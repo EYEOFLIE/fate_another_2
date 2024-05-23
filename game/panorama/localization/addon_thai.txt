@@ -1,0 +1,317 @@
+"lang" //ver 1.0
+{
+	"Language"		"Thai"
+	"Tokens"
+	{	
+		"Unassigned"      								"Unassigned Team"
+		"Spectator"       								"Spectator Team"
+		"Neutrals"        								"Neutral Team"
+		"NoTeam"          								"No Team"
+
+		"DOTA_GoodGuys"   								"ทีมแดง"
+		"DOTA_BadGuys"    								"ทีมดำ"
+		"DOTA_Custom1"    								"ทีมชมพู"
+		"DOTA_Custom2"    								"ทีมส้ม"
+		"DOTA_Custom3"    								"ทีมน้ำเงิน"
+		"DOTA_Custom4"    								"ทีมเขียว"
+		"DOTA_Custom5"    								"ทีมน้ำตาล"
+		"DOTA_Custom6"    								"ทีมฟ้า"
+		"DOTA_Custom7"    								"ทีมเขียวมะกอก"
+		"DOTA_Custom8"    								"ทีมม่วง"		
+
+		"Next"				"ถัดไป"
+		"Back"				"ก่อน"
+		"OK"				"ตกลง"
+		"Interface"			"อินเตอร์เฟส"
+
+		"Kirei_Welcome_1"	"ยินดีต้อนรับมาสเตอร์ใหม่ \n ฉันชื่อ โคโตมิเนะ คิเรย์ เป็นผู้ดูแลในสงครามจอกศักดิ์สิทธิ์ที่ชื่อว่า"
+		"Kirei_Welcome_2"	"     ฉันจะให้สอนวิธีการเล่นเกมนี้ให้เอง"
+
+		"Skill_Layout"		"แถบสกิล"
+		"innate_Skill"		"สกิลติดตัว"
+		"saber_charisma"	"คุณสมบัติพิเศษ"
+		"saber_charisma_des"	"เพิ่มความเร็วในการเคลื่อนที่ \n และความเร็วในการโจมตีให้แก่เพื่อนร่วมทีมใกล้ๆ"
+		"saber_instinct"	"สัญชาตญาณ"
+		"saber_instinct_des"	"มีโอกาสหลบการโจมตีทั่วไป"
+		"saber_invisible_air"	"อินวิสซิเบิล แอร์"
+		"saber_invisible_air_des"	"เพิ่มพลังโจมตีของอาเธอเรีย และดึงศัตรูเข้ามาหาเธอเมื่อกดใช้"
+		"saber_caliburn"	"คาลิเบิร์น"
+		"saber_caliburn_des"	"สร้างความเสียหายและทำให้เป้าหมายเชื่องช้า"
+		"saber_avalon"		"อวาลอน"
+		"saber_avalon_des"	"ทำให้อาเธอเรียปลอดภัยจากอันตรายทั้งปวง. ในช่วงเวลานี้ การรับความเสียหายที่มากกว่าเกณฑ์ อาเธอเรียจะวิ่งเข้าไปฟันผู้ที่สร้างความเสียหายทันที"
+		"saber_excalibur"	"เอ็กซ์คาลิเบอร์"
+		"saber_excalibur_des"	"อาเธอเรียชาร์จเอ็กซ์คาลิเบอร์ด้วยมานา และฟันดาบลงพร้อมทั้งปลดปล่อยคลื่นแสง สร้างความเสียหายต่อศัตรูที่อยู่ในเส้นทางของลำแสง"
+		"strike_air_att"		"คุณสมบัติ: สไตรค์ แอร์      มานาของมาสเตอร์ที่ต้องใช้: 15"
+		"strike_air_att_des"	"เปิดใช้งาน สไตรค์ แอร์ และ สไตรค์ แอร์ อัพสตรีม"
+		"strike_air"			"สไตรค์ แอร์"
+		"strike_air_des"	"อาเธอเรียปลดปล่อยพายุทำลายล้างจากปลายดาบ สร้างความเสียหายพร้อมทั้งผลักศัตรูทั้งหมดที่อยู่ในเส้นทางออกไป ศัตรูที่ถูกผลักชนกำแพงจะติดสตั้นและได้รับความเสียหายเพิ่มเติม"
+		"saber_max_excalibur"	"ดาบพันธะสัญญาแห่งชัยชนะ"
+		"saber_max_excalibur_des"	"อาเธอเรียปลดปล่อยแสงที่แท้จริงของเอ็กซ์คาลิเบอร์ กลืนกินทุกสิ่งที่อยู่ในเส้นทาง และสร้างความเสียหายร้ายแรง \n ข้อกำหนดขั้นต่ำ : 25 stats of STR, AGI และ INT"
+
+		"Layout_Describe"	"มี 3 สิ่งเกี่ยวกับแถบสกิลที่คุณจำเป็นต้องรู้ \n\n1. สกิลพื้นฐาน : เป็นสกิลที่สามารถอัพเกรด รีเซ็ตด้วยเรย์จู หรือ เมื่อจบรอบต่อสู้ \n\n2. สกิลติดตัว : สกิลที่ไม่สามารถอัพเกรดได้ ยกเว้นสกิลติดตัวบางอันที่สามารถอัพเกรดได้ด้วยคุณสมบัติเซอร์แวนท์ ไม่สามารถรีเซ็ตด้วยเรย์จู หรือเมื่อจบรอบต่อสู้"
+		"Layout_Describe_2"	"3. ปรับแต่งเซอร์แวนท์ : ระบบพรสวรรค์ที่ทำให้คุณสามารถปรับแต่งเซอร์แวนท์ได้อย่างอิสระ โดยการใช้มานาของมาสเตอร์ในการอัพเกรด \nแถบปรับแต่งอยู่ใกล้กับภาพเซอร์แวนท์ของคุณ \nนอกจากนี้คุณยังสามารถใช้งาน มาสเตอร์ 2 ในการปรับแต่งเซอร์แวนท์ได้"
+
+		"Item"				"ไอเท็ม"
+                "ItemsDes"                     "ไอเท็มทั้งหมดในเกมนี้ล้วนแต่เป็นไอเท็มที่ใช้แล้วหมดไป \n พวกมันมีประโยชน์มากในทุกสถานการณ์ \n\n ไอเท็มบางอันจำเป็นต้องใช้การผสมของไอเท็มเดียวกัน 2 อัน \n\n คุณสามารถซื้อไอเท็มได้จากทุกที่ในเกม แต่การซื้อนอกฐาน ไอเท็มจะมีราคาเพิ่มขึ้น 50%" 
+		"c_scroll"			"คัมภีร์ C"
+		"c_scroll_des"		"ยิงบอลล์ไฟใส่ศัตรู ทำให้ติดสตั้น"
+		"b_scroll"			"คัมภีร์ B"
+		"b_scroll_des"		"สร้างบาเรียดูดซับความเสียหายเวท"
+		"a_scroll"			"คัมภีร์ A"
+		"a_scroll_des"		"เพิ่มค่าป้องกันเวทมนตร์อย่างมาก"
+		"s_scroll"			"คัมภีร์ S"
+		"s_scroll_des"		"ช๊อตศัตรูเพื่อหยุดการเคลื่อนไหว พร้อมทั้งห้ามไม่ให้ศัตรูใช้สกิลประเภท บลิ้งค์"
+		"link_scroll"		"คัมภีร์เชื่อมวิญญาณ"
+		"link_scroll_des"	"เชื่อมต่อกับเพื่อนร่วมทีม เพื่อแชร์ความเสียหายที่ได้รับ"
+
+                "Customize_Servant"        "ปรับแต่งเซอร์แวนท์"
+                "CustDes"                  "คุณจำเป็นต้องใช้มานาของมาสเตอร์เพื่ออัพเกรดเซอร์แวนท์ \nคุณสามารถหามานาของมาสเตอร์ได้จากการเพิ่มเลเวลให้กับเซอร์แวนท์ \n+3 มานาต่อเลเวล \nหรือรอพรจากจอกศักดิ์สิทธิ์ +15 มานา ทุกๆ 10 นาที"
+                "Servant_Attribute"          "คุณสมบัติเซอร์แวนท์"
+                "ServantAtr_Des"               "เซอร์แวนท์แต่ละตัวจะมีคุณสมบัติของตัวเอง ซึ่งจะพัฒนาสกิลหลัก หรือเป็นการเปิดใช้งานสกิลพิเศษ"
+                "Servant_Stat"		"Stat ของเซอร์แวนท์"
+                "ServantSt"                   "Stats ในเกมนี้เป็นสิ่งที่สำคัญมากสำหรับเซอร์แวนท์ของคุณ \n\n นอกจาก stats ที่คุณได้รับจากการเพิ่มเลเวล และอัพเกรดสกิล อัพเกรด All Stats แล้ว คุณยังสามารถอัพเกรด stat ได้ผ่านการใช้ มานาของมาสเตอร์ \n\n ถ้าเซอร์แวนท์ของคุณมี stat ตามข้อกำหนดขั้นต่ำ 25 หรือ 30 STR, AGI และ INT ตามแต่เซอร์แวนท์แล้ว คุณจะสามารถเปิดใช้งานคอมโบพิเศษ ซึ่งเป็นสกิลที่แข็งแกร่งที่สุดของเซอร์แวนท์ของคุณ"
+                "ServantSt2"                    "แต่ละ Stat ต้องเสีย 1 มานาของมาสเตอร์ แต่ละอันอัพเกรดได้สูงสุด 50 ครั้ง"   
+              
+                "Command_Seal"                "เรย์จู"
+                "Command_Seal_Describe"       "เรย์จู เป็นระบบซัพพอร์ทประเภทหนึ่ง เพื่อทำให้เซอร์แวนท์ของคุณแข็งแกร่งขึ้นในการต่อสู้ หรือใช้ช่วยชีวิตในสถานการณ์ที่ยากลำบาก \n อินเตอร์เฟซของเรย์จู จะอยู่ทางด้านซ้ายมือของจอ นอกจากนี้คุณยังสามารถใช้เรย์จูผ่านทาง มาสเตอร์ 1 ได้ด้วย"
+                "Command_Seal_Master"          "เพื่อที่จะใช้เรย์จู คุณจำเป็นต้องมี มานาและเลือดของมาสเตอร์อย่างละ 1 หน่วย และ มาสเตอร์ 1 กับมาสเตอร์ 2 นั้นแชร์ค่ามานาเดียวกัน พรจากจอกศักดิ์สิทธิ์จะฟื้นเลือกให้กับมาสเตอร์ 1 จนเต็มทุกๆ 10 นาที"
+                "Command_Seal_Revoke"           "มีบางสถานะที่ทำให้เซอร์แวนท์ของคุณรีโวคจากมาสเตอร์ สถานะรีโวคจะทำให้มาสเตอร์ไม่สามารถใช้เรย์จูเพื่อซัพพอร์ทเซอร์แวนท์ของคุณได้ คุณสามารถตรวจสอบมันได้จาก แถบบัฟเหนือหลอดเลือด"
+                "seal_4"                        "เรย์จู 4"
+                "seal_4_des"                    "เลือดของมาสเตอร์ที่ต้องการ: 1, มานาของมาสเตอร์ที่ต้องการ: 1 \n ฟื้นมานาให้แก่เซอร์แวนท์จนเต็มทันที"
+                "seal_3"                        "เรย์จู 3"
+                "seal_3_des"                    "เลือดของมาสเตอร์ที่ต้องการ: 1, มานาของมาสเตอร์ที่ต้องการ: 1 \n ฟื้นเลือดให้แก่เซอร์แวนท์จนเต็มทันที"
+                "seal_2"                        "เรย์จู 2"
+                "seal_2_des"                    "เลือดของมาสเตอร์ที่ต้องการ: 1, มานาของมาสเตอร์ที่ต้องการ: 2 \n รีเซ็ตคูลดาวน์ของสกิลและไอเท็มทั้งหมด ยกเว้นคอมโบ และสกิลที่ไม่สามารถรีเซ็ตได้"
+                "seal_1"                        "เรย์จู 1"
+                "seal_1_des"                    "เลือดของมาสเตอร์ที่ต้องการ: 1, มานาของมาสเตอร์ที่ต้องการ: 2 \n มาสเตอร์จะสามารถใช้เรย์จูอื่นได้ด้วยการจ่ายมานาเพียง 1 หน่วย โดยไม่เสียคูลดาวน์เป็นเวลา 20 วินาที"
+
+		"Fate_Setting"		"ตั้งค่าเฟท"
+		"Fate_Setting_Describe"	"ตั้งค่าเฟท เป็นตัวตั้งค่าพิเศษเฉพาะเกมนี้ ประกอบไปด้วย 3 ส่วน คือ Config, สาราณุกรมเฟท และ เครดิต \n\n ตำแหน่งของตั้งค่าเฟท อยู่ด้านบนซ้ายของจอ"
+                "Fate_Config"           "ตั้งค่า Config: Camera distance, ตั้งค่า BGM, คำสั่งอื่นๆ. \n คุณสามารถเปลี่ยน Camera distance เพื่อที่จะมองเห็นภาพในมุมที่กว้างขึ้นได้"
+                "Fate_Pedia"            "สาราณุกรมเฟท: ข้อมูลของเซอร์แวนท์ทั้งหมด สกิล คุณสมบัติ และคอมโบ"
+
+		"Holy_Grail"		"จอกศักดิ์สิทธิ์"
+		"Holy_Grail_Describe"	"เศษจอกศักดิ์สิทธิ์ถือเป็นสุดยอดไอเท็มสำหรับเซอร์แวนท์ของคุณ \n\n มันเป็นไอเท็มที่จะช่วยให้คุณพลิกเกมได้ \n\n คุณสามารถรับเศษจอกศักดิ์สิทธิ์ได้ผ่านทาง มาสเตอร์ 1"
+		"7_Deaths_Describe"	      "ในเกมเดธแมทช์ 7v7 หรือ 6v6 วิธีเดียวที่จะรับเศษจอกศักดิ์สิทธิ์ คือการตายจนครบ 7 ครั้ง สำหรับ FFA หรือ Rumble game, เศษจอกศักดิ์สิทธิ์จะตกลงมาจากฟ้าในเวลาที่แน่นอน \n\n\n           จอกความโลภ: มอบทองและมานา 1 หน่วยให้มาสเตอร์ \n\n           จอกต่อต้านเวท: ปลอดภัยจากเวทมนตร์ \n\n           จอกเติมเต็ม:  ฟื้นเลือดและมานาให้แก่เซอร์แวนท์\nจนเต็มทันที พร้อมทั้งเพิ่มค่าเกราะให้ในช่วงเวลาหนึ่ง \n\n           จอกรุ่งเรือง: เพิ่มเลเวลของเซอร์แวนท์ขึ้น 4 เลเวลทันที และเพิ่มเลือดของมาสเตอร์ 1 หน่วย"
+
+		"Rule"				"กฎ"
+		"Rule_Describe"		"1. วิธีได้รับแต้มชัยชนะ \n-ฆ่าฝ่ายศัตรูทั้งหมด \n-เมื่อรอบต่อสู้จบลง ทีมที่มีผู้เล่นเหลือมากกว่าจะเป็นฝ่ายที่ชนะ และได้แต้มชัยชนะไป \n-เมื่อรอบต่อสู้จบลงแต่ผู้เล่นของทั้งสองฝ่ายมีจำนวนเหลือรอดเท่ากัน \nทีมที่มีแต้มชัยชนะน้อยกว่าจะเป็นฝ่ายได้แต้มชัยนะไป \n\n2. เมื่อทีมใดทีมหนึ่งมีแต้มชัยชนะถึงเป้าที่กำหนด จะเป็นผู้ชนะในเกมนี้"
+
+		"Quest_1"			"แบบฝึกหัด #1"
+		"Quest_2"			"แบบฝึกหัด #2"
+		"Quest_3"			"แบบฝึกหัด #3"
+		"Quest_4"			"แบบฝึกหัด #4"
+		"Quest_5"			"แบบฝึกหัด #5"
+		"Quest_6"			"แบบฝึกหัด #6"
+		"Quest_7"			"แบบฝึกหัด #7"
+		"Quest_8"			"แบบฝึกหัด #8"
+		"Quest_9"			"แบบฝึกหัด #9"
+		"Quest_10"			"แบบฝึกหัด #10"
+		"Quest_11"			"แบบฝึกหัด #11"
+		"Quest_12"			"แบบฝึกหัด #12"
+		"Quest_13"			"แบบฝึกหัด #13"
+		"Quest_14"			"แบบฝึกหัด #14"
+		"Quest_15"			"แบบฝึกหัด #15"
+		"Quest_16"			"แบบฝึกหัด #16"
+		"quest1"			"ดึงศัตรูเข้ามาด้วยการใช้ อินวิสซิเบิ้ล แอร์!"
+		"quest2"			"ใช้คาร์ลิเบิร์น สร้างความเสียหายพร้อมทำให้ศัตรูเชื่องช้า"
+		"quest3"			"เคาน์เตอร์สกิลของศัตรูด้วย อวาลอน"
+		"quest4"			"ยิงเอ็กซ์คาลิเบอร์ใส่ศัตรู"
+		"quest5"			"อัพเกรดคุณสมบัติ: สไตรค์ แอร์ และใช้ สไตรค์ แอร์"
+		"quest6"			"อัพ stat ทั้งหมดจนครบ 25 แล้วใช้คอมโบ: ดาบพันธะสัญญาแห่งชัยชนะ \n ลำดับการใช้สกิล : E -> R (ภายใน 3 วินาที)"
+		"quest7"			"ใช้เรย์จู 4 ฟื้นค่ามานาของเซอร์แวนท์"
+		"quest8"			"ใช้เรย์จู 3 เพื่อทำให้เซอร์แวนท์รอดจากสกิลของศัตรู"
+		"quest9"			"ใช้คาลิเบิร์น 2 ครั้งภายใน 4 วินาที ด้วยการใช้เรย์จู2 รีเซ็ตคูลดาวน์สกิลทั้งหมดของเซอร์แวนท์"
+		"quest10"			"ใช้เรย์จู 1 เพื่อทำให้เรย์จู 2 - 4 ไม่ติดคูลดาวน์ และยิง เอ็กซ์คาลิเบอร์ 2 ครั้ง ภายใน 10 วินาที"
+		"quest11"			"ใช้คัมภีร์ C ตีขัดการร่ายสกิลของศัตรู"
+		"quest12"			"ใช้คัมภีร์ B และ ใช้คัมภีร์ A เพื่อลดความเสียหายเวทที่ได้รับ"
+		"quest13"			"ใช้คัมภีร์ S ยับยั้งศัตรูไม่ให้หนีไป"
+		"quest14"			"ใช้คัมภีร์เชื่อมวิญญาณ แชร์ความเสียหายให้แก่เพื่อร่วมทีม"
+		"quest15"			"ปรับ camera's distance เป็น 1900"
+		"quest16"			"จัดการศัตรู"
+
+		"Class"				"คลาสเซอร์แวนท์:"
+		"Type"				"ประเภท:"
+		"Trait"				"ลักษณะพิเศษ:"
+		"Hp"				"เลือด:"
+		"MR"				"ต้านเวท:"
+		"STR"				"STR:"
+		"AGI"				"AGI:"
+		"INT"				"INT:"
+		"NP"				"โฮกุ:"
+		"Dif"				"ความยาก:"
+
+		"Basic"				"สกิลพื้นฐาน"
+		"Innate"			"สกิลติดตัว"
+		"Attribute"			"คุณสมบัติ"
+		"Combo"				"คอมโบ"
+
+		"Saber"				"เซเบอร์"
+		"Archer"			"อาร์เชอร์"
+		"Lancer"			"แลนเซอร์"
+		"Rider"				"ไรเดอร์"
+		"Caster"			"แคสเตอร์"
+		"Assassin"			"แอสซาซิน"
+		"Berserker"			"เบอร์เซิกเกอร์"
+		"Ruler"				"รูลเลอร์"
+		"Avenger"			"อาเวนเจอร์"
+		"Male"				"เพศชาย"
+		"Female"			"เพศหญิง"
+
+		"control"			"ควบคุม"
+		"assassin"			"แอสซาซิน"
+		"mobility"			"ว่องไว"
+		"snipe"				"ซุ่มยิง"
+		"reality_marble"	"เรียลลิตี้ มาร์เบิ้ล"
+		"carry"				"แครี่"
+		"support"			"ซัพพอร์ต"
+		"jumper"			"จั๊มเปอร์"
+		"beamer"			"บีมเมอร์"
+		"burst"				"เบิรสท์"
+		"tank"				"แท้งค์"
+		"counter"			"เคานเตอร์"
+		"manaless"			"ไม่มีมานา"
+		"no_attack"			"โจมตีไม่ได้"
+		"divine"			"สายเลือดเทพ"
+		"dragon"			"สายเลือดมังกร"
+		"arthur"			"อาเธอร์"
+		"shinsengumi"		"ชินเซ็นกุมิ"
+		"human"				"มนุษย์"
+		"female_slayer"		"ผู้สังหารเพศหญิง"
+		"human_slayer"		"ผู้สังหารมนุษย์"
+		"god_slayer"		"ผู้สังหารเทพ"
+
+		"enable_"			"ปลดล็อก "
+
+		"ban_button"		"แบน"
+		"pick_button"		"เลือก"
+
+		"happy_new_year"	"ปีใหม่"
+		"chinese_new_year"	"ตรุษจีน"
+		"fate_owned"		"มีแล้ว"
+		"fate_claim"		"กดรับ"
+		"fate_closed"		"X"
+
+		"Fateanother_Customize"						"ปรับแต่งเซอร์แวนท์"
+		"Fateanother_Customize_Attributes"			"อัพเกรดสกิล"
+		"Fateanother_Customize_Attributes_Tooltip"	"กลุ่มคุณสมบัติอันเป็นเอกลักษณ์ที่สามารถเสริมความแข็งแกร่งให้แก่เซอร์แวนท์ของคุณได้อย่างหลากหลาย"
+		"Fateanother_Customize_Stats"			"STATS"
+		"Fateanother_Customize_Stats_Tooltip"	"แต่ละ stat สามารถอัพเกรดได้สูงสุด 50 ครั้ง."
+		"Fateanother_Customize_Special_Cooldowns"	"คอมโบ"
+		"Fateanother_Customize_Special_Cooldowns_Tooltip"	"สกิลสุดวิเศษที่เซอร์แวนท์ของคุณจำเป็นต้องเติมเต็มค่า stat ขั้นต่ำที่ต้องการ และกดใช้สกิลตามลำดับที่กำหนดไว้ จึงจะสามารถเปิดใช้งานคอมโบได้"
+		"Fateanother_Customize_Special_Shards"	"เศษจอกศักดิ์สิทธิ์"
+		"Fateanother_Customize_Special_Shards_Tooltip"		"ไอเท็มในตำนาน เซอร์แวนท์ของคุณสามารถครอบครองมันได้เมื่อเผชิญหน้ากับความตาย 7 ครั้ง โดยที่ไม่ใช่การฆ่าตัวตายหรือ ถูกฆ่าโดยเพื่อร่วมทีม"
+		"Fateanother_Customize_Button"						"กดเพื่ออัพเกรดสกิล และ stat ของตัวละคร"
+
+		"FA_Fatepedia"						"สารานุกรมเฟท"
+		"FA_Fatepedia_Button"				"คลิ๊กเพื่อเปิดสารานุกรมเฟท ที่ที่คุณสามารถเรียนรู้เกี่ยวกับสกิลและวิธีการเล่นของเซอร์แวนท์แต่ละตัว"
+		"FA_Fatepedia_Hero_Button"			"แสดงสกิลและคุณสมบัติของ "
+
+		"FA_Config"						"Configuration"
+		"FA_Config_Button"				"คลิ๊กเพื่อเปิดแถบ Configuration"
+
+		"FA_Config_Camdist"				"Camera Distance"
+
+		"FA_Config_BGM_Repeat"			"เล่นซ้ำ"
+		"BGM0"	"0. Waiting Room (Network Menu) | Melty Blood: Type Lumina [OST]"
+		"BGM1"	"1. Fate/Unlimited Codes - Stranger"
+		"BGM2"	"2. Melty Blood Actress Again Soundtrack - Kara no Kyoukai"
+		"BGM3"	"3. [Fate/Zero] Emiya -time alter-"
+		"BGM4"	"4. Warming up Disaster (Tomorrow's Collapse) | Melty Blood: Type Lumina [OST]"
+		"BGM5"	"5. Fate/Grand Order - Six Tail Tamamo Vitch Koyanskaya Theme"
+		"BGM6"	"6. Actions in the Lower World | Melty Blood: Type Lumina [OST]"
+		"BGM7"	"7. [Fate/Grand Order] Oberon Battle OST"
+		"BGM8"	"8. Last Stardust -Fate/Stay Night: Unlimited Blade Works"
+		"BGM9"	"9. Blazing Ashes II -Fate/Stay Night: Unlimited Blade Works"
+		"BGM10"	"10. On the Battlefield -Fate/Zero"
+		"BGM11"	"11. The Battle Is to The Strong -Fate/Zero"
+		"BGM12"	"12. This Day, And Never Again -Fate/Zero"
+		"BGM13"	"13. Absolute Demonic Front -Fate/Grand Order (Babylonia)"
+		"BGM14"	"14. She Rules the Battlefield -Fate/Stay Night: Heaven's Feel II"
+		"BGM15"	"15. He Comes Back Again And Again -Fate/Stay Night: Heaven's Feel II"
+		"BGM16"	"16. Clear Ruin - Fate/kaleid liner Prisma☆Illya"
+		"BGM17"	"17. Battle -Fate/Apocrypha"
+		"BGM18"	"18. The Four Rings -Fate/Stay Night: Heaven's Feel III"
+
+		"fate_tour"					"Fate Tour 3!"
+		"fate_tour_03_detail"			"
+รางวัล
+อันดับ 1: ฉายา CHAMPTION + LIMITED สกิน + 6k CP แก่ทุกคนในทีม
+อันดับ 2: 4k CP แก่ทุกคนในทีม
+อันดับ 3: 2k CP แก่ทุกคนในทีม
+รางวัลสำหรับผู้เข้าร่วม: 1k CP
+
+วันและตาราง
+- ระยะเวลาสมัคร: 28 ตค - 3 พย
+- ประกาศรายชื่อทีมและผู้เล่น : 4 พย
+- ประกาศตารางแข่ง: 5 พย
+- วันและเวลาแข่ง ขึ้นอยู่กับ หัวหน้าทีมของทั้ง 2 ฝ่ายตกลงกัน
+- ระยะเวลาการแข่งขัน 6 พย - 27 พย
+- รอบตัดสิน จะประกาศอีกครั้ง
+
+การสมัคร
+- ระยะเวลาสมัคร: 28 ตค - 3 พย
+- แต่ละทีมมีผู้เล่น 7-9 คน (7 ตัวจริง + 2 ตัวสำรอง)
+- สมัครแบบทีม! (ขั้นต่ำ 5 คน) 
+- สมัครแบบผู้เล่นเดี่ยว!
+- แต่ละคนเข้าร่วมได้แค่ 1 ทีม
+- หากต้องการเปลี่ยนแปลงข้อมูลผู้เล่น ให้แจ้งก่อนวันที่ 3 พย
+- แต่ละทีมสามารถเปลี่ยนข้อมูลได้วันละ 1 ครั้ง"
+
+		"FA_Config_Gameplay"			"เกมเพลย์"
+		"FA_Config_Option1"				"ขอเงินเมื่อมีน้อยกว่า 200g"
+		"FA_Config_Option1_Context"		"เมื่อกดติ๊ก, หากซื้อของแล้วเหลือเงินน้อยกว่า 200g จะเปิดใช้งานคำสั่ง -goldpls โดยอัตโนมัติ"
+		"FA_Config_Option2"				"ปิดการใช้งาน ตัวเลขค่าความเสียหาย"
+		"FA_Config_Option3"				"ปิดการใช้งาน mount reselection"
+		"FA_Config_Option3_Context"		"เมื่อขึ้นขี่ (ได้แก่ Ancient Dragon, Gigantic Horror, Golden Hind), selecting hero automatically reselects mount instead. Check this option if you want to disable this function."
+		"FA_Config_Option4"				"ปิดเสียงแจ้งเตือนของ presence detection"
+		"FA_Config_Option5"				"ซ่อนอินเตอร์เฟซ์ของมาสเตอร์"
+		"FA_Config_Option6"				"เปิดการใช้งาน Alt + คลิ๊ก บนแถบบัฟ"
+		"FA_Config_Option7"				"ปิดการใช้งานแถบมาสเตอร์"
+		"FA_Config_Option8"				"ปิดการใช้งาน ระบบย้ายไอเท็มเข้าตัวละครอัตโนมัติ"
+		"FA_Config_Option8_Context"		"ไอเท็มที่ซื้อจะไม่ถูกย้ายเข้าตัวเซอร์แวนท์ แต่จะอยู่ในคลัง"
+		"FA_Config_Option9"				"ปิดการใช้งาน แจ้งเตือนมาสเตอร์มานา"
+		"FA_Config_Option9_Context"		"ปุ่มปรับแต่งเซอร์แวนท์จะเปล่งแสงสีแดงเมื่อมีมาสเตอร์มานามากกว่า 15"
+		"FA_Config_Option10"				"เปิดการใช้งานคีย์ลัดของ เรย์จู (ไม่สามารถย้อนกลับได้)"
+		"FA_Config_Option10_Context"		"คีย์ลัด 2 เป็นเรย์จู 2, คีย์ลัด 3 เป็นเรย์จู 3, คีย์ลัด 4 เป็นเรย์จู 4, คีย์ลัด 5 เป็นเรย์จู 5"
+
+		"FA_Config_Cmd1"	"เด้งข้อความขอเงินไปที่เพื่อนในทีม"
+		"FA_Config_Cmd2"	"เปิด/ปิด BGM"
+		"FA_Config_Cmd3"	"เพิ่มมานาและเลือดของมาสเตอร์เป็น 100/1000, \n และเปลี่ยนค่า stat เป็นจำนวนขั้นต่ำในการใช้คอมโบ"
+		"FA_Config_Cmd4"	"ลบสถานะ round pause ออกจากเซอร์แวนท์ทั้งหมด"
+		"FA_Config_Cmd5"	"เปิดหรือปิดการใช้งานระบบเสียงของเซอร์แวนท์"
+
+		"skin_ava"		"เปลี่ยนสกินได้"
+		"new_rec"		"แนะนำสำหรับมือใหม่"
+
+		"Fateanother_Portrait_Tooltip"					"คลิ๊กเพื่อเลือกที่เซอร์แวนท์ของคุณ"
+		"Fateanother_Master_Tooltip"					"คลิ๊กเพื่อเลือกที่มาสเตอร์ ซึ่งสามารถซัพพอร์ทเซอร์แวนท์ของคุณด้วยเรย์จู"
+		"Fateanother_Master_Health"						"เลือดของมาสเตอร์ "
+		"Fateanother_Master_Mana"						"มานาของมาสเตอร์ "
+		"Fateanother_Master_Health_Tooltip"				"เลือดของมาสเตอร์ในตอนนี้ คือจำนวนครั้งที่คุณจะสามารถใช้เรย์จูได้ การใช้เรย์จูต้องเสียเลือดของมาสเตอร์ 1 หน่วย และอาจถึงขั้นปิดการใช้งานเรย์จูหากเลือดของมาสเตอร์ลดลงถึง 0 \nเลือดของมาสเตอร์จะถูกฟื้นฟูจนเต็มทุก 10 นาที"
+		"Fateanother_Master_Mana_Tooltip"				"มานาของมาสเตอร์ในตอนนี้ คือทรัพยาการที่จะใช้ในการปรับแต่งเซอร์แวนท์ หรือใช้เรย์จู \nมานาจะเพิ่มขึ้น 3 หน่วยทุกครั้งที่เซอร์แวนท์เพิ่มเลเวล และจะเพิ่มขึ้น 15 หน่วยทุก 10 นาที"
+
+		"FA_Options_tooltip"                            "ตั้งค่าเฟท"
+
+        "ABOUT_DEV"                                     "Fate/Another II"
+        "ABOUT_DEV_BODY"                                "ผู้พัฒนาในตอนนี้: ZeFiRoFT, Nerd, Seraph, Kagutsuchi"
+        "ABOUT_CREDITS"                                 "Credits and acknowledgements"
+
+        "ABOUT_CREDITS_BODY"
+        "Special thanks to Dun1007 and past developers of Fate/Another and Fate/Alternate for making the gamemode.
+\nkriith, Jeekaroose and Bonjwa for the particles.
+\nBMD, Noya, DoctorGester, atr1 and other people of the Dota 2 modding community who lent a helping hand.
+\nChaosRealm and SCV Market for public models.
+\nTailer007 for Nero as well as Blitz for its animations.
+\nstyx for Semiramis, Hundred-Faced Hassan variants, and updated textures 
+\nKingSaber(WC3) for bridge and road models.
+\nDelta and Pyrefly for cinematic.
+\nFilo for servant voice clips ported from other series.
+\nEYEOFLIE for Okita's model and animations.
+\nKaiserraiser and ZeFiRoFT for Drake and Scathach's model and animations.
+\nSeva (Fate/Balance) for Modred.
+\nTranslation volunteers: MENTAL OUT|食蜂操祈, Marcellus, Mucya, SasakiSaki, Com, Beato, Amano Jack, AMATERASU, Matka Tvoja, RyuDo, GISH.
+\nVarious other Type-Moon games such as Unlimited Codes and Extella which I shamelessly ripped audios from... plz no lawsuit.
+\nType-Moon for creating Fate/Stay Night and the franchise."
+	}
+}

@@ -1,0 +1,1702 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Melt - Elegant Waltz (Q) 
+	//=================================================================================================================
+	"melt_q"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityTextureName"			"custom/melt/melt_q"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_3"
+		"AnimationPlaybackRate" 		"2.0"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityManaCost"				"100"
+		"AbilityCooldown"				"13 12 11 10 9"
+		"AbilityCastPoint"				"0.05"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"damage"			"150 200 250 300 350"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"range"				"750"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"0.3"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/melt/melt_abilities"
+				"Function"		"OnQ"
+			}
+		}	
+		"Modifiers"
+		{
+			"modifier_melt_dashing"
+			{
+				"IsHidden"			"0"
+				"IsBuff"			"1"
+				"Duration"			"%duration"	
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_DISABLE_TURNING" 		"1"
+					"MODIFIER_PROPERTY_OVERRIDE_ANIMATION"		"ACT_DOTA_CAST_ABILITY_3"
+					"MODIFIER_PROPERTY_OVERRIDE_ANIMATION_RATE"	"3"
+				}
+			
+				"States"
+				{
+					"MODIFIER_STATE_DISARMED"			"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_SILENCED"			"MODIFIER_STATE_VALUE_ENABLED"
+				}
+
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Melt - Elegant Waltz (Q) SA UPGRADE
+	//=================================================================================================================
+	"melt_q_upgrade"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityTextureName"			"custom/melt/melt_q"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_3"
+		"AnimationPlaybackRate" 		"2.0"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityManaCost"				"100"
+		"AbilityCooldown"				"13 12 11 10 9"
+		"AbilityCastPoint"				"0.05"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"damage"			"150 200 250 300 350"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"range"				"750"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"0.3"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"damage_per_agi"	"3"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/melt/melt_abilities"
+				"Function"		"OnQ"
+			}
+		}	
+		"Modifiers"
+		{
+			"modifier_melt_dashing"
+			{
+				"IsHidden"			"0"
+				"IsBuff"			"1"
+				"Duration"			"%duration"	
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_DISABLE_TURNING" 		"1"
+					"MODIFIER_PROPERTY_OVERRIDE_ANIMATION"		"ACT_DOTA_CAST_ABILITY_3"
+					"MODIFIER_PROPERTY_OVERRIDE_ANIMATION_RATE"	"3"
+				}
+			
+				"States"
+				{
+					"MODIFIER_STATE_DISARMED"			"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_SILENCED"			"MODIFIER_STATE_VALUE_ENABLED"
+				}
+
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Melt - Grand Jete (W) 
+	//=================================================================================================================
+	"melt_w"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityTextureName"			"custom/melt/melt_w"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_1"
+		"AnimationPlaybackRate" 		"1.0"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityManaCost"				"200"
+		"AbilityCastRange"				"0"
+		"AbilityCooldown"				"16"
+		"AbilityCastPoint"				"0.15"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"circle_damage"			"100 150 200 250 300"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"damage"			"250 325 400 475 550"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"circle_range"		"350"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"impact_range"		"300"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"front_range"		"250"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"1.15"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"delay_impact"			"1.1"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"delay_spin"			"0.4"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"width"				"160"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"movespeed_bonus"	"10 16 22 28 34"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"slow_duration"		"1.5"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"w_slow"	"-30 -40 -50 -60 -70"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/melt/melt_abilities"
+				"Function"		"OnW"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_melt_dance"
+			{
+				"IsHidden"			"0"
+				"IsBuff"			"1"
+				"Duration"			"%duration"	
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%movespeed_bonus"
+					"MODIFIER_PROPERTY_DISABLE_TURNING" "1"
+				}
+			
+				"States"
+				{
+					"MODIFIER_STATE_DISARMED"			"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_SILENCED"			"MODIFIER_STATE_VALUE_ENABLED"
+				}
+
+			}
+			"modifier_melt_dance_slow"
+			{
+				"IsDebuff"			"1"
+				"IsHidden"			"0"
+				"Duration"			"%slow_duration"	
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%w_slow"
+				}
+			}
+
+
+			"modifier_sequence_window"
+			{	
+				"IsHidden"				"1"
+				"Attributes"			"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/melt/melt_abilities"
+						"Function"		"OnSequenceStart"
+					}
+				}			
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"abilities/melt/melt_abilities"
+						"Function"		 	"OnSequenceDestroy"
+					}
+				}				
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"abilities/melt/melt_abilities"
+						"Function"		 	"OnSequenceDie"
+					}
+				}
+			}
+		}	
+	}
+
+	//=================================================================================================================
+	// Melt - Grand Jete (W) SA UPGRADE
+	//=================================================================================================================
+	"melt_w_upgrade"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityTextureName"			"custom/melt/melt_w"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_1"
+		"AnimationPlaybackRate" 		"1.0"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityManaCost"				"200"
+		"AbilityCastRange"				"0"
+		"AbilityCooldown"				"16"
+		"AbilityCastPoint"				"0.15"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"circle_damage"			"100 150 200 250 300"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"damage"			"250 325 400 475 550"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"circle_range"		"350"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"impact_range"		"300"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"front_range"		"250"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"1.15"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"delay_impact"			"1.1"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"delay_spin"			"0.4"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"width"				"160"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"movespeed_bonus"	"10 16 22 28 34"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"slow_duration"	"1.5"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"w_slow"	"-30 -40 -50 -60 -70"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"buff_duration"		"8 10 12 14 16"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"aspd_buff"			"70 90 110 130 150"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"splash_dmg_per_str"	"0.5 0.8 1.1 1.4 1.7"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"splash_aoe_per_int"	"3.2"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/melt/melt_abilities"
+				"Function"		"OnW"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_melt_dance"
+			{
+				"IsHidden"			"0"
+				"IsBuff"			"1"
+				"Duration"			"%duration"	
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%movespeed_bonus"
+					"MODIFIER_PROPERTY_DISABLE_TURNING" "1"
+				}
+			
+				"States"
+				{
+					"MODIFIER_STATE_DISARMED"			"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_SILENCED"			"MODIFIER_STATE_VALUE_ENABLED"
+				}
+
+			}
+			"modifier_melt_dance_slow"
+			{
+				"IsHidden"			"0"
+				"IsDebuff"				"1"
+				"Duration"			"%slow_duration"	
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%w_slow"
+				}
+			}
+			"modifier_melt_dance_buff"
+			{
+				"IsHidden"			"0"
+				"IsBuff"			"1"
+				"Duration"			"%buff_duration"	
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%movespeed_bonus"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%aspd_buff"
+				}
+
+
+				"OnAttackLanded"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/melt/melt_abilities"
+						"Function"		"OnSplashBuff"
+					}
+				}
+			}
+
+			"modifier_sequence_window"
+			{	
+				"IsHidden"				"1"
+				"Attributes"			"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/melt/melt_abilities"
+						"Function"		"OnSequenceStart"
+					}
+				}			
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"abilities/melt/melt_abilities"
+						"Function"		 	"OnSequenceDestroy"
+					}
+				}				
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"abilities/melt/melt_abilities"
+						"Function"		 	"OnSequenceDie"
+					}
+				}
+			}
+		}	
+	}
+
+	//=================================================================================================================
+	// Melt - En Pointe (E) 
+	//=================================================================================================================
+	"melt_e"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityTextureName"			"custom/melt/melt_e"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_2"
+		"AOERadius"						"%aoe_find_range"
+		"AnimationPlaybackRate" 		"1.0"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityManaCost"				"400"
+		"AbilityCastRange"				"700"
+		"AbilityCooldown"				"19 18 17 16 15"
+		"AbilityCastPoint"				"0.1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"aoe_find_range"	"340 360 380 400 420"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"damage"			"390 480 570 660 750"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"cooldown_refund"	"5 6 7 8 9"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"cast_delay"		"0.25"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"miss_stun_self"		"0.5"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"stun_duration"			"0.3"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"cast_range"		"650"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/melt/melt_abilities"
+				"Function"		"OnE"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_melt_e_block"
+			{
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE" "-50"
+				}
+				"States"
+				{
+					"MODIFIER_STATE_STUNNED"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+		}	
+	}
+	//=================================================================================================================
+	// Melt - En Pointe (E) 
+	//=================================================================================================================
+	"melt_e_upgrade"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityTextureName"			"custom/melt/melt_e"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_2"
+		"AOERadius"						"%aoe_find_range"
+		"AnimationPlaybackRate" 		"1.0"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityManaCost"				"400"
+		"AbilityCastRange"				"700"
+		"AbilityCooldown"				"19 18 17 16 15"
+		"AbilityCastPoint"				"0.1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"aoe_find_range"	"340 360 380 400 420"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"damage"			"590 680 770 860 950"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"bonus_agi"			"3"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"cooldown_refund"	"5 6 7 8 9"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"cast_delay"		"0.25"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"miss_stun_self"		"0.5"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"stun_duration"			"0.3"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"cast_range"		"650"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/melt/melt_abilities"
+				"Function"		"OnE"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_melt_e_block"
+			{
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE" "-50"
+				}
+				"States"
+				{
+					"MODIFIER_STATE_STUNNED"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+		}	
+	}
+
+	//=================================================================================================================
+	// Melt - Saraswati Meltout (R) 
+	//=================================================================================================================
+	"melt_r"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityTextureName"			"custom/melt/melt_r"
+		"AbilityCastAnimation" 			"ACT_DOTA_ATTACK2"
+		"AnimationPlaybackRate" 		"0.5"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityManaCost"				"700"
+		"AbilityCastRange"				"0"
+		"AbilityCooldown"				"52 50 48 46 44"
+		"AbilityCastPoint"				"0.1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"damage_aoe"		"450"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"cast_delay"		"1.1"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"minimum_cast_delay"		"0.65"
+			}
+
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"flight_after"		"0.3"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"damage"			"600 800 1000 1200 1400"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/melt/melt_abilities"
+				"Function"		"OnR"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_melt_dance"
+			{
+				"IsHidden"			"0"
+				"IsBuff"			"1"
+				"Duration"			"%duration"	
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%movespeed_bonus"
+					"MODIFIER_PROPERTY_DISABLE_TURNING" "1"
+				}
+
+				"States"
+				{
+					"MODIFIER_STATE_DISARMED"			"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_SILENCED"			"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_MUTED"				"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+		}	
+	}
+
+	//=================================================================================================================
+	// Melt - Saraswati Meltout (R) SA UPGRADE
+	//=================================================================================================================
+	"melt_r_upgrade"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityTextureName"			"custom/melt/melt_r"
+		"AbilityCastAnimation" 			"ACT_DOTA_ATTACK2"
+		"AnimationPlaybackRate" 		"0.5"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityManaCost"				"700"
+		"AbilityCastRange"				"0"
+		"AbilityCooldown"				"52 50 48 46 44"
+		"AbilityCastPoint"				"0.1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"damage_aoe"		"450"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"cast_delay"		"1.1"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"minimum_cast_delay"		"0.65"
+			}
+
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"flight_after"		"0.3"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"damage"			"700 900 1100 1300 1500"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"damage_per_int"	"6"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/melt/melt_abilities"
+				"Function"		"OnR"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_melt_dance"
+			{
+				"IsHidden"			"0"
+				"IsBuff"			"1"
+				"Duration"			"%duration"	
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%movespeed_bonus"
+					"MODIFIER_PROPERTY_DISABLE_TURNING" "1"
+				}
+
+				"States"
+				{
+					"MODIFIER_STATE_DISARMED"			"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_SILENCED"			"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_MUTED"				"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+		}	
+	}
+
+	//=======================================
+	// ATTRIBUTES
+	//=======================================
+	"melt_d_dummy"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityTextureName"			"custom/melt/melt_d"
+		
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"5"
+		"AbilityManaCost"				"0"
+
+		"AbilitySpecial"
+		{
+
+		}
+
+	    "OnSpellStart"
+	    {
+	    	"RunScript"
+			{
+				"ScriptFile"	"abilities/melt/melt_abilities"
+				"Function"		"OnComboDummyButton"
+			}
+	    }
+	    "Modifiers"
+	    {
+	    	"modifier_combo_window"
+			{	
+				"IsHidden"				"1"
+				"Attributes"			"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/melt/melt_abilities"
+						"Function"		"OnComboWindow"
+					}
+				}			
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"abilities/melt/melt_abilities"
+						"Function"		 	"OnComboWindowBroken"
+					}
+				}				
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"abilities/melt/melt_abilities"
+						"Function"		 	"OnComboWindowDeath"
+					}
+				}
+			}
+	    }
+	}
+	//=================================================================================================================
+	// Melt - COMBO - Benzaiten Gogen Biwa - Sarasvati Meltout
+	//=================================================================================================================
+	"melt_combo"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/melt/melt_combo"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_3"
+		"AnimationPlaybackRate" 		"0.5"
+		"MaxLevel"						"1"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityManaCost"				"700"
+		"AbilityCastRange"				"3500"
+		"AbilityCooldown"				"170"
+		"AbilityCastPoint"				"1.1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"cast_delay"		"1.1"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"dash_speed"		"4000"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"fail_cast_stun"	"1.5"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"dash_duration_max"	"1.5"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"fail_cast_cooldown"	"20"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"damage_per_slash_multiplier_attack"	"0.75"
+			}		
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"minimum_slash"		"4"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"agi_per_slash"		"15"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"cyclone_dps"		"250"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"cyclone_bonus_int"	"3"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"final_aoe_damage"	"500"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"damage"			"2500"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"final_stun"		"1.0"
+			}
+		}
+
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{
+			 	"ScriptFile"	"abilities/melt/melt_abilities"
+			 	"Function"		"OnComboCheck"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/melt/melt_abilities"
+				"Function"		"OnCombo"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_melt_combo_cooldown"
+			{
+				"IsDebuff"				"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			}
+			"combo_melt_flying"
+			{
+				"IsHidden"			"0"
+				"IsBuff"			"1"
+				"Duration"			"10"	
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_OVERRIDE_ANIMATION" "ACT_DOTA_CHANNEL_ABILITY_6"
+				}
+
+				"States"
+				{
+					"MODIFIER_STATE_FLYING"			"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_UNIT_COLLISION" "MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+			"modifier_melt_fly"
+			{
+				"IsHidden"			"1"
+				"IsBuff"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"States"
+				{
+					"MODIFIER_STATE_FLYING_FOR_PATHING_PURPOSES_ONLY"			"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_UNIT_COLLISION" "MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+			"modifier_melt_combo_slow"
+			{
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"-100"
+				}
+				"ThinkInterval"  "0.2"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/melt/melt_abilities"
+						"Function"		"OnCycloneDPS"
+					}
+				}
+			}
+		}	
+	}
+	//=================================================================================================================
+	// Melt - COMBO - Benzaiten Gogen Biwa - Sarasvati Meltout
+	//=================================================================================================================
+	"melt_combo_upgrade"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/melt/melt_combo"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_3"
+		"AnimationPlaybackRate" 		"0.5"
+		"MaxLevel"						"1"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityManaCost"				"700"
+		"AbilityCastRange"				"3500"
+		"AbilityCooldown"				"170"
+		"AbilityCastPoint"				"1.1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"cast_delay"		"1.1"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"dash_speed"		"4000"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"fail_cast_stun"	"1.5"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"dash_duration_max"	"1.5"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"fail_cast_cooldown"	"20"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"damage_per_slash_multiplier_attack"	"0.75"
+			}		
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"minimum_slash"		"4"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"agi_per_slash"		"15"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"cyclone_dps"		"250"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"cyclone_bonus_int"	"3"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"final_aoe_damage"	"500"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"damage"			"3500"
+			}
+		}
+
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{
+			 	"ScriptFile"	"abilities/melt/melt_abilities"
+			 	"Function"		"OnComboCheck"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/melt/melt_abilities"
+				"Function"		"OnCombo"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_melt_combo_cooldown"
+			{
+				"IsDebuff"				"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			}
+			"combo_melt_flying"
+			{
+				"IsHidden"			"0"
+				"IsBuff"			"1"
+				"Duration"			"10"	
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_OVERRIDE_ANIMATION" "ACT_DOTA_CHANNEL_ABILITY_6"
+				}
+
+				"States"
+				{
+					"MODIFIER_STATE_FLYING"			"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_UNIT_COLLISION" "MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+			"modifier_melt_fly"
+			{
+				"IsHidden"			"1"
+				"IsBuff"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"States"
+				{
+					"MODIFIER_STATE_FLYING_FOR_PATHING_PURPOSES_ONLY"			"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_UNIT_COLLISION" "MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+			"modifier_melt_combo_slow"
+			{
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"-100"
+				}
+				"ThinkInterval"  "0.2"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/melt/melt_abilities"
+						"Function"		"OnCycloneDPS"
+					}
+				}
+			}
+		}	
+	}
+	//=================================================================================================================
+	// Melt - Composite Divinity (D) 
+	//=================================================================================================================
+	"melt_d"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NO_TARGET  | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"		
+		"AbilityTextureName"			"custom/melt/melt_d"
+		"MaxLevel"						"1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_stats"		"3"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"bonus_stun_e_per25_str"		"0"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"bonus_r_reduce_cast_per25_agi"		"0"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"bonus_melt_virus_damage_per_int"		"0"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_composite_divinity"
+			{
+				"Passive"			"1"
+				"IsHidden"			"0"
+				"IsBuff"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"%bonus_stats"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS" "%bonus_stats"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS" "%bonus_stats"
+				}
+			}
+		}	
+	}
+
+	//=================================================================================================================
+	// Melt - Composite Divinity (D) UPGRADE SA
+	//=================================================================================================================
+	"melt_d_upgrade"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NO_TARGET  | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"	
+		"AbilityTextureName"			"custom/melt/melt_d"
+		"MaxLevel"						"1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_stats"		"6"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"bonus_stun_e_per25_str"		"0.15"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"bonus_r_reduce_cast_per25_agi"		"0.1"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"bonus_melt_virus_damage_per_int"		"0.25"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_composite_divinity"
+			{
+				"Passive"			"1"
+				"IsHidden"			"0"
+				"IsBuff"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"%bonus_stats"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS" "%bonus_stats"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS" "%bonus_stats"
+				}
+			}
+		}	
+	}
+
+	//=================================================================================================================
+	// Melt - Melt Virus (F) 
+	//=================================================================================================================
+	"melt_f"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NO_TARGET  | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"	
+		"AbilityTextureName"			"custom/melt/melt_f"
+		"MaxLevel"						"1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"damage_per_second"	"25"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"4"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"bonus_stats"		"0.4"
+			}
+		}
+
+		"Modifiers"
+		{			
+			"modifier_virus_stack"
+			{
+				"Passive"			"1"
+				"IsHidden"			"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE | MODIFIER_ATTRIBUTE_PERMANENT"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS" "%bonus_stats"
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS" "%bonus_stats"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS" "%bonus_stats"
+				}
+			}
+			"modifier_melt_virus"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Duration"			"%duration"
+		
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%slow"
+				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow" 
+				}
+		
+				"ThinkInterval"  "0.95"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/melt/melt_abilities"
+						"Function"		"OnVirusThink"
+					}
+				}
+
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"abilities/melt/melt_abilities"
+						"Function"		 	"OnMeltVirusGone"
+					}
+				}	
+			}
+		}	
+	}
+
+	//=======================================
+	// ATTRIBUTES
+	//=======================================
+	"melt_attribute_melt_virus"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/melt/melt_f"
+		
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"8"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"damage_per_second"	"25"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"4"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"bonus_stats"		"0.4"
+			}
+		}
+
+	    "OnSpellStart"
+	    {
+	    	"RunScript"
+			{
+				"ScriptFile"	"abilities/melt/melt_abilities"
+				"Function"		"OnVirusAcquired"
+			}
+	    }
+	}
+
+	//=======================================
+	// ATTRIBUTES
+	//=======================================
+	"melt_attribute_composite"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/melt/melt_d"
+		
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"16"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"bonus_stats"		"6"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"bonus_stun_e_per25_str"		"0.15"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"bonus_r_reduce_cast_per25_agi"		"0.1"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"bonus_melt_virus_damage_per_int"		"0.5"
+			}
+		}
+
+	    "OnSpellStart"
+	    {
+	    	"RunScript"
+			{
+				"ScriptFile"	"abilities/melt/melt_abilities"
+				"Function"		"OnComposite"
+			}
+	    }
+	}
+
+	//=======================================
+	// ATTRIBUTES
+	//=======================================
+	"melt_attribute_crime"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/melt/melt_crime"
+		
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"14"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"damage_per_agi_q"	"3"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"bonus_e_damage"	"200"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"damage_per_agi"	"3"
+			}
+
+		}
+
+	    "OnSpellStart"
+	    {
+	    	"RunScript"
+			{
+				"ScriptFile"	"abilities/melt/melt_abilities"
+				"Function"		"OnCrimeBallet"
+			}
+	    }
+	}
+	//=======================================
+	// ATTRIBUTES
+	//=======================================
+	"melt_attribute_sadistic"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/melt/melt_sadistic"
+		
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"13"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"movespeed_bonus"	"10 16 22 28 34"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"buff_duration"		"8 10 12 14 16"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"aspd_buff"			"70 90 110 130 150"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"splash_dmg_per_str"	"0.5 0.8 1.1 1.4 1.7"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"splash_aoe_per_int"	"3.2"
+			}
+		}
+
+	    "OnSpellStart"
+	    {
+	    	"RunScript"
+			{
+				"ScriptFile"	"abilities/melt/melt_abilities"
+				"Function"		"OnSadistic"
+			}
+	    }
+	}
+	//=======================================
+	// ATTRIBUTES: Saint Graph Expansion
+	//=======================================
+	"melt_attribute_saint_graph"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/melt/melt_saint"
+		
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"16"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"bonus_r_damage"	"100"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"damage_per_int"	"6"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"bonus_combo_damage"	"1000"
+			}
+		}
+
+	    "OnSpellStart"
+	    {
+	    	"RunScript"
+			{
+				"ScriptFile"	"abilities/melt/melt_abilities"
+				"Function"		"OnSaintGraphBallet"
+			}
+	    }
+	}
+	//=======================================
+	// Precache
+	//=======================================
+	"melt_precache"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"custom/medusa/medusa_attribute_monstrous_strength"
+
+		"precache"
+		{
+			"particle"				"particles/melt/melt_cut_fx.vpcf"
+			"particle"				"particles/melt/melt_q_spin.vpcf"
+			"particle"				"particles/melt/melt_w_slam.vpcf"
+			"particle"				"particles/melt/melt_e_ground_target.vpcf"
+			"particle"				"particles/melt/melt_r.vpcf"
+			"particle"				"particles/melt/melt_combo_trail.vpcf"
+			"particle"				"particles/melt/melt_combo_trail_debris.vpcf"
+			"particle"  			"particles/econ/items/kunkka/kunkka_immortal/kunkka_immortal_ghost_ship_impact.vpcf"
+			"particle"  			"particles/econ/items/drow/drow_ti9_immortal/drow_ti9_marksman_frost_gem_flash.vpcf"
+			"particle"  			"particles/units/heroes/hero_slark/slark_dark_pact_pulses_body.vpcf"
+			"particle"  			"particles/melt/melt_spin_flash.vpcf"
+			"particle"  			"particles/melt/melt_spin_blade.vpcf"
+			"particle"  			"particles/econ/events/fall_2021/cyclone_fall2021.vpcf"
+			"particle"  			"particles/melt/melt_foot_glow.vpcf"
+			"particle"  			"particles/melt/melt_dash_trail.vpcf"
+			"particle"  			"particles/melt/melt_feet_twinkle.vpcf"
+		}
+	}
+}

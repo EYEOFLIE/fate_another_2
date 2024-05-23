@@ -1,0 +1,2261 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Hans : High speed incantation (Q)
+	//=================================================================================================================
+	"hans_incantation"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityTextureName"			"custom/hans/incantation"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.2"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		"AnimationPlaybackRate"			"1"
+		"AbilityCooldown"				"11"
+		"AbilityManaCost"				"100"
+		"precache"
+		{
+			
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"600"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_time"				"0.2"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mana_restore"			"300 400 500 600 700"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"han_bonus"				"50"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cd_reduction"			"0"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/hans/hans_abilities"
+				"Function"		"OnIncantationStart"
+			}
+		}
+
+	    "Modifiers"
+	    {
+			"modifier_hans_combo_window"
+			{	
+				"IsHidden"				"1"
+				"Duration"				"5" 
+				"Attributes"			"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/hans/hans_abilities"
+						"Function"		"OnComboWindow"
+					}
+				}			
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"abilities/hans/hans_abilities"
+						"Function"		 	"OnComboWindowBroken"
+					}
+				}				
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"abilities/hans/hans_abilities"
+						"Function"		 	"OnComboWindowDeath"
+					}
+				}
+			}
+		}	
+	}	
+
+	//=================================================================================================================
+	// Hans : High speed incantation Upgraded from ult (Q)
+	//=================================================================================================================
+	"hans_incantation_upgrade"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityTextureName"			"custom/hans/incantation"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityCastRange"				"1200"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		"AnimationPlaybackRate"			"1"
+		"AbilityCooldown"				"11"
+		"AbilityManaCost"				"0"
+		"precache"
+		{
+			
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"850"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mana_restore"			"300 400 500 600 700"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"han_bonus"				"50"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cd_reduction"			"10 15 20 25 30"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/hans/hans_abilities"
+				"Function"		"OnIncantationStart"
+			}
+		}
+
+		"Modifiers"
+	    {
+			"modifier_hans_combo_window"
+			{	
+				"IsHidden"				"1"
+				"Duration"				"5" 
+				"Attributes"			"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/hans/hans_abilities"
+						"Function"		"OnComboWindow"
+					}
+				}			
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"abilities/hans/hans_abilities"
+						"Function"		 	"OnComboWindowBroken"
+					}
+				}				
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"abilities/hans/hans_abilities"
+						"Function"		 	"OnComboWindowDeath"
+					}
+				}
+			}
+		}
+	}	
+	//=================================================================================================================
+	// Hans : Human Observation (w)
+	//=================================================================================================================
+	"hans_nightingale"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityTextureName"			"custom/hans/humanobservation"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityCastPoint"				"0.2"
+		"AbilityCastRange"				"800"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		"AnimationPlaybackRate"			"1"
+		"AbilityCooldown"				"28 27 26 25 24"
+		"AbilityManaCost"				"200"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"			"0.3"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_mr"				"6 10 14 16 20"
+			}			
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_arm"				"4 5 6 7 8"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_spell_amp"		"6 10 14 18 22"
+			}				
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_hp_regen"		"10 13 16 19 22"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"12"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_snow_queen_damage"		"0 50 100 150 200"
+			}
+		}
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/hans/hans_abilities"
+				"Function"		"OnCommandFilter"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/hans/hans_abilities"
+				"Function"		"OnHumanObserve"
+			}
+		}		
+
+		"Modifiers"
+		{
+			"modifier_hans_observation"
+			{
+				"Passive"				"0"
+				"IsHidden"				"0"
+				"IsBuff"				"1"
+				"Attributes"			"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Duration"				"%duration"
+				"EffectName"			"particles/econ/events/ti10/agh_aura_03_shape.vpcf"
+				"EffectAttachType"		"follow_origin"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%bonus_mr"				
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%bonus_arm"
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"	"%bonus_hp_regen"
+				}
+			}	
+		}
+	}
+	//=================================================================================================================
+	// Hans : Human Observation (W) (SA)
+	//=================================================================================================================
+	"hans_nightingale_upgrade"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityTextureName"			"custom/hans/humanobservation"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityCastPoint"				"0.2"
+		"AbilityCastRange"				"1200"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		"AnimationPlaybackRate"			"1"
+		"AbilityCooldown"				"28 27 26 25 24"
+		"AbilityManaCost"				"200"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"			"0.3"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_mr"				"14 18 22 26 30"
+			}			
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_arm"				"4 5 6 7 8"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_spell_amp"		"13 16 19 22 25"
+			}	
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_hp_regen"		"10 13 16 19 22"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"17"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_snow_queen_damage"		"0 50 100 150 200"
+			}
+		}
+
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/hans/hans_abilities"
+				"Function"		"OnCommandFilter"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/hans/hans_abilities"
+				"Function"		"OnHumanObserve"
+			}
+		}		
+
+		"Modifiers"
+		{
+			"modifier_hans_observation"
+			{
+				"Passive"				"0"
+				"IsHidden"				"0"
+				"IsBuff"				"1"
+				"Attributes"			"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Duration"				"%duration"
+				"EffectName"			"particles/econ/events/ti10/agh_aura_03_shape.vpcf"
+				"EffectAttachType"		"follow_origin"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%bonus_mr"				
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%bonus_arm"
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"	"%bonus_hp_regen"
+				}
+			}	
+		}
+	}
+	//=================================================================================================================
+	// Hans : Masterpiece - Open 
+	//=================================================================================================================
+	"hans_masterpiece_open"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityTextureName"			"custom/hans/openmasterpiece"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"0"
+		"AbilityManaCost"				"0"
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/hans/hans_abilities"
+				"Function"		"OnMasterpieceOpen"
+			}
+		}
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/hans/hans_abilities"
+				"Function"		"OnMasterpieceUpgrade"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_hans_masterpiece_open"
+			{				
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsPurgable"		"0" 
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Hans : Masterpiece - Open (Thumbelina SA)
+	//=================================================================================================================
+	"hans_masterpiece_open_thumbelina"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityTextureName"			"custom/hans/openmasterpiece"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"0"
+		"AbilityManaCost"				"0"
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/hans/hans_abilities"
+				"Function"		"OnMasterpieceOpen"
+			}
+		}
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/hans/hans_abilities"
+				"Function"		"OnMasterpieceUpgrade"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_hans_masterpiece_open"
+			{				
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsPurgable"		"0" 
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Hans : Masterpiece - Open (Observation SA)
+	//=================================================================================================================
+	"hans_masterpiece_open_observation"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityTextureName"			"custom/hans/openmasterpiece"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"0"
+		"AbilityManaCost"				"0"
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/hans/hans_abilities"
+				"Function"		"OnMasterpieceOpen"
+			}
+		}
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/hans/hans_abilities"
+				"Function"		"OnMasterpieceUpgrade"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_hans_masterpiece_open"
+			{				
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsPurgable"		"0" 
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Hans : Masterpiece - Open (Thumbelina and Observation SA)
+	//=================================================================================================================
+	"hans_masterpiece_open_upgrade"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityTextureName"			"custom/hans/openmasterpiece"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"0"
+		"AbilityManaCost"				"0"
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/hans/hans_abilities"
+				"Function"		"OnMasterpieceOpen"
+			}
+		}
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/hans/hans_abilities"
+				"Function"		"OnMasterpieceUpgrade"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_hans_masterpiece_open"
+			{				
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsPurgable"		"0" 
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Hans : Masterpiece - Red Shoes
+	//=================================================================================================================
+	"hans_masterpiece_red_shoes"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY" 
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityTextureName"			"custom/hans/redshoes"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityCastPoint"				"0.1"
+		"AbilityCastRange"				"700"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		"AnimationPlaybackRate"			"1"
+		"AbilityCooldown"				"28"
+		"AbilityManaCost"				"200"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"			"0.2"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"700"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"220 240 260 280 300"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"2.5 3 3.5 4 4.5"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/hans/hans_abilities"
+				"Function"		"OnRedShoes"
+			}
+		}		
+		"Modifiers"
+		{
+			"modifier_hans_red_shoes"
+			{
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Duration"			"%duration"	
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"ThinkInterval"  		"0.2"
+
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/hans/hans_abilities"
+						"Function"		"OnRedShoesThink"
+					}
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Hans : Masterpiece - Snow Queen
+	//=================================================================================================================
+	"hans_masterpiece_snow_queen"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityTextureName"			"custom/hans/snowqueen"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityCastPoint"				"0.25"
+		"AbilityCastRange"				"700"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		"AnimationPlaybackRate"			"1"
+		"AbilityCooldown"				"24"
+		"AbilityManaCost"				"250 300 350 400 450"
+		"AOERadius"						"%radius"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"			"0.3"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"700"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"400 475 550 625 700"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow"					"-12 -15 -18 -21 -24"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"2 3 4 5 6"
+			}			
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"turn_rate_reduction"	"-25 -30 -35 -40 -45"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"300"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/hans/hans_abilities"
+				"Function"		"OnSnowQueen"
+			}
+		}		
+		"Modifiers"
+		{
+			"modifier_hans_snow_queen"
+			{
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Duration"			"%duration"	
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"  "%slow"
+					"MODIFIER_PROPERTY_TURN_RATE_PERCENTAGE"		"%turn_rate_reduction"
+				}	
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Hans : Masterpiece - Nightingale
+	//=================================================================================================================
+	"hans_masterpiece_match_girl"
+	{	
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityTextureName"			"custom/hans/nightingale"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityCastRange"				"800"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		"AnimationPlaybackRate"			"1"
+		"AbilityCooldown"				"14"
+		"AbilityManaCost"				"300"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"800"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"health_restore"		"400 500 600 700 800"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"int_scale"				"4"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"health_restore_from_max_health"	"0 5 10 15 20"
+			}			
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_reduction"		"-20"
+			}
+			"05"			
+			{
+				"var_type"				"FIELD_INTEGER"
+				"buff_duration"			"3"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_duration_per_int"			"0.025"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/hans/hans_abilities"
+				"Function"		"OnNightingaleStart"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_hans_nightingale_buff"
+			{
+				"Passive"				"0"
+				"IsHidden"				"0"
+				"IsBuff"				"1"
+				"Attributes"			"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"EffectName"			"particles/econ/items/omniknight/omni_ti8_head/omniknight_repel_buff_ti8_swoosh_b.vpcf"
+				"EffectAttachType"		"follow_origin"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE"		"%damage_reduction"
+				}
+			}			
+		}
+	}
+
+	//=================================================================================================================
+	// Hans : Masterpiece - Thumbelina
+	//=================================================================================================================
+	"hans_masterpiece_thumbelina"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityTextureName"			"custom/hans/thumbelina"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCastRange"				"700"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		"AnimationPlaybackRate"			"1"
+		"AbilityCooldown"				"32"
+		"AbilityManaCost"				"350"
+		"AOERadius"						"%radius"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"			"0.4"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"650"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"450"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"stun"					"1 1.1 1.2 1.3 1.4"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"revoke"				"0.2 0.25 0.3 0.35 0.4"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"radius"				"350"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/hans/hans_abilities"
+				"Function"		"OnThumbelina"
+			}
+		}		
+	}
+
+	//=================================================================================================================
+	// Hans : Masterpiece - close
+	//=================================================================================================================
+	"hans_masterpiece_close"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityTextureName"			"silencer_last_word"
+		"MaxLevel"						"1"
+		"AbilityCastPoint"				"0"
+		"AbilityManaCost"				"0"
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{ 
+				"ScriptFile"	"abilities/hans/hans_abilities"
+				"Function"		"OnMasterpieceClose"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Hans : Masterpiece - Red Shoes (SA)
+	//=================================================================================================================
+	"hans_masterpiece_red_shoes_upgrade"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY" 
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityTextureName"			"custom/hans/redshoes"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityCastPoint"				"0.1"
+		"AbilityCastRange"				"900"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		"AnimationPlaybackRate"			"1"
+		"AbilityCooldown"				"28"
+		"AbilityManaCost"				"200"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"			"0.2"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"850"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"220 240 260 280 300"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"2.5 3 3.5 4 4.5"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/hans/hans_abilities"
+				"Function"		"OnRedShoes"
+			}
+		}		
+		"Modifiers"
+		{
+			"modifier_hans_red_shoes"
+			{
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Duration"			"%duration"	
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"ThinkInterval"  		"0.1"
+
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/hans/hans_abilities"
+						"Function"		"OnRedShoesThink"
+					}
+				}
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Hans : Masterpiece - Snow Queen (SA)
+	//=================================================================================================================
+	"hans_masterpiece_snow_queen_upgrade"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityTextureName"			"custom/hans/snowqueen"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCastRange"				"900"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		"AnimationPlaybackRate"			"1"
+		"AbilityCooldown"				"24"
+		"AbilityManaCost"				"250 300 350 400 450"
+		"AOERadius"						"%radius"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"			"0.2"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"850"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"450 525 600 675 750"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow"					"-12 -15 -18 -21 -24"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"2 3 4 5 6"
+			}			
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"turn_rate_reduction"	"-25 -30 -35 -40 -45"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"300"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/hans/hans_abilities"
+				"Function"		"OnSnowQueen"
+			}
+		}		
+		"Modifiers"
+		{
+			"modifier_hans_snow_queen"
+			{
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Duration"			"%duration"	
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"  "%slow"
+					"MODIFIER_PROPERTY_TURN_RATE_PERCENTAGE"		"%turn_rate_reduction"
+				}	
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Hans : Masterpiece - Nightingale (SA)
+	//=================================================================================================================
+	"hans_masterpiece_match_girl_upgrade"
+	{
+		
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityTextureName"			"custom/hans/nightingale"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityCastRange"				"1200"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		"AnimationPlaybackRate"			"1"
+		"AbilityCooldown"				"14"
+		"AbilityManaCost"				"300"
+		"precache"
+		{
+			
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"800"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"health_restore"		"400 500 600 700 800"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"int_scale"				"4"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"health_restore_from_max_health"	"0 5 10 15 20"
+			}			
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_reduction"		"-20"
+			}
+			"05"			
+			{
+				"var_type"				"FIELD_INTEGER"
+				"buff_duration"			"6"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_duration_per_int"			"0.04"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/hans/hans_abilities"
+				"Function"		"OnNightingaleStart"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_hans_nightingale_buff"
+			{
+				"Passive"				"0"
+				"IsHidden"				"0"
+				"IsBuff"				"1"
+				"Attributes"			"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"EffectName"			"particles/econ/items/omniknight/omni_ti8_head/omniknight_repel_buff_ti8_swoosh_b.vpcf"
+				"EffectAttachType"		"follow_origin"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE"		"%damage_reduction"
+				}
+			}			
+		}
+	}
+
+	//=================================================================================================================
+	// Hans : Masterpiece - Thumbelina (SA)
+	//=================================================================================================================
+	"hans_masterpiece_thumbelina_upgrade"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityTextureName"			"custom/hans/thumbelina"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCastRange"				"900"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		"AnimationPlaybackRate"			"1"
+		"AbilityCooldown"				"32"
+		"AbilityManaCost"				"350"
+		"AOERadius"						"%radius"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"			"0.4"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"900"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"450"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"stun"					"1 1.1 1.2 1.3 1.4"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"revoke"				"0.2 0.25 0.3 0.35 0.4"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"radius"				"350"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/hans/hans_abilities"
+				"Function"		"OnThumbelina"
+			}
+		}		
+	}
+
+	//=================================================================================================================
+	// Hans : Masterpiece - Naked King
+	//=================================================================================================================
+	"hans_naked_king"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+	    "AbilityTextureName"			"custom/hans/nakedking"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"MaxLevel"						"1"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_2"
+		"AbilityCooldown"				"20"
+		"AbilityManaCost"				"200"
+		"AbilityCastPoint"				"0.2"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"illusion_duration"		"10"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"illusion_amount" 		"2"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"invis_duration"  		"6"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/hans/hans_abilities"
+				"Function"		"OnNakedKingStart"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_hans_naked_king_cooldown"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"IsPurgable"		"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE | MODIFIER_ATTRIBUTE_PERMANENT"
+			}
+
+			"modifier_hans_illusion"
+			{
+				"IsHidden"			"0"
+				"Duration"			"%illusion_duration"
+			
+				"States"
+				{
+					"MODIFIER_STATE_DISARMED"			"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+
+			"modifier_hans_invis"
+			{
+				"IsHidden"			"0"
+				"IsBuff"			"1"
+				"Duration"			"%invis_duration"
+				"Attributes"			"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"EffectName"			"particles/units/heroes/hero_pugna/pugna_decrepify.vpcf"	
+				"EffectAttachType"		"follow_overhead"
+				"States"
+			    {
+				    "MODIFIER_STATE_INVISIBLE" "MODIFIER_STATE_VALUE_ENABLED"
+				    "MODIFIER_STATE_NO_UNIT_COLLISION" "MODIFIER_STATE_VALUE_ENABLED"
+			    }
+
+			    "OnAttackStart"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"abilities/hans/hans_abilities"
+						"Function"			"OnAmbushDeath"
+					}					
+				}				
+				"OnAbilityExecuted"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"abilities/hans/hans_abilities"
+						"Function"			"OnAmbushCast"
+					}								
+				}				
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"abilities/hans/hans_abilities"
+						"Function"			"OnAmbushDeath"
+					}
+				}
+			}
+
+		}
+	}
+
+	//=================================================================================================================
+	// Hans : Territory
+	//=================================================================================================================
+	"hans_territory"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityTextureName"			"custom/hans/territory"
+		"MaxLevel"						"1"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"bonus_mana"		"200"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"bonus_mana_reg"	"1"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_hans_territory"
+			{
+				"Passive"				"1"
+				"IsHidden"				"0"
+				"IsDebuff"				"0"
+				"Attributes"			"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MANA_BONUS" "%bonus_mana"
+				    "MODIFIER_PROPERTY_MANA_REGEN_CONSTANT" "%bonus_mana_reg" 
+				}
+			}	
+		}
+	}	
+
+	//=================================================================================================================
+	// Hans : Territory Upgrade
+	//=================================================================================================================
+	"hans_territory_upgrade"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityTextureName"			"custom/hans/territory"
+		"MaxLevel"						"1"		
+		"AbilityCastPoint"				"0.4"
+		"AbilityCooldown"				"40"
+		"AbilityManaCost"				"300"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"bonus_mana"		"400"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"bonus_mana_reg"	"4"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"mr_reduction"		"-20"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"bonus_mr"			"20"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"radius"			"1000"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"9"
+			}			
+			"06"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"cast_delay"		"0.4"
+			}			
+			"07"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"revoke_duration"	"2"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/hans/hans_abilities"
+				"Function"		"OnTerritoryCreation"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_hans_territory"
+			{
+				"Passive"				"1"
+				"IsHidden"				"0"
+				"IsDebuff"				"0"
+				"Attributes"			"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MANA_BONUS" "%bonus_mana"
+				    "MODIFIER_PROPERTY_MANA_REGEN_CONSTANT" "%bonus_mana_reg" 
+				}
+			}
+
+			"modifier_hans_territory_buff"
+			{
+				"Duration"				"1"
+				"IsHidden"				"0"
+				"IsBuff"				"1"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%bonus_mr"
+				}
+			}
+
+			"modifier_hans_territory_debuff"
+			{
+				"Duration"				"1"
+				"IsHidden"				"0"
+				"IsDebuff"				"1"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%mr_reduction"
+				}
+			}
+
+			"modifier_hans_territory_cooldown"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"IsPurgable"		"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE | MODIFIER_ATTRIBUTE_PERMANENT"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Hans : The Autobiography of Hans Christian Andersen
+	//=================================================================================================================
+	"hans_biography"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"custom/hans/biographyofhans"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_mana_regen_out_of_combat"		"1 1 1 1 1"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"out_of_combat_range"	"800"
+			}			
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_mr"			"0 0 10 10 10"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_spell_damage"	"0 0 0 0 250"
+			}			
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_all_stats"	"0 3 3 5 5"
+			}			
+			"06"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"bonus_movespeed"	"0 0 40 40 40"
+			}
+		}
+
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/hans/hans_abilities"
+				"Function"		"OnBiographyUpgrade"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_hans_biography"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"Attributes"			"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"ThinkInterval"  		"0.9"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/hans/hans_abilities"
+						"Function"		"OnBiographyThink"
+					}
+				}
+
+				"Properties"
+				{
+
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"	"%bonus_movespeed"
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%bonus_mr"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"%bonus_all_stats"
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"%bonus_all_stats"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"	"%bonus_all_stats"
+				}
+			}	
+
+			"modifier_hans_bonus_damage"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"Attributes"			"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			}
+		}
+	}
+
+	//=======================================
+	// Hans Attribute : Improve Territory
+	//=======================================
+	"hans_attribute_territory"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/hans/improveterritory"
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"14"
+
+		"AbilitySpecial"
+		{
+			"06"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"cast_delay"		"0.4"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"radius"			"1000"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"9"
+			}	
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_mana"			"200"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_mana_reg"		"3"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"mr_reduction"		"-20"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"bonus_mr"			"20"
+			}		
+			"06"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"cooldown"			"40"
+			}
+			"07"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"revoke_duration"	"2"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/hans/hans_abilities"
+				"Function"		"OnTerritoryAcquired"
+			}
+		}
+	}
+
+	//=======================================
+	// Hans Attribute : Improve Human Observation
+	//=======================================
+	"hans_attribute_refine_nightingale"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/hans/humanobservation"
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"11"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_duration"		"5"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_spell_amp"		"8"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_cast_range"		"400"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/hans/hans_abilities"
+				"Function"		"OnNightingaleAcquired"
+			}
+		}
+	}
+
+	//=================================================
+	// Hans Attribute : Write Masterpiece - Thumbelina
+	//=================================================
+	"hans_attribute_write_thumbelina"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/hans/thumbelina"
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"13"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"			"0.3"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"450"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"stun"					"1 1.1 1.2 1.3 1.4"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"revoke"				"0.2 0.25 0.3 0.35 0.4"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"radius"				"350"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cooldown"				"32"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/hans/hans_abilities"
+				"Function"		"OnThumbelinaAcquired"
+			}
+		}
+	}
+
+	//=================================================
+	// Hans Attribute : Finish Manuscript
+	//=================================================
+	"hans_attribute_human_observation"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/hans/finishmanuscript"
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"15"
+
+		"precache"
+		{
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_cast_range"			"200"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"int_scale_nightingale"				"4"
+			}			
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"nightingale_bonus_buff_duration"				"3"
+			}			
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"nightingale_bonus_duration_per_int"				"0.4"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/hans/hans_abilities"
+				"Function"		"OnObservationAcquired"
+			}
+		}
+	}
+
+	//=================================================
+	// Hans Attribute : First love letter
+	//=================================================
+	"hans_attribute_love_letter"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/hans/loveletter"
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"14"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_master_mana_gain"		"1"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_master_health_gain"		"1"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_all_stats"		"4"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_duration"		"9"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_mr"				"5"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_max_health"	"50"
+			}					
+			"06"
+			{				
+				"var_type"			"FIELD_INTEGER"
+				"bonus_magical_damage"	"25"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/hans/hans_abilities"
+				"Function"		"OnLetterAcquired"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Hans : Märchen Meines Lebens - A Tale Just For You
+	//=================================================================================================================
+	"hans_combo"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityTextureName"			"custom/hans/combo"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityCastRange"				"600"
+		"AbilityCastPoint"				"0.6"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		"AnimationPlaybackRate"			"1"
+		"AbilityCooldown"				"180"
+		"AbilityManaCost"				"1200"
+		
+		"AbilitySpecial"
+		{			
+			"10"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"cast_delay"		"1.8"
+			}
+			"10"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"cast_range"		"600"
+			}
+			"07"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"duration"			"18"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_mana_regen_out_of_combat"		"45"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_health_regen_out_of_combat"		"100"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"out_of_combat_range"	"800"
+			}			
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_mr"			"10"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_health_regen"	"20"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_arm"			"10"
+			}
+			"08"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_all_stats"	"3"
+			}
+			"11"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_max_hp"		"100"
+			}
+			"11"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"bonus_cd_red"		"2.5"
+			}
+			"09"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"master_mana_gain"	"1"
+			}			
+			"10"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"master_health_gain"	"0"
+			}				
+			"11"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_magical_damage"	"0"
+			}	
+			"11"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"bonus_duration_per_int"	"0.1"
+			}			
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/hans/hans_abilities"
+				"Function"		"OnComboStart"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_hans_combo_buff"
+			{
+				"Passive"				"0"
+				"IsHidden"				"0"
+				"IsBuff"				"1"
+				"Attributes"			"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"ThinkInterval"  		"0.65"
+				"EffectName"			"particles/units/heroes/hero_spirit_breaker/spirit_breaker_magnet_aura.vpcf"
+				"EffectAttachType"		"follow_origin"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/hans/hans_abilities"
+						"Function"		"OnComboThink"
+					}
+				}
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_BONUS"		"%bonus_max_hp"
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%bonus_mr"
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%bonus_arm"
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"	"%bonus_health_regen"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"%bonus_all_stats"
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"%bonus_all_stats"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"	"%bonus_all_stats"
+				}
+			}			
+
+			"modifier_hans_combo_buff_self"
+			{
+				"Passive"				"0"
+				"IsBuff"				"1"
+				"IsPurgable"			"1"
+				"IsHidden"				"0"
+				"Attributes"			"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"ThinkInterval"  		"0.65"
+				"EffectName"			"particles/units/heroes/hero_spirit_breaker/spirit_breaker_magnet_aura.vpcf"
+				"EffectAttachType"		"follow_origin"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/hans/hans_abilities"
+						"Function"		"OnComboThink"
+					}
+				}
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"%bonus_all_stats"
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"%bonus_all_stats"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"	"%bonus_all_stats"
+					"MODIFIER_PROPERTY_HEALTH_BONUS"		"%bonus_max_hp"
+				}
+			}
+
+			"modifier_hans_combo_level_up"
+			{
+				"Passive"				"0"
+				"IsHidden"				"1"
+				"Attributes"			"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			}		
+
+			"modifier_hans_combo_cooldown"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"IsPurgable"		"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE | MODIFIER_ATTRIBUTE_PERMANENT"
+			}	
+		}
+	}	
+
+	//=================================================================================================================
+	// Hans : Märchen Meines Lebens - A Tale Just For You (SA)
+	//=================================================================================================================
+	"hans_combo_upgrade"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityTextureName"			"custom/hans/combo"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityCastRange"				"600"
+		"AbilityCastPoint"				"0.6"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		"AnimationPlaybackRate"			"1"
+		"AbilityCooldown"				"180"
+		"AbilityManaCost"				"1200"
+		
+		"AbilitySpecial"
+		{
+			"10"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"cast_delay"		"1.8"
+			}
+			"10"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"cast_range"		"600"
+			}
+			"07"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"duration"			"26"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_mana_regen_out_of_combat"		"45"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_health_regen_out_of_combat"		"100"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"out_of_combat_range"	"800"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_mr"			"15"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_health_regen"	"20"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_arm"			"10"
+			}
+			"08"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_all_stats"	"7"
+			}
+			"11"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_max_hp"		"150"
+			}
+			"11"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"bonus_cd_red"		"2.5"
+			}
+			"09"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"master_mana_gain"	"2"
+			}			
+			"10"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"master_health_gain"	"1"
+			}						
+			"11"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_magical_damage"	"25"
+			}	
+			"11"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"bonus_duration_per_int"	"0.1"
+			}		
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/hans/hans_abilities"
+				"Function"		"OnComboStart"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_hans_combo_buff"
+			{
+				"Passive"				"0"
+				"IsBuff"				"1"
+				"IsPurgable"			"1"
+				"IsHidden"				"0"
+				"Attributes"			"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"ThinkInterval"  		"0.65"
+				"EffectName"			"particles/units/heroes/hero_spirit_breaker/spirit_breaker_magnet_aura.vpcf"
+				"EffectAttachType"		"follow_origin"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/hans/hans_abilities"
+						"Function"		"OnComboThink"
+					}
+				}
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%bonus_mr"
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%bonus_arm"
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"	"%bonus_health_regen"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"%bonus_all_stats"
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"%bonus_all_stats"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"	"%bonus_all_stats"
+					"MODIFIER_PROPERTY_HEALTH_BONUS"		"%bonus_max_hp"
+				}
+			}
+
+			"modifier_hans_combo_buff_self"
+			{
+				"Passive"				"0"
+				"IsBuff"				"1"
+				"IsPurgable"			"1"
+				"IsHidden"				"0"
+				"Attributes"			"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"ThinkInterval"  		"0.65"
+				"EffectName"			"particles/units/heroes/hero_spirit_breaker/spirit_breaker_magnet_aura.vpcf"
+				"EffectAttachType"		"follow_origin"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/hans/hans_abilities"
+						"Function"		"OnComboThink"
+					}
+				}
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"%bonus_all_stats"
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"%bonus_all_stats"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"	"%bonus_all_stats"
+					"MODIFIER_PROPERTY_HEALTH_BONUS"		"%bonus_max_hp"
+				}
+			}
+
+			"modifier_hans_combo_level_up"
+			{
+				"Passive"				"0"
+				"IsHidden"				"1"
+				"Attributes"			"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			}		
+
+			"modifier_hans_combo_cooldown"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"IsPurgable"		"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE | MODIFIER_ATTRIBUTE_PERMANENT"
+			}		
+		}
+	}	
+	//=======================================
+	// Precache
+	//=======================================
+	"hans_precache"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"custom/medusa/medusa_attribute_monstrous_strength"
+
+		"precache"
+		{
+			"particle"				"particles/hans/incantation/hans_incantation.vpcf"
+			"particle"  			"particles/hans/nightingale/hans_nightingale.vpcf"
+			"particle"  			"particles/hans/combo/hans_combo.vpcf"
+			"particle"  			"particles/units/heroes/hero_oracle/oracle_false_promise_arc.vpcf"
+			"particle"  			"particles/units/heroes/hero_oracle/oracle_false_promise_break_heal.vpcf"
+			"particle"  			"particles/econ/items/nightstalker/nightstalker_ti10_silence/nightstalker_ti10_aura_flash.vpcf"
+			"particle"  			"particles/hans/redshoes/hans_shoes.vpcf"
+			"particle"  			"particles/hans/snowqueen/hans_snowqueen.vpcf"
+			"particle"  			"particles/econ/items/phantom_lancer/phantom_lancer_fall20_immortal/phantom_lancer_fall20_immortal_doppelganger_pattern_glow.vpcf"
+			"particle"  			"particles/hans/workshop/hansworkshop.vpcf"
+			"particle"  			"particles/hans/thumbelina/hansthumb.vpcf"
+		}
+	}
+}
+
+
+	

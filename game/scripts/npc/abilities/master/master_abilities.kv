@@ -1,0 +1,39 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Master Intervention
+	//=================================================================================================================
+	"cmd_seal_5"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/master/cmd_seal_5"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE"
+		"AbilityTextureName"			"custom/master/master_intervention"
+		"MaxLevel"						"1"
+		"AbilityCooldown"				"30"
+		"AbilityManaCost"				"1"
+
+		"precache"
+		{
+			"particle"					"particles/prototype_fx/item_linkens_buff.vpcf"
+			"particle"					"particles/custom/abaddon_death_coil_explosion.vpcf"
+			"particle"					"particles/econ/events/ti10/mjollnir_shield_ti10.vpcf"
+			"particle"					"particles/econ/items/pangolier/pangolier_ti8_immortal/pangolier_ti8_immortal_shield_buff.vpcf"
+			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_abaddon.vsndevts"
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"1"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_reduc"			"-20"
+			}
+		}
+	}
+}

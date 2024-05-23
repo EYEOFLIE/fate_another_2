@@ -1,0 +1,2227 @@
+"DOTAAbilities"
+{
+	//=======================================
+	// Mordred Innate : Secret of Pedigree
+	//=======================================
+
+    "mordred_pedigree"
+	{		
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/mordred/mordred_pedigree"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY" 
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/mordred/mordred_pedigree"
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"16"
+		"AbilityManaCost"				"0"
+
+		"precache"
+		{
+			
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"8"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"armor"					"10"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"magic_resist"			"10"
+			}
+		}		
+	}
+	//=======================================
+	// Moredred Innate: Secret of Pedigree (Improve Pedegree SA)
+	//=======================================
+
+    "mordred_pedigree_upgrade"
+	{		
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/mordred/mordred_pedigree"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY" 
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/mordred/mordred_pedigree"
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"16"
+		"AbilityManaCost"				"0"
+
+		"precache"
+		{
+			
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"8"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"armor"					"20"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"magic_resist"			"20"
+			}
+		}		
+	}
+	//=======================================
+	// Mana Burst - Battle
+	//=======================================
+	"mordred_mana_burst"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/mordred/mordred_mana_burst"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"			"custom/mordred/mordred_mana_burst"
+		
+		
+		"AbilityCastPoint"				"0.1"
+		"AbilityCooldown"				"12"
+		"AbilityManaCost"				"100"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"2 2.5 3 3.5 4"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mana_percent"			"10"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"base_as"				"45 60 75 90 105"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"base_damage"			"15 30 45 60 75"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mana_as"				"50"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mana_damage"			"70"
+			}
+		}
+	}
+
+	//=======================================
+	// Mordred : Crimson Lightning
+	//=======================================
+
+	"mordred_mana_burst_hit"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/mordred/mordred_mana_burst_hit"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE "
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY" 
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/mordred/mordred_hit"
+		"AbilityCastRange"				"250"
+		"AbilityCastRangeBuffer"		"75"
+		"AbilityCastPoint"				"0.4"
+		"IsCastableWhileHidden"			"1"
+		"AbilityCooldown"				"10.0"
+
+		"AbilityManaCost"				"200"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"400 450 500 550 600"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"1.0 1.5 2.0 2.5 3.0"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"mana_percent"		"20"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"mana_damage"		"80 90 100 110 120"
+			}
+		}
+	}
+	//=======================================
+	// Mordred : Crimson Lightning (Mana Burst)
+	//=======================================
+
+	"mordred_mana_burst_hit_burst"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/mordred/mordred_mana_burst_hit"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY" 
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/mordred/mordred_hit"
+		"AbilityCastRange"				"250"
+		"AbilityCastRangeBuffer"		"75"
+		"AbilityCastPoint"				"0.4"
+		"IsCastableWhileHidden"			"1"
+		"AbilityCooldown"				"10.0"
+
+		"AbilityManaCost"				"200"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"400 450 500 550 600"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"1.0 1.5 2.0 2.5 3.0"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"mana_percent"		"20"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"mana_damage"		"80 90 100 110 120"
+			}
+		}
+	}
+	//=======================================
+	// Mordred : Crimson Lightning (Mana Burst) (Lightning Overload SA)
+	//=======================================
+
+	"mordred_mana_burst_hit_upgrade"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/mordred/mordred_mana_burst_hit"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY" 
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/mordred/mordred_hit"
+		"AbilityCastRange"				"250"
+		"AbilityCastRangeBuffer"		"75"
+		"AbilityCastPoint"				"0.4"
+		"IsCastableWhileHidden"			"1"
+		"AbilityCooldown"				"10.0"
+
+		"AbilityManaCost"				"200"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"400 450 500 550 600"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"1.0 1.5 2.0 2.5 3.0"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"mana_percent"		"20"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"mana_damage"		"80 90 100 110 120"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"overload_damage"		"10"
+			}	
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"overload_radius"		"400"
+			}	
+		}
+	}
+
+	//=======================================
+	// Mordred : Powerful Slash
+	//=======================================
+
+	"mordred_slash"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/mordred/mordred_top_secret"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY" 
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"AbilityTextureName"			"custom/mordred/mordred_rampage"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_4_END"
+		"AbilityCastRange"				"250"
+		"AbilityCastRangeBuffer"		"75"
+		"AbilityCastPoint"				"0.2"
+		"AnimationPlaybackRate" 		"5"
+		"IsCastableWhileHidden"			"1"
+		"AbilityCooldown"				"5 5 4 4 3"
+
+		"AbilityManaCost"				"100"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"base_damage"		"150"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_damage"		"100 120 140 160 180"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"0.5 0.6 0.7 0.8 0.9"
+			}	
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"mana_percent"		"20"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"mana_damage"		"80 90 100 110 120"
+			}
+			
+		}
+	}
+	//=======================================
+	// Mordred : Powerful Slash (Rampage SA)
+	//=======================================
+
+	"mordred_slash_upgrade"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/mordred/mordred_top_secret"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY" 
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"AbilityTextureName"			"custom/mordred/mordred_rampage"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_4_END"
+		"AbilityCastRange"				"250"
+		"AbilityCastRangeBuffer"		"75"
+		"AbilityCastPoint"				"0.2"
+		"AnimationPlaybackRate" 		"5"
+		"IsCastableWhileHidden"			"1"
+		"AbilityCooldown"				"5 5 4 4 3"
+
+		"AbilityManaCost"				"100"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"base_damage"		"150"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_damage"		"100 120 140 160 180"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"0.5 0.6 0.7 0.8 0.9"
+			}	
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"mana_percent"		"20"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"mana_damage"		"80 90 100 110 120"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"armor_shred"		"-50"
+			}	
+		}
+	}
+	//=======================================
+	// Mordred : Powerful Slash (Mana Burst)
+	//=======================================
+
+	"mordred_slash_burst"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/mordred/mordred_top_secret"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY" 
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"AbilityTextureName"			"custom/mordred/mordred_rampage"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_4_END"
+		"AbilityCastRange"				"250"
+		"AbilityCastRangeBuffer"		"75"
+		"AbilityCastPoint"				"0.2"
+		"AnimationPlaybackRate" 		"5"
+		"IsCastableWhileHidden"			"1"
+		"AbilityCooldown"				"5 5 4 4 3"
+
+		"AbilityManaCost"				"100"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"base_damage"		"150"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_damage"		"100 130 160 190 220"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"0.5 0.6 0.7 0.8 0.9"
+			}	
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"mana_percent"		"20"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"mana_damage"		"80 90 100 110 120"
+			}
+		}
+	}
+	//=======================================
+	// Mordred : Powerful Slash (Mana Burst) (Rampage SA)
+	//=======================================
+
+	"mordred_slash_upgrade_1"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/mordred/mordred_top_secret"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY" 
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"AbilityTextureName"			"custom/mordred/mordred_rampage"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_4_END"
+		"AbilityCastRange"				"250"
+		"AbilityCastRangeBuffer"		"75"
+		"AbilityCastPoint"				"0.2"
+		"AnimationPlaybackRate" 		"5"
+		"IsCastableWhileHidden"			"1"
+		"AbilityCooldown"				"5 5 4 4 3"
+
+		"AbilityManaCost"				"100"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"base_damage"		"150"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_damage"		"100 130 160 190 220"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"0.5 0.6 0.7 0.8 0.9"
+			}	
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"mana_percent"		"20"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"mana_damage"		"80 90 100 110 120"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"armor_shred"		"-50"
+			}	
+		}
+	}
+	//=======================================
+	// Mordred : Powerful Slash (Mana Burst) (Lightning Overload SA)
+	//=======================================
+
+	"mordred_slash_upgrade_2"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/mordred/mordred_top_secret"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY" 
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"AbilityTextureName"			"custom/mordred/mordred_rampage"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_4_END"
+		"AbilityCastRange"				"250"
+		"AbilityCastRangeBuffer"		"75"
+		"AbilityCastPoint"				"0.2"
+		"AnimationPlaybackRate" 		"5"
+		"IsCastableWhileHidden"			"1"
+		"AbilityCooldown"				"5 5 4 4 3"
+
+		"AbilityManaCost"				"100"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"base_damage"		"150"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_damage"		"100 130 160 190 220"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"0.5 0.6 0.7 0.8 0.9"
+			}	
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"mana_percent"		"20"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"mana_damage"		"80 90 100 110 120"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"armor_shred"		"-50"
+			}	
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"overload_damage"		"10"
+			}	
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"overload_radius"		"400"
+			}	
+		}
+	}
+	//=======================================
+	// Mordred : Powerful Slash (Mana Burst) (Rampage + Lightning Overload SA)
+	//=======================================
+
+	"mordred_slash_upgrade_3"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/mordred/mordred_top_secret"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY" 
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"AbilityTextureName"			"custom/mordred/mordred_rampage"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_4_END"
+		"AbilityCastRange"				"250"
+		"AbilityCastRangeBuffer"		"75"
+		"AbilityCastPoint"				"0.2"
+		"AnimationPlaybackRate" 		"5"
+		"IsCastableWhileHidden"			"1"
+		"AbilityCooldown"				"5 5 4 4 3"
+
+		"AbilityManaCost"				"100"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"base_damage"		"150"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_damage"		"100 130 160 190 220"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"0.5 0.6 0.7 0.8 0.9"
+			}	
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"mana_percent"		"20"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"mana_damage"		"80 90 100 110 120"
+			}	
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"overload_damage"		"10"
+			}	
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"overload_radius"		"400"
+			}	
+		}
+	}
+
+	//=======================================
+	// Mana Burst - Lightning
+	//=======================================
+
+	"mordred_mb_lightning"
+    {
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "abilities/mordred/mordred_mb_lightning.lua"
+        "MaxLevel"						"1"
+		"RequiredLevel"					"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityTextureName"			"custom/mordred/mordred_mb"		
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_1"
+		"AbilityCastPoint"				"0.3"
+        "AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"        
+		"AbilityCooldown"				"30"
+		"AbilityManaCost"				"400"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{	
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"400"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"area_of_effect"	"475"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"vision_duration"	"2.3"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"mana_percent"		"20"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"mana_damage"		"80"
+			}
+		}
+    }
+    //=======================================
+	// Mana Burst - Lightning (Rampage SA)
+	//=======================================
+
+	"mordred_mb_lightning_upgrade"
+    {
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "abilities/mordred/mordred_mb_lightning.lua"
+        "MaxLevel"						"1"
+		"RequiredLevel"					"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityTextureName"			"custom/mordred/mordred_mb"		
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_1"
+		"AbilityCastPoint"				"0.3"
+        "AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"        
+		"AbilityCooldown"				"30"
+		"AbilityManaCost"				"400"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{	
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"600"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"area_of_effect"	"475"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"vision_duration"	"2.3"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"mana_percent"		"20"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"mana_damage"		"80"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"total_shield"		"3"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"shield_dur"		"8"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"shield_amount"		"300"
+			}
+		}
+    }
+    
+
+	//=======================================
+	// Mordred: Rage Rush
+	//=======================================
+
+	"mordred_rush"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/mordred/mordred_rush"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELED"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/mordred/mordred_rush"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_3"
+		"AnimationPlaybackRate" 		"1.0"
+		"IsCastableWhileHidden"			"1"	
+		"AbilityCastRange"				"1800"
+		"AbilityCastPoint"				"0.1"
+		"AbilityManaCost"				"400"
+		//"AbilityChannelTime"			"2.0"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"34"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_time"				"2.0"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"250 300 350 400 450"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_per_second"		"150 200 250 300 350"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"distance"				"1800"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"speed"					"1300"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"speed_per_second"		"900"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"400"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"rampage_dur"			"4"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"rampage_bonus_dur"		"2"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"rampage_bonus"			"20"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"rampage_mark_dur"		"4"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"rampage_mark_slow"		"-10"
+			}
+		}		
+	}	
+	//=======================================
+	// Mordred : Rage Rush (Mana Burst)
+	//=======================================
+
+	"mordred_rush_burst"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/mordred/mordred_rush"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELED | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/mordred/mordred_rush"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_3"
+		"AnimationPlaybackRate" 		"1.0"
+		"IsCastableWhileHidden"			"1"
+		"AbilityCastRange"				"1800"
+		"AbilityCastPoint"				"0.1"
+		"AbilityManaCost"				"400"
+		//"AbilityChannelTime"			"2.0"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"34"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_time"				"2.0"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"250 300 350 400 450"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_per_second"		"150 200 250 300 350"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"distance"				"1800"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"speed"					"1300"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"speed_per_second"		"900"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"400"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"rampage_dur"			"4"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"rampage_bonus_dur"		"2"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"rampage_bonus"			"20"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"rampage_mark_dur"		"4"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"rampage_mark_slow"		"-10"
+			}
+		}		
+	}	
+	//=======================================
+	// Mordred : Rage Rush (Mana Burst) (Rampage SA)
+	//=======================================
+
+	"mordred_rush_upgrade_1"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/mordred/mordred_rush"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELED | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/mordred/mordred_rush"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_3"
+		"AnimationPlaybackRate" 		"1.0"
+		"IsCastableWhileHidden"			"1"
+		"AbilityCastRange"				"1800"
+		"AbilityCastPoint"				"0.1"
+		"AbilityManaCost"				"400"
+		//"AbilityChannelTime"			"2.0"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"34"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_time"				"2.0"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"250 300 350 400 450"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_per_second"		"150 200 250 300 350"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"distance"				"1800"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"speed"					"1300"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"speed_per_second"		"900"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"400"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"stun"					"1.0"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"rampage_dur"			"4"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"rampage_bonus_dur"		"2"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"rampage_bonus"			"20"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"rampage_mark_dur"		"4"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"rampage_mark_slow"		"-10"
+			}
+		}		
+	}
+	//=======================================
+	// Mordred : Rage Rush (Mana Burst) (Lightning Overload SA)
+	//=======================================
+
+	"mordred_rush_upgrade_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/mordred/mordred_rush"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELED | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/mordred/mordred_rush"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_3"
+		"AnimationPlaybackRate" 		"1.0"
+		"IsCastableWhileHidden"			"1"
+		"AbilityCastRange"				"1800"
+		"AbilityCastPoint"				"0.1"
+		"AbilityManaCost"				"400"
+		//"AbilityChannelTime"			"2.0"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"34"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_time"				"2.0"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"250 300 350 400 450"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_per_second"		"150 200 250 300 350"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"distance"				"1800"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"speed"					"1300"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"speed_per_second"		"900"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"400"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"overload_damage"		"10"
+			}	
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"overload_radius"		"400"
+			}	
+		}		
+	}	
+
+	//=======================================
+	// Mordred : Rage Rush (Mana Burst) (Rampage + Lightning Overload SA)
+	//=======================================
+
+	"mordred_rush_upgrade_3"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/mordred/mordred_rush"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELED | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/mordred/mordred_rush"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_3"
+		"AnimationPlaybackRate" 		"1.0"
+		"IsCastableWhileHidden"			"1"
+		"AbilityCastRange"				"1800"
+		"AbilityCastPoint"				"0.1"
+		"AbilityManaCost"				"400"
+		//"AbilityChannelTime"			"2.0"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"34"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_time"				"2.0"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"250 300 350 400 450"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_per_second"		"150 200 250 300 350"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"distance"				"1800"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"speed"					"1300"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"speed_per_second"		"900"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"400"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"stun"				"1.0"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"overload_damage"		"10"
+			}	
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"overload_radius"		"400"
+			}	
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"rampage_dur"			"4"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"rampage_bonus_dur"		"2"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"rampage_bonus"			"20"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"rampage_mark_dur"		"4"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"rampage_mark_slow"		"-10"
+			}
+		}		
+	}
+
+	//=======================================
+	// Mordred: Clarent Blood Arthur
+	//=======================================
+
+	"mordred_clarent"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/mordred/mordred_clarent"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"AbilityTextureName"			"custom/mordred/mordred_clarent"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_3_END"
+		"AnimationPlaybackRate" 		"1.32"				// Adjust playback rate to reflect the ability was 0.9
+		"precache"
+		{
+			
+		}
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1800"
+		"AbilityCastPoint"				"0.3"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"40.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"800"
+		
+		// AbilitySpecial
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"			"1.25"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"width"					"400"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range"					"1800"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"speed"					"1150"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"600 725 850 975 1100"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"mana_percent"			"20 25 30 35 40"
+			}
+		}
+	}
+	//=======================================
+	// Mordred: Clarent Blood Arthur (Curse SA)
+	//=======================================
+
+	"mordred_clarent_upgrade_1"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/mordred/mordred_clarent"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"AbilityTextureName"			"custom/mordred/mordred_clarent"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_3_END"
+		"AnimationPlaybackRate" 		"1.32"				// Adjust playback rate to reflect the ability was 0.9
+		"precache"
+		{
+			
+		}
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1800"
+		"AbilityCastPoint"				"0.3"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"40.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"800"
+		
+		// AbilitySpecial
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"			"1.25"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"width"					"400"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range"					"1800"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"speed"					"1150"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"600 725 850 975 1100"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_arthur"			"300"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"mana_percent"			"20 25 30 35 40"
+			}
+		}
+	}
+	//=======================================
+	// Mordred: Clarent Blood Arthur (Lightning Overload SA)
+	//=======================================
+
+	"mordred_clarent_upgrade_2"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/mordred/mordred_clarent"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"AbilityTextureName"			"custom/mordred/mordred_clarent"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_3_END"
+		"AnimationPlaybackRate" 		"1.32"				// Adjust playback rate to reflect the ability was 0.9
+		"precache"
+		{
+			
+		}
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1800"
+		"AbilityCastPoint"				"0.3"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"40.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"800"
+		
+		// AbilitySpecial
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"			"1.25"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"width"					"400"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range"					"1800"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"speed"					"1150"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"600 725 850 975 1100"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"mana_percent"			"40 45 50 55 60"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"overload_damage"		"10"
+			}	
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"overload_radius"		"400"
+			}	
+		}
+	}
+	//=======================================
+	// Mordred: Clarent Blood Arthur (Curse + Lightning Overload SA)
+	//=======================================
+
+	"mordred_clarent_upgrade_3"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/mordred/mordred_clarent"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"AbilityTextureName"			"custom/mordred/mordred_clarent"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_3_END"
+		"AnimationPlaybackRate" 		"1.32"				// Adjust playback rate to reflect the ability was 0.9
+		"precache"
+		{
+			
+		}
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1800"
+		"AbilityCastPoint"				"0.3"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"40.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"800"
+		
+		// AbilitySpecial
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"			"1.25"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"width"					"400"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range"					"1800"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"speed"					"1150"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"600 725 850 975 1100"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_arthur"			"300"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"mana_percent"			"40 45 50 55 60"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"overload_damage"		"10"
+			}	
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"overload_radius"		"400"
+			}	
+		}
+	}
+
+	//=================================================================================================================
+	// Mordred: Max Mana Burst - Lightning
+	//=================================================================================================================
+	"mordred_mmb_lightning"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/mordred/mordred_mmb_lightning"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"AbilityTextureName"			"custom/mordred/mordred_max_mana_burst"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_3"
+		"AnimationPlaybackRate" 		"0.9"
+		"precache"
+		{
+			
+		}
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"2000"
+		"AbilityCastPoint"				"0.1"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"180"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"800"
+		
+		// Ability Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_time"				"4.0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range"					"2000"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"width"					"550"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"speed"					"9000"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"400"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"lightning_aoe"			"300"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"blast_radius"			"1700"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mana_damage"			"100"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"moderate"				"75"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"inner_range"			"600"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"low"					"50"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"medium_range"			"1100"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"high"					"100"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Mordred: Max Mana Burst - Lightning (Lightning Overload SA)
+	//=================================================================================================================
+	"mordred_mmb_lightning_upgrade"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/mordred/mordred_mmb_lightning"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"AbilityTextureName"			"custom/mordred/mordred_max_mana_burst"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_3"
+		"AnimationPlaybackRate" 		"0.9"
+		"precache"
+		{
+			
+		}
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"2000"
+		"AbilityCastPoint"				"0.1"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"180"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"800"
+		
+		// Ability Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_time"				"4.0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range"					"2000"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"width"					"550"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"speed"					"9000"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"600"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"lightning_aoe"			"300"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"blast_radius"			"1700"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mana_damage"			"170"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"moderate"				"75"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"inner_range"			"600"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"low"					"50"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"medium_range"			"1100"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"high"					"100"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Mordred: Curse of Retribution
+	//=================================================================================================================
+	"mordred_curse_passive"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/mordred/mordred_curse_passive"
+		"MaxLevel"						"1"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"custom/mordred/mordred_curse"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"health_percent"		"25"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"shield_gain"			"50"
+			}
+		}		
+	}
+	//=================================================================================================================
+	// Mordred Attribute: Curse of Retribution
+	//=================================================================================================================
+	"mordred_attribute_curse"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/mordred/mordred_attributes"
+		"MaxLevel"						"1"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/mordred/mordred_curse"
+		"AbilityCooldown"				"9999"
+
+		"AbilityManaCost"				"13"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"health_percent"		"25"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"shield_gain"			"50"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_arthur"			"300"
+			}
+		}		
+	}
+	//=================================================================================================================
+	// Mordred Attribute: Battle Continuation
+	//=================================================================================================================
+	"mordred_attribute_bc"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/mordred/mordred_attributes"
+		"MaxLevel"						"1"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/mordred/mordred_battle_continuation"
+		"AbilityCooldown"				"9999"
+
+		"AbilityManaCost"				"11"
+
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cooldown"				"99"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dmg_threshold"			"1500"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"1.0"
+			}
+		}		
+	}
+	//=================================================================================================================
+	// Mordred: Battle Continuation
+	//=================================================================================================================
+	"mordred_bc_passive"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/mordred/mordred_attributes"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"custom/mordred/mordred_battle_continuation"
+		"AbilityCooldown"				"99"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dmg_threshold"			"1500"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"1.0"
+			}
+		}		
+	}
+	//=================================================================================================================
+	// Mordred Attribute: Rampaging Warrior
+	//=================================================================================================================
+	"mordred_attribute_rampage"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/mordred/mordred_attributes"
+		"MaxLevel"						"1"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/mordred/mordred_rampage2"
+		"AbilityCooldown"				"9999"
+
+		"AbilityManaCost"				"15"
+
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"rush_radius"			"400"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"rush_stun"				"1.0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slash_armor_shred"		"-50"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"rampage_dur"			"4"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"rampage_bonus_dur"		"2"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"rampage_bonus"			"20"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"rampage_mark_dur"		"4"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"rampage_mark_slow"		"-10"
+			}
+			"09"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"total_shield"		"3"
+			}
+			"10"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"shield_dur"		"8"
+			}
+			"11"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"shield_amount"		"350"
+			}
+			
+		}		
+	}
+	//=================================================================================================================
+	// Mordred: Rampaging Warrior
+	//=================================================================================================================
+	"mordred_rampage_passive"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/mordred/mordred_attributes"
+		"MaxLevel"						"1"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"custom/mordred/mordred_rampage2"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+
+		"AbilitySpecial"
+		{
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"rampage_dur"			"4"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"rampage_bonus_dur"		"2"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"rampage_bonus"			"20"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"rampage_mark_dur"		"4"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"rampage_mark_slow"		"-10"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"total_shield"		"3"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"shield_dur"		"8"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"shield_amount"		"350"
+			}
+		}		
+	}
+	//=================================================================================================================
+	// Mordred Attribute: Improve Pedigree
+	//=================================================================================================================
+	"mordred_attribute_pedigree"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/mordred/mordred_attributes"
+		"MaxLevel"						"1"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/mordred/mordred_pedigree"
+		"AbilityCooldown"				"9999"
+
+		"AbilityManaCost"				"7"
+
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_arm"			"10"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_mr"			"10"
+			}
+		}		
+	}
+	//=================================================================================================================
+	// Mordred Attribute: Lightning Overload
+	//=================================================================================================================
+	"mordred_attribute_overload"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/mordred/mordred_attributes"
+		"MaxLevel"						"1"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/mordred/mordred_thunder"
+		"AbilityCooldown"				"9999"
+
+		"AbilityManaCost"				"14"
+
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dmg_per_lvl"			"10"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"400"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"stun_per_lvl"			"0.05"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"clarent_bonus_mana"	"20"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"combo_bonus_mana"		"70"
+			}
+		}		
+	}
+	//=================================================================================================================
+	// Mordred: Rampaging Warrior
+	//=================================================================================================================
+	"mordred_overload_passive"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/mordred/mordred_attributes"
+		"MaxLevel"						"1"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"custom/mordred/mordred_thunder"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dmg_per_lvl"			"10"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"400"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"stun_per_lvl"			"0.05"
+			}
+		}		
+	}
+	//=======================================
+	// Precache
+	//=======================================
+	"mordred_precache"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"custom/medusa/medusa_attribute_monstrous_strength"
+
+		"precache"
+		{
+			"model"					"models/mordred/casual/casual_mordred_by_zefiroft.vmdl"
+			"model"					"models/mordred/mordred_unarmor/mordred_unarmor_by_zefiroft.vmdl"
+			"model"					"models/mordred/summer/summer_mordred_by_zefiroft.vmdl"
+			"model"					"models/updated_by_seva_and_hudozhestvenniy_film_spizdili/mordred/mordred_unanim_face.vmdl"
+			"model"					"models/mordred/summer/summer_mordred_surf_by_zefiroft.vmdl"
+			"particle"  			"particles/custom/mordred/purge_the_unjust/ruler_purge_the_unjust_a.vpcf"
+			"particle" 		 		"particles/mordred/mordred_clarent_beam.vpcf"
+			"particle"  			"particles/mordred/mordred_clarent_beam_pepeg.vpcf"
+			"particle"  			"particles/custom/caster/caster_argos_durability.vpcf"
+			"particle"  			"particles/custom/mordred/zuus_arc_lightning.vpcf"
+			"particle"  			"particles/custom/mordred/zuus_static_field.vpcf"
+			"particle"  			"particles/custom/mordred/zuus_lightning_bolt.vpcf"
+			"particle"  			"particles/custom/mordred/gods_resolution/gods_resolution_active_circle.vpcf"
+			"particle"  			"particles/custom/mordred/mordred_lightning_shield.vpcf"
+			"particle"  			"particles/custom/mordred/max_excalibur/shockwave.vpcf"
+			"particle"  			"particles/custom/screen_red_splash.vpcf"
+			"particle" 	 			"particles/units/heroes/hero_techies/techies_blast_off.vpcf"
+			"particle"  			"particles/custom/mordred/max_excalibur/charge.vpcf"
+		}
+	}
+}

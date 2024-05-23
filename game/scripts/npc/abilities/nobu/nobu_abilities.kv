@@ -1,0 +1,1616 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Nobu - guns (D)
+	//	"nobu_guns"
+	//	{
+	//		"BaseClass"						"ability_lua"
+	//		"ScriptFile"					"abilities/nobu/nobu_guns"
+	//		"MaxLevel"						"4"
+	//		"RequiredLevel"					"1"
+	//		"LevelsBetweenUpgrades"			"25"
+	//		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_VECTOR_TARGETING"
+	//		"AbilityTextureName"			"custom/nobu/nobu_guns"
+	//		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	//		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+	//		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	//		"AbilityCastPoint"				"0"
+	//		"AbilityCastRange"				"700"
+	// 		"AbilityCooldown"				"30 30 25 20"
+	//		"AbilityManaCost"				"200"
+	//		"AbilitySpecial"
+	//		{
+	//			 
+	//		
+	//			"01"
+	//			{
+	//				"var_type"				"FIELD_FLOAT"
+	//				"base_dmg"				"130"
+	//			} 
+	//			"02"
+	//			{
+	//				"var_type"				"FIELD_FLOAT"
+	//				"dmg_per_lvl"			"9"
+	//			} 
+	//			"03"
+	//			{
+	//				"var_type"				"FIELD_FLOAT"
+	//				"dmg_per_int"			"1.4"
+	//			}  
+	//			"04"
+	//			{
+	//				"var_type"				"FIELD_FLOAT"
+	//				"amount"				"0 3 5 7"
+	//			}  
+	//		}
+	//	}
+	//=================================================================================================================
+	"nobu_guns"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/nobu/nobu_guns"
+		"MaxLevel"						"1"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"25"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"custom/nobu/nobu_guns"
+		"AbilityCastPoint"				"0"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"base_dmg"				"110"
+			} 
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"dmg_per_lvl"			"2"
+			} 
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"dmg_per_int"			"2.5"
+			}  
+		}
+	}
+
+	"nobu_guns_action"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/nobu/nobu_guns"
+		"MaxLevel"						"1"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"25"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"custom/nobu/nobu_guns"
+		"AbilityCastPoint"				"0"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"base_dmg"				"150"
+			} 
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"dmg_per_lvl"			"2"
+			} 
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"dmg_per_int"			"2.5"
+			} 			
+		}
+	}
+
+	"nobu_guns_unifying"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/nobu/nobu_guns"
+		"MaxLevel"						"1"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"25"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"custom/nobu/nobu_guns"
+		"AbilityCastPoint"				"0"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"base_dmg"				"110"
+			} 
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"dmg_per_lvl"			"2"
+			} 
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"dmg_per_int"			"2.5"
+			} 
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"divine_damage_mod"				"20"
+			} 
+		}
+	}
+
+	"nobu_guns_upgrade"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/nobu/nobu_guns"
+		"MaxLevel"						"1"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"25"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"custom/nobu/nobu_guns"
+		"AbilityCastPoint"				"0"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"base_dmg"				"150"
+			} 
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"dmg_per_lvl"			"2"
+			} 
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"dmg_per_int"			"2.5"
+			} 
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"divine_damage_mod"				"20"
+			} 
+		}
+	}
+	//=================================================================================================================
+	// Nobu - Gun shot (Q)
+	//=================================================================================================================
+	"nobu_shot"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/nobu/nobu_shot"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"AbilityTextureName"			"custom/nobu/nobu_shot"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_1"
+		"AnimationPlaybackRate" 		"1.0"
+		"AbilityCastPoint"				"0.1"
+		"AbilityCastRange"				"1000"
+ 		"AbilityCooldown"				"4 3.5 3 2.5 2"
+		"AbilityManaCost"				"100"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"distance"			"1000"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"aoe"				"50"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"damage_mod"		"1.1 1.2 1.3 1.4 1.5"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"slow_power"		"20 25 30 35 40"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"1"
+			}
+		}
+	}
+
+	"nobu_shot_upgrade"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/nobu/nobu_shot"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"AbilityTextureName"			"custom/nobu/nobu_shot"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_1"
+		"AnimationPlaybackRate" 		"1.0"
+		"AbilityCastPoint"				"0.1"
+		"AbilityCastRange"				"1000"
+ 		"AbilityCooldown"				"4 3.5 3 2.5 2"
+		"AbilityManaCost"				"100"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"distance"			"1000"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"aoe"				"50"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"damage_mod"		"1.1 1.2 1.3 1.4 1.5"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"armor_pierce"		"20"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"slow_power"		"20 25 30 35 40"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"1"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"microstun_duration"				"0.1"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"knock"				"80"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Nobu - 3 line formation (I FIRST NAMED IT 3000 WORLDS SO ITS 3000 LOL)   (R)
+	//=================================================================================================================
+	"nobu_3000"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/nobu/nobu_3000"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT| DOTA_ABILITY_BEHAVIOR_CHANNELED"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityTextureName"			"custom/nobu/nobu_3000"
+		//"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_4"
+		"AbilityChannelAnimation" 		"ACT_DOTA_CAST_ABILITY_4"
+		"AnimationPlaybackRate" 		"1.0"
+		"AbilityCastPoint"				"0.1"
+		"AbilityCastRange"				"1400"
+ 		"AbilityCooldown"				"40 38 36 34 32"
+		"AbilityManaCost"				"800"
+		"AbilityChannelTime"			"3.25"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"damage_mod"		"0.5 0.55 0.6 0.65 0.7"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"channel_time"		"3.15"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"range"				"1400"
+			} 
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"aoe"				"65"
+			} 
+		}
+	}
+
+	//=================================================================================================================
+	// Nobu - 3 line formation (I FIRST NAMED IT 3000 WORLDS SO ITS 3000 LOL)   (R)
+	//=================================================================================================================
+	"nobu_3000_upgrade"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/nobu/nobu_3000"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT| DOTA_ABILITY_BEHAVIOR_CHANNELED"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityTextureName"			"custom/nobu/nobu_3000"
+		//"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_4"
+		"AbilityChannelAnimation" 		"ACT_DOTA_CAST_ABILITY_4"
+		"AnimationPlaybackRate" 		"1.0"
+		"AbilityCastPoint"				"0.1"
+		"AbilityCastRange"				"1400"
+ 		"AbilityCooldown"				"40 38 36 34 32"
+		"AbilityManaCost"				"800"
+		"AbilityChannelTime"			"3.25"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"damage_mod"		"0.5 0.55 0.6 0.65 0.7"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"channel_time"		"3.15"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"range"				"1400"
+			} 
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"aoe"				"65"
+			}  
+			"04"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"pure_perc"			"0"
+			} 
+			"04"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"armor_dmg"			"2"
+			} 
+		}
+	}
+
+	//=================================================================================================================
+	// Nobunaga - dash (W) 
+	//=================================================================================================================
+	"nobu_dash"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/nobu/nobu_dash"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityTextureName"			"custom/nobu/nobu_dash"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_2"
+		"AnimationPlaybackRate" 		"1.0"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityManaCost"				"100"
+		"AbilityCooldown"				"1"
+		"AbilityCastPoint"				"0.1"
+		"AbilityCharges"				"3"
+		"AbilityChargeRestoreTime"		"30 28 26 24 22"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"cooldown"			"0.5"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"dash"				"400"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"search"			"800"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_gun"			"2"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"damage_mod"		"0.7"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"knock"				"40"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Nobunaga - dash (W) (3000 World SA)
+	//=================================================================================================================
+	"nobu_dash_3000"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/nobu/nobu_dash"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityTextureName"			"custom/nobu/nobu_dash"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_2"
+		"AnimationPlaybackRate" 		"1.0"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityManaCost"				"100"
+		"AbilityCooldown"				"1"
+		"AbilityCastPoint"				"0.1"
+		"AbilityCharges"				"3"
+		"AbilityChargeRestoreTime"		"30 28 26 24 22"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"cooldown"			"0.5"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"dash"				"400"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"search"			"800"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_gun"			"2"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"damage_mod"		"0.7"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"knock"				"40"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Nobunaga - dash (W) (Independent Action SA)
+	//=================================================================================================================
+	"nobu_dash_action"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/nobu/nobu_dash"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityTextureName"			"custom/nobu/nobu_dash"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_2"
+		"AnimationPlaybackRate" 		"1.0"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityManaCost"				"100"
+		"AbilityCooldown"				"1"
+		"AbilityCastPoint"				"0.1"
+		"AbilityCharges"				"3"
+		"AbilityChargeRestoreTime"		"30 28 26 24 22"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"cooldown"			"0.5"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"dash"				"400"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"action_dur"				"3.0"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"action_bonus_dmg"			"20 25 30 35 40"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"damage_mod"		"0.7"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Nobunaga - dash (W)
+	//=================================================================================================================
+	"nobu_dash_upgrade"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/nobu/nobu_dash"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityTextureName"			"custom/nobu/nobu_dash"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_2"
+		"AnimationPlaybackRate" 		"1.0"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityManaCost"				"100"
+		"AbilityCooldown"				"1"
+		"AbilityCastPoint"				"0.1"
+		"AbilityCharges"				"3"
+		"AbilityChargeRestoreTime"		"30 28 26 24 22"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"damage_mod"		"0.7"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"cooldown"			"0.5"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"dash"				"400"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"search"			"800"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_gun"			"2"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"bonus_gun_dmg"		"0.7"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"knock"				"40"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"action_dur"				"3.0"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"action_bonus_dmg"			"20 25 30 35 40"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Nobu - (E)
+	//=================================================================================================================
+	"nobu_double_shots"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/nobu/nobu_double_shots"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT |DOTA_ABILITY_BEHAVIOR_AOE |DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityTextureName"			"custom/nobu/nobu_double_shots"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_3"
+		"AnimationPlaybackRate" 		"1.0"
+		"AOERadius"						"%aoe"
+		"AbilityCastPoint"				"0.1"
+		"AbilityCastRange"				"1000"
+ 		"AbilityCooldown"				"30 29 28 27 26"
+		"AbilityManaCost"				"400"
+		"AbilitySpecial"
+		{
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"delay_stop"		"0.5"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"5"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"cast_range"		"1000"
+			} 
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"aoe"				"70"
+			}  
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"damage_mod"		"0.5 0.575 0.65 0.725 0.8"
+			}
+			
+			 "03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"sps"				"3"
+			} 
+			 
+		}
+	}
+
+	//=================================================================================================================
+	// Nobu - (E)
+	//=================================================================================================================
+	"nobu_double_shots_upgrade"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/nobu/nobu_double_shots"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT |DOTA_ABILITY_BEHAVIOR_AOE |DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityTextureName"			"custom/nobu/nobu_double_shots"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_3"
+		"AnimationPlaybackRate" 		"1.0"
+		"AOERadius"						"%aoe"
+		"AbilityCastPoint"				"0.1"
+		"AbilityCastRange"				"1000"
+ 		"AbilityCooldown"				"30 29 28 27 26"
+		"AbilityManaCost"				"400"
+		"AbilitySpecial"
+		{
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"delay_stop"		"0.5"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"5"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"cast_range"		"1000"
+			} 
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"aoe"				"70"
+			}  
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"damage_mod"		"0.5 0.575 0.65 0.725 0.8"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"armor_pierce"		"20"
+			}
+			 "03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"sps"				"3"
+			} 
+			 
+		}
+	}
+
+	//=================================================================================================================
+	//  Nobu - double shots stop (E - E)
+	//=================================================================================================================
+	"nobu_double_shots_stop"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/nobu/nobu_double_shots_stop"
+		"MaxLevel"						"1"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"25"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityTextureName"			"custom/nobu/nobu_double_shots_stop"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_7"
+		"AnimationPlaybackRate" 		"0.0"
+		"AbilityCastPoint"				"0.0"
+ 		"AbilityCooldown"				"0"
+		"AbilityManaCost"				"0"
+		"AbilitySpecial"
+		{
+		}
+	}
+	 
+
+	//=================================================================================================================
+	//  Nobu - Demon  King (F - spellbook open ) 
+	//=================================================================================================================
+	"nobu_demon_king_open"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/nobu/nobu_demon_king"
+		"MaxLevel"						"1"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"25"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET| DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE|DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityTextureName"			"custom/nobu/nobu_demon_king"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_7"
+		"AnimationPlaybackRate" 		"0.0"
+		"AbilityCastPoint"				"0.0"
+ 		"AbilityCooldown"				"0"
+		"AbilityManaCost"				"0"
+		"AbilitySpecial"
+		{
+		}
+	}
+	//=================================================================================================================
+	//  Nobu - Demon  King (F - spellbook open ) 
+	//=================================================================================================================
+	"nobu_demon_king_open_upgrade"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/nobu/nobu_demon_king"
+		"MaxLevel"						"1"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"25"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET| DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE|DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityTextureName"			"custom/nobu/nobu_demon_king"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_7"
+		"AnimationPlaybackRate" 		"0.0"
+		"AbilityCastPoint"				"0.0"
+ 		"AbilityCooldown"				"0"
+		"AbilityManaCost"				"0"
+		"AbilitySpecial"
+		{
+		}
+	}
+	//=================================================================================================================
+	//  Nobu -  Demon king (F - spellbook close)
+	//=================================================================================================================
+	"nobu_demon_king_close"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/nobu/nobu_demon_king"
+		"MaxLevel"						"1"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"25"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET| DOTA_ABILITY_BEHAVIOR_HIDDEN|DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE|DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityTextureName"			"custom/nobu/nobu_demon_king_close"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_7"
+		"AnimationPlaybackRate" 		"0.0"
+		"AbilityCastPoint"				"0.0"
+ 		"AbilityCooldown"				"0"
+		"AbilityManaCost"				"0"
+		"AbilitySpecial"
+		{
+		}
+	}
+	//=================================================================================================================
+	//  Nobu - Destroyer of WORLDS (F - Q)
+	//=================================================================================================================
+	"nobu_dow"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/nobu/nobu_demon_king"
+		"MaxLevel"						"1"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"25"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET| DOTA_ABILITY_BEHAVIOR_HIDDEN|DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE|DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityTextureName"			"custom/nobu/nobu_dow"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_7"
+		"AnimationPlaybackRate" 		"0.0"
+		"AbilityCastPoint"				"0.0"
+ 		"AbilityCooldown"				"0"
+		"AbilityManaCost"				"0"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"distance"		"1000"
+			}
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"aoe"			"50"
+			}
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"damage"		"100"
+			}
+			"01"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"cooldown"		"1.5"
+			}
+		}
+	}
+	//=================================================================================================================
+	//  Nobu - Destroyer of gods and buddhas (F - W)
+	//=================================================================================================================
+	"nobu_dogab"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/nobu/nobu_demon_king"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET| DOTA_ABILITY_BEHAVIOR_HIDDEN|DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE|DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityTextureName"			"custom/nobu/nobu_dogab"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_7"
+		"AnimationPlaybackRate" 		"0.0"
+		"AbilityCastPoint"				"0.0"
+ 		"AbilityCooldown"				"0"
+		"AbilityManaCost"				"0"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_range"				"1000"
+			} 
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"7"
+			} 
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"stack"					"9"
+			} 
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"activated_duration"				"7"
+			} 
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"arm_debuff"			"-20"
+			} 
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cooldown"				"40"
+			} 
+		}
+	}
+	//=================================================================================================================
+	//  Nobu - Fool of owari (F - E)
+	//=================================================================================================================
+	"nobu_fool_of_owari"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/nobu/nobu_demon_king"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET| DOTA_ABILITY_BEHAVIOR_HIDDEN|DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE|DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityTextureName"			"custom/nobu/nobu_fool_of_owari"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_7"
+		"AnimationPlaybackRate" 		"0.0"
+		"AbilityCastPoint"				"0.0"
+ 		"AbilityCooldown"				"0"
+		"AbilityManaCost"				"0"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"aura_radius"				"1000"
+			} 
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"ms_bonus"				"12"
+			} 
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"armor_bonus"				"5"
+			}
+		}
+	}
+	//=================================================================================================================
+	//  Nobu - King of innovation (F - R)
+	//=================================================================================================================
+	"nobu_king_of_innovation"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/nobu/nobu_demon_king"
+		"MaxLevel"						"1"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"25"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET| DOTA_ABILITY_BEHAVIOR_HIDDEN|DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE|DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityTextureName"			"custom/nobu/nobu_king_of_innovation"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_7"
+		"AnimationPlaybackRate" 		"0.0"
+		"AbilityCastPoint"				"0.0"
+ 		"AbilityCooldown"				"0"
+		"AbilityManaCost"				"0"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"aura_radius"				"1000"
+			} 
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"9"
+			} 
+			
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"health_base"				"20"
+			} 
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_str_heal"		"1"
+			} 
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"heal_cd"				"1"
+			} 
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"ms_bonus"				"15"
+			} 
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"ms_duration"			"1"
+			} 
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cooldown"				"40"
+			}
+		}
+	}
+	
+	 
+	//=================================================================================================================
+	// Nobu - Charisma (F - fool of owari)
+	//=================================================================================================================
+	"nobu_charisma"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/nobu/nobu_charisma"
+		"MaxLevel"						"1"
+		"RequiredLevel"					"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityTextureName"			"custom/nobu/nobu_fool_of_owari"
+		"AbilityCastPoint"				"0"
+		"AbilityCastRange"				"1000"
+ 		"AbilityCooldown"				"0"
+		"AbilityManaCost"				"0"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"aura_radius"				"1000"
+			} 
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"ms_bonus"				"12"
+			} 
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"armor_bonus"				"5"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Nobu - Strategy
+	//=================================================================================================================
+	"nobu_strat"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/nobu/nobu_charisma"
+		"MaxLevel"						"1"
+		"RequiredLevel"					"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityTextureName"			"custom/nobu/nobu_fool_of_owari"
+		"AbilityCastPoint"				"0"
+		"AbilityCastRange"				"0"
+ 		"AbilityCooldown"				"10"
+		"AbilityManaCost"				"0"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"cooldown_time"				"10" 		 
+			} 
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"bonus_ms"				"15"
+			} 
+		    "03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"bonus_attack"				"60"
+			} 
+			"04"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"				"4"
+			} 
+		}
+	}
+
+	//=================================================================================================================
+	// Nobu - DOW passive (F - DOW)
+	//=================================================================================================================
+	"nobu_dow_passive"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/nobu/nobu_demon_king"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE|DOTA_ABILITY_BEHAVIOR_AOE|DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityTextureName"			"custom/nobu/nobu_dow"
+		"AbilityCastPoint"				"0"
+		"AbilityCastRange"				"1000"
+ 		"AbilityCooldown"				"1.5"
+		"AbilityManaCost"				"0"
+		"AbilitySpecial"
+		{
+			 "01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"distance"		"1000"
+			}
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"aoe"			"50"
+			}
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"damage"		"100"
+			}
+			"01"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"cooldown"		"1.5"
+			} 
+		}
+	}
+
+	//=================================================================================================================
+	// Nobu -leader of innovation (F - innovation)
+	//=================================================================================================================
+	"nobu_leader_of_innovation"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/nobu/nobu_leader_of_innovation"
+		"MaxLevel"						"1"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"25"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET|DOTA_ABILITY_BEHAVIOR_IMMEDIATE|DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityTextureName"			"custom/nobu/nobu_king_of_innovation"
+		"AbilityCastPoint"				"0"
+		"AbilityCastRange"				"1000"
+ 		"AbilityCooldown"				"40"
+		"AbilityManaCost"				"100"
+		"AbilitySpecial"
+		{
+			 
+			 
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"aura_radius"				"1000"
+			} 
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"9"
+			} 
+			
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"health_base"				"20"
+			} 
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_str_heal"		"1"
+			} 
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cooldown"				"1"
+			} 
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"ms_bonus"				"15"
+			} 
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"ms_duration"			"1"
+			} 
+		}
+	}
+
+	//=================================================================================================================
+	// Nobu - Charisma (F - divinity mark)
+	//=================================================================================================================
+	"nobu_divinity_mark"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/nobu/nobu_divinity_mark"
+		"MaxLevel"						"1"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"25"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET|DOTA_ABILITY_BEHAVIOR_HIDDEN|DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityTextureName"			"custom/nobu/nobu_dogab"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityCastPoint"				"0"
+		"AbilityCastRange"				"1000"
+ 		"AbilityCooldown"				"40"
+		"AbilityManaCost"				"100"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_range"				"1000"
+			} 
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"7"
+			} 
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"stack"					"9"
+			} 
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"activated_duration"				"7"
+			} 
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"arm_debuff"			"-20"
+			} 
+		}
+	}
+
+
+	 
+	//=================================================================================================================
+	// Nobu - Combo -  Demon king of sixth heaven
+	//=================================================================================================================
+	"nobu_combo"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/nobu/nobu_combo"
+		"MaxLevel"						"1"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"25"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET|DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityTextureName"			"custom/nobu/nobu_combo"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_8"
+		"AnimationPlaybackRate" 		"0.0"
+		//"AOERadius"						"%radius"
+		"AbilityCastPoint"				"0.3"
+ 		"AbilityCooldown"				"170"
+		"AbilityManaCost"				"600"
+		"AbilityCastRange"				"2000"
+		"AbilitySpecial"
+		{
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"charge_time"		"1.5"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"radius"				"2000"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"run_speed"				"2000"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"run_duration"				"3"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"dmg_initial"				"900"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"total_atk"			"25"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"dmg_mod"				"0.65"
+			}
+	
+		}
+	}
+
+	//=================================================================================================================
+	// Nobu - Combo -  Demon king of sixth heaven
+	//=================================================================================================================
+	"nobu_combo_upgrade"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/nobu/nobu_combo"
+		"MaxLevel"						"1"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"25"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET|DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityTextureName"			"custom/nobu/nobu_combo"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_8"
+		"AnimationPlaybackRate" 		"0.0"
+		//"AOERadius"						"%radius"
+		"AbilityCastPoint"				"0.3"
+ 		"AbilityCooldown"				"170"
+		"AbilityManaCost"				"600"
+		"AbilityCastRange"				"2000"
+		"AbilitySpecial"
+		{
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"charge_time"		"1.5"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"radius"				"2000"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"run_speed"				"2000"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"run_duration"				"3"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"dmg_initial"				"900"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"total_atk"			"25"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"dmg_mod"			"0.65"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"pure"				"10"
+			}
+		}
+	}
+
+	"nobu_strategy_attribute" //is written inside the charisma lua ability 
+	{
+		 
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/nobu/nobu_attributes"
+		"MaxLevel"						"1"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/nobu/nobu_strategy_attribute"
+		"AbilityCooldown"				"9999"
+
+		"AbilityManaCost"				"14"
+
+		 
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"cooldown_time"				"10" 		 
+			} 
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"bonus_ms"				"15"
+			} 
+		    "03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"bonus_attack"				"60"
+			} 
+			"04"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"				"4"
+			} 
+		}		
+	}
+
+	"nobu_expanding_attribute"
+	{
+		 
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/nobu/nobu_attributes"
+		"MaxLevel"						"1"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/nobu/nobu_expanding_attribute"
+		"AbilityCooldown"				"9999"
+
+		"AbilityManaCost"				"13"
+
+		 
+		"AbilitySpecial"
+		{ 
+		}		
+	}
+
+	"nobu_3000_attribute"
+	{
+		 
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/nobu/nobu_attributes"
+		"MaxLevel"						"1"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/nobu/nobu_3000_attribute"
+		"AbilityCooldown"				"9999"
+
+		"AbilityManaCost"				"14"
+
+		"AbilitySpecial"
+		{
+			
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"three_pure"		"0"
+			} 
+			"04"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"three_armor_dmg"	"2"
+			} 
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"combo_pure"		"20"
+			} 
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"search"			"800"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_gun"			"2"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"damage_mod"		"0.7"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"knock"				"40"
+			}  
+		}		
+	}
+	"nobu_unifying_attribute"
+	{
+		 
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/nobu/nobu_attributes"
+		"MaxLevel"						"1"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/nobu/nobu_unifying_attribute"
+		"AbilityCooldown"				"9999"
+
+		"AbilityManaCost"				"13"
+
+		 
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"int_scaling"				"2.5"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"divine_damage_mod"			"20"
+			} 
+		}		
+	}
+
+	"nobu_independent_action"
+	{
+		 
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/nobu/nobu_attributes"
+		"MaxLevel"						"1"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/nobu/nobu_independent_action"
+		"AbilityCooldown"				"9999"
+
+		"AbilityManaCost"				"18"
+
+		 
+		"AbilitySpecial"
+		{
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"guns_damage"		"40"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"shoot_armor_pierce" "20"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"shoot_stun"		"0.1"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"shoot_knock"		"80"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"dash_dur"				"3.0"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"dash_bonus_dmg"			"20 30 40 50 60"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"double_armor_pierce"	"20"
+			}
+		}
+	}
+	//=======================================
+	// Precache
+	//=======================================
+	"nobu_precache"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"custom/medusa/medusa_attribute_monstrous_strength"
+
+		"precache"
+		{
+			"particle"				"particles/nobu/3000-charge.vpcf"
+			"particle"  			"particles/nobu/gun_no_destroy.vpcf"
+			"particle"  			"particles/nobu/gun.vpcf"
+			"particle"  			"particles/nobu/nobu_lasers_nonproj.vpcf"
+			"particle"  			"particles/nobu/nobu_bullet.vpcf"
+			"particle"  			"particles/nobu/nobu_bullet_q.vpcf"
+			"particle"  			"particles/nobu/nobu_combo_smoke_red.vpcf"
+			"particle"  			"particles/nobu/nobu_divinity_mark.vpcf"
+			"particle"  			"particles/nobu/nobu_divinity_mark_activated.vpcf"
+		}
+	}
+}

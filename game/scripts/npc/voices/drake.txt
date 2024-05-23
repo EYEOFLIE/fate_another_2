@@ -1,0 +1,56 @@
+"FATEVoices"
+{
+	"npc_dota_hero_troll_warlord"
+	{
+		"Spawn"
+		{
+			"01"						"drake_spawn"
+		}
+		
+		"Move"
+		{
+			"01"						"drake_attack_04"
+		}
+		
+		"Attack"
+		{
+			"01"						"drake_attack_01"
+			"02"						"drake_attack_02"
+			"03"						"drake_attack_03"
+			"04"						"drake_tch"
+		}
+		
+		"Cast"
+		{
+			"01"						"drake_laugh"
+		}
+		
+		"Hurt"
+		{
+			"01"						"drake_hurt_01"
+			"02"						"drake_hurt_02"
+		}
+		
+		"Respawn"
+		{
+			"01"						"drake_other_01"
+			"02"						"drake_other_02"
+			"03"						"drake_other_03"
+			"04"						"drake_other_04"
+			"05"						"drake_level_up"
+			"06"						"drake_like"
+		}
+		
+		"Death"
+		{
+			"01"						"drake_death"
+		}
+		
+		"Kill"
+		{
+			"01"						"drake_kill_01"
+			"02"						"drake_kill_02"
+			"03"						"drake_yare"
+		}
+	}
+}

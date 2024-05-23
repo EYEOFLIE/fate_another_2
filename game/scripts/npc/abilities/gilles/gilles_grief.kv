@@ -1,0 +1,152 @@
+"DOTAAbilities"
+{
+	//===================================================
+	// Gilles De Rais : Rlyeh Text - Grief
+	//===================================================
+	"gilles_grief"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/gilles/gilles_grief"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/gilles/gilles_grief"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_2"
+
+		"AnimationPlaybackRate" 		"1.5"
+		"AOERadius"						"%radius"		
+		
+		"precache"
+		{
+			
+		}
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"750"
+		"AbilityCastPoint"				"0.25"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"14.0"
+		"AbilityManaCost"				"25"
+
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"mana_cost"			"25"
+			}	
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"300 400 500 600 700"
+			}	
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"1.0 1.5 2.0 2.5 3.0"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"stun_duration"		"1.0"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"void_damage"		"40"
+			}	
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"300"
+			}
+		}
+	}
+	//===================================================
+	// Gilles De Rais : Rlyeh Text - Grief
+	//===================================================
+	"gilles_grief_upgrade"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/gilles/gilles_grief"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/gilles/gilles_grief"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_2"
+
+		"AnimationPlaybackRate" 		"1.5"
+		"AOERadius"						"%radius"		
+		
+		"precache"
+		{
+			
+		}
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"750"
+		"AbilityCastPoint"				"0.25"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"14.0"
+		"AbilityManaCost"				"25"
+
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"mana_cost"			"25"
+			}	
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"300 400 500 600 700"
+			}	
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"1.0 1.5 2.0 2.5 3.0"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"stun_duration"		"1.0"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"void_damage"		"40"
+			}	
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_void_int"	"1"
+			}	
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"300"
+			}
+		}
+	}
+}

@@ -1,0 +1,6 @@
+
+
+"Vo"
+{
+	"npc_dota_hero_templar_assassin_1" "1"
+}

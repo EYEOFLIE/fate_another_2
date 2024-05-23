@@ -1,0 +1,12 @@
+"NewbieBan"
+{
+	"npc_dota_hero_vengefulspirit"		"1" //Angra Mainyu
+	"npc_dota_hero_crystal_maiden"		"1" //Medea
+	"npc_dota_hero_shadow_shaman"		"1" //Gilles
+	"npc_dota_hero_ember_spirit"		"1" //Emiya
+	"npc_dota_hero_juggernaut"			"1" //Sasaki
+	"npc_dota_hero_windrunner"			"1" //Nursery Rhyme
+	"npc_dota_hero_dark_willow"			"1" //Okita
+	"npc_dota_hero_lina"				"1" //Nero
+	"npc_dota_hero_kunkka"				"1" //Muramasa
+}

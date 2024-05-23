@@ -1,0 +1,147 @@
+"DOTAAbilities"
+{
+	//====================================
+	// Lancer : Gae Bolg - Spear Throw
+	//====================================
+	"cu_chulain_gae_bolg_throw"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/cu_chulain/cu_chulain_gae_bolg_throw"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/cu_chulain/cu_chulain_gae_bolg_jump"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_1"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AnimationPlaybackRate" 		"0.5"
+		"AbilityCastRange"				"1000"
+		"AbilityCastPoint"				"0.6"
+		"AbilityCooldown"				"30.0"
+		"AbilityManaCost"				"800"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"cast_delay"				"0.6"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"750 975 1200 1425 1650"
+			}
+			
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"550"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"range"				"1000"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"speed"				"1900"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"knock_duration"	"0.25"
+			}
+			"07"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"stun_duration"		"0.5"
+			}
+			"08"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"disarm"			"3.0"
+			}
+		}
+	}
+	//====================================
+	// Lancer : Gae Bolg - Spear Throw (The Spear of Striking Death Flight SA)
+	//====================================
+	"cu_chulain_gae_bolg_throw_upgrade"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/cu_chulain/cu_chulain_gae_bolg_throw"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/cu_chulain/cu_chulain_gae_bolg_jump"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_1"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AnimationPlaybackRate" 		"0.5"
+		"AbilityCastRange"				"1600"
+		"AbilityCastPoint"				"0.6"
+		"AbilityCooldown"				"30.0"
+		"AbilityManaCost"				"800"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"cast_delay"				"0.6"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"850 1075 1300 1525 1750"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_agi"			"5"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"550"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"range"				"1600"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"speed"				"1900"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"knock_duration"	"0.25"
+			}
+			"07"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"stun_duration"		"0.5"
+			}
+			"08"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"disarm"			"3.0"
+			}
+		}
+	}
+}

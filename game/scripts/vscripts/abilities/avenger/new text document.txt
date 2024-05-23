@@ -1,0 +1,633 @@
+
+function OnDPStart(keys)
+	local caster = keys.caster
+	local ability = keys.ability
+	local casterPos = caster:GetAbsOrigin()
+	local targetPoint = ability:GetCursorPosition()
+	local health_cost = ability:GetSpecialValueFor("health_cost")
+	local range = ability:GetSpecialValueFor("range")
+	local penalty_cooldown = ability:GetSpecialValueFor("penalty_cooldown")
+	local currentHealthCost = 0
+    local ply = caster:GetPlayerOwner()
+
+	if IsLocked(caster) then 
+		ability:EndCooldown()
+		SendErrorMessage(caster:GetPlayerOwnerID(), "#Cannot_Blink")
+		return
+	end
+
+	if GridNav:IsBlocked(targetPoint) or not GridNav:IsTraversable(targetPoint) then
+		ability:EndCooldown()  
+		SendErrorMessage(caster:GetPlayerOwnerID(), "#Cannot_Travel")
+		return 
+	end 
+
+	local currentStack = caster:GetModifierStackCount("modifier_dark_passage", caster) or 0
+	currentHealthCost = health_cost * 2 ^ currentStack
+	if currentStack == 0 and caster:HasModifier("modifier_dark_passage") then currentStack = 1 end
+	caster:RemoveModifierByName("modifier_dark_passage") 
+	ability:ApplyDataDrivenModifier(caster, caster, "modifier_dark_passage", {}) 
+	caster:SetModifierStackCount("modifier_dark_passage", caster, currentStack + 1)
+
+	if caster:GetHealth() <= currentHealthCost then
+		caster:SetHealth(1)
+		ability:EndCooldown()
+		ability:StartCooldown(penalty_cooldown)
+	else
+		caster:SetHealth(caster:GetHealth() - currentHealthCost)
+	end
+	
+	-- Create particle at start point
+	local startParticleIndex = ParticleManager:CreateParticle( "particles/custom/avenger/avenger_dark_passage_start.vpcf", PATTACH_CUSTOMORIGIN, caster )
+	ParticleManager:SetParticleControl( startParticleIndex, 0, caster:GetAbsOrigin() )
+	Timers:CreateTimer( 2.0, function()
+		ParticleManager:DestroyParticle( startParticleIndex, false )
+		ParticleManager:ReleaseParticleIndex( startParticleIndex )
+	end)
+	
+	caster:EmitSound("Hero_Antimage.Blink_out")
+	
+	local diff = targetPoint - caster:GetAbsOrigin()
+	Timers:CreateTimer(0.033, function()
+		if diff:Length2D() > range then
+			targetPoint = caster:GetAbsOrigin() + diff:Normalized() * range
+		end
+
+		local i = 1
+		while GridNav:IsBlocked(targetPoint) or not GridNav:IsTraversable(targetPoint) do
+			i = i+1
+			targetPoint = caster:GetAbsOrigin() + diff:Normalized() * (range - i*50)
+		end
+		caster:SetAbsOrigin(targetPoint)
+		FindClearSpaceForUnit(caster, targetPoint, true)
+		ProjectileManager:ProjectileDodge(caster)
+		caster:EmitSound("Hero_Antimage.Blink_in")
+			
+		-- Create end particle
+		-- Create particle at start point
+		local endParticleIndex = ParticleManager:CreateParticle( "particles/custom/avenger/avenger_dark_passage_end.vpcf", PATTACH_CUSTOMORIGIN, caster )
+		ParticleManager:SetParticleControl( endParticleIndex, 0, caster:GetAbsOrigin() )
+		Timers:CreateTimer( 2.0, function()
+			ParticleManager:DestroyParticle( endParticleIndex, false )
+			ParticleManager:ReleaseParticleIndex( endParticleIndex )
+		end)
+	end)
+end
+
+function OnDarkPassageRespawn(keys)
+	local caster = keys.caster
+	local ability = keys.ability
+	caster:RemoveModifierByName("modifier_dark_passage")
+	ability:EndCooldown()
+end
+
+function OnMurderStart(keys)
+	local caster = keys.caster 
+	local ability = keys.ability 
+
+	if caster:HasModifier("modifier_murderous_instinct_debuff") then 
+		caster:RemoveModifierByName("modifier_murderous_instinct_debuff")
+	end
+
+	ability:ApplyDataDrivenModifier(caster, caster, "modifier_murderous_instinct_buff", {}) 
+end 
+
+function OnMurderDebuff(keys)
+	local caster = keys.caster 
+	local ability = keys.ability 
+	ability:ApplyDataDrivenModifier(caster, caster, "modifier_murderous_instinct_debuff", {}) 
+end
+
+function OnMurderUpgrade(keys)
+	local caster = keys.caster 
+
+end
+
+function OnRemainStart(keys)
+	local caster = keys.caster
+	local ability = keys.ability
+	ability:ApplyDataDrivenModifier(caster, caster, "modifier_avenger_death_checker", {})
+	local attackmove = {
+		UnitIndex = nil,
+		OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+		Position = nil
+	}
+	caster:EmitSound("Hero_Nevermore.Shadowraze")
+	local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_nevermore/nevermore_shadowraze.vpcf", PATTACH_CUSTOMORIGIN, caster)
+	ParticleManager:SetParticleControl(particle, 0, caster:GetAbsOrigin() + caster:GetForwardVector() * 200) 
+	Timers:CreateTimer( 2.0, function()
+		ParticleManager:DestroyParticle( particle, false )
+		ParticleManager:ReleaseParticleIndex( particle )
+	end)
+
+	for i=1, keys.SpawnNumber do
+		local remain = CreateUnitByName("avenger_remain", caster:GetAbsOrigin() + caster:GetForwardVector() * 200, true, nil, nil, caster:GetTeamNumber()) 
+		--remain:SetControllableByPlayer(caster:GetPlayerID(), true)
+		remain:SetOwner(caster:GetPlayerOwner():GetAssignedHero())
+		LevelAllAbility(remain)
+		FindClearSpaceForUnit(remain, remain:GetAbsOrigin(), true)
+		remain:FindAbilityByName("avenger_remain_passive"):SetLevel(keys.ability:GetLevel())
+		remain:AddNewModifier(caster, nil, "modifier_kill", {duration = 24})
+		Timers:CreateTimer(3.0, function() 
+			if not remain:IsAlive() then return end
+			attackmove.UnitIndex = remain:entindex()
+			attackmove.Position = remain:GetAbsOrigin() + RandomVector(1000) 
+			ExecuteOrderFromTable(attackmove)
+			return 3.0
+		end)
+	end
+
+
+end
+
+function OnRemainDeath(keys)
+	local caster = keys.caster
+	local summons = FindUnitsInRadius(caster:GetTeam(), caster:GetAbsOrigin(), nil, 20000, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_ALL, 0, FIND_CLOSEST, false)
+	for k,v in pairs(summons) do
+		--print("Found unit " .. v:GetUnitName())
+		if v:GetUnitName() == "avenger_remain" then
+			v:ForceKill(true) 
+		end
+	end
+end
+
+function OnRemainExplode(keys)
+	local caster = keys.caster
+	local target = keys.target
+	if (target:GetName() == "npc_dota_ward_base") or caster.IsDamageDone then
+		return
+	end
+	caster.IsDamageDone = true
+	caster:EmitSound("Hero_Broodmother.SpawnSpiderlingsImpact")
+	local targets = FindUnitsInRadius(caster:GetTeam(), caster:GetOrigin(), nil, 250
+            , DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_ALL, 0, FIND_ANY_ORDER, false)
+	for k,v in pairs(targets) do
+         DoDamage(caster, v, keys.Damage, DAMAGE_TYPE_MAGICAL, 0, keys.ability, false)
+    end
+    caster:ForceKill(true)
+end
+
+function OnRemainMultiplyStart(keys)
+	local caster = keys.caster
+	Timers:CreateTimer(0.033, function()
+		local avenger = caster:GetPlayerOwner():GetAssignedHero()
+		local remainabil = avenger:FindAbilityByName("avenger_unlimited_remains")
+		local period = remainabil:GetLevelSpecialValueFor("multiply_period", remainabil:GetLevel()-1)	
+		Timers:CreateTimer(period, function() 
+			if not IsValidEntity(caster) or not caster:IsAlive() then return end
+			OnRemainMultiply(keys)
+			return period
+		end)	
+	end)
+
+end
+
+function OnRemainMultiply(keys)
+	local caster = keys.caster
+	local attackmove = {
+		UnitIndex = nil,
+		OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+		Position = nil
+	}
+	local remain = CreateUnitByName("avenger_remain", caster:GetAbsOrigin(), true, nil, nil, caster:GetTeamNumber()) 
+	--remain:SetControllableByPlayer(caster:GetPlayerID(), true)
+	remain:SetOwner(caster:GetPlayerOwner():GetAssignedHero())
+	LevelAllAbility(remain)
+	FindClearSpaceForUnit(remain, remain:GetAbsOrigin(), true)
+	remain:FindAbilityByName("avenger_remain_passive"):SetLevel(keys.ability:GetLevel())
+	remain:AddNewModifier(caster, nil, "modifier_kill", {duration = 30})
+	Timers:CreateTimer(3.0, function() 
+		if not remain:IsAlive() then return end
+		attackmove.UnitIndex = remain:entindex()
+		attackmove.Position = remain:GetAbsOrigin() + RandomVector(1000) 
+		ExecuteOrderFromTable(attackmove)
+		return 3.0
+	end)
+end
+
+function OnZarichTawrichStart(keys)
+	local caster = keys.caster 
+	local ability = keys.ability 
+	local target_point = ability:GetCursorPosition() 
+	local origin = caster:GetAbsOrigin()
+	local forwardvec = caster:GetForwardVector() 
+	local rightvec = caster:GetRightVector() 
+	local distance = ability:GetSpecialValueFor("distance")
+	local speed = ability:GetSpecialValueFor("speed")
+	local width = ability:GetSpecialValueFor("width")
+	local self_disarm = ability:GetSpecialValueFor("self_disarm")
+
+
+	if (target_point - origin):Length2D() < 200 then 
+		target_point = origin + (target_point - origin):Normalized() * 200 
+	end
+
+	local range = (target_point - origin):Length2D()
+	local duration = range / speed
+
+	local leftorigin = origin + -rightvec * width /2
+	leftorigin.z = origin.z
+	local rightorigin = origin + rightvec * width /2
+	rightorigin.z = origin.z
+
+	local tawrich = {
+		Ability = ability,
+		EffectName = "particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf",
+		iMoveSpeed = speed,
+		vSpawnOrigin = leftorigin,
+		fDistance = range - width,
+		Source = caster,
+		fStartRadius = width,
+        fEndRadius = width,
+		bHasFrontialCone = true,
+		bReplaceExisting = false,
+		iUnitTargetTeam = DOTA_UNIT_TARGET_TEAM_ENEMY,
+		iUnitTargetFlags = DOTA_UNIT_TARGET_FLAG_NONE,
+		iUnitTargetType = DOTA_UNIT_TARGET_ALL,
+		fExpireTime = GameRules:GetGameTime() + 3,
+		bDeleteOnHit = false,
+		vVelocity = forwardvec * speed,		
+	}
+
+	local zarich = {
+		Ability = ability,
+		EffectName = "particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf",
+		iMoveSpeed = speed,
+		vSpawnOrigin = rightorigin,
+		fDistance = range - width ,
+		Source = caster,
+		fStartRadius = width,
+        fEndRadius = width,
+		bHasFrontialCone = true,
+		bReplaceExisting = false,
+		iUnitTargetTeam = DOTA_UNIT_TARGET_TEAM_ENEMY,
+		iUnitTargetFlags = DOTA_UNIT_TARGET_FLAG_NONE,
+		iUnitTargetType = DOTA_UNIT_TARGET_ALL,
+		fExpireTime = GameRules:GetGameTime() + 3,
+		bDeleteOnHit = false,
+		vVelocity = forwardvec * speed,		
+	}
+
+	local tawrich_projectile = ProjectileManager:CreateLinearProjectile(tawrich)
+	local zarich_projectile = ProjectileManager:CreateLinearProjectile(zarich)
+	local tvelocity = ProjectileManager:GetLinearProjectileVelocity(tawrich_projectile)
+	print(tvelocity)
+	print(tawrich.vVelocity)
+	local current_left 
+	local current_right
+	local new_vec_left 
+	local new_vec_right 
+
+	giveUnitDataDrivenModifier(caster, caster, "disarmed", self_disarm)
+
+	Timers:CreateTimer(duration * 2/3, function()
+		current_left = ProjectileManager:GetLinearProjectileLocation(tawrich_projectile)
+		new_vec_left = (target_point - current_left):Normalized() * speed
+		ProjectileManager:UpdateLinearProjectileDirection(tawrich_projectile, Vector(new_vec_left.x, new_vec_left.y, 0), range)
+		local velocity = ProjectileManager:GetLinearProjectileVelocity(tawrich_projectile)
+		print(velocity)
+
+		current_right = ProjectileManager:GetLinearProjectileLocation(zarich_projectile)
+		new_vec_right = (target_point - current_right):Normalized() * speed
+		ProjectileManager:UpdateLinearProjectileDirection(zarich_projectile, Vector(new_vec_right.x, new_vec_right.y, 0), range)
+		Timers:CreateTimer(duration * 1/3, function()
+			new_vec_left = (current_right - target_point):Normalized() * speed
+			new_vec_right = (current_left - target_point):Normalized() * speed
+			
+			ProjectileManager:UpdateLinearProjectileDirection(tawrich_projectile, Vector(new_vec_left.x, new_vec_left.y, 0), range)
+			ProjectileManager:UpdateLinearProjectileDirection(zarich_projectile, Vector(new_vec_right.x, new_vec_right.y, 0), range)
+			local new_velocity = ProjectileManager:GetLinearProjectileVelocity(tawrich_projectile)
+			print(new_velocity)
+			Timers:CreateTimer(duration * 1/3, function()
+				new_vec_left = -forwardvec * speed
+				new_vec_right = -forwardvec * speed
+				ProjectileManager:UpdateLinearProjectileDirection(tawrich_projectile, Vector(new_vec_left.x, new_vec_left.y, 0), range )
+				ProjectileManager:UpdateLinearProjectileDirection(zarich_projectile, Vector(new_vec_right.x, new_vec_right.y, 0), range )
+			end)
+		end)
+	end)
+
+	Timers:CreateTimer(duration * 2, function()
+		ProjectileManager:DestroyLinearProjectile(tawrich_projectile)
+		ProjectileManager:DestroyLinearProjectile(zarich_projectile)
+	end)
+end
+
+function OnZarichTawrichHit(keys)
+	local caster = keys.caster 
+	local ability = keys.ability 
+	local target = keys.target 
+
+	if target == nil then return end 
+
+	local cc_duration = ability:GetSpecialValueFor("active_cc_duration")
+
+	if target.ZarichTawrichHit == nil then 
+		target.ZarichTawrichHit = 0 
+	end
+
+	if target.ZarichTawrichHit < 1 then 
+		if not target:IsMagicImmune() then
+			giveUnitDataDrivenModifier(caster, target, "silenced", cc_duration)
+		end
+		giveUnitDataDrivenModifier(caster, target, "disarmed", cc_duration)
+		
+	end
+
+	target.ZarichTawrichHit = target.ZarichTawrichHit + 1
+
+	Timers:CreateTimer(1.0,function()
+		target.ZarichTawrichHit = 0 
+	end)
+
+	ability:ApplyDataDrivenModifier(caster, target, "modifier_tawrich_zarich_damage", {}) 
+	if not IsImmuneToSlow(target) and not target:IsMagicImmune() then 
+		ability:ApplyDataDrivenModifier(caster, target, "modifier_tawrich_zarich_slow", {}) 
+	end
+end
+
+function OnZarichTawrichDamage(keys)
+	local caster = keys.caster 
+	local ability = keys.ability 
+	local target = keys.target 
+	local total_damage = ability:GetSpecialValueFor("total_damage")
+
+	DoDamage(caster, target, total_damage / 6, DAMAGE_TYPE_PHYSICAL, 0, ability, false)
+
+	target:EmitSound("Hero_BountyHunter.Jinada")
+	local particle = ParticleManager:CreateParticle("particles/econ/courier/courier_mechjaw/mechjaw_death_sparks.vpcf", PATTACH_CUSTOMORIGIN, caster)
+	ParticleManager:SetParticleControl(particle, 0, target:GetAbsOrigin()) 
+	Timers:CreateTimer( 2.0, function()
+		ParticleManager:DestroyParticle( particle, false )
+		ParticleManager:ReleaseParticleIndex( particle )
+	end)
+end
+
+function OnZarichAttack(keys)
+	local caster = keys.caster 
+	local ability = keys.ability 
+	local target = keys.target 
+	local passive_silence = ability:GetSpecialValueFor("passive_silence")
+	local cc_duration = ability:GetSpecialValueFor("passive_silence_duration")
+
+	if target:IsMagicImmune() then return end
+	if target:HasModifier("modifier_tawrich_zarich_cooldown") then return end
+
+	if RandomInt(1, 100) <= passive_silence then 
+		giveUnitDataDrivenModifier(caster, target, "silenced", cc_duration)
+		ability:ApplyDataDrivenModifier(caster, target, "modifier_tawrich_zarich_cooldown ", {}) 
+	end
+end
+
+function OnTawrichAttack(keys)
+	local caster = keys.caster 
+	local ability = keys.ability 
+	local target = keys.target 
+	local passive_disarm = ability:GetSpecialValueFor("passive_disarm")
+	local cc_duration = ability:GetSpecialValueFor("passive_disarm_duration")
+
+	if target:HasModifier("modifier_tawrich_zarich_cooldown") then return end
+
+	if RandomInt(1, 100) <= passive_silence then 
+		giveUnitDataDrivenModifier(caster, target, "disarmed", cc_duration)
+		ability:ApplyDataDrivenModifier(caster, target, "modifier_tawrich_zarich_cooldown", {}) 
+	end
+end
+
+function OnVengeanceStart(keys)
+	local caster = keys.caster
+	local target = keys.target
+	local ability = keys.ability
+	local damage = ability:GetSpecialValueFor("damage")
+
+	if IsSpellBlocked(target) then return end
+	ability:ApplyDataDrivenModifier(caster, target, "modifier_vengeance_mark", {})
+	DoDamage(caster, target, damage, DAMAGE_TYPE_MAGICAL, 0, ability, false)
+
+	caster:EmitSound("Hero_DoomBringer.Devour")
+	local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_doom_bringer/doom_bringer_lvl_death_bonus.vpcf", PATTACH_ABSORIGIN, target)
+	ParticleManager:SetParticleControl(particle, 0, target:GetAbsOrigin())
+end
+
+function OnVengeanceEnd(keys)
+	local caster = keys.caster
+	local target = keys.target
+	local ability = keys.ability
+	local damage = ability:GetSpecialValueFor("damage")
+	local return_percentage = ability:GetSpecialValueFor("return_percentage") / 100
+	DoDamage(target, caster, damage * return_percentage, DAMAGE_TYPE_MAGICAL, 0, ability, false)
+end
+
+function OnTFStart(keys)
+	local caster = keys.caster
+	local ability = keys.ability
+
+	ability:ApplyDataDrivenModifier(caster, caster, "modifier_true_form", {}) 
+	AvengerCheckCombo(caster, ability)
+
+    caster:EmitSound("Avenger.TransformShort")
+end
+
+function OnTFCreate(keys)
+	local caster = keys.caster
+	local ability = keys.ability
+	caster:SetModel("models/avenger/trueform/trueform.vmdl")
+    caster:SetOriginalModel("models/avenger/trueform/trueform.vmdl")
+    caster:SetModelScale(1.1)
+
+    caster:SwapAbilities("avenger_murderous_instinct", "avenger_unlimited_remains", false, true) 
+    caster:SwapAbilities("avenger_tawrich_zarich", "avenger_vengeance_mark", false, true) 
+    caster:SwapAbilities("avenger_true_form", "avenger_demon_core", false, true)
+end
+
+function OnTFDestroy(keys)
+	local caster = keys.caster
+	caster:SetModel("models/avenger/avenger.vmdl")
+    caster:SetOriginalModel("models/avenger/avenger.vmdl")
+    caster:SetModelScale(0.8)
+
+	caster:SwapAbilities("avenger_murderous_instinct", "avenger_unlimited_remains", true, false) 
+    caster:SwapAbilities("avenger_tawrich_zarich", "avenger_vengeance_mark", true, false) 
+    caster:SwapAbilities("avenger_true_form", "avenger_demon_core", true, false)
+end
+
+function OnTFDeath(keys)
+	local caster = keys.caster 
+	caster:RemoveModifierByName("modifier_true_form")
+end
+
+function OnTFUpgrade(keys)
+	local caster = keys.caster 
+
+
+end
+
+function OnDCToggleOn(keys)
+	local caster = keys.caster
+	local ability = keys.ability
+
+	ability:ApplyDataDrivenModifier(caster, caster, "modifier_demon_core", {})
+end
+
+
+function OnDCTick(keys)
+	local caster = keys.caster
+	local ability = keys.ability
+	local mana_cost = ability:GetSpecialValueFor("mana_cost_per_second")
+	-- If Demon Core is not toggled on or caster has less than 50 mana, remove buff 
+	if not ability:GetToggleState() or caster:GetMana() < mana_cost * 0.25 or not caster:HasModifier("modifier_true_form") then 
+		caster:RemoveModifierByName("modifier_demon_core")
+		return
+	end
+	-- Reduce mana and process attribute stuffs
+	caster:SpendMana(mana_cost * 0.25, ability)
+	--caster:SetMana(caster:GetMana() - 25) 
+	if caster.IsDIAcquired then 
+		local trueform = caster:FindAbilityByName("avenger_true_form")
+		local trueformcd = trueform:GetCooldownTimeRemaining() 
+		trueform:EndCooldown()
+		trueform:StartCooldown(trueformcd - 0.5)
+	end
+end
+
+function TurnDCOff(keys)
+	local caster = keys.caster
+	local demoncore = caster:FindAbilityByName("avenger_demon_core")
+    if demoncore:GetToggleState() then
+    	demoncore:ToggleAbility()
+    end
+end
+
+function OnVergAvestaDamageTrack (keys)
+	local caster = keys.caster 
+	local ability = keys.ability 
+	local target = keys.target
+	local attacker = keys.attacker
+	caster.verg_damage_taken = keys.DamageTaken
+	local marker_duration = ability:GetSpecialValueFor("duration")
+
+	caster.verg_damage_taken = math.min((caster.verg_damage_taken or 0) , caster:GetMaxHealth())
+
+	ability:ApplyDataDrivenModifier(caster, caster, "modifier_verg_damage_tracker_progress",{})
+
+	ability:ApplyDataDrivenModifier(caster, attacker, "modifier_verg_marker", {})		
+
+	if not attacker:IsHero() then
+		local attacker2 = attacker:GetPlayerOwner():GetAssignedHero()
+		ability:ApplyDataDrivenModifier(caster, attacker2, "modifier_verg_marker", {})	
+	end
+
+	caster:SetModifierStackCount("modifier_verg_damage_tracker", caster, math.min(caster.vergstack + (keys.DamageTaken), caster:GetMaxHealth()))
+
+end
+
+function OnVergAvestaReset (keys)
+	local caster = keys.caster 
+	local ability = keys.ability 
+
+	caster.vergstack = caster:GetModifierStackCount("modifier_verg_damage_tracker", caster) or 0
+	caster:SetModifierStackCount("modifier_verg_damage_tracker", caster, math.min(caster.vergstack, caster:GetMaxHealth()))
+
+	if caster:HasModifier("modifier_verg_damage_tracker_progress") then return end
+
+	caster:SetModifierStackCount("modifier_verg_damage_tracker", caster, 0)
+	caster.verg_damage_taken = 0
+end
+
+function OnVergAvestaStart (keys)
+	local caster = keys.caster
+	local ability = keys.ability 
+	local multiplier = ability:GetSpecialValueFor("multiplier")
+
+	if caster.IsDemonReincarnateAcquired then
+		multiplier = multiplier + 20
+	end
+	
+	local VergMarker = FindUnitsInRadius(caster:GetTeam(), Vector(0,0,0), nil, 20000, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_NONE, FIND_UNITS_EVERYWHERE, false)
+	for k,targets in pairs(VergMarker) do
+		if targets:HasModifier("modifier_verg_marker") then
+			damage = caster.vergstack * (multiplier / 100)
+			DoDamage(caster, targets, damage, DAMAGE_TYPE_MAGICAL, DOTA_DAMAGE_FLAG_BYPASSES_INVULNERABILITY, ability, none, false)
+			caster:RemoveModifierByName("modifier_verg_damage_tracker_progress")
+		end
+	end
+end
+
+EUsed = false 
+ETime = 0
+
+function AvengerCheckCombo(caster, ability)
+	if math.cei(caster:GetStrength()) >= 25 and math.cei(caster:GetAgility()) >= 25 and  math.cei(caster:GetIntellect()) >= 25 then 
+		if ability == caster:FindAbilityByName("avenger_true_form") then
+			EUsed = true
+			ETime = GameRules:GetGameTime()
+			Timers:CreateTimer({
+				endTime = 4,
+				callback = function()
+				EUsed = false
+			end})
+		elseif ability == caster:FindAbilityByName("avenger_unlimited_remains") and caster:FindAbilityByName("avenger_4_days_loop"):IsCooldownReady() and not caster:HasModifier("modifier_4_days_loop_cooldown") then
+			if EUsed == true then 
+				ability:ApplyDataDrivenModifier(caster, caster, "modifier_4_days_loop_window", {})	
+			end
+		end
+	end
+end 
+
+function On4DaysLoopStart (keys)
+	local caster = keys.caster 
+	local ability = keys.ability 
+	local revive_stack = ability:GetSpecialValueFor("revive_stack")
+
+	-- Set master's combo cooldown
+	local masterCombo = caster.MasterUnit2:FindAbilityByName(ability:GetAbilityName())
+	masterCombo:EndCooldown()
+	masterCombo:StartCooldown(ability:GetCooldown(1))
+	ability:ApplyDataDrivenModifier(caster, caster, "modifier_endless_loop_cooldown", {duration = ability:GetCooldown(ability:GetLevel())})
+
+	EmitGlobalSound("Avenger.Darkness")
+	EmitGlobalSound("Avenger.Berg")
+
+	caster.DeathInLoop = false
+	caster.CurrentHp = GetHealth()
+	caster.CurrentMana = GetMana()
+	caster.Combo_origin = caster:GetAbsOrigin()
+
+	caster:RemoveModifierByName("modifier_4_days_loop_window")
+	ability:ApplyDataDrivenModifier(caster, caster, "modifier_4_days_loop_cooldown", {})
+	ability:ApplyDataDrivenModifier(caster, caster, "modifier_4_days_loop", {})
+	caster:SetModifierStackCount("modifier_4_days_loop", caster, revive_stack)
+end
+
+function On4DaysLoopThink (keys)
+	local caster = keys.caster 
+	local ability = keys.ability 
+
+	ResetAbilities(caster)
+	ResetItems(caster)
+	caster:SetHealth(caster.CurrentHp)
+	caster:SetMana(caster.CurrentMana)
+	caster:SetModifierStackCount("modifier_4_days_loop", caster, caster.fourdayloopstack - 1)
+end
+
+--dead while in loop
+function On4DaysLoopDead (keys)
+	local caster = keys.caster
+	local ability = keys.ability
+
+	if caster:HasModifier("modifier_4_days_loop") then
+		caster:SetTimeUntilRespawn(0.0)
+		caster:SetRespawnPosition(caster.Combo_origin)
+		caster:SetHealth(caster.CurrentHp)
+		caster:SetMana(caster.CurrentMana)
+		if caster.IsAtTheEndOfFourNightsAcquired then
+			caster:SetModifierStackCount("modifier_4_days_loop", caster, caster.fourdayloopstack - 1)
+			if caster.fourdayloopstack - 1 <= 0 then
+				caster:RemoveModifierByName("modifier_4_days_loop")
+			end
+		else
+			caster:RemoveModifierByName("modifier_4_days_loop")
+		end
+		caster.DeathInLoop = true
+	end
+end

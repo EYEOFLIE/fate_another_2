@@ -1,0 +1,419 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Ishtar: Innate : Gem creation (D)
+	//=================================================================================================================
+	"ishtar_d"
+	{		
+		//General-------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/ishtar/ishtar_d"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityTextureName"			"custom/ishtar/ishtar_d"
+		"MaxLevel"						"1"
+
+		//Casting-------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0"
+		"AbilityManaCost"				"50"
+		"AbilityGoldCost"				"300"
+		"AnimationPlaybackRate"			"1"
+
+		//Time----------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"1"
+
+		//Targeting-----------------------------------------------------------------------------------------------------
+	    "AbilityUnitTargetTeam"  		"DOTA_UNIT_TARGET_TEAM_NONE"
+
+		"AbilityValues"
+		{
+			"gem_cost"					"300"
+			"max_gem"					"5"
+			"gem_loss"					"1"
+		}
+	}
+	//=================================================================================================================
+	// Ishtar: Innate : Gem creation (D) (SA)
+	//=================================================================================================================
+	"ishtar_d_upgrade"
+	{		
+		//General-------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/ishtar/ishtar_d"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityTextureName"			"custom/ishtar/ishtar_d"
+		"MaxLevel"						"1"
+
+		//Casting-------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0"
+		"AbilityManaCost"				"0"
+		"AbilityGoldCost"				"800"
+		"AnimationPlaybackRate"			"1"
+
+		//Time----------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"1"
+
+		//Targeting-----------------------------------------------------------------------------------------------------
+	    "AbilityUnitTargetTeam"  		"DOTA_UNIT_TARGET_TEAM_NONE"
+
+		"AbilityValues"
+		{
+			"gem_cost"					"800"
+		}
+	}
+	//=================================================================================================================
+	// Ishtar: Innate : Gem Consume (F)
+	//=================================================================================================================
+	"ishtar_f"
+	{		
+		//General-------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/ishtar/ishtar_d"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityTextureName"			"custom/ishtar/ishtar_d"
+		"MaxLevel"						"1"
+
+		//Casting-------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0"
+		"AbilityManaCost"				"0"
+
+		//Time----------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"0"
+
+		//Targeting-----------------------------------------------------------------------------------------------------
+	    "AbilityUnitTargetTeam"  		"DOTA_UNIT_TARGET_TEAM_NONE"
+	}
+	//=================================================================================================================
+	// Ishtar: Gem Shot (Q)
+	//=================================================================================================================
+	"ishtar_q"
+	{
+		//General-------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/ishtar/ishtar_q"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/ishtar/ishtar_q"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+
+		//Casting-------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1000"	
+		"AbilityCastPoint"				"0.15"
+		"AbilityManaCost"				"100"
+
+		//Time----------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"15 14 13 12 11"
+		
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"cast_delay"					"0.15"
+			"gem_consume"					"1"
+			"distance"						"1000"
+			"arrow"							"4"
+			"damage"						"150 170 190 210 230"
+			"gem_dmg"						"40"
+			"speed"							"1700"
+			"width"							"130"
+		}
+	}
+	//=================================================================================================================
+	// Ishtar: Gem Shot (Q)
+	//=================================================================================================================
+	"ishtar_q_upgrade"
+	{
+		//General-------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/ishtar/ishtar_q"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/ishtar/ishtar_q"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+
+		//Casting-------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1100"	
+		"AbilityCastPoint"				"0.15"
+		"AbilityManaCost"				"100"
+
+		//Time----------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"15 14 13 12 11"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"cast_delay"					"0.15"
+			"gem_consume"					"1"
+			"distance"						"1100"
+			"arrow"							"5"
+			"damage"						"150 170 190 210 230"
+			"gem_dmg"						"40"
+			"speed"							"1700"
+			"width"							"130"
+			"slow"							"20"
+			"slow_dur"						"1.5"
+		}
+	}
+	//=================================================================================================================
+	// Ishtar: Das (W)
+	//=================================================================================================================
+	"ishtar_w"
+	{	
+		//General-------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/ishtar/ishtar_w"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/ishtar/ishtar_w"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+
+		//Casting-------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1300"	
+		"AbilityCastPoint"				"0.0"
+		"AbilityManaCost"				"200"
+		"AbilityChannelTime"      		"1"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+
+		//Time----------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"18 16 14 12 10"
+
+		"AbilityValues"
+		{
+			"cast_delay"			"0"
+			"gem_consume"			"1"
+			"speed"					"110"
+			"dash_duration"			"1.5"
+			"dash_range"			"1300"
+			"damage"				"200 250 300 350 400"
+			"gem_knock"				"200"
+			"turn_rate_reduction"	"-100"
+		}
+	}
+	//=================================================================================================================
+	// Ishtar : Gem Bombard
+	//=================================================================================================================
+	"ishtar_e"
+	{	
+		//General-------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/ishtar/ishtar_e"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/ishtar/ishtar_e"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+
+		//Casting-------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"950"
+		"AbilityCastPoint"				"0.1"
+		"AbilityManaCost"				"400"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+
+		//Time----------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"38 35 32 29 26"
+
+		"AbilityValues"
+		{
+			"delay"					"0.3"
+			"range"					"950"
+			"max_range"				"2000"
+			"aoe"					"400"
+			"gem_consume"			"2"
+			"arrows"				"5 6 7 8 9"
+			"gem_arrows"			"2"
+			"speed"					"1800"
+			"damage"				"100"
+		}
+	}
+	//=================================================================================================================
+	// Ishtar : Gem Bombard
+	//=================================================================================================================
+	"ishtar_e_upgrade"
+	{	
+		//General-------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/ishtar/ishtar_e"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/ishtar/ishtar_e"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+
+		//Casting-------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"950"
+		"AbilityCastPoint"				"0.1"
+		"AbilityManaCost"				"400"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+
+		//Time----------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"38 35 32 29 26"
+
+		"AbilityValues"
+		{
+			"delay"					"0.3"
+			"range"					"1050"
+			"max_range"				"2500"
+			"aoe"					"400"
+			"max_gem"				"1"
+			"arrows"				"5 6 7 8 9"
+			"gem_arrows"			"2"
+			"speed"					"1800"
+			"damage"				"150"
+		}
+	}
+	//=================================================================================================================
+	// Ishtar : Ult R
+	//=================================================================================================================
+	"ishtar_r"
+	{	
+		//General-------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/ishtar/ishtar_r"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/ishtar/ishtar_r"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+
+		//Casting-------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1800"
+		"AbilityCastPoint"				"0.05"
+		"AbilityChannelTime"      		"3"
+		"AbilityManaCost"				"800"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
+
+		//Time----------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"52 50 48 46 44"
+
+		"AbilityValues"
+		{
+			"channel"				"3"
+			"gem_consume"			"2"
+			"range"					"1800"
+			"range_bonus_channel"	"200"
+			"width"					"180"
+			"speed"					"2000"
+			"speed_bonus_channel"	"200"
+			"damage"				"300 400 500 600 700"
+			"impact_radius"			"400"
+			"min_damage_impact"		"400 550 700 850 1000"	
+			"max_damage_impact"		"700 850 1000 1150 1300"
+			"damage_bonus_channel"	"100"	
+			"gem_delay"				"1.0"	
+			"gem_range"				"1500"
+			"gem_burst_damage"		"800 1000 1200 1400 1600"
+			"gem_bonus_dps"			"400"	
+			"gem_aoe"				"400"
+		}
+	}
+	//=================================================================================================================
+	// Ishtar : Combo (Goddess of beauty)
+	//=================================================================================================================
+	"ishtar_combo"
+	{	
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/ishtar/ishtar_combo"
+		"MaxLevel"						"1"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/ishtar/ishtar_combo"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
+		"AbilityCastPoint"				"0.2"
+
+		"AbilityCooldown"				"150"
+		"AbilityManaCost"				"800"
+		"AbilityValues"
+		{
+			"cast_delay"			"4"
+			"gem_consume"			"2"
+			"range"					"1800"
+			"range_bonus_channel"	"200"
+			"width"					"180"
+			"speed"					"2000"
+			"speed_bonus_channel"	"200"
+			"damage"				"300 400 500 600 700"
+			"impact_radius"			"400"
+			"min_damage_impact"		"400 550 700 850 1000"	
+			"max_damage_impact"		"700 850 1000 1150 1300"
+			"damage_bonus_channel"	"100"	
+			"gem_delay"				"1.0"	
+			"gem_range"				"1500"
+			"gem_burst_damage"		"800 1000 1200 1400 1600"
+			"gem_bonus_dps"			"400"	
+			"gem_aoe"				"400"
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"max_teleport_range"	"1750"
+			}
+			"03"
+			{				
+				"var_type"				"FIELD_FLOAT"
+				"speed"					"4000"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"impact_radius"			"800"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage"				"2500"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage_per_gem"		"150"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"arrow_range"			"2000"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"dps"					"120"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"dps_duration"			"2.5"
+			}
+		}
+	}

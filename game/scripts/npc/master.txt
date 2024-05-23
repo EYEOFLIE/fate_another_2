@@ -1,0 +1,187 @@
+
+
+Master
+{
+	"01" // Emiya Shirou
+	{
+		"id"			"1" 
+		"name"			"master_1"
+		"model"			""
+		"cost"			"0"
+		"bonus"			"false"
+		"skinlist"		"0"
+	}
+	"02" // Tohsaka Rin
+	{
+		"id"			"2" 
+		"name"			"master_2"
+		"model"			""
+		"cost"			"0"
+		"bonus"			"false"
+		"skinlist"		"0"
+	}
+	"03" // Kotomine Kirei
+	{
+		"id"			"3" 
+		"name"			"master_3"
+		"model"			""
+		"cost"			"2000"
+		"skinlist"		"0"
+		"bonus"		
+		{
+			"hp"		"1"
+		}
+	}
+	"04" // Matou Sakura
+	{
+		"id"			"4" 
+		"name"			"master_4"
+		"model"			""
+		"cost"			"3000"
+		"skinlist"		"0"
+		"bonus"		
+		{
+			"int"		"1"
+			"mana_reg"	"1"
+		}
+	}
+	"05" // Matou Shinji
+	{
+		"id"			"5" 
+		"name"			"master_5"
+		"model"			""
+		"cost"			"1000"
+		"skinlist"		"0"
+		"bonus"		
+		{
+			"ms"		"10"
+		}
+	}
+	"06" // Illya von Einzbern
+	{
+		"id"			"6" 
+		"name"			"master_6"
+		"model"			""
+		"cost"			"4000"
+		"skinlist"		"0"
+		"bonus"		
+		{
+			"mana_reg"	"3"
+		}
+	}
+	"07" // Kiritsugu
+	{
+		"id"			"7" 
+		"name"			"master_7"
+		"model"			""
+		"cost"			"4000"
+		"skinlist"		"0"
+		"bonus"		
+		{
+			"agi"		"2"
+			"as"		"5"
+		}
+	}
+	"08" // Keyneth El-Melloi Archibald
+	{
+		"id"			"8" 
+		"name"			"master_8"
+		"model"			""
+		"cost"			"3000"
+		"skinlist"		"0"
+		"bonus"		
+		{
+			"int"		"1"
+			"mana_reg"	"1"
+		}
+	}
+	"09" // Waver Velvet
+	{
+		"id"			"9" 
+		"name"			"master_9"
+		"model"			""
+		"cost"			"3000"
+		"skinlist"		"0"
+		"bonus"		
+		{
+			"int"		"2"
+		}
+	}
+	"10" // Kishinami Hakuno
+	{
+		"id"			"10" 
+		"name"			"master_10"
+		"model"			""
+		"cost"			"3000"
+		"skinlist"		"0"
+		"bonus"		
+		{
+			"str"		"1"
+			"agi"		"1"
+		}
+	}
+	"11" // Gudako
+	{
+		"id"			"11" 
+		"name"			"master_11"
+		"model"			""
+		"cost"			"3000"
+		"skinlist"		"0"
+		"bonus"		
+		{
+			"str"		"1"
+			"int"		"1"
+		}
+	}
+	"12" // Barzet
+	{
+		"id"			"12" 
+		"name"			"master_12"
+		"model"			""
+		"cost"			"4000"
+		"skinlist"		"0"
+		"bonus"		
+		{
+			"agi"		"3"
+		}
+	}
+	"13" // Karen Hortensia
+	{
+		"id"			"13" 
+		"name"			"master_13"
+		"model"			""
+		"cost"			"3000"
+		"skinlist"		"0"
+		"bonus"		
+		{
+			"int"		"1"
+			"hp"		"1"
+		}
+	}
+	"14" // Irisviel von Einzbern
+	{
+		"id"			"14" 
+		"name"			"master_14"
+		"model"			""
+		"cost"			"4000"
+		"skinlist"		"0"
+		"bonus"		
+		{
+			"int"		"2"
+			"mana_reg"	"1"
+		}
+	}
+	"15" // Reines El-Melloi Archibald
+	{
+		"id"			"15" 
+		"name"			"master_15"
+		"model"			""
+		"cost"			"4000"
+		"skinlist"		"0"
+		"bonus"		
+		{
+			"int"		"2"
+			"agi"		"1"
+		}
+	}
+}

@@ -1,0 +1,72 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Lancer : Disengage
+	//=================================================================================================================
+	"cu_chulain_disengage"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/cu_chulain/cu_chulain_rune_of_disengage"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"			"phantom_lancer_juxtapose"
+		
+		"AbilityCastPoint"				"0.3"
+		"AbilityManaCost"				"100"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_1"
+		"AnimationPlaybackRate" 		"1.0"
+		"AbilityCooldown"				"15 14 13 12 11"
+
+		"precache"
+		{
+
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type" 		"FIELD_INTEGER"
+				"distance"		"600 700 800 900 1000"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Lancer : Disengage (Rune Magic SA)
+	//=================================================================================================================
+	"cu_chulain_disengage_upgrade"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/cu_chulain/cu_chulain_rune_of_disengage"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"			"phantom_lancer_juxtapose"
+		
+		"AbilityCastPoint"				"0.3"
+		"AbilityManaCost"				"100"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_1"
+		"AnimationPlaybackRate" 		"1.0"
+		"AbilityCooldown"				"15 14 13 12 11"
+
+		"precache"
+		{
+
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type" 		"FIELD_INTEGER"
+				"distance"		"600 700 800 900 1000"
+			}
+			"01"
+			{
+				"var_type" 		"FIELD_INTEGER"
+				"heal"			"300 350 400 450 500"
+			}
+		}
+	}
+}

@@ -1,0 +1,23 @@
+
+"SpecificBan"
+{
+	"79643024"	//tyrant rikka
+	{
+		"npc_dota_hero_windrunner"		"1" //Nursery Rhyme
+	}	
+	//"155068590"	 //Ruri	
+	//{
+		//"npc_dota_hero_sven"		"1" //Lancelot
+	//}
+	//"379023591"	//Exo
+	//{
+	//	"npc_dota_hero_ember_spirit"		"1" //Emiya
+	//	"npc_dota_hero_beastmaster"			"1" //Karna
+	//}
+	"1192038691"		// Erika
+	{
+		"npc_dota_hero_ember_spirit"	"1" //Emiya
+		"npc_dota_hero_enigma"			"1" //Amakusa
+		"npc_dota_hero_mirana"			"1" //Jeanne
+	}
+}

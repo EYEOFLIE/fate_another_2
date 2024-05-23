@@ -1,0 +1,459 @@
+
+"ContributePointUnlock"
+{
+	"npc_dota_hero_legion_commander_1" //Casual Artoria
+	{
+		"99999999999"		"1"
+		"315377603"			"1" //Sakuya - Event
+		"168294133"			"1" //周馬 - Event
+		"104915663"			"1" //Hoppaw - Event
+		"25975666"			"1" // Prick - 30 Days Quest 
+		"257341283"			"1" // HAHA - Reactived Quest
+	}
+	"npc_dota_hero_legion_commander_2" // Suit Artoria
+	{
+		"99999999999"		"1"
+	}
+	"npc_dota_hero_legion_commander_3" // Crown Artoria
+	{
+		"99999999999"		"1"
+		"767728007"			"1" //Fannie
+		"131975343"			"1" //I_AM_SHADOW
+		"238102534"			"1" //RoRax
+		"67723765"			"1" //Jimmy hiphop
+		"52459602"			"1" //Raku
+	}
+	"npc_dota_hero_legion_commander_4" // Artoria Lily
+	{
+		"99999999999"		"1"
+		"126863914"			"1" //Yui_sys
+		"767728007"			"1" //Fannie
+		"67723765"			"1" //Jimmy hiphop
+	}
+	"npc_dota_hero_legion_commander_5" // Crane Wedding Artoria
+	{
+		"99999999999"		"1"
+		"170614282"			"1" //Yang
+		"49297047"			"1" // classic
+		"838298693"			"1" //ไนท์
+	}
+	"npc_dota_hero_legion_commander_6" // Arthur Pendragon
+	{
+		"99999999999"		"1"
+	}
+	"npc_dota_hero_spectre_1" // Casual Dress Artoria(Alter)
+	{
+		"99999999999"		"1"
+	}
+	"npc_dota_hero_spectre_2" // Unarmor Artoria(Alter)
+	{
+		"99999999999"		"1"
+		"185613212"			"1" //Riko - Host Quest
+		"124506060"			"1" //Remi
+		"131975343"			"1" //I_AM_SHADOW
+		"67723765"			"1" //Jimmy hiphop
+		"937095899"			"1" //Ab
+		"171622143"			"1" //Mafu
+	}
+	"npc_dota_hero_spectre_3" // Summer Artoria(Alter)
+	{
+		"99999999999"		"1"
+	}
+	"npc_dota_hero_phantom_lancer_1" // Moon Cell Cu Chulainn
+	{
+		"99999999999"		"1"
+		"179419427"			"1" // Nerd - Reactived Quest
+	}
+	"npc_dota_hero_phantom_lancer_2" // Lancer Card Illya
+	{
+		"99999999999"		"1"
+	}
+	"npc_dota_hero_phantom_lancer_3" // Lancer Card Rin
+	{
+		"99999999999"		"1"
+		"116623791"			"1" // Mu
+		"39181514"			"1" // NISE
+		"206236138"			"1" //Eli
+		"194317463"			"1" //yo
+		"141743726"			"1" //Mike
+		"65177003"			"1" //Gura
+		"124254168"			"1" //
+		"919069943"			"1" //Sana
+		"129880666"			"1" //V
+		"156994691"			"1" //LiuXin
+	}
+	"npc_dota_hero_tusk_1" // Casual Mordred
+	{
+		"99999999999"		"1"
+		"107927115"			"1" // Sherlock - Host Quest 
+		"468551536"			"1" // Bao - Reactived Quest
+		"185970099"			"1" // Pettan-Conti - 30 Days Quest 
+		"118158970"			"1" // Akuma - Reactived Quest
+		"992561617"			"1" // SOU - Reactived Quest
+	}
+	"npc_dota_hero_tusk_2" // Armorless Mordred
+	{
+		"99999999999"		"1"
+		"131975343"			"1" //I_AM_SHADOW
+		"238102534"			"1" //RoRax
+		"767728007"			"1" //Fannie
+		"357580928"			"1" //Non Player
+	}
+	"npc_dota_hero_tusk_3" // Summer Mordred
+	{
+		"99999999999"		"1"
+	}
+	"npc_dota_hero_ember_spirit_1" // Counter Guardian Emiya
+	{
+		"99999999999"		"1"
+		"214241877"			"1" // Rexor - Event
+		"49020355"			"1" // Shana - Event
+		"171983101"			"1" // Lark - Reactived Quest
+	}
+	"npc_dota_hero_ember_spirit_2" // Emiya Shirou
+	{
+		"99999999999"		"1"
+		"102126937"			"1" //Azusa
+		"179419427"			"1" //Nerd
+		"61236324"			"1" //Titan
+	}
+	"npc_dota_hero_ember_spirit_3" // Archer Shirou
+	{
+		"99999999999"		"1"
+	}
+	"npc_dota_hero_ember_spirit_4" // Cyber Emiya
+	{
+		"99999999999"		"1"
+	}
+	"npc_dota_hero_ember_spirit_5" // Senji Muramasa
+	{
+		"99999999999"		"1"
+		"179419427"			"1" //Nerd
+	}
+	"npc_dota_hero_crystal_maiden_1" // Uncaped Medea 
+	{
+		"99999999999"		"1"
+		"82282908"			"1" // Rose - 30 Days Quest 
+		"162497847"			"1" // UWU - 30 Days Quest 
+	}
+	"npc_dota_hero_crystal_maiden_2" // Medea Lily
+	{
+		"99999999999"		"1"
+		"75996662"			"1" //Gorilla
+		"194317463"			"1" //yo
+		"180712875"			"1" //Shinkaruna
+		"49297047"			"1" // classic
+	}
+	"npc_dota_hero_crystal_maiden_3" // Caster Card Illya
+	{
+		"99999999999"		"1"
+	}
+	"npc_dota_hero_doom_bringer_1" // Berserker Card Illya
+	{
+		"99999999999"		"1"
+	}
+	"npc_dota_hero_doom_bringer_2" // Bonk Doge
+	{
+		"99999999999"		"1"
+	}
+	"npc_dota_hero_dark_willow_1" // Sakura Okita 
+	{
+		"99999999999"		"1"
+		"104915663"		"1" //Hoppaw - 30 Days Quest
+		"104266649"		"1" //Kafuu - 30 Days Quest
+		"399652097"		"1" //Bunny - Reactived Quest
+	}
+	"npc_dota_hero_dark_willow_2" // Okita Alter
+	{
+		"99999999999"		"1"
+	}
+	"npc_dota_hero_bounty_hunter_1" // Hundred Face Hassan
+	{
+		"99999999999"		"1"
+	}
+	"npc_dota_hero_bounty_hunter_2"	// Female Hassan
+	{
+		"99999999999"		"1"
+		"357580928"			"1" //Non Player
+	}
+	"npc_dota_hero_bounty_hunter_3" // Assassin Card Illya
+	{
+		"99999999999"		"1"
+	}
+	"npc_dota_hero_tidehunter_1" // Dracula Vlad
+	{
+		"99999999999"		"1"
+		"52459602"			"1" //Raku
+		"131975343"			"1" //I_AM_SHADOW
+		"767728007"			"1" //Fannie
+		"863517475"			"1" //Matthew
+	}
+	"npc_dota_hero_juggernaut_1" // Pepesaki
+	{
+		"99999999999"		"1"
+	}
+	"npc_dota_hero_chen_1" // Salaryman Iskandar
+	{
+		"99999999999"		"1"
+	}
+	"npc_dota_hero_enchantress_1" // Casual Tamamo
+	{
+		"99999999999"		"1"
+	}
+	"npc_dota_hero_enchantress_2" // Schoolgirl Tamamo
+	{
+		"99999999999"		"1"
+	}
+	"npc_dota_hero_enchantress_3" // Police Tamamo
+	{
+		"99999999999"		"1"
+	}
+	"npc_dota_hero_enchantress_4" // Magical Girl Tamamo
+	{
+		"99999999999"		"1"
+	}
+	"npc_dota_hero_enchantress_5" // Wedding Tamamo
+	{
+		"99999999999"		"1"
+	}
+	"npc_dota_hero_enchantress_6" // Waifu Tamamo
+	{
+		"99999999999"		"1"
+	}
+	"npc_dota_hero_enchantress_7" // Summer Tamamo
+	{
+		"99999999999"		"1"
+	}
+	"npc_dota_hero_drow_ranger_1" // Atalanta (Alter)
+	{
+		"99999999999"		"1"
+		"171622143"			"1" //Mafu
+	}
+	
+	"npc_dota_hero_templar_assassin_1" // Medusa Lily
+	{
+		"99999999999"		"1"
+		"127185614"			"1" // บาส
+		"133583351"			"1" // onichi
+		"49297047"			"1" // classic
+		"120380006"			"1" // เบ้น
+		"220147519"			"1" //altair2
+		"177310581"			"1" //Joka
+		"170614282"			"1" //Yang
+	}
+	"npc_dota_hero_templar_assassin_2" // Rider Card Illya
+	{
+		"99999999999"		"1"
+	}
+	"npc_dota_hero_templar_assassin_3" // Lancer Ana
+	{
+		"99999999999"		"1"
+		"116623791"			"1" // Mu
+		"110348871"			"1" // memo
+		"49297047"			"1" // classic
+		"39181514"			"1" // NISE
+		"206236138"			"1" //Eli
+		"194317463"			"1" //yo
+		"141743726"			"1" //Mike
+		"136188782"			"1" //Ilshion
+	}
+	"npc_dota_hero_templar_assassin_4" // Ana
+	{
+		"99999999999"		"1"
+		"116623791"			"1" // Mu
+		"110348871"			"1" // memo
+		"49297047"			"1" // classic
+		"39181514"			"1" // NISE
+		"206236138"			"1" //Eli
+		"194317463"			"1" //yo
+		"141743726"			"1" //Mike
+		"136188782"			"1" //Ilshion
+	}
+	"npc_dota_hero_night_stalker_1"	// Count Edmond
+	{
+		"99999999999"		"1"
+		"39181514"			"1" // NISE
+	}
+	"npc_dota_hero_naga_siren_1"	// Archer Card Illya
+	{
+		"99999999999"		"1"
+	}
+	"npc_dota_hero_lina_1" // Emperor Nero
+	{
+		"99999999999"		"1"
+	}
+	"npc_dota_hero_lina_2" // King Nero
+	{
+		"99999999999"		"1"
+		"238102534"			"1" //RoRax
+		"937095899"			"1" //Ab
+		"131975343"			"1" //I_AM_SHADOW
+	}
+	"npc_dota_hero_lina_3" // Summer Dressed Nero
+	{
+		"99999999999"		"1"
+		"179419427"			"1" //Nerd
+		"102126937"			"1" //Azusa
+		"49297047"			"1" //ClassicStar
+		"157413679"			"1" //Wonder
+		"1001092376"		"1" //นมหวาน
+		"25975666"			"1" //Prick
+	}
+	"npc_dota_hero_lina_4" // Racing Nero
+	{
+		"99999999999"		"1"
+	}
+	"npc_dota_hero_mirana_1" // White Jeanne
+	{
+		"99999999999"		"1"
+	}
+	"npc_dota_hero_mirana_2" // Jeanne Santa
+	{
+		"99999999999"		"1"
+		"177310581"			"1" //Joka
+		"124506060"			"1" //Remi
+	}
+	"npc_dota_hero_bloodseeker_1" // Gangster Li
+	{
+		"99999999999"		"1"
+	}
+	"npc_dota_hero_bloodseeker_2" // Boss Li
+	{
+		"99999999999"		"1"
+		"863517475"			"1" //Matthew
+	}
+	"npc_dota_hero_queenofpain_1" // Schoolgirl Astolfo
+	{
+		"99999999999"		"1"
+	}
+	"npc_dota_hero_queenofpain_2" // Candy Pink Astolfo
+	{
+		"99999999999"		"1"
+		"767728007"			"1" //Fannie
+		"126863914"			"1" //Yui_sys
+		"67723765"			"1" //Jimmy hiphop
+	}
+	"npc_dota_hero_shadow_shaman_1" // Abyssal Gilles
+	{
+		"99999999999"		"1"
+	}
+	"npc_dota_hero_shadow_shaman_2" // Pope Gilles
+	{
+		"99999999999"		"1"
+		"67723765"			"1" //Jimmy hiphop
+	}
+	"npc_dota_hero_death_prophet_1" // Schoolgirl Elizabeth
+	{
+		"99999999999"		"1"
+	}
+	"npc_dota_hero_death_prophet_2" // Kilenc Elizabeth
+	{
+		"99999999999"		"1"
+	}
+	"npc_dota_hero_vengefulspirit_1" // Shirou Angra
+	{
+		"99999999999"		"1"
+	}
+	"npc_dota_hero_sven_1" // Suit Lancelot
+	{
+		"99999999999"		"1"
+	}
+	"npc_dota_hero_sven_2" // Dragon Armor Lancelot
+	{
+		"99999999999"		"1"
+	}
+	"npc_dota_hero_omniknight_1" // Samurai Gawain
+	{
+		"99999999999"		"1"
+	}
+	"npc_dota_hero_omniknight_2" // Summer Gawain
+	{
+		"99999999999"		"1"
+		"344242723"			"1" // Assassyn
+		"79388689"			"1" // Glacial
+	}
+	"npc_dota_hero_beastmaster_1" // Bartender Karna
+	{
+		"99999999999"		"1"
+	}
+	"npc_dota_hero_beastmaster_2" // Brahma God Karna
+	{
+		"99999999999"		"1"
+		"200974450"			"1" //CaptGuardian
+		"767728007"			"1" //Fannie
+	}
+	"npc_dota_hero_windrunner_1" // Alice NR
+	{
+		"99999999999"		"1"
+	}
+	"npc_dota_hero_monkey_king_1" // Secretary Scathach
+	{
+		"99999999999"		"1"
+	}
+	"npc_dota_hero_monkey_king_2" // Priestess Scathach
+	{
+		"99999999999"		"1"
+		"178793406"			"1" //Sol Pariso
+	}
+	"npc_dota_hero_monkey_king_3" // Sergeant Scathach
+	{
+		"99999999999"		"1"
+		"131975343"			"1" //I_AM_SHADOW
+		"863517475"			"1" //Matthew
+	}
+	"npc_dota_hero_monkey_king_4" // Summer Scathach
+	{
+		"99999999999"		"1"
+		"301222766"			"1"
+	}
+	"npc_dota_hero_axe_1" // Warlord Lu Bu
+	{
+		"99999999999"		"1"
+	}
+	"npc_dota_hero_axe_2" // Mecha Lu Bu
+	{
+		"99999999999"		"1"
+	}
+	"npc_dota_hero_axe_3" // Dynasty Warrior Lu Bu
+	{
+		"99999999999"		"1"
+	}
+	"npc_dota_hero_troll_warlord_1" // Captain Drake
+	{
+		"99999999999"		"1"
+	}
+	"npc_dota_hero_troll_warlord_2" // Pirate Drake
+	{
+		"99999999999"		"1"
+	}
+	"npc_dota_hero_troll_warlord_3" // Cowgirl Drake
+	{
+		"99999999999"		"1"
+		"361932793"			"1" //Phira
+		"67723765"			"1" //Jimmy hiphop
+	}
+	"npc_dota_hero_troll_warlord_4" // Summer Drake
+	{
+		"99999999999"		"1"
+		"120890066"			"1" //Taika
+	}
+	"npc_dota_hero_enigma_1"	// True Amakusa
+	{
+		"99999999999"		"1"
+		"937095899"			"1" //Ab
+		"52459602"			"1" //Raku
+		"357580928"			"1" //Non Player
+	}
+	"npc_dota_hero_skywrath_mage_2"	// Female Gilgamesh
+	{
+		"99999999999"		"1"
+	}
+	"npc_dota_hero_disruptor_1" // Waver Velvet
+	{
+		"99999999999"		"1"
+	}
+	"npc_dota_hero_void_spirit_01" // swimming suit kiyo
+	{
+		"99999999999"		"1"
+	}
+}

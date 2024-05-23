@@ -1,0 +1,4247 @@
+// Dota Heroes File
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Chloe von Einzbern : Innate : Sharing of Pain (D)
+	//=================================================================================================================
+	"kuro_sharing_pain"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		//หารูปมาใส่
+		"AbilityTextureName"			"custom/kuro/kuro_sharing_pain"
+		"MaxLevel"						"1"
+		"AbilityCastPoint"				"0.8"
+		"AbilityCastRange"				"300"
+		"AbilityCastAnimation"			"ACT_DOTA_IDLE"
+		"AbilityCooldown"				"30"
+		"AbilityManaCost"				"100"
+		"precache"
+		{
+			
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"			"0.8"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"dmg_ratio"				"80"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"ally_ratio"			"50"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"6"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"window_duration"		"4"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/kuro/kuro_abilities"
+				"Function"		"SharingPainStart"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_sharing_of_pain_tracker"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"IsBuff"			"1"
+				"IsPurgable"		"0" 
+				"Duration"			"%duration"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"EffectName"		"particles/custom/kuro/kuro_sharing_pain.vpcf"
+				"EffectAttachType"	"follow_origin"
+				//"OnCreated"
+				//{
+				//	"RunScript"
+				//	{
+				//		"ScriptFile"	"abilities/kuro/kuro_abilities"
+				//		"Function"		"SharingPainCreate"
+				//	}
+				//}
+				//"OnDestroy"
+				//{
+				//	"RunScript"
+				//	{
+				//		"ScriptFile"	"abilities/kuro/kuro_abilities"
+				//		"Function"		"SharingPainDestroy"
+				//	}
+				//}
+				"OnTakeDamage"
+				// "%attack_damage" is set to the damage value after mitigation
+				{
+					"RunScript"
+					{
+						"DamageTaken"   "%attack_damage"
+						"ScriptFile"	"abilities/kuro/kuro_abilities"
+						"Function"		"SharingPainTrackingDamage"
+					}
+				}
+			}
+			"modifier_sharing_of_pain_enemy_target"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Duration"			"%duration"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"EffectName"		"particles/custom/kuro/kuro_sharing_pain.vpcf"
+				"EffectAttachType"	"follow_origin"
+				//"OnDestroy"
+				//{
+				//	"RunScript"
+				//	{
+				//		"ScriptFile"	"abilities/kuro/kuro_abilities"
+				//		"Function"		"SharingPainTargetDestroy"
+				//	}
+				//}
+			}
+			"modifier_sharing_of_pain_ally_target"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Duration"			"%duration"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"EffectName"		"particles/custom/kuro/kuro_sharing_pain.vpcf"
+				"EffectAttachType"	"follow_origin"
+				//"OnDestroy"
+				//{
+				//	"RunScript"
+				//	{
+				//		"ScriptFile"	"abilities/kuro/kuro_abilities"
+				//		"Function"		"SharingPainTargetDestroy"
+				//	}
+				//}
+			}
+			"modifier_fake_ubw_window"
+			{
+				"IsPurgable"		"0"
+				"IsBuff"			"1"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Duration"			"%window_duration"
+
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/kuro/kuro_abilities"
+						"Function"		"OnFakeUBWWindow"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/kuro/kuro_abilities"
+						"Function"		"OnFakeUBWWindowDestroy"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/kuro/kuro_abilities"
+						"Function"		"OnFakeUBWWindowDied"
+					}
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Chloe von Einzbern : Innate : Sharing of Pain (D) (Kuro Magic SA)
+	//=================================================================================================================
+	"kuro_sharing_pain_upgrade"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		//หารูปมาใส่
+		"AbilityTextureName"			"custom/kuro/kuro_sharing_pain"
+		"MaxLevel"						"1"
+		"AbilityCastPoint"				"0.8"
+		"AbilityCastRange"				"300"
+		"AbilityCastAnimation"			"ACT_DOTA_IDLE"
+		"AbilityCooldown"				"30"
+		"AbilityManaCost"				"100"
+		"precache"
+		{
+			
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"			"0.8"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"dmg_ratio"				"130"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"ally_ratio"			"50"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"6"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mana_drain"			"15"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"stun_duration"			"0.5"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"window_duration"		"4"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/kuro/kuro_abilities"
+				"Function"		"SharingPainStart"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_sharing_of_pain_tracker"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"IsBuff"			"1"
+				"IsPurgable"		"0" 
+				"Duration"			"%duration"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				//"OnCreated"
+				//{
+				//	"RunScript"
+				//	{
+				//		"ScriptFile"	"abilities/kuro/kuro_abilities"
+				//		"Function"		"SharingPainCreate"
+				//	}
+				//}
+				//"OnDestroy"
+				//{
+				//	"RunScript"
+				//	{
+				//		"ScriptFile"	"abilities/kuro/kuro_abilities"
+				//		"Function"		"SharingPainDestroy"
+				//	}
+				//}
+				"OnTakeDamage"
+				// "%attack_damage" is set to the damage value after mitigation
+				{
+					"RunScript"
+					{
+						"DamageTaken"   "%attack_damage"
+						"ScriptFile"	"abilities/kuro/kuro_abilities"
+						"Function"		"SharingPainTrackingDamage"
+					}
+				}
+			}
+			"modifier_sharing_of_pain_enemy_target"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Duration"			"%duration"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				//"OnDestroy"
+				//{
+				//	"RunScript"
+				//	{
+				//		"ScriptFile"	"abilities/kuro/kuro_abilities"
+				//		"Function"		"SharingPainTargetDestroy"
+				//	}
+				//}
+			}
+			"modifier_sharing_of_pain_ally_target"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Duration"			"%duration"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				//"OnDestroy"
+				//{
+				//	"RunScript"
+				//	{
+				//		"ScriptFile"	"abilities/kuro/kuro_abilities"
+				//		"Function"		"SharingPainTargetDestroy"
+				//	}
+				//}
+			}
+			"modifier_fake_ubw_window"
+			{
+				"IsPurgable"		"0"
+				"IsBuff"			"1"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Duration"			"%window_duration"
+
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/kuro/kuro_abilities"
+						"Function"		"OnFakeUBWWindow"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/kuro/kuro_abilities"
+						"Function"		"OnFakeUBWWindowDestroy"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/kuro/kuro_abilities"
+						"Function"		"OnFakeUBWWindowDied"
+					}
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Chloe von Einzbern : Innate : Clairvoyance (F)
+	//=================================================================================================================
+	"kuro_clairvoyance"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"MaxLevel"						"1"
+		"AbilityTextureName"			"custom/kuro/kuro_clairvoyance"
+		"AOERadius"						"%radius"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_4"
+		"AnimationPlaybackRate" 		"1.0"
+		"precache"
+		{
+			
+		}
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"99999"
+		"AbilityCastPoint"				"0.3"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"22.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"100"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"700"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"8.0"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"    "abilities/kuro/kuro_abilities"
+				"Function"      "FarSightVision"
+				"Radius"		"%radius"
+				"Target"		"POINT"
+				"Duration"		"%duration"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_kuro_hrunting_window"
+			{
+				"IsPurgable"		"0"
+				"IsBuff"			"1"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Duration"			"%duration"
+
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/kuro/kuro_abilities"
+						"Function"		"OnHruntingWindow"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/kuro/kuro_abilities"
+						"Function"		"OnHruntingWindowDestroy"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/kuro/kuro_abilities"
+						"Function"		"OnHruntingWindowDied"
+					}
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Chloe von Einzbern : Innate : Clairvoyance (F) (Eagle Eye SA)
+	//=================================================================================================================
+	"kuro_clairvoyance_upgrade"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"MaxLevel"						"1"
+		"AbilityTextureName"			"custom/kuro/kuro_clairvoyance"
+		"AOERadius"						"%radius"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_4"
+		"AnimationPlaybackRate" 		"1.0"
+		"precache"
+		{
+			
+		}
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"99999"
+		"AbilityCastPoint"				"0.3"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"18.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"100"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"900"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"8.0"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"    "abilities/kuro/kuro_abilities"
+				"Function"      "FarSightVision"
+				"Radius"		"%radius"
+				"Target"		"POINT"
+				"Duration"		"%duration"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_kuro_hrunting_window"
+			{
+				"IsPurgable"		"0"
+				"IsBuff"			"1"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Duration"			"%duration"
+
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/kuro/kuro_abilities"
+						"Function"		"OnHruntingWindow"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/kuro/kuro_abilities"
+						"Function"		"OnHruntingWindowDestroy"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/kuro/kuro_abilities"
+						"Function"		"OnHruntingWindowDied"
+					}
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Chloe von Einzbern : Hrunting (F)
+	//=================================================================================================================
+	"kuro_hrunting"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_CHANNELED | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/kuro/kuro_hrunting"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_4"
+		"AnimationPlaybackRate" 		"0.3"
+		
+		"precache"
+		{
+			
+		}
+		
+		"AbilityCastPoint"				"0.5"
+		"AbilityChannelTime"			"3.5"
+		"AbilityCastRange"				"3000"
+		"AbilityCastRangeBuffer"		"9999"
+		"AbilityCooldown"				"40"
+		"AbilityManaCost"				"0"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"			"3.5"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_range"			"3000"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"mana_used"				"75"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage"				"300 400 500 600 700"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"stun_duration"			"2"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"600"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_bounce"			"2"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bounce_damage"			"75"
+			}
+		}
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/kuro/kuro_abilities"
+				"Function"		"OnHruntingFilter"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/kuro/kuro_abilities"
+				"Function"		"OnHruntCast"
+			}
+			"FireSound"
+			{
+				"EffectName"	"Hero_Invoker.EMP.Charge"
+				"Target"		"CASTER"
+			}
+		}
+		
+		"OnChannelInterrupted"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/kuro/kuro_abilities"
+				"Function"			"OnHruntInterrupted"
+			}			
+		}
+		
+		"OnChannelSucceeded"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/kuro/kuro_abilities"
+				"Function"			"OnHruntStart"
+			}
+		}
+		
+		"OnProjectileHitUnit"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/kuro/kuro_abilities"
+				"Function"			"OnHruntHit"
+			}
+		}
+			
+		"Modifiers"
+		{
+			"modifier_bow"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Duration"			"%cast_delay"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/kuro/kuro_abilities"
+						"Function"		"OnBowCreate"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/kuro/kuro_abilities"
+						"Function"		"OnBowDestroy"
+					}
+				}
+			}
+			"modifier_hrunting_cooldown"
+			{
+				"IsDebuff"			"1"
+				"IsPurgable"		"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Chloe von Einzbern : Hrunting (F) (Eagle Eye SA)
+	//=================================================================================================================
+	"kuro_hrunting_upgrade"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_CHANNELED | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/kuro/kuro_hrunting"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_4"
+		"AnimationPlaybackRate" 		"0.3"
+		
+		"precache"
+		{
+			
+		}
+		
+		"AbilityCastPoint"				"0.5"
+		"AbilityChannelTime"			"3.5"
+		"AbilityCastRange"				"5000"
+		"AbilityCastRangeBuffer"		"9999"
+		"AbilityCooldown"				"40"
+		"AbilityManaCost"				"0"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"			"3.5"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_range"			"5000"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"mana_used"				"75"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage"				"300 400 500 600 700"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"stun_duration"			"2"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"600"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_bounce"			"2"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bounce_damage"			"75"
+			}
+		}
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/kuro/kuro_abilities"
+				"Function"		"OnHruntingFilter"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/kuro/kuro_abilities"
+				"Function"		"OnHruntCast"
+			}
+			"FireSound"
+			{
+				"EffectName"	"Hero_Invoker.EMP.Charge"
+				"Target"		"CASTER"
+			}
+		}
+		
+		"OnChannelInterrupted"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/kuro/kuro_abilities"
+				"Function"			"OnHruntInterrupted"
+			}			
+		}
+		
+		"OnChannelSucceeded"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/kuro/kuro_abilities"
+				"Function"			"OnHruntStart"
+			}
+		}
+		
+		"OnProjectileHitUnit"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/kuro/kuro_abilities"
+				"Function"			"OnHruntHit"
+			}
+		}
+			
+		"Modifiers"
+		{
+			"modifier_bow"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Duration"			"%cast_delay"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/kuro/kuro_abilities"
+						"Function"		"OnBowCreate"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/kuro/kuro_abilities"
+						"Function"		"OnBowDestroy"
+					}
+				}
+			}
+			"modifier_hrunting_cooldown"
+			{
+				"IsDebuff"			"1"
+				"IsPurgable"		"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Chloe von Einzbern : Kanshou & Bakuya (Q)
+	//=================================================================================================================
+	"kuro_kanshou_byakuya"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/kuro/kuro_kanshou_byakuya"
+		"AbilityCastAnimation" 			"ACT_DOTA_ATTACK"
+		"AnimationPlaybackRate" 		"1.0"
+		
+		
+		"precache"
+		{
+			
+		}
+		
+		"AbilityCastPoint"				"0.1"
+		"AbilityCastRange"				"500"
+		"AbilityCooldown"				"4"
+		"AbilityManaCost"				"100"
+		
+		"AbilitySpecial"
+		{			
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"80 95 110 125 140"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"sword_aoe"				"135"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range"					"900"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"num_blade"				"2"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"overedge_damage"		"180"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"overedge_stun"			"0.5"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"overedge_duration"		"1.5"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"UBW_cooldown"			"1"
+			}
+		}
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/kuro/kuro_abilities"
+				"Function"		"OnKBUpgrade"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/kuro/kuro_abilities"
+				"Function"		"KanshouByakuyaStart"
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"			"0"
+			"RunScript"
+			{
+			 	"ScriptFile"	"abilities/kuro/kuro_abilities"
+			 	"Function"		"OnKBHit"
+			}		
+		}
+
+		"Modifiers"
+		{
+			"modifier_overedge_stack"
+			{
+				"Duration"			"%overedge_duration"
+				"IsDebuff"			"1"
+				"IsHidden"			"0"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Chloe von Einzbern : Kanshou & Bakuya (Q) (Overedge SA)
+	//=================================================================================================================
+	"kuro_kanshou_byakuya_upgrade"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/kuro/kuro_kanshou_byakuya"
+		"AbilityCastAnimation" 			"ACT_DOTA_ATTACK"
+		"AnimationPlaybackRate" 		"1.0"
+		
+		
+		"precache"
+		{
+			
+		}
+		
+		"AbilityCastPoint"				"0.1"
+		"AbilityCastRange"				"500"
+		"AbilityCooldown"				"4"
+		"AbilityManaCost"				"100"
+		
+		"AbilitySpecial"
+		{			
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"80 95 110 125 140"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"sword_aoe"				"135"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range"					"900"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"num_blade"				"4"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"overedge_damage"		"180"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"overedge_stun"			"0.5"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"overedge_count"		"4"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"overedge_duration"		"1.5"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"UBW_cooldown"			"1"
+			}
+		}
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/kuro/kuro_abilities"
+				"Function"		"OnKBUpgrade"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/kuro/kuro_abilities"
+				"Function"		"KanshouByakuyaStart"
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"			"0"
+			"RunScript"
+			{
+			 	"ScriptFile"	"abilities/kuro/kuro_abilities"
+			 	"Function"		"OnKBHit"
+			}		
+		}
+
+		"Modifiers"
+		{
+			"modifier_overedge_stack"
+			{
+				"Duration"			"%overedge_duration"
+				"IsDebuff"			"1"
+				"IsHidden"			"0"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Chloe von Einzbern : Calabolg III (W)
+	//=================================================================================================================
+	"kuro_calabolg"
+	{
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/kuro/kuro_calabolg"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_4"
+		"AnimationPlaybackRate" 		"1.0"
+
+		"AbilityCastPoint"                          "0.5"
+        "AbilityManaCost"                           "200"
+        "AbilityCooldown"                           "20"
+        "AbilityCastRange"                          "2000"
+        "AbilityCastRangeBuffer"                    "500"
+        "AbilityChannelTime"                        "1.0"
+
+		"precache"
+		{
+			
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"			"1.0"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range"					"2000"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"350"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"target_damage"			"120 160 200 240 280"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"total_damage"			"300 370 440 510 580"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"splash_damage"			"180 210 240 270 300"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"stun_duration"			"1.1 1.1 1.2 1.2 1.3"
+			}
+		}
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/kuro/kuro_abilities"
+				"Function"		"OnBPUpgrade"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/kuro/kuro_abilities"
+				"Function"		"OnBPCast"
+			}
+		}
+
+	
+		"OnChannelInterrupted"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/kuro/kuro_abilities"
+				"Function"		"OnBPInterrupted"
+			}
+		}
+		"OnChannelSucceeded"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/kuro/kuro_abilities"
+				"Function"		"OnBPStart"
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"RunScript"
+			{
+				"ScriptFile"    "abilities/kuro/kuro_abilities"
+				"Function"      "OnBPHit"
+				"Radius"		"%radius"
+				"StunDuration"	"%stun_duration"
+				"TargetDamage"	"%target_damage"
+				"SplashDamage"	"%splash_damage"
+			}
+			"FireSound"
+			{
+				"EffectName"	"Hero_Sven.StormBoltImpact"
+			}
+		}	
+		"Modifiers"
+		{
+			"modifier_bow"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Duration"			"%cast_delay"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/kuro/kuro_abilities"
+						"Function"		"OnBowCreate"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/kuro/kuro_abilities"
+						"Function"		"OnBowDestroy"
+					}
+				}
+			}
+		}	
+	}
+	//=================================================================================================================
+	// Chloe von Einzbern : Calabolg III (W) (Eagle Eye SA)
+	//=================================================================================================================
+	"kuro_calabolg_upgrade"
+	{
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/kuro/kuro_calabolg"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_4"
+		"AnimationPlaybackRate" 		"1.0"
+
+		"AbilityCastPoint"                          "0.5"
+        "AbilityManaCost"                           "200"
+        "AbilityCooldown"                           "20"
+        "AbilityCastRange"                          "3000"
+        "AbilityCastRangeBuffer"                    "500"
+        "AbilityChannelTime"                        "1.0"
+
+		"precache"
+		{
+			
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"			"1.0"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range"					"3000"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"350"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"target_damage"			"120 160 200 240 280"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"total_damage"			"300 370 440 510 580"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"splash_damage"			"180 210 240 270 300"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"stun_duration"			"1.1 1.1 1.2 1.2 1.3"
+			}
+		}
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/kuro/kuro_abilities"
+				"Function"		"OnBPUpgrade"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/kuro/kuro_abilities"
+				"Function"		"OnBPCast"
+			}
+		}
+
+	
+		"OnChannelInterrupted"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/kuro/kuro_abilities"
+				"Function"		"OnBPInterrupted"
+			}
+		}
+		"OnChannelSucceeded"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/kuro/kuro_abilities"
+				"Function"		"OnBPStart"
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"RunScript"
+			{
+				"ScriptFile"    "abilities/kuro/kuro_abilities"
+				"Function"      "OnBPHit"
+				"Radius"		"%radius"
+				"StunDuration"	"%stun_duration"
+				"TargetDamage"	"%target_damage"
+				"SplashDamage"	"%splash_damage"
+			}
+			"FireSound"
+			{
+				"EffectName"	"Hero_Sven.StormBoltImpact"
+			}
+		}	
+		"Modifiers"
+		{
+			"modifier_bow"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Duration"			"%cast_delay"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/kuro/kuro_abilities"
+						"Function"		"OnBowCreate"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/kuro/kuro_abilities"
+						"Function"		"OnBowDestroy"
+					}
+				}
+			}
+		}		
+	}
+	//=================================================================================================================
+	// Chloe von Einzbern : Skill 3 : Chloe's Weapon Project List (E)
+	//=================================================================================================================
+	"kuro_projection"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityTextureName"			"custom/kuro/kuro_projection"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"15"
+		"AbilityManaCost"				"0"
+		"precache"
+		{
+		}
+		"AbilitySpecial"
+		{
+			
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/kuro/kuro_abilities"
+				"Function"		"OnProjectStart"
+			}
+		}
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/kuro/kuro_abilities"
+				"Function"		"OnProjectUpgrade"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_kuro_project_check"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"IsBuff"			"1"
+				"IsPurgable"		"0" 
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+		
+				"OnCreated"
+				{ // change skill layout
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/kuro/kuro_abilities"
+						"Function"		"OnProjectOpen"
+					}
+				}
+				"OnDestroy"
+				{ // change skill back to default
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/kuro/kuro_abilities"
+						"Function"		"OnProjectClose"
+					}
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Chloe von Einzbern : Skill 3 : Chloe's Weapon Project List (E) (Improve Project SA)
+	//=================================================================================================================
+	"kuro_projection_upgrade"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		//หารูปมาใส่
+		"AbilityTextureName"			"custom/kuro/kuro_projection"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"0"
+		"AbilityManaCost"				"0"
+		"precache"
+		{
+		}
+		"AbilitySpecial"
+		{
+			
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/kuro/kuro_abilities"
+				"Function"		"OnProjectStart"
+			}
+		}
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/kuro/kuro_abilities"
+				"Function"		"OnProjectUpgrade"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_kuro_project_check"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"IsBuff"			"1"
+				"IsPurgable"		"0" 
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+		
+				"OnCreated"
+				{ // change skill layout
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/kuro/kuro_abilities"
+						"Function"		"OnProjectOpen"
+					}
+				}
+				"OnDestroy"
+				{ // change skill back to default
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/kuro/kuro_abilities"
+						"Function"		"OnProjectClose"
+					}
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Chloe von Einzbern : Skill 3 : Chloe's Weapon Project Closed (F)
+	//=================================================================================================================
+	"kuro_projection_close"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		//หารูปมาใส่
+		"AbilityTextureName"			"silencer_last_word"
+		"MaxLevel"						"1"
+		"AbilityCastPoint"				"0.0"
+		"AbilityManaCost"				"0"
+		"precache"
+		{
+		}
+		"AbilitySpecial"
+		{
+			
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{ // remove modifier military tactic check
+				"ScriptFile"	"abilities/kuro/kuro_abilities"
+				"Function"		"OnProjectCloseStart"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Chloe von Einzbern : Excalibur Image
+	//=================================================================================================================
+	"kuro_excalibur"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"AbilityTextureName"			"custom/kuro/kuro_excalibur"
+		"AbilityCastAnimation" 			"ACT_DOTA_IDLE"
+		"AnimationPlaybackRate" 		"0.9"				// Adjust playback rate to reflect the ability was 0.9
+		"precache"
+		{
+			
+		}
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1600"
+		"AbilityCastPoint"				"0.2"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"25.0"
+		
+		//"AbilityDamage"					"500 650 800 950 1100"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"500"
+		
+		// AbilitySpecial
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"			"1.2"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"width"					"400"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"length"				"1600"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"speed"					"1200"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"500 650 800 950 1100"
+			}
+			// Extra variables
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pause_duration"		"2.3"
+			}
+		}
+		
+		// Data driven
+		//-------------------------------------------------------------------------------------------------------------	
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+			 	"ScriptFile"	"abilities/kuro/kuro_abilities"
+			 	"Function"		"OnExcaliburStart"
+			 	"Target"		"POINT"
+			 	"StartRadius"	"%width"
+			 	"EndRadius"		"%width"
+			 	"Speed"			"%speed"
+			 	"Range"			"%length"
+			 	"Delay"			"%cast_delay"
+			}
+		}
+		
+		
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"			"0"
+			"RunScript"
+			{
+			 	"ScriptFile"	"abilities/kuro/kuro_abilities"
+			 	"Function"		"OnExcaliburHit"
+			 	"Damage"		"%damage"
+			}	
+			"FireEffect"
+			{
+				"EffectName"        "particles/custom/saber/excalibur/hit.vpcf"
+				"EffectAttachType"  "follow_origin"
+				"Target"            "TARGET"
+			}		
+		}
+		
+		"Modifiers"
+		{
+			"modifier_excalibur"
+			{
+				"Duration"		"%delay"
+				"IsHidden"		"1"
+			}
+			"saber_anim_vfx"
+			{
+				"Duration"		"%pause_duration"
+				"IsHidden"	"1"
+				"OverrideAnimation"     "ACT_DOTA_ATTACK_EVENT"		
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_OVERRIDE_ANIMATION_RATE"		"0.2"
+				}		
+				"OnCreated"
+				{
+					"RunScript"
+					{
+					 	"ScriptFile"	"abilities/kuro/kuro_abilities"
+					 	"Function"		"OnExcaliburVfxStart"
+					}
+				}
+			}
+			
+			// VFX section
+			"excalibur_vfx_phase_1"
+			{
+				"IsHidden"					"1"
+				"Duration"					"1.5"
+			
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"Target"			"TARGET"
+						"EffectName"		"particles/units/heroes/hero_skywrath_mage/skywrath_mage_concussive_shot_cast.vpcf"
+						"EffectAttachType"	"start_at_customorigin"
+						"ControlPointEntities"
+						{
+							"TARGET"		"attach_attack1"
+						}
+					}
+					
+					"AttachEffect"
+					{
+						"Target"			"TARGET"
+						"EffectName"		"particles/units/heroes/hero_skywrath_mage/skywrath_mage_concussive_shot_cast.vpcf"
+						"EffectAttachType"	"start_at_customorigin"
+						"ControlPointEntities"
+						{
+							"TARGET"		"attach_attack1"
+						}
+					}
+					
+					"AttachEffect"
+					{
+						"Target"			"TARGET"
+						"EffectName"		"particles/units/heroes/hero_skywrath_mage/skywrath_mage_concussive_shot_cast.vpcf"
+						"EffectAttachType"	"start_at_customorigin"
+						"ControlPointEntities"
+						{
+							"TARGET"		"attach_attack2"
+						}
+					}
+					"RunScript"
+					{
+					 	"ScriptFile"	"abilities/kuro/kuro_abilities"
+					 	"Function"		"OnExcaliburSwordVfxStart"
+					}	
+				}
+			}
+			
+			"excalibur_vfx_phase_2"
+			{
+				"IsHidden"					"1"
+				"Duration"					"1.9"
+				
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"Target"			"TARGET"
+						"EffectName"		"particles/units/heroes/hero_invoker/invoker_sun_strike_beam.vpcf"
+						"EffectAttachType"	"attach_origin"
+					}
+					
+					"AttachEffect"
+					{
+						"Target"			"TARGET"
+						"EffectName"		"particles/units/heroes/hero_wisp/wisp_overcharge.vpcf"
+						"EffectAttachType"	"start_at_customorigin"
+						"ControlPointEntities"
+						{
+							"TARGET"		"attach_attack2"
+						}
+					}
+				}
+			}
+			"modifier_stop_exca"
+			{
+				"IsHidden"					"1"
+				"IsPurgable"				"0"
+				"IsBuff"					"1"
+				"IsDebuff"					"0"
+				"Duration"					"1.0"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_OVERRIDE_ANIMATION" 			"1500"
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Chloe von Einzbern : Excalibur Image (Improve Project SA)
+	//=================================================================================================================
+	"kuro_excalibur_upgrade"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"AbilityTextureName"			"custom/kuro/kuro_excalibur"
+		"AbilityCastAnimation" 			"ACT_DOTA_IDLE"
+		"AnimationPlaybackRate" 		"0.9"				// Adjust playback rate to reflect the ability was 0.9
+		"precache"
+		{
+			
+		}
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1600"
+		"AbilityCastPoint"				"0.2"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"19"
+		
+		//"AbilityDamage"					"500 650 800 950 1100"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"400"
+		
+		// AbilitySpecial
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"			"1.2"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"width"					"400"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"length"				"1600"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"speed"					"1200"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"800 950 1100 1250 1400"
+			}
+			// Extra variables
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pause_duration"		"2.3"
+			}
+		}
+		
+		// Data driven
+		//-------------------------------------------------------------------------------------------------------------	
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+			 	"ScriptFile"	"abilities/kuro/kuro_abilities"
+			 	"Function"		"OnExcaliburStart"
+			 	"Target"		"POINT"
+			 	"StartRadius"	"%width"
+			 	"EndRadius"		"%width"
+			 	"Speed"			"%speed"
+			 	"Range"			"%length"
+			 	"Delay"			"%cast_delay"
+			}
+		}
+		
+		
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"			"0"
+			"RunScript"
+			{
+			 	"ScriptFile"	"abilities/kuro/kuro_abilities"
+			 	"Function"		"OnExcaliburHit"
+			 	"Damage"		"%damage"
+			}	
+			"FireEffect"
+			{
+				"EffectName"        "particles/custom/saber/excalibur/hit.vpcf"
+				"EffectAttachType"  "follow_origin"
+				"Target"            "TARGET"
+			}		
+		}
+		
+		"Modifiers"
+		{
+			"modifier_excalibur"
+			{
+				"Duration"		"%delay"
+				"IsHidden"		"1"
+			}
+			"saber_anim_vfx"
+			{
+				"Duration"		"%pause_duration"
+				"IsHidden"	"1"
+				"OverrideAnimation"     "ACT_DOTA_ATTACK_EVENT"		
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_OVERRIDE_ANIMATION_RATE"		"0.2"
+				}		
+				"OnCreated"
+				{
+					"RunScript"
+					{
+					 	"ScriptFile"	"abilities/kuro/kuro_abilities"
+					 	"Function"		"OnExcaliburVfxStart"
+					}
+				}
+			}
+			
+			// VFX section
+			"excalibur_vfx_phase_1"
+			{
+				"IsHidden"					"1"
+				"Duration"					"1.5"
+			
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"Target"			"TARGET"
+						"EffectName"		"particles/units/heroes/hero_skywrath_mage/skywrath_mage_concussive_shot_cast.vpcf"
+						"EffectAttachType"	"start_at_customorigin"
+						"ControlPointEntities"
+						{
+							"TARGET"		"attach_attack1"
+						}
+					}
+					
+					"AttachEffect"
+					{
+						"Target"			"TARGET"
+						"EffectName"		"particles/units/heroes/hero_skywrath_mage/skywrath_mage_concussive_shot_cast.vpcf"
+						"EffectAttachType"	"start_at_customorigin"
+						"ControlPointEntities"
+						{
+							"TARGET"		"attach_attack1"
+						}
+					}
+					
+					"AttachEffect"
+					{
+						"Target"			"TARGET"
+						"EffectName"		"particles/units/heroes/hero_skywrath_mage/skywrath_mage_concussive_shot_cast.vpcf"
+						"EffectAttachType"	"start_at_customorigin"
+						"ControlPointEntities"
+						{
+							"TARGET"		"attach_attack2"
+						}
+					}
+					"RunScript"
+					{
+					 	"ScriptFile"	"abilities/kuro/kuro_abilities"
+					 	"Function"		"OnExcaliburSwordVfxStart"
+					}	
+				}
+			}
+			
+			"excalibur_vfx_phase_2"
+			{
+				"IsHidden"					"1"
+				"Duration"					"1.9"
+				
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"Target"			"TARGET"
+						"EffectName"		"particles/units/heroes/hero_invoker/invoker_sun_strike_beam.vpcf"
+						"EffectAttachType"	"attach_origin"
+					}
+					
+					"AttachEffect"
+					{
+						"Target"			"TARGET"
+						"EffectName"		"particles/units/heroes/hero_wisp/wisp_overcharge.vpcf"
+						"EffectAttachType"	"start_at_customorigin"
+						"ControlPointEntities"
+						{
+							"TARGET"		"attach_attack2"
+						}
+					}
+				}
+			}
+			"modifier_stop_exca"
+			{
+				"IsHidden"					"1"
+				"IsPurgable"				"0"
+				"IsBuff"					"1"
+				"IsDebuff"					"0"
+				"Duration"					"1.0"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_OVERRIDE_ANIMATION" 			"1500"
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Chloe von Einzbern : Gae Bolg Image (D)
+	//=================================================================================================================
+	"kuro_gae_bolg"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN  | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/kuro/kuro_gae_bolg"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_1"
+		"AnimationPlaybackRate" 		"1.0"
+		
+		"IsCastableWhileHidden"			"1"
+		
+		"precache"
+		{
+			
+		}
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"300"
+		"AbilityCastRangeBuffer"		"500"
+		"AbilityCastPoint"				"0.7"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"20.0"
+
+		// Damage.
+		//-------------------------------------------------------------------------------------------------------------
+		//"AbilityDamage"					"300 400 500 600 700"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"400"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"delay"				"0.7"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"300 400 500 600 700"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"heart_break"		"5"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"stun"				"0.8"
+			}
+		}
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/kuro/kuro_abilities"
+				"Function"		"GBAttachEffect"
+			}
+		}
+		"OnSpellStart"
+		{
+			 "RunScript"
+			 {
+			 	"ScriptFile"	"abilities/kuro/kuro_abilities"
+			 	"Function"		"OnGBTargetHit"
+			 	"Damage"		"%damage"
+			 }
+		}
+	}
+	//=================================================================================================================
+	// Chloe von Einzbern : Gae Bolg Image (D) (Improve Project SA)
+	//=================================================================================================================
+	"kuro_gae_bolg_upgrade"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN  | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/kuro/kuro_gae_bolg"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_1"
+		"AnimationPlaybackRate" 		"1.0"
+		
+		"IsCastableWhileHidden"			"1"
+		
+		"precache"
+		{
+			
+		}
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"300"
+		"AbilityCastRangeBuffer"		"500"
+		"AbilityCastPoint"				"0.7"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"15.0"
+
+		// Damage.
+		//-------------------------------------------------------------------------------------------------------------
+		//"AbilityDamage"					"300 400 500 600 700"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"300"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"delay"				"0.7"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"450 550 650 750 850"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"heart_break"		"10"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"stun"				"0.8"
+			}
+		}
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/kuro/kuro_abilities"
+				"Function"		"GBAttachEffect"
+			}
+		}
+		"OnSpellStart"
+		{
+			 "RunScript"
+			 {
+			 	"ScriptFile"	"abilities/kuro/kuro_abilities"
+			 	"Function"		"OnGBTargetHit"
+			 	"Damage"		"%damage"
+			 }
+		}
+	}
+	//=================================================================================================================
+	// Chloe von Einzbern : Fake Nine Live (R)
+	//=================================================================================================================
+	"kuro_fake_nine_live"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/kuro/kuro_nine_lives"
+		"AOERadius"						"%radius"
+		
+		
+		"precache"
+		{
+			
+		}
+		
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"250"
+		"AbilityCastPoint"				"0.1"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"32.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"500"
+		
+		"AbilitySpecial"
+		{
+			"09"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"total_hit"			"9"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"150"
+			}
+
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"40 50 60 70 80"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"mini_duration"		"0.5"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius_lasthit"	"300"
+			}
+
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage_lasthit"	"250 300 350 400 450"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"stun_duration"		"1.5"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"range"				"350"
+			}
+			"07"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"pause_duration"	"2.5"
+			}
+			"08"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"post_nine"			"0.5"
+			}
+			
+		}
+		"OnAbilityPhaseStart"
+		{
+		
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/kuro/kuro_abilities"
+				"Function"		"OnNineCast"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/kuro/kuro_abilities"
+				"Function"			"OnNineStart"
+			}
+		}
+		
+		"Modifiers"
+		{
+		}
+	}
+	//=================================================================================================================
+	// Chloe von Einzbern : Fake Nine Live (R) (Improve Project SA)
+	//=================================================================================================================
+	"kuro_fake_nine_live_upgrade"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/kuro/kuro_nine_lives"
+		"AOERadius"						"%radius"
+		
+		
+		"precache"
+		{
+			
+		}
+		
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"250"
+		"AbilityCastPoint"				"0.1"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"24.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"400"
+		
+		"AbilitySpecial"
+		{
+			"09"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"total_hit"			"9"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"150"
+			}
+
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"50 60 70 80 90"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"mini_duration"		"0.5"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius_lasthit"	"300"
+			}
+
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage_lasthit"	"550 600 650 700 750"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"stun_duration"		"1.5"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"range"				"350"
+			}
+			"07"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"pause_duration"	"2.5"
+			}
+			"08"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"post_nine"			"0.5"
+			}
+		}
+		"OnAbilityPhaseStart"
+		{
+		
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/kuro/kuro_abilities"
+				"Function"		"OnNineCast"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/kuro/kuro_abilities"
+				"Function"			"OnNineStart"
+			}
+		}
+		
+		"Modifiers"
+		{
+		}
+	}
+	//=======================================
+	// Chloe von Einzbern : Rho Aias
+	//=======================================
+	"kuro_rho_aias"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/kuro/kuro_rho_aias"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_4"
+		"AnimationPlaybackRate" 		"1.0"
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"800"
+		"AbilityCooldown"				"24"
+		"AbilityManaCost"				"400"
+
+		"precache"
+		{
+			
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_absorb"				"600 750 900 1050 1200"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"			"7"
+			}
+		}	
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/kuro/kuro_abilities"
+				"Function"		"OnRhoCast"
+			}
+		}	
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/kuro/kuro_abilities"
+				"Function"		"OnRhoStart"
+				"ShieldAmount"	"%damage_absorb"
+			}
+			"FireSound"
+			{
+				"EffectName"	"Hero_EmberSpirit.FlameGuard.Cast"
+				"Target"		"TARGET"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_rho_aias"
+			{
+				"IsDebuff"		"0 "
+				"IsPurgable"	"0"
+				"Duration"		"7.0"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/kuro/kuro_abilities"
+						"Function"		"OnRhoCreate"	
+					}
+				}
+				"ThinkInterval"  "0.1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/kuro/kuro_abilities"
+						"Function"		"OnRhoThink"	
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/kuro/kuro_abilities"
+						"Function"		"OnRhoDestroy"	
+					}
+				}
+				
+				"OnTakeDamage"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/kuro/kuro_abilities"
+						"Function"		"OnRhoDamaged"
+						"DamageTaken"	"%attack_damage"		
+					}
+				}
+				
+				"States"
+				{
+					"MODIFIER_STATE_ROOTED"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+			//"modifier_rho_aias_health_bonus"
+			//{
+			//	"Passive"		"1"
+			//	"Properties"
+			//	{
+			//		"MODIFIER_PROPERTY_HEALTH_BONUS"		"%bonus_health"
+			//	}
+			//}
+		}
+	}
+	//=======================================
+	// Chloe von Einzbern : Rho Aias (Improve Project SA)
+	//=======================================
+	"kuro_rho_aias_upgrade"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/kuro/kuro_rho_aias"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_4"
+		"AnimationPlaybackRate" 		"1.0"
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"800"
+		"AbilityCooldown"				"18"
+		"AbilityManaCost"				"300"
+
+		"precache"
+		{
+			
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_absorb"			"800 950 1100 1250 1400"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"7"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"knock"					"200"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"knock_radius"			"300"
+			}
+		}	
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/kuro/kuro_abilities"
+				"Function"		"OnRhoCast"
+			}
+		}	
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/kuro/kuro_abilities"
+				"Function"		"OnRhoStart"
+				"ShieldAmount"	"%damage_absorb"
+			}
+			"FireSound"
+			{
+				"EffectName"	"Hero_EmberSpirit.FlameGuard.Cast"
+				"Target"		"TARGET"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_rho_aias"
+			{
+				"IsDebuff"		"0 "
+				"IsPurgable"	"0"
+				"Duration"		"7.0"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/kuro/kuro_abilities"
+						"Function"		"OnRhoCreate"	
+					}
+				}
+				"ThinkInterval"  "0.1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/kuro/kuro_abilities"
+						"Function"		"OnRhoThink"	
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/kuro/kuro_abilities"
+						"Function"		"OnRhoDestroy"	
+					}
+				}
+				
+				"OnTakeDamage"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/kuro/kuro_abilities"
+						"Function"		"OnRhoDamaged"
+						"DamageTaken"	"%attack_damage"		
+					}
+				}
+				
+				"States"
+				{
+					"MODIFIER_STATE_ROOTED"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+			//"modifier_rho_aias_health_bonus"
+			//{
+			//	"Passive"		"1"
+			//	"Properties"
+			//	{
+			//		"MODIFIER_PROPERTY_HEALTH_BONUS"		"%bonus_health"
+			//	}
+			//}
+		}
+	}
+	//=======================================
+	// Chloe von Einzbern : Rosa Ichthys Image (R)
+	//=======================================
+	"kuro_rosa_ichthys"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"ScriptFile"					"abilities/kuro/kuro_rosa_ichthys"
+		"MaxLevel"						"5"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/nero_rosa_ichthys"
+		"AbilityCastAnimation" 			"ACT_DOTA_ATTACK_EVENT"
+		
+		// Ability stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"700"
+		"AbilityCastRangeBuffer"		"125"
+		"AbilityCastPoint"				"0.2"
+		"AbilityCooldown"				"12"
+		"AbilityManaCost"				"400"
+
+		// Data driven
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"						
+		{
+			
+		}		
+
+		// Ability special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"350 425 500 575 650"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"splash_damage"		"50"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"range"				"700"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"stun_duration"		"0.7"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/kuro/kuro_abilities"
+				"Function"		"OnRIStart"
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"	"0"
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/kuro/kuro_abilities"
+				"Function"		"OnRIHit"
+			}
+		}
+	}
+	//=======================================
+	// Chloe von Einzbern : Rosa Ichthys Image (R) (Improve Projection SA)
+	//=======================================
+	"kuro_rosa_ichthys_upgrade"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"ScriptFile"					"abilities/kuro/kuro_rosa_ichthys"
+		"MaxLevel"						"5"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/nero_rosa_ichthys"
+		"AbilityCastAnimation" 			"ACT_DOTA_ATTACK_EVENT"
+		
+		// Ability stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"700"
+		"AbilityCastRangeBuffer"		"125"
+		"AbilityCastPoint"				"0.2"
+		"AbilityCooldown"				"9"
+		"AbilityManaCost"				"300"
+
+		// Data driven
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"						
+		{
+			
+		}		
+
+		// Ability special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"450 525 600 675 750"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"splash_damage"		"50"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"range"				"700"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"stun_duration"		"0.7"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow"					"-30"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow_duration"			"2.0"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/kuro/kuro_abilities"
+				"Function"		"OnRIStart"
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"	"0"
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/kuro/kuro_abilities"
+				"Function"		"OnRIHit"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_kuro_rosa_slow"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Duration"			"%slow_duration"
+				"Properties"
+				{
+				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow" 
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Chloe von Einzbern : Triple Link Crane Wing (R)
+	//=================================================================================================================
+	"kuro_triple_link_crane_wing"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/kuro/kuro_triple_link"
+		"AOERadius"						"%radius"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_5"
+		"AnimationPlaybackRate" 		"3.0"	
+		"precache"
+		{
+			
+		}
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.2"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"800"
+		
+		"AbilitySpecial"
+		{
+			"07"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"cast_delay"		"0.2"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"cast_range"		"800"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"300"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"kb_sword"			"4"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"80 95 110 125 140"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_damage"		"500 650 800 950 1100"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"sword_aoe"			"135"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"range"				"900"
+			}
+			
+			"07"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"stun_duration"		"1.2"
+			}
+			"07"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"mini_duration"		"0.3"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/kuro/kuro_abilities"
+				"Function"			"OnTripleCraneWingStart"
+			}
+		}
+
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"	"0"
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/kuro/kuro_abilities"
+				"Function"		"OnTLCWHit"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_overedge_anim"
+			{
+				"OverrideAnimation"		"ACT_DOTA_ATTACK"
+				"Duration"				"0.6"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Chloe von Einzbern : Triple Link Crane Wing (R) (Overedge SA)
+	//=================================================================================================================
+	"kuro_triple_link_crane_wing_upgrade_1"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/kuro/kuro_triple_link"
+		"AOERadius"						"%radius"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_5"
+		"AnimationPlaybackRate" 		"3.0"	
+		"precache"
+		{
+			
+		}
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.2"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"800"
+		
+		"AbilitySpecial"
+		{
+			"07"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"cast_delay"		"0.2"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"cast_range"		"800"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"300"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"kb_sword"			"4"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"110 125 140 155 170"
+			}
+			
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_damage"		"700 850 1000 1150 1300"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"sword_aoe"			"135"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"range"				"900"
+			}
+			
+			"07"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"stun_duration"		"1.2"
+			}
+			"07"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"mini_duration"		"0.3"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/kuro/kuro_abilities"
+				"Function"			"OnTripleCraneWingStart"
+			}
+		}
+
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"	"0"
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/kuro/kuro_abilities"
+				"Function"		"OnTLCWHit"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_overedge_anim"
+			{
+				"OverrideAnimation"		"ACT_DOTA_ATTACK"
+				"Duration"				"0.6"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Chloe von Einzbern : Triple Link Crane Wing (R) (Kuro Magic SA)
+	//=================================================================================================================
+	"kuro_triple_link_crane_wing_upgrade_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/kuro/kuro_triple_link"
+		"AOERadius"						"%radius"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_5"
+		"AnimationPlaybackRate" 		"3.0"	
+		"precache"
+		{
+			
+		}
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.2"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"800"
+		
+		"AbilitySpecial"
+		{
+			"07"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"cast_delay"		"0.2"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"cast_range"		"800"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"300"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"kb_sword"			"4"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"80 95 110 125 140"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_damage"		"500 650 800 950 1100"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"sword_aoe"			"135"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"range"				"900"
+			}
+			"07"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"stun_duration"		"1.2"
+			}
+			"07"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"mini_duration"		"0.3"
+			}
+			"07"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"int_ratio"			"3"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/kuro/kuro_abilities"
+				"Function"			"OnTripleCraneWingStart"
+			}
+		}
+
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"	"0"
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/kuro/kuro_abilities"
+				"Function"		"OnTLCWHit"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_overedge_anim"
+			{
+				"OverrideAnimation"		"ACT_DOTA_ATTACK"
+				"Duration"				"0.6"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Chloe von Einzbern : Triple Link Crane Wing (R) (Overedge + Kuro Magic SA)
+	//=================================================================================================================
+	"kuro_triple_link_crane_wing_upgrade_3"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/kuro/kuro_triple_link"
+		"AOERadius"						"%radius"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_5"
+		"AnimationPlaybackRate" 		"3.0"	
+		"precache"
+		{
+			
+		}
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.2"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"800"
+		
+		"AbilitySpecial"
+		{
+			"07"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"cast_delay"		"0.2"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"cast_range"		"800"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"300"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"kb_sword"			"4"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"110 125 140 155 170"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_damage"		"700 850 1000 1150 1300"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"sword_aoe"			"135"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"range"				"900"
+			}
+			"07"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"stun_duration"		"1.2"
+			}
+			"07"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"mini_duration"		"0.3"
+			}
+			"07"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"int_ratio"			"3"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/kuro/kuro_abilities"
+				"Function"			"OnTripleCraneWingStart"
+			}
+		}
+
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"	"0"
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/kuro/kuro_abilities"
+				"Function"		"OnTLCWHit"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_overedge_anim"
+			{
+				"OverrideAnimation"		"ACT_DOTA_ATTACK"
+				"Duration"				"0.6"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Chloe von Einzbern Attribute : Overedge
+	//=================================================================================================================
+	"kuro_attribute_overedge"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/kuro/kuro_attribute_overedge"
+		
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"13"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_kb_sword"	"2"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_kb_damage"	"180"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"bonus_kb_stun"		"0.5"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_kb_hit"		"4"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_tlcw_kb"		"30"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_tlcw_crane"	"200"
+			}
+			"07"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"combo_chance"		"50"
+			}
+			"08"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"combo_damage"		"150"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/kuro/kuro_abilities"
+				"Function"		"OnOveredgeAcquired"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Chloe von Einzbern Attribute : Improve Projection
+	//=================================================================================================================
+	"kuro_attribute_improve_projection"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/kuro/kuro_attribute_projection"
+		
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"19"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cooldown_reduction"	"25"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mana_cost"				"100"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"exca_bonus_dmg"		"300"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"gae_bonus_dmg"			"150"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"gae_bonus_HB"			"5"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"nine_lives_bonus"		"10"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"nine_lives_bonus_lasthit"		"300"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"rho_aias_bonus"		"200"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"rho_aias_knock"		"300"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"rosa_bonus"			"100"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"rosa_slow"				"-30"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"rosa_slow_duration"	"2"
+			}
+			"10"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"ubw_duration"			"1"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/kuro/kuro_abilities"
+				"Function"		"OnImproveProjectionAcquired"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Chloe von Einzbern Attribute : Kuro Magic
+	//=================================================================================================================
+	"kuro_attribute_kuro_magic"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/kuro/kuro_attribute_kuro_magic"
+		
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"10"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"share_pain_bonus"		"50"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mana_drain"			"15"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"stun_duration"			"0.4"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"int_ratio"				"3"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/kuro/kuro_abilities"
+				"Function"		"OnKuroMagicAcquired"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Chloe von Einzbern Attribute : Hrunting
+	//=================================================================================================================
+	"kuro_attribute_hrunting"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/kuro/kuro_attribute_hrunting"
+		
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"15"
+
+		"AbilitySpecial"
+		{
+			
+			
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"			"3.5"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"3000"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"mana_used"				"75"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage"				"300 400 500 600 700"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"stun_duration"			"2"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"600"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_bounce"			"2"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bounce_damage"			"75"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cooldown"				"40"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/kuro/kuro_abilities"
+				"Function"		"OnHruntingAcquired"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Chloe von Einzbern Attribute : Eagle Eye
+	//=================================================================================================================
+	"kuro_attribute_eagle_eye"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/kuro/kuro_attribute_eagle_eye"
+		
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"12"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"clair_radius"		"200"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"clair_cd"			"4"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"calad_range"		"1000"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"hrunt_range"		"2000"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/kuro/kuro_abilities"
+				"Function"		"OnEagleEyeAcquired"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Chloe von Einzbern Attribute : Combo : Fake Unlimited Blade Works (R)
+	//=================================================================================================================
+	"kuro_fake_ubw"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET| DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		//หารูปมาใส่
+		"AbilityTextureName"			"custom/kuro/kuro_combo"
+		"MaxLevel"						"1"
+		"AbilityCastPoint"				"0.5"
+		"AbilityCooldown"				"160"
+		"AbilityManaCost"				"800"
+		"precache"
+		{
+			
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"3"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"1200"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dmg"					"150"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"stun"					"0.1"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"interval"				"0.1"
+			}
+		}
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/kuro/kuro_abilities"
+				"Function"		"OnFakeUBWCast"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/kuro/kuro_abilities"
+				"Function"		"OnFakeUBWStart"
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"	"1"
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/kuro/kuro_abilities"
+				"Function"		"OnFakeUBWHit"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_fake_ubw_dummy"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"IsBuff"			"1"
+				"IsPurgable"		"0"
+				"ThinkInterval"  	"0.1"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/kuro/kuro_abilities"
+						"Function"		"OnFakeUBWRingCreate"
+					}
+				}
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/kuro/kuro_abilities"
+						"Function"		"OnFakeUBWDummyMove"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/kuro/kuro_abilities"
+						"Function"		"OnFakeUBWRingDestroy"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/kuro/kuro_abilities"
+						"Function"		"OnFakeUBWDeath"
+					}
+				}
+			}
+			"modifier_fake_ubw_think"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"IsPurgable"		"0"
+				"ThinkInterval"  	"%interval"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/kuro/kuro_abilities"
+						"Function"		"OnFakeUBWThink"
+					}
+				}
+			}
+			"modifier_fake_ubw_cooldown"
+			{
+				"IsPurgable"		"0"
+				"IsBuff"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"IsPurgable"		"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE | MODIFIER_ATTRIBUTE_PERMANENT"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Chloe von Einzbern Attribute : Combo : Fake Unlimited Blade Works (R) (Overedge SA)
+	//=================================================================================================================
+	"kuro_fake_ubw_upgrade_1"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET| DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		//หารูปมาใส่
+		"AbilityTextureName"			"custom/kuro/kuro_combo"
+		"MaxLevel"						"1"
+		"AbilityCastPoint"				"0.5"
+		"AbilityCooldown"				"160"
+		"AbilityManaCost"				"800"
+		"precache"
+		{
+
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"3"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"1200"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dmg"					"150"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"stun"					"0.1"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"overedge_chance"		"50"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"overedge_dmg"			"150"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"interval"				"0.1"
+			}
+		}
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/kuro/kuro_abilities"
+				"Function"		"OnFakeUBWCast"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/kuro/kuro_abilities"
+				"Function"		"OnFakeUBWStart"
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"	"1"
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/kuro/kuro_abilities"
+				"Function"		"OnFakeUBWHit"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_fake_ubw_dummy"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"IsBuff"			"1"
+				"IsPurgable"		"0"
+				"ThinkInterval"  	"0.1"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/kuro/kuro_abilities"
+						"Function"		"OnFakeUBWRingCreate"
+					}
+				}
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/kuro/kuro_abilities"
+						"Function"		"OnFakeUBWDummyMove"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/kuro/kuro_abilities"
+						"Function"		"OnFakeUBWRingDestroy"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/kuro/kuro_abilities"
+						"Function"		"OnFakeUBWDeath"
+					}
+				}
+			}
+			"modifier_fake_ubw_think"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"IsPurgable"		"0"
+				"ThinkInterval"  	"%interval"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/kuro/kuro_abilities"
+						"Function"		"OnFakeUBWThink"
+					}
+				}
+			}
+			"modifier_fake_ubw_cooldown"
+			{
+				"IsPurgable"		"0"
+				"IsBuff"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"IsPurgable"		"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE | MODIFIER_ATTRIBUTE_PERMANENT"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Chloe von Einzbern Attribute : Combo : Fake Unlimited Blade Works (R) (Improve Project SA)
+	//=================================================================================================================
+	"kuro_fake_ubw_upgrade_2"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET| DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		//หารูปมาใส่
+		"AbilityTextureName"			"custom/kuro/kuro_combo"
+		"MaxLevel"						"1"
+		"AbilityCastPoint"				"0.5"
+		"AbilityCooldown"				"160"
+		"AbilityManaCost"				"800"
+		"precache"
+		{
+
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"4"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"1200"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dmg"					"150"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"stun"					"0.1"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"interval"					"0.1"
+			}
+		}
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/kuro/kuro_abilities"
+				"Function"		"OnFakeUBWCast"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/kuro/kuro_abilities"
+				"Function"		"OnFakeUBWStart"
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"	"1"
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/kuro/kuro_abilities"
+				"Function"		"OnFakeUBWHit"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_fake_ubw_dummy"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"IsBuff"			"1"
+				"IsPurgable"		"0"
+				"ThinkInterval"  "0.1"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/kuro/kuro_abilities"
+						"Function"		"OnFakeUBWRingCreate"
+					}
+				}
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/kuro/kuro_abilities"
+						"Function"		"OnFakeUBWDummyMove"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/kuro/kuro_abilities"
+						"Function"		"OnFakeUBWRingDestroy"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/kuro/kuro_abilities"
+						"Function"		"OnFakeUBWDeath"
+					}
+				}
+			}
+			"modifier_fake_ubw_think"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"IsPurgable"		"0"
+				"ThinkInterval"  "%interval"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/kuro/kuro_abilities"
+						"Function"		"OnFakeUBWThink"
+					}
+				}
+			}
+			"modifier_fake_ubw_cooldown"
+			{
+				"IsPurgable"		"0"
+				"IsBuff"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"IsPurgable"		"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE | MODIFIER_ATTRIBUTE_PERMANENT"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Chloe von Einzbern Attribute : Combo : Fake Unlimited Blade Works (R) (Overedge + Improve Project SA)
+	//=================================================================================================================
+	"kuro_fake_ubw_upgrade_3"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET| DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		//หารูปมาใส่
+		"AbilityTextureName"			"custom/kuro/kuro_combo"
+		"MaxLevel"						"1"
+		"AbilityCastPoint"				"0.5"
+		"AbilityCooldown"				"160"
+		"AbilityManaCost"				"800"
+		"precache"
+		{
+
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"4"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"1200"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dmg"					"150"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"stun"					"0.1"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"overedge_chance"		"50"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"overedge_dmg"			"150"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"interval"					"0.1"
+			}
+		}
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/kuro/kuro_abilities"
+				"Function"		"OnFakeUBWCast"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/kuro/kuro_abilities"
+				"Function"		"OnFakeUBWStart"
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"	"1"
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/kuro/kuro_abilities"
+				"Function"		"OnFakeUBWHit"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_fake_ubw_dummy"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"IsBuff"			"1"
+				"IsPurgable"		"0"
+				"ThinkInterval"  "0.1"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/kuro/kuro_abilities"
+						"Function"		"OnFakeUBWRingCreate"
+					}
+				}
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/kuro/kuro_abilities"
+						"Function"		"OnFakeUBWDummyMove"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/kuro/kuro_abilities"
+						"Function"		"OnFakeUBWRingDestroy"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/kuro/kuro_abilities"
+						"Function"		"OnFakeUBWDeath"
+					}
+				}
+			}
+			"modifier_fake_ubw_think"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"IsPurgable"		"0"
+				"ThinkInterval"  "%interval"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/kuro/kuro_abilities"
+						"Function"		"OnFakeUBWThink"
+					}
+				}
+			}
+			"modifier_fake_ubw_cooldown"
+			{
+				"IsPurgable"		"0"
+				"IsBuff"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"IsPurgable"		"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE | MODIFIER_ATTRIBUTE_PERMANENT"
+			}
+		}
+	}
+	//=======================================
+	// Precache
+	//=======================================
+	"kuro_precache"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"custom/medusa/medusa_attribute_monstrous_strength"
+
+		"precache"
+		{
+			"model"					"models/kuro/illya_archer/illya_archer_by_zefiroft.vmdl"
+			"model"					"models/archer/kanshou.vmdl"
+			"model"					"models/archer/byakuya.vmdl"
+			"model"					"models/kuro/kuro_bow.vmdl"
+			"particle"  			"particles/custom/kuro/kuro_sharing_pain.vpcf"
+			"particle"				"particles/custom/archer/archer_clairvoyance_dust.vpcf"
+			"particle"				"particles/custom/archer/archer_clairvoyance_circle.vpcf"
+			"particle"				"particles/econ/events/ti4/teleport_end_ti4.vpcf"
+			"particle"				"particles/custom/archer/archer_hrunting_orb.vpcf"
+			"particle"				"particles/custom/archer/archer_hrunting_area.vpcf"
+			"particle"				"particles/custom/archer/archer_broken_phantasm/archer_broken_phantasm_crosshead.vpcf"
+			"particle"				"particles/units/heroes/hero_queenofpain/queen_shadow_strike.vpcf"
+			"particle"				"particles/econ/courier/courier_mechjaw/mechjaw_death_sparks.vpcf"
+			"particle"				"particles/custom/archer/archer_byakuya.vpcf"
+			"particle"				"particles/custom/archer/archer_kanshou.vpcf"
+			"particle"				"particles/units/heroes/hero_sven/sven_storm_bolt_projectile_explosion.vpcf"
+			"particle"				"particles/units/heroes/hero_clinkz/clinkz_searing_arrow.vpcf"
+			"particle"				"particles/units/heroes/hero_skywrath_mage/skywrath_mage_concussive_shot_cast.vpcf"
+			"particle"				"particles/units/heroes/hero_wisp/wisp_overcharge.vpcf"
+			"particle"				"particles/units/heroes/hero_invoker/invoker_sun_strike_beam.vpcf"
+			"particle"				"particles/custom/saber/excalibur/hit.vpcf"
+			"particle"				"particles/custom/saber/excalibur/shockwave.vpcf"
+			"particle"				"particles/units/heroes/hero_invoker/invoker_sun_strike_sparks.vpcf"
+			"particle"				"particles/units/heroes/hero_chaos_knight/chaos_knight_reality_rift.vpcf"
+			"particle"				"particles/units/heroes/hero_centaur/centaur_double_edge.vpcf"
+			"particle"  			"particles/generic_gameplay/screen_blood_splatter.vpcf"
+			"particle"				"particles/units/heroes/hero_axe/axe_culling_blade_kill.vpcf"
+			"particle"				"particles/custom/lancer/lancer_heart_break_txt.vpcf"
+			"particle"				"particles/items_fx/dagon.vpcf"
+			"particle"				"particles/custom/diarmuid/gae_dearg_slash.vpcf"
+			"particle"				"particles/custom/berserker/nine_lives/hit.vpcf"
+			"particle"				"particles/custom/berserker/nine_lives/last_hit.vpcf"
+			"particle"				"particles/custom/archer/archer_overedge_slash.vpcf"
+			"particle"				"particles/custom/archer/archer_rhoaias_shield.vpcf"
+			"particle"				"particles/units/heroes/hero_templar_assassin/templar_assassin_refract_hit_sphere.vpcf"
+			"particle"  			"particles/custom/nero/nero_scorched_earth_child_embers_rosa.vpcf"
+			"particle"  			"particles/econ/items/sven/sven_ti7_sword/sven_ti7_sword_spell_great_cleave_gods_strength.vpcf"
+			"particle"				"particles/custom/archer/emiya_kb_swords.vpcf"
+			"particle"				"particles/units/heroes/hero_centaur/centaur_warstomp.vpcf"
+			"particle"				"particles/custom/kuro/kuro_ubw_ground.vpcf"
+			"particle"				"particles/custom/kuro/kuro_byakuya.vpcf"
+			"particle"				"particles/custom/kuro/kuro_kanshou.vpcf"
+			"particle"  			"particles/custom/kuro/kuro_byakuya_launch.vpcf"
+			"particle"  			"particles/custom/kuro/kuro_kanshou_launch.vpcf"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_phantom_lancer.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_centaur.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_ember_spirit.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_earth_spirit.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_ogre_magi.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_lion.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_sven.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_luna.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_juggernaut.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_invoker.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_keeper_of_the_light.vsndevts"
+		}
+	}
+}

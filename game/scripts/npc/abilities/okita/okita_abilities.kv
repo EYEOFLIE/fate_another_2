@@ -1,0 +1,3756 @@
+// Dota Heroes File
+#base "okita_new_e.kv"
+
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Okita Souji : Innate : Flag of Sincerity (D)
+	//=================================================================================================================
+	"okita_flag_of_sincerity"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityTextureName"			"custom/okita/okita_flag_of_sincerity"
+		"MaxLevel" 						"1"
+		"AbilityManaCost"				"400"
+		"AbilityCooldown"				"36.0"
+		"AbilityCastRange"				"1000"
+		"AbilityCastPoint"				"0.5"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_1"
+		"AnimationPlaybackRate" 		"1.0"
+		"AOERadius"						"%radius"
+
+		"precache"
+		{
+			
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"			"0.5"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"1000"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"min_summon"			"4"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_summon"			"8"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"11"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"flag_health"			"6"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"buff_aspd"				"100"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"buff_ms"				"50"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"buff_atk"				"50"
+			}
+		}
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/okita/okita_abilities"
+				"Function"		"OnAbilityCastInvisBroke"
+			}
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/okita/okita_abilities"
+				"Function"		"OnFlagCast"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/okita/okita_abilities"
+				"Function"		"OnFlagStart"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_flag_summon"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"IsBuff"			"1"
+				"IsPurgable"		"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Duration"			"%duration"
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/okita/okita_abilities"
+						"Function"		"OnSummonFlagDestroy"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/okita/okita_abilities"
+						"Function"		"OnOkitaDeath"
+					}
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Okita Souji : Innate : Flag of Sincerity (D) (Coat of Oath SA)
+	//=================================================================================================================
+	"okita_flag_of_sincerity_upgrade"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityTextureName"			"custom/okita/okita_flag_of_sincerity"
+		"MaxLevel" 						"1"
+		"AbilityManaCost"				"400"
+		"AbilityCooldown"				"36.0"
+		"AbilityCastRange"				"1500"
+		"AbilityCastPoint"				"0.5"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_1"
+		"AnimationPlaybackRate" 		"1.0"
+		"AOERadius"						"%radius"
+
+		"precache"
+		{
+
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"			"0.5"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"1500"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"summon_chance"			"33"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"min_summon"			"5"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_summon"			"9"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"15"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"flag_health"			"8"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"buff_aspd"				"100"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"buff_ms"				"50"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"buff_atk"				"50"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"buff_hp_reg"			"60"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"buff_mana_reg"			"40"
+			}
+		}
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/okita/okita_abilities"
+				"Function"		"OnAbilityCastBroke"
+			}
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/okita/okita_abilities"
+				"Function"		"OnFlagCast"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/okita/okita_abilities"
+				"Function"		"OnFlagStart"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_flag_summon"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"IsBuff"			"1"
+				"IsPurgable"		"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Duration"			"%duration"
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/okita/okita_abilities"
+						"Function"		"OnSummonFlagDestroy"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/okita/okita_abilities"
+						"Function"		"OnOkitaDeath"
+					}
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Okita Souji Flag : Flag of Sincerity Passive
+	//=================================================================================================================
+	"okita_flag_of_sincerity_passive"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		//หารูปมาใส่
+		"AbilityTextureName"			"custom/okita/okita_flag_of_sincerity"
+		"MaxLevel"						"1"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"0"
+		"AbilityManaCost"				"0"
+		"precache"
+		{
+			"particle"				"particles/econ/events/ti6/radiant_fountain_regen_ti6_lvl3.vpcf" 
+		}
+		"AbilitySpecial"
+		{
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"buff_duration"			"5.0"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"buff_aspd"				"100"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"buff_ms"				"50"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"buff_atk"				"50"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"buff_hp_reg"			"60"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"buff_mana_reg"			"40"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_flag_of_sincerity"
+			{
+				"IsPurgable"		"0"
+				"IsDebuff"			"0"
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"IsBuff"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"States"
+				{
+					"MODIFIER_STATE_NOT_ON_MINIMAP"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NOT_ON_MINIMAP_FOR_ENEMIES"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_UNIT_COLLISION"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_ROOTED"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_CONSTANT_BLOCK" "9999"
+				}
+				"ThinkInterval"  "1"
+				"OnIntervalThink"
+				{
+					"RunScript"												//summon death = remove flag, flag go to isekai
+					{
+						"ScriptFile"	"abilities/okita/okita_abilities"
+						"Function"		"OnFlagThinkPassive"
+					}
+				}
+				"OnAttacked"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/okita/okita_abilities"
+						"Function"		"OnFlagTakeDamagePassive"
+						"DamageTaken"   "%attack_damage"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/okita/okita_abilities"
+						"Function"		"OnFlagDeathPassive"
+					}
+				}
+			}
+			"modifier_okita_headband"
+			{
+				"IsPurgable"		"0"
+				"IsDebuff"			"0"
+				"IsHidden"			"0"
+				"IsBuff"			"1"
+				"Duration"			"1"
+				"EffectName"		"particles/econ/events/ti6/radiant_fountain_regen_ti6_lvl3.vpcf"
+				"EffectAttachType"	"follow_origin"
+				"AbilityTextureName"	"custom/okita/okita_attribute_headband"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%buff_aspd"
+				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" "%buff_ms" 
+				    "MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE" "%buff_atk" 
+				}
+			}
+			"modifier_okita_headband_upgrade"
+			{
+				"IsPurgable"		"0"
+				"IsDebuff"			"0"
+				"IsHidden"			"0"
+				"IsBuff"			"1"
+				"Duration"			"1"
+				"AbilityTextureName"	"custom/okita/okita_attribute_headband"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%buff_aspd"
+				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" "%buff_ms" 
+				    "MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE" "%buff_atk" 
+				    "MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT" "%buff_hp_reg" 
+				    "MODIFIER_PROPERTY_MANA_REGEN_CONSTANT" "%buff_mana_reg" 
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Okita Souji : Hijikata : Laws of Shinsengumi Passive
+	//=================================================================================================================
+	"okita_law_of_shinsengumi_passive"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		//หารูปมาใส่
+		"AbilityTextureName"			"custom/okita/hijikata_law_of_shinsengumi"
+		"MaxLevel"						"1"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"1500"
+		"AbilityCooldown"				"0"
+		"AbilityManaCost"				"0"
+
+		"precache"
+		{
+			"particle"  "particles/econ/events/ti10/bottle_ti10_ring_bokeh.vpcf"
+		}
+
+		"AbilitySpecial"
+		{
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"radius"					"1500"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"buff_aspd"				"100"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"buff_ms"				"50"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"buff_atk"				"50"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_law_of_shinsengumi_aura"
+			{
+				"Passive"			"1"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Aura"          	"modifier_shinsengumi_checker"
+				"Aura_Radius"   	"%radius"
+				"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"Aura_Types"    	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"Aura_Flags"    	"DOTA_UNIT_TARGET_FLAG_NONE"
+				"Aura_ApplyToCaster" "1"			
+
+			}
+			"modifier_shinsengumi_checker"
+			{
+				"IsPurgable"		"0"
+				"IsDebuff"			"0"
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsBuff"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/okita/okita_abilities"
+						"Function"		"OnLawShinsengumiCheck"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/okita/okita_abilities"
+						"Function"		"OnLawShinsengumiDestroy"
+					}
+				}
+			}
+			"modifier_law_of_shinsengumi_buff"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsBuff"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"EffectName"        "particles/econ/events/ti10/bottle_ti10_ring_bokeh.vpcf"
+						"EffectAttachType"  "follow_origin"
+						"Target"            "TARGET"
+					}
+				}
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%buff_aspd"
+				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%buff_ms" 
+				    "MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE" "%buff_atk"
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Okita Souji : Hijikata : Shinsengumi Undying Sincerity
+	//=================================================================================================================
+	"okita_hijikata_undying_sincerity"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+		"AbilityTextureName"			"custom/okita/hijikata_undying_sincerity"
+		"MaxLevel"						"1"
+		"AbilityCastPoint"				"0.9"
+		"AbilityCastRange"				"1000"
+		"AbilityCooldown"				"30"
+		"AbilityManaCost"				"800"
+
+		"AbilitySpecial"
+		{
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"			"0.9"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"range"					"1000"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"speed"					"1000"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"800"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"stun"					"1.0"
+			}
+		}
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/okita/okita_abilities"
+				"Function"		"OnUndyingSincerityCast"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/okita/okita_abilities"
+				"Function"		"OnUndyingSincerityStart"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_undying_sincerity"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Duration"			"2.0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"States"
+				{
+					"MODIFIER_STATE_NO_UNIT_COLLISION"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_STUNNED"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_OVERRIDE_ANIMATION" "ACT_DOTA_RUN"
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Okita Souji Shinsengumi : Shinsengumi Passive
+	//=================================================================================================================
+	"okita_head_shinsengumi_passive"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		//หารูปมาใส่
+		"AbilityTextureName"			"custom/okita/okita_attribute_headband"
+		"MaxLevel"						"1"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"0"
+		"AbilityManaCost"				"0"
+
+		"Modifiers"
+		{
+			"modifier_head_of_shinsengumi"
+			{
+				"IsPurgable"		"0"
+				"IsDebuff"			"0"
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"IsBuff"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/okita/okita_abilities"
+						"Function"		"OnShinsengumiDeath"
+					}
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Okita Souji Shinsengumi : Shinsengumi Passive
+	//=================================================================================================================
+	"okita_shinsengumi_passive"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		//หารูปมาใส่
+		"AbilityTextureName"			"custom/okita/okita_flag_of_sincerity"
+		"MaxLevel"						"1"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"0"
+		"AbilityManaCost"				"0"
+
+		"Modifiers"
+		{
+			"modifier_shinsengumi_think"
+			{
+				"IsPurgable"		"0"
+				"IsDebuff"			"0"
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"IsBuff"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"ThinkInterval"  	"0.03"
+				"OnIntervalThink"
+				{
+					"RunScript"	//summon death = remove flag, flag go to isekai
+					{
+						"ScriptFile"	"abilities/okita/okita_abilities"
+						"Function"		"OnShinsengumiThinkPassive"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/okita/okita_abilities"
+						"Function"		"OnShinsengumiDeath"
+					}
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Okita Souji : Innate : Weak Constitution (F)
+	//=================================================================================================================
+	"okita_weak_constitution"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		//หารูปมาใส่
+		"AbilityTextureName"			"custom/okita/okita_weak_constitution"
+		"MaxLevel"						"1"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"0"
+		"AbilityManaCost"				"0"
+		"precache"
+		{
+			
+		}
+		"AbilitySpecial"
+		{
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"exhaust"			"1"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"base_cough"		"100"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"max_cough"			"120"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"base_cough_delay"	"2.0"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"count_duration"	"10"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"recovery"			"10"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"hp_loss_percent"	"15"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"stun_duration"		"0.9"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"weak_duration"		"1.5"
+			}
+			"07"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"aspd_debuff"		"-20"
+			}
+			"08"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"ms_debuff"			"-20"
+			}
+			"09"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"mr_debuff"			"-3"
+			}
+			"10"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"armor_debuff"		"-5"
+			}
+			"11"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"atk_debuff"		"-10"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_weak_constitution_counter"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"IsDebuff"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"ThinkInterval"  "0.1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/okita/okita_abilities"
+						"Function"		"OnWeakConstitutionThink"
+					}
+				}
+				"OnAttackLanded"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/okita/okita_abilities"
+						"Function"		"OnWeakConstitutionAttack"
+					}
+					"RunScript"
+					{ // sound atk
+						"ScriptFile"	"abilities/okita/okita_abilities"
+						"Function"		"OnSoundAttack"
+					}
+				}	
+			}
+			"modifier_weak_constitution_progress"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Duration"			"%count_duration"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"OnCreated"
+				{ 
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/okita/okita_abilities"
+						"Function"		"OnWeakConstitutionCreate"
+					}
+				}	
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/okita/okita_abilities"
+						"Function"		"OnWeakConstitutionRecovery"
+					}	
+				}			
+			}
+			"modifier_weak_constitution"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Duration"			"%weak_duration"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%aspd_debuff"
+				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" "%ms_debuff" 
+				    "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%armor_debuff" 
+				    "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS" "%mr_debuff" 
+				    "MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE" "%atk_debuff" 
+				}
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/okita/okita_abilities"
+						"Function"		"OnCoughUp"
+					}
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Okita Souji : Innate : Weak Constitution (D) (Persistence SA)
+	//=================================================================================================================
+	"okita_weak_constitution_upgrade"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		//หารูปมาใส่
+		"AbilityTextureName"			"custom/okita/okita_weak_constitution"
+		"MaxLevel"						"1"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"0"
+		"AbilityManaCost"				"0"
+		"precache"
+		{
+
+		}
+		"AbilitySpecial"
+		{
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"exhaust"			"1"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"base_cough"		"100"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"max_cough"			"150"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"base_cough_delay"	"2.0"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"count_duration"	"10"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"recovery"			"20"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"hp_loss_percent"	"15"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"stun_duration"		"0.9"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"weak_duration"		"1.5"
+			}
+			"07"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"aspd_debuff"		"-20"
+			}
+			"08"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"ms_debuff"			"-20"
+			}
+			"09"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"mr_debuff"			"-3"
+			}
+			"10"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"armor_debuff"		"-5"
+			}
+			"11"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"atk_debuff"		"-10"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_weak_constitution_counter"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"IsDebuff"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"ThinkInterval"  "0.1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/okita/okita_abilities"
+						"Function"		"OnWeakConstitutionThink"
+					}
+				}
+				"OnAttackLanded"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/okita/okita_abilities"
+						"Function"		"OnWeakConstitutionAttack"
+					}
+					"RunScript"
+					{ // sound atk
+						"ScriptFile"	"abilities/okita/okita_abilities"
+						"Function"		"OnSoundAttack"
+					}
+				}	
+			}
+			"modifier_weak_constitution_progress"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Duration"			"%count_duration"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"	
+				"OnCreated"
+				{ 
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/okita/okita_abilities"
+						"Function"		"OnWeakConstitutionCreate"
+					}
+				}	
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/okita/okita_abilities"
+						"Function"		"OnWeakConstitutionRecovery"
+					}	
+				}	
+			}
+			"modifier_weak_constitution"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Duration"			"%weak_duration"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%aspd_debuff"
+				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" "%ms_debuff" 
+				    "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%armor_debuff" 
+				    "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS" "%mr_debuff" 
+				    "MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE" "%atk_debuff" 
+				}
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/okita/okita_abilities"
+						"Function"		"OnCoughUp"
+					}
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Okita Souji : Skill 1 : Shukuchi (Q)
+	//=================================================================================================================
+	"okita_shukuchi"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityTextureName"			"custom/okita/okita_shukuchi"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_1"
+		"AnimationPlaybackRate" 		"1.0"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityManaCost"				"100"
+		"AbilityCooldown"				"12.0 11.0 10.0 9.0 8.0"
+		"AbilityCastPoint"				"0.0"
+
+		"precache"
+		{
+			
+		}
+
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"exhaust"				"10"
+			}	
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"leap_range"			"500"
+			}	
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"invis_duration"		"0.5"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"buff_duration"			"2.5"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_aspd"			"30 60 90 120 150"
+			}
+														
+		}
+		"OnSpellStart"
+		{
+		
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/okita/okita_abilities"
+				"Function"		"OnShukuchiStart"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_shukuchi_invis"
+			{
+				"IsPurgable"		"1"
+				"IsDebuff"			"0"
+				"IsHidden"			"0"
+				"IsBuff"			"1"
+				"Duration"			"%invis_duration"
+				"EffectName"				"particles/units/heroes/hero_pugna/pugna_decrepify.vpcf"	
+				"EffectAttachType"			"follow_overhead"
+				"States"
+			    {
+				    "MODIFIER_STATE_INVISIBLE" "MODIFIER_STATE_VALUE_ENABLED"
+				    "MODIFIER_STATE_NO_UNIT_COLLISION" "MODIFIER_STATE_VALUE_ENABLED"
+				    "MODIFIER_STATE_NOT_ON_MINIMAP_FOR_ENEMIES" "MODIFIER_STATE_VALUE_ENABLED"
+			    }
+				
+				"Properties"
+				{
+				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" 	"550" 
+				    "MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE"			"550"
+				}
+				"OnAttackStart"
+				{
+					"RemoveModifier"
+					{
+						"ModifierName"	"modifier_shukuchi_invis"
+						"Target" 		"TARGET"
+					}
+				}
+				"OnAbilityExecuted"
+				{
+					"RemoveModifier"
+					{
+						"ModifierName"	"modifier_shukuchi_invis"
+						"Target" 		"TARGET"
+					}
+				}
+				"OnTakeDamage"
+				{
+					"RemoveModifier"
+					{
+						"ModifierName"	"modifier_shukuchi_invis"
+						"Target" 		"TARGET"
+					}
+				}
+			}
+			"modifier_shukuchi_breath"
+			{
+				"IsPurgable"		"1"
+				"IsDebuff"			"0"
+				"IsHidden"			"0"
+				"IsBuff"			"1"
+				"Duration"			"%buff_duration"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%bonus_aspd"
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Okita Souji : Skill 1 : Kyokuchi (Q) (Kyokuchi SA)
+	//=================================================================================================================
+	"okita_shukuchi_upgrade"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityTextureName"			"custom/okita/okita_shukuchi"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_1"
+		"AnimationPlaybackRate" 		"1.0"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityManaCost"				"100"
+		"AbilityCooldown"				"12.0 11.0 10.0 9.0 8.0"
+		"AbilityCastPoint"				"0.0"
+
+		"precache"
+		{
+
+		}
+
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"exhaust"				"10"
+			}	
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"leap_range"			"800"
+			}	
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"invis_duration"		"0.5"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"buff_duration"			"4.0"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_aspd"			"30 60 90 120 150"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"crit_dmg"				"135 145 155 165 175"
+			}														
+		}
+		"OnSpellStart"
+		{
+		
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/okita/okita_abilities"
+				"Function"		"OnShukuchiStart"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_shukuchi_invis"
+			{
+				"IsPurgable"		"1"
+				"IsDebuff"			"0"
+				"IsHidden"			"0"
+				"IsBuff"			"1"
+				"Duration"			"%invis_duration"
+				"EffectName"				"particles/units/heroes/hero_pugna/pugna_decrepify.vpcf"	
+				"EffectAttachType"			"follow_overhead"
+				"States"
+			    {
+				    "MODIFIER_STATE_INVISIBLE" "MODIFIER_STATE_VALUE_ENABLED"
+				    "MODIFIER_STATE_NO_UNIT_COLLISION" "MODIFIER_STATE_VALUE_ENABLED"
+				    "MODIFIER_STATE_NOT_ON_MINIMAP_FOR_ENEMIES" "MODIFIER_STATE_VALUE_ENABLED"
+			    }
+				
+				"Properties"
+				{
+				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" 	"550" 
+				    "MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE"			"550"
+				}
+				"OnAttackStart"
+				{
+					"RemoveModifier"
+					{
+						"ModifierName"	"modifier_shukuchi_invis"
+						"Target" 		"TARGET"
+					}
+				}
+				"OnAbilityExecuted"
+				{
+					"RemoveModifier"
+					{
+						"ModifierName"	"modifier_shukuchi_invis"
+						"Target" 		"TARGET"
+					}
+				}
+				"OnTakeDamage"
+				{
+					"RemoveModifier"
+					{
+						"ModifierName"	"modifier_shukuchi_invis"
+						"Target" 		"TARGET"
+					}
+				}
+			}
+			"modifier_shukuchi_breath"
+			{
+				"IsPurgable"		"1"
+				"IsDebuff"			"0"
+				"IsHidden"			"0"
+				"IsBuff"			"1"
+				"Duration"			"%buff_duration"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%bonus_aspd"
+					"MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE"	"%crit_dmg"
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Okita Souji : Skill 2 : Tennen Rishin-Ryu Kenjutsu (W)
+	//=================================================================================================================
+	"okita_tennen"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"			"custom/okita/okita_tennen"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_2"
+		"AnimationPlaybackRate" 		"10.0"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityManaCost"				"200"
+		"AbilityCooldown"				"24.0"
+		"AbilityCastPoint"				"0.1"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"exhaust"				"20"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"4.0 4.5 5.0 5.5 6.0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"base_atk"				"50 60 70 80 90"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_agi"				"1 1 2 2 3"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"agi_duration"			"12"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_stacks"			"10"
+			}						
+		}
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/okita/okita_abilities"
+				"Function"		"OnAbilityCastBroke"
+			}
+		}
+
+		"OnSpellStart"
+		{	
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/okita/okita_abilities"
+				"Function"		"OnTenninRishinStart"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_tennen_base"
+			{
+				"IsPurgable"		"0"
+				"IsDebuff"			"0"
+				"IsHidden"			"0"
+				"IsBuff"			"1"
+				"Duration"			"%duration"
+				
+				"Properties"
+				{
+				    "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "%base_atk" 
+				}
+			}
+			"modifier_tennen_passive"
+			{
+				"Passive"			"1"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"ThinkInterval"  "1.0"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/okita/okita_abilities"
+						"Function"		"OnTennenThink"
+					}
+				}
+			
+				"OnAttackLanded"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/okita/okita_abilities"
+						"Function"		"OnTennenAttack"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/okita/okita_abilities"
+						"Function"		"OnTennenDeath"
+					}
+				}
+			}
+			"modifier_tennen_bonus"
+			{
+				"IsPurgable"		"0"
+				"IsDebuff"			"0"
+				"IsHidden"			"1"
+				"IsBuff"			"1"
+				"Duration"			"%agi_duration"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE | MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS" "%bonus_agi" 
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/okita/okita_abilities"
+						"Function"		"OnTennenBonusDestroy"
+					}
+				}
+			}
+			"modifier_zekken_window"
+			{
+				"IsPurgable"		"0"
+				"IsBuff"			"1"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Duration"			"4"
+
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/okita/okita_abilities"
+						"Function"		"OnZekkenWindow"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/okita/okita_abilities"
+						"Function"		"OnZekkenWindowDestroy"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/okita/okita_abilities"
+						"Function"		"OnZekkenWindowDied"
+					}
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Okita Souji : Skill 2 : Tennen Rishin-Ryu Kenjutsu (W)
+	//=================================================================================================================
+	"okita_tennen_upgrade"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"			"custom/okita/okita_tennen"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_2"
+		"AnimationPlaybackRate" 		"10.0"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityManaCost"				"200"
+		"AbilityCooldown"				"24.0"
+		"AbilityCastPoint"				"0.1"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"exhaust"				"20"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"7.0 7.5 8.0 8.5 9.0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"base_atk"				"50 60 70 80 90"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_agi"				"1 1 2 2 3"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"agi_duration"			"12"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_stacks"			"10"
+			}						
+		}
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/okita/okita_abilities"
+				"Function"		"OnAbilityCastBroke"
+			}
+		}
+
+		"OnSpellStart"
+		{	
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/okita/okita_abilities"
+				"Function"		"OnTenninRishinStart"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_tennen_base"
+			{
+				"IsPurgable"		"0"
+				"IsDebuff"			"0"
+				"IsHidden"			"0"
+				"IsBuff"			"1"
+				"Duration"			"%duration"
+				
+				"Properties"
+				{
+				    "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "%base_atk" 
+				}
+			}
+			"modifier_tennen_passive"
+			{
+				"Passive"			"1"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"ThinkInterval"  "1.0"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/okita/okita_abilities"
+						"Function"		"OnTennenThink"
+					}
+				}
+			
+				"OnAttackLanded"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/okita/okita_abilities"
+						"Function"		"OnTennenAttack"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/okita/okita_abilities"
+						"Function"		"OnTennenDeath"
+					}
+				}
+			}
+			"modifier_tennen_bonus"
+			{
+				"IsPurgable"		"0"
+				"IsDebuff"			"0"
+				"IsHidden"			"1"
+				"IsBuff"			"1"
+				"Duration"			"%agi_duration"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE | MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS" "%bonus_agi" 
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/okita/okita_abilities"
+						"Function"		"OnTennenBonusDestroy"
+					}
+				}
+			}
+			"modifier_zekken_window"
+			{
+				"IsPurgable"		"0"
+				"IsBuff"			"1"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Duration"			"4"
+
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/okita/okita_abilities"
+						"Function"		"OnZekkenWindow"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/okita/okita_abilities"
+						"Function"		"OnZekkenWindowDestroy"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/okita/okita_abilities"
+						"Function"		"OnZekkenWindowDied"
+					}
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Okita Souji : Hira-Seigan no Kamae (E)
+	//=================================================================================================================
+	"okita_hira_seigan"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"			"custom/okita/okita_seigan"
+		"AbilityCastAnimation" 			"ACT_DOTA_ITEM_DROP"
+		"AnimationPlaybackRate" 		"1.0"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityManaCost"				"400"
+		"AbilityCastRange"				"1000"
+		"AbilityCooldown"				"30 28 26 24 22"
+		"AbilityCastPoint"				"0.1"
+		"precache"
+		{
+			
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"exhaust"				"30"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"3"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"shield"				"300 400 500 600 700"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"min_damage"			"300 400 500 600 700"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_damage"			"600 700 800 900 1000"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"beam_width"			"250"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"beam_range"			"1000"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"beam_speed"			"4000"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/okita/okita_abilities"
+				"Function"		"OnSeiganStart"
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"	"0"
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/okita/okita_abilities"
+				"Function"		"OnSeiganBeamHit"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_hira_seigan_shield"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"Duration"			"%duration"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/okita/okita_abilities"
+						"Function"		"OnSeiganCreate"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/okita/okita_abilities"
+						"Function"		"OnSeiganDestroy"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/okita/okita_abilities"
+						"Function"		"OnSeiganStop"
+					}
+				}
+				"States"
+				{
+					"MODIFIER_STATE_ROOTED"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+				"OnTakeDamage"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/okita/okita_abilities"
+						"Function"		"OnSeiganTakeDamage"
+						"DamageTaken"	"%attack_damage"
+					}
+				}
+				"OnAbilityExecuted"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/okita/okita_abilities"
+						"Function"		"OnSeiganStop"
+					}
+				}
+				"OnAttackStart"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/okita/okita_abilities"
+						"Function"		"OnSeiganStop"
+					}
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Okita Souji : Hira-Seigan no Kamae (E)
+	//=================================================================================================================
+	"okita_hira_seigan_upgrade"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"			"custom/okita/okita_seigan"
+		"AbilityCastAnimation" 			"ACT_DOTA_ITEM_DROP"
+		"AnimationPlaybackRate" 		"1.0"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityManaCost"				"400"
+		"AbilityCastRange"				"1000"
+		"AbilityCooldown"				"30 28 26 24 22"
+		"AbilityCastPoint"				"0.1"
+		"precache"
+		{
+
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"exhaust"				"30"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"3"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"shield"				"300 400 500 600 700"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"min_damage"			"300 400 500 600 700"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_damage"			"800 900 1000 1100 1200"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"beam_width"			"250"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"beam_range"			"1000"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"beam_speed"			"4000"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/okita/okita_abilities"
+				"Function"		"OnSeiganStart"
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"	"0"
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/okita/okita_abilities"
+				"Function"		"OnSeiganBeamHit"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_hira_seigan_shield"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"Duration"			"%duration"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/okita/okita_abilities"
+						"Function"		"OnSeiganCreate"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/okita/okita_abilities"
+						"Function"		"OnSeiganDestroy"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/okita/okita_abilities"
+						"Function"		"OnSeiganStop"
+					}
+				}
+				"States"
+				{
+					"MODIFIER_STATE_ROOTED"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+				"OnTakeDamage"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/okita/okita_abilities"
+						"Function"		"OnSeiganTakeDamage"
+						"DamageTaken"	"%attack_damage"
+					}
+				}
+				"OnAbilityExecuted"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/okita/okita_abilities"
+						"Function"		"OnSeiganStop"
+					}
+				}
+				"OnAttackStart"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/okita/okita_abilities"
+						"Function"		"OnSeiganStop"
+					}
+				}
+			}
+		}
+	}
+	//=======================================
+	// Okita Souji : Hira-Seigan no Kamae Stop (E)
+	//=======================================
+	"okita_hira_seigan_stop"
+	{
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityTextureName"			"silencer_last_word"
+		
+		"AbilityCastPoint"				"0.0"
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/okita/okita_abilities"
+				"Function"		"OnSeiganStop"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Okita Souji : Hira-Seigan no Kamae (E)
+	//=================================================================================================================
+	"okita_hira_seigan_old"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELED"
+		"AbilityTextureName"			"custom/okita/okita_seigan"
+		"AbilityCastAnimation" 			"ACT_DOTA_ITEM_DROP"
+		"AnimationPlaybackRate" 		"1.0"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityManaCost"				"400"
+		"AbilityCastRange"				"500"
+		"AbilityCooldown"				"30 28 26 24 22"
+		"AbilityCastPoint"				"0.3"
+		"AbilityChannelTime"            "3.0"
+		"precache"
+		{
+			"particle"  "particles/custom/okita/hira_seigen_ring2.vpcf"
+			"particle"  "particles/custom/okita/hira_seigen_shield.vpcf"
+			"particle"  "particles/custom/okita/okita_seigan_beam.vpcf"
+			"particle"  "particles/custom/okita/okita_seigan_beam_black.vpcf"
+			"particle"  "particles/econ/items/keeper_of_the_light/kotl_ti10_immortal/kotl_ti10_blinding_light_groundring.vpcf"
+			"soundevents" "soundevents/game_sounds_heroes/game_sounds_keeper_of_the_light.vsndevts"
+			"soundevents" "soundevents/game_sounds_heroes/game_sounds_invoker.vsndevts"
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"exhaust"				"30"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"3"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"dmg_reduction"				"-50"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dmg_threshold"			"100 85 70 55 40"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"500"
+			}	
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"base_damage"			"300 375 450 525 600"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"charge_damage"			"180 210 240 270 300"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"beam_damage"			"840 1005 1170 1335 1500"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"beam_width"			"250"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"beam_range"			"1000"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/okita/okita_abilities"
+				"Function"		"OnSeiganChannelStart"
+			}
+		}
+		"OnChannelInterrupted"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/okita/okita_abilities"
+				"Function"		"OnSeiganInterrupt"
+			}
+		}
+		"OnChannelSucceeded"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/okita/okita_abilities"
+				"Function"		"OnSeiganSuccess"
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"	"0"
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/okita/okita_abilities"
+				"Function"		"OnSeiganBeamHit"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_hira_seigan_thinker"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"Duration"			"%duration"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/okita/okita_abilities"
+						"Function"		"OnSeiganCreate"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/okita/okita_abilities"
+						"Function"		"OnSeiganDestroy"
+					}
+				}
+				"ThinkInterval"  "0.1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/okita/okita_abilities"
+						"Function"		"OnSeiganThink"
+					}
+				}
+				"Properties"
+				{
+				    "MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE" "%dmg_reduction"
+				}
+				"OnTakeDamage"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/okita/okita_abilities"
+						"Function"		"OnSeiganTakeDamage"
+						"DamageTaken"	"%attack_damage"
+					}
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Okita Souji : Skill 4 : Mumyo Sandan-Zuki (R)
+	//=================================================================================================================
+	"okita_sandanzuki"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+		"AbilityTextureName"			"custom/okita/okita_mumyo"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_2"
+		"AnimationPlaybackRate" 		"2.0"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+
+		"AbilityCastPoint"                          "0.9"
+        "AbilityManaCost"                           "800"
+        "AbilityCooldown"                           "45"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"exhaust"				"40"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"		"0.9"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"window_duration"		"6"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"distance"				"950"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"base_damage"			"250 315 380 445 510"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"delay_duration"		"0.7"
+			}
+		}
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/okita/okita_abilities"
+				"Function"		"OnAbilityCastInvisBroke"
+			}
+		}
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/okita/okita_abilities"
+				"Function"		"OnSandanzukiUpgrade"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/okita/okita_abilities"
+				"Function"		"OnSandanzukiStart"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_sandanzuki_window"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Duration"			"%window_duration"
+				"States"
+				{
+					"MODIFIER_STATE_ROOTED"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+		
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/okita/okita_abilities"
+						"Function"		"OnSandanzukiWindowCreate"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/okita/okita_abilities"
+						"Function"		"OnSandanzukiWIndowDestroy"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/okita/okita_abilities"
+						"Function"		"OnSandanzukiWIndowDeath"
+					}
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Okita Souji : Skill 4 : Mumyo Sandan-Zuki (R) (Kiku Ichimonji SA)
+	//=================================================================================================================
+	"okita_sandanzuki_upgrade"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+		"AbilityTextureName"			"custom/okita/okita_mumyo"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_2"
+		"AnimationPlaybackRate" 		"2.0"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+
+		"AbilityCastPoint"                          "0.9"
+        "AbilityManaCost"                           "800"
+        "AbilityCooldown"                           "45"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"exhaust"				"40"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"		"0.9"
+			}
+			
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"window_duration"		"6"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"distance"				"950"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"base_damage"			"250 315 380 445 510"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_agi_ratio"		"1.5"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"delay_duration"		"0.7"
+			}
+		}
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/okita/okita_abilities"
+				"Function"		"OnSandanzukiUpgrade"
+			}
+		}
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/okita/okita_abilities"
+				"Function"		"OnAbilityCastInvisBroke"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/okita/okita_abilities"
+				"Function"		"OnSandanzukiStart"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_sandanzuki_window"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Duration"			"%window_duration"
+				"States"
+				{
+					"MODIFIER_STATE_ROOTED"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+		
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/okita/okita_abilities"
+						"Function"		"OnSandanzukiWindowCreate"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/okita/okita_abilities"
+						"Function"		"OnSandanzukiWIndowDestroy"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/okita/okita_abilities"
+						"Function"		"OnSandanzukiWIndowDeath"
+					}
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Okita Souji : Skill 4 : Mumyo Sandan-Zuki (R) Dash 1
+	//=================================================================================================================
+	"okita_sandanzuki_charge1"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+		"AbilityTextureName"			"custom/okita/okita_mumyo"
+		"AbilityCastAnimation" 			"ACT_DOTA_ITEM_DROP"
+		"AnimationPlaybackRate" 		"0.3"
+		"MaxLevel"						"1"
+
+		"AbilityCastPoint"                          "0.0"
+        "AbilityManaCost"                           "0"
+        "AbilityCooldown"                           "0"
+        "precache"
+        {
+        	
+        }
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"exhaust"				"10"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dash_speed"			"2500"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"distance"				"950"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/okita/okita_abilities"
+				"Function"		"OnSandanzukiDash"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_sandanzuki_dash"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Duration"			"1.0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+		
+				"States"
+				{
+					"MODIFIER_STATE_STUNNED"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_UNTARGETABLE"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_FLYING_FOR_PATHING_PURPOSES_ONLY"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_UNIT_COLLISION"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_ROOTED"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Okita Souji : Skill 4 : Mumyo Sandan-Zuki (R) Dash 2
+	//=================================================================================================================
+	"okita_sandanzuki_charge2"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+		"AbilityTextureName"			"custom/okita/okita_mumyo"
+		"AbilityCastAnimation" 			"ACT_DOTA_ITEM_DROP"
+		"AnimationPlaybackRate" 		"0.3"
+		"MaxLevel"						"1"
+
+		"AbilityCastPoint"                          "0.0"
+        "AbilityManaCost"                           "0"
+        "AbilityCooldown"                           "0"
+        "precache"
+        {
+
+        }
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"exhaust"				"10"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dash_speed"			"3000"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"distance"				"950"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/okita/okita_abilities"
+				"Function"		"OnSandanzukiDash"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_sandanzuki_dash"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Duration"			"1.0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+		
+				"States"
+				{
+					"MODIFIER_STATE_STUNNED"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_UNTARGETABLE"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_FLYING_FOR_PATHING_PURPOSES_ONLY"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_UNIT_COLLISION"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_ROOTED"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Okita Souji : Skill 4 : Mumyo Sandan-Zuki (R) Dash 3
+	//=================================================================================================================
+	"okita_sandanzuki_charge3"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+		"AbilityTextureName"			"custom/okita/okita_mumyo"
+		"AbilityCastAnimation" 			"ACT_DOTA_ITEM_DROP"
+		"AnimationPlaybackRate" 		"0.3"
+		"MaxLevel"						"5"
+
+		"AbilityCastPoint"                          "0.0"
+        "AbilityManaCost"                           "0"
+        "AbilityCooldown"                           "0"
+        "precache"
+        {
+
+        }
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"exhaust"				"10"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dash_speed"			"3500"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"distance"				"950"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"base_damage"			"250 315 380 445 510"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_agi_ratio"		"1.5"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/okita/okita_abilities"
+				"Function"		"OnSandanzukiDash"
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"	"1"
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/okita/okita_abilities"
+				"Function"		"OnSandanzukiHit"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_sandanzuki_dash"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Duration"			"1.0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+		
+				"States"
+				{
+					"MODIFIER_STATE_STUNNED"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_UNTARGETABLE"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_HEALTH_BAR"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_FLYING_FOR_PATHING_PURPOSES_ONLY"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_INVULNERABLE"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_UNIT_COLLISION"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_ROOTED"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Okita Souji : Skill 4 : Mumyo Sandan-Zuki (R) Dash 3 (Kiku Ichimonji SA)
+	//=================================================================================================================
+	"okita_sandanzuki_charge3_upgrade"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+		"AbilityTextureName"			"custom/okita/okita_mumyo"
+		"AbilityCastAnimation" 			"ACT_DOTA_ITEM_DROP"
+		"AnimationPlaybackRate" 		"0.3"
+		"MaxLevel"						"5"
+
+		"AbilityCastPoint"                          "0.0"
+        "AbilityManaCost"                           "0"
+        "AbilityCooldown"                           "0"
+        "precache"
+        {
+
+        }
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"exhaust"				"10"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dash_speed"			"3500"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"distance"				"950"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"base_damage"			"250 315 380 445 510"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_agi_ratio"		"1.5"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/okita/okita_abilities"
+				"Function"		"OnSandanzukiDash"
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"	"1"
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/okita/okita_abilities"
+				"Function"		"OnSandanzukiHit"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_sandanzuki_dash"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Duration"			"1.0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+		
+				"States"
+				{
+					"MODIFIER_STATE_STUNNED"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_UNTARGETABLE"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_HEALTH_BAR"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_FLYING_FOR_PATHING_PURPOSES_ONLY"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_INVULNERABLE"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_UNIT_COLLISION"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_ROOTED"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Okita Souji : Mind's Eye (False) (F)
+	//=================================================================================================================
+	"okita_mind_eye"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityTextureName"			"custom/okita/okita_mind_eye"
+		"AbilityCastAnimation" 			"ACT_DOTA_ITEM_DROP"
+		"AnimationPlaybackRate" 		"1.0"
+		"MaxLevel"						"1"
+		"RequiredLevel"					"25"
+		"AbilityManaCost"				"0"
+		"AbilityCooldown"				"20.0"
+		"AbilityCastPoint"				"0.0"
+
+		"precache"
+		{
+			"particle"  "particles/items_fx/immunity_sphere_buff.vpcf"
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"1.0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range"					"500"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"distance"				"500"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"evasion"				"100"
+			}	
+		}
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/okita/okita_abilities"
+				"Function"		"OnAbilityCastBroke"
+			}
+		}
+
+		"OnSpellStart"
+		{	
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/okita/okita_abilities"
+				"Function"		"OnMindEyeStart"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_okita_mind_eye"
+			{
+				"IsPurgable"		"0"
+				"IsDebuff"			"0"
+				"IsHidden"			"0"
+				"IsBuff"			"1"
+				"Duration"			"%duration"
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"EffectName"        "particles/items_fx/immunity_sphere_buff.vpcf"
+						"EffectAttachType"	"start_at_customorigin"
+						"Target"            "TARGET"
+						"ControlPointEntities"
+						{
+							"TARGET"		"attach_hitloc"
+						}
+					}
+				}
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_EVASION_CONSTANT" "%evasion"
+				}
+				"ThinkInterval"  "0.033"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/okita/okita_abilities"
+						"Function"		"OnMindEyeThink"
+					}
+				}
+				"OnTakeDamage"
+				// "%attack_damage" is set to the damage value after mitigation
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/okita/okita_abilities"
+						"Function"		"OnMindEyeTakeDamage"
+						"DamageTaken"	"%attack_damage"
+					}
+				}
+			}
+			"modifier_okita_mind_eye_cooldown"
+			{
+				"IsDebuff"			"1"
+				"IsPurgable"		"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Okita Souji : Coat of Oaths (W)
+	//=================================================================================================================
+	"okita_coat_of_oaths"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityManaCost"				"0"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"			"custom/okita/okita_coat"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityCastPoint"              "0.1"
+        "AbilityManaCost"               "200"
+        "AbilityCooldown"               "20"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"5 5 6 6 7"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_mr"				"10 13 16 19 22"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_armor"			"8 11 14 17 20"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/okita/okita_abilities"
+				"Function"		"OnCoatStart"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_coat_of_oaths"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"IsBuff"			"1"
+				"Duration"			"%duration"
+				"EffectName"		"particles/econ/items/primal_beast/primal_beast_2022_prestige/primal_beast_2022_prestige_onslaught_charge_body_emissive.vpcf"
+				"EffectAttachType"	"follow_origin"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%bonus_armor"
+				    "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS" "%bonus_mr" 
+				}
+			}
+			"modifier_zekken_window"
+			{
+				"IsPurgable"		"0"
+				"IsBuff"			"1"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Duration"			"4"
+
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/okita/okita_abilities"
+						"Function"		"OnZekkenWindow"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/okita/okita_abilities"
+						"Function"		"OnZekkenWindowDestroy"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/okita/okita_abilities"
+						"Function"		"OnZekkenWindowDied"
+					}
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Okita Souji : Coat of Oaths (W)
+	//=================================================================================================================
+	"okita_coat_of_oaths_upgrade"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityManaCost"				"0"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"			"custom/okita/okita_coat"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityCastPoint"              "0.1"
+        "AbilityManaCost"               "200"
+        "AbilityCooldown"               "20"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"8 8 9 9 10"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_mr"				"10 13 16 19 22"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_armor"			"8 11 14 17 20"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/okita/okita_abilities"
+				"Function"		"OnCoatStart"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_coat_of_oaths"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"IsBuff"			"1"
+				"Duration"			"%duration"
+				"EffectName"		"particles/econ/items/primal_beast/primal_beast_2022_prestige/primal_beast_2022_prestige_onslaught_charge_body_emissive.vpcf"
+				"EffectAttachType"	"follow_origin"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%bonus_armor"
+				    "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS" "%bonus_mr" 
+				}
+			}
+			"modifier_zekken_window"
+			{
+				"IsPurgable"		"0"
+				"IsBuff"			"1"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Duration"			"4"
+
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/okita/okita_abilities"
+						"Function"		"OnZekkenWindow"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/okita/okita_abilities"
+						"Function"		"OnZekkenWindowDestroy"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/okita/okita_abilities"
+						"Function"		"OnZekkenWindowDied"
+					}
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Okita Souji Combo : Zekken Mukyuu Sandan (R) 
+	//=================================================================================================================
+	"okita_zekken"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL | DAMAGE_TYPE_PURE | DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/okita/okita_combo_zekken"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_3"
+		"AnimationPlaybackRate" 		"1.0"
+		"AbilityCastPoint"				"0.2"
+		"AbilityCastRange"				"1000"
+		"AbilityCastRangeBuffer"		"200"
+		"AbilityCooldown"				"180"
+		"AbilityManaCost"				"800"
+		
+		"precache"
+		{
+
+		}
+				
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"exhaust"				"60"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dash_speed"			"3500"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"distance"				"1000"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"						//basedamage
+				"interval"			"0.1"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_FLOAT"						
+				"atk_count"			"15"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"dmg"				"-50"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"500"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"last_hit_damage"	"1000"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"last_hit_radius"	"200"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"beam_damage"		"2000"
+			}
+			"07"
+			{
+				"var_type"			"FIELD_INTEGER"						
+				"beam_distance"		"1800"
+			}
+			"08"
+			{
+				"var_type"			"FIELD_INTEGER"						
+				"beam_radius"		"250"
+			}
+			"09"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"beam_kiku_agi_ratio" "6"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/okita/okita_abilities"
+				"Function"		"OnZekkenStart"
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"	"0"
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/okita/okita_abilities"
+				"Function"		"OnZekkenBeamHit"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_zekken_checker"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"1"
+				"Duration"			"1.0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			}
+			"modifier_zekken_cooldown"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE | MODIFIER_ATTRIBUTE_PERMANENT"
+			}
+			"modifier_zekken"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Duration"			"1.5"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE" "%dmg"
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Okita Souji Combo : Zekken Mukyuu Sandan (R) (Kiku Ichimonji SA)
+	//=================================================================================================================
+	"okita_zekken_upgrade"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL | DAMAGE_TYPE_PURE | DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/okita/okita_combo_zekken"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_3"
+		"AnimationPlaybackRate" 		"1.0"
+		"AbilityCastPoint"				"0.2"
+		"AbilityCastRange"				"1000"
+		"AbilityCastRangeBuffer"		"200"
+		"AbilityCooldown"				"180"
+		"AbilityManaCost"				"800"
+		
+		"precache"
+		{
+
+		}
+		
+		
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"exhaust"				"60"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dash_speed"			"3500"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"distance"				"1000"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"						//basedamage
+				"interval"			"0.1"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_FLOAT"						
+				"atk_count"			"15"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"dmg"				"-50"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"500"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"last_hit_damage"	"1000"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"last_hit_radius"	"200"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"beam_damage"		"2000"
+			}
+			"07"
+			{
+				"var_type"			"FIELD_INTEGER"						
+				"beam_distance"		"1800"
+			}
+			"08"
+			{
+				"var_type"			"FIELD_INTEGER"						
+				"beam_radius"		"250"
+			}
+			"09"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"beam_kiku_agi_ratio" "6"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/okita/okita_abilities"
+				"Function"		"OnZekkenStart"
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"	"0"
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/okita/okita_abilities"
+				"Function"		"OnZekkenBeamHit"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_zekken_checker"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"1"
+				"Duration"			"1.0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			}
+			"modifier_zekken_cooldown"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE | MODIFIER_ATTRIBUTE_PERMANENT"
+			}
+			"modifier_zekken"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Duration"			"1.5"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE" "%dmg"
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Okita Souji Attribute : Coat of Oaths
+	//=================================================================================================================
+	"okita_attribute_coat_of_oaths"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/okita/okita_attribute_coat_of_oaths"
+		
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"10"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_mr"				"10"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_armor"			"10"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"flag_summon_chance"	"33"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"flag_bonus_summon"		"1"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"flag_range"			"500"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"flag_health"			"2"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/okita/okita_abilities"
+				"Function"		"OnCoatOfOathsAcquired"
+			}
+		}
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/okita/okita_abilities"
+				"Function"		"OnCoatOfOathsLevelup"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_coat_of_oaths"
+			{
+				"Passive"			"1"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"IsBuff"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%bonus_armor"
+				    "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS" "%bonus_mr" 
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/okita/okita_abilities"
+						"Function"		"OnCoatOfOathDestroy"
+					}
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Okita Souji Attribute : Mind's Eye (False)
+	//=================================================================================================================
+	"okita_attribute_mind_eye"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/okita/okita_attribute_mind_eye"
+		
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"8"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"1.0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range"					"500"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"distance"				"500"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cooldown"				"20"
+			}	
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/okita/okita_abilities"
+				"Function"		"OnMindEyeAcquired"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Okita Souji Attribute : Kiku-Ichimonji
+	//=================================================================================================================
+	"okita_attribute_kiku_ichimonji"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/okita/okita_attribute_kiku_ichimonji"
+		
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"15"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"mumyo_bonus_agi_ratio"			"1.3"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"zekken_bonus_agi_ratio"		"6"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/okita/okita_abilities"
+				"Function"		"OnKikuIchimonjiAcquired"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Okita Souji Attribute : Persistence
+	//=================================================================================================================
+	"okita_attribute_persistence"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/okita/okita_attribute_persistence"
+		
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"7"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_cough"				"150"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_recovery"		"10"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/okita/okita_abilities"
+				"Function"		"OnPersistenceAcquired"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Okita Souji Attribute : Kyokuchi
+	//=================================================================================================================
+	"okita_attribute_kyokuji"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/okita/okita_attribute_kyokuji"
+		
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"10"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_distance"		"300"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_duration"		"1.5"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"crit_dmg"				"135 145 155 165 175"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/okita/okita_abilities"
+				"Function"		"OnKyokujiAcquired"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Okita Souji Attribute : Peerless Sword
+	//=================================================================================================================
+	"okita_attribute_peerless"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/okita/okita_attribute_peerless"
+		
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"12"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"seigan_beam"			"200"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"tennen_duration"		"3"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/okita/okita_abilities"
+				"Function"		"OnPeerlessAcquired"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Okita Souji Attribute : Headband
+	//=================================================================================================================
+	"okita_attribute_headband"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/okita/okita_attribute_headband"
+		
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"11"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"flag_radius"			"500"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"flag_duration"			"4"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"flag_summon"			"1"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"flag_hp"				"2"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"buff_hp_reg"			"60"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"buff_mana_reg"			"40"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"coat_bonus_dur"		"3"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/okita/okita_abilities"
+				"Function"		"OnHeadbandAcquired"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Okita Souji Attribute : Tennen
+	//=================================================================================================================
+	"okita_attribute_tennen"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/okita/okita_tennen"
+		
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"14"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"tennen_agi"			"1 2 3 4 5"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"tennen_dur"			"20"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_flash"			"10"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"beam_distance"			"1000"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"beam_base_damage"		"500"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"beam_atk_dmg"			"300"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"beam_bonus_agi"		"5"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"beam_cd"				"30"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_rdr_agi"			"0.002"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/okita/okita_abilities"
+				"Function"		"OnTennenAcquired"
+			}
+		}
+	}
+	//=======================================
+	// Precache
+	//=======================================
+	"okita_precache"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"custom/medusa/medusa_attribute_monstrous_strength"
+
+		"precache"
+		{
+			"model"					"models/okita/okita_pink/okita_pink_by_zefiroft.vmdl"
+			"model"					"models/okita/okita_alter/okita_alter_by_zefiroft.vmdl"
+			"model"					"models/okita/okita_scabbard.vmdl"
+			"model"					"models/okita/okita_sword.vmdl"
+			"model"					"models/okita/okita_flag.vmdl"
+			"model"					"models/heroes/juggernaut/juggernaut.vmdl"
+			"model"					"models/items/juggernaut/bladesrunner_arms/bladesrunner_arms.vmdl"
+			"model"					"models/items/juggernaut/bladesrunner_back/bladesrunner_back.vmdl"
+			"model"					"models/items/juggernaut/bladesrunner_head/bladesrunner_head.vmdl"
+			"model"					"models/items/juggernaut/bladesrunner_legs/bladesrunner_legs.vmdl"
+			"model"					"models/items/juggernaut/bladesrunner_weapon/bladesrunner_weapon.vmdl"
+			"particle"				"particles/custom/okita/okita_flag_zone.vpcf"
+			"particle"  			"particles/units/heroes/hero_phantom_assassin/phantom_assassin_crit_impact_bloodstain.vpcf"
+			"particle"				"particles/custom/atalanta/sting/ring.vpcf"
+			"particle"				"particles/units/heroes/hero_pugna/pugna_decrepify.vpcf"
+			"particle"  			"particles/custom/okita/hira_seigen_ring2.vpcf"
+			"particle"  			"particles/custom/okita/hira_seigen_shield.vpcf"
+			"particle"  			"particles/custom/okita/okita_seigan_beam.vpcf"
+			"particle"  			"particles/custom/okita/okita_seigan_beam_black.vpcf"
+			"particle"  			"particles/custom/false_assassin/tsubame_gaeshi/tsubame_gaeshi_windup_indicator_flare.vpcf"
+        	"particle"  			"particles/custom/false_assassin/tsubame_gaeshi/slashes.vpcf"
+        	"particle"  			"particles/okita/okita_afterimage_windrunner.vpcf"
+        	"particle"				"particles/econ/items/juggernaut/jugg_arcana/juggernaut_arcana_v2_omni_slash_tgt_serrakura.vpcf"
+        	"particle"				"particles/custom/gilgamesh/enuma_elish/cracks_smoke.vpcf"
+        	"particle"				"particles/okita/okita_zekken_beam.vpcf" 
+        	"particle"				"particles/econ/events/ti6/radiant_fountain_regen_ti6_lvl3.vpcf" 
+        	"particle"				"particles/econ/items/primal_beast/primal_beast_2022_prestige/primal_beast_2022_prestige_onslaught_charge_body_emissive.vpcf" 
+			"particle"  			"particles/custom/okita/okita_flash_slash_a.vpcf"
+			"particle"  			"particles/custom/okita/okita_flash_thrust.vpcf"
+			"particle"  			"particles/custom/okita/okita_sandan.vpcf"
+			"particle"  			"particles/custom/okita/okita_sandan_end.vpcf"
+			"particle"  			"particles/custom/okita/okita_sandan_shadow.vpcf"
+			"soundfile" 			"soundevents/game_sounds_heroes/game_sounds_keeper_of_the_light.vsndevts"
+			"soundfile" 			"soundevents/game_sounds_heroes/game_sounds_invoker.vsndevts"
+			"soundfile"   			"soundevents/game_sounds_heroes/game_sounds_riki.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_bounty_hunter.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_sven.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_luna.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_juggernaut.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_ember_spirit.vsndevts"
+		}
+	}
+}

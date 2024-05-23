@@ -1,0 +1,444 @@
+ServantAttribute
+{
+	"npc_dota_hero_legion_commander"	
+	{
+		"SA1"	"saber_attribute_improve_excalibur"
+		"SA2"	"saber_attribute_improve_instinct"
+		"SA3"	"saber_attribute_strike_air"
+		"SA4"	"saber_attribute_everdistant_utopia"
+		"SA5"	"saber_attribute_chivalry"
+		"SCombo"	"saber_max_excalibur"
+	}		
+	"npc_dota_hero_spectre"				
+	{
+		"SA1"	"saber_alter_attribute_mana_shroud"
+		"SA2"	"saber_alter_attribute_mana_blast"
+		"SA3"	"saber_alter_attribute_improve_ferocity"
+		"SA4"	"saber_alter_attribute_ultimate_darklight"
+		"SA5"	"saber_alter_attribute_air_burst"
+		"SCombo"	"saber_alter_max_mana_burst"
+	}
+	"npc_dota_hero_lina"				
+	{
+		"SA1"	"nero_attribute_pari_tenu_blauserum"
+		"SA2"	"nero_attribute_improve_imperial_privilege"
+		"SA3"	"nero_attribute_invictus_spiritus"
+		"SA4"	"nero_attribute_soverigns_glory"
+		"SA5"	"nero_attribute_aestus_estus"
+		"SCombo"	"nero_laus_saint_claudius"
+	}		
+	"npc_dota_hero_omniknight"			
+	{
+		"SA1"	"gawain_attribute_blessing_of_fairy"
+		"SA2"	"gawain_attribute_nightless_charisma"
+		"SA3"	"gawain_attribute_numeral_saint"
+		"SA4"	"gawain_attribute_belt"
+		"SA5"	"gawain_attribute_kots"
+		"SCombo"	"gawain_combo_excalibur_galatine"
+	}	
+	"npc_dota_hero_tusk"				
+	{
+		"SA1"	"mordred_attribute_curse"
+		"SA2"	"mordred_attribute_bc"
+		"SA3"	"mordred_attribute_rampage"
+		"SA4"	"mordred_attribute_pedigree"
+		"SA5"	"mordred_attribute_overload"
+		"SCombo"	"mordred_mmb_lightning"
+	}
+	"npc_dota_hero_dark_willow"			
+	{
+		"SA1"	"okita_attribute_kyokuji"
+		"SA2"	"okita_attribute_headband"
+		"SA3"	"okita_attribute_tennen"
+		"SA4"	"okita_attribute_mind_eye"
+		"SA5"	"okita_attribute_kiku_ichimonji"
+		"SCombo"	"okita_zekken"
+	}
+	"npc_dota_hero_ember_spirit"		
+	{
+		"SA1"	"archer_attribute_eagle_eye"
+		"SA2"	"archer_attribute_overedge"
+		"SA3"	"archer_attribute_shroud_of_martin"
+		"SA4"	"archer_attribute_improve_projection"
+		"SA5"	"archer_attribute_hrunting"
+		"SCombo"	"archer_arrow_rain"
+	}
+	"npc_dota_hero_skywrath_mage"		
+	{
+		"SA1"	"gilgamesh_attribute_improve_golden_rule"
+		"SA2"	"gilgamesh_attribute_power_of_sumer"
+		"SA3"	"gilgamesh_attribute_rain_of_swords"
+		"SA4"	"gilgamesh_attribute_sword_of_creation"
+		"SA5"	"fate_empty1"
+		"SCombo"	"gilgamesh_max_enuma_elish"
+	}
+	"npc_dota_hero_drow_ranger"			
+	{
+		"SA1"	"atalanta_attribute_arrows_of_the_big_dipper"
+		"SA2"	"atalanta_attribute_hunters_mark"
+		"SA3"	"atalanta_attribute_crossing_arcadia_plus"
+		"SA4"	"atalanta_attribute_calydonian_snipe"
+		"SA5"	"fate_empty1"
+		"SCombo"	"atalanta_phoebus_catastrophe_snipe"
+	}
+	"npc_dota_hero_naga_siren"			
+	{
+		"SA1"	"kuro_attribute_overedge"
+		"SA2"	"kuro_attribute_improve_projection"
+		"SA3"	"kuro_attribute_kuro_magic"
+		"SA4"	"kuro_attribute_eagle_eye"
+		"SA5"	"kuro_attribute_hrunting"
+		"SCombo"	"kuro_fake_ubw"
+	}
+	"npc_dota_hero_phantom_lancer"		
+	{
+		"SA1"	"lancer_attribute_improve_battle_continuation"
+		"SA2"	"lancer_attribute_protection_from_arrows"
+		"SA3"	"lancer_attribute_death_flight"
+		"SA4"	"lancer_attribute_the_heartseeker"
+		"SA5"	"lancer_attribute_celtic_runes"
+		"SCombo"	"lancer_wesen_gae_bolg"
+	}		
+	"npc_dota_hero_huskar"				
+	{
+		"SA1"	"diarmuid_attribute_improve_love_spot"
+		"SA2"	"diarmuid_attribute_improve_minds_eye"
+		"SA3"	"diarmuid_attribute_golden_rose_of_mortality"
+		"SA4"	"diarmuid_attribute_crimson_rose_of_exorcism"
+		"SA5"	"diarmuid_attribute_double_spear_strike"
+		"SCombo"	"diarmuid_rampant_warrior"
+	}
+	"npc_dota_hero_beastmaster"			
+	{
+		"SA1"	"karna_attribute_poor"
+		"SA2"	"karna_attribute_ucm"
+		"SA3"	"karna_attribute_mana_burst"
+		"SA4"	"karna_attribute_indra"
+		"SA5"	"fate_empty1"
+		"SCombo"	"karna_combo_vasavi"
+	}
+	"npc_dota_hero_tidehunter"			
+	{
+		"SA1"	"vlad_attribute_innocent_monster"
+		"SA2"	"vlad_attribute_protection_of_faith"
+		"SA3"	"vlad_attribute_improved_impaling"
+		"SA4"	"vlad_attribute_instant_curse"
+		"SA5"	"vlad_attribute_bloodletter"
+		"SCombo"	"vlad_combo"
+	}
+	"npc_dota_hero_monkey_king"			
+	{
+		"SA1"	"scathach_attribute_primeval_rune"
+		"SA2"	"scathach_attribute_god_slayer"
+		"SA3"	"scathach_attribute_branch_tonelico"
+		"SA4"	"scathach_attribute_wisdom_of_haunt_ground"
+		"SA5"	"scathach_attribute_immortal"
+		"SCombo"	"scathach_combo_gate_of_sky"
+	}
+	"npc_dota_hero_death_prophet"		
+	{
+		"SA1"	"bathory_attribute_territory"
+		"SA2"	"bathory_attribute_dragon_breath"
+		"SA3"	"bathory_attribute_mental"
+		"SA4"	"bathory_attribute_sadism_charisma"
+		"SA5"	"bathory_attribute_torture"
+		"SCombo"	"bathory_combo_fresh_blood"
+	}
+	"npc_dota_hero_templar_assassin"	
+	{
+		"SA1"	"medusa_attribute_improve_mystic_eyes"
+		"SA2"	"medusa_attribute_riding"
+		"SA3"	"medusa_attribute_seal"
+		"SA4"	"medusa_attribute_monstrous_strength"
+		"SA5"	"fate_empty1"
+		"SCombo"	"medusa_bellerophon_2"
+	}
+	"npc_dota_hero_chen"				
+	{
+		"SA1"	"iskandar_attribute_improve_charisma"
+		"SA2"	"iskandar_attribute_thundergods_wrath"
+		"SA3"	"iskandar_attribute_via_expugnatio"
+		"SA4"	"iskandar_attribute_bond_beyond_time"
+		"SA5"	"fate_empty1"
+		"SCombo"	"iskandar_annihilate"
+	}
+	"npc_dota_hero_troll_warlord"		
+	{
+		"SA1"	"drake_attribute_improve_military_tactic"
+		"SA2"	"drake_attribute_pioneer"
+		"SA3"	"drake_attribute_logbook"
+		"SA4"	"drake_attribute_strengthen_golden_hind"
+		"SA5"	"fate_empty1"
+		"SCombo"	"drake_combo_golden_wild_hunt"
+	}
+	"npc_dota_hero_queenofpain"			
+	{
+		"SA1"	"astolfo_attribute_riding"
+		"SA2"	"astolfo_attribute_monstrous_strength"
+		"SA3"	"astolfo_attribute_independent_action"
+		"SA4"	"astolfo_attribute_sanity"
+		"SA5"	"astolfo_attribute_deafening_blast"
+		"SCombo"	"astolfo_hippogriff_ride"
+	}
+	"npc_dota_hero_crystal_maiden"		
+	{
+		"SA1"	"medea_attribute_improve_territory_creation"
+		"SA2"	"medea_attribute_improve_argos"
+		"SA3"	"medea_attribute_witchcraft"
+		"SA4"	"medea_attribute_dagger_of_treachery"
+		"SA5"	"fate_empty1"
+		"SCombo"	"medea_hecatic_graea_powered"
+	}
+	"npc_dota_hero_shadow_shaman"		
+	{
+		"SA1"	"gilles_eye_for_art_attribute"
+		"SA2"	"gilles_outer_god_attribute"
+		"SA3"	"gilles_demonic_horde_attribute"
+		"SA4"	"gilles_sunken_city_attribute"
+		"SA5"	"gilles_abyssal_connection_attribute"
+		"SCombo"	"gille_larret_de_mort"
+	}
+	"npc_dota_hero_windrunner"			
+	{
+		"SA1"	"nursery_rhyme_attribute_forever_together"
+		"SA2"	"nursery_rhyme_attribute_nightmare"
+		"SA3"	"nursery_rhyme_attribute_reminiscence"
+		"SA4"	"nursery_rhyme_attribute_improve_queens_glass_game"
+		"SA5"	"fate_empty1"
+		"SCombo"	"nursery_rhyme_story_for_somebodys_sake"
+	}
+	"npc_dota_hero_enchantress"			
+	{
+		"SA1"	"tamamo_attribute_spirit_theft"
+		"SA2"	"tamamo_attribute_mystic_shackle"
+		"SA3"	"tamamo_attribute_polygamist"
+		"SA4"	"tamamo_attribute_witchcraft"
+		"SA5"	"tamamo_attribute_territory"
+		"SCombo"	"tamamo_combo"
+	}
+	"npc_dota_hero_juggernaut"			
+	{
+		"SA1"	"sasaki_attribute_ganryu"
+		"SA2"	"sasaki_attribute_katana_of_the_forgotten"
+		"SA3"	"sasaki_attribute_vitrification"
+		"SA4"	"sasaki_attribute_improve_minds_eye"
+		"SA5"	"fate_empty1"
+		"SCombo"	"sasaki_hiken_enbu"
+	}
+	"npc_dota_hero_bounty_hunter"		
+	{
+		"SA1"	"hassan_attribute_improve_presence_concealment"
+		"SA2"	"hassan_attribute_protection_from_wind"
+		"SA3"	"hassan_attribute_weakening_venom"
+		"SA4"	"hassan_attribute_shadow_strike"
+		"SA5"	"hassan_attribute_shaytan_arm"
+		"SCombo"	"hassan_combo"
+	}
+	"npc_dota_hero_bloodseeker"			
+	{
+		"SA1"	"lishuwen_attribute_circulatory_shock"
+		"SA2"	"lishuwen_attribute_improve_martial_arts"
+		"SA3"	"lishuwen_attribute_dual_class"
+		"SA4"	"lishuwen_attribute_furious_chain"
+		"SA5"	"fate_empty1"
+		"SCombo"	"lishuwen_raging_dragon_strike"
+	}
+	"npc_dota_hero_riki"				
+	{
+		"SA1"	"jtr_attribute_information_erase"
+		"SA2"	"jtr_attribute_mental_pollution"
+		"SA3"	"jtr_attribute_soul_eater"
+		"SA4"	"jtr_attribute_murderer_on_misty_night"
+		"SA5"	"jtr_attribute_holy_mother"
+		"SCombo"	"jtr_whitechapel"
+	}
+	"npc_dota_hero_doom_bringer"		
+	{
+		"SA1"	"heracles_attribute_eternal_rage"
+		"SA2"	"heracles_attribute_god_hand"
+		"SA3"	"heracles_attribute_reincarnation"
+		"SA4"	"heracles_attribute_mad_enhancement"
+		"SA5"	"fate_empty1"
+		"SCombo"	"heracles_madmans_roar"
+	}
+	"npc_dota_hero_sven"				
+	{
+		"SA1"	"lancelot_attribute_improve_eternal"
+		"SA2"	"lancelot_attribute_blessing_of_fairy"
+		"SA3"	"lancelot_attribute_improve_knight_of_owner"
+		"SA4"	"lancelot_attribute_knight_of_owner_arsenal"
+		"SA5"	"lancelot_attribute_kotl"
+		"SCombo"	"lancelot_nuke"
+	}
+	"npc_dota_hero_vengefulspirit"		
+	{
+		"SA1"	"avenger_attribute_improve_dark_passage"
+		"SA2"	"avenger_attribute_demon_incarnate"
+		"SA3"	"avenger_attribute_end_of_four_nights"
+		"SA4"	"avenger_attribute_world_evil"
+		"SA5"	"avenger_attribute_avenger"
+		"SCombo"	"avenger_combo_endless_loop"
+	}
+	"npc_dota_hero_mirana"				
+	{
+		"SA1"	"jeanne_attribute_identity_discernment"
+		"SA2"	"jeanne_attribute_improve_saint"
+		"SA3"	"jeanne_attribute_punishment"
+		"SA4"	"jeanne_attribute_divine_symbol"
+		"SA5"	"jeanne_attribute_revelation"
+		"SCombo"	"jeanne_la_pucelle"
+	}
+	"npc_dota_hero_axe"					
+	{
+		"SA1"	"lubu_attribute_houtengageki"
+		"SA2"	"lubu_attribute_mad_enhancement"
+		"SA3"	"lubu_attribute_dragon_tongue"
+		"SA4"	"lubu_attribute_ruthless_warrior"
+		"SA5"	"lubu_attribute_immortal"
+		"SCombo"	"lubu_combo_god_force"
+	}
+	"npc_dota_hero_zuus"				
+	{
+		"SA1"	"fran_attribute_bridal_chest"
+		"SA2"	"fran_attribute_mad_enhancement"
+		"SA3"	"fran_attribute_overload"
+		"SA4"	"fran_attribute_lament"
+		"SA5"	"fran_attribute_improve_galvanism"
+		"SCombo"	"fran_combo_blasted_tree"
+	}
+	"npc_dota_hero_enigma"				
+	{
+		"SA1"	"amakusa_attribute_left_hand"
+		"SA2"	"amakusa_attribute_identify"
+		"SA3"	"amakusa_attribute_church"
+		"SA4"	"amakusa_attribute_anti_ruler"
+		"SA5"	"fate_empty1"
+		"SCombo"	"amakusa_twin_arm"
+	}
+	"npc_dota_hero_night_stalker"		
+	{
+		"SA1"	"edmond_attribute_avenger"
+		"SA2"	"edmond_attribute_determination"
+		"SA3"	"edmond_attribute_wisdom"
+		"SA4"	"edmond_attribute_esperer"
+		"SA5"	"edmond_attribute_improve_monte"
+		"SCombo"	"edmond_chateau"
+	}
+	"npc_dota_hero_disruptor"			
+	{
+		"SA1"	"zhuge_liang_attribute_territory"
+		"SA2"	"zhuge_liang_attribute_alchemist"
+		"SA3"	"zhuge_liang_attribute_stratagems"
+		"SA4"	"zhuge_liang_attribute_letter"
+		"SA5"	"zhuge_liang_attribute_discern_eye"
+		"SCombo"	"zhuge_liang_combo"
+	}
+	"npc_dota_hero_sniper"				
+	{
+		"SA1"	"robin_attribute_subversive"
+		"SA2"	"robin_attribute_faceless"
+		"SA3"	"robin_attribute_righteous_thief"
+		"SA4"	"robin_attribute_taxine"
+		"SA5"	"robin_attribute_guerilla"
+		"SCombo"	"robin_combo"
+	}
+	"npc_dota_hero_phantom_assassin"	
+	{
+		"SA1"	"semiramis_attribute_dual_class"
+		"SA2"	"semiramis_attribute_territory"
+		"SA3"	"semiramis_attribute_absolute"
+		"SA4"	"semiramis_attribute_charmer"
+		"SA5"	"semiramis_attribute_poisoner"
+		"SCombo"	"semiramis_combo"
+	}
+	"npc_dota_hero_skeleton_king"		
+	{
+		"SA1"	"kinghassan_attribute_oldman"
+		"SA2"	"kinghassan_attribute_presence"
+		"SA3"	"kinghassan_attribute_abyss"
+		"SA4"	"kinghassan_attribute_boundary"
+		"SA5"	"kinghassan_attribute_body"
+		"SCombo"	"kinghassan_combo"
+	}
+	"npc_dota_hero_necrolyte"			
+	{
+		"SA1"	"hans_attribute_territory"
+		"SA2"	"hans_attribute_write_thumbelina"
+		"SA3"	"hans_attribute_human_observation"
+		"SA4"	"hans_attribute_refine_nightingale"
+		"SA5"	"hans_attribute_love_letter"
+		"SCombo"	"hans_combo"
+	}
+	"npc_dota_hero_gyrocopter"			
+	{
+		"SA1"	"nobu_strategy_attribute"
+		"SA2"	"nobu_expanding_attribute"
+		"SA3"	"nobu_3000_attribute"
+		"SA4"	"nobu_unifying_attribute"
+		"SA5"	"nobu_independent_action"
+		"SCombo"	"nobu_combo"
+	}
+	"npc_dota_hero_dragon_knight"		
+	{
+		"SA1"	"mashu_attribute_barrel"
+		"SA2"	"mashu_attribute_shield"
+		"SA3"	"mashu_attribute_chalk"
+		"SA4"	"mashu_attribute_amalgam"
+		"SA5"	"mashu_attribute_defense"
+		"SCombo"	"mashu_combo"
+	}
+	"npc_dota_hero_antimage"			
+	{
+		"SA1"	"musashi_attributes_battle_continuation"
+		"SA2"	"musashi_attributes_improve_tengan"
+		"SA3"	"musashi_attributes_gorin_no_sho"
+		"SA4"	"musashi_attributes_mukyuu"
+		"SA5"	"musashi_attributes_niten_ichiryuu"
+		"SCombo"	"musashi_ishana_daitenshou"
+	}
+	"npc_dota_hero_oracle"			
+	{
+		"SA1"	"ishtar_attribute_offering"
+		"SA2"	"ishtar_attribute_gems"
+		"SA3"	"ishtar_attribute_goddess"
+		"SA4"	"ishtar_attribute_venus"
+		"SA5"	"fate_empty1"
+		"SCombo"	"ishtar_combo"
+	}
+	"npc_dota_hero_ursa"			
+	{
+		"SA1"	"atalanta_evolution_attribute"
+		"SA2"	"atalanta_tornado_attribute"
+		"SA3"	"atalanta_vision_attribute"
+		"SA4"	"atalanta_moon_attribute"
+		"SA5"	"fate_empty1"
+		"SCombo"	"atalanta_skia"
+	}
+	"npc_dota_hero_kunkka"			
+	{
+		"SA1"	"muramasa_pride"
+		"SA2"	"muramasa_tameshi_mono"
+		"SA3"	"muramasa_karmic_vision"
+		"SA4"	"muramasa_blaze"
+		"SA5"	"fate_empty1"
+		"SCombo"	"muramasa_combo"
+	}
+	"npc_dota_hero_void_spirit"			
+	{
+		"SA1"	"kiyo_sa_1"
+		"SA2"	"kiyo_sa_2"
+		"SA3"	"kiyo_sa_3"
+		"SA4"	"kiyo_sa_4"
+		"SA5"	"kiyo_sa_5"
+		"SCombo"	"kiyo_combo"
+	}
+	"npc_dota_hero_nyx_assassin"
+	{
+		"SA1"	"melt_attribute_melt_virus"
+		"SA2"	"melt_attribute_composite"
+		"SA3"	"melt_attribute_crime"
+		"SA4"	"melt_attribute_sadistic"
+		"SA5"	"melt_attribute_saint_graph"
+		"SCombo"	"melt_combo"
+	}
+}

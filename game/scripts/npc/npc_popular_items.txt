@@ -1,0 +1,44 @@
+"DOTAHeroes"
+{
+	"npc_dota_hero_antimage"
+	{
+		"popular_items"
+		{
+			"item_condensed_mana_essence" "1"
+			"item_c_scroll" "1"
+			"item_b_scroll" "1"
+			"item_a_scroll" "1"
+			"item_a_plus_scroll" "1"
+			"item_s_scroll" "1"
+			"item_gem_of_speed" "1"
+		}
+	}
+	"npc_dota_hero_axe"
+	{
+		"popular_items"
+		{
+			"item_condensed_mana_essence" "1"
+			"item_c_scroll" "1"
+			"item_b_scroll" "1"
+			"item_a_scroll" "1"
+			"item_a_plus_scroll" "1"
+			"item_s_scroll" "1"
+			"item_gem_of_speed" "1"
+			"item_healing_scroll" "1"
+		}
+	}
+	"npc_dota_hero_beastmaster"
+	{
+		"popular_items"
+		{
+			"item_condensed_mana_essence" "1"
+			"item_c_scroll" "1"
+			"item_b_scroll" "1"
+			"item_a_scroll" "1"
+			"item_a_plus_scroll" "1"
+			"item_ex_scroll" "1"
+			"item_gem_of_speed" "1"
+			"item_mana_essence" "1"
+		}
+	}
+}

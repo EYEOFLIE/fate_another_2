@@ -1,0 +1,4431 @@
+"DOTAAbilities"
+{
+	//=======================================
+	// Vlad III: Rebellious Intent
+	//=======================================
+	"vlad_rebellious_intent"
+	{
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityTextureName"			"shadow_demon_demonic_purge"
+
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"0"
+		"AbilityManaCost"				"0"
+		"LevelsBetweenUpgrades"			"1"
+
+		"precache"
+		{
+
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"str_per_stack"				"1.0 2.0 3.0 4.0 5.0"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"str_per_stack_tooltip"		"10 20 30 40 50"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"armor_per_stack"			"0.8 1 1.2 1.4 1.6"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"armor_per_stack_tooltip"	"8 10 12 14 16"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"mr_per_stack"				"2"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"mr_per_stack_tooltip"			"20"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"att_speed_stack"			"2 3 4 5 6"
+			}
+			"08"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"att_speed_tooltip"			"20 30 40 50 60"
+			}
+			"09"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"self_slow_per_stack"		"-3"
+			}
+			"10"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"self_slow_per_stack_tooltip"	"30"
+			}
+			"11"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"max_stacks"				"10"
+			}
+			"12"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"stacks_interval"			"0.5"
+			}
+			"13"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"drain_per_sec"				"6"
+			}
+			"14"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"drain_interval"			"0.1"
+			}
+			"15"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"bonus_bleed_stack"			"1"
+			}
+		}
+		"OnToggleOn"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/vlad/vlad_abilities"
+				"Function"		"OnRebelliousIntentToggle"
+			}
+		}
+		"OnToggleOff"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/vlad/vlad_abilities"
+				"Function"		"OnRebelliousIntentToggleOff"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_vlad_rebellious_intent"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnRebelliousIntentCreate"
+					}
+					"AttachEffect"
+					{
+						"EffectName"        "particles/custom/vlad/vlad_ri_active.vpcf"
+						"EffectAttachType"  "follow_origin"
+						"Target"            "CASTER"
+					}
+				}
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS" "%str_per_stack"
+				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%self_slow_per_stack" 
+				    "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%armor_per_stack" 
+				    "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS" "%mr_per_stack" 
+				    "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%att_speed_stack" 
+				}
+				"ThinkInterval"  "%drain_interval"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnRebelliousIntentDrain"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnRebelliousIntentDestroy"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnRebelliousIntentDeath"
+					}
+				}
+			}
+		}
+	}
+	//=======================================
+	// Vlad III: Ceremonial Purge
+	//=======================================
+	"vlad_ceremonial_purge"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/vlad/vlad_abilities"
+		"MaxLevel"						"5"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityTextureName"			"custom/vlad_ceremonial_purge"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+
+		"AbilityCastPoint"				"0.1"
+		//"AbilityCastRange"				"465"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		"AbilityCooldown"				"6"
+		//"AbilityManaCost"				"200" //stuff concerning mana cost, conditional and attribute hp% update of this ability is currently hardcoded in lua
+		"LevelsBetweenUpgrades"			"1"
+
+		"precache"
+		{
+			
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"delay"							"0.4"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"aoe_inner"						"265"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"dmg_inner"						"150 190 230 270 310"
+			}
+			"05"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"stun_inner"					"0.25"
+			}
+			"06"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"aoe_outer"						"465"
+			}
+			"07"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"dmg_outer"						"440 505 570 635 700"
+			}
+			"08"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"stun_outer"					"0.75"
+			}
+			"09"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"slow_per_stack"				"-10"
+			}
+			"10"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"slow_duration"					"6"
+			}
+			"11"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"condition_free_mana"			"35"
+			}
+			"12"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"hp_cost"						"15"
+			}
+			"13"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"bleed_stack_inner"				"5"
+			}
+			"14"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"bleed_stack_outer"				"3"
+			}
+			"07"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_dmg_per_bleed"			"5"
+			}
+			"15"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"bonus_dmg_per_bloodpower"		"1"
+			}
+			"16"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"bloodpowercap"					"30"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/vlad/vlad_abilities"
+				"Function"		"OnCeremonialPurgeStart"
+			}
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/vlad/vlad_abilities"
+				"Function"		"OnCeremonialPurgeCD"
+			}
+		}
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/vlad/vlad_abilities"
+				"Function"		"OnCeremonialPurgeUpgrade"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_ceremonial_purge_slow"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"Duration"			"%slow_duration"
+		
+				"Properties"
+				{
+				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow_per_stack" 
+				}
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnCeremonialPurgeSlowCreate"
+					}
+				}
+				"ThinkInterval"  "1.0"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnCeremonialPurgeSlowThink"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnCeremonialPurgeDestroy"
+					}
+				}
+			}
+		}
+	}
+	//=======================================
+	// Vlad III: Ceremonial Purge No Mana
+	//=======================================
+	"vlad_ceremonial_purge_no_mana"
+	{
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityTextureName"			"custom/vlad_ceremonial_purge"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+
+		"AbilityCastPoint"				"0.1"
+		"AbilityCastRange"				"465"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		"AbilityCooldown"				"6"
+		"AbilityManaCost"				"0" //stuff concerning mana cost, conditional and attribute hp% update of this ability is currently hardcoded in lua
+		"LevelsBetweenUpgrades"			"1"
+
+		"precache"
+		{
+			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_axe.vsndevts"
+			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_life_stealer.vsndevts"
+			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+			"particle"					"particles/custom/vlad/vlad_cp_spin.vpcf"
+			"particle" 					"particles/units/heroes/hero_life_stealer/life_stealer_open_wounds.vpcf"
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"delay"							"0.4"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"aoe_inner"						"265"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"dmg_inner"						"150 190 230 270 310"
+			}
+			"05"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"stun_inner"					"0.25"
+			}
+			"06"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"aoe_outer"						"465"
+			}
+			"07"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"dmg_outer"						"440 505 570 635 700"
+			}
+			"08"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"stun_outer"					"0.75"
+			}
+			"09"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"slow_per_stack"				"-10"
+			}
+			"10"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"slow_duration"					"6"
+			}
+			"12"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"hp_cost"						"15"
+			}
+			"13"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"bleed_stack_inner"				"5"
+			}
+			"14"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"bleed_stack_outer"				"3"
+			}
+			"07"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_dmg_per_bleed"			"5"
+			}
+			"15"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"bonus_dmg_per_bloodpower"		"1"
+			}
+			"16"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"bloodpowercap"					"30"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/vlad/vlad_abilities"
+				"Function"		"OnCeremonialPurgeStart"
+			}
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/vlad/vlad_abilities"
+				"Function"		"OnCeremonialPurgeCD"
+			}
+		}
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/vlad/vlad_abilities"
+				"Function"		"OnCeremonialPurgeUpgrade"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_ceremonial_purge_slow"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"Duration"			"%slow_duration"
+		
+				"Properties"
+				{
+				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow_per_stack" 
+				}
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnCeremonialPurgeSlowCreate"
+					}
+				}
+				"ThinkInterval"  "1.0"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnCeremonialPurgeSlowThink"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnCeremonialPurgeDestroy"
+					}
+				}
+			}
+		}
+	}
+	//=======================================
+	// Vlad III: Ceremonial Purge (Improve Impaling SA)
+	//=======================================
+	"vlad_ceremonial_purge_upgrade_1"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/vlad/vlad_abilities"
+		"MaxLevel"						"5"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityTextureName"			"custom/vlad_ceremonial_purge"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+
+		"AbilityCastPoint"				"0.1"
+		//"AbilityCastRange"				"465"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		"AbilityCooldown"				"6"
+		//"AbilityManaCost"				"200" //stuff concerning mana cost, conditional and attribute hp% update of this ability is currently hardcoded in lua
+		"LevelsBetweenUpgrades"			"1"
+
+		"precache"
+		{
+			
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"delay"							"0.4"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"aoe_inner"						"265"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"dmg_inner"						"250 290 330 370 410"
+			}
+			"05"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"stun_inner"					"0.25"
+			}
+			"06"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"aoe_outer"						"465"
+			}
+			"07"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"dmg_outer"						"540 605 670 735 800"
+			}
+			"08"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"stun_outer"					"0.75"
+			}
+			"09"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"slow_per_stack"				"-10"
+			}
+			"10"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"slow_duration"					"6"
+			}
+			"11"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"condition_free_mana"			"70"
+			}
+			"12"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"hp_cost"						"15"
+			}
+			"13"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"bleed_stack_inner"				"5"
+			}
+			"14"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"bleed_stack_outer"				"3"
+			}
+			"07"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_dmg_per_bleed"			"5"
+			}
+			"15"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"bonus_dmg_per_bloodpower"		"1"
+			}
+			"16"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"bloodpowercap"					"30"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/vlad/vlad_abilities"
+				"Function"		"OnCeremonialPurgeStart"
+			}
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/vlad/vlad_abilities"
+				"Function"		"OnCeremonialPurgeCD"
+			}
+		}
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/vlad/vlad_abilities"
+				"Function"		"OnCeremonialPurgeUpgrade"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_ceremonial_purge_slow"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"Duration"			"%slow_duration"
+		
+				"Properties"
+				{
+				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow_per_stack" 
+				}
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnCeremonialPurgeSlowCreate"
+					}
+				}
+				"ThinkInterval"  "1.0"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnCeremonialPurgeSlowThink"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnCeremonialPurgeDestroy"
+					}
+				}
+			}
+		}
+	}
+	//=======================================
+	// Vlad III: Ceremonial Purge No Mana (Improve Impaling SA)
+	//=======================================
+	"vlad_ceremonial_purge_upgrade_1_no_mana"
+	{
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityTextureName"			"custom/vlad_ceremonial_purge"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+
+		"AbilityCastPoint"				"0.1"
+		"AbilityCastRange"				"465"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		"AbilityCooldown"				"6"
+		"AbilityManaCost"				"0" //stuff concerning mana cost, conditional and attribute hp% update of this ability is currently hardcoded in lua
+		"LevelsBetweenUpgrades"			"1"
+
+		"precache"
+		{
+			
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"delay"							"0.4"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"aoe_inner"						"265"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"dmg_inner"						"250 290 330 370 410"
+			}
+			"05"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"stun_inner"					"0.25"
+			}
+			"06"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"aoe_outer"						"465"
+			}
+			"07"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"dmg_outer"						"540 605 670 735 800"
+			}
+			"08"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"stun_outer"					"0.75"
+			}
+			"09"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"slow_per_stack"				"-10"
+			}
+			"10"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"slow_duration"					"6"
+			}
+			"12"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"hp_cost"						"15"
+			}
+			"13"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"bleed_stack_inner"				"5"
+			}
+			"14"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"bleed_stack_outer"				"3"
+			}
+			"07"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_dmg_per_bleed"			"5"
+			}
+			"15"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"bonus_dmg_per_bloodpower"		"1"
+			}
+			"16"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"bloodpowercap"					"30"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/vlad/vlad_abilities"
+				"Function"		"OnCeremonialPurgeStart"
+			}
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/vlad/vlad_abilities"
+				"Function"		"OnCeremonialPurgeCD"
+			}
+		}
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/vlad/vlad_abilities"
+				"Function"		"OnCeremonialPurgeUpgrade"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_ceremonial_purge_slow"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"Duration"			"%slow_duration"
+		
+				"Properties"
+				{
+				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow_per_stack" 
+				}
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnCeremonialPurgeSlowCreate"
+					}
+				}
+				"ThinkInterval"  "1.0"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnCeremonialPurgeSlowThink"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnCeremonialPurgeDestroy"
+					}
+				}
+			}
+		}
+	}
+	//=======================================
+	// Vlad III: Ceremonial Purge (Blood Letter SA)
+	//=======================================
+	"vlad_ceremonial_purge_upgrade_2"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/vlad/vlad_abilities"
+		"MaxLevel"						"5"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityTextureName"			"custom/vlad_ceremonial_purge"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+
+		"AbilityCastPoint"				"0.1"
+		//"AbilityCastRange"				"465"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		"AbilityCooldown"				"6"
+		//"AbilityManaCost"				"200" //stuff concerning mana cost, conditional and attribute hp% update of this ability is currently hardcoded in lua
+		"LevelsBetweenUpgrades"			"1"
+
+		"precache"
+		{
+			
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"delay"							"0.4"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"aoe_inner"						"265"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"dmg_inner"						"150 190 230 270 310"
+			}
+			"05"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"stun_inner"					"0.25"
+			}
+			"06"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"aoe_outer"						"465"
+			}
+			"07"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"dmg_outer"						"440 505 570 635 700"
+			}
+			"08"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"stun_outer"					"0.75"
+			}
+			"09"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"slow_per_stack"				"-10"
+			}
+			"10"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"slow_duration"					"6"
+			}
+			"11"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"condition_free_mana"			"35"
+			}
+			"12"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"hp_cost"						"15"
+			}
+			"13"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"bleed_stack_inner"				"5"
+			}
+			"14"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"bleed_stack_outer"				"3"
+			}
+			"07"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_dmg_per_bleed"			"5"
+			}
+			"15"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"bonus_dmg_per_bloodpower"		"1"
+			}
+			"16"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"bloodpowercap"					"30"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/vlad/vlad_abilities"
+				"Function"		"OnCeremonialPurgeStart"
+			}
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/vlad/vlad_abilities"
+				"Function"		"OnCeremonialPurgeCD"
+			}
+		}
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/vlad/vlad_abilities"
+				"Function"		"OnCeremonialPurgeUpgrade"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_ceremonial_purge_slow"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"Duration"			"%slow_duration"
+		
+				"Properties"
+				{
+				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow_per_stack" 
+				}
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnCeremonialPurgeSlowCreate"
+					}
+				}
+				"ThinkInterval"  "1.0"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnCeremonialPurgeSlowThink"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnCeremonialPurgeDestroy"
+					}
+				}
+			}
+		}
+	}
+	//=======================================
+	// Vlad III: Ceremonial Purge No Mana (Blood Letter SA)
+	//=======================================
+	"vlad_ceremonial_purge_upgrade_2_no_mana"
+	{
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityTextureName"			"custom/vlad_ceremonial_purge"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+
+		"AbilityCastPoint"				"0.1"
+		"AbilityCastRange"				"465"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		"AbilityCooldown"				"6"
+		"AbilityManaCost"				"0" //stuff concerning mana cost, conditional and attribute hp% update of this ability is currently hardcoded in lua
+		"LevelsBetweenUpgrades"			"1"
+
+		"precache"
+		{
+			
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"delay"							"0.4"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"aoe_inner"						"265"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"dmg_inner"						"150 190 230 270 310"
+			}
+			"05"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"stun_inner"					"0.25"
+			}
+			"06"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"aoe_outer"						"465"
+			}
+			"07"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"dmg_outer"						"440 505 570 635 700"
+			}
+			"08"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"stun_outer"					"0.75"
+			}
+			"09"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"slow_per_stack"				"-10"
+			}
+			"10"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"slow_duration"					"6"
+			}
+			"12"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"hp_cost"						"15"
+			}
+			"13"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"bleed_stack_inner"				"5"
+			}
+			"14"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"bleed_stack_outer"				"3"
+			}
+			"07"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_dmg_per_bleed"			"5"
+			}
+			"15"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"bonus_dmg_per_bloodpower"		"1"
+			}
+			"16"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"bloodpowercap"					"30"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/vlad/vlad_abilities"
+				"Function"		"OnCeremonialPurgeStart"
+			}
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/vlad/vlad_abilities"
+				"Function"		"OnCeremonialPurgeCD"
+			}
+		}
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/vlad/vlad_abilities"
+				"Function"		"OnCeremonialPurgeUpgrade"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_ceremonial_purge_slow"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"Duration"			"%slow_duration"
+		
+				"Properties"
+				{
+				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow_per_stack" 
+				}
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnCeremonialPurgeSlowCreate"
+					}
+				}
+				"ThinkInterval"  "1.0"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnCeremonialPurgeSlowThink"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnCeremonialPurgeDestroy"
+					}
+				}
+			}
+		}
+	}
+	//=======================================
+	// Vlad III: Ceremonial Purge (Improve Impaling + Blood Letter SA)
+	//=======================================
+	"vlad_ceremonial_purge_upgrade_3"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/vlad/vlad_abilities"
+		"MaxLevel"						"5"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityTextureName"			"custom/vlad_ceremonial_purge"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+
+		"AbilityCastPoint"				"0.1"
+		//"AbilityCastRange"				"465"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		"AbilityCooldown"				"6"
+		//"AbilityManaCost"				"200" //stuff concerning mana cost, conditional and attribute hp% update of this ability is currently hardcoded in lua
+		"LevelsBetweenUpgrades"			"1"
+
+		"precache"
+		{
+			
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"delay"							"0.4"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"aoe_inner"						"265"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"dmg_inner"						"250 290 330 370 410"
+			}
+			"05"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"stun_inner"					"0.25"
+			}
+			"06"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"aoe_outer"						"465"
+			}
+			"07"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"dmg_outer"						"540 605 670 735 800"
+			}
+			"08"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"stun_outer"					"0.75"
+			}
+			"09"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"slow_per_stack"				"-10"
+			}
+			"10"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"slow_duration"					"6"
+			}
+			"11"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"condition_free_mana"			"70"
+			}
+			"12"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"hp_cost"						"15"
+			}
+			"13"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"bleed_stack_inner"				"5"
+			}
+			"14"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"bleed_stack_outer"				"3"
+			}
+			"07"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_dmg_per_bleed"			"5"
+			}
+			"15"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"bonus_dmg_per_bloodpower"		"1"
+			}
+			"16"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"bloodpowercap"					"30"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/vlad/vlad_abilities"
+				"Function"		"OnCeremonialPurgeStart"
+			}
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/vlad/vlad_abilities"
+				"Function"		"OnCeremonialPurgeCD"
+			}
+		}
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/vlad/vlad_abilities"
+				"Function"		"OnCeremonialPurgeUpgrade"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_ceremonial_purge_slow"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"Duration"			"%slow_duration"
+		
+				"Properties"
+				{
+				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow_per_stack" 
+				}
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnCeremonialPurgeSlowCreate"
+					}
+				}
+				"ThinkInterval"  "1.0"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnCeremonialPurgeSlowThink"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnCeremonialPurgeDestroy"
+					}
+				}
+			}
+		}
+	}
+	//=======================================
+	// Vlad III: Ceremonial Purge No Mana (Improve Impaling + Blood Letter SA)
+	//=======================================
+	"vlad_ceremonial_purge_upgrade_3_no_mana"
+	{
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityTextureName"			"custom/vlad_ceremonial_purge"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+
+		"AbilityCastPoint"				"0.1"
+		"AbilityCastRange"				"465"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		"AbilityCooldown"				"6"
+		"AbilityManaCost"				"0" //stuff concerning mana cost, conditional and attribute hp% update of this ability is currently hardcoded in lua
+		"LevelsBetweenUpgrades"			"1"
+
+		"precache"
+		{
+			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_axe.vsndevts"
+			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_life_stealer.vsndevts"
+			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+			"particle"					"particles/custom/vlad/vlad_cp_spin.vpcf"
+			"particle" 					"particles/units/heroes/hero_life_stealer/life_stealer_open_wounds.vpcf"
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"delay"							"0.4"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"aoe_inner"						"265"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"dmg_inner"						"250 290 330 370 410"
+			}
+			"05"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"stun_inner"					"0.25"
+			}
+			"06"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"aoe_outer"						"465"
+			}
+			"07"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"dmg_outer"						"540 605 670 735 800"
+			}
+			"08"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"stun_outer"					"0.75"
+			}
+			"09"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"slow_per_stack"				"-10"
+			}
+			"10"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"slow_duration"					"6"
+			}
+			"12"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"hp_cost"						"15"
+			}
+			"13"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"bleed_stack_inner"				"5"
+			}
+			"14"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"bleed_stack_outer"				"3"
+			}
+			"07"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_dmg_per_bleed"			"5"
+			}
+			"15"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"bonus_dmg_per_bloodpower"		"1"
+			}
+			"16"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"bloodpowercap"					"30"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/vlad/vlad_abilities"
+				"Function"		"OnCeremonialPurgeStart"
+			}
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/vlad/vlad_abilities"
+				"Function"		"OnCeremonialPurgeCD"
+			}
+		}
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/vlad/vlad_abilities"
+				"Function"		"OnCeremonialPurgeUpgrade"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_ceremonial_purge_slow"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"Duration"			"%slow_duration"
+		
+				"Properties"
+				{
+				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow_per_stack" 
+				}
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnCeremonialPurgeSlowCreate"
+					}
+				}
+				"ThinkInterval"  "1.0"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnCeremonialPurgeSlowThink"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnCeremonialPurgeDestroy"
+					}
+				}
+			}
+		}
+	}
+	//=======================================
+	// Vlad : Ceremonial Purge Think
+	//=======================================
+	"vlad_ceremonial_purge_think"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityTextureName"			"custom/vlad_protection_of_faith"
+
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"0"
+		"AbilityManaCost"				"0"
+
+		"precache"
+		{
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"free_mana"					"35"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_free_mana"			"35"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_ceremonial_purge_think"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE | MODIFIER_ATTRIBUTE_PERMANENT"
+		
+				"ThinkInterval"  "0.1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnCeremonialPurgeThink"
+					}
+				}
+			}
+		}
+	}
+	//=======================================
+	// Vlad III: Cursed Lance
+	//=======================================
+	"vlad_cursed_lance"
+	{
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/vlad_cursed_lance"
+
+
+		"AbilityCastPoint"				"0.3"
+		"AbilityCastRange"				"400"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
+		"AbilityCooldown"				"25"
+		"AbilityManaCost"				"400"
+		"LevelsBetweenUpgrades"			"2"
+
+		"precache"
+		{
+			
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"max_shield"					"300 400 500 600 700"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"bonus_shield_per_bleed"	"10"
+			}
+			
+			"03"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"bonus_shield_per_bloodpower"	"2"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"max_dmg"						"375 500 625 750 875"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"bonus_dmg_per_bleed"			"6"
+			}
+			"06"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"bonus_dmg_per_bloodpower"		"1"
+			}
+			"07"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"aoe"							"400"
+			}
+			"08"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"duration"						"10"
+			}
+			"09"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"hp_cost"						"20"
+			}			
+			"10"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"bloodpower_cap"				"40"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/vlad/vlad_abilities"
+				"Function"		"OnCurseLanceStart"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_cursed_lance_shield"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"IsBuff"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Duration"			"%duration"
+		
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnCurseLanceCreate"
+					}
+				}
+				"ThinkInterval"  "0.1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnCurseLanceThink"
+					}
+				}
+				"OnTakeDamage"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnCurseLanceTakeDamage"
+						"DamageTaken" 	"%attack_damage"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnCurseLanceDestroy"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnCurseLanceDeath"
+					}
+				}
+			}
+			"modifier_instant_cursed_window"
+			{
+				"IsPurgable"		"0"
+				"IsBuff"			"1"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Duration"			"%duration"
+
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnInstantCurseWindowStart"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnInstantCurseWindowDestroy"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnInstantCurseWindowDeath"
+					}
+				}
+			}
+			"modifier_vlad_combo_window"
+			{
+				"IsPurgable"		"0"
+				"IsBuff"			"1"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Duration"			"6"
+
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnVladComboWindowCreate"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnVladComboWindowDestroy"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnVladComboWindowDied"
+					}
+				}
+			}
+		}
+	}
+	//=======================================
+	// Vlad III: Cursed Lance (Instant Curse SA)
+	//=======================================
+	"vlad_cursed_lance_upgrade_1"
+	{
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/vlad_cursed_lance"
+
+
+		"AbilityCastPoint"				"0.3"
+		"AbilityCastRange"				"400"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
+		"AbilityCooldown"				"25"
+		"AbilityManaCost"				"400"
+		"LevelsBetweenUpgrades"			"2"
+
+		"precache"
+		{
+			
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"max_shield"					"300 400 500 600 700"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"bonus_shield_per_bleed"	"10"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"bonus_shield_per_bloodpower"	"2"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"max_dmg"						"375 500 625 750 875"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"bonus_dmg_per_bleed"			"6"
+			}
+			"06"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"bonus_dmg_per_bloodpower"		"1"
+			}
+			"07"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"aoe"							"400"
+			}
+			"08"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"duration"						"10"
+			}
+			"09"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"hp_cost"						"20"
+			}
+		
+			"10"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"bloodpower_cap"				"40"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/vlad/vlad_abilities"
+				"Function"		"OnCurseLanceStart"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_cursed_lance_shield"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Duration"			"%duration"
+		
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnCurseLanceCreate"
+					}
+				}
+				"ThinkInterval"  "0.1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnCurseLanceThink"
+					}
+				}
+				"OnTakeDamage"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnCurseLanceTakeDamage"
+						"DamageTaken" 	"%attack_damage"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnCurseLanceDestroy"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnCurseLanceDeath"
+					}
+				}
+			}
+			"modifier_instant_cursed_window"
+			{
+				"IsPurgable"		"0"
+				"IsBuff"			"1"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Duration"			"%duration"
+
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnInstantCurseWindowStart"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnInstantCurseWindowDestroy"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnInstantCurseWindowDeath"
+					}
+				}
+			}
+			"modifier_vlad_combo_window"
+			{
+				"IsPurgable"		"0"
+				"IsBuff"			"1"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Duration"			"6"
+
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnVladComboWindowCreate"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnVladComboWindowDestroy"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnVladComboWindowDied"
+					}
+				}
+			}
+		}
+	}
+	//=======================================
+	// Vlad III: Cursed Lance (Bleed Letter SA)
+	//=======================================
+	"vlad_cursed_lance_upgrade_2"
+	{
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/vlad_cursed_lance"
+
+
+		"AbilityCastPoint"				"0.3"
+		"AbilityCastRange"				"400"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
+		"AbilityCooldown"				"25"
+		"AbilityManaCost"				"400"
+		"LevelsBetweenUpgrades"			"2"
+
+		"precache"
+		{
+			
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"max_shield"					"300 400 500 600 700"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"bonus_shield_per_bleed"	"10"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"bonus_shield_per_bloodpower"	"2"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"max_dmg"						"375 500 625 750 875"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"bonus_dmg_per_bleed"			"6"
+			}
+			"06"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"bonus_dmg_per_bloodpower"		"1"
+			}
+			"07"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"aoe"							"400"
+			}
+			"08"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"duration"						"10"
+			}
+			"09"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"hp_cost"						"20"
+			}
+
+			"10"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"bloodpower_cap"				"40"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/vlad/vlad_abilities"
+				"Function"		"OnCurseLanceStart"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_cursed_lance_shield"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Duration"			"%duration"
+		
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnCurseLanceCreate"
+					}
+				}
+				"ThinkInterval"  "0.1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnCurseLanceThink"
+					}
+				}
+				"OnTakeDamage"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnCurseLanceTakeDamage"
+						"DamageTaken" 	"%attack_damage"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnCurseLanceDestroy"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnCurseLanceDeath"
+					}
+				}
+			}
+			"modifier_instant_cursed_window"
+			{
+				"IsPurgable"		"0"
+				"IsBuff"			"1"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Duration"			"%duration"
+
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnInstantCurseWindowStart"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnInstantCurseWindowDestroy"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnInstantCurseWindowDeath"
+					}
+				}
+			}
+			"modifier_vlad_combo_window"
+			{
+				"IsPurgable"		"0"
+				"IsBuff"			"1"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Duration"			"6"
+
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnVladComboWindowCreate"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnVladComboWindowDestroy"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnVladComboWindowDied"
+					}
+				}
+			}
+		}
+	}
+	//=======================================
+	// Vlad III: Cursed Lance (Instant Curse + Blood Letter SA)
+	//=======================================
+	"vlad_cursed_lance_upgrade_3"
+	{
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/vlad_cursed_lance"
+
+
+		"AbilityCastPoint"				"0.3"
+		"AbilityCastRange"				"400"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
+		"AbilityCooldown"				"25"
+		"AbilityManaCost"				"400"
+		"LevelsBetweenUpgrades"			"2"
+
+		"precache"
+		{
+			
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"max_shield"					"300 400 500 600 700"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"bonus_shield_per_bleed"	"10"
+			}
+			
+			"03"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"bonus_shield_per_bloodpower"	"2"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"max_dmg"						"375 500 625 750 875"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"bonus_dmg_per_bleed"			"6"
+			}
+			"06"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"bonus_dmg_per_bloodpower"		"1"
+			}
+			"07"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"aoe"							"400"
+			}
+			"08"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"duration"						"10"
+			}
+			"09"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"hp_cost"						"20"
+			}
+			"10"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"bloodpower_cap"				"40"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/vlad/vlad_abilities"
+				"Function"		"OnCurseLanceStart"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_cursed_lance_shield"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Duration"			"%duration"
+		
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnCurseLanceCreate"
+					}
+				}
+				"ThinkInterval"  "0.1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnCurseLanceThink"
+					}
+				}
+				"OnTakeDamage"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnCurseLanceTakeDamage"
+						"DamageTaken" 	"%attack_damage"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnCurseLanceDestroy"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnCurseLanceDeath"
+					}
+				}
+			}
+			"modifier_instant_cursed_window"
+			{
+				"IsPurgable"		"0"
+				"IsBuff"			"1"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Duration"			"%duration"
+
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnInstantCurseWindowStart"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnInstantCurseWindowDestroy"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnInstantCurseWindowDeath"
+					}
+				}
+			}
+			"modifier_vlad_combo_window"
+			{
+				"IsPurgable"		"0"
+				"IsBuff"			"1"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Duration"			"6"
+
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnVladComboWindowCreate"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnVladComboWindowDestroy"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnVladComboWindowDied"
+					}
+				}
+			}
+		}
+	}
+	//=======================================
+	// Vlad III: Instant Curse
+	//=======================================
+	"vlad_instant_curse"
+	{
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"shadow_demon_disruption"
+
+		"AbilityCastPoint"				"0.10"
+		"AbilityCastRange"				"400"
+		"AbilityCooldown"				"1"
+		"AbilityManaCost"				"0"
+		//"LevelsBetweenUpgrades"				"1"
+
+		"precache"
+		{
+		}
+
+		"AbilitySpecial"
+		{
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/vlad/vlad_abilities"
+				"Function"		"OnInstantCurseStart"
+			}
+		}
+	}
+	//=======================================
+	// Vlad III: Transfusion
+	//=======================================
+	"vlad_transfusion"
+	{
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/vlad_transfusion"
+
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"30"
+		"AbilityCastRange"				"500"
+		"AbilityManaCost"				"100"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
+		//"LevelsBetweenUpgrades"				"1"
+
+		"precache"
+		{
+			
+		}
+
+		"AbilitySpecial"
+		{
+			"07"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"transfusion_duration"			"5"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"transfusion_interval"			"0.25"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"aoe"							"500"
+			}
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"dmg"							"30"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"heal"							"30"
+			}
+			"08"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"dmg_bonus"						"10"
+			}
+			"05"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"slow_per_stack"				"-5"
+			}
+			"09"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"slow_duration"					"1"
+			}
+			"10"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bloodpower_duration"			"20"
+			}
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"bleed_dmg"					"4"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bleed_duration"			"7"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"bleed_interval"			"0.5"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"stacks_onhit_abilities"	"5"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"stacks_onhit_melee"		"1"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/vlad/vlad_abilities"
+				"Function"		"OnTransfusionStart"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_bleed_passive"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE | MODIFIER_ATTRIBUTE_PERMANENT"
+		
+				"OnAttackLanded"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnBleedAttack"
+					}
+				}
+			}
+			"modifier_vlad_bleed"
+			{
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Duration"			"%bleed_duration"
+				"TextureName"		"custom/vlad_transfusion2"
+			
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnBleedCreate"
+					}
+				}
+				"ThinkInterval"  "%bleed_interval"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnBleedThink"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnBleedDestroy"
+					}
+				}
+			}
+			"modifier_vlad_transfusion_cooldown"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE | MODIFIER_ATTRIBUTE_PERMANENT"
+			}
+			"modifier_vlad_transfusion_self"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"Duration"			"%transfusion_duration"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+		
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnTransfusionThink"
+					}
+				}
+				"ThinkInterval"  "%transfusion_interval"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnTransfusionThink"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnTransfusionDestroy"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnTransfusionDeath"
+					}
+				}
+			}
+
+			"modifier_transfusion_blood_power"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"Duration"			"%bloodpower_duration"
+				"TextureName"		"custom/vlad_transfusion2"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnBloodPowerCreate"
+					}
+				}
+				"ThinkInterval"  "1.0"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnBloodPowerThink"
+					}
+				}
+			}
+			"modifier_vlad_transfusion_target"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Duration"			"%slow_duration"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+		
+				"Properties"
+				{
+				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow_per_stack" 
+				}
+			}
+			"modifier_impale_window"
+			{
+				"IsPurgable"		"0"
+				"IsBuff"			"1"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Duration"			"%bloodpower_duration"
+
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnImpaleWindowStart"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnImpaleWindowDestroy"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnImpaleWindowDeath"
+					}
+				}
+			}
+		}
+	}
+	//=======================================
+	// Vlad III: Transfusion (Blood Letter SA)
+	//=======================================
+	"vlad_transfusion_upgrade"
+	{
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/vlad_transfusion"
+
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"30"
+		"AbilityCastRange"				"500"
+		"AbilityManaCost"				"100"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
+
+		"precache"
+		{
+			
+		}
+
+		"AbilitySpecial"
+		{
+			"07"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"transfusion_duration"			"8"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"transfusion_interval"			"0.25"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"aoe"							"500"
+			}
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"dmg"							"60"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"heal"							"60"
+			}
+			"08"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"dmg_bonus"						"10"
+			}
+			"05"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"slow_per_stack"				"-5"
+			}
+			"09"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"slow_duration"					"1"
+			}
+			"10"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bloodpower_cap"			"30"
+			}
+			"10"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bloodpower_gain"				"2"
+			}
+			"10"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bloodpower_duration"			"20"
+			}
+			"10"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bloodpower_bonus"			"1"
+			}
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"bleed_dmg"					"4"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bleed_duration"			"7"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"bleed_interval"			"0.5"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"stacks_onhit_melee"		"1"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/vlad/vlad_abilities"
+				"Function"		"OnTransfusionStart"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_bleed_passive"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE | MODIFIER_ATTRIBUTE_PERMANENT"
+		
+				"OnAttackLanded"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnBleedAttack"
+					}
+				}
+			}
+			"modifier_vlad_bleed"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Duration"			"%bleed_duration"
+				"TextureName"		"custom/vlad_transfusion2"
+			
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnBleedCreate"
+					}
+				}
+				"ThinkInterval"  "%bleed_interval"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnBleedThink"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnBleedDestroy"
+					}
+				}
+			}
+			"modifier_vlad_transfusion_cooldown"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE | MODIFIER_ATTRIBUTE_PERMANENT"
+			}
+			"modifier_vlad_transfusion_self"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"Duration"			"%transfusion_duration"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+		
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnTransfusionThink"
+					}
+				}
+				"ThinkInterval"  "%transfusion_interval"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnTransfusionThink"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnTransfusionDestroy"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnTransfusionDeath"
+					}
+				}
+			}
+
+			"modifier_transfusion_blood_power"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"Duration"			"%bloodpower_duration"
+				"TextureName"		"custom/vlad_transfusion2"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%bloodpower_bonus"
+				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%bloodpower_bonus"
+				    "MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE" "%bloodpower_bonus" 
+				    "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%bloodpower_bonus"
+				    "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS" "%bloodpower_bonus"
+				}
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnBloodPowerCreate"
+					}
+				}
+				"ThinkInterval"  "1.0"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnBloodPowerThink"
+					}
+				}
+			}
+			"modifier_vlad_transfusion_target"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Duration"			"%slow_duration"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+		
+				"Properties"
+				{
+				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow_per_stack" 
+				}
+			}
+			"modifier_impale_window"
+			{
+				"IsPurgable"		"0"
+				"IsBuff"			"1"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Duration"			"%bloodpower_duration"
+
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnImpaleWindowStart"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnImpaleWindowDestroy"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnImpaleWindowDeath"
+					}
+				}
+			}
+		}
+	}
+
+	//=======================================
+	// Vlad III: Impale
+	//=======================================
+	"vlad_impale"
+	{
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/vlad_impale"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
+
+		"AbilityCastPoint"				"0.30"
+		"AbilityCooldown"				"3"
+		"AbilityManaCost"				"100"
+		"AbilityCastRange"				"600"
+		"AOERadius"						"%radius_min"
+
+		"precache"
+		{
+			
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"range"				"600"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"delay"				"0.3"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"200"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"dmg_gain"			"30"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius_min"		"150"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius_gain"		"5"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius_max"		"250"
+			}
+			"07"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"stun_min"			"1"
+			}
+			"08"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"stun_gain"			"0.075"
+			}
+			"09"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"stun_max"			"4.0"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_bleed_stack"		"5"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/vlad/vlad_abilities"
+				"Function"		"OnImpaleStart"
+			}
+		}
+	}
+
+	//=======================================
+	// Vlad III: Battle Continuation
+	//=======================================
+	"vlad_battle_continuation"
+	{
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityTextureName"			"custom/vlad_battle_continuation"
+
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"120"
+		"AbilityManaCost"				"0"
+
+		"precache"
+		{
+			
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"hp_condition"					"15"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"duration"						"1.5"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/vlad/vlad_abilities"
+				"Function"		"OnBattleContinuationStart"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_vlad_battle_continuation"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"Duration"			"%duration"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+		
+				"States"
+				{
+					"MODIFIER_STATE_INVULNERABLE"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+		
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnBattleContinuationCreate"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnBattleContinuationDestroy"
+					}
+				}
+			}
+		}
+	}
+	//=======================================
+	// Vlad III: Battle Continuation (Protection of Faith SA)
+	//=======================================
+	"vlad_battle_continuation_upgrade"
+	{
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityTextureName"			"custom/vlad_battle_continuation"
+
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"120"
+		"AbilityManaCost"				"0"
+
+		"precache"
+		{
+			
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"hp_condition"					"25"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"duration"						"1.5"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"heal"					"1000"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"heal_duration"			"10"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/vlad/vlad_abilities"
+				"Function"		"OnBattleContinuationStart"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_vlad_battle_continuation"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"Duration"			"%duration"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+		
+				"States"
+				{
+					"MODIFIER_STATE_INVULNERABLE"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+		
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnBattleContinuationCreate"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnBattleContinuationDestroy"
+					}
+				}
+			}
+			"modifier_vlad_battle_continuation_heal"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"Duration"			"%heal_duration"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnBattleContinuationHealCreate"
+					}
+				}
+				"ThinkInterval"  "1.0"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnBattleContinuationHealThink"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnBattleContinuationHealDestroy"
+					}
+				}
+			}
+		}
+	}
+
+	//=======================================
+	// Vlad III: The Fortress of Impalement
+	//=======================================
+	"vlad_kazikli_bey"
+	{
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation"			"ACT_DOTA_IDLE"
+		"AbilityTextureName"			"custom/vlad_kazikli_bey"
+		"AbilityCastPoint"				"0.45"
+		"AbilityCooldown"				"50"
+		"AbilityCastRange"				"400"
+		"AbilityManaCost"				"800"
+		"LevelsBetweenUpgrades"			"2"
+
+		"precache"
+		{
+			
+		}
+
+		"AbilitySpecial"
+		{		
+			"01"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"activation"					"0.95"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"endcast_pause"					"0.50"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"aoe_spikes"					"400"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"dmg_spikes"					"32 44 56 68 80" 
+			}
+			"05"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"aoe_lastspike"					"550"
+			}
+			"06"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"dmg_lastspike"					"400 500 600 700 800"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"bonus_dmg_per_bleed"		"7"
+			}
+			"08"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"bonus_dmg_per_bloodpower"		"1"
+			}
+			"09"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"stun"							"1.25"
+			}
+			"10"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"total_hit"						"11"
+			}
+			"11"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"spikes_bleed_stack"					"1"
+			}
+			"12"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"lastspike_bleed_stack"			"5"
+			}
+			"13"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"lastspike_heal_per_target"	"100"
+			}
+			
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/vlad/vlad_abilities"
+				"Function"		"OnKazikliBeyStart"
+			}
+		}
+	}
+	//=======================================
+	// Vlad III: The Fortress of Impalement (Improve Impaling SA)
+	//=======================================
+	"vlad_kazikli_bey_upgrade_1"
+	{
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation"			"ACT_DOTA_IDLE"
+		"AbilityTextureName"			"custom/vlad_kazikli_bey"
+		"AbilityCastPoint"				"0.45"
+		"AbilityCooldown"				"50"
+		"AbilityCastRange"				"400"
+		"AbilityManaCost"				"800"
+		"LevelsBetweenUpgrades"			"2"
+
+		"precache"
+		{
+			
+		}
+
+		"AbilitySpecial"
+		{		
+			"01"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"activation"					"0.95"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"endcast_pause"					"0.50"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"aoe_spikes"					"400"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"dmg_spikes"					"42 54 66 78 90" 
+			}
+			"05"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"bonus_dmg_per_bleed"		"7"
+			}
+			"06"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"bonus_dmg_per_bloodpower"		"1"
+			}
+			"07"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"aoe_lastspike"					"550"
+			}
+			"08"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"dmg_lastspike"					"500 600 700 800 900"
+			}
+			"09"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"stun"							"1.25"
+			}
+			"10"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"total_hit"						"11"
+			}
+			"11"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"spikes_bleed_stack"					"1"
+			}
+			"12"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"lastspike_bleed_stack"			"5"
+			}
+			"13"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"lastspike_heal_per_target"	"100"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/vlad/vlad_abilities"
+				"Function"		"OnKazikliBeyStart"
+			}
+		}
+	}
+	//=======================================
+	// Vlad III: The Fortress of Impalement (Blood Letter SA)
+	//=======================================
+	"vlad_kazikli_bey_upgrade_2"
+	{
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation"			"ACT_DOTA_IDLE"
+		"AbilityTextureName"			"custom/vlad_kazikli_bey"
+		"AbilityCastPoint"				"0.45"
+		"AbilityCooldown"				"50"
+		"AbilityCastRange"				"400"
+		"AbilityManaCost"				"800"
+		"LevelsBetweenUpgrades"			"2"
+
+		"precache"
+		{
+			
+		}
+
+		"AbilitySpecial"
+		{		
+			"01"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"activation"					"0.95"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"endcast_pause"					"0.50"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"aoe_spikes"					"400"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"dmg_spikes"					"32 44 56 68 80" 
+			}
+			"05"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"aoe_lastspike"					"550"
+			}
+			"06"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"dmg_lastspike"					"400 500 600 700 800"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"bonus_dmg_per_bleed"		"7"
+			}
+			"08"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"bonus_dmg_per_bloodpower"		"1"
+			}
+			"09"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"stun"							"1.25"
+			}
+			"10"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"total_hit"						"11"
+			}
+			"11"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"spikes_bleed_stack"					"1"
+			}
+			"12"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"lastspike_bleed_stack"			"5"
+			}
+			"13"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"lastspike_heal_per_target"	"100"
+			}
+			"10"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bloodpower_cap"				"40"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/vlad/vlad_abilities"
+				"Function"		"OnKazikliBeyStart"
+			}
+		}
+	}
+	//=======================================
+	// Vlad III: The Fortress of Impalement (Improve Impaling + Blood Letter SA)
+	//=======================================
+	"vlad_kazikli_bey_upgrade_3"
+	{
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/vlad_kazikli_bey"
+		"AbilityCastAnimation"			"ACT_DOTA_IDLE"
+		"AbilityCastPoint"				"0.45"
+		"AbilityCooldown"				"50"
+		"AbilityCastRange"				"400"
+		"AbilityManaCost"				"800"
+		"LevelsBetweenUpgrades"			"2"
+
+		"precache"
+		{
+			
+		}
+
+		"AbilitySpecial"
+		{		
+			"01"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"activation"					"0.95"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"endcast_pause"					"0.50"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"aoe_spikes"					"400"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"dmg_spikes"					"42 54 66 78 90" 
+			}
+			"05"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"aoe_lastspike"					"550"
+			}
+			"06"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"dmg_lastspike"					"500 600 700 800 900"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"bonus_dmg_per_bleed"		"7"
+			}
+			"08"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"bonus_dmg_per_bloodpower"		"1"
+			}
+			"09"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"stun"							"1.25"
+			}
+			"10"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"total_hit"						"11"
+			}
+			"11"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"spikes_bleed_stack"					"1"
+			}
+			"12"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"lastspike_bleed_stack"			"5"
+			}
+			"13"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"lastspike_heal_per_target"	"100"
+			}
+			"10"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bloodpower_cap"				"40"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/vlad/vlad_abilities"
+				"Function"		"OnKazikliBeyStart"
+			}
+		}
+	}
+	//=======================================
+	// Vlad III: Combo : Lord of Execution
+	//=======================================
+	"vlad_combo"
+	{
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/vlad_combo"
+
+		"AbilityCastPoint"				"0.20"
+		"AbilityCastRange"				"1500"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+		"AbilityCooldown"				"180"
+		"AbilityManaCost"				"200"
+		//"LevelsBetweenUpgrades"				"1"
+
+		"precache"
+		{
+			
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"aoe"							"1500"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"dmg"							"1500"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"heal"						   	"1000"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"stun"							"3"
+			}
+			"05"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"penalty"						"1.0"
+			}
+			"09"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"spike_bleed_stack"				"5"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/vlad/vlad_abilities"
+				"Function"		"OnLordOfExecutionStart"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_lord_of_execution_cooldown"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE | MODIFIER_ATTRIBUTE_PERMANENT"
+			}
+		}
+	}
+
+	//=======================================
+	// Vlad : Innocent Monster
+	//=======================================
+	"vlad_innocent_monster"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityTextureName"			"custom/vlad_innocent_monster"
+
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"0"
+		"AbilityManaCost"				"0"
+
+		"precache"
+		{
+			
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_mres"			"15"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_as_per_1"		"4"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_hp_regen_per_1"	"0.6"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"splash_aoe"			"600"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"splash_percentage"		"75"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"lifesteal"				"50"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"atk_bleed_stack"		"1"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_innocent_monster_passive"
+			{
+				"Passive"			"1"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE | MODIFIER_ATTRIBUTE_PERMANENT"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS" "%bonus_mres"
+				}
+				"ThinkInterval"  "0.1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnInnocentMonsterThink"
+					}
+				}
+				"OnAttackLanded"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnInnocentMonsterAttack"
+						"Damage"		"%attack_damage"  
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	""
+						"Function"		"OnInnocentMonsterDeath"
+					}
+				}
+			}
+			"modifier_innocent_monster_stack"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE | MODIFIER_ATTRIBUTE_PERMANENT"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%bonus_as_per_1"
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT" "%bonus_hp_regen_per_1"
+				}
+			}
+		}
+	}
+	//=======================================
+	// Vlad : Protection of Faith
+	//=======================================
+	"vlad_protection_of_faith"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityTextureName"			"custom/vlad_protection_of_faith"
+
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"70"
+		"AbilityManaCost"				"0"
+
+		"precache"
+		{
+			
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_ms"				"50"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"2"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"condition"				"500"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_protection_of_faith_passive"
+			{
+				"Passive"			"1"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE | MODIFIER_ATTRIBUTE_PERMANENT"
+		
+				"OnTakeDamage"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/vlad/vlad_abilities"
+						"Function"		"OnProtectionOfFaithTakeDamage"
+						"DamageTaken"	"%attack_damage"
+					}
+				}
+				"Properties"
+				{
+				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" "%bonus_ms" 
+				}
+			}
+			"modifier_protection_of_faith_active"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Duration"			"%duration"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE | MODIFIER_ATTRIBUTE_PERMANENT"
+				"States"
+				{
+					"MODIFIER_STATE_MAGIC_IMMUNE"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+			"modifier_protection_of_faith_cooldown"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE | MODIFIER_ATTRIBUTE_PERMANENT"
+			}
+		}
+	}
+
+	//=======================================
+	// Vlad Attribute : Innocent Monster
+	//=======================================
+	"vlad_attribute_innocent_monster"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/vlad_innocent_monster"
+
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"18"
+
+		"precache"
+		{
+
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_mres"			"15"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_as_per_1"		"4"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_hp_regen_per_1"	"0.6"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"splash_aoe"			"600"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"splash_percentage"		"0.75"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"splash_percentage__TT"	"75"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"lifesteal"				"0.5"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"lifesteal__TT"			"50"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/vlad/vlad_abilities"
+				"Function"		"OnInnocentMonsterAcquired"
+			}
+		}
+	}
+
+	//=======================================
+	// Vlad Attribute : Protection of Faith
+	//=======================================
+	"vlad_attribute_protection_of_faith"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/vlad_protection_of_faith"
+
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"13"
+
+		"precache"
+		{
+
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_ms"				"50"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"pof_duration"			"2"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"pof_condition"			"500"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"pof_cd"				"70"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bc_hp_condition"		"25"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bc_heal"				"100"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bc_heal__TT"			"1000"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bc_heal_duration"		"10"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/vlad/vlad_abilities"
+				"Function"		"OnProtectionOfFaithAcquired"
+			}
+		}
+	}
+	//=======================================
+	// Vlad Attribute : Improved Impaling
+	//=======================================
+	"vlad_attribute_improved_impaling"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/vlad_improved_impaling"
+
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"13"
+
+		"precache"
+		{
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"kb_bonus_spikes_dmg"		"10"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"kb_bonus_lastspike_dmg"	"100"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"kb_spike_heal_per_target"	"100"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"kb_bonus_bleed_stack"		"1"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"kb_bonus_dmg_per_stack"	"7"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"cp_dmg_bonus"				"100"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"cp_conditional"			"70"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"cp_bonus_dmg_per_stack"	"5"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/vlad/vlad_abilities"
+				"Function"		"OnImproveImpalingAcquired"
+			}
+		}
+	}
+
+	//=======================================
+	// Vlad Attribute : Instant Curse
+	//=======================================
+	"vlad_attribute_instant_curse"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"shadow_demon_disruption"
+
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"6"
+
+		"precache"
+		{
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"cl_bonus_shield_per_stack"	"10"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"cl_bonus_dmg_per_stack"	"6"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/vlad/vlad_abilities"
+				"Function"		"OnInstantCurseAcquired"
+			}
+		}
+	}
+
+	//=======================================
+	// Vlad Attribute : Bloodletter
+	//=======================================
+	"vlad_attribute_bloodletter"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/vlad_transfusion2"
+
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"11"
+
+		"precache"
+		{
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"transfusiondur"				"3"
+			}
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"transfusionbonus"				"30"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"cl_bonus_shield_per_stack"		"0.02"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"cl_bonus_shield_per_stack__TT"	"2"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"cl_bonus_dmg_per_stack"		"0.01"
+			}
+			"05"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"cl_bonus_dmg_per_stack__TT"	"1"
+			}
+			"06"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"kb_bonus_dmg_per_stack"		"0.01"
+			}
+			"07"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"kb_bonus_dmg_per_stack__TT"	"1"
+			}
+			"08"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"cp_bonus_dmg_per_stack"		"0.01"
+			}
+			"09"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"cp_bonus_dmg_per_stack__TT"	"1"
+			}
+			"10"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bloodpower_cap"				"30"
+			}
+			"10"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bloodpower_gain"			"2"
+			}
+			"10"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bloodpower_bonus"			"1"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"impale_damage"			"200"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"impale_dmg_gain"		"30"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/vlad/vlad_abilities"
+				"Function"		"OnBloodLetterAcquired"
+			}
+		}
+	}
+	//=======================================
+	// Precache
+	//=======================================
+	"vlad_precache"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"custom/medusa/medusa_attribute_monstrous_strength"
+
+		"precache"
+		{
+			"model"					"models/vlad/apo/vlad_by_zefiroft.vmdl"
+			"particle"				"particles/custom/vlad/vlad_ri_active.vpcf"
+			"particle"				"particles/custom/vlad/vlad_cp_spin.vpcf"
+			"particle" 				"particles/units/heroes/hero_life_stealer/life_stealer_open_wounds.vpcf"
+			"particle" 				"particles/custom/vlad/vlad_cl_popup.vpcf"
+			"particle" 				"particles/custom/vlad/vlad_cl_indicator.vpcf"
+			"particle" 				"particles/custom/vlad/vlad_cl_shield.vpcf"
+			"particle" 				"particles/custom/vlad/vlad_cl_shield2.vpcf"
+			"particle" 				"particles/custom/vlad/vlad_cl_explosion.vpcf"
+			"particle" 				"particles/custom/vlad/vlad_cl_preexplosion.vpcf"
+			"particle" 				"particles/custom/vlad/vlad_cl_expiring.vpcf"
+			"particle" 				"particles/custom/vlad/vlad_tf_ontarget_drain.vpcf"
+			"particle" 				"particles/custom/vlad/vlad_tf_self.vpcf"
+			"particle"				"particles/custom/vlad/vlad_tf_bloodpower.vpcf"
+			"particle"				"particles/custom/vlad/vlad_ip_prespike.vpcf"
+			"particle"				"particles/custom/vlad/vlad_ip_spikes.vpcf"
+			"particle"				"particles/custom/vlad/vlad_bc_cast.vpcf"
+			"particle"				"particles/custom/vlad/vlad_bc_buff.vpcf"
+			"particle"				"particles/custom/vlad/vlad_bc_heal.vpcf"
+			"particle" 			    "particles/custom/vlad/vlad_kb_hold.vpcf"
+			"particle" 			    "particles/custom/vlad/vlad_kb_spikesend.vpcf"
+			"particle" 			    "particles/custom/vlad/vlad_kb_ontarget.vpcf"
+			"particle" 			    "particles/custom/vlad/vlad_impale_bleed.vpcf"
+			"particle" 				"particles/custom/vlad/vlad_kb_ontarget_prespike.vpcf"
+			"particle" 				"particles/custom/vlad/vlad_kb_hold_swirl.vpcf"
+			"particle"				"particles/custom/vlad/vlad_combo_aoe.vpcf"
+			"particle"				"particles/custom/vlad/vlad_combo_ontarget_stun.vpcf"
+			"particle"				"particles/custom/vlad/vlad_combo_ontarget_execute.vpcf"
+			"particle"				"particles/custom/vlad/vlad_im_splash.vpcf"
+			"particle"				"particles/custom/vlad/vlad_im_splash_blood.vpcf"
+			"particle" 				"particles/items_fx/black_king_bar_avatar.vpcf"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_lycan.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_phantom_assassin.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_nyx_assassin.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_ogre_magi.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_leshrac.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_death_prophet.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_abaddon.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_bloodseeker.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_phantom_lancer.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_tidehunter.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_axe.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_life_stealer.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+		}
+	}
+}

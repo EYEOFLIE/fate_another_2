@@ -1,0 +1,188 @@
+"DOTAUnits"
+{
+	"semiramis_hanging_gardens"
+	{
+		// General
+		//----------------------------------------------------------------
+		"BaseClass"					"npc_dota_creature"
+		"Model"						"models/hanging/stolenbabylon.vmdl"
+		"ModelScale"				"1.15"
+		"Level"						"1"
+		"HealthBarOffset"			"500"
+		"ConsideredHero"			"1"
+		"HasInventory"				"0"
+
+		
+		"AbilityLayout"				"6"
+		"Ability1"					"hanging_gardens_mount"	 
+		"Ability2"					"hanging_gardens_bombard"
+		"Ability3"					"hanging_garden_passive_laser"
+		"Ability4"					"hanging_gardens_mass_recall"
+		"Ability5"					"fate_empty1"
+		"Ability6"					"semiramis_hanging_garden_sikera_usum"
+		"Ability7"					"hanging_garden_presence"
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"25"
+		"MagicalResistance"			"15"
+		
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"			"50"								// Damage range min.
+		"AttackDamageMax"			"100"								// Damage range max.
+		"AttackRate"				"2.0"								// Speed of attack.
+		"AttackAnimationPoint"		"0.5"								// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"1000"								// Range within a target can be acquired.
+		"AttackRange"				"800"								// Range within a target can be attacked.
+		"ProjectileModel"			"particles/units/heroes/hero_ancient_apparition/ancient_apparition_base_attack.vpcf"									// Particle system model for projectile.
+		"ProjectileSpeed"			"2000"	
+
+
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"150"			// Experience earn.
+		"BountyGoldMin"				"1000"			// Gold earned min.
+		"BountyGoldMax"				"1000"			// Gold earned max.
+		
+		// Bounds
+		//----------------------------------------------------------------
+		"BoundsHullName"			"DOTA_HULL_SIZE_BARRACKS"
+		"RingRadius"				"250"
+		"CollisionSize"				"500"
+		
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_FLY"
+		"MovementSpeed"				"150"
+		"MovementTurnRate"			"1.5"
+		
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"1500"
+		"StatusHealthRegen"			"20"
+		"StatusMana"				"1500"
+		"StatusManaRegen"			"10"
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"1000"
+		"VisionNighttimeRange"		"1000"
+		
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_NEUTRALS"
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_STRONG"
+		"UnitRelationShipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+		"ShouldDoFlyHeightVisual"	"0"
+	}
+
+	"semiramis_snek"
+	{
+		"Model"				"models/creeps/neutral_creeps/n_creep_troll_skeleton/n_creep_skeleton_melee.vmdl"
+		"BaseClass"			"npc_dota_creature"
+		"BoundsHullName"	"DOTA_HULL_SIZE_SMALL"	
+		//"SoundSet"					"Creep_Good_Melee"
+
+		"Ability1"					""			// Ability 1
+		"Ability2"					""			// Ability 2
+		"Ability3"					""			// Ability 3
+		"Ability4"					""			// Ability 4
+
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"25"
+		"MagicalResistance"			"15"
+		
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"			"100"								// Damage range min.
+		"AttackDamageMax"			"100"								// Damage range max.
+		"AttackRate"				"1.0"								// Speed of attack.
+		"AttackAnimationPoint"		"0.2"								// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"500"								// Range within a target can be acquired.
+		"AttackRange"				"300"								// Range within a target can be attacked.
+		"ProjectileModel"			"particles/econ/items/viper/viper_ti7_immortal/viper_poison_attack_ti7.vpcf"									// Particle system model for projectile.
+		"ProjectileSpeed"			"9999"	
+
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND" 
+		"MovementSpeed"				"300"		// Speed.
+		"MovementTurnRate"			"0.3"		// Turning rate.
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"1000"		// Base health.
+		"StatusHealthRegen"			"150"		// Health regeneration rate.
+		"StatusMana"				"0"			// Base mana.
+		"StatusManaRegen"			"0"			// Mana regeneration rate.	
+
+		"BountyXP"					"75"			// Experience earn.
+		"BountyGoldMin"				"500"			// Gold earned min.
+		"BountyGoldMax"				"500"			// Gold earned max.
+
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"700"		// Range of vision during day light.
+		"VisionNighttimeRange"		"700"		// Range of vision at night time.
+	}
+
+	"semiramis_bird"
+	{
+		"Model"						"models/items/beastmaster/hawk/fotw_eagle/fotw_eagle.vmdl"	// Model.
+		"BaseClass"					"npc_dota_beastmaster_hawk"
+		"SoundSet"					"0"			// Name of sound set.
+		"Level"						"6"
+		"ModelScale"				"1.0"
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					""			// Ability 1
+		"Ability2"					""			// Ability 2
+		"Ability3"					""			// Ability 3
+		"Ability4"					""			// Ability 4
+
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyGoldMin"				"30"		// Gold earned min.
+		"BountyGoldMax"				"30"		// Gold earned max.
+
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"0"			// Physical protection.
+
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+
+		// Bounds
+		//----------------------------------------------------------------
+		"HealthBarOffset"			"50"
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_FLY"
+		"MovementSpeed"				"400"		// Speed.
+		"MovementTurnRate"			"0.7"		// Turning rate.
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"100"		// Base health.
+		"StatusHealthRegen"			"0"		// Health regeneration rate.
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"700"		// Range of vision during day light.
+		"VisionNighttimeRange"		"700"		// Range of vision at night time.
+
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_GOODGUYS"
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		
+		"WakesNeutrals"				"0"
+	}
+}

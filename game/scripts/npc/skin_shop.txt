@@ -1,0 +1,89 @@
+
+SkinShop
+{
+	"001"		"1000" 		// [Normal] Casual Gilgamesh
+	"002"		"1000"		// [Normal] Casual Artoria
+	"003"		"2000"		// [Heroic] Crown Artoria
+	"004"		"1000"		// [Normal] Casual Artoria (Alter)
+	"005"		"1000"		// [Normal] Casual Mordred
+	"006"		"2000"		// [Heroic] Dracula Vlad
+	"007"		"2000"		// [Heroic] Atalanta (Alter)
+	"008"		"2000"		// [Heroic] Dress Artoria (Alter)
+	"009"		"1000"		// [Normal] Moon Cell Cu
+	"010"		"1000"		// [Normal] Uncaped Medea
+	"011"		"1000"		// [Normal] Sakura Okita
+	"012"		"1000"		// [Normal] Counter Guardian Emiya
+	"013"		"1000"		// [Normal] Casual Tamamo
+	"014"		"1000"		// [Normal] Emperor Nero
+	"015"		"6000"		// [Legend] Medusa Lily
+	"016"		"6000"		// [Legend] Medea Lily
+	"017"		"6000"		// [Legend] Summer Dress Nero
+	"018"		"2000"		// [Heroic] Armorless Mordred
+	"019"		"6000"		// [Legend] Santa Jeanne
+	"020"		"1000"		// [Normal] White Jeanne
+	"021"		"1000"		// [Normal] Gangster Li
+	"022"		"2000"		// [Heroic] Boss Li
+	"023"		"1000"		// [Normal] Schoolgirl Astolfo
+	"024"		"2000"		// [Heroic] Candy Pink Astolfo
+	"025"		"1000"		// [Normal] Abyssal Gilles
+	"026"		"2000"		// [Heroic] Pope Gilles
+	"027"		"1000"		// [Normal] Salaryman Iskandar
+	"028"		"1000"		// [Normal] Hundred Face Hassan
+	"029"		"1000"		// [Normal] Schoolgirl Elizabeth
+	"030"		"1000"		// [Normal] Emiya Angra
+	"031"		"1000"		// [Normal] Suit Lancelot
+	"032"		"1000"		// [Normal] Samurai Gawain
+	"033"		"6000"		// [Legend] Summer Gawain
+	"034"		"1000"		// [Normal] Bartender Karna
+	"035"		"2000"		// [Heroic] Brahma God Karna
+	"036"		"1000"		// [Normal] Alice NR
+	"037"		"1000"		// [Normal] Secretary Scathach
+	"038"		"2000"		// [Heroic] Priestess Scathach
+	"039"		"8000"		// [Legend] Arthur Pendragon
+	"040"		"1000"		// [Normal] Suit Artoria
+	"041"		"2000"		// [Heroic] King Nero
+	"042"		"2000"		// [Heroic] Sergeant Scathach
+	"043"		"1000"		// [Normal] Warlord Lu Bu
+	"044"		"4000"		// [Legend] Mecha Lu Bu
+	"045"		"1000"		// [Normal] Captain Drake
+	"046"		"1000"		// [Normal] Pirate Drake
+	"047"		"2000"		// [Heroic] Cowgirl Drake
+	"048"		"6000"		// [Legend] Summer Drake
+	"049"		"2000"		// [Heroic] Samurai Amakusa
+	"050"		"6000"		// [Legend] Crane Wedding Artoria
+	"051"		"3000"		// [Heroic] Artoria Lily
+	"052"		"6000"		// [Legend] Emiya Shirou
+	"053"		"6000"		// [Legend] Summer Scathach
+	"054"		"2000"		// [Heroic] Kilenc Elizabeth
+	"055"		"2000"		// [Heroic] Dragon Armor Lancelot
+	"056"		"limit"		// [Limited] Cyber Emiya
+	"057"		"3000"		// [Heroic] Archer Card Illya
+	"058"		"6000"		// [Legend] Rider Card Illya
+	"059"		"2000"		// [Heroic] Female Hassan
+	"060"		"6000"		// [Legend] Lancer Card Illya
+	"061"		"limit"		// [Limited] Racing Nero
+	"062"		"6000"		// [Legend] Wedding Tamamo
+	"063"		"6000"		// [Legend] Assassin Card Illya
+	"064"		"6000"		// [Legend] Okita Alter
+	"065"		"6000"		// [Legend] Archer Card Shirou
+	"066"		"limit"		// [Limited] Senji Muramasa
+	"067"		"1000"		// [Normal] Schoolgirl Tamamo
+	"068"		"2000"		// [Heroic] Police Tamamo
+	"069"		"2000"		// [Heroic] Magical Girl Tamamo
+	"070"		"4000"		// [Legend] Waifu Tamamo
+	"071"		"6000"		// [Legend] Summer Tamamo
+	"072"		"6000"		// [Legend] Berserker Card Illya
+	"073"		"6000"		// [Legend] Female Gilgamesh
+	"074"		"2000"		// [Heroic] Waver Velvet
+	"075"		"6000"		// [Legend] Caster Card Illya
+	"076"		"6000"		// [Legend] Lancer Ana
+	"077"		"4000"		// [Legend] Count Edmond
+	"078"		"limit"		// [Limited] Ana
+	"079"		"15000"		// [Legend] Dynasty Warrior Lu Bu
+	"080"		"1000"		// [Normal] Swimming Suit Kiyohime
+	"081"		"6000"		// [Legend] Summer Artoria (Alter)
+	"082"		"6000"		// [Legend] Summer Mordred
+	"083"		"15000"		// [PEPE] Pepesaki
+	"084"		"limit"		// [Limited] Lancer Card Rin
+	"085"		"15000"		// [MEME] Bonk Doge Herc
+}

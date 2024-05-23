@@ -1,0 +1,64 @@
+"DOTAAbilities"
+{
+	//========================================
+	// Jack Murderer Mist
+	//========================================
+	"jtr_murderer_mist"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/jtr/jtr_the_mist"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"			"custom/jtr/murderer_misty_night"
+		"AbilityCastAnimation" 			"ACT_DOTA_ITEM_PICKUP"
+		"AnimationPlaybackRate" 		"1.0"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+
+		"precache"
+		{
+			"particle"					"particles/custom/jtr/invis_smoke.vpcf"
+			"particle"					"particles/custom/jtr/jtr_invis_ring.vpcf"
+			"particle"  				"particles/custom/jtr/murderer_mist.vpcf"
+			"particle"  				"particles/custom/jtr/murderer_mist_cloud.vpcf"
+			"particle"  				"particles/custom/jtr/murderer_mist_cloud_center.vpcf"
+			"particle"  				"particles/custom/jtr/murderer_mist_dust.vpcf"
+			"particle"  				"particles/custom/jtr/murderer_mist_start.vpcf"
+			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_templar_assassin.vsndevts"
+			"soundfile"					"soundevents/hero_jtr.vsndevts"
+		}
+		
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"34"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"400"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"700 900 1100 1300 1500"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"8 9 10 11 12"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow_pct"				"-50 -60 -70 -80 -90"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"fade_time"				"0.5"
+			}
+		}
+	}
+}

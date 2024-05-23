@@ -1,0 +1,43 @@
+Welcome to new Holy Grail War " Fate/Another II"
+
+Fate/Another II is an updated version of Fate/Another based on Fate Series
+
+-------------
+
+Join our <a href="https://discord.gg/yrBzecRjUd">Discord</a>
+Language : English, ไทย
+
+-------------
+
+Fate/Another II is Hero Arena game featuring 30+ Servants from Fate universe. Choose your Servant, explore diverse build path, and stand victorious in extremely fast-paced bloodbath.
+
+---------------
+
+To newcomers who interest in the game and want to gain more understanding of this game. please try Fate Tutorial map to learn the mechanics and tips.
+
+
+-------------
+
+Game Feature
+
+Master and Command Seal : Master can use Command Seal to help you in difficult situation.
+
+Customize Servant : You can freely build your own style playing.
+
+Unique Combo Skill : Combo skill is unlock when your Servant's stat reach minimum requirement.
+
+Holy Grail : Holy Grail is a comeback item that can make you turn the table.
+
+----------------
+
+Game Mode
+
+Death Match (2 Teams) : Map fate_elim_7v7 and fate_elim_6v6 - Fuyuki City
+
+Draft Mode (2 Teams) : Map fate_elim_7v7 and fate_elim_6v6 with full lobby - Fuyuki City
+
+Free For All (No Team) : Map fate_ffa - Ryudo Temple
+
+Rumble (4 Teams) : Map fate_3v3v3v3 - Einzbern Castle
+
+Tutorial Mode : Map fate_tutorial

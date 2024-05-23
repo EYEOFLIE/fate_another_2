@@ -1,0 +1,1837 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Amakusa Shirou Tokisada : Black Key
+	//=================================================================================================================
+	"amakusa_black_key_passive"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/amakusa/amakusa_abilities"
+		"MaxLevel"						"5"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityTextureName"			"custom/amakusa/amakusa_black_key"
+		"precache"
+		{
+			
+		}
+		
+		// Ability stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.05"
+		"AbilityCooldown"				"5"
+		"AbilityManaCost"				"100"
+		
+		// Ability special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"stack_gain"			"1 1 2 2 3"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"stack_gain_r"			"3 3 6 6 9"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_stacks"			"3 3 6 6 9"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cooldown"				"5"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Amakusa Shirou Tokisada : Black Key Set
+	//=================================================================================================================
+	"amakusa_set"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/amakusa/amakusa_abilities"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/amakusa/amakusa_set"
+		"AbilityCastAnimation" 			"ACT_DOTA_ITEM_PICKUP"
+		"AnimationPlaybackRate" 		"1.0"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityManaCost"				"100"
+		"AbilityCastRange"				"1000"
+		"AbilityCooldown"				"5.0"
+		"AbilityCastPoint"				"0.1"
+
+		"precache"
+		{
+			
+		}
+		
+		"AbilitySpecial"
+		{
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range"					"1000"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dmg"					"100 110 120 130 140"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"stun"					"0.1"
+			}	
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cooldown"				"5.0"
+			}				
+		}
+	}
+	//=================================================================================================================
+	// Amakusa Shirou Tokisada : Black Key Set (Priest SA)
+	//=================================================================================================================
+	"amakusa_set_upgrade"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/amakusa/amakusa_abilities"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/amakusa/amakusa_set"
+		"AbilityCastAnimation" 			"ACT_DOTA_ITEM_PICKUP"
+		"AnimationPlaybackRate" 		"1.0"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityManaCost"				"100"
+		"AbilityCastRange"				"1000"
+		"AbilityCooldown"				"5.0"
+		"AbilityCastPoint"				"0.1"
+
+		"precache"
+		{
+
+		}
+		
+		"AbilitySpecial"
+		{
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range"					"1000"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dmg"					"100 110 120 130 140"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_int"				"0.4"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"stun"					"0.1"
+			}	
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cooldown"				"5.0"
+			}				
+		}
+	}
+	//=================================================================================================================
+	// Amakusa Shirou Tokisada : Black Key Bombard
+	//=================================================================================================================
+	"amakusa_bombard"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/amakusa/amakusa_abilities"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/amakusa/amakusa_bombard"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_2"
+		"AnimationPlaybackRate" 		"2.0"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityManaCost"				"200"
+		"AbilityCastRange"				"800"
+		"AbilityCooldown"				"14 13 12 11 10"
+		"AbilityCastPoint"				"0.3"
+		"AOERadius"						"%aoe"
+		"precache"
+		{
+			
+		}
+		"AbilitySpecial"
+		{
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"			"0.3"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range"					"800"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"delay"					"0.3"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aoe"					"400"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dmg"					"400 470 540 610 680"
+			}	
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"stun_duration"			"0.30 0.35 0.40 0.45 0.50"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"root"					"0.5 0.6 0.7 0.8 0.9"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cooldown"				"14 13 12 11 10"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Amakusa Shirou Tokisada : Black Key Bombard (Priest SA)
+	//=================================================================================================================
+	"amakusa_bombard_upgrade"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/amakusa/amakusa_abilities"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/amakusa/amakusa_bombard"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_2"
+		"AnimationPlaybackRate" 		"2.0"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityManaCost"				"200"
+		"AbilityCastRange"				"800"
+		"AbilityCooldown"				"14 13 12 11 10"
+		"AbilityCastPoint"				"0.3"
+		"AOERadius"						"%aoe"
+		"precache"
+		{
+
+		}
+		"AbilitySpecial"
+		{
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"			"0.3"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range"					"800"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"delay"					"0.3"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aoe"					"400"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dmg"					"550 620 690 760 830"
+			}	
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"stun_duration"			"0.30 0.35 0.40 0.45 0.50"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"root"					"0.5 0.6 0.7 0.8 0.9"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cooldown"				"14 13 12 11 10"
+			}
+		}
+	}
+	//========================================
+	// Amakusa Shirou Tokisada : God's Resolution
+	//========================================
+	"amakusa_god_resolution"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/amakusa/amakusa_abilities"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"			"custom/amakusa/amakusa_god_resolution"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_3"
+		"AnimationPlaybackRate" 		"3.0"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityCooldown"				"23"
+		"AbilityCastPoint"				"0.2"
+		"AbilityManaCost"				"400"
+		"AbilityCastRange"				"400"
+
+		"precache"
+		{
+			
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"			"0.2"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"pray_aoe"				"400"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"pray_dmg"				"300 350 400 450 500"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pray_slow"				"-25 -30 -35 -40 -45"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pray_slow_dur"			"1.0 1.3 1.5 1.7 1.9"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"god_duration"			"8.0 8.5 9.0 9.5 10.0"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"atk_count"				"3"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"light_dmg"				"100 150 200 250 300"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"light_aoe"				"300"
+			}			
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"light_slow"			"-20"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"light_slow_dur"		"1.0"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cooldown"				"23"
+			}
+		}
+	}
+	//========================================
+	// Amakusa Shirou Tokisada : God's Resolution (Anti Ruler SA)
+	//========================================
+	"amakusa_god_resolution_upgrade"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/amakusa/amakusa_abilities"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"			"custom/amakusa/amakusa_god_resolution"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_3"
+		"AnimationPlaybackRate" 		"3.0"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityCooldown"				"23"
+		"AbilityCastPoint"				"0.2"
+		"AbilityManaCost"				"400"
+		"AbilityCastRange"				"400"
+
+		"precache"
+		{
+
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"			"0.2"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"pray_aoe"				"400"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"pray_dmg"				"300 350 400 450 500"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pray_slow"				"-25 -30 -35 -40 -45"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pray_slow_dur"			"1.0 1.3 1.5 1.7 1.9"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"god_duration"			"8.0 8.5 9.0 9.5 10.0"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"atk_count"				"3"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"light_dmg"				"100 150 200 250 300"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"light_aoe"				"300"
+			}			
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"light_slow"			"-20"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"light_slow_dur"		"1.0"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cooldown"				"23"
+			}
+		}
+	}
+	//========================================
+	// Amakusa Shirou Tokisada : Right Hand - Evil Eater
+	//========================================
+	"amakusa_right_hand"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"			"custom/amakusa/amakusa_right_hand"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityCastAnimation" 			"ACT_DOTA_ITEM_DROP"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityCooldown"				"51"
+		"AbilityCastPoint"				"0.05"
+		"AbilityManaCost"				"800"
+
+		"precache"
+		{
+			
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"6 7 8 9 10"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_stacks"			"4 5 6 7 8"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/amakusa/amakusa_abilities"
+				"Function"			"OnRightHandStart"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_right_hand"
+			{
+				"IsHidden"			"0"
+				"IsBuff"			"1"
+				"IsPurgable"		"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/amakusa/amakusa_abilities"
+						"Function"		"OnRightHandCreate"
+					}
+					"AttachEffect"
+					{
+						"Target"			"CASTER"
+						"EffectName"		"particles/econ/items/silencer/silencer_ti6/silencer_ti6_ambient.vpcf"
+						"EffectAttachType"	"follow_customorigin"
+						"ControlPointEntities"
+						{
+							"CASTER"		"attach_attack1"
+						}
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/amakusa/amakusa_abilities"
+						"Function"		"OnRightHandDestroy"
+					}
+				}
+				"ThinkInterval"  	"0.1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/amakusa/amakusa_abilities"
+						"Function"		"OnRIghtHandThink"
+					}
+				}
+			}
+			"modifier_twin_arm_window"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"IsPurgable"		"0"
+				"Duration"			"3"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/amakusa/amakusa_abilities"
+						"Function"		"OnTwinWindowCreate"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/amakusa/amakusa_abilities"
+						"Function"		"OnTwinWindowDestroy"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/amakusa/amakusa_abilities"
+						"Function"		"OnTwinDeath"
+					}
+				}
+			}
+		}
+	}
+	//========================================
+	// Amakusa Shirou Tokisada : Right Hand - Evil Eater (Left Hand - Xanadu Matric SA)
+	//========================================
+	"amakusa_right_hand_upgrade"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"			"custom/amakusa/amakusa_right_hand"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityCastAnimation" 			"ACT_DOTA_ITEM_DROP"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityCooldown"				"51"
+		"AbilityCastPoint"				"0.05"
+		"AbilityManaCost"				"800"
+
+		"precache"
+		{
+
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"6 7 8 9 10"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mana_per_dur"			"400"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_stacks"			"4 5 6 7 8"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mana_per_stack"		"300"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"hp_reg"				"1"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/amakusa/amakusa_abilities"
+				"Function"			"OnRightHandStart"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_left_hand"
+			{
+				"IsHidden"			"0"
+				"IsBuff"			"1"
+				"IsPurgable"		"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"TextureName"		"custom/amakusa/amakusa_attribute_left_hand"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE" "%hp_reg"
+				}
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"Target"			"CASTER"
+						"EffectName"		"particles/econ/items/queen_of_pain/qop_arcana/qop_arcana_whip_ambient_v2.vpcf"
+						"EffectAttachType"	"follow_customorigin"
+						"ControlPointEntities"
+						{
+							"CASTER"		"attach_attack2"
+						}
+					}
+				}
+			}
+			"modifier_right_hand"
+			{
+				"IsHidden"			"0"
+				"IsBuff"			"1"
+				"IsPurgable"		"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"Target"			"CASTER"
+						"EffectName"		"particles/econ/items/silencer/silencer_ti6/silencer_ti6_ambient.vpcf"
+						"EffectAttachType"	"follow_customorigin"
+						"ControlPointEntities"
+						{
+							"CASTER"		"attach_attack1"
+						}
+					}
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/amakusa/amakusa_abilities"
+						"Function"		"OnRightHandCreate"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/amakusa/amakusa_abilities"
+						"Function"		"OnRightHandDestroy"
+					}
+				}
+			}
+			"modifier_twin_arm_window"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"IsPurgable"		"0"
+				"Duration"			"3"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/amakusa/amakusa_abilities"
+						"Function"		"OnTwinWindowCreate"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/amakusa/amakusa_abilities"
+						"Function"		"OnTwinWindowDestroy"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/amakusa/amakusa_abilities"
+						"Function"		"OnTwinDeath"
+					}
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Amakusa Shirou Tokisada : Dimension Rift
+	//=================================================================================================================
+	"amakusa_blink"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityTextureName"			"custom/amakusa/amakusa_blink"
+		"AbilityCastAnimation" 			"ACT_DOTA_ITEM_DROP"
+		"AnimationPlaybackRate" 		"1.0"
+		"MaxLevel"						"1"
+		"AbilityManaCost"				"0"
+		"AbilityCooldown"				"1.0"
+		"AbilityCastPoint"				"0.0"
+
+		"precache"
+		{
+			
+		}
+
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"distance"				"800"
+			}	
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"stack_cost"			"1"
+			}											
+		}
+		"OnSpellStart"
+		{
+		
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/amakusa/amakusa_abilities"
+				"Function"		"OnRiftStart"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Amakusa Shirou Tokisada : Revelation
+	//=================================================================================================================
+	"amakusa_revelation"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityTextureName"			"custom/amakusa/amakusa_attribute_revelation"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_NONE"
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"0"
+		"AbilityManaCost"				"0"
+
+		"precache"
+		{
+			
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"detect_range"		"20000"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"detect_duration"	"2"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"detect_aoe"		"500"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_amakusa_revelation_passive"
+			{
+				"Passive"			"1"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"IsBuff"			"1"
+				"Aura"				"modifier_amakusa_trigger"
+				"Aura_Radius"		"%detect_range"
+				"Aura_Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_BASIC"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE | MODIFIER_ATTRIBUTE_PERMANENT"
+				"OnTakeDamage"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/amakusa/amakusa_abilities"
+						"Function"		"OnRevelationTakeDamage"
+					}
+				}
+			}
+			"modifier_amakusa_trigger"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"OnAbilityExecuted"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/amakusa/amakusa_abilities"
+						"Function"		"OnRevelationDetect"
+					}
+				}
+			}
+			"modifier_amakusa_vision"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"IsPurgable"		"0"
+				"Duration"			"%detect_duration"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PROVIDES_FOW_POSITION" "1"
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Amakusa Shirou Tokisada : Identity Discernment
+	//=================================================================================================================
+	"amakusa_identity_discernment"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityTextureName"			"custom/amakusa/amakusa_attribute_identify"
+		"AbilityCastAnimation" 			"ACT_DOTA_ITEM_DROP"
+		"MaxLevel"						"1"
+		"AbilityCooldown"				"30"
+		"precache"
+		{
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"ping_duration"			"3"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/amakusa/amakusa_abilities"
+				"Function"			"OnIDPing"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_amakusa_identity_cooldown"
+			{
+				"IsPurgable"		"0"
+				"IsBuff"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"IsPurgable"		"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE | MODIFIER_ATTRIBUTE_PERMANENT"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Amakusa Shirou Tokisada : Anti-Ruler Appitude
+	//=================================================================================================================
+	"amakusa_anti_ruler"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityTextureName"			"custom/amakusa/amakusa_attribute_anti_ruler"
+		"MaxLevel"						"1"
+
+		"precache"
+		{
+			
+		}
+		
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"anti_ruler"		"50"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_amakusa_anti_ruler"
+			{
+				"Passive"				"1"
+				"IsHidden"				"0"
+				"IsDebuff"				"0"
+				"Attributes"			"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"OnAttackLanded"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/amakusa/amakusa_abilities"
+						"Function"		"OnAntiRulerAttack"
+						"DamageDeal" 	"%attack_damage"
+					}
+				}
+			}	
+		}
+	}
+	//=================================================================================================================
+	// Amakusa Shirou Tokisada : Twin Arm - Big Crunch
+	//=================================================================================================================
+	"amakusa_twin_arm"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityTextureName"			"custom/amakusa/amakusa_twin_arm"
+		"AbilityCastAnimation" 			"ACT_DOTA_ITEM_DROP"
+		"MaxLevel"						"1"
+		"AbilityCastPoint"				"0.5"
+		"AbilityCooldown"				"200"
+		"AbilityCastRange"				"1000"
+		"AbilityManaCost"				"0"
+		"AOERadius"						"%radius"
+		"precache"
+		{
+			
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"delay"					"2"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range"					"1000"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"1"
+			}
+			
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"800"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dmg"					"2000"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mana_drain"			"1000"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"block"					"2000"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow"					"-100"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/amakusa/amakusa_abilities"
+				"Function"		"OnTwinArmStart"
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"	"1"
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/amakusa/amakusa_abilities"
+				"Function"		"OnTwinArmHit"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_amakusa_combo_ally"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"Duration"			"%duration"
+				"Aura"				"modifier_amakusa_combo_block"
+				"Aura_Radius"		"%radius"
+				"Aura_Teams"		"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"Aura_Types"		"DOTA_UNIT_TARGET_ALL"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			}
+			"modifier_amakusa_combo_block"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"IsPurgable"		"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			}
+			"modifier_amakusa_combo_enemy"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"Duration"			"%duration"
+				"Aura"				"modifier_amakusa_combo_pull"
+				"Aura_Radius"		"%radius"
+				"Aura_Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types"		"DOTA_UNIT_TARGET_ALL"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			}
+			"modifier_amakusa_combo_pull"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"IsPurgable"		"0"
+				"ThinkInterval"  "0.1"
+				"Properties"
+				{
+				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow" 
+				}
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/amakusa/amakusa_abilities"
+						"Function"		"OnTwinArmThink"
+					}
+				}
+			}
+			"modifier_amakusa_twin_cooldown"
+			{
+				"IsPurgable"		"0"
+				"IsBuff"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"IsPurgable"		"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE | MODIFIER_ATTRIBUTE_PERMANENT"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Amakusa Shirou Tokisada : Twin Arm - Big Crunch (Left Hand SA)
+	//=================================================================================================================
+	"amakusa_twin_arm_upgrade"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityTextureName"			"custom/amakusa/amakusa_twin_arm"
+		"AbilityCastAnimation" 			"ACT_DOTA_ITEM_DROP"
+		"MaxLevel"						"1"
+		"AbilityCastPoint"				"0.5"
+		"AbilityCooldown"				"200"
+		"AbilityCastRange"				"1000"
+		"AbilityManaCost"				"0"
+		"AOERadius"						"%radius"
+		"precache"
+		{
+
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"delay"					"2"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range"					"1000"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"1"
+			}
+			
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"800"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dmg"					"2500"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mana_drain"			"1000"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"block"					"2500"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow"					"-100"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/amakusa/amakusa_abilities"
+				"Function"		"OnTwinArmStart"
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"	"1"
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/amakusa/amakusa_abilities"
+				"Function"		"OnTwinArmHit"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_amakusa_combo_ally"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"Duration"			"%duration"
+				"Aura"				"modifier_amakusa_combo_block"
+				"Aura_Radius"		"%radius"
+				"Aura_Teams"		"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"Aura_Types"		"DOTA_UNIT_TARGET_ALL"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			}
+			"modifier_amakusa_combo_block"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"IsPurgable"		"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			}
+			"modifier_amakusa_combo_enemy"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"Duration"			"%duration"
+				"Aura"				"modifier_amakusa_combo_pull"
+				"Aura_Radius"		"%radius"
+				"Aura_Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types"		"DOTA_UNIT_TARGET_ALL"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			}
+			"modifier_amakusa_combo_pull"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"IsPurgable"		"0"
+				"ThinkInterval"  "0.1"
+				"Properties"
+				{
+				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow" 
+				}
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/amakusa/amakusa_abilities"
+						"Function"		"OnTwinArmThink"
+					}
+				}
+			}
+			"modifier_amakusa_twin_cooldown"
+			{
+				"IsPurgable"		"0"
+				"IsBuff"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"IsPurgable"		"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE | MODIFIER_ATTRIBUTE_PERMANENT"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Amakusa Shirou Tokisada : Baptism Rite
+	//=================================================================================================================
+	"amakusa_baptism"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityCastAnimation" 			"ACT_DOTA_ITEM_DROP"
+		"AbilityTextureName"			"custom/amakusa/amakusa_baptism"
+		"MaxLevel"						"1"
+		"AbilityCastPoint"				"0.5"
+		"AbilityCooldown"				"200"
+		"AbilityManaCost"				"400"
+		"precache"
+		{
+			
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"25"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cooldown"				"1"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"range"					"800"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_mark"				"7"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dmg_per_mark"			"20"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dmg_vamp"				"30"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"dmg_human"				"10"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow"					"-100"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow_dur"				"1.0"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/amakusa/amakusa_abilities"
+				"Function"		"OnKyrieStart"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_amakusa_baptism"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"IsPurgable"		"0"
+				"Duration"			"%duration"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/amakusa/amakusa_abilities"
+						"Function"		"OnKyrieCreate"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/amakusa/amakusa_abilities"
+						"Function"		"OnKyrieDestroy"
+					}
+				}
+			}
+			
+			"modifier_amakusa_baptism_cooldown"
+			{
+				"IsPurgable"		"0"
+				"IsBuff"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"IsPurgable"		"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE | MODIFIER_ATTRIBUTE_PERMANENT"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Amakusa Shirou Tokisada : Baptism Rite - Chant
+	//=================================================================================================================
+	"amakusa_baptism_chant"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityTextureName"			"custom/amakusa/amakusa_baptism_chant"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_2"
+		"MaxLevel"						"1"
+		"AbilityCastPoint"				"0.1"
+		"AbilityCooldown"				"1"
+		"AbilityManaCost"				"0"
+		"AbilityCastRange"				"800"
+		"precache"
+		{
+			
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"20"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cooldown"				"1"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"range"					"800"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_mark"				"7"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dmg_per_mark"			"15"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dmg_vamp"				"25"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"dmg_human"				"10"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow"					"-100"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow_dur"				"1.0"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/amakusa/amakusa_abilities"
+				"Function"		"OnKyrieChant"
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"	"1"
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/amakusa/amakusa_abilities"
+				"Function"		"OnKyrieHit"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_amakusa_baptism_mark"
+			{
+				"Duration"			"%duration"
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"IsPurgable"		"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/amakusa/amakusa_abilities"
+						//"Function"		"AbilityName"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/amakusa/amakusa_abilities"
+						//"Function"		"AbilityName"
+					}
+				}
+			}
+			"modifier_amakusa_baptism_mark_slow"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"Duration"			"%slow_dur"
+			
+				"Properties"
+				{
+				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow" 
+				}
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"EffectName"        "particles/custom/amakusa/amakusa_kyrie_ambient.vpcf"
+						"EffectAttachType"  "follow_origin"
+						"Target"            "TARGET"
+					}
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Amakusa Shirou Tokisada : Attribute : Revelation
+	//=================================================================================================================
+	"amakusa_attribute_revelation"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/amakusa/amakusa_attribute_revelation"
+		
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"10"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"detect_range"		"20000"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"detect_duration"	"2"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"detect_aoe"		"500"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/amakusa/amakusa_abilities"
+				"Function"		"OnRevelationAcquired"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Amakusa Shirou Tokisada : Attribute : Left Hand
+	//=================================================================================================================
+	"amakusa_attribute_left_hand"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/amakusa/amakusa_attribute_left_hand"
+		
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"14"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_hp_reg"		"1"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_duration"	"400"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_stack"		"300"
+			}	
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"blink"				"800"
+			}	
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"twin_damage"		"500"
+			}	
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"twin_block"		"500"
+			}	
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/amakusa/amakusa_abilities"
+				"Function"		"OnLeftHandAcquired"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Amakusa Shirou Tokisada : Attribute : Identity Discernment
+	//=================================================================================================================
+	"amakusa_attribute_identify"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/amakusa/amakusa_attribute_identify"
+		
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"11"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"detect_range"		"20000"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"detect_duration"	"2"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"detect_aoe"		"500"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"ping_duration"		"3"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"cooldown"			"30"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/amakusa/amakusa_abilities"
+				"Function"		"OnIdentifyAcquired"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Amakusa Shirou Tokisada : Attribute : Assembly of the Eighth Sacrament
+	//=================================================================================================================
+	"amakusa_attribute_church"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/amakusa/amakusa_attribute_church"
+		
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"16"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"set_int_damage"	"0.4"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bombard_damage"	"150"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"chant_duration"				"25"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"chant_cooldown"				"1"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"chant_range"					"800"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"chant_max_mark"				"7"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"chant_dmg_per_mark"			"20"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"chant_dmg_vamp"				"30"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"chant_dmg_human"				"10"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"chant_slow"					"-100"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/amakusa/amakusa_abilities"
+				"Function"		"OnChurchAcquired"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Amakusa Shirou Tokisada : Attribute : Anti Ruler
+	//=================================================================================================================
+	"amakusa_attribute_anti_ruler"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/amakusa/amakusa_attribute_anti_ruler"
+		
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"11"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"anti_ruler"		"50"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"revoke"			"1"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/amakusa/amakusa_abilities"
+				"Function"		"OnAntiRulerAcquired"
+			}
+		}
+	}
+	//=======================================
+	// Precache
+	//=======================================
+	"amakusa_precache"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"custom/medusa/medusa_attribute_monstrous_strength"
+
+		"precache"
+		{
+			"models"				"models/amakusa/samurai/amakusa_rebel_by_zefiroft.vmdl"
+			"models"				"models/amakusa/amakusa_sword.vmdl"
+			"models"				"models/amakusa/amakusa_sword2.vmdl"
+			"particle"				"particles/custom/amakusa/amakusa_blink.vpcf"
+			"particle"  			"particles/custom/amakusa/amakusa_set.vpcf"
+			"particle"				"particles/custom/amakusa/amakusa_set_cicle.vpcf"
+			"particle"  			"particles/custom/amakusa/amakusa_bombard_ring.vpcf"
+			"particle"  			"particles/custom/amakusa/amakusa_bombard_sword.vpcf"
+			"particle"  			"particles/custom/amakusa/amakusa_bombard_blast.vpcf"
+			"particle"				"particles/custom/amakusa/amakusa_god_strike_immortal1.vpcf"
+			"particle"				"particles/custom/ruler/purge_the_unjust/ruler_purge_the_unjust.vpcf"
+			"particle"				"particles/custom/amakusa/amakusa_god.vpcf"
+			"particle"				"particles/econ/items/queen_of_pain/qop_arcana/qop_arcana_whip_ambient_v2.vpcf"
+			"particle"				"particles/econ/items/silencer/silencer_ti6/silencer_ti6_ambient.vpcf"
+			"particle"				"particles/custom/lancelot/lancelot_arondite_ambient.vpcf"
+			"particle"				"particles/units/heroes/hero_brewmaster/brewmaster_thunder_clap.vpcf"
+			"particle"				"particles/units/heroes/hero_dragon_knight/dragon_knight_breathe_fire.vpcf"
+			"particle"				"particles/custom/amakusa/amakusa_blink.vpcf"
+			"particle"				"particles/custom/rider/rider_mystic_eye_debuff.vpcf"
+			"particle"				"particles/custom/amakusa/amakusa_combo_blackhole.vpcf"
+			"particle"				"particles/custom/amakusa/amakusa_left_ball.vpcf"
+			"particle"				"particles/custom/amakusa/amakusa_right_ball.vpcf"
+			"particle"				"particles/custom/amakusa/amakusa_combo_fire_orb_projectile.vpcf"
+			"particle"				"particles/custom/amakusa/amakusa_ice_orb_projectile.vpcf"
+			"particle"				"particles/units/heroes/hero_queenofpain/queen_shadow_strike.vpcf"
+			"particle"				"particles/custom/amakusa/amakusa_kyrie.vpcf"
+			"particle"  			"particles/custom/amakusa/amakusa_god_strike_flame_immortal1.vpcf"
+			"particle"  			"particles/custom/amakusa/amakusa_kyrie_ambient.vpcf"
+			"soundfile"   			"soundevents/game_sounds_heroes/game_sounds_silencer.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_invoker.vsndevts"
+			"soundfile" 			"soundevents/game_sounds_heroes/game_sounds_razor.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_skywrath_mage.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_enigma.vsndevts"
+		}
+	}
+}

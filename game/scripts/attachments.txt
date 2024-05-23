@@ -1,0 +1,1347 @@
+"Attachments"
+{
+	"models/astolfo/astolfo.vmdl"
+	{
+		"attach_sword"
+		{
+			"models/astolfo/astolfo_sword.vmdl"
+			{
+				"scale"		"100"
+				"pitch"		"120"
+				"roll"		"100"
+				"ZPos"		"-0.10000000149012"
+				"YPos"		"-0.050000000745058"
+				"yaw"		"92"
+				"XPos"		"0"
+			}
+		}
+		"attach_horn"
+		{
+			"models/astolfo/astolfo_horn.vmdl"
+			{
+				"scale"		"1.7999999523163"
+				"pitch"		"30"
+				"roll"		"-60"
+				"ZPos"		"0"
+				"YPos"		"-10"
+				"yaw"		"-100"
+				"XPos"		"-10"
+			}
+		}
+	}
+	"models/astolfo/default/astolfo_by_zefiroft.vmdl"
+	{
+		"attach_sword"
+		{
+			"models/astolfo/astolfo_sword.vmdl"
+			{
+				"scale"		"0.8"
+				"pitch"		"90"
+				"yaw"		"0"
+				"roll"		"0"
+				"ZPos"		"0"
+				"YPos"		"0"
+				"XPos"		"0"
+			}
+		}
+		"attach_scabbard"
+		{
+			"models/astolfo/astolfo_scabbard.vmdl"
+			{
+				"scale"		"0.8"
+				"pitch"		"15"
+				"yaw"		"90"
+				"roll"		"60"
+				"ZPos"		"-5"
+				"YPos"		"-4"
+				"XPos"		"0"
+			}
+		}
+		"attach_lance"
+		{
+			"models/astolfo/astolfo_lance.vmdl"
+			{
+				"scale"		"1.0"
+				"pitch"		"90"
+				"yaw"		"0"
+				"roll"		"0"
+				"ZPos"		"0"
+				"YPos"		"0"
+				"XPos"		"0"
+			}
+		}
+		"attach_horn"
+		{
+			"models/astolfo/astolfo_new_horn.vmdl"
+			{
+				"scale"		"1.0"
+				"pitch"		"0"
+				"yaw"		"-135"
+				"roll"		"45"
+				"ZPos"		"-10"
+				"YPos"		"0"
+				"XPos"		"-10"
+			}
+		}
+	}
+	"models/astolfo/casual/astolfo_pink_by_zefiroft.vmdl"
+	{
+		"attach_sword"
+		{
+			"models/astolfo/astolfo_sword.vmdl"
+			{
+				"scale"		"0.8"
+				"pitch"		"90"
+				"yaw"		"0"
+				"roll"		"0"
+				"ZPos"		"0"
+				"YPos"		"0"
+				"XPos"		"0"
+			}
+		}
+		"attach_scabbard"
+		{
+			"models/astolfo/astolfo_scabbard.vmdl"
+			{
+				"scale"		"0.8"
+				"pitch"		"15"
+				"yaw"		"90"
+				"roll"		"60"
+				"ZPos"		"-5"
+				"YPos"		"-4"
+				"XPos"		"0"
+			}
+		}
+		"attach_lance"
+		{
+			"models/astolfo/astolfo_lance.vmdl"
+			{
+				"scale"		"1.0"
+				"pitch"		"90"
+				"yaw"		"0"
+				"roll"		"0"
+				"ZPos"		"0"
+				"YPos"		"0"
+				"XPos"		"0"
+			}
+		}
+		"attach_horn"
+		{
+			"models/astolfo/astolfo_new_horn.vmdl"
+			{
+				"scale"		"1.0"
+				"pitch"		"0"
+				"yaw"		"-135"
+				"roll"		"45"
+				"ZPos"		"-10"
+				"YPos"		"0"
+				"XPos"		"-10"
+			}
+		}
+	}
+	"models/astolfo/school/astolfo_school_by_zefiroft.vmdl"
+	{
+		"attach_sword"
+		{
+			"models/astolfo/astolfo_sword.vmdl"
+			{
+				"scale"		"0.8"
+				"pitch"		"90"
+				"yaw"		"0"
+				"roll"		"0"
+				"ZPos"		"0"
+				"YPos"		"0"
+				"XPos"		"0"
+			}
+		}
+		"attach_scabbard"
+		{
+			"models/astolfo/astolfo_scabbard.vmdl"
+			{
+				"scale"		"0.8"
+				"pitch"		"15"
+				"yaw"		"90"
+				"roll"		"60"
+				"ZPos"		"-5"
+				"YPos"		"-4"
+				"XPos"		"0"
+			}
+		}
+		"attach_lance"
+		{
+			"models/astolfo/astolfo_lance.vmdl"
+			{
+				"scale"		"1.0"
+				"pitch"		"90"
+				"yaw"		"0"
+				"roll"		"0"
+				"ZPos"		"0"
+				"YPos"		"0"
+				"XPos"		"0"
+			}
+		}
+		"attach_horn"
+		{
+			"models/astolfo/astolfo_new_horn.vmdl"
+			{
+				"scale"		"1.0"
+				"pitch"		"0"
+				"yaw"		"-135"
+				"roll"		"45"
+				"ZPos"		"-10"
+				"YPos"		"0"
+				"XPos"		"-10"
+			}
+		}
+	}
+
+	"models/kuro/kuro.vmdl"
+	{
+		"attach_attack2"
+		{
+			"models/kuro/kuro_bow.vmdl"
+			{
+				"scale"		"1.0"
+				"pitch"		"0"
+				"roll"		"90"
+				"yaw"		"-20"
+				"ZPos"		"-105"
+				"YPos"		"4"
+				"XPos"		"-20"
+			}
+		}
+	}
+	"models/kuro/illya_archer/illya_archer_by_zefiroft.vmdl"
+	{
+		"attach_attack1"
+		{
+			"models/archer/kanshou.vmdl"
+			{
+				"scale"		"0.3"
+				"pitch"		"0"
+				"roll"		"270"
+				"yaw"		"0"
+				"ZPos"		"-67"
+				"YPos"		"75"
+				"XPos"		"20"
+			}
+		}
+		"attach_attack2"
+		{
+			"models/archer/byakuya.vmdl"
+			{
+				"scale"		"0.3"
+				"pitch"		"0"
+				"roll"		"90"
+				"yaw"		"0"
+				"ZPos"		"-52"
+				"YPos"		"75"
+				"XPos"		"20"
+			}
+		}
+		"attach_bow"
+		{
+			"models/kuro/kuro_bow.vmdl"
+			{
+				"scale"		"1.0"
+				"pitch"		"-10"
+				"roll"		"180"
+				"yaw"		"-10"
+				"ZPos"		"-110"
+				"YPos"		"2"
+				"XPos"		"-20"
+			}
+		}
+	}
+	"models/archer/emiya_black/emiya_black_zefiroft.vmdl"
+	{
+		"attach_attack1"
+		{
+			"models/archer/kanshou.vmdl"
+			{
+				"scale"		"0.4"
+				"pitch"		"0"
+				"roll"		"0"
+				"yaw"		"180"
+				"ZPos"		"-8"
+				"YPos"		"70"
+				"XPos"		"0"
+			}
+		}
+		"attach_attack2"
+		{
+			"models/archer/byakuya.vmdl"
+			{
+				"scale"		"0.4"
+				"pitch"		"180"
+				"roll"		"0"
+				"yaw"		"180"
+				"ZPos"		"0"
+				"YPos"		"70"
+				"XPos"		"5"
+			}
+		}
+		"attach_attack3"
+		{
+			"models/kuro/kuro_bow.vmdl"
+			{
+				"scale"		"1.4"
+				"pitch"		"0"
+				"roll"		"90"
+				"yaw"		"-20"
+				"ZPos"		"-110"
+				"YPos"		"2"
+				"XPos"		"-18"
+			}
+		}
+		"attach_nine"
+		{
+			"models/archer/herc_weapon.vmdl"
+			{
+				"scale"		"0.4"
+				"pitch"		"180"
+				"roll"		"0"
+				"yaw"		"180"
+				"ZPos"		"-60"
+				"YPos"		"70"
+				"XPos"		"0"
+			}
+		}
+	}
+	"models/archer/emiya_shirou/emiya_shirou_by_zefiroft.vmdl"
+	{
+		"attach_attack1"
+		{
+			"models/archer/kanshou.vmdl"
+			{
+				"scale"		"0.4"
+				"pitch"		"0"
+				"roll"		"0"
+				"yaw"		"180"
+				"ZPos"		"-8"
+				"YPos"		"70"
+				"XPos"		"10"
+			}
+		}
+		"attach_attack2"
+		{
+			"models/archer/byakuya.vmdl"
+			{
+				"scale"		"0.4"
+				"pitch"		"180"
+				"roll"		"0"
+				"yaw"		"180"
+				"ZPos"		"0"
+				"YPos"		"70"
+				"XPos"		"5"
+			}
+		}
+		"attach_attack3"
+		{
+			"models/kuro/kuro_bow.vmdl"
+			{
+				"scale"		"1.4"
+				"pitch"		"0"
+				"roll"		"90"
+				"yaw"		"-20"
+				"ZPos"		"-110"
+				"YPos"		"2"
+				"XPos"		"-18"
+			}
+		}
+		"attach_nine"
+		{
+			"models/archer/herc_weapon.vmdl"
+			{
+				"scale"		"0.4"
+				"pitch"		"180"
+				"roll"		"0"
+				"yaw"		"180"
+				"ZPos"		"-60"
+				"YPos"		"70"
+				"XPos"		"0"
+			}
+		}
+	}
+	"models/archer/emiya_cyber/emiya_cyber_by_zefiroft.vmdl"
+	{
+		"attach_attack1"
+		{
+			"models/archer/kanshou.vmdl"
+			{
+				"scale"		"0.4"
+				"pitch"		"180"
+				"roll"		"0"
+				"yaw"		"180"
+				"ZPos"		"-8"
+				"YPos"		"70"
+				"XPos"		"-5"
+			}
+		}
+		"attach_attack2"
+		{
+			"models/archer/byakuya.vmdl"
+			{
+				"scale"		"0.4"
+				"pitch"		"180"
+				"roll"		"0"
+				"yaw"		"160"
+				"ZPos"		"0"
+				"YPos"		"72"
+				"XPos"		"20"
+			}
+		}
+		"attach_attack3"
+		{
+			"models/kuro/kuro_bow.vmdl"
+			{
+				"scale"		"1.4"
+				"pitch"		"0"
+				"roll"		"90"
+				"yaw"		"-20"
+				"ZPos"		"-110"
+				"YPos"		"2"
+				"XPos"		"-18"
+			}
+		}
+		"attach_nine"
+		{
+			"models/archer/herc_weapon.vmdl"
+			{
+				"scale"		"0.4"
+				"pitch"		"180"
+				"roll"		"0"
+				"yaw"		"180"
+				"ZPos"		"-60"
+				"YPos"		"70"
+				"XPos"		"0"
+			}
+		}
+	}
+	"models/archer/emiya_hero/emiya_hero_by_zefiroft.vmdl"
+	{
+		"attach_attack1"
+		{
+			"models/archer/kanshou.vmdl"
+			{
+				"scale"		"0.4"
+				"pitch"		"180"
+				"roll"		"90"
+				"yaw"		"180"
+				"ZPos"		"-15"
+				"YPos"		"75"
+				"XPos"		"20"
+			}
+		}
+		"attach_attack2"
+		{
+			"models/archer/byakuya.vmdl"
+			{
+				"scale"		"0.4"
+				"pitch"		"0"
+				"roll"		"90"
+				"yaw"		"0"
+				"ZPos"		"8"
+				"YPos"		"75"
+				"XPos"		"20"
+			}
+		}
+		"attach_attack3"
+		{
+			"models/kuro/kuro_bow.vmdl"
+			{
+				"scale"		"1.4"
+				"pitch"		"0"
+				"roll"		"90"
+				"yaw"		"-20"
+				"ZPos"		"-110"
+				"YPos"		"2"
+				"XPos"		"-18"
+			}
+		}
+		"attach_nine"
+		{
+			"models/archer/herc_weapon.vmdl"
+			{
+				"scale"		"0.4"
+				"pitch"		"180"
+				"roll"		"0"
+				"yaw"		"180"
+				"ZPos"		"-60"
+				"YPos"		"70"
+				"XPos"		"0"
+			}
+		}
+	}
+	
+	"models/medea/medea_uncape/medea_uncape_by_zefiroft.vmdl"
+	{
+		"attach_attack2"
+		{
+			"models/medea/medea_rule_breaker.vmdl"
+			{
+				"scale"		"0.7"
+				"pitch"		"0"
+				"roll"		"0"
+				"yaw"		"180"
+				"ZPos"		"0"
+				"YPos"		"2"
+				"XPos"		"-6"
+			}
+		}
+	}
+	"models/medea/medea_lily/medea_lily_by_zefiroft.vmdl"
+	{
+		"attach_attack2"
+		{
+			"models/medea/medea_rule_breaker.vmdl"
+			{
+				"scale"		"0.8"
+				"pitch"		"0"
+				"roll"		"0"
+				"yaw"		"180"
+				"ZPos"		"0"
+				"YPos"		"0"
+				"XPos"		"-6"
+			}
+		}
+	}
+	"models/okita/okita_pink/okita_pink_by_zefiroft.vmdl"
+	{
+		"attach_attack1"
+		{
+			"models/okita/okita_sword.vmdl"
+			{
+				"scale"		"1.0"
+				"pitch"		"180"
+				"roll"		"20"
+				"yaw"		"260"
+				"ZPos"		"2"
+				"YPos"		"-4"
+				"XPos"		"-2"
+			}
+		}
+		"attach_scabbard"
+		{
+			"models/okita/okita_scabbard.vmdl"
+			{
+				"scale"		"1.0"
+				"pitch"		"0"
+				"roll"		"-10"
+				"yaw"		"90"
+				"ZPos"		"-10"
+				"YPos"		"0"
+				"XPos"		"-15"
+			}
+		}
+	}
+	"models/okita/okita_blue/okita_by_zefiroft.vmdl"
+	{
+		"attach_scabbard"
+		{
+			"models/okita/okita_scabbard.vmdl"
+			{
+				"scale"		"1.0"
+				"pitch"		"0"
+				"roll"		"-10"
+				"yaw"		"90"
+				"ZPos"		"-10"
+				"YPos"		"0"
+				"XPos"		"-15"
+			}
+		}
+	}
+	"models/lubu/lubu_by_zefiroft.vmdl"
+	{
+		"attach_attack1"
+		{
+			"models/lubu/lubu_lance.vmdl"
+			{
+				"scale"		"1.0"
+				"pitch"		"0"
+				"roll"		"0"
+				"yaw"		"90"
+				"ZPos"		"-4"
+				"YPos"		"5"
+				"XPos"		"-70"
+			}
+		}
+		"attach_bow"
+		{
+			"models/lubu/lubu_bow.vmdl"
+			{
+				"scale"		"0.8"
+				"pitch"		"0"
+				"roll"		"0"
+				"yaw"		"90"
+				"ZPos"		"-4"
+				"YPos"		"5"
+				"XPos"		"0"
+			}
+		}
+		"attach_attack2"
+		{
+			"models/lubu/lubu_arrow.vmdl"
+			{
+				"scale"		"0.6"
+				"pitch"		"0"
+				"roll"		"0"
+				"yaw"		"90"
+				"ZPos"		"-4"
+				"YPos"		"-3"
+				"XPos"		"0"
+			}
+		}
+	}
+	"models/bathory/default/bathory_by_zefiroft.vmdl"
+	{
+		"attach_lance"
+		{
+			"models/bathory/bathory_weapon.vmdl"
+			{
+				"scale"		"0.7"
+				"pitch"		"-45"
+				"roll"		"100"
+				"yaw"		"90"
+				"ZPos"		"0"
+				"YPos"		"0"
+				"XPos"		"0"
+			}
+		}
+	}
+	"models/bathory/school/bathory_schoolgirl_by_zefiroft.vmdl"
+	{
+		"attach_lance"
+		{
+			"models/bathory/bathory_weapon.vmdl"
+			{
+				"scale"		"0.7"
+				"pitch"		"-45"
+				"roll"		"100"
+				"yaw"		"90"
+				"ZPos"		"0"
+				"YPos"		"0"
+				"XPos"		"0"
+			}
+		}
+	}
+	"models/bathory/hunter/bathory_hunter_by_zefiroft.vmdl"
+	{
+		"attach_lance"
+		{
+			"models/bathory/bathory_weapon.vmdl"
+			{
+				"scale"		"0.7"
+				"pitch"		"-45"
+				"roll"		"100"
+				"yaw"		"90"
+				"ZPos"		"0"
+				"YPos"		"0"
+				"XPos"		"0"
+			}
+		}
+	}
+	"models/lancelot/lancelot_by_zefiroft.vmdl"
+	{
+		"attach_rod"
+		{
+			"models/lancelot/lancelot_rod.vmdl"
+			{
+				"scale"		"0.85"
+				"pitch"		"0"
+				"yaw"		"80"
+				"roll"		"0"
+				"ZPos"		"-180"
+				"YPos"		"-120"
+				"XPos"		"-15"
+			}
+		}
+		"attach_sword"
+		{
+			"models/lancelot/lancelot_arondight.vmdl"
+			{
+				"scale"		"0.85"
+				"pitch"		"0"
+				"yaw"		"90"
+				"roll"		"0"
+				"ZPos"		"-185"
+				"YPos"		"100"
+				"XPos"		"10"
+			}
+		}
+		"attach_gun"
+		{
+			"models/lancelot/lancelot_gun_by_zefiroft.vmdl"
+			{
+				"scale"		"0.85"
+				"pitch"		"0"
+				"yaw"		"90"
+				"roll"		"0"
+				"ZPos"		"-120"
+				"YPos"		"50"
+				"XPos"		"0"
+			}
+		}
+	}
+	"models/lancelot/suit/lancelot_suit_by_zefiroft.vmdl"
+	{
+		"attach_rod"
+		{
+			"models/lancelot/lancelot_rod.vmdl"
+			{
+				"scale"		"0.80"
+				"pitch"		"90"
+				"yaw"		"85"
+				"roll"		"0"
+				"ZPos"		"-182"
+				"YPos"		"-120"
+				"XPos"		"-15"
+			}
+		}
+		"attach_sword"
+		{
+			"models/lancelot/lancelot_arondight.vmdl"
+			{
+				"scale"		"0.85"
+				"pitch"		"0"
+				"yaw"		"90"
+				"roll"		"95"
+				"ZPos"		"-184"
+				"YPos"		"100"
+				"XPos"		"5"
+			}
+		}
+		"attach_gun"
+		{
+			"models/lancelot/lancelot_gun_by_zefiroft.vmdl"
+			{
+				"scale"		"0.8"
+				"pitch"		"0"
+				"yaw"		"90"
+				"roll"		"90"
+				"ZPos"		"-130"
+				"YPos"		"70"
+				"XPos"		"0"
+			}
+		}
+	}
+	"models/lancelot/armor/lancelot_curse_by_zefiroft.vmdl"
+	{
+		"attach_rod"
+		{
+			"models/lancelot/lancelot_rod.vmdl"
+			{
+				"scale"		"0.80"
+				"pitch"		"90"
+				"yaw"		"85"
+				"roll"		"0"
+				"ZPos"		"-182"
+				"YPos"		"-120"
+				"XPos"		"-15"
+			}
+		}
+		"attach_sword"
+		{
+			"models/lancelot/lancelot_arondight.vmdl"
+			{
+				"scale"		"0.85"
+				"pitch"		"0"
+				"yaw"		"90"
+				"roll"		"95"
+				"ZPos"		"-184"
+				"YPos"		"100"
+				"XPos"		"5"
+			}
+		}
+		"attach_gun"
+		{
+			"models/lancelot/lancelot_gun_by_zefiroft.vmdl"
+			{
+				"scale"		"0.8"
+				"pitch"		"0"
+				"yaw"		"90"
+				"roll"		"90"
+				"ZPos"		"-130"
+				"YPos"		"70"
+				"XPos"		"0"
+			}
+		}
+	}
+	"models/scathach/default/scat_by_zefiroft.vmdl"
+	{
+		"attach_attack2"
+		{
+			"models/scathach/scat_gae.vmdl"
+			{
+				"scale"		"1.0"
+				"pitch"		"90"
+				"yaw"		"0"
+				"roll"		"0"
+				"ZPos"		"0"
+				"YPos"		"0"
+				"XPos"		"0"
+			}
+		}
+	}
+	"models/scathach/secretary/scat_secretary_by_zefiroft.vmdl"
+	{
+		"attach_attack2"
+		{
+			"models/scathach/scat_gae.vmdl"
+			{
+				"scale"		"1.0"
+				"pitch"		"90"
+				"yaw"		"0"
+				"roll"		"0"
+				"ZPos"		"0"
+				"YPos"		"0"
+				"XPos"		"0"
+			}
+		}
+	}
+	"models/scathach/gypse/scat_gypsee_by_zefiroft.vmdl"
+	{
+		"attach_attack2"
+		{
+			"models/scathach/scat_gae.vmdl"
+			{
+				"scale"		"1.0"
+				"pitch"		"90"
+				"yaw"		"0"
+				"roll"		"0"
+				"ZPos"		"0"
+				"YPos"		"0"
+				"XPos"		"0"
+			}
+		}
+	}
+	"models/scathach/duchess/scat_duchess_by_zefiroft.vmdl"
+	{
+		"attach_attack2"
+		{
+			"models/scathach/scat_gae.vmdl"
+			{
+				"scale"		"1.0"
+				"pitch"		"90"
+				"yaw"		"0"
+				"roll"		"0"
+				"ZPos"		"0"
+				"YPos"		"0"
+				"XPos"		"0"
+			}
+		}
+	}
+	"models/scathach/summer/scat_summer_by_zefiroft.vmdl"
+	{
+		"attach_attack2"
+		{
+			"models/scathach/scat_gae.vmdl"
+			{
+				"scale"		"1.0"
+				"pitch"		"90"
+				"yaw"		"0"
+				"roll"		"0"
+				"ZPos"		"0"
+				"YPos"		"0"
+				"XPos"		"0"
+			}
+		}
+	}
+	"models/lubu/default/lubu_by_zefiroft.vmdl"
+	{
+		"attach_lance"
+		{
+			"models/lubu/lubu_lance2.vmdl"
+			{
+				"scale"		"1.0"
+				"pitch"		"0"
+				"roll"		"90"
+				"yaw"		"90"
+				"ZPos"		"-5"
+				"YPos"		"-10"
+				"XPos"		"30"
+			}
+		}
+		"attach_bow"
+		{
+			"models/lubu/lubu_bow.vmdl"
+			{
+				"scale"		"1.0"
+				"pitch"		"0"
+				"roll"		"90"
+				"yaw"		"95"
+				"ZPos"		"-10"
+				"YPos"		"-5"
+				"XPos"		"0"
+			}
+		}
+		"attach_arrow"
+		{
+			"models/lubu/lubu_arrow2.vmdl"
+			{
+				"scale"		"0.9"
+				"pitch"		"0"
+				"roll"		"90"
+				"yaw"		"85"
+				"ZPos"		"10"
+				"YPos"		"0"
+				"XPos"		"120"
+			}
+		}
+	}
+	"models/lubu/general/lubu_flying_general.vmdl"
+	{
+		"attach_lance"
+		{
+			"models/lubu/lubu_lance2.vmdl"
+			{
+				"scale"		"1.0"
+				"pitch"		"0"
+				"roll"		"90"
+				"yaw"		"90"
+				"ZPos"		"-5"
+				"YPos"		"-10"
+				"XPos"		"30"
+			}
+		}
+		"attach_bow"
+		{
+			"models/lubu/lubu_bow.vmdl"
+			{
+				"scale"		"1.0"
+				"pitch"		"0"
+				"roll"		"90"
+				"yaw"		"95"
+				"ZPos"		"-10"
+				"YPos"		"-5"
+				"XPos"		"0"
+			}
+		}
+		"attach_arrow"
+		{
+			"models/lubu/lubu_arrow2.vmdl"
+			{
+				"scale"		"0.9"
+				"pitch"		"0"
+				"roll"		"90"
+				"yaw"		"85"
+				"ZPos"		"10"
+				"YPos"		"0"
+				"XPos"		"120"
+			}
+		}
+	}
+	"models/lubu/mecha/mecha_lubu_zefiroft.vmdl"
+	{
+		"attach_lance"
+		{
+			"models/lubu/lubu_lance2.vmdl"
+			{
+				"scale"		"1.0"
+				"pitch"		"0"
+				"roll"		"90"
+				"yaw"		"90"
+				"ZPos"		"-5"
+				"YPos"		"-10"
+				"XPos"		"30"
+			}
+		}
+		"attach_bow"
+		{
+			"models/lubu/lubu_bow.vmdl"
+			{
+				"scale"		"1.0"
+				"pitch"		"0"
+				"roll"		"90"
+				"yaw"		"95"
+				"ZPos"		"-10"
+				"YPos"		"-5"
+				"XPos"		"0"
+			}
+		}
+		"attach_arrow"
+		{
+			"models/lubu/lubu_arrow2.vmdl"
+			{
+				"scale"		"0.9"
+				"pitch"		"0"
+				"roll"		"90"
+				"yaw"		"85"
+				"ZPos"		"10"
+				"YPos"		"0"
+				"XPos"		"120"
+			}
+		}
+	}
+	"models/drake/default/drake_by_zefiroft.vmdl"
+	{
+		"attach_sword"
+		{
+			"models/drake/drake_sword.vmdl"
+			{
+				"scale"		"0.8"
+				"pitch"		"0"
+				"roll"		"90"
+				"yaw"		"90"
+				"ZPos"		"2"
+				"YPos"		"3"
+				"XPos"		"0"
+			}
+		}
+		"attach_gun1"
+		{
+			"models/drake/drake_gun1.vmdl"
+			{
+				"scale"		"0.9"
+				"pitch"		"0"
+				"roll"		"90"
+				"yaw"		"85"
+				"ZPos"		"0"
+				"YPos"		"2"
+				"XPos"		"3"
+			}
+		}
+		"attach_gun2"
+		{
+			"models/drake/drake_gun2.vmdl"
+			{
+				"scale"		"0.9"
+				"pitch"		"0"
+				"roll"		"90"
+				"yaw"		"85"
+				"ZPos"		"0"
+				"YPos"		"2"
+				"XPos"		"3"
+			}
+		}
+		"attach_origin"
+		{
+			"models/drake/drake_boat.vmdl"
+			{
+				"scale"		"0.9"
+				"pitch"		"0"
+				"roll"		"85"
+				"yaw"		"90"
+				"ZPos"		"-45"
+				"YPos"		"0"
+				"XPos"		"25"
+			}
+		}
+	}
+	"models/drake/captain/drake_captain_by_zefiroft.vmdl"
+	{
+		"attach_sword"
+		{
+			"models/drake/drake_sword.vmdl"
+			{
+				"scale"		"0.8"
+				"pitch"		"0"
+				"roll"		"90"
+				"yaw"		"90"
+				"ZPos"		"2"
+				"YPos"		"3"
+				"XPos"		"0"
+			}
+		}
+		"attach_gun1"
+		{
+			"models/drake/drake_gun1.vmdl"
+			{
+				"scale"		"0.9"
+				"pitch"		"0"
+				"roll"		"90"
+				"yaw"		"85"
+				"ZPos"		"0"
+				"YPos"		"2"
+				"XPos"		"3"
+			}
+		}
+		"attach_gun2"
+		{
+			"models/drake/drake_gun2.vmdl"
+			{
+				"scale"		"0.9"
+				"pitch"		"0"
+				"roll"		"90"
+				"yaw"		"85"
+				"ZPos"		"0"
+				"YPos"		"2"
+				"XPos"		"3"
+			}
+		}
+		"attach_origin"
+		{
+			"models/drake/drake_boat.vmdl"
+			{
+				"scale"		"0.9"
+				"pitch"		"0"
+				"roll"		"85"
+				"yaw"		"90"
+				"ZPos"		"-45"
+				"YPos"		"0"
+				"XPos"		"25"
+			}
+		}
+	}
+	"models/drake/pirate/drake_pirate_by_zefiroft.vmdl"
+	{
+		"attach_sword"
+		{
+			"models/drake/drake_sword.vmdl"
+			{
+				"scale"		"0.8"
+				"pitch"		"0"
+				"roll"		"90"
+				"yaw"		"90"
+				"ZPos"		"2"
+				"YPos"		"3"
+				"XPos"		"0"
+			}
+		}
+		"attach_gun1"
+		{
+			"models/drake/drake_gun1.vmdl"
+			{
+				"scale"		"0.9"
+				"pitch"		"0"
+				"roll"		"90"
+				"yaw"		"85"
+				"ZPos"		"0"
+				"YPos"		"2"
+				"XPos"		"3"
+			}
+		}
+		"attach_gun2"
+		{
+			"models/drake/drake_gun2.vmdl"
+			{
+				"scale"		"0.9"
+				"pitch"		"0"
+				"roll"		"90"
+				"yaw"		"85"
+				"ZPos"		"0"
+				"YPos"		"2"
+				"XPos"		"3"
+			}
+		}
+		"attach_origin"
+		{
+			"models/drake/drake_boat.vmdl"
+			{
+				"scale"		"0.9"
+				"pitch"		"0"
+				"roll"		"85"
+				"yaw"		"90"
+				"ZPos"		"-45"
+				"YPos"		"0"
+				"XPos"		"25"
+			}
+		}
+	}
+	"models/drake/cowgirl/drake_cowgirl_by_zefiroft.vmdl"
+	{
+		"attach_sword"
+		{
+			"models/drake/drake_sword.vmdl"
+			{
+				"scale"		"0.8"
+				"pitch"		"0"
+				"roll"		"90"
+				"yaw"		"90"
+				"ZPos"		"2"
+				"YPos"		"3"
+				"XPos"		"0"
+			}
+		}
+		"attach_gun1"
+		{
+			"models/drake/drake_gun1.vmdl"
+			{
+				"scale"		"0.9"
+				"pitch"		"0"
+				"roll"		"90"
+				"yaw"		"85"
+				"ZPos"		"0"
+				"YPos"		"2"
+				"XPos"		"3"
+			}
+		}
+		"attach_gun2"
+		{
+			"models/drake/drake_gun2.vmdl"
+			{
+				"scale"		"0.9"
+				"pitch"		"0"
+				"roll"		"90"
+				"yaw"		"85"
+				"ZPos"		"0"
+				"YPos"		"2"
+				"XPos"		"3"
+			}
+		}
+		"attach_origin"
+		{
+			"models/drake/drake_boat.vmdl"
+			{
+				"scale"		"0.9"
+				"pitch"		"0"
+				"roll"		"85"
+				"yaw"		"90"
+				"ZPos"		"-45"
+				"YPos"		"0"
+				"XPos"		"25"
+			}
+		}
+	}
+	"models/drake/summer/drake_summer_by_zefiroft.vmdl"
+	{
+		"attach_sword"
+		{
+			"models/drake/drake_sword.vmdl"
+			{
+				"scale"		"0.8"
+				"pitch"		"0"
+				"roll"		"90"
+				"yaw"		"90"
+				"ZPos"		"2"
+				"YPos"		"3"
+				"XPos"		"0"
+			}
+		}
+		"attach_gun1"
+		{
+			"models/drake/drake_gun1.vmdl"
+			{
+				"scale"		"0.9"
+				"pitch"		"0"
+				"roll"		"90"
+				"yaw"		"85"
+				"ZPos"		"0"
+				"YPos"		"2"
+				"XPos"		"3"
+			}
+		}
+		"attach_gun2"
+		{
+			"models/drake/drake_gun2.vmdl"
+			{
+				"scale"		"0.9"
+				"pitch"		"0"
+				"roll"		"90"
+				"yaw"		"85"
+				"ZPos"		"0"
+				"YPos"		"2"
+				"XPos"		"3"
+			}
+		}
+		"attach_origin"
+		{
+			"models/drake/drake_boat.vmdl"
+			{
+				"scale"		"0.9"
+				"pitch"		"0"
+				"roll"		"85"
+				"yaw"		"90"
+				"ZPos"		"-45"
+				"YPos"		"0"
+				"XPos"		"25"
+			}
+		}
+	}
+	"models/amakusa/default/amakusa_by_zefiroft.vmdl"
+	{
+		"attach_sword"
+		{
+			"models/amakusa/amakusa_sword.vmdl"
+			{
+				"scale"		"0.9"
+				"pitch"		"-10"
+				"roll"		"45"
+				"yaw"		"25"
+				"ZPos"		"-1"
+				"YPos"		"2"
+				"XPos"		"23"
+			}
+		}
+	}
+	"models/amakusa/samurai/amakusa_rebel_by_zefiroft.vmdl"
+	{
+		"attach_sword"
+		{
+			"models/amakusa/amakusa_sword2.vmdl"
+			{
+				"scale"		"0.9"
+				"pitch"		"-30"
+				"roll"		"0"
+				"yaw"		"105"
+				"ZPos"		"-1"
+				"YPos"		"2"
+				"XPos"		"23"
+			}
+		}
+	}
+	"models/gilgamesh/female/female_gil_by_zefiroft.vmdl"
+	{
+		"attach_sword"
+		{
+			"models/gilgamesh/gil_ea.vmdl"
+			{
+				"scale"		"1.0"
+				"pitch"		"0"
+				"roll"		"0"
+				"yaw"		"0"
+				"ZPos"		"0"
+				"YPos"		"0"
+				"XPos"		"0"
+			}
+		}
+	}
+	"models/iskandar/default/iskandar_new_by_zefiroft.vmdl"
+	{
+		"attach_hitloc"
+		{
+			"models/iskandar/horse/horse.vmdl"
+			{
+				"scale"		"11.0"
+				"pitch"		"0"
+				"roll"		"90"
+				"yaw"		"90"
+				"ZPos"		"-20"
+				"YPos"		"0"
+				"XPos"		"-3"
+			}
+		}
+	}
+	"models/iskandar/salary/iskandar_salary_by_zefiroft.vmdl"
+	{
+		"attach_hitloc"
+		{
+			"models/iskandar/horse/horse.vmdl"
+			{
+				"scale"		"13.0"
+				"pitch"		"0"
+				"roll"		"90"
+				"yaw"		"90"
+				"ZPos"		"-20"
+				"YPos"		"0"
+				"XPos"		"-3"
+			}
+		}
+	} 
+	"models/bonk/bonk_doge_by_zefiroft.vmdl"
+	{
+		"attach_sword"
+		{
+			"models/bonk/bonk_bat.vmdl"
+			{
+				"scale"		"1.0"
+				"pitch"		"0"
+				"roll"		"270"
+				"yaw"		"0"
+				"ZPos"		"45"
+				"YPos"		"0"
+				"XPos"		"0"
+			}
+		}
+	}
+}

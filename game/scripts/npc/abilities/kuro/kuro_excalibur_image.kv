@@ -1,0 +1,70 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Kuro Excalibur Image
+	//=================================================================================================================
+	"kuro_excalibur_image"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/kuro/kuro_excalibur_image"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/kuro/kuro_excalibur_image"
+		"AbilityCastAnimation" 			"ACT_DOTA_ATTACK_EVENT"
+		
+		// Ability stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1300"
+		"AbilityCastRangeBuffer"		"100"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"35"
+		"AbilityManaCost"				"400"
+
+		// Data driven
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"						
+		{
+			"particle"			"particles/custom/karna/brahmastra_beam.vpcf"
+			"particle"			"particles/custom/kuro/excalibur/excalibur_shockwave.vpcf"
+			"particle"			"particles/custom/saber/caliburn/explosion.vpcf"
+			"particle" 			"particles/custom/saber/caliburn/slash.vpcf"
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_lion.vsndevts"
+		}		
+
+		// Ability special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"1100"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"beam_width"			"350"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"projection_damage"		"350"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range"					"1400"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"delay"					"1"
+			}
+		}
+	}
+}

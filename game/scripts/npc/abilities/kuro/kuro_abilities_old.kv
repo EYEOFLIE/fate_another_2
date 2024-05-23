@@ -1,0 +1,156 @@
+#base "kuro_barrage_moonwalk.kv"
+#base "kuro_broken_phantasm.kv"
+#base "kuro_kanshou_byakuya.kv"
+#base "kuro_crane_wings.kv"
+#base "kuro_rho_aias.kv"
+#base "kuro_clairvoyance.kv"
+#base "kuro_crane_wings_combo.kv"
+#base "kuro_nine_lives.kv"
+#base "kuro_gae_bolg.kv"
+#base "kuro_excalibur_image.kv"
+#base "kuro_projection.kv"
+
+"DOTAAbilities"
+{
+	//=======================================
+	// Kuro Attribute Excalibur Image
+	//=======================================
+	"kuro_attribute_excalibur_image"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/kuro/kuro_attributes"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/kuro/kuro_excalibur_image"
+		
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"14"
+
+		"precache"
+		{
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"main_damage"		"1000"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"beam_damage"		"250"
+			}
+		}
+	}
+
+	//=======================================
+	// Kuro Attribute: Gae Bolg Image
+	//=======================================
+	"kuro_attribute_gae_bolg"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/kuro/kuro_attributes"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/kuro/kuro_gae_bolg"		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"15"
+
+		"precache"
+		{
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"cast_delay"		"1.0"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"silence_duration"	"0.5"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"1000"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"heartbreak"		"25"
+			}
+		}
+	}
+
+	//=======================================
+	// Archer Attribute : Kanshou Bakuya Overedge
+	//=======================================
+	"kuro_attribute_projection"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/kuro/kuro_attributes"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/kuro/kuro_attribute_projection"
+		
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"17"
+
+		"precache"
+		{
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cooldown_reduction"	"35"
+			}
+		}
+	}
+
+	//=======================================
+	// Archer Attribute : Kanshou Bakuya Overedge
+	//=======================================
+	"kuro_attribute_placeholder4"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/kuro/kuro_attributes"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/kuro/kuro_attribute_placeholder"
+		
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"1000"
+
+		"precache"
+		{
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_blades"			"2"
+			}
+		}
+	}
+}

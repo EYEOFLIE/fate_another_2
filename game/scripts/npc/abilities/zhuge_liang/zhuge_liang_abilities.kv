@@ -1,0 +1,3802 @@
+"DOTAAbilities"
+{
+	//===================================================
+	// Zhuge Liang : Discern Eye 
+	//===================================================
+	"zhuge_liang_discern_eye"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityTextureName"			"custom/kongming/zhuge_liang_eye"
+		"AbilityCastRange"				"750"
+		
+		"precache"
+		{
+			
+		}
+	
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"750"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_stat"		"5"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_discern_eye_passive"
+			{
+				"Passive"				"1"
+				"IsHidden"				"0"
+				//"Attributes"			"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Aura"					"modifier_discern_eye_check"
+				"Aura_Radius"			"%radius"
+				"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"Aura_Types"			"DOTA_UNIT_TARGET_HERO"
+				"Aura_ApplyToCaster" 	"0"
+			}
+			"modifier_discern_eye_check"
+			{
+				"IsHidden"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+						"Function"		"OnDiscernEyeCheck"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+						"Function"		"OnDiscernEyeDestroy"
+					}
+				}
+			}
+			"modifier_discern_eye_str"
+			{
+				"Attributes"			"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+	        	"EffectName"			"particles/custom/zhuge_liang/kongming_discern_eye.vpcf"
+	        	"EffectAttachType"		"attach_hitloc"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"%bonus_stat"
+				}
+			}
+			"modifier_discern_eye_agi"
+			{
+				"Attributes"			"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"EffectName"			"particles/custom/zhuge_liang/kongming_discern_eye.vpcf"
+	        	"EffectAttachType"		"attach_hitloc"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"	"%bonus_stat"
+				}
+			}
+			"modifier_discern_eye_int"
+			{
+				"Attributes"			"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"EffectName"			"particles/custom/zhuge_liang/kongming_discern_eye.vpcf"
+	        	"EffectAttachType"		"attach_hitloc"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"%bonus_stat"
+				}
+			}
+		}
+	}
+	//===================================================
+	// Zhuge Liang : Discern Eye 
+	//===================================================
+	"zhuge_liang_discern_eye_upgrade"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityTextureName"			"custom/kongming/zhuge_liang_eye"
+		"AbilityCastRange"				"1000"
+		
+		"precache"
+		{
+			
+		}
+	
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"1000"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_stat"		"9"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"second_stat"		"4"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_discern_eye_passive"
+			{
+				"Passive"				"1"
+				"IsHidden"				"0"
+				//"Attributes"			"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Aura"					"modifier_discern_eye_check"
+				"Aura_Radius"			"%radius"
+				"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"Aura_Types"			"DOTA_UNIT_TARGET_HERO"
+				"Aura_ApplyToCaster" 	"0"
+			}
+			"modifier_discern_eye_check"
+			{
+				"IsHidden"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+						"Function"		"OnDiscernEyeCheck"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+						"Function"		"OnDiscernEyeDestroy"
+					}
+				}
+			}
+			"modifier_discern_eye_str"
+			{
+				"Attributes"			"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"EffectName"			"particles/custom/zhuge_liang/kongming_discern_eye.vpcf"
+	        	"EffectAttachType"		"attach_hitloc"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"%bonus_stat"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"	"%second_stat"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"%second_stat"
+				}
+			}
+			"modifier_discern_eye_str_no_int"
+			{
+				"Attributes"			"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"EffectName"			"particles/custom/zhuge_liang/kongming_discern_eye.vpcf"
+	        	"EffectAttachType"		"attach_hitloc"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"%bonus_stat"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"	"%second_stat"
+				}
+			}
+			"modifier_discern_eye_agi"
+			{
+				"Attributes"			"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"EffectName"			"particles/custom/zhuge_liang/kongming_discern_eye.vpcf"
+	        	"EffectAttachType"		"attach_hitloc"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"%second_stat"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"	"%bonus_stat"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"%second_stat"
+				}
+			}
+			"modifier_discern_eye_agi_no_int"
+			{
+				"Attributes"			"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"EffectName"			"particles/custom/zhuge_liang/kongming_discern_eye.vpcf"
+	        	"EffectAttachType"		"attach_hitloc"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"%second_stat"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"	"%bonus_stat"
+				}
+			}
+			"modifier_discern_eye_int"
+			{
+				"Attributes"			"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"EffectName"			"particles/custom/zhuge_liang/kongming_discern_eye.vpcf"
+	        	"EffectAttachType"		"attach_hitloc"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"%second_stat"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"	"%second_stat"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"%bonus_stat"
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Zhuge Liang : Innate : Alchemist (d)
+	//=================================================================================================================
+	"zhuge_liang_alchemist"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityTextureName"			"custom/kongming/zhuge_liang_alchemist"
+		"MaxLevel"						"1"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"25"
+		"AbilityManaCost"				"0"
+		"precache"
+		{
+		}
+		"AbilitySpecial"
+		{
+			
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+				"Function"		"OnAlchemistStart"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_zhuge_liang_alchemist_check"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"IsBuff"			"1"
+				"IsPurgable"		"0" 
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+		
+				"OnCreated"
+				{ 
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+						"Function"		"OnAlchemistOpen"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+						"Function"		"OnAlchemistClose"
+					}
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Zhuge Liang : Innate : Alchemist (Item Creation SA)
+	//=================================================================================================================
+	"zhuge_liang_alchemist_upgrade"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityTextureName"			"custom/kongming/zhuge_liang_alchemist"
+		"MaxLevel"						"1"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"0"
+		"AbilityManaCost"				"0"
+		"precache"
+		{
+		}
+		"AbilitySpecial"
+		{
+			
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+				"Function"		"OnAlchemistStart"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_zhuge_liang_alchemist_check"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"IsBuff"			"1"
+				"IsPurgable"		"0" 
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+		
+				"OnCreated"
+				{ 
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+						"Function"		"OnAlchemistOpen"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+						"Function"		"OnAlchemistClose"
+					}
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Zhuge Liang : Book Closed (F)
+	//=================================================================================================================
+	"zhuge_liang_alchemist_close"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		//หารูปมาใส่
+		"AbilityTextureName"			"silencer_last_word"
+		"MaxLevel"						"1"
+		"AbilityCastPoint"				"0.0"
+		"AbilityManaCost"				"0"
+		"precache"
+		{
+			
+		}
+		"AbilitySpecial"
+		{
+			
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{ 
+				"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+				"Function"		"OnSpellBookClose"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Zhuge Liang : Alchemist : Heal Potion (Q)
+	//=================================================================================================================
+	"zhuge_liang_heal_pot"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityTextureName"			"custom/kongming/zhuge_liang_heal_pot"
+		"MaxLevel"						"1"
+		"AbilityCastPoint"				"0.2"
+		"AbilityCastRange"				"650"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		"AnimationPlaybackRate"			"1"
+		"AbilityCooldown"				"25"
+		"AbilityManaCost"				"200"
+		"AOERadius"						"%radius"
+		"precache"
+		{
+			
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"			"0.2"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"300"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"3.0"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"heal_sec"				"150"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+				"Function"		"OnPotionStart"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_zhuge_liang_heal_buff"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"Duration"			"%duration"	
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"EffectName"		"particles/custom/zhuge_liang/kongming_red_fx.vpcf"
+	        	"EffectAttachType"	"attach_hitloc"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT" "%heal_sec"
+				}	
+			}
+		}
+	}
+	//=================================================================================================================
+	// Zhuge Liang : Alchemist : Heal Potion (Q)
+	//=================================================================================================================
+	"zhuge_liang_heal_pot_upgrade"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityTextureName"			"custom/kongming/zhuge_liang_heal_pot"
+		"MaxLevel"						"1"
+		"AbilityCastPoint"				"0.2"
+		"AbilityCastRange"				"650"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		"AnimationPlaybackRate"			"1"
+		"AbilityCooldown"				"25"
+		"AbilityManaCost"				"200"
+		"AOERadius"						"%radius"
+		"precache"
+		{
+			
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"			"0.2"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"300"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"5.0"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"heal_sec"				"150"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+				"Function"		"OnPotionStart"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_zhuge_liang_heal_buff"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"Duration"			"%duration"	
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"EffectName"		"particles/custom/zhuge_liang/kongming_red_fx.vpcf"
+	        	"EffectAttachType"	"attach_hitloc"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT" "%heal_sec"
+				}	
+			}
+		}
+	}
+	//=================================================================================================================
+	// Zhuge Liang : Alchemist : Mana Potion (W)
+	//=================================================================================================================
+	"zhuge_liang_mana_pot"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityTextureName"			"custom/kongming/zhuge_liang_mana_pot"
+		"MaxLevel"						"1"
+		"AbilityCastPoint"				"0.2"
+		"AbilityCastRange"				"650"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		"AnimationPlaybackRate"			"1"
+		"AbilityCooldown"				"25"
+		"AbilityManaCost"				"200"
+		"AOERadius"						"%radius"
+		"precache"
+		{
+			
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"			"0.2"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"300"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"3.0"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mana_sec"				"100"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+				"Function"		"OnPotionStart"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_zhuge_liang_mana_buff"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"Duration"			"%duration"	
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"EffectName"		"particles/custom/zhuge_liang/kongming_blue_fx.vpcf"
+	        	"EffectAttachType"	"attach_hitloc"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT" "%mana_sec"
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Zhuge Liang : Alchemist : Mana Potion (W)
+	//=================================================================================================================
+	"zhuge_liang_mana_pot_upgrade"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityTextureName"			"custom/kongming/zhuge_liang_mana_pot"
+		"MaxLevel"						"1"
+		"AbilityCastPoint"				"0.2"
+		"AbilityCastRange"				"650"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		"AnimationPlaybackRate"			"1"
+		"AbilityCooldown"				"25"
+		"AbilityManaCost"				"200"
+		"AOERadius"						"%radius"
+		"precache"
+		{
+		
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"			"0.2"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"300"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"5.0"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mana_sec"				"100"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+				"Function"		"OnPotionStart"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_zhuge_liang_mana_buff"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"Duration"			"%duration"	
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"EffectName"		"particles/custom/zhuge_liang/kongming_blue_fx.vpcf"
+	        	"EffectAttachType"	"attach_hitloc"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT" "%mana_sec"
+				}	
+			}
+		}
+	}
+	//=================================================================================================================
+	// Zhuge Liang : Alchemist : Accelerate Potion (W)
+	//=================================================================================================================
+	"zhuge_liang_accel_pot"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityTextureName"			"custom/kongming/zhuge_liang_accel_pot"
+		"MaxLevel"						"1"
+		"AbilityCastPoint"				"0.2"
+		"AbilityCastRange"				"650"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		"AnimationPlaybackRate"			"1"
+		"AbilityCooldown"				"25"
+		"AbilityManaCost"				"200"
+		"AOERadius"						"%radius"
+		"precache"
+		{
+			
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"			"0.2"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"300"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"6.0"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_ms"				"30"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+				"Function"		"OnPotionStart"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_zhuge_liang_accel_buff"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"Duration"			"%duration"	
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"EffectName"		"particles/custom/zhuge_liang/kongming_purple_fx.vpcf"
+	        	"EffectAttachType"	"attach_hitloc"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%bonus_ms"
+				}	
+			}
+		}
+	}
+	//=================================================================================================================
+	// Zhuge Liang : Alchemist : Accelerate Potion (W)
+	//=================================================================================================================
+	"zhuge_liang_accel_pot_upgrade"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityTextureName"			"custom/kongming/zhuge_liang_accel_pot"
+		"MaxLevel"						"1"
+		"AbilityCastPoint"				"0.2"
+		"AbilityCastRange"				"650"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		"AnimationPlaybackRate"			"1"
+		"AbilityCooldown"				"25"
+		"AbilityManaCost"				"200"
+		"AOERadius"						"%radius"
+		"precache"
+		{
+			
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"			"0.2"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"300"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"9.0"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_ms"				"30"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+				"Function"		"OnPotionStart"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_zhuge_liang_accel_buff"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"Duration"			"%duration"	
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"EffectName"		"particles/custom/zhuge_liang/kongming_purple_fx.vpcf"
+	        	"EffectAttachType"	"attach_hitloc"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%bonus_ms"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%bonus_ms"
+				}	
+			}
+		}
+	}
+	//=================================================================================================================
+	// Zhuge Liang : Alchemist : Acid Potion (W)
+	//=================================================================================================================
+	"zhuge_liang_acid_pot"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityTextureName"			"alchemist_unstable_concoction"
+		"MaxLevel"						"1"
+		"AbilityCastPoint"				"0.2"
+		"AbilityCastRange"				"650"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		"AnimationPlaybackRate"			"1"
+		"AbilityCooldown"				"25"
+		"AbilityManaCost"				"200"
+		"AOERadius"						"%radius"
+		"precache"
+		{
+			
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"			"0.2"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"400"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"4.0"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dps"					"150"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow"					"-20"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+				"Function"		"OnGreenPotionStart"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_zhuge_liang_acid_slow"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Duration"			"%duration"	
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow"
+				}	
+			}
+			"modifier_zhuge_liang_acid"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"Duration"			"%duration"	
+				"EffectName"		"particles/custom/semiramis/poison_debuff.vpcf"
+	        	"EffectAttachType"	"attach_hitloc"
+				"ThinkInterval"  "0.5"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+						"Function"		"OnGreenPotionThink"
+					}
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Zhuge Liang : Alchemist : Acid Potion (W)
+	//=================================================================================================================
+	"zhuge_liang_acid_pot_upgrade"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityTextureName"			"alchemist_unstable_concoction"
+		"MaxLevel"						"1"
+		"AbilityCastPoint"				"0.2"
+		"AbilityCastRange"				"650"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		"AnimationPlaybackRate"			"1"
+		"AbilityCooldown"				"25"
+		"AbilityManaCost"				"200"
+		"AOERadius"						"%radius"
+		"precache"
+		{
+			
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"			"0.2"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"400"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"4.0"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dps"					"250"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow"					"-30"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+				"Function"		"OnGreenPotionStart"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_zhuge_liang_acid_slow"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Duration"			"%duration"	
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow"
+				}	
+			}
+			"modifier_zhuge_liang_acid"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"Duration"			"%duration"	
+				"EffectName"		"particles/custom/semiramis/poison_debuff.vpcf"
+	        	"EffectAttachType"	"attach_hitloc"
+				"ThinkInterval"  "0.5"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+						"Function"		"OnGreenPotionThink"
+					}
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Zhuge Liang : Laser (Q)
+	//=================================================================================================================
+	"zhuge_liang_laser"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/kongming/zhuge_liang_laser"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityCastPoint"				"0.1"
+		"AbilityCastRange"				"500"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		"AnimationPlaybackRate"			"10"
+		"AbilityCooldown"				"9 8 7 6 5"
+		"AbilityManaCost"				"100"
+		"precache"
+		{
+			
+		}
+		"AbilitySpecial"
+		{
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range"					"600"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"width"					"200"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"laser"					"2"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"silence"				"0.1"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"110 140 170 200 230"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+				"Function"		"OnLaserStart"
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"	"0"
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+				"Function"		"OnLaserHit"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Zhuge Liang : Strategy Command Spellbook (W)
+	//=================================================================================================================
+	"zhuge_liang_strat_command"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityTextureName"			"custom/kongming/zhuge_liang_tactic"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"0"
+		"AbilityManaCost"				"0"
+		"precache"
+		{
+		}
+		"AbilitySpecial"
+		{
+			
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+				"Function"		"OnTacticStart"
+			}
+		}
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+				"Function"		"OnTacticeUpgrade"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_zhuge_liang_strat_command_check"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"IsBuff"			"1"
+				"IsPurgable"		"0" 
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+		
+				"OnCreated"
+				{ 
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+						"Function"		"OnTacticOpen"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+						"Function"		"OnTacticClose"
+					}
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Zhuge Liang : Strategy Command Spellbook (W) (36 Stratagems)
+	//=================================================================================================================
+	"zhuge_liang_strat_command_upgrade"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityTextureName"			"custom/kongming/zhuge_liang_tactic"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"0"
+		"AbilityManaCost"				"0"
+		"precache"
+		{
+		}
+		"AbilitySpecial"
+		{
+			
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+				"Function"		"OnTacticStart"
+			}
+		}
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+				"Function"		"OnTacticeUpgrade"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_zhuge_liang_strat_command_check"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"IsBuff"			"1"
+				"IsPurgable"		"0" 
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+		
+				"OnCreated"
+				{ 
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+						"Function"		"OnTacticOpen"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+						"Function"		"OnTacticClose"
+					}
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Zhuge Liang : Strategy Command : Rock Fall (Q)
+	//=================================================================================================================
+	"zhuge_liang_rock_fall"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityTextureName"			"earth_spirit_rolling_boulder"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityCastPoint"				"0.2"
+		"AbilityCastRange"				"700"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+		"AnimationPlaybackRate"			"1"
+		"AbilityCooldown"				"12"
+		"AbilityManaCost"				"200"
+		"AOERadius"						"%radius"
+		"precache"
+		{
+			
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"			"0.5"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"300"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"300 360 420 480 540"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"stun"					"1.0"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+				"Function"		"OnRockFall"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Zhuge Liang : Strategy Command : Rock Fall (Q) (36 Stratagems SA)
+	//=================================================================================================================
+	"zhuge_liang_rock_fall_upgrade"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityTextureName"			"earth_spirit_rolling_boulder"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityCastPoint"				"0.2"
+		"AbilityCastRange"				"700"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+		"AnimationPlaybackRate"			"1"
+		"AbilityCooldown"				"12"
+		"AbilityManaCost"				"200"
+		"AOERadius"						"%radius"
+		"precache"
+		{
+			
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"			"0.5"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"400"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"400 460 520 580 640"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"stun"					"1.0"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+				"Function"		"OnRockFall"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Zhuge Liang : Strategy Command : Fire Arrows (W)
+	//=================================================================================================================
+	"zhuge_liang_fire_arrow"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityTextureName"			"clinkz_searing_arrows"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityCastPoint"				"0.2"
+		"AbilityCastRange"				"700"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+		"AnimationPlaybackRate"			"1"
+		"AbilityCooldown"				"12"
+		"AbilityManaCost"				"200"
+		"AOERadius"						"%radius"
+		"precache"
+		{
+			
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"			"0.3"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"160"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"300 350 400 450 500"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"flame_dur"				"3.0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"fire_dur"				"3.0"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"fire_damage"			"50"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+				"Function"		"OnFireArrows"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_zhuge_liang_fire_aoe_thinker"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"ThinkInterval"  	"0.99"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+						"Function"		"OnFireBurn"
+					}
+				}
+			}
+			"modifier_zhuge_liang_fire_arrow"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Duration"			"%fire_dur"	
+				"EffectName"		"particles/units/heroes/hero_shredder/shredder_flame_thrower_debuff.vpcf"
+				"EffectAttachType"	"attach_hitloc"
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"ThinkInterval"  	"0.49"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+						"Function"		"OnFireArrowsBurn"
+					}
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Zhuge Liang : Strategy Command : Fire Arrows (W) (36 Stratagems SA)
+	//=================================================================================================================
+	"zhuge_liang_fire_arrow_upgrade"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityTextureName"			"clinkz_searing_arrows"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityCastPoint"				"0.2"
+		"AbilityCastRange"				"700"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+		"AnimationPlaybackRate"			"1"
+		"AbilityCooldown"				"12"
+		"AbilityManaCost"				"200"
+		"AOERadius"						"%radius"
+		"precache"
+		{
+			
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"			"0.3"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"160"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"300 350 400 450 500"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"flame_dur"				"3.0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"fire_dur"				"3.0"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"fire_damage"			"80"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+				"Function"		"OnFireArrows"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_zhuge_liang_fire_aoe_thinker"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"ThinkInterval"  	"0.99"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+						"Function"		"OnFireBurn"
+					}
+				}
+			}
+			"modifier_zhuge_liang_fire_arrow"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Duration"			"%fire_dur"	
+				"EffectName"		"particles/units/heroes/hero_shredder/shredder_flame_thrower_debuff.vpcf"
+				"EffectAttachType"	"attach_hitloc"
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"ThinkInterval"  	"0.49"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+						"Function"		"OnFireArrowsBurn"
+					}
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Zhuge Liang : Strategy Command : Flood (E)
+	//=================================================================================================================
+	"zhuge_liang_flood"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityTextureName"			"tidehunter_gush"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityCastPoint"				"0.2"
+		"AbilityCastRange"				"800"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+		"AnimationPlaybackRate"			"1"
+		"AbilityCooldown"				"12"
+		"AbilityManaCost"				"200"
+		"precache"
+		{
+			
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"			"0.2"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"200 230 260 290 320"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"width"					"300"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"distance"				"800"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"knock"					"0.5"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+				"Function"		"OnFloodStart"
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"	"0"
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+				"Function"		"OnFloodHit"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Zhuge Liang : Strategy Command : Flood (E) (36 Stratagems SA)
+	//=================================================================================================================
+	"zhuge_liang_flood_upgrade"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityTextureName"			"tidehunter_gush"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityCastPoint"				"0.2"
+		"AbilityCastRange"				"800"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+		"AnimationPlaybackRate"			"1"
+		"AbilityCooldown"				"12"
+		"AbilityManaCost"				"200"
+		"AOERadius"						"%radius"
+		"precache"
+		{
+			
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"			"0.2"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"300 330 360 390 420"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"width"					"300"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"distance"				"800"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"knock"					"0.5"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+				"Function"		"OnFloodStart"
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"	"0"
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+				"Function"		"OnFloodHit"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Zhuge Liang : Strategy Command : Wind (D)
+	//=================================================================================================================
+	"zhuge_liang_wind"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityTextureName"			"invoker_tornado"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityCastPoint"				"0.2"
+		"AbilityCastRange"				"600"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+		"AnimationPlaybackRate"			"1"
+		"AbilityCooldown"				"12"
+		"AbilityManaCost"				"200"
+		"precache"
+		{
+			
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"			"0.2"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"100 150 200 250 300"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"width"					"400"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"distance"				"600"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"knock"					"0.5 0.75 1.0 1.25 1.5"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+				"Function"		"OnWindStart"
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"	"0"
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+				"Function"		"OnWindHit"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Zhuge Liang : Strategy Command : Wind (D) (36 Stratagems SA)
+	//=================================================================================================================
+	"zhuge_liang_wind_upgrade"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityTextureName"			"invoker_tornado"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityCastPoint"				"0.2"
+		"AbilityCastRange"				"900"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+		"AnimationPlaybackRate"			"1"
+		"AbilityCooldown"				"12"
+		"AbilityManaCost"				"200"
+		"precache"
+		{
+			
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"			"0.2"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"100 150 200 250 300"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"width"					"400"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"distance"				"900"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"knock"					"0.5 0.75 1.0 1.25 1.5"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+				"Function"		"OnWindStart"
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"	"0"
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+				"Function"		"OnWindHit"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Zhuge Liang : Strategy Command : Wood Trap (R)
+	//=================================================================================================================
+	"zhuge_liang_wood_trap"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityTextureName"			"treant_overgrowth"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityCastPoint"				"0.2"
+		"AbilityCastRange"				"700"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+		"AnimationPlaybackRate"			"1"
+		"AbilityCooldown"				"12"
+		"AbilityManaCost"				"200"
+		"AOERadius"						"%radius"
+		"precache"
+		{
+			
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"			"0.3"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"300"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dps"					"100 130 160 190 220"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"1.0 1.3 1.6 1.9 2.2"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+				"Function"		"OnWoodTrap"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_zhuge_liang_wood_trap"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Duration"			"%duration"	
+				"EffectName"		"particles/units/heroes/hero_treant/treant_overgrowth_vines.vpcf"
+	        	"EffectAttachType"	"attach_origin"
+				"States"
+				{
+					"MODIFIER_STATE_ROOTED"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+				"ThinkInterval"  	"0.49"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+						"Function"		"OnWoodLock"
+					}
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Zhuge Liang : Strategy Command : Wood Trap (R) (36 Stratagems SA)
+	//=================================================================================================================
+	"zhuge_liang_wood_trap_upgrade"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityTextureName"			"treant_overgrowth"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityCastPoint"				"0.2"
+		"AbilityCastRange"				"700"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+		"AnimationPlaybackRate"			"1"
+		"AbilityCooldown"				"12"
+		"AbilityManaCost"				"200"
+		"AOERadius"						"%radius"
+		"precache"
+		{
+			
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"			"0.3"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"500"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dps"					"100 130 160 190 220"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"1.0 1.3 1.6 1.9 2.2"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+				"Function"		"OnWoodTrap"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_zhuge_liang_wood_trap"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Duration"			"%duration"	
+				"EffectName"		"particles/units/heroes/hero_treant/treant_overgrowth_vines.vpcf"
+	        	"EffectAttachType"	"attach_origin"
+				"States"
+				{
+					"MODIFIER_STATE_ROOTED"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+				"ThinkInterval"  	"0.49"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+						"Function"		"OnWoodLock"
+					}
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Zhuge Liang : Strategy Command Spellbook (E)
+	//=================================================================================================================
+	"zhuge_liang_war_command"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityTextureName"			"custom/kongming/zhuge_liang_advice"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"20"
+		"AbilityManaCost"				"0"
+		"precache"
+		{
+		}
+		"AbilitySpecial"
+		{
+			
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+				"Function"		"OnCommandStart"
+			}
+		}
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+				"Function"		"OnCommandUpgrade"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_zhuge_liang_war_command_check"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"IsBuff"			"1"
+				"IsPurgable"		"0" 
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+		
+				"OnCreated"
+				{ 
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+						"Function"		"OnCommandOpen"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+						"Function"		"OnCommandClose"
+					}
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Zhuge Liang : Strategy Command Spellbook (E) (Shi Chu Biao SA)
+	//=================================================================================================================
+	"zhuge_liang_war_command_upgrade"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityTextureName"			"custom/kongming/zhuge_liang_advice"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"20"
+		"AbilityManaCost"				"0"
+		"precache"
+		{
+		}
+		"AbilitySpecial"
+		{
+			
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+				"Function"		"OnCommandStart"
+			}
+		}
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+				"Function"		"OnCommandUpgrade"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_zhuge_liang_war_command_check"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"IsBuff"			"1"
+				"IsPurgable"		"0" 
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+		
+				"OnCreated"
+				{ 
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+						"Function"		"OnCommandOpen"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+						"Function"		"OnCommandClose"
+					}
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Zhuge Liang : Strategy Command : Ambush (Q)
+	//=================================================================================================================
+	"zhuge_liang_ambush"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityTextureName"			"custom/kongming/zhuge_liang_advice_ambush"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"2"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityCastPoint"				"0.2"
+		"AbilityCastRange"				"650"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
+		"AnimationPlaybackRate"			"1"
+		"AbilityCooldown"				"20"
+		"AbilityManaCost"				"400"
+		"precache"
+		{
+			
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"4 5 6 7 8"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_ms"				"20 30 40 50 60"
+			}
+		}
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+				"Function"		"OnCommandFilter"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+				"Function"		"OnAmbushStart"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_zhuge_liang_ambush"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"IsBuff"			"1"
+				"Duration"			"%duration"
+				"EffectName"		"particles/units/heroes/hero_pugna/pugna_decrepify.vpcf"	
+				"EffectAttachType"	"follow_overhead"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"States"
+				{
+					"MODIFIER_STATE_INVISIBLE"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+				"Properties"
+				{
+				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%bonus_ms" 
+				}
+				"OnAttackLanded"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+						"Function"		"OnAmbushAttack"
+					}
+				}
+				"OnTakeDamage"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+						"Function"		"OnAmbushBreak"
+					}
+				}
+				"OnAbilityExecuted"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+						"Function"		"OnAmbushBreak"
+					}
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Zhuge Liang : Strategy Command : Ambush (Q) (Chu Shi Biao SA)
+	//=================================================================================================================
+	"zhuge_liang_ambush_upgrade"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityTextureName"			"custom/kongming/zhuge_liang_advice_ambush"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"2"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityCastPoint"				"0.2"
+		"AbilityCastRange"				"650"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
+		"AnimationPlaybackRate"			"1"
+		"AbilityCooldown"				"20"
+		"AbilityManaCost"				"400"
+		"AOERadius"						"%aoe"
+		"precache"
+		{
+			
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"aoe"					"200"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"8 9 10 11 12"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_ms"				"20 30 40 50 60"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"debuff"				"-20"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"debuff_dur"			"5.0"
+			}
+		}
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+				"Function"		"OnCommandFilter"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+				"Function"		"OnAmbushStart"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_zhuge_liang_ambush"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"IsBuff"			"1"
+				"Duration"			"%duration"
+				"EffectName"		"particles/units/heroes/hero_pugna/pugna_decrepify.vpcf"	
+				"EffectAttachType"	"follow_overhead"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"States"
+				{
+					"MODIFIER_STATE_INVISIBLE"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+				"Properties"
+				{
+				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%bonus_ms" 
+				}
+				"OnAttackLanded"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+						"Function"		"OnAmbushAttack"
+					}
+				}
+				"OnTakeDamage"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+						"Function"		"OnAmbushBreak"
+					}
+				}
+				"OnAbilityExecuted"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+						"Function"		"OnAmbushBreak"
+					}
+				}
+			}
+			"modifier_zhuge_liang_ambush_debuff"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"IsBuff"			"0"
+				"Duration"			"%debuff_dur"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Properties"
+				{
+				    "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%debuff" 
+				    "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS" "%debuff" 
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Zhuge Liang : Strategy Command : Offensive Formation (W)
+	//=================================================================================================================
+	"zhuge_liang_offense"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"AbilityTextureName"			"custom/kongming/zhuge_liang_advice_atk"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"2"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityCastPoint"				"0.2"
+		"AbilityCastRange"				"650"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
+		"AnimationPlaybackRate"			"1"
+		"AbilityCooldown"				"20"
+		"AbilityManaCost"				"400"
+		"precache"
+		{
+			
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"6 7 8 9 10"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_atk"				"20 25 30 35 40"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_aspd"			"20 25 30 35 40"
+			}
+		}
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+				"Function"		"OnCommandFilter"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+				"Function"		"OnOffenseStart"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_zhuge_liang_offense"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"IsBuff"			"1"
+				"Duration"			"%duration"
+				"EffectName"		"particles/items_fx/aura_assault.vpcf"
+				"EffectAttachType"	"attach_origin"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"EffectName"        "particles/custom/zhuge_liang/kongming_sword_parent.vpcf"
+						"EffectAttachType"  "follow_origin"
+						"Target"            "TARGET"
+					}
+				}
+				"Properties"
+				{
+				    "MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE" "%bonus_atk" 
+				    "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%bonus_aspd"
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Zhuge Liang : Strategy Command : Offensive Formation (W) (Chu Shi Biao SA)
+	//=================================================================================================================
+	"zhuge_liang_offense_upgrade"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"AbilityTextureName"			"custom/kongming/zhuge_liang_advice_atk"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"2"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityCastPoint"				"0.2"
+		"AbilityCastRange"				"650"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
+		"AnimationPlaybackRate"			"1"
+		"AbilityCooldown"				"20"
+		"AbilityManaCost"				"400"
+		"AOERadius"						"%aoe"
+		"precache"
+		{
+			
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"aoe"					"200"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"6 7 8 9 10"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_atk"				"30 35 40 45 50"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_aspd"			"30 35 40 45 50"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"crit_rate"				"25"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"crit_dmg"				"150"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"spell_amp"				"15"
+			}
+		}
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+				"Function"		"OnCommandFilter"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+				"Function"		"OnOffenseStart"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_zhuge_liang_offense"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"IsBuff"			"1"
+				"Duration"			"%duration"
+				"EffectName"		"particles/items_fx/aura_assault.vpcf"
+				"EffectAttachType"	"attach_origin"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"EffectName"        "particles/custom/zhuge_liang/kongming_sword_parent.vpcf"
+						"EffectAttachType"  "follow_origin"
+						"Target"            "TARGET"
+					}
+				}
+				"Properties"
+				{
+				    "MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE" "%bonus_atk" 
+				    "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%bonus_aspd"
+				}
+				"OnAttackStart"
+				{
+					"RemoveModifier"
+					{
+						"ModifierName"	"modifier_zhuge_liang_offense_crit"
+						"Target"
+ 						{
+ 							"Center"	"CASTER"
+ 							"Flags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+ 						}
+					}
+					"Random"
+					{
+						"Chance"	"%crit_rate"
+						"OnSuccess"
+						{
+							"RunScript"
+							{
+								"ScriptFile"			"abilities/zhuge_liang/zhuge_liang_abilities"
+								"Function"				"OnOffenseCrit"
+							}
+						}
+					}
+				}
+			}
+			"modifier_zhuge_liang_offense_crit"
+			{
+				"IsHidden"		"1"
+				"Duration"		"1"
+				"Attributes"	"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE" "%crit_dmg"
+				}
+				"OnAttackLanded"
+				{
+			    	"FireEffect"
+			    	{
+			    		"EffectName"		"particles/units/heroes/hero_juggernaut/jugg_crit_blur_impact.vpcf"
+			    		"EffectAttachType"	"attach_hitloc"
+			    		"Target"			"TARGET"
+			    	}
+			        "RemoveModifier"
+			        {
+			            "ModifierName"  	"modifier_zhuge_liang_offense_crit"
+						"Target"
+ 						{
+ 							"Center"	"CASTER"
+ 							"Flags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+ 						}
+   			        }			
+				}
+			}
+			"modifier_zhuge_spell_amp"
+			{
+				"IsHidden"		"1"
+				"Attributes"	"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Duration"		"%duration"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Zhuge Liang : Strategy Command : Defensive Formation (E)
+	//=================================================================================================================
+	"zhuge_liang_defense"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"AbilityTextureName"			"custom/kongming/zhuge_liang_advice_def"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"2"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityCastPoint"				"0.2"
+		"AbilityCastRange"				"750"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
+		"AnimationPlaybackRate"			"1"
+		"AbilityCooldown"				"20"
+		"AbilityManaCost"				"400"
+		"precache"
+		{
+			
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"6 8 10 12 14"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_armor"			"6 9 12 15 18"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_mr"				"6 9 12 15 18"
+			}
+		}
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+				"Function"		"OnCommandFilter"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+				"Function"		"OnDefenseStart"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_zhuge_liang_defense"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"EffectName"        "particles/custom/zhuge_liang/kongming_shield_parent.vpcf"
+						"EffectAttachType"  "follow_origin"
+						"Target"            "TARGET"
+					}
+				}
+				
+				"Duration"			"%duration"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Properties"
+				{
+				    "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%bonus_armor" 
+				    "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS" "%bonus_mr"
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Zhuge Liang : Strategy Command : Defensive Formation (E) (Chu Shi Biao SA)
+	//=================================================================================================================
+	"zhuge_liang_defense_upgrade"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"AbilityTextureName"			"custom/kongming/zhuge_liang_advice_def"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"2"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityCastPoint"				"0.2"
+		"AbilityCastRange"				"750"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
+		"AnimationPlaybackRate"			"1"
+		"AbilityCooldown"				"20"
+		"AbilityManaCost"				"400"
+		"AOERadius"						"%aoe"
+		"precache"
+		{
+		
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"aoe"					"200"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"6 8 10 12 14"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_armor"			"11 14 17 20 23"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_mr"				"11 14 17 20 23"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"shield"				"1000"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"shield_dur"			"7.0"
+			}
+		}
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+				"Function"		"OnCommandFilter"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+				"Function"		"OnDefenseStart"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_zhuge_liang_defense"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"EffectName"        "particles/custom/zhuge_liang/kongming_shield_parent.vpcf"
+						"EffectAttachType"  "follow_origin"
+						"Target"            "TARGET"
+					}
+				}
+				
+				"Duration"			"%duration"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Properties"
+				{
+				    "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%bonus_armor" 
+				    "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS" "%bonus_mr"
+				}
+			}
+			"modifier_zhuge_liang_shield"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"Duration"			"%shield_dur" 
+				"EffectName"		"particles/custom/zhuge_liang/kongming_shield_sphere.vpcf"
+				"EffectAttachType"	"follow_customorigin"
+				"ControlPointEntities"
+				{
+					"CASTER"		"attach_hitloc"
+					"CASTER"		"attach_hitloc"
+					"CASTER"		"attach_hitloc"
+				}
+				
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"OnTakeDamage"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+						"Function"		"OnShieldDamaged"
+						"DamageTaken"	"%attack_damage"		
+					}
+				}
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+						"Function"		"OnRhoCreate"	
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+						"Function"		"OnRhoDestroy"	
+					}
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Zhuge Liang : Strategy Command : Cross Bow (R) (36 Stratagems SA)
+	//=================================================================================================================
+	"zhuge_liang_cross_bow"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_NONE"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityTextureName"			"custom/scathach/scathach_rune_fire"
+		"MaxLevel"						"1"
+		"AbilityCastPoint"				"0.2"
+		"AbilityCastRange"				"300"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+		"AnimationPlaybackRate"			"1"
+		"AbilityCooldown"				"100"
+		"AbilityManaCost"				"400"
+
+		"precache"
+		{
+			
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"			"0.2"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"50"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"health"				"1200"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"atk"					"160"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aspd"					"800"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"atk_range"				"1200"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"vision"				"1200"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+				"Function"		"OnRuneFlameStart"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_zhuge_liang_crossbow_con"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"Duration"			"3"
+				"States"
+				{
+					"MODIFIER_STATE_DISARMED"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+						"Function"		"AbilityName"
+					}
+				}
+				"ThinkInterval"  "0.49"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+						"Function"		"AbilityName"
+					}
+				}
+			}
+			"modifier_zhuge_liang_crossbow"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Duration"			"%duration"	
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"States"
+				{
+					"MODIFIER_STATE_ROOTED"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+			"modifier_zhuge_liang_crossbow_checker"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Duration"			"%duration"	
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	""
+						"Function"		"AbilityName"
+					}
+				}
+			}
+			"modifier_zhuge_liang_crossbow_cooldown"
+			{
+				"IsDebuff"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			}	
+		}
+	}
+	//=================================================================================================================
+	// Zhuge Liang : Unreturn Formation Stone Sentinel Maze (R)
+	//=================================================================================================================
+	"zhuge_liang_array"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityTextureName"			"custom/kongming/zhuge_liang_array"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityCastPoint"				"0.1"
+		"AbilityCastRange"				"750"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
+		"AnimationPlaybackRate"			"1"
+		"AbilityCooldown"				"48"
+		"AbilityManaCost"				"800"
+		"AOERadius"						"%radius"
+		"precache"
+		{
+			
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"			"0.9"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"400"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"5.0 5.5 6.0 6.5 7.0"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"armor_debuff"			"-10 -15 -20 -25 -30"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mr_debuff"				"-10 -15 -20 -25 -30"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+				"Function"		"OnMazeStart"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_zhuge_liang_array_checker"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"Duration"				"%duration"	
+				"Attributes"			"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+						"Function"		"OnMazeDestroy"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+						"Function"		"OnMazeDie"
+					}
+				}
+			}
+			"modifier_zhuge_liang_array_aura"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"Duration"				"%duration"	
+				"Aura"					"modifier_zhuge_liang_array_enemy"
+				"Aura_Radius"			"%radius"
+				"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Flags"			"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+				"Aura_Types"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+				"Attributes"			"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			}
+			"modifier_zhuge_liang_array_enemy"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"ThinkInterval"  	"0.03"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%armor_debuff"
+				    "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS" "%mr_debuff" 
+				}
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+						"Function"		"OnMazeLock"
+					}
+				}
+				"OnUnitMoved"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+						"Function"		"OnMazeLock"
+					}
+				}
+			}
+			"modifier_zhuge_thunder_storm_window"
+			{
+				"IsPurgable"		"0"
+				"IsBuff"			"1"
+				"IsHidden"			"1"
+				"Duration"			"3"
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+						"Function"		"OnThunderStormWindowCreate"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+						"Function"		"OnThunderStormWindowDestroy"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+						"Function"		"OnThunderStormWindowDeath"
+					}
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Zhuge Liang : Unreturn Formation Stone Sentinel Maze (R) (Territory Creation SA)
+	//=================================================================================================================
+	"zhuge_liang_array_upgrade"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityTextureName"			"custom/kongming/zhuge_liang_array"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityCastPoint"				"0.1"
+		"AbilityCastRange"				"1000"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
+		"AnimationPlaybackRate"			"1"
+		"AbilityCooldown"				"48"
+		"AbilityManaCost"				"800"
+		"AOERadius"						"%radius"
+		"precache"
+		{
+			
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"			"0.9"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"500"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"6.0 6.5 7.0 7.5 8.0"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"armor_debuff"			"-20 -25 -30 -35 -40"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mr_debuff"				"-20 -25 -30 -35 -40"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"heal_debuff"			"-50"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+				"Function"		"OnMazeStart"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_zhuge_liang_array_checker"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"Duration"				"%duration"	
+				"Attributes"			"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+						"Function"		"OnMazeDestroy"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+						"Function"		"OnMazeDie"
+					}
+				}
+			}
+			"modifier_zhuge_liang_array_aura"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"Duration"				"%duration"	
+				"Aura"					"modifier_zhuge_liang_array_enemy"
+				"Aura_Radius"			"%radius"
+				"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Flags"			"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+				"Aura_Types"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+				"Attributes"			"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			}
+			"modifier_zhuge_liang_array_enemy"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"ThinkInterval"  	"0.03"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%armor_debuff"
+				    "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS" "%mr_debuff" 
+				}
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+						"Function"		"OnMazeLock"
+					}
+				}
+				"OnUnitMoved"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+						"Function"		"OnMazeLock"
+					}
+				}
+			}
+			"modifier_zhuge_liang_array_aura_debuff"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"Duration"				"%duration"	
+				"Aura"					"modifier_zhuge_liang_array_heal_debuff"
+				"Aura_Radius"			"%radius"
+				"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Flags"			"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+				"Aura_Types"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+				"Attributes"			"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			}
+			"modifier_zhuge_liang_array_heal_debuff"
+			{
+				"IsDebuff"			"1"
+				"IsHidden"			"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+						"Function"		"DebuffStack"
+					}
+				}
+			}
+			"modifier_zhuge_thunder_storm_window"
+			{
+				"IsPurgable"		"0"
+				"IsBuff"			"1"
+				"IsHidden"			"1"
+				"Duration"			"3"
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+						"Function"		"OnThunderStormWindowCreate"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+						"Function"		"OnThunderStormWindowDestroy"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+						"Function"		"OnThunderStormWindowDeath"
+					}
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Zhuge Liang : Combo : Thunder Storm 
+	//=================================================================================================================
+	"zhuge_liang_combo"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityTextureName"			"custom/kongming/zhuge_liang_combo"
+		"MaxLevel"						"1"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCastRange"				"700"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+		"AnimationPlaybackRate"			"1"
+		"AbilityCooldown"				"180"
+		"AbilityManaCost"				"400"
+		"AOERadius"						"%radius"
+		"precache"
+		{
+			
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"			"0.8"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"600"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"lightning_count"		"30"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"lightning_dmg"			"450"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"lightning_aoe"			"300"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"stun"					"1.0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"debuff_dur"			"5.0"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"debuff"				"-5"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow"					"-5"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+				"Function"		"OnThunderStormStart"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_zhuge_thunder_storm_cooldown"
+			{
+				"IsDebuff"			"1"
+				"IsHidden"			"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			}
+			"modifier_zhuge_thunder_storm_debuff"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Duration"			"%debuff_dur"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%debuff"
+				    "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS" "%debuff" 
+				}
+			}
+			"modifier_zhuge_thunder_storm_slow"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Duration"			"%debuff_dur"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" "%slow"
+				    "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%slow" 
+				}
+			}
+		}
+	}
+	//=======================================
+	// Zhuge Liang Attribute : Territory Creation
+	//=======================================
+	"zhuge_liang_attribute_territory"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/kongming/zhuge_liang_attribute_territory"
+		
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"12"
+
+		"precache"
+		{
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_radius"			"100"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_cast_range"		"250"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_duration"		"1.0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"armor_debuff"			"10"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mr_debuff"				"10"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"heal_debuff"			"-50"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+				"Function"		"OnTerritoryAcquired"
+			}
+		}
+	}
+	//=======================================
+	// Zhuge Liang Attribute : Item Creation
+	//=======================================
+	"zhuge_liang_attribute_alchemist"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/kongming/zhuge_liang_attribute_item"
+		
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"13"
+
+		"precache"
+		{
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_heal"			"2.0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_mana"			"1.0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_speed"			"3.0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_as"				"30"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_dps"				"100"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow"					"10"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+				"Function"		"OnAlchemistAcquired"
+			}
+		}
+	}
+	//=======================================
+	// Zhuge Liang Attribute : 36 Stratagems
+	//=======================================
+	"zhuge_liang_attribute_stratagems"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/kongming/zhuge_liang_attribute_stratagem"
+		
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"15"
+
+		"precache"
+		{
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"rock_aoe"				"100"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"rock_dmg"				"100"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"fire_dps"				"30"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"flood_dmg"				"100"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wind_dist"				"300"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wood_aoe"				"200"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cross_duration"		"50"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cross_health"			"1200"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cross_atk"				"160"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cross_range"			"1200"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+				"Function"		"OnStratagemsAcquired"
+			}
+		}
+	}
+	//=======================================
+	// Zhuge Liang Attribute : Chu Shi Biao
+	//=======================================
+	"zhuge_liang_attribute_letter"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/kongming/zhuge_liang_attribute_letter"
+		
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"12"
+
+		"precache"
+		{
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"buff_aoe"				"200"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"ambush_dur"			"4.0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"ambush_debuff"			"-20"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"ambush_debuff_dur"			"5.0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"atk"					"10"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"crit_rate"				"25"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"crit_dmg"				"150"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"spell_amp"				"15"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"def"					"5"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"shield"				"1000"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"shield_dur"			"7"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+				"Function"		"OnLetterAcquired"
+			}
+		}
+	}
+	//=======================================
+	// Zhuge Liang Attribute : Improve Discern Eye
+	//=======================================
+	"zhuge_liang_attribute_discern_eye"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/kongming/zhuge_liang_eye"
+		
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"8"
+
+		"precache"
+		{
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_stat"			"4"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_radius"			"250"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/zhuge_liang/zhuge_liang_abilities"
+				"Function"		"OnDiscernEyeAcquired"
+			}
+		}
+	}
+	//=======================================
+	// Precache
+	//=======================================
+	"zhuge_liang_precache"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"custom/medusa/medusa_attribute_monstrous_strength"
+
+		"precache"
+		{
+			"model"					"models/koumei/waver/waver_by_zefiroft.vmdl"
+			"particle"				"particles/custom/zhuge_liang/kongming_discern_eye.vpcf"
+			"particle"  			"particles/custom/zhuge_liang/kongming_red_fx.vpcf"
+			"particle"  			"particles/custom/zhuge_liang/kongming_blue_fx.vpcf"
+			"particle"  			"particles/custom/zhuge_liang/kongming_purple_fx.vpcf" 
+			"particle"  			"particles/custom/zhuge_liang/kongming_red_potion_hit.vpcf"
+			"particle"  			"particles/custom/zhuge_liang/kongming_blue_potion_hit.vpcf"
+			"particle"  			"particles/custom/zhuge_liang/kongming_purple_potion_hit.vpcf"
+			"particle"  			"particles/custom/zhuge_liang/kongming_green_potion_hit.vpcf"
+			"particle"  			"particles/custom/zhuge_liang/kongming_red_potion.vpcf"
+			"particle"  			"particles/custom/zhuge_liang/kongming_blue_potion.vpcf"
+			"particle"  			"particles/custom/zhuge_liang/kongming_purple_potion.vpcf"
+			"particle"  			"particles/custom/zhuge_liang/kongming_green_potion.vpcf"
+			"particle"  			"particles/custom/semiramis/poison_debuff.vpcf"
+			"particle"  			"particles/custom/zhuge_liang/kongming_laser.vpcf"
+			"particle"  			"particles/econ/courier/courier_mechjaw/mechjaw_death_sparks.vpcf"
+			"particle"  			"particles/custom/zhuge_liang/kongming_rock_fall.vpcf"
+			"particle"  			"particles/units/heroes/hero_earth_spirit/espirit_bouldersmash_groundrock.vpcf"
+			"particle"  			"particles/custom/zhuge_liang/kongming_arrow_group.vpcf"
+			"particle"  			"particles/units/heroes/hero_shredder/shredder_flame_thrower_debuff.vpcf"
+			"particle"  			"particles/custom/zhuge_liang/kongming_scorch_burn.vpcf"
+			"particle"  			"particles/units/heroes/hero_invoker/invoker_tornado.vpcf"
+			"particle"  			"particles/custom/zhuge_liang/kongming_flood.vpcf"
+			"particle"  			"particles/custom/zhuge_liang/kongming_wood_cast.vpcf"
+			"particle" 	 			"particles/units/heroes/hero_treant/treant_overgrowth_vines.vpcf"
+			"particle"				"particles/units/heroes/hero_pugna/pugna_decrepify.vpcf"
+			"particle"  			"particles/items_fx/aura_assault.vpcf"
+			"particle" 	 			"particles/units/heroes/hero_juggernaut/jugg_crit_blur_impact.vpcf"
+			"particle"  			"particles/units/heroes/hero_templar_assassin/templar_assassin_refract_hit_sphere.vpcf"
+			"particle"  			"particles/custom/zhuge_liang/kongming_shield_parent.vpcf"
+			"particle"  			"particles/custom/zhuge_liang/kongming_shield_sphere.vpcf"
+			"particle"  			"particles/custom/zhuge_liang/kongming_sword_parent.vpcf"
+			"particle"  			"particles/custom/zhuge_liang/kongming_maze_pilar.vpcf"
+			"particle"  			"particles/custom/zhuge_liang/kongming_maze_ring.vpcf"
+			"particle"  			"particles/custom/zhuge_liang/kongming_maze_ground_glow.vpcf"
+			"particle"  			"particles/custom/zhuge_liang/kongming_maze_border_b.vpcf"
+			"particle"  			"particles/units/heroes/hero_zuus/zuus_lightning_bolt.vpcf"
+			"particle"  			"particles/econ/items/zeus/lightning_weapon_fx/zuus_lb_cfx_il.vpcf"
+			"particle"  			"particles/custom/zhuge_liang/kongming_rain_storm_cloud.vpcf"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_alchemist.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_tinker.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_tiny.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_legion_commander.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_tidehunter.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_invoker.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_treant.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_omniknight.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_oracle.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_ogre_magi.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_earthshaker.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_zuus.vsndevts"
+		}
+	}
+}

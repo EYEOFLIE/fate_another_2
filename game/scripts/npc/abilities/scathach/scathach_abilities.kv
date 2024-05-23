@@ -1,0 +1,3927 @@
+// Dota Heroes File
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Scathach : Innate : Rune Magecraft (F)
+	//=================================================================================================================
+	"scathach_rune_mage"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityTextureName"			"custom/scathach/scathach_rune_magic"
+		"MaxLevel"						"1"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"25"
+		"AbilityManaCost"				"0"
+		"precache"
+		{
+		}
+		"AbilitySpecial"
+		{
+			
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/scathach/scathach_abilities"
+				"Function"		"OnRuneMagicStart"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_scathach_rune_mage_check"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"IsBuff"			"1"
+				"IsPurgable"		"0" 
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+		
+				"OnCreated"
+				{ // change skill layout
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/scathach/scathach_abilities"
+						"Function"		"OnRuneMagicOpen"
+					}
+				}
+				"OnDestroy"
+				{ // change skill back to default
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/scathach/scathach_abilities"
+						"Function"		"OnRuneMagicClose"
+					}
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Scathach : Innate : Rune Magecraft (F) (Improve Primeval Rune SA)
+	//=================================================================================================================
+	"scathach_rune_mage_upgrade_1"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityTextureName"			"custom/scathach/scathach_rune_magic"
+		"MaxLevel"						"1"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"0"
+		"AbilityManaCost"				"0"
+		"precache"
+		{
+		}
+		"AbilitySpecial"
+		{
+			
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/scathach/scathach_abilities"
+				"Function"		"OnRuneMagicStart"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_scathach_rune_mage_check"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"IsBuff"			"1"
+				"IsPurgable"		"0" 
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+		
+				"OnCreated"
+				{ // change skill layout
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/scathach/scathach_abilities"
+						"Function"		"OnRuneMagicOpen"
+					}
+				}
+				"OnDestroy"
+				{ // change skill back to default
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/scathach/scathach_abilities"
+						"Function"		"OnRuneMagicClose"
+					}
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Scathach : Innate : Rune Magecraft (F) (Haunt SA)
+	//=================================================================================================================
+	"scathach_rune_mage_upgrade_2"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityTextureName"			"custom/scathach/scathach_rune_magic"
+		"MaxLevel"						"1"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"25"
+		"AbilityManaCost"				"0"
+		"precache"
+		{
+		}
+		"AbilitySpecial"
+		{
+			
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/scathach/scathach_abilities"
+				"Function"		"OnRuneMagicStart"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_scathach_rune_mage_check"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"IsBuff"			"1"
+				"IsPurgable"		"0" 
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+		
+				"OnCreated"
+				{ // change skill layout
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/scathach/scathach_abilities"
+						"Function"		"OnRuneMagicOpen"
+					}
+				}
+				"OnDestroy"
+				{ // change skill back to default
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/scathach/scathach_abilities"
+						"Function"		"OnRuneMagicClose"
+					}
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Scathach : Innate : Rune Magecraft (F) (Improve Primeval Rune + Haunt SA)
+	//=================================================================================================================
+	"scathach_rune_mage_upgrade_3"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityTextureName"			"custom/scathach/scathach_rune_magic"
+		"MaxLevel"						"1"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"0"
+		"AbilityManaCost"				"0"
+		"precache"
+		{
+		}
+		"AbilitySpecial"
+		{
+			
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/scathach/scathach_abilities"
+				"Function"		"OnRuneMagicStart"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_scathach_rune_mage_check"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"IsBuff"			"1"
+				"IsPurgable"		"0" 
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+		
+				"OnCreated"
+				{ // change skill layout
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/scathach/scathach_abilities"
+						"Function"		"OnRuneMagicOpen"
+					}
+				}
+				"OnDestroy"
+				{ // change skill back to default
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/scathach/scathach_abilities"
+						"Function"		"OnRuneMagicClose"
+					}
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Scathach : Rune Magecraft Closed (F)
+	//=================================================================================================================
+	"scathach_rune_close"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		//หารูปมาใส่
+		"AbilityTextureName"			"silencer_last_word"
+		"MaxLevel"						"1"
+		"AbilityCastPoint"				"0.0"
+		"AbilityManaCost"				"0"
+		"precache"
+		{
+		}
+		"AbilitySpecial"
+		{
+			
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{ 
+				"ScriptFile"	"abilities/scathach/scathach_abilities"
+				"Function"		"OnRuneMagicCloseStart"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Scathach : Rune Magecraft : Rune of Flame (Q)
+	//=================================================================================================================
+	"scathach_rune_fire"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		//หารูปมาใส่
+		"AbilityTextureName"			"custom/scathach/scathach_rune_fire"
+		"MaxLevel"						"1"
+		"AbilityCastPoint"				"0.2"
+		"AbilityCastRange"				"500"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+		"AnimationPlaybackRate"			"1"
+		"AbilityCooldown"				"25"
+		"AbilityManaCost"				"200"
+		"AOERadius"						"%radius"
+		"precache"
+		{
+			
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"			"0.2"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"100"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"1.0"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"burn_dps"				"300"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow_debuff"			"-10"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/scathach/scathach_abilities"
+				"Function"		"OnRuneFlameStart"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_scathach_fire_check"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"IsPurgable"		"0"
+				"Duration"			"%duration"		
+			}
+			"modifier_scathach_fire_burn"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"IsPurgable"		"0"
+				"Duration"			"%duration"
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"Target"			"TARGET"
+						"EffectName"        "particles/units/heroes/hero_doom_bringer/doom_infernal_blade_debuff.vpcf"
+						"EffectAttachType"  "follow_origin"
+						"ControlPoints"
+						{
+							"00"	"0 0 0"
+						}
+					}
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/scathach/scathach_abilities"
+						"Function"		"OnRuneFlameCreate"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/scathach/scathach_abilities"
+						"Function"		"OnRuneFlameDestroy"
+					}
+				}
+				"Properties"
+				{
+				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow_debuff" 
+				}
+		
+				"ThinkInterval"  "0.19"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/scathach/scathach_abilities"
+						"Function"		"OnRuneFlameBurn"
+					}
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Scathach : Rune Magecraft : Rune of Flame (Q) (Improve Primeval Rune SA)
+	//=================================================================================================================
+	"scathach_rune_fire_upgrade"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		//หารูปมาใส่
+		"AbilityTextureName"			"custom/scathach/scathach_rune_fire"
+		"MaxLevel"						"1"
+		"AbilityCastPoint"				"0.2"
+		"AbilityCastRange"				"500"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+		"AnimationPlaybackRate"			"1"
+		"AbilityCooldown"				"25"
+		"AbilityManaCost"				"300"
+		"AOERadius"						"%radius"
+		"precache"
+		{
+			
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"			"0.2"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"100"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"1.0"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"burn_dps"				"700"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow_debuff"			"-10"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/scathach/scathach_abilities"
+				"Function"		"OnRuneFlameStart"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_scathach_fire_check"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"IsPurgable"		"0"
+				"Duration"			"%duration"		
+			}
+			"modifier_scathach_fire_burn"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"IsPurgable"		"0"
+				"Duration"			"%duration"
+				//"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"Target"			"TARGET"
+						"EffectName"        "particles/units/heroes/hero_doom_bringer/doom_infernal_blade_debuff.vpcf"
+						"EffectAttachType"  "follow_origin"
+						"ControlPoints"
+						{
+							"00"	"0 0 0"
+						}
+					}
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/scathach/scathach_abilities"
+						"Function"		"OnRuneFlameCreate"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/scathach/scathach_abilities"
+						"Function"		"OnRuneFlameDestroy"
+					}
+				}
+				"Properties"
+				{
+				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow_debuff" 
+				}
+		
+				"ThinkInterval"  "0.19"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/scathach/scathach_abilities"
+						"Function"		"OnRuneFlameBurn"
+					}
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Scathach : Rune Magecraft : Rune of Frost (W)
+	//=================================================================================================================
+	"scathach_rune_frost"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		//หารูปมาใส่
+		"AbilityTextureName"			"custom/scathach/scathach_rune_frost"
+		"MaxLevel"						"1"
+		"AbilityCastPoint"				"0.2"
+		"AbilityCastRange"				"300"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2_END"
+		"AnimationPlaybackRate"			"5"
+		"AbilityCooldown"				"25"
+		"AbilityManaCost"				"200"
+		"precache"
+		{
+			
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range"					"300"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"1.0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dmg"					"200"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"freeze_dps"			"100"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"freeze_mana_drain"		"100"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/scathach/scathach_abilities"
+				"Function"		"OnRuneFrostStart"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_scathach_freeze"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"IsPurgable"		"0"
+				"Duration"			"%duration"
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"Target"			"TARGET"
+						"EffectName"        "particles/units/heroes/hero_crystalmaiden/maiden_frostbite_buff.vpcf"
+						"EffectAttachType"  "follow_origin"
+						"ControlPoints"
+						{
+							"00"	"0 0 0"
+						}
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/scathach/scathach_abilities"
+						"Function"		"OnRuneFrostDestroy"
+					}
+				}
+				"States"
+				{
+					"MODIFIER_STATE_FROZEN"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_DISARMED"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_SILENCED"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_EVADE_DISABLED"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_ROOTED"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_COMMAND_RESTRICTED"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+				"ThinkInterval"  "0.1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/scathach/scathach_abilities"
+						"Function"		"OnRuneFrostFreeze"
+					}
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Scathach : Rune Magecraft : Rune of Frost (W) (Upgraded)
+	//=================================================================================================================
+	"scathach_rune_frost_upgrade"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		//หารูปมาใส่
+		"AbilityTextureName"			"custom/scathach/scathach_rune_frost"
+		"MaxLevel"						"1"
+		"AbilityCastPoint"				"0.1"
+		"AbilityCastRange"				"400"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2_END"
+		"AnimationPlaybackRate"			"5"
+		"AbilityCooldown"				"25"
+		"AbilityManaCost"				"300"
+		"precache"
+		{
+			
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range"					"400"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"1.5"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dmg"					"250"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"freeze_dps"			"150"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"freeze_mana_drain"		"200"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/scathach/scathach_abilities"
+				"Function"		"OnRuneFrostStart"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_scathach_freeze"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"IsPurgable"		"0"
+				"Duration"			"%duration"
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"Target"			"TARGET"
+						"EffectName"        "particles/units/heroes/hero_crystalmaiden/maiden_frostbite_buff.vpcf"
+						"EffectAttachType"  "follow_origin"
+						"ControlPoints"
+						{
+							"00"	"0 0 0"
+						}
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/scathach/scathach_abilities"
+						"Function"		"OnRuneFrostDestroy"
+					}
+				}
+				"States"
+				{
+					"MODIFIER_STATE_FROZEN"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_DISARMED"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_SILENCED"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_EVADE_DISABLED"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_ROOTED"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_COMMAND_RESTRICTED"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+				"ThinkInterval"  "0.1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/scathach/scathach_abilities"
+						"Function"		"OnRuneFrostFreeze"
+					}
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Scathach : Rune Magecraft : Creed Blast (E)
+	//=================================================================================================================
+	"scathach_rune_blast"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		//หารูปมาใส่
+		"AbilityTextureName"			"custom/scathach/scathach_rune_blast"
+		"MaxLevel"						"1"
+		"AbilityCastPoint"				"0.3"
+		"AnimationPlaybackRate"			"3.4"
+		"AbilityCastRange"				"800"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
+		"AbilityCooldown"				"25"
+		"AbilityManaCost"				"200"
+		"precache"
+		{
+			
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"distance"				"800"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"speed"					"1000"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dmg"					"200"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"stun"					"0.1"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/scathach/scathach_abilities"
+				"Function"		"OnBlastStart"
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"	"0"
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/scathach/scathach_abilities"
+				"Function"		"OnBlastHit"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Scathach : Rune Magecraft : Creed Blast (E) (Upgraded)
+	//=================================================================================================================
+	"scathach_rune_blast_upgrade"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		//หารูปมาใส่
+		"AbilityTextureName"			"custom/scathach/scathach_rune_blast"
+		"MaxLevel"						"1"
+		"AbilityCastPoint"				"0.2"
+		"AnimationPlaybackRate"			"3.4"
+		"AbilityCastRange"				"800"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
+		"AbilityCooldown"				"25"
+		"AbilityManaCost"				"300"
+		"precache"
+		{
+			
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"distance"				"800"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"speed"					"1000"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dmg"					"300"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"stun"					"0.1"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/scathach/scathach_abilities"
+				"Function"		"OnBlastStart"
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"	"0"
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/scathach/scathach_abilities"
+				"Function"		"OnBlastHit"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Scathach : Rune Magecraft : Rune of Teleport (D)
+	//=================================================================================================================
+	"scathach_rune_teleport"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		//หารูปมาใส่
+		"AbilityTextureName"			"custom/scathach/scathach_rune_teleport"
+		"MaxLevel"						"2"
+		"AbilityCastPoint"				"0.1"
+		"AbilityCastAnimation"			"ACT_DOTA_IDLE"
+		"AbilityCooldown"				"25"
+		"AbilityManaCost"				"200"
+		"precache"
+		{
+			
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range"					"600"
+			}
+		}
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/scathach/scathach_abilities"
+				"Function"		"OnTeleportCast"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/scathach/scathach_abilities"
+				"Function"		"OnTeleportStart"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Scathach : Rune Magecraft : Rune of Teleport (D) (Upgraded)
+	//=================================================================================================================
+	"scathach_rune_teleport_upgrade"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		//หารูปมาใส่
+		"AbilityTextureName"			"custom/scathach/scathach_rune_teleport"
+		"MaxLevel"						"2"
+		"AbilityCastPoint"				"0.1"
+		"AbilityCastAnimation"			"ACT_DOTA_IDLE"
+		"AbilityCooldown"				"25"
+		"AbilityManaCost"				"300"
+		"precache"
+		{
+			
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range"					"800"
+			}
+		}
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/scathach/scathach_abilities"
+				"Function"		"OnTeleportCast"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/scathach/scathach_abilities"
+				"Function"		"OnTeleportStart"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Scathach : Rune Magecraft : Rune of Heal (R)
+	//=================================================================================================================
+	"scathach_rune_heal"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		//หารูปมาใส่
+		"AbilityTextureName"			"custom/scathach/scathach_rune_heal"
+		"MaxLevel"						"1"
+		"AbilityCastPoint"				"0.2"
+		"AbilityCastRange"				"400"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3_END"
+		"AnimationPlaybackRate"			"3.3"
+		"AbilityCooldown"				"25"
+		"AbilityManaCost"				"200 300"
+		"precache"
+		{
+			
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"heal_amount"			"300"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_armor"			"10"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_mr"				"10"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"10"
+			}
+		}
+		"OnSpellStart"
+		{
+			"FireSound"
+			{
+				"EffectName"	"Hero_Omniknight.Purification"
+				"Target"		"TARGET"
+			}
+
+			"FireEffect"
+			{
+				"Target"			"TARGET"
+				"EffectName"		"particles/units/heroes/hero_omniknight/omniknight_purification.vpcf"
+				"EffectAttachType"	"follow_origin"
+				"ControlPoints"
+				{
+					"00"	"0 0 0"
+					"01"	"100 100 100"
+				}
+			}
+		
+			"FireEffect"
+			{
+				"Target"			"TARGET"
+				"EffectName"		"particles/units/heroes/hero_omniknight/omniknight_purification_cast.vpcf"
+				"EffectAttachType"	"follow_origin"
+			}
+			"ActOnTargets"
+			{
+				"Action"
+				{
+					"FireEffect"
+					{
+						"Target"			"TARGET"
+						"EffectName"		"particles/units/heroes/hero_omniknight/omniknight_purification_hit.vpcf"
+						"EffectAttachType"	"follow_origin"
+					}
+				}
+			}
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/scathach/scathach_abilities"
+				"Function"		"OnHealStart"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_scathach_rune_heal_buff"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"IsBuff"			"1"
+				"Duration"			"%duration"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/scathach/scathach_abilities"
+						"Function"		"OnHealBuffCreate"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/scathach/scathach_abilities"
+						"Function"		"OnHealBuffDestroy"
+					}
+				}
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%bonus_armor"
+				    "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS" "%bonus_mr" 
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Scathach : Rune Magecraft : Rune of Heal (R) (Upgraded)
+	//=================================================================================================================
+	"scathach_rune_heal_upgrade"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		//หารูปมาใส่
+		"AbilityTextureName"			"custom/scathach/scathach_rune_heal"
+		"MaxLevel"						"1"
+		"AbilityCastPoint"				"0.1"
+		"AbilityCastRange"				"500"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3_END"
+		"AnimationPlaybackRate"			"3.3"
+		"AbilityCooldown"				"25"
+		"AbilityManaCost"				"300"
+		"precache"
+		{
+			
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"heal_amount"			"600"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_armor"			"10"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_mr"				"10"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"10"
+			}
+		}
+		"OnSpellStart"
+		{
+			"FireSound"
+			{
+				"EffectName"	"Hero_Omniknight.Purification"
+				"Target"		"TARGET"
+			}
+
+			"FireEffect"
+			{
+				"Target"			"TARGET"
+				"EffectName"		"particles/units/heroes/hero_omniknight/omniknight_purification.vpcf"
+				"EffectAttachType"	"follow_origin"
+				"ControlPoints"
+				{
+					"00"	"0 0 0"
+					"01"	"100 100 100"
+				}
+			}
+		
+			"FireEffect"
+			{
+				"Target"			"TARGET"
+				"EffectName"		"particles/units/heroes/hero_omniknight/omniknight_purification_cast.vpcf"
+				"EffectAttachType"	"follow_origin"
+			}
+			"ActOnTargets"
+			{
+				"Action"
+				{
+					"FireEffect"
+					{
+						"Target"			"TARGET"
+						"EffectName"		"particles/units/heroes/hero_omniknight/omniknight_purification_hit.vpcf"
+						"EffectAttachType"	"follow_origin"
+					}
+				}
+			}
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/scathach/scathach_abilities"
+				"Function"		"OnHealStart"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_scathach_rune_heal_buff"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"IsBuff"			"1"
+				"Duration"			"%duration"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/scathach/scathach_abilities"
+						"Function"		"OnHealBuffCreate"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/scathach/scathach_abilities"
+						"Function"		"OnHealBuffDestroy"
+					}
+				}
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%bonus_armor"
+				    "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS" "%bonus_mr" 
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Scathach : Innate : Pinning God Killing Thorn (D)
+	//=================================================================================================================
+	"scathach_pinning_god"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		//หารูปมาใส่
+		"AbilityTextureName"			"custom/scathach/scathach_pinning_god"
+		"MaxLevel"						"1"
+		"AbilityChannelTime"			"1.0"
+		"AbilityCastPoint"				"0.01"
+		"AbilityCastRange"				"2000"
+		"AbilityCastRangeBuffer"		"3000"
+		"AbilityCastAnimation"			"ACT_DOTA_ATTACK_EVENT_BASH"
+		"AnimationPlaybackRate"			"1.0"
+		"AbilityCooldown"				"40"
+		"AbilityManaCost"				"400"
+		"precache"
+		{
+			
+		}
+		"AbilitySpecial"
+		{
+			"10"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"			"1.0"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"speed"					"5000"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"distance"				"2000"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"base_dmg"				"500"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_agi_ratio"		"12"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_divine"			"20"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"stun"					"1"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"knockback"				"200"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wall_dmg"				"300"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/scathach/scathach_abilities"
+				"Function"		"OnPinningCast"
+			}
+		}
+		"OnChannelInterrupted"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/scathach/scathach_abilities"
+				"Function"			"OnPinningInterrupt"
+			}			
+		}		
+		"OnChannelSucceeded"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/scathach/scathach_abilities"
+				"Function"			"OnPinningStart"
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"	"1"
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/scathach/scathach_abilities"
+				"Function"		"OnPinningHit"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_pinning_god_cooldown"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"IsPurgable"		"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE | MODIFIER_ATTRIBUTE_PERMANENT"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Scathach : Thorn of the red wind (Q)
+	//=================================================================================================================
+	"scathach_red_wind"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		//หารูปมาใส่
+		"AbilityTextureName"			"custom/scathach/scathach_red_wind"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityCastPoint"				"0.05"
+		"AbilityCastRange"				"600 650 700 750 800"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		"AnimationPlaybackRate"			"10"
+		"AbilityCooldown"				"13.0 12.0 11.0 10.0 9.0"
+		"AbilityManaCost"				"100"
+		"IsCastableWhileHidden"			"1"
+		"precache"
+		{
+			
+		}
+		"AbilitySpecial"
+		{
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"stun"					"0.5"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"110 140 170 200 230"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_divine"			"20"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range"					"600 650 700 750 800"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"window_duration"		"4"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/scathach/scathach_abilities"
+				"Function"		"OnRedWindStart"
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"	"0"
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/scathach/scathach_abilities"
+				"Function"		"OnRedwindHit"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_gate_of_sky_window"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"IsPurgable"		"0"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/scathach/scathach_abilities"
+						"Function"		"OnGateOfSkyWindow"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/scathach/scathach_abilities"
+						"Function"		"OnGateOfSkyWindowDestroy"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/scathach/scathach_abilities"
+						"Function"		"OnGateOfSkyWindowDied"
+					}
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Scathach : Thorn of the red wind (Q) (God Slayer SA)
+	//=================================================================================================================
+	"scathach_red_wind_upgrade"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		//หารูปมาใส่
+		"AbilityTextureName"			"custom/scathach/scathach_red_wind"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityCastPoint"				"0.05"
+		"AbilityCastRange"				"600 650 700 750 800"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		"AnimationPlaybackRate"			"10"
+		"AbilityCooldown"				"13.0 12.0 11.0 10.0 9.0"
+		"AbilityManaCost"				"100"
+		"IsCastableWhileHidden"			"1"
+		"precache"
+		{
+			
+		}
+		"AbilitySpecial"
+		{
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"stun"					"0.5"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"110 140 170 200 230"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range"					"600 650 700 750 800"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_divine"			"20"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"window_duration"		"4"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/scathach/scathach_abilities"
+				"Function"		"OnRedWindStart"
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"	"0"
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/scathach/scathach_abilities"
+				"Function"		"OnRedwindHit"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_gate_of_sky_window"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"IsPurgable"		"0"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/scathach/scathach_abilities"
+						"Function"		"OnGateOfSkyWindow"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/scathach/scathach_abilities"
+						"Function"		"OnGateOfSkyWindowDestroy"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/scathach/scathach_abilities"
+						"Function"		"OnGateOfSkyWindowDied"
+					}
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Scathach : Spearmanship (W)
+	//=================================================================================================================
+	"scathach_spearmanship"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET |DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		//หารูปมาใส่
+		"AbilityTextureName"			"custom/scathach/scathach_spearmanship"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityCastPoint"				"0.05"
+		"AbilityCastAnimation"			"ACT_DOTA_IDLE"
+		"AbilityCooldown"				"20.0 19.0 18.0 17.0 16.0"
+		"AbilityManaCost"				"200"
+		"precache"
+		{
+			
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"double_atk_chance"		"10 15 20 25 30"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_aspd"			"20 40 60 80 100"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"10"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"window_duration"		"4"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/scathach/scathach_abilities"
+				"Function"		"OnSpearmanshipStart"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_scathach_spearman_passive"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"IsPurgable"		"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE | MODIFIER_ATTRIBUTE_PERMANENT"
+			
+				"OnAttackLanded"
+				{ // spear attack sound
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/scathach/scathach_abilities"
+						"Function"		"OnAttack"
+					}
+				}
+			}
+			"modifier_scathach_spearmanship"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"IsBuff"			"1"
+				"IsPurgable"		"0"
+				"Duration"			"%duration"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%bonus_aspd"
+					"MODIFIER_PROPERTY_TOOLTIP"	"%double_atk_chance"
+				}
+				"OnAttackLanded"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/scathach/scathach_abilities"
+						"Function"		"OnSpearmanshipAttackLand"
+					}
+				}
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/scathach/scathach_abilities"
+						"Function"		"OnSpearmanshipCreate"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/scathach/scathach_abilities"
+						"Function"		"OnSpearmanshipDestroy"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/scathach/scathach_abilities"
+						"Function"		"OnSpearmanshipDeath"
+					}
+				}
+			}
+			"modifier_gae_combo_window"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"IsPurgable"		"0"
+				"Duration"			"%window_duration"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/scathach/scathach_abilities"
+						"Function"		"OnGaeComboWindow"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/scathach/scathach_abilities"
+						"Function"		"OnGaeComboWindowDestroy"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/scathach/scathach_abilities"
+						"Function"		"OnGaeComboWindowDied"
+					}
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Scathach : Spearmanship (W) (God Slayer SA)
+	//=================================================================================================================
+	"scathach_spearmanship_upgrade"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET |DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		//หารูปมาใส่
+		"AbilityTextureName"			"custom/scathach/scathach_spearmanship"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityCastPoint"				"0.05"
+		"AbilityCastAnimation"			"ACT_DOTA_IDLE"
+		"AbilityCooldown"				"20.0 19.0 18.0 17.0 16.0"
+		"AbilityManaCost"				"200"
+		"precache"
+		{
+			
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"double_atk_chance"		"10 15 20 25 30"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_aspd"			"20 40 60 80 100"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"10"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"divine_chance"			"50"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"divine_agi_ratio"		"1"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"divine_cooldown"		"1"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"window_duration"		"4"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/scathach/scathach_abilities"
+				"Function"		"OnSpearmanshipStart"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_scathach_spearman_passive"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"IsPurgable"		"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE | MODIFIER_ATTRIBUTE_PERMANENT"
+			
+				"OnAttackLanded"
+				{ // spear attack sound
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/scathach/scathach_abilities"
+						"Function"		"OnAttack"
+					}
+				}
+			}
+			"modifier_scathach_spearmanship_divine_cooldown"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Duration"			"%divine_cooldown"
+			}
+			"modifier_scathach_spearmanship"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"IsBuff"			"1"
+				"IsPurgable"		"0"
+				"Duration"			"%duration"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%bonus_aspd"
+					"MODIFIER_PROPERTY_TOOLTIP"	"%double_atk_chance"
+				}
+				"OnAttackLanded"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/scathach/scathach_abilities"
+						"Function"		"OnSpearmanshipAttackLand"
+					}
+				}
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/scathach/scathach_abilities"
+						"Function"		"OnSpearmanshipCreate"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/scathach/scathach_abilities"
+						"Function"		"OnSpearmanshipDestroy"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/scathach/scathach_abilities"
+						"Function"		"OnSpearmanshipDeath"
+					}
+				}
+			}
+			"modifier_gae_combo_window"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"IsPurgable"		"0"
+				"Duration"			"%window_duration"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/scathach/scathach_abilities"
+						"Function"		"OnGaeComboWindow"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/scathach/scathach_abilities"
+						"Function"		"OnGaeComboWindowDestroy"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/scathach/scathach_abilities"
+						"Function"		"OnGaeComboWindowDied"
+					}
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Scathach : Gae Bolg Alternative : Barbed Spear that pierce with death (E)
+	//=================================================================================================================
+	"scathach_gae_bolg"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/scathach/scathach_gae_bolg"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_1"
+		"AnimationPlaybackRate" 		"1.1"
+		"IsCastableWhileHidden"			"1"
+		
+		"precache"
+		{
+			
+		}
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"300"
+		"AbilityCastRangeBuffer"		"500"
+		"AbilityCastPoint"				"0.9"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"27.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"400"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"delay"				"0.9"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"550 660 770 880 990"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"heart_break"		"5 7 9 11 13"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"stun"				"1.0"
+			}
+		}
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/scathach/scathach_abilities"
+				"Function"		"GBAttachEffect"
+			}
+		}
+		"OnSpellStart"
+		{
+			 "RunScript"
+			 {
+			 	"ScriptFile"	"abilities/scathach/scathach_abilities"
+			 	"Function"		"OnGBTargetHit"
+			 }
+		}
+	}
+	//=================================================================================================================
+	// Scathach : Gae Bolg Alternative : Barbed Spear that pierce with death (E) (Branch SA)
+	//=================================================================================================================
+	"scathach_gae_bolg_upgrade_1"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/scathach/scathach_gae_bolg"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_1"
+		"AnimationPlaybackRate" 		"1.1"
+		"IsCastableWhileHidden"			"1"
+		
+		"precache"
+		{
+			
+		}
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"300"
+		"AbilityCastRangeBuffer"		"500"
+		"AbilityCastPoint"				"0.9"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"27.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"400"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"delay"				"0.9"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"550 660 770 880 990"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"heart_break"		"10 12 14 16 18"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"stun"				"1.0"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"bonus_doublespear"	"30"
+			}
+		}
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/scathach/scathach_abilities"
+				"Function"		"GBAttachEffect"
+			}
+		}
+		"OnSpellStart"
+		{
+			 "RunScript"
+			 {
+			 	"ScriptFile"	"abilities/scathach/scathach_abilities"
+			 	"Function"		"OnGBTargetHit"
+			 }
+		}
+	}
+	//=================================================================================================================
+	// Scathach : Gae Bolg Alternative : Barbed Spear that pierce with death (E) (God Slayer SA)
+	//=================================================================================================================
+	"scathach_gae_bolg_upgrade_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/scathach/scathach_gae_bolg"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_1"
+		"AnimationPlaybackRate" 		"1.1"
+		"IsCastableWhileHidden"			"1"
+		
+		"precache"
+		{
+			
+		}
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"300"
+		"AbilityCastRangeBuffer"		"500"
+		"AbilityCastPoint"				"0.9"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"27.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"400"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"delay"				"0.9"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"550 660 770 880 990"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"heart_break"		"5 7 9 11 13"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"stun"				"1.0"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"bonus_divine"		"20"
+			}
+		}
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/scathach/scathach_abilities"
+				"Function"		"GBAttachEffect"
+			}
+		}
+		"OnSpellStart"
+		{
+			 "RunScript"
+			 {
+			 	"ScriptFile"	"abilities/scathach/scathach_abilities"
+			 	"Function"		"OnGBTargetHit"
+			 }
+		}
+	}
+	//=================================================================================================================
+	// Scathach : Gae Bolg Alternative : Barbed Spear that pierce with death (E) (Branch + God Slayer SA)
+	//=================================================================================================================
+	"scathach_gae_bolg_upgrade_3"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/scathach/scathach_gae_bolg"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_1"
+		"AnimationPlaybackRate" 		"1.1"
+		"IsCastableWhileHidden"			"1"
+		
+		"precache"
+		{
+			
+		}
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"300"
+		"AbilityCastRangeBuffer"		"500"
+		"AbilityCastPoint"				"0.9"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"27.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"400"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"delay"				"0.9"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"550 660 770 880 990"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"heart_break"		"10 12 14 16 18"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"stun"				"1.0"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"bonus_doublespear"	"30"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"bonus_divine"		"20"
+			}
+		}
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/scathach/scathach_abilities"
+				"Function"		"GBAttachEffect"
+			}
+		}
+		"OnSpellStart"
+		{
+			 "RunScript"
+			 {
+			 	"ScriptFile"	"abilities/scathach/scathach_abilities"
+			 	"Function"		"OnGBTargetHit"
+			 }
+		}
+	}
+	//====================================
+	// Scathach : Gae Bolg Alternative : Soaring Spear of Piercing Death (R)
+	//====================================
+	"scathach_gae_bolg_jump"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/scathach/scathach_gae_bolg_jump"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_1"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AnimationPlaybackRate" 		"1.7"
+		"AOERadius"						"%radius"
+		"IsCastableWhileHidden"			"1"
+
+		"precache"
+		{
+			
+		}
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1000"
+		"AbilityCastPoint"				"0.6"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"39.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"800"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"delay"				"0.6"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"750 975 1200 1425 1650"
+			}			
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"550"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"cast_range"		"1000"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"speed"				"1900"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"knock_duration"	"0.25"
+			}
+			"08"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"disarm"			"3.0"
+			}
+		}
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/scathach/scathach_abilities"
+				"Function"		"OnScatGBAOECast"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/scathach/scathach_abilities"
+				"Function"		"OnScatGBAOEStart"
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"	"1"
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/scathach/scathach_abilities"
+				"Function"		"OnGBReturn"
+			}
+		}
+		"Modifiers"
+		{	
+			"modifier_self_disarm"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Duration"			"%disarm"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"States"
+				{
+					"MODIFIER_STATE_DISARMED"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+		}
+	}
+	//====================================
+	// Scathach : Gae Bolg Alternative : Soaring Spear of Piercing Death (R) (Branch SA)
+	//====================================
+	"scathach_gae_bolg_jump_upgrade_1"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/scathach/scathach_gae_bolg_jump"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_1"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AnimationPlaybackRate" 		"1.7"
+		"AOERadius"						"%radius"
+		"IsCastableWhileHidden"			"1"
+
+		"precache"
+		{
+			
+		}
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1500"
+		"AbilityCastPoint"				"0.6"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"39.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"800"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"delay"				"0.6"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"750 975 1200 1425 1650"
+			}	
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_agi"			"2"
+			}			
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"550"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"cast_range"		"1500"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"speed"				"1900"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"knock_duration"	"0.25"
+			}
+			"08"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"branch_damage"		"55"
+			}
+		}
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/scathach/scathach_abilities"
+				"Function"		"OnScatGBAOECast"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/scathach/scathach_abilities"
+				"Function"		"OnScatGBAOEStart"
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"	"1"
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/scathach/scathach_abilities"
+				"Function"		"OnGBReturn"
+			}
+		}
+		"Modifiers"
+		{	
+		}
+	}
+	//====================================
+	// Scathach : Gae Bolg Alternative : Soaring Spear of Piercing Death (R) (God Slayer SA)
+	//====================================
+	"scathach_gae_bolg_jump_upgrade_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/scathach/scathach_gae_bolg_jump"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_1"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AnimationPlaybackRate" 		"1.7"
+		"AOERadius"						"%radius"
+		"IsCastableWhileHidden"			"1"
+
+		"precache"
+		{
+			
+		}
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1000"
+		"AbilityCastPoint"				"0.6"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"39.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"800"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"delay"				"0.6"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"750 975 1200 1425 1650"
+			}			
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"550"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"cast_range"		"1000"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"speed"				"1900"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"knock_duration"	"0.25"
+			}
+			"08"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"disarm"			"3.0"
+			}
+			"08"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"bonus_divine"		"20"
+			}
+		}
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/scathach/scathach_abilities"
+				"Function"		"OnScatGBAOECast"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/scathach/scathach_abilities"
+				"Function"		"OnScatGBAOEStart"
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"	"1"
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/scathach/scathach_abilities"
+				"Function"		"OnGBReturn"
+			}
+		}
+		"Modifiers"
+		{	
+			"modifier_self_disarm"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Duration"			"%disarm"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"States"
+				{
+					"MODIFIER_STATE_DISARMED"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+		}
+	}
+	//====================================
+	// Scathach : Gae Bolg Alternative : Soaring Spear of Piercing Death (R) (Branch + God Slayer SA)
+	//====================================
+	"scathach_gae_bolg_jump_upgrade_3"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/scathach/scathach_gae_bolg_jump"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_1"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AnimationPlaybackRate" 		"1.7"
+		"AOERadius"						"%radius"
+		"IsCastableWhileHidden"			"1"
+
+		"precache"
+		{
+			
+		}
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1500"
+		"AbilityCastPoint"				"0.6"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"39.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"800"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"delay"				"0.6"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"750 975 1200 1425 1650"
+			}	
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_agi"			"2"
+			}			
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"550"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"cast_range"		"1500"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"speed"				"1900"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"knock_duration"	"0.25"
+			}
+			"08"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"branch_damage"		"55"
+			}
+			"08"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"bonus_divine"		"20"
+			}
+		}
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/scathach/scathach_abilities"
+				"Function"		"OnScatGBAOECast"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/scathach/scathach_abilities"
+				"Function"		"OnScatGBAOEStart"
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"	"1"
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/scathach/scathach_abilities"
+				"Function"		"OnGBReturn"
+			}
+		}
+		"Modifiers"
+		{	
+		}
+	}
+	//=================================================================================================================
+	// Scathach : Wisdom of haunt ground Passive
+	//=================================================================================================================
+	"scathach_wisdom_of_haunt_ground"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityTextureName"			"custom/scathach/scathach_attribute_wisdom_of_haunt_ground"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_NONE"
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"0"
+		"AbilityManaCost"				"0"
+
+		"precache"
+		{
+			
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"detect_range"		"2000"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"detect_duration"	"3"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"invis_detect_duration"	"1"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"cooldown_duration"	"60"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_wisdom_passive"
+			{
+				"Passive"			"1"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"IsBuff"			"1"
+				"Aura"				"modifier_wisdom_trigger"
+				"Aura_Radius"		"%detect_range"
+				"Aura_Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_BASIC"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE | MODIFIER_ATTRIBUTE_PERMANENT"
+				"ThinkInterval"  "0.1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/scathach/scathach_abilities"
+						//"Function"		"OnWisdomSpellThink"
+					}
+				}
+			}
+			"modifier_wisdom_trigger"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"OnAbilityExecuted"
+				// Any ability (including items) was used by the unit with this modifier.
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/scathach/scathach_abilities"
+						"Function"		"OnWisdomOsHauntGroundDetect"
+					}
+				}
+			}
+			"modifier_wisdom_target"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"IsPurgable"		"0"
+				//"Duration"			"%detect_duration"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PROVIDES_FOW_POSITION" "1"
+				}
+			}
+			"modifier_wisdom_spell_block"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"IsBuff"			"1"
+				"IsPurgable"		"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE | MODIFIER_ATTRIBUTE_PERMANENT"
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/scathach/scathach_abilities"
+						"Function"		"OnWisdomSpellBlockDestroy"
+					}
+				}
+			}
+			"modifier_wisdom_spell_block_cooldown"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"IsBuff"			"0"
+				"IsPurgable"		"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE | MODIFIER_ATTRIBUTE_PERMANENT"
+				"Duration"			"%cooldown_duration"
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/scathach/scathach_abilities"
+						"Function"		"OnWisdomSpellBlockCooldownEnd"
+					}
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Scathach : Rune of Protection 
+	//=================================================================================================================
+	"scathach_rune_of_protection"
+	{
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityTextureName"			"custom/scathach/scathach_attribute_wisdom_of_haunt_ground"
+		"AbilityManaCost"				"0"
+		"AbilityCastPoint"				"0.1"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_3_END"
+		"AnimationPlaybackRate" 		"3.3"
+		"AbilityCooldown"				"25"
+
+		"precache"
+		{
+			
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type" 		"FIELD_FLOAT"
+				"duration"		"3.0"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/scathach/scathach_abilities"
+				"Function"		"OnRuneProtectionStart"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_scathach_rune_of_protection"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"Duration"			"%duration"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"EffectName"        "particles/items_fx/immunity_sphere_buff.vpcf"
+						"EffectAttachType"	"start_at_customorigin"
+						"Target"            "TARGET"
+						"ControlPointEntities"
+						{
+							"TARGET"		"attach_hitloc"
+						}
+					}
+				}	
+			}
+			"modifier_scathach_rune_of_protection_cooldown"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"IsBuff"			"0"
+				"IsPurgable"		"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE | MODIFIER_ATTRIBUTE_PERMANENT"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Scathach : Immortal Passive
+	//=================================================================================================================
+	"scathach_immortal"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityTextureName"			"custom/scathach/scathach_attribute_immortal"
+		
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"0"
+		"AbilityManaCost"				"0"
+
+		"precache"
+		{
+			
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_evade"		"25"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"crit_chance"		"50"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"crit_multiply"		"200"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_aspd"		"130"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_agi"			"2"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"stack_count"		"2"
+			}
+			"10"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"revive_duration"	"1"
+			}
+			"10"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"revive_hp"			"100"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_immortal_passive"
+			{
+				"Passive"			"1"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"IsBuff"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE | MODIFIER_ATTRIBUTE_PERMANENT"
+				"OnHeroKilled"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/scathach/scathach_abilities"
+						"Function"		"OnImmortalKill"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/scathach/scathach_abilities"
+						"Function"		"OnImmortalDead"
+					}
+				}
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_TOOLTIP" "%bonus_agi"
+				}
+			}
+			"modifier_immortal_agi"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"IsPurgable"		"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE | MODIFIER_ATTRIBUTE_PERMANENT"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS" "%bonus_agi"
+				}
+			}
+			"modifier_immortal_crit"
+			{
+				"Passive"		"0"
+				"IsHidden"		"1"
+				"IsPurgable" 	"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE | MODIFIER_ATTRIBUTE_PERMANENT"
+				"OnAttackStart"
+				{
+					"RemoveModifier"
+					{
+						"ModifierName"	"modifier_immortal_crit_hit"
+						"Target"
+ 						{
+ 							"Center"	"CASTER"
+ 							"Flags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+ 						}
+					}
+					"Random"
+					{
+						"Chance"	"%crit_chance"
+						"OnSuccess"
+						{
+							"RunScript"
+							{
+								"ScriptFile"			"abilities/scathach/scathach_abilities"
+								"Function"				"OnImmortalCrit"
+							}
+						}
+					}
+				}
+			}
+			"modifier_immortal_crit_hit"
+			{
+				"IsHidden"		"1"
+				"Attributes"	"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE"	"%crit_multiply"
+
+				}
+				"OnAttackLanded"
+				{
+			    	"FireEffect"
+			    	{
+			    		"EffectName"		"particles/units/heroes/hero_juggernaut/jugg_crit_blur_impact.vpcf"
+			    		"EffectAttachType"	"attach_hitloc"
+			    		"Target"			"TARGET"
+			    	}
+			        "RemoveModifier"
+			        {
+			            "ModifierName"  	"modifier_immortal_crit_hit"
+						"Target"
+ 						{
+ 							"Center"	"CASTER"
+ 							"Flags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+ 						}
+   			        }			
+				}
+			}
+			"modifier_immortal_evade"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"IsPurgable"		"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE | MODIFIER_ATTRIBUTE_PERMANENT"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_EVASION_CONSTANT" "%bonus_evade"
+				}
+			}
+			"modifier_immortal_aspd"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"IsPurgable"		"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE | MODIFIER_ATTRIBUTE_PERMANENT"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%bonus_aspd"
+				}
+			}
+			"modifier_immortal_revive"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"IsBuff"			"1"
+				"IsPurgable"		"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE | MODIFIER_ATTRIBUTE_PERMANENT"
+				"OnTakeDamage"
+				// "%attack_damage" is set to the damage value after mitigation
+				{
+					"RunScript"
+					{
+						"DamageTaken"   "%attack_damage"
+						"ScriptFile"	"abilities/scathach/scathach_abilities"
+						"Function"		"OnImmortalRevive"
+					}
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Scathach Attribute : Primeval Rune
+	//=================================================================================================================
+	"scathach_attribute_primeval_rune"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/scathach/scathach_attribute_primeval_rune"
+		
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"15"
+
+		"AbilitySpecial"
+		{
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"fire_damage"			"400"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_armor"			"10"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_mr"				"10"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"10"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mana_cost"				"100"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"frost_duration"		"0.5"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"frost_damage"			"50"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"frost_radius"			"100"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"frost_drain"			"100"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"blast_damage"			"100"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_heal"			"200"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/scathach/scathach_abilities"
+				"Function"		"OnPrimevalRuneAcquired"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Scathach Attribute : God Slayer
+	//=================================================================================================================
+	"scathach_attribute_god_slayer"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/scathach/scathach_attribute_god_slayer"
+		
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"15"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_dmg"			"20"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"spearman_agi"				"1"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"spearman_chance"				"50"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"spearman_cd"				"2"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"			"1.0"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"distance"				"2000"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"base_dmg"				"500"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_agi_ratio"		"12"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"stun"					"1"
+			}
+			"10"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"knockback"				"200"
+			}
+			"11"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wall_dmg"				"300"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/scathach/scathach_abilities"
+				"Function"		"OnGodSlayerAcquired"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Scathach Attribute : Branch of Tonelico
+	//=================================================================================================================
+	"scathach_attribute_branch_tonelico"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/scathach/scathach_attribute_branch_tonelico"
+		
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"16"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"gae_malee_bonus"	"30"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"gae_malee_threshold"	"5"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"gae_jump_bonus_range"	"500"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_agi"			"2"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"gae_jump_dmg"		"55"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"dashback"				"400"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"gae_malee_dmg"			"200"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"gae_thrown"			"100"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"gae_thrown_dmg"		"600"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/scathach/scathach_abilities"
+				"Function"		"OnBranchTonelicoAcquired"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Scathach Attribute : Wisdom of haunt ground
+	//=================================================================================================================
+	"scathach_attribute_wisdom_of_haunt_ground"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/scathach/scathach_attribute_wisdom_of_haunt_ground"
+		
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"14"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"cooldown"			"25"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"2000"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"duration"			"3"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"invis_duration"			"1"
+			}
+			"01"
+			{
+				"var_type" 		"FIELD_FLOAT"
+				"protect_dur"		"3.0"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/scathach/scathach_abilities"
+				"Function"		"OnWisdomOfHauntGroundAcquired"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Scathach Attribute : Immortal
+	//=================================================================================================================
+	"scathach_attribute_immortal"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/scathach/scathach_attribute_immortal"
+		
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"10"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_agi"			"2"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_evade"		"25"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"crit_chance"		"50"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"crit_multiply"		"200"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_aspd"		"130"
+			}	
+			"07"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"immortal"			"1"
+			}	
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/scathach/scathach_abilities"
+				"Function"		"OnImmortalAcquired"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Scathach : Combo : Gate of Sky (F)
+	//=================================================================================================================
+	"scathach_combo_gate_of_sky"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		//หารูปมาใส่
+		"AbilityTextureName"			"custom/scathach/scathach_combo_gate_of_sky"
+		"MaxLevel"						"1"
+		"AbilityCastPoint"				"1.0"
+		"AbilityCooldown"				"240"
+		"AbilityCastRange"				"1500"
+		"AbilityManaCost"				"800"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
+		"AnimationPlaybackRate"			"1"
+		"precache"
+		{
+			
+		}
+		"AbilitySpecial"
+		{
+			"09"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_time"				"1.0"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"gate_open_duration"	"1.0"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pull_duration"			"4.0"
+			}
+			"10"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"reduction"				"-70"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"5.1"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range"					"1500"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"execute_range"			"150"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dmg"					"2500"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mana_burn_sec"			"40"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"interval"					"0.1"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow_debuff"			"-30"
+			}
+			
+		}
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/scathach/scathach_abilities"
+				"Function"		"OnGateOfSkySound"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/scathach/scathach_abilities"
+				"Function"		"OnGateOfSkyCast"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_gate_of_sky_pull"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"IsPurgable"		"0"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/scathach/scathach_abilities"
+						//"Function"		"OnGateOfSkyPull"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/scathach/scathach_abilities"
+						"Function"		"OnGateOfSkyPullStop"
+					}
+				}
+				"ThinkInterval"  "%interval"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/scathach/scathach_abilities"
+						"Function"		"OnGateOfSkyBurnMana"
+					}
+				}
+			}
+			"modifier_gate_of_sky_pull_aura"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"Duration"			"%pull_duration"
+				"Aura"				"modifier_gate_of_sky_pull"
+				"Aura_Radius"		"%range"
+				"Aura_Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types"		"DOTA_UNIT_TARGET_ALL"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			}
+			"modifier_gate_of_sky_no_blink"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"IsPurgable"		"0"
+				"Properties"
+				{
+				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow_debuff" 
+				}
+				"ThinkInterval"  "0.1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/scathach/scathach_abilities"
+						"Function"		"OnGateOfSkyPull"
+					}
+				}
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"Target"			"TARGET"
+						"EffectName"        "particles/econ/items/windrunner/windrunner_cape_cascade/windrunner_windrun_burst_cascade.vpcf"
+						"EffectAttachType"  "follow_origin"
+						"ControlPoints"
+						{
+							"00"	"0 0 0"
+						}
+					}
+				}
+			}
+			"modifier_gate_of_sky_buff"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"IsBuff"			"1"
+				"IsPurgable"		"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE" "%reduction"
+				}
+			}
+			"modifier_gate_of_sky_check"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"Aura"				"modifier_gate_of_sky_no_blink"
+				"Aura_Radius"		"%range"
+				"Duration"			"%duration"
+				"Aura_Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types"		"DOTA_UNIT_TARGET_ALL"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/scathach/scathach_abilities"
+						"Function"		"OnGateOfSkyCreate"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/scathach/scathach_abilities"
+						"Function"		"OnGateOfSkyDestroy"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/scathach/scathach_abilities"
+						"Function"		"OnGateOfSkyDeath"
+					}
+				}
+			}
+			"modifier_gate_of_sky_cooldown"
+			{
+				"IsPurgable"		"0"
+				"IsBuff"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"IsPurgable"		"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE | MODIFIER_ATTRIBUTE_PERMANENT"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Scathach : Combo : Double Gae Bolg Alternative (R)
+	//=================================================================================================================
+	"scathach_combo_double_gae_bolg"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		//หารูปมาใส่
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"AbilityTextureName"			"custom/scathach/scathach_combo_double_gae_bolg"
+		"MaxLevel"						"1"
+		"AbilityCastPoint"				"0.8"
+		"AbilityCooldown"				"240"
+		"AbilityManaCost"				"800"
+		"AbilityCastRange"				"400"
+		"AbilityCastRangeBuffer"		"600"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		"AnimationPlaybackRate"			"1.25"
+		"precache"
+		{
+			
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"gae_malee_dmg"			"200"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"gae_thrown"			"100"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"gae_thrown_dmg"		"600"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"400"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"stun"					"1"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"knock"					"0.25"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"dashback"				"400"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_divine"			"20"
+			}
+		}
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/scathach/scathach_abilities"
+				"Function"		"OnGaeComboCast"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/scathach/scathach_abilities"
+				"Function"		"OnGaeComboStart"
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"	"1"
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/scathach/scathach_abilities"
+				"Function"		"OnGaeComboHit"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_combo_double_gae_bolg_cooldown"
+			{
+				"IsPurgable"		"0"
+				"IsBuff"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"IsPurgable"		"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE | MODIFIER_ATTRIBUTE_PERMANENT" 
+			}
+		}
+	}
+	//=================================================================================================================
+	// Scathach : Combo : Double Gae Bolg Alternative (R) (God Slayer SA)
+	//=================================================================================================================
+	"scathach_combo_double_gae_bolg_upgrade"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		//หารูปมาใส่
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"AbilityTextureName"			"custom/scathach/scathach_combo_double_gae_bolg"
+		"MaxLevel"						"1"
+		"AbilityCastPoint"				"0.8"
+		"AbilityCooldown"				"240"
+		"AbilityManaCost"				"800"
+		"AbilityCastRange"				"400"
+		"AbilityCastRangeBuffer"		"600"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		"AnimationPlaybackRate"			"1.25"
+		"precache"
+		{
+			
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"gae_malee_dmg"			"200"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"gae_thrown"			"100"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"gae_thrown_dmg"		"600"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"400"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"stun"					"1"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"knock"					"0.25"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"dashback"				"400"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_divine"			"20"
+			}
+		}
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/scathach/scathach_abilities"
+				"Function"		"OnGaeComboCast"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/scathach/scathach_abilities"
+				"Function"		"OnGaeComboStart"
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"	"1"
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/scathach/scathach_abilities"
+				"Function"		"OnGaeComboHit"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_combo_double_gae_bolg_cooldown"
+			{
+				"IsPurgable"		"0"
+				"IsBuff"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"IsPurgable"		"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE | MODIFIER_ATTRIBUTE_PERMANENT" 
+			}
+		}
+	}
+	//=======================================
+	// Precache
+	//=======================================
+	"scathach_precache"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"custom/medusa/medusa_attribute_monstrous_strength"
+
+		"precache"
+		{
+			"model"					"models/scathach/secretary/scat_secretary_by_zefiroft.vmdl"
+			"model"					"models/scathach/gypse/scat_gypsee_by_zefiroft.vmdl"
+			"model"					"models/scathach/duchess/scat_duchess_by_zefiroft.vmdl"
+			"model"					"models/scathach/summer/scat_summer_by_zefiroft.vmdl"
+			"model"					"models/scathach/scat_gae.vmdl"
+			"particle"  			"particles/custom/tamamo/combo/fire_explosion_column.vpcf"
+			"particle"  			"particles/units/heroes/hero_doom_bringer/doom_infernal_blade_debuff.vpcf"
+			"particle"  			"particles/units/heroes/hero_crystalmaiden/maiden_frostbite_buff.vpcf"
+			"particle"  			"particles/custom/scathach/scathach_frost.vpcf"
+			"particle"  			"particles/custom/scathach/scathach_blast.vpcf"
+			"particle"  			"particles/units/heroes/hero_mirana/mirana_spell_arrow_launch.vpcf"
+			"particle"  			"particles/items_fx/blink_dagger_start.vpcf"
+			"particle"  			"particles/items_fx/blink_dagger_end.vpcf"
+			"particle"  			"particles/items_fx/healing_clarity.vpcf"
+			"particle"				"particles/units/heroes/hero_omniknight/omniknight_purification.vpcf"
+			"particle"				"particles/units/heroes/hero_omniknight/omniknight_purification_hit.vpcf"
+			"particle"				"particles/units/heroes/hero_omniknight/omniknight_purification_cast.vpcf"
+			"particle"				"particles/custom/lancer/soaring/spear.vpcf"
+			"particle"  			"particles/generic_gameplay/screen_blood_splatter.vpcf"
+			"particle"  			"particles/custom/archer/archer_overedge_slash.vpcf"
+			"particle"				"particles/units/heroes/hero_chaos_knight/chaos_knight_reality_rift.vpcf"
+			"particle"				"particles/units/heroes/hero_centaur/centaur_double_edge.vpcf"
+			"particle"  			"particles/custom/lancer/lancer_culling_blade_kill.vpcf"
+			"particle"				"particles/custom/lancer/lancer_heart_break_txt.vpcf"
+			"particle"				"particles/items_fx/dagon.vpcf"
+			"particle"				"particles/custom/diarmuid/gae_dearg_slash.vpcf"
+			"particle"				"particles/units/heroes/hero_chaos_knight/chaos_knight_reality_rift.vpcf"
+			"particle"				"particles/units/heroes/hero_huskar/huskar_burning_spear.vpcf"
+			"particle"				"particles/custom/lancer/lancer_gae_bolg_projectile.vpcf"
+			"particle"				"particles/units/heroes/hero_warlock/warlock_rainofchaos_start_breakout_fallback_mid.vpcf"
+			"particle"				"particles/units/heroes/hero_elder_titan/elder_titan_echo_stomp_cracks.vpcf"
+			"particle"				"particles/custom/lancer/lancer_gae_bolg_hit.vpcf"
+			"particle"  			"particles/custom/lancer/soaring/spear.vpcf"
+			"particle"				"particles/items_fx/aegis_respawn.vpcf"
+			"particle"				"particles/items_fx/immunity_sphere_buff.vpcf"
+			"particle"  			"particles/custom/scathach/scat_gate_end.vpcf"
+			"particle"				"particles/units/heroes/heroes_underlord/abbysal_underlord_darkrift_ambient_end_a.vpcf"
+			"particle"				"particles/units/heroes/heroes_underlord/abbysal_underlord_darkrift_ambient_base.vpcf"
+			"particle"				"particles/custom/scathach/scathach_gate_ground.vpcf"
+			"particle"				"particles/custom/scathach/scat_gate.vpcf"
+			"particle"				"particles/econ/items/windrunner/windrunner_cape_cascade/windrunner_windrun_burst_cascade.vpcf"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_lion.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_huskar.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_drowranger.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_antimage.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_mirana.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_crystalmaiden.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_shredder.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_omniknight.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_phantom_lancer.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_luna.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_mars.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_windrunner.vsndevts"
+		}
+	}
+}

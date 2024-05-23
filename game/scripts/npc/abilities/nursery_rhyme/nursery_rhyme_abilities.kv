@@ -1,0 +1,2208 @@
+
+"DOTAAbilities"
+{
+	//====================================
+	// Nursery Rhyme: Shapeshift(D)
+	//====================================
+	"nursery_rhyme_shapeshift"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityTextureName"			"custom/nursery_rhyme_shapeshift"
+		"AbilityCastAnimation" 			"ACT_DOTA_IDLE"
+		"AnimationPlaybackRate" 		"1.0"
+		"precache"
+		{
+			"particle"			"particles/custom/rider/rider_breaker_gorgon_debuff.vpcf"
+			"particle"			"particles/generic_gameplay/illusion_killed.vpcf"
+			"particle"			"particles/units/heroes/hero_disruptor/disruptor_thunder_strike_bolt.vpcf"
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_terrorblade.vsndevts"
+		}
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"2500"
+		"AbilityCastPoint"				"0.3"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"40"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"300"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"				"3"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"income_dmg"		"100"
+			}
+		}
+		
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+			 	"ScriptFile"	"abilities/nursery_rhyme/nursery_rhyme_abilities"
+			 	"Function"		"OnShapeShiftStart"
+			 	"Duration"		"%duration"
+			 	"Target"		"POINT"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_nursery_rhyme_shapeshift_clone"
+			{
+				"IsHidden"			"1"
+				"Duration"			"%duration"
+
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"			"abilities/nursery_rhyme/nursery_rhyme_abilities"
+						"Function"				"OnShapeShiftEnd"
+					}
+				}				
+				"States"
+				{
+					"MODIFIER_STATE_DISARMED"			"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_UNIT_COLLISION"	"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+			"modifier_nursery_rhyme_shapeshift_window"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"IsPurgable"		"0"
+				"Duration"			"%duration"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/nursery_rhyme/nursery_rhyme_abilities"
+						"Function"		"OnShapeShiftWindowCreate"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/nursery_rhyme/nursery_rhyme_abilities"
+						"Function"		"OnShapeShiftWindowDestroy"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/nursery_rhyme/nursery_rhyme_abilities"
+						"Function"		"OnShapeShiftWindowDeath"
+					}
+				}
+			}
+			"modifier_b_scroll"
+	    	{
+				"EffectName"		"particles/custom/item/item_b_scroll_shield.vpcf"
+				"EffectAttachType"	"follow_origin"
+				"TextureName" 		"item_b_scroll"
+				"OnCreated"
+				{
+			    	"FireEffect"
+			    	{
+			    		"EffectName"		"particles/units/heroes/hero_oracle/oracle_false_promise_heal_core.vpcf"
+			    		"EffectAttachType"	"attach_origin"
+			    		"Target"			"CASTER"
+			    	}
+				}
+	    	}
+	    	"modifier_a_scroll"
+	    	{
+	    		"TextureName" 	"item_a_scroll"
+				"EffectName" 	"particles/units/heroes/hero_oracle/oracle_fatesedict_arc_pnt.vpcf"
+				"OnCreated"
+				{
+			    	"FireEffect"
+			    	{
+			    		"EffectName"		"particles/units/heroes/hero_oracle/oracle_false_promise_cast_enemy.vpcf"
+			    		"EffectAttachType"	"attach_origin"
+			    		"Target"			"CASTER"
+			    	}
+				}
+	    		"Properties"
+	    		{
+	    			"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%bonus_mr"
+	    			//"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%bonus_armor"
+	    		}
+	    	}
+	    	"modifier_healing_scroll"
+	    	{	
+	    		"TextureName" 	"item_healing_scroll"
+	    		"Attributes"	"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"EffectName"	"particles/units/heroes/hero_lich/lich_frost_armor_model.vpcf"
+				"EffectAttachType"	"follow_overhead"
+	    		"Properties"
+	    		{
+	    			"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%armor_amount"
+	    		}
+	    	}
+	    	"modifier_speed_gem"
+	    	{
+	    		"TextureName" 			"item_sphere"
+	    		"Attributes"			"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"EffectName"			"particles/units/heroes/hero_dark_seer/dark_seer_surge.vpcf"
+				"EffectAttachType"		"follow_origin"	
+	    		"Properties"
+	    		{
+	    			"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"30"
+	    		}
+	    	}
+	    	"modifier_berserk_scroll"
+	    	{
+	    		"TextureName" 	"berserk_scroll"
+	    		"Attributes"	"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"EffectName"		"particles/items2_fx/mask_of_madness.vpcf"
+				"EffectAttachType"	"follow_origin"
+	    		"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"100"
+				}
+	    	}
+	    	"item_pot_regen"
+	        {
+	        	"Attributes"	"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+	        	"EffectName"	"particles/items_fx/healing_flask.vpcf"
+	        	"TextureName" 	"mana_essence"
+	        	"EffectAttachType"	"attach_hitloc"
+	            "Properties"
+	            {
+	            	"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"	"50"
+	            	"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"		"30"
+	            }
+	            "OnTakeDamage"
+	            {
+	            	"RemoveModifier"
+	            	{
+	            		"Target"	"CASTER"
+	            		"ModifierName"		"item_pot_regen"
+	            	}
+	            }
+	        } 
+		}
+	}
+
+	//====================================
+	// Nursery Rhyme: Shapeshift(D) (Forever Together SA)
+	//====================================
+	"nursery_rhyme_shapeshift_upgrade"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityTextureName"			"custom/nursery_rhyme_shapeshift"
+		"AbilityCastAnimation" 			"ACT_DOTA_IDLE"
+		"AnimationPlaybackRate" 		"1.0"
+		"precache"
+		{
+			"particle"			"particles/custom/rider/rider_breaker_gorgon_debuff.vpcf"
+			"particle"			"particles/generic_gameplay/illusion_killed.vpcf"
+			"particle"			"particles/units/heroes/hero_disruptor/disruptor_thunder_strike_bolt.vpcf"
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_terrorblade.vsndevts"
+		}
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"2500"
+		"AbilityCastPoint"				"0.3"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"20"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"300"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"7"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"income_dmg"		"100"
+			}
+		}
+		
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+			 	"ScriptFile"	"abilities/nursery_rhyme/nursery_rhyme_abilities"
+			 	"Function"		"OnShapeShiftStart"
+			 	"Duration"		"%duration"
+			 	"Target"		"POINT"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_nursery_rhyme_shapeshift_clone"
+			{
+				"IsHidden"			"1"
+				"Duration"			"%duration"
+
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"			"abilities/nursery_rhyme/nursery_rhyme_abilities"
+						"Function"				"OnShapeShiftEnd"
+					}
+				}				
+				"States"
+				{
+					"MODIFIER_STATE_DISARMED"			"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_UNIT_COLLISION"	"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+			"modifier_nursery_rhyme_shapeshift_window"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"IsPurgable"		"0"
+				"Duration"			"%duration"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/nursery_rhyme/nursery_rhyme_abilities"
+						"Function"		"OnShapeShiftWindowCreate"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/nursery_rhyme/nursery_rhyme_abilities"
+						"Function"		"OnShapeShiftWindowDestroy"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/nursery_rhyme/nursery_rhyme_abilities"
+						"Function"		"OnShapeShiftWindowDeath"
+					}
+				}
+			}
+			"modifier_b_scroll"
+	    	{
+				"EffectName"	"particles/custom/item/item_b_scroll_shield.vpcf"
+				"EffectAttachType"	"follow_origin"
+				"TextureName" "item_b_scroll"
+				"OnCreated"
+				{
+			    	"FireEffect"
+			    	{
+			    		"EffectName"		"particles/units/heroes/hero_oracle/oracle_false_promise_heal_core.vpcf"
+			    		"EffectAttachType"	"attach_origin"
+			    		"Target"			"CASTER"
+			    	}
+				}
+	    	}
+	    	"modifier_a_scroll"
+	    	{
+	    		"TextureName" 	"item_a_scroll"
+				"EffectName" 	"particles/units/heroes/hero_oracle/oracle_fatesedict_arc_pnt.vpcf"
+				"OnCreated"
+				{
+			    	"FireEffect"
+			    	{
+			    		"EffectName"		"particles/units/heroes/hero_oracle/oracle_false_promise_cast_enemy.vpcf"
+			    		"EffectAttachType"	"attach_origin"
+			    		"Target"			"CASTER"
+			    	}
+				}
+	    		"Properties"
+	    		{
+	    			"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%bonus_mr"
+	    			//"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%bonus_armor"
+	    		}
+	    	}
+	    	"modifier_healing_scroll"
+	    	{	
+	    		"TextureName" 	"item_healing_scroll"
+	    		"Attributes"	"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"EffectName"	"particles/units/heroes/hero_lich/lich_frost_armor_model.vpcf"
+				"EffectAttachType"	"follow_overhead"
+	    		"Properties"
+	    		{
+	    			"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%armor_amount"
+	    		}
+	    	}
+	    	"modifier_speed_gem"
+	    	{
+	    		"TextureName" 			"item_sphere"
+	    		"Attributes"			"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"EffectName"			"particles/units/heroes/hero_dark_seer/dark_seer_surge.vpcf"
+				"EffectAttachType"		"follow_origin"	
+	    		"Properties"
+	    		{
+	    			"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"30"
+	    		}
+	    	}
+	    	"modifier_berserk_scroll"
+	    	{
+	    		"TextureName" 	"berserk_scroll"
+	    		"Attributes"	"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"EffectName"		"particles/items2_fx/mask_of_madness.vpcf"
+				"EffectAttachType"	"follow_origin"
+	    		"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"100"
+				}
+	    	}
+	    	"item_pot_regen"
+	        {
+	        	"Attributes"	"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+	        	"EffectName"	"particles/items_fx/healing_flask.vpcf"
+	        	"TextureName" 	"mana_essence"
+	        	"EffectAttachType"	"attach_hitloc"
+	            "Properties"
+	            {
+	            	"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"	"50"
+	            	"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"		"30"
+	            }
+	            "OnTakeDamage"
+	            {
+	            	"RemoveModifier"
+	            	{
+	            		"Target"	"CASTER"
+	            		"ModifierName"		"item_pot_regen"
+	            	}
+	            }
+	        } 
+		}
+	}
+
+	//====================================
+	// Nursery Rhyme: Shapeshift(swap)
+	//====================================
+	"nursery_rhyme_shapeshift_swap"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityTextureName"			"custom/nursery_rhyme_shapeshift_swap"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_1"
+
+		"AbilityCastPoint"				"0.15"
+		"AbilityCooldown"				"8"
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"100"
+
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+			 	"ScriptFile"	"abilities/nursery_rhyme/nursery_rhyme_abilities"
+			 	"Function"		"OnShapeShiftSwap"
+			}
+		}
+	}
+
+	//====================================
+	// Nursery Rhyme: Nameless Forest(F)
+	//====================================
+	"nursery_rhyme_nameless_forest"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityTextureName"			"custom/nursery_rhyme_nameless_forest"
+		"AbilityCastAnimation" 			"ACT_DOTA_ATTACK"
+		"AnimationPlaybackRate" 		"1.0"	
+
+		"precache"
+		{
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_winter_wyvern.vsndevts"
+		}
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"200"
+		"AbilityCastPoint"				"0.3"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"45"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"200"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"				"3"
+			}
+		}
+		
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+			 	"ScriptFile"	"abilities/nursery_rhyme/nursery_rhyme_abilities"
+			 	"Function"		"OnNamelessStart"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_nameless_forest"
+			{
+				"EffectName"			"particles/units/heroes/hero_winter_wyvern/wyvern_cold_embrace_buff.vpcf"
+				"EffectAttachType"		"follow_origin"
+				"Duration"		"%duration"
+				"IsDebuff"		"1"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"    "abilities/nursery_rhyme/nursery_rhyme_abilities"
+						"Function"      "OnNamelessDebuffStart"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"    "abilities/nursery_rhyme/nursery_rhyme_abilities"
+						"Function"      "OnNamelessEnd"						
+					}
+				}
+				"States"
+				{
+					"MODIFIER_STATE_UNSELECTABLE" "MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_INVULNERABLE"    "MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NOT_ON_MINIMAP" "MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_HEALTH_BAR"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_STUNNED"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_SILENCED"		"MODIFIER_STATE_SILENCED"
+					"MODIFIER_STATE_NO_UNIT_COLLISION"	"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+			"modifier_nameless_forest_ally"
+			{
+				"EffectName"			"particles/units/heroes/hero_winter_wyvern/wyvern_cold_embrace_buff.vpcf"
+				"EffectAttachType"		"follow_origin"
+				"Duration"		"%duration"
+				"IsDebuff"		"1"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"    "abilities/nursery_rhyme/nursery_rhyme_abilities"
+						"Function"      "OnNamelessDebuffStart"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"    "abilities/nursery_rhyme/nursery_rhyme_abilities"
+						"Function"      "OnNamelessEnd"						
+					}
+				}
+				"States"
+				{
+					"MODIFIER_STATE_UNSELECTABLE" "MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_INVULNERABLE"    "MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NOT_ON_MINIMAP" "MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_HEALTH_BAR"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_STUNNED"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_SILENCED"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_UNIT_COLLISION"	"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+		}
+	}
+
+	//====================================
+	// Nursery Rhyme: Nameless Forest(F) (Reminiscence SA)
+	//====================================
+	"nursery_rhyme_nameless_forest_upgrade"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityTextureName"			"custom/nursery_rhyme_nameless_forest"
+		"AbilityCastAnimation" 			"ACT_DOTA_ATTACK"
+		"AnimationPlaybackRate" 		"1.0"	
+
+		"precache"
+		{
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_winter_wyvern.vsndevts"
+		}
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"350"
+		"AbilityCastPoint"				"0.3"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"200"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"				"3"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"mana_regen"			"1.5"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"steal_stat"		"-10"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"gain_stat"			"10"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"steal_duration"		"15.0"
+			}
+		}
+		
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+			 	"ScriptFile"	"abilities/nursery_rhyme/nursery_rhyme_abilities"
+			 	"Function"		"OnNamelessStart"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_nameless_forest"
+			{
+				"EffectName"			"particles/units/heroes/hero_winter_wyvern/wyvern_cold_embrace_buff.vpcf"
+				"EffectAttachType"		"follow_origin"
+				"Duration"		"%duration"
+				"IsDebuff"		"1"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"    "abilities/nursery_rhyme/nursery_rhyme_abilities"
+						"Function"      "OnNamelessDebuffStart"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"    "abilities/nursery_rhyme/nursery_rhyme_abilities"
+						"Function"      "OnNamelessEnd"						
+					}
+				}
+				"States"
+				{
+					"MODIFIER_STATE_UNSELECTABLE" "MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_INVULNERABLE"    "MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NOT_ON_MINIMAP" "MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_HEALTH_BAR"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_STUNNED"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_SILENCED"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_UNIT_COLLISION"	"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+			"modifier_nameless_forest_ally"
+			{
+				"EffectName"			"particles/units/heroes/hero_winter_wyvern/wyvern_cold_embrace_buff.vpcf"
+				"EffectAttachType"		"follow_origin"
+				"Duration"		"%duration"
+				"IsDebuff"		"1"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"    "abilities/nursery_rhyme/nursery_rhyme_abilities"
+						"Function"      "OnNamelessDebuffStart"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"    "abilities/nursery_rhyme/nursery_rhyme_abilities"
+						"Function"      "OnNamelessEnd"						
+					}
+				}
+				"States"
+				{
+					"MODIFIER_STATE_UNSELECTABLE" "MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_INVULNERABLE"    "MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NOT_ON_MINIMAP" "MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_HEALTH_BAR"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_STUNNED"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_SILENCED"		"MODIFIER_STATE_SILENCED"
+					"MODIFIER_STATE_NO_UNIT_COLLISION"	"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+			"modifier_nursery_rhyme_nameless_window"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"IsPurgable"		"0"
+				"Duration"			"%duration"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/nursery_rhyme/nursery_rhyme_abilities"
+						"Function"		"OnNamelessForestWindowCreate"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/nursery_rhyme/nursery_rhyme_abilities"
+						"Function"		"OnNamelessForestWindowDestroy"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/nursery_rhyme/nursery_rhyme_abilities"
+						"Function"		"OnNamelessForestWindowDeath"
+					}
+				}
+			}
+			"modifier_nameless_forest_stat_steal_debuff"
+			{
+				"IsDebuff"		"1"
+				"Duration"		"%steal_duration"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"%steal_stat"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"		"%steal_stat"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"%steal_stat"
+				}
+			}
+			"modifier_nameless_forest_stat_steal_buff"
+			{
+				"Duration"		"%steal_duration"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"%gain_stat"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"		"%gain_stat"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"%gain_stat"
+				}
+			}
+			"modifier_nameless_forest_mana_regen"
+			{
+				"IsHidden"		"1"
+				"Passive"		"1"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MANA_REGEN_TOTAL_PERCENTAGE"		"%mana_regen"
+				}
+			}
+		}
+	}
+
+	//====================================
+	// Nursery Rhyme: Reminiscence(undo F)
+	//====================================
+	"nursery_rhyme_reminiscence"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE"
+		"AbilityTextureName"			"custom/nursery_rhyme_reminiscence"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_1"
+
+		"AbilityCooldown"				"5"
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+			 	"ScriptFile"	"abilities/nursery_rhyme/nursery_rhyme_abilities"
+			 	"Function"		"OnReminiscenceStart"
+			}
+		}
+	}
+
+	//====================================
+	// Nursery Rhyme: White Queen's Enigma(Q)
+	//====================================
+	"nursery_rhyme_white_queens_enigma"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"AbilityTextureName"			"custom/nursery_rhyme_white_queens_enigma"
+		"AbilityCastAnimation" 			"ACT_DOTA_ATTACK"
+		"AnimationPlaybackRate" 		"1.0"
+
+		"precache"
+		{
+			"particle"			"particles/units/heroes/hero_tusk/tusk_ice_shards_projectile.vpcf"
+			"particle"			"particles/units/heroes/hero_winter_wyvern/wyvern_cold_embrace_buff_model.vpcf"
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_tusk.vsndevts"
+		}
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1000"
+		"AbilityCastPoint"				"0.2"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"7"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"100"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"300 350 400 450 500"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"stun_duration"		"0.5"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"slow_duration"		"1.5 2.0 2.5 3.0 3.5"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"lock_duration"		"0.75 0.90 1.05 1.20 1.35"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"slow_pct"			"-75"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"width"				"200"
+			}
+			"07"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"length"			"900"
+			}
+			"08"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"speed"				"1500"
+			}
+		}
+		
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+			 	"ScriptFile"	"abilities/nursery_rhyme/nursery_rhyme_abilities"
+			 	"Function"		"OnEnigmaStart"
+			}
+		}
+		
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"			"0"
+			"RunScript"
+			{
+			 	"ScriptFile"	"abilities/nursery_rhyme/nursery_rhyme_abilities"
+			 	"Function"		"OnEnigmaHit"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_white_queens_enigma_slow"
+			{
+				"Duration"		"%slow_duration"
+				"IsDebuff"		"1"
+				"IsHidden"		"0"
+				"Properties"
+				{
+				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow_pct" 
+				}
+			}
+		}
+	}
+
+	//====================================
+	// Nursery Rhyme: The Plains of Water(W)
+	//====================================
+	"nursery_rhyme_the_plains_of_water"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_1"
+		"AnimationPlaybackRate" 		"1.0"	
+		"AbilityTextureName"			"custom/nursery_rhyme_the_plains_of_water"
+		"precache"
+		{
+			"particle"			"particles/custom/nursery_rhyme/plains_of_water.vpcf"
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_winter_wyvern.vsndevts"
+		}
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"950"
+		"AbilityCastPoint"				"0.2"
+		"AbilityCastRangeBuffer"		"75"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"7"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"200"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"300"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"max_bounce"		"4 5 6 7 8"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"dmg_reduction"		"5"
+			}
+		}
+		
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+			 	"ScriptFile"	"abilities/nursery_rhyme/nursery_rhyme_abilities"
+			 	"Function"		"OnPlainStart"
+			}
+		}
+
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/nursery_rhyme/nursery_rhyme_abilities"
+				"Function"		"OnPlainsUpgrade"
+			}
+		}
+	}
+
+	//====================================
+	// Nursery Rhyme: The Plains of Water(W) (Nightmare SA)
+	//====================================
+	"nursery_rhyme_the_plains_of_water_upgrade"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_1"
+		"AnimationPlaybackRate" 		"1.0"	
+		"AbilityTextureName"			"custom/nursery_rhyme_the_plains_of_water"
+		"precache"
+		{
+			"particle"			"particles/custom/nursery_rhyme/plains_of_water.vpcf"
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_winter_wyvern.vsndevts"
+		}
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"950"
+		"AbilityCastPoint"				"0.2"
+		"AbilityCastRangeBuffer"		"75"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"7"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"200"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"300"
+			}
+			"08"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"bonus_int"			"1.5"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"max_bounce"		"5 7 9 11 13"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"dmg_reduction"		"5"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"slow"				"-50"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"slow_duration"		"0.35"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"stat_steal"		"-1"
+			}
+			"07"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"stat_gain"			"1"
+			}
+			"08"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"stat_steal_duration"		"15"
+			}
+		}
+		
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+			 	"ScriptFile"	"abilities/nursery_rhyme/nursery_rhyme_abilities"
+			 	"Function"		"OnPlainStart"
+			}
+		}
+
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/nursery_rhyme/nursery_rhyme_abilities"
+				"Function"		"OnPlainsUpgrade"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_plains_of_water_slow"
+			{
+				"IsHidden"		"0"
+				"IsDebuff"		"1"
+				"Duration"		"%slow_duration"
+				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"		"%slow"
+				}
+			}
+			"modifier_plains_of_water_int_debuff"
+			{
+				"IsHidden"		"1"
+				"IsDebuff"		"1"
+				"Duration"		"%stat_steal_duration"
+				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%stat_steal"
+				}
+			}
+			"modifier_plains_of_water_int_buff"
+			{
+				"IsHidden"		"1"
+				"Duration"		"%stat_steal_duration"
+				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%stat_gain"
+				}
+			}
+		}
+
+	}
+
+	//====================================
+	// Nursery Rhyme: I Am You, and You Are Me
+	//====================================
+	"nursery_rhyme_doppelganger"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_1"
+		"AbilityTextureName"			"custom/nursery_rhyme_doppelganger"
+		"AnimationPlaybackRate" 		"1.0"
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_terrorblade/terrorblade_mirror_image.vpcf"
+			"particle"	"particles/custom/nursery_rhyme/doppelganger/doppelganger.vpcf"
+			"particle"	"particles/units/heroes/hero_bane/bane_fiendsgrip_hands.vpcf"
+		}
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.2"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"29"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"400"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"doppelganger_health"				"70 90 110 130 150"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"damage_shared"				"40"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"				"5 5.5 6 6.5 7"
+			}
+		}
+		
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+			 	"ScriptFile"	"abilities/nursery_rhyme/nursery_rhyme_abilities"
+			 	"Function"		"OnCloneStart"
+			 	"Duration"		"%duration"
+			 	"Health"		"%doppelganger_health"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_doppelganger"
+			{
+				"EffectName"				"particles/custom/nursery_rhyme/doppelganger/doppelganger.vpcf"	
+				"EffectAttachType"			"attach_origin"
+				"Duration"					"%duration"
+	            "ThinkInterval"		"0.33"
+	            "OnIntervalThink"
+	         	{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/nursery_rhyme/nursery_rhyme_abilities"
+						"Function"		"OnCloneThink"
+					}
+				}
+
+				"OnTakeDamage"
+				{
+					"RunScript"
+					{
+						"ScriptFile"    "abilities/nursery_rhyme/nursery_rhyme_abilities"
+						"Function"      "OnCloneTakeDamage"
+						"DamageTaken"	"%attack_damage"
+						"SharedDamage"		"%damage_shared"
+					}
+				}		
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+					 	"ScriptFile"	"abilities/nursery_rhyme/nursery_rhyme_abilities"
+					 	"Function"		"OnCloneDeath"
+					}
+				}		
+			}
+			"modifier_doppelganger_enemy"
+			{
+				"IsDebuff"					"1"
+				"EffectName"				"particles/custom/nursery_rhyme/doppelganger/doppelganger.vpcf"	
+				"EffectAttachType"			"attach_origin"
+				"Duration"					"%duration"		
+				"OnTakeDamage"
+				{
+					"RunScript"
+					{
+						"ScriptFile"    "abilities/nursery_rhyme/nursery_rhyme_abilities"
+						"Function"      "OnCloneOriginalTakeDamage"
+						"DamageTaken"	"%attack_damage"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+					 	"ScriptFile"	"abilities/nursery_rhyme/nursery_rhyme_abilities"
+					 	"Function"		"OnCloneOriginalDeath"
+					}
+				}			
+			}
+			"modifier_doppelganger_lookaway_slow"
+			{
+				"EffectName"				"particles/units/heroes/hero_bane/bane_fiendsgrip_hands.vpcf"	
+				"EffectAttachType"			"attach_origin"
+				"Duration"		"0.75"
+				"IsDebuff"		"1"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"-70"
+				}
+			}
+		}
+	}
+
+	//====================================
+	// Nursery Rhyme: I Am You, and You Are Me (Forever Together SA)
+	//====================================
+	"nursery_rhyme_doppelganger_upgrade"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_1"
+		"AbilityTextureName"			"custom/nursery_rhyme_doppelganger"
+		"AnimationPlaybackRate" 		"1.0"
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_terrorblade/terrorblade_mirror_image.vpcf"
+			"particle"	"particles/custom/nursery_rhyme/doppelganger/doppelganger.vpcf"
+			"particle"	"particles/units/heroes/hero_bane/bane_fiendsgrip_hands.vpcf"
+		}
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.2"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"29"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"400"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"doppelganger_health"				"70 90 110 130 150"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"damage_shared"				"70"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"				"5 5.5 6 6.5 7"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"int_ratio"				"0.5"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"slow"				"-70"
+			}
+		}
+		
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+			 	"ScriptFile"	"abilities/nursery_rhyme/nursery_rhyme_abilities"
+			 	"Function"		"OnCloneStart"
+			 	"Duration"		"%duration"
+			 	"Health"		"%doppelganger_health"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_doppelganger"
+			{
+				"EffectName"				"particles/custom/nursery_rhyme/doppelganger/doppelganger.vpcf"	
+				"EffectAttachType"			"attach_origin"
+				"Duration"					"%duration"
+	            "ThinkInterval"		"0.33"
+	            "OnIntervalThink"
+	         	{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/nursery_rhyme/nursery_rhyme_abilities"
+						"Function"		"OnCloneThink"
+					}
+				}
+
+				"OnTakeDamage"
+				{
+					"RunScript"
+					{
+						"ScriptFile"    "abilities/nursery_rhyme/nursery_rhyme_abilities"
+						"Function"      "OnCloneTakeDamage"
+						"DamageTaken"	"%attack_damage"
+						"SharedDamage"		"%damage_shared"
+					}
+				}		
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+					 	"ScriptFile"	"abilities/nursery_rhyme/nursery_rhyme_abilities"
+					 	"Function"		"OnCloneDeath"
+					}
+				}		
+			}
+			"modifier_doppelganger_enemy"
+			{
+				"IsDebuff"					"1"
+				"EffectName"				"particles/custom/nursery_rhyme/doppelganger/doppelganger.vpcf"	
+				"EffectAttachType"			"attach_origin"
+				"Duration"					"%duration"		
+				"OnTakeDamage"
+				{
+					"RunScript"
+					{
+						"ScriptFile"    "abilities/nursery_rhyme/nursery_rhyme_abilities"
+						"Function"      "OnCloneOriginalTakeDamage"
+						"DamageTaken"	"%attack_damage"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+					 	"ScriptFile"	"abilities/nursery_rhyme/nursery_rhyme_abilities"
+					 	"Function"		"OnCloneOriginalDeath"
+					}
+				}			
+			}
+			"modifier_doppelganger_lookaway_slow"
+			{
+				"EffectName"				"particles/units/heroes/hero_bane/bane_fiendsgrip_hands.vpcf"	
+				"EffectAttachType"			"attach_origin"
+				"Duration"		"0.75"
+				"IsDebuff"		"1"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%slow"
+				}
+			}
+		}
+	}
+
+	//====================================
+	// Nursery Rhyme: Queen's Glass Game
+	//====================================
+	"nursery_rhyme_queens_glass_game"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/nursery_rhyme/nursery_rhyme_queens_glass_game"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityTextureName"			"custom/nursery_rhyme_queens_glass_game"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_1"
+
+		"AnimationPlaybackRate" 		"1.0"
+		"precache"
+		{
+			"particle"		"particles/custom/nursery_rhyme/queens_glass_game/queens_glass_game_aoe.vpcf"
+			"particle"		"particles/custom/nursery_rhyme/nursery_timelapse.vpcf"
+			"particle"		"particles/custom/nursery_rhyme/queens_glass_game/queens_glass_game_bookswirl.vpcf"
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_weaver.vsndevts"
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_faceless_void.vsndevts"
+		}
+
+		"AbilityCastPoint"				"0.5"
+		"AbilityCastRange"				"1000 1200 1400 1600 1800"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"50"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"800"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"1000 1200 1400 1600 1800"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"4 6 8 10 12"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"active_cooldown"		"2"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/nursery_rhyme/nursery_rhyme_abilities"
+				"Function"		"OnQueensGlassGameStart"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_nr_queens_glass_game_aura"
+			{
+				"Duration"				"%duration"
+				"Passive"				"0"
+				"IsHidden"				"1"
+				"Attributes"			"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Aura"					"modifier_nr_queens_glass_game"
+				"Aura_Radius"			"%radius"
+				"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"Aura_Types"			"DOTA_UNIT_TARGET_HERO"
+
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/nursery_rhyme/nursery_rhyme_abilities"
+						"Function"		"OnQueensGlassGameCreate"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/nursery_rhyme/nursery_rhyme_abilities"
+						"Function"		"OnQueensGlassGameDestroy"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/nursery_rhyme/nursery_rhyme_abilities"
+						"Function"		"OnQueenGlassGameDeath"
+					}
+				}
+			}
+			"modifier_nr_queens_glass_game"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+			
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/nursery_rhyme/nursery_rhyme_abilities"
+						"Function"		"OnQueensGlassGameWindowCreate"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/nursery_rhyme/nursery_rhyme_abilities"
+						"Function"		"OnQueensGlassGameWindowDestroy"
+					}
+				}
+			}
+			"modifier_story_for_somebodys_sake_window"
+			{
+				"IsPurgable"		"0"
+				"IsBuff"			"1"
+				"IsHidden"			"1"
+				"Duration"			"2"
+
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/nursery_rhyme/nursery_rhyme_abilities"
+						"Function"		"OnStoryForSomebodysWindowCreate"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/nursery_rhyme/nursery_rhyme_abilities"
+						"Function"		"OnStoryForSomebodysWindowDestroy"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/nursery_rhyme/nursery_rhyme_abilities"
+						"Function"		"OnStoryForSomebodysWindowDeath"
+					}
+				}
+			}
+		}
+	}
+
+	//====================================
+	// Nursery Rhyme: Queen's Glass Game (Improve Queen's Glass Game SA)
+	//====================================
+	"nursery_rhyme_queens_glass_game_upgrade"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/nursery_rhyme/nursery_rhyme_queens_glass_game"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityTextureName"			"custom/nursery_rhyme_queens_glass_game"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_1"
+
+		"AnimationPlaybackRate" 		"1.0"
+		"precache"
+		{
+			"particle"		"particles/custom/nursery_rhyme/queens_glass_game/queens_glass_game_aoe.vpcf"
+			"particle"		"particles/custom/nursery_rhyme/nursery_timelapse.vpcf"
+			"particle"		"particles/custom/nursery_rhyme/queens_glass_game/queens_glass_game_bookswirl.vpcf"
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_weaver.vsndevts"
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_faceless_void.vsndevts"
+		}
+
+		"AbilityCastPoint"				"0.5"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"50"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"800"
+		"AbilityCastRange"				"1000 1200 1400 1600 1800"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"1000 1200 1400 1600 1800"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"4 6 8 10 12"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"active_cooldown"		"2"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/nursery_rhyme/nursery_rhyme_abilities"
+				"Function"		"OnQueensGlassGameStart"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_nr_queens_glass_game_aura"
+			{
+				"Duration"				"%duration"
+				"Passive"				"0"
+				"IsHidden"				"1"
+				"Attributes"			"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Aura"					"modifier_nr_queens_glass_game"
+				"Aura_Radius"			"%radius"
+				"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"Aura_Types"			"DOTA_UNIT_TARGET_HERO"
+
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/nursery_rhyme/nursery_rhyme_abilities"
+						"Function"		"OnQueensGlassGameCreate"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/nursery_rhyme/nursery_rhyme_abilities"
+						"Function"		"OnQueensGlassGameDestroy"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/nursery_rhyme/nursery_rhyme_abilities"
+						"Function"		"OnQueenGlassGameDeath"
+					}
+				}
+			}
+			"modifier_nr_queens_glass_game"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+			
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/nursery_rhyme/nursery_rhyme_abilities"
+						"Function"		"OnQueensGlassGameWindowCreate"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/nursery_rhyme/nursery_rhyme_abilities"
+						"Function"		"OnQueensGlassGameWindowDestroy"
+					}
+				}
+			}
+			"modifier_story_for_somebodys_sake_window"
+			{
+				"IsPurgable"		"0"
+				"IsBuff"			"1"
+				"IsHidden"			"1"
+				"Duration"			"2"
+
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/nursery_rhyme/nursery_rhyme_abilities"
+						"Function"		"OnStoryForSomebodysWindowCreate"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/nursery_rhyme/nursery_rhyme_abilities"
+						"Function"		"OnStoryForSomebodysWindowDestroy"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/nursery_rhyme/nursery_rhyme_abilities"
+						"Function"		"OnStoryForSomebodysWindowDeath"
+					}
+				}
+			}
+		}
+	}
+
+	//====================================
+	// Nursery Rhyme: Queens Glass Game Active
+	//====================================
+	"nursery_rhyme_queens_glass_game_activate"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityTextureName"			"custom/nursery_rhyme_queens_glass_game"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_1"
+
+		"AbilityCastPoint"				"0.1"
+		"AbilityCooldown"				"2"
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/nursery_rhyme/nursery_rhyme_abilities"
+				"Function"		"OnQueensGlassGameActivate"
+			}
+		}
+	}
+
+	//====================================
+	// Nursery Rhyme: Combo : A Story for Somebody's Sake
+	//====================================
+	"nursery_rhyme_story_for_somebodys_sake"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityTextureName"			"custom/nursery_rhyme_story_for_somebodys_sake"
+
+		"AnimationPlaybackRate" 		"1.0"
+		"precache"
+		{
+			"particle"			"particles/units/heroes/hero_abaddon/abaddon_borrowed_time.vpcf"
+			"particle"			"particles/econ/items/wraith_king/wraith_king_ti6_bracer/wraith_king_ti6_witness_ambient_body.vpcf"
+			"particle"			"soundevents/game_sounds_heroes/game_sounds_abaddon.vsndevts"
+			"particle"			"particles/custom/screen_red_splash.vpcf"
+			"particle"			"particles/custom/screen_lightblue_splash.vpcf"
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_wisp.vsndevts"
+		}
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"200"
+		"AbilityCastPoint"				"0.3"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"450"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"400"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"time_limit"				"30"
+			}
+		}
+		
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/nursery_rhyme/nursery_rhyme_abilities"
+				"Function"		"OnNRComboStart"
+				"TimeLimit"		"%time_limit"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_story_for_someones_sake"
+			{
+				"EffectName"				"particles/units/heroes/hero_abaddon/abaddon_borrowed_time.vpcf"
+				"EffectAttachType"			"attach_origin"
+				"Duration"		"29.8"
+	            "ThinkInterval"		"5"
+	            "OnIntervalThink"
+	         	{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/nursery_rhyme/nursery_rhyme_abilities"
+						"Function"		"PingLocationForEnemies"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/nursery_rhyme/nursery_rhyme_abilities"
+						"Function"		"OnNRComboEnd"
+					}					
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/nursery_rhyme/nursery_rhyme_abilities"
+						"Function"		"OnNRComboDeath"						
+					}
+				}
+			}
+			"modifier_story_for_someones_sake_enemy"
+			{
+				"EffectName"				"particles/econ/items/wraith_king/wraith_king_ti6_bracer/wraith_king_ti6_witness_ambient_body.vpcf"
+				"EffectAttachType"			"attach_origin"
+				"Duration"		"29.8"
+				"IsDebuff"		"1"
+			}
+
+			"modifier_story_for_someones_sake_cooldown"
+			{
+				"IsDebuff"	"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			}
+		}
+	}
+	//====================================
+	// Nursery Rhyme: Combo : A Story for Somebody's Sake
+	//====================================
+	"nursery_rhyme_story_for_somebodys_sake_upgrade"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityTextureName"			"custom/nursery_rhyme_story_for_somebodys_sake"
+
+		"AnimationPlaybackRate" 		"1.0"
+		"precache"
+		{
+			"particle"			"particles/units/heroes/hero_abaddon/abaddon_borrowed_time.vpcf"
+			"particle"			"particles/econ/items/wraith_king/wraith_king_ti6_bracer/wraith_king_ti6_witness_ambient_body.vpcf"
+			"particle"			"soundevents/game_sounds_heroes/game_sounds_abaddon.vsndevts"
+			"particle"			"particles/custom/screen_red_splash.vpcf"
+			"particle"			"particles/custom/screen_lightblue_splash.vpcf"
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_wisp.vsndevts"
+		}
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"200"
+		"AbilityCastPoint"				"0.3"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"380"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"400"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"time_limit"				"30"
+			}
+		}
+		
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/nursery_rhyme/nursery_rhyme_abilities"
+				"Function"		"OnNRComboStart"
+				"TimeLimit"		"%time_limit"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_story_for_someones_sake"
+			{
+				"EffectName"				"particles/units/heroes/hero_abaddon/abaddon_borrowed_time.vpcf"
+				"EffectAttachType"			"attach_origin"
+				"Duration"		"29.8"
+	            "ThinkInterval"		"5.0"
+	            "OnIntervalThink"
+	         	{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/nursery_rhyme/nursery_rhyme_abilities"
+						"Function"		"PingLocationForEnemies"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/nursery_rhyme/nursery_rhyme_abilities"
+						"Function"		"OnNRComboEnd"
+					}					
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/nursery_rhyme/nursery_rhyme_abilities"
+						"Function"		"OnNRComboDeath"						
+					}
+				}
+			}
+			"modifier_story_for_someones_sake_enemy"
+			{
+				"EffectName"				"particles/econ/items/wraith_king/wraith_king_ti6_bracer/wraith_king_ti6_witness_ambient_body.vpcf"
+				"EffectAttachType"			"attach_origin"
+				"Duration"		"29.8"
+				"IsDebuff"		"1"
+			}
+
+			"modifier_story_for_someones_sake_cooldown"
+			{
+				"IsDebuff"	"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			}
+		}
+	}
+
+	//=======================================
+	// Nursery Rhyme Attribute: Forever Together
+	//=======================================
+	"nursery_rhyme_attribute_forever_together"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/nursery_rhyme_attribute_forever_together"
+		
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"12"
+
+		"precache"
+		{
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow_amount"			"70"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage_per_sec"			"1.5"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"share_damage"			"30"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"shapeshift_duration"			"7"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"shapeshift_cd"			"20"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/nursery_rhyme/nursery_rhyme_abilities"
+				"Function"		"OnFTAcquired"
+			}
+		}
+	}
+
+	//=======================================
+	// Nursery Rhyme Attribute: Nightmare
+	//=======================================
+	"nursery_rhyme_attribute_nightmare"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/nursery_rhyme_attribute_nightmare"
+		
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"17"
+
+		"precache"
+		{
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"extra_bounce"			"1 2 3 4 5"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow"					"50"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"int_ratio"				"1.5"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"int_steal"				"1"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"int_steal_duration"	"15"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/nursery_rhyme/nursery_rhyme_abilities"
+				"Function"		"OnNightmareAcquired"
+			}
+		}
+	}
+
+	//=======================================
+	// Nursery Rhyme Attribute: Reminiscence
+	//=======================================
+	"nursery_rhyme_attribute_reminiscence"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/nursery_rhyme_attribute_reminiscence"
+		
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"12"
+
+		"precache"
+		{
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cdr"					"15"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_cast_range"		"150"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"stat_steal"			"10"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"stat_steal_duration"			"15"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pct_mana_regen"			"1.5"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/nursery_rhyme/nursery_rhyme_abilities"
+				"Function"		"OnReminiscenceAcquired"
+			}
+		}
+	}
+
+	//=======================================
+	// Nursery Rhyme Attribute: Improve Queens Glass Game
+	//=======================================
+	"nursery_rhyme_attribute_improve_queens_glass_game"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/nursery_rhyme_attribute_improve_queens_glass_game"
+		
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"18"
+
+		"precache"
+		{
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cdr"					"70"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/nursery_rhyme/nursery_rhyme_abilities"
+				"Function"		"OnImproveQGGAcquired"
+			}
+		}
+	}
+}

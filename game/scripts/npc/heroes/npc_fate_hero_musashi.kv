@@ -1,0 +1,93 @@
+"DOTAHeroes"
+{
+	//==================================================================================================================
+	//	Miyamoto Musashi
+	//==================================================================================================================
+	"npc_dota_hero_musashi"				
+	{
+		//Model---------------------------------------------------------------------------------------------------------
+		"Override_hero"					"npc_dota_hero_antimage"
+		"Model"							"models/musashi/red/musashi_red_by_zefiroft.vmdl"
+		"ModelScale"					"2.25"
+		"DrawParticlesWhileHidden" 		"1"
+		"DisableWearables"				"1"
+
+		//Abilities-----------------------------------------------------------------------------------------------------
+		"AbilityLayout"					"6"
+		"Ability1"						"musashi_accel_turn"
+		"Ability2"						"musashi_dai_go_sei"
+		"Ability3"						"musashi_niou_kurikara"
+		"Ability4"						"musashi_tengan"
+		"Ability5"						"fate_empty1"
+		"Ability6"						"musashi_ganryuu_jima"
+		"Ability7"						"musashi_mukyuu"
+		"Ability8"						"musashi_tenma_gogan"
+		"Ability9"						"musashi_tengen_no_hana"
+		"Ability10"						"musashi_battle_continuation"
+		"Ability11"						"musashi_niou"
+		"Ability12"						"musashi_ishana_daitenshou"
+		"Ability13"						"musashi_dai_go_sei_wave"
+		"Ability14"						"presence_detection_passive"
+		"Ability15"						"attribute_bonus_custom"
+
+		"TotalAbility"					"15"
+		//AbilitiesUpgrades---------------------------------------------------------------------------------------------
+		"AttributeNumber"				"5"
+		"Attribute1"					"musashi_attributes_battle_continuation"
+		"Attribute2"					"musashi_attributes_improve_tengan"
+		"Attribute3"					"musashi_attributes_gorin_no_sho"
+		"Attribute4"					"musashi_attributes_mukyuu"
+		"Attribute5"					"musashi_attributes_niten_ichiryuu"
+		
+		//Combo---------------------------------------------------------------------------------------------------------
+		"Combo"							"musashi_ishana_daitenshou"
+
+		//Traits--------------------------------------------------------------------------------------------------------
+		"NP"							"5"
+		"Difficult"						"5"
+		"SType"							"dps, mobility, tank"
+		"Trait"							"Female"
+
+		//Armor---------------------------------------------------------------------------------------------------------
+		"ArmorPhysical"					"5"
+		"MagicalResistance"				"15"
+
+		//Attack--------------------------------------------------------------------------------------------------------
+		"AttackCapabilities"			"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"				"60"
+		"AttackDamageMax"				"65"
+		"AttackRate"					"1"
+		"AttackAcquisitionRange"		"500"
+		"AttackRange"					"150"
+
+		//Attributes----------------------------------------------------------------------------------------------------
+		"AttributePrimary"				"DOTA_ATTRIBUTE_AGILITY"
+		"AttributeStrengthGain"			"2.1"
+		"AttributeAgilityGain"			"2.5"
+		"AttributeIntelligenceGain"		"1.4"
+		"AttributeBaseStrength"			"0"
+		"AttributeBaseAgility"			"0"
+		"AttributeBaseIntelligence"		"0"
+
+		//Movement------------------------------------------------------------------------------------------------------
+		"MovementCapabilities"			"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"					"380"
+		"MovementTurnRate"				"1.0"
+
+		//Status--------------------------------------------------------------------------------------------------------
+		"StatusHealth"					"1400"
+		"StatusHealthRegen"				"6"
+		"StatusMana"					"1000"
+		"StatusManaRegen"				"4"
+
+		//Vision--------------------------------------------------------------------------------------------------------
+		"VisionDaytimeRange"			"1000"
+		"VisionNighttimeRange"			"1000"
+
+		//Precache------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			
+		}
+	}
+}

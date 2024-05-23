@@ -1,0 +1,3044 @@
+#base "jtr_dagger_throw.kv"
+
+"DOTAAbilities"
+{
+	//========================================
+	// Jack Innate: Surgery
+	//========================================
+	"jtr_surgery"
+    {
+        "BaseClass"                     "ability_datadriven"
+        "MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityTextureName"			"custom/jtr/jtr_surgery"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_2"
+		"AbilityCastPoint"				"0.2"  
+		"AbilityCooldown"				"8"
+		"AbilityManaCost"				"100"
+        "AbilityChannelTime"            "4"
+        "AbilityCastRange"				"300"
+
+		"precache"
+		{
+		
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{	
+				"var_type"			"FIELD_INTEGER"
+				"heal"				"170"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"duration"			"4"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"cooldown_reduc"	"2"
+			}	
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"max_distance"		"350"
+			}			
+		}
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/jtr/jtr_abilities"
+				"Function"		"OnInvalidCast"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/jtr/jtr_abilities"
+				"Function"		"OnSurgeryStart"
+			}
+		}
+		"OnChannelInterrupted"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/jtr/jtr_abilities"
+				"Function"		"OnSurgeryInterrupt"
+			}
+		}
+		"OnChannelFinish"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/jtr/jtr_abilities"
+				"Function"		"OnSurgeryInterrupt"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_jtr_surgery_heal"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"Duration"			"%duration"
+				"EffectName"		"particles/custom/jtr/jtr_heal.vpcf"
+				"EffectAttachType"	"follow_origin"
+				"ThinkInterval"  "0.1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/jtr/jtr_abilities"
+						"Function"		"OnSurgeryHealThink"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/jtr/jtr_abilities"
+						"Function"		"OnSurgeryHealDestroy"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/jtr/jtr_abilities"
+						"Function"		"OnSurgeryInterrupt"
+					}
+				}
+			}
+		}
+    }
+    //========================================
+	// Jack: Illusion Trap (Curse)
+	//========================================
+	"jtr_illusion_trap_curse"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/jtr/jtr_illusion_trap"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_4"
+		"AnimationPlaybackRate" 		"1.5"
+		
+		"AbilityCastPoint"				"0.2"
+		"AbilityCastRange"				"600"
+		"AbilityCastRangeBuffer"		"100"
+		"AbilityCooldown"				"15"
+		"AbilityManaCost"				"200"
+		
+		"precache"
+		{
+			
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_point"			"0.2"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range"					"600"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"4"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dps"					"200"
+			}
+		}	
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/jtr/jtr_abilities"
+				"Function"		"OnIllusionTrapStart"
+			}
+		}
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/jtr/jtr_abilities"
+				"Function"		"OnIllusionTrapDeath"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_illusion_trap"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Duration"			"%duration"
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"EffectName"        "particles/units/heroes/hero_siren/naga_siren_song_debuff.vpcf"
+						"EffectAttachType"  "follow_origin"
+						"Target"            "TARGET"
+					}
+					"AttachEffect"
+					{
+						"EffectName"        "particles/generic_gameplay/generic_sleep.vpcf"
+						"EffectAttachType"  "follow_overhead"
+						"Target"            "TARGET"
+					}
+				}
+				"States"
+				{
+					"MODIFIER_STATE_NIGHTMARED"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_STUNNED"		"MODIFIER_STATE_VALUE_ENABLED"
+				}	
+				"ThinkInterval"  "0.1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/jtr/jtr_abilities"
+						"Function"		"OnIllusionTrapThink"
+					}
+				}
+				"OnTakeDamage"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/jtr/jtr_abilities"
+						"Function"		"OnIllusionTrapTakeDamage"
+					}
+				}
+			}
+		}
+	}
+	//========================================
+	// Jack: Quick Strikes
+	//========================================
+	"jtr_quick_strikes"
+    {
+        "BaseClass"                     "ability_datadriven"
+        "MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
+		"AbilityTextureName"			"custom/jtr/jtr_slash"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_1"
+		"AbilityCastPoint"				"0.1"
+        "AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"        
+		"AbilityCooldown"				"22 20 18 16 14"
+		"AbilityManaCost"				"200"
+		"AbilityCastRange"				"600"
+
+		"precache"
+		{
+			
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{	
+				"var_type"			"FIELD_INTEGER"
+				"slashes"			"5 6 7 8 9"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"attack_radius"		"300"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"100 120 140 160 180"
+			}	
+			"04"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"interval"			"0.2"
+			}			
+		}
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/jtr/jtr_abilities"
+				"Function"		"OnInvalidCast"
+			}
+		}
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/jtr/jtr_abilities"
+				"Function"		"OnQuickStrikesUpgrade"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/jtr/jtr_abilities"
+				"Function"		"OnQuickStrikesStart"
+			}
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/jtr/jtr_abilities"
+				"Function"		"OnQuickStrikesActive"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_quick_strikes"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+
+				"OverrideAnimation"     "ACT_DOTA_RUN"		
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_OVERRIDE_ANIMATION_RATE"		"1.0"
+				}	
+		
+				"States"
+				{
+					"MODIFIER_STATE_STUNNED"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_UNTARGETABLE"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_HEALTH_BAR"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_UNIT_COLLISION"		"MODIFIER_STATE_VALUE_ENABLED"
+					//"MODIFIER_STATE_INVULNERABLE"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/jtr/jtr_abilities"
+						"Function"		"OnQuickStrikesCreate"
+					}	
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/jtr/jtr_abilities"
+						"Function"		"OnQuickStrikesDestroy"
+					}
+				}
+			}
+		}
+    }
+    //========================================
+	// Jack: Quick Strikes (Holy Mother SA)
+	//========================================
+	"jtr_quick_strikes_upgrade"
+    {
+        "BaseClass"                     "ability_datadriven"
+        "MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
+		"AbilityTextureName"			"custom/jtr/jtr_slash"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_1"
+		"AbilityCastPoint"				"0.1"
+        "AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"        
+		"AbilityCooldown"				"22 20 18 16 14"
+		"AbilityManaCost"				"200"
+		"AbilityCastRange"				"600"
+
+		"precache"
+		{
+			
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{	
+				"var_type"			"FIELD_INTEGER"
+				"slashes"			"5 6 7 8 9"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"attack_radius"		"300"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"100 120 140 160 180"
+			}	
+			"04"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"interval"			"0.2"
+			}			
+		}
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/jtr/jtr_abilities"
+				"Function"		"OnInvalidCast"
+			}
+		}
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/jtr/jtr_abilities"
+				"Function"		"OnQuickStrikesUpgrade"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/jtr/jtr_abilities"
+				"Function"		"OnQuickStrikesStart"
+			}
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/jtr/jtr_abilities"
+				"Function"		"OnQuickStrikesActive"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_quick_strikes"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+
+				"OverrideAnimation"     "ACT_DOTA_RUN"		
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_OVERRIDE_ANIMATION_RATE"		"1.0"
+				}	
+		
+				"States"
+				{
+					"MODIFIER_STATE_STUNNED"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_UNTARGETABLE"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_HEALTH_BAR"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_UNIT_COLLISION"		"MODIFIER_STATE_VALUE_ENABLED"
+					//"MODIFIER_STATE_INVULNERABLE"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/jtr/jtr_abilities"
+						"Function"		"OnQuickStrikesCreate"
+					}
+					
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/jtr/jtr_abilities"
+						"Function"		"OnQuickStrikesDestroy"
+					}
+				}
+			}
+		}
+    }
+    //========================================
+	// Jack: Quick Strikes (Curse)
+	//========================================
+	"jtr_quick_strikes_curse"
+    {
+        "BaseClass"                     "ability_datadriven"
+        "MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
+		"AbilityTextureName"			"custom/jtr/jtr_slash"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_1"
+		"AbilityCastPoint"				"0.1"
+        "AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"        
+		"AbilityCooldown"				"22 20 18 16 14"
+		"AbilityManaCost"				"200"
+		"AbilityCastRange"				"600"
+
+		"precache"
+		{
+			
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{	
+				"var_type"			"FIELD_INTEGER"
+				"slashes"			"5 6 7 8 9"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"100 120 140 160 180"
+			}	
+			"04"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"interval"			"0.2"
+			}	
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"curse_duration"	"3.0"
+			}	
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"curse_slow"		"-5"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"curse_dps"			"5 10 15 20 25"
+			}		
+		}
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/jtr/jtr_abilities"
+				"Function"		"OnInvalidCast"
+			}
+		}
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/jtr/jtr_abilities"
+				"Function"		"OnQuickStrikesUpgrade"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/jtr/jtr_abilities"
+				"Function"		"OnQuickStrikesStart"
+			}
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/jtr/jtr_abilities"
+				"Function"		"OnQuickStrikesActive"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_jtr_curse"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Duration"			"%curse_duration"
+				"ThinkInterval"  "0.1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/jtr/jtr_abilities"
+						"Function"		"OnCurseThink"
+					}
+				}
+			}
+			"modifier_jtr_curse_slow"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Duration"			"%curse_duration"
+				"Properties"
+				{
+				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%curse_slow" 
+				}
+			}
+			"modifier_quick_strikes"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+
+				"OverrideAnimation"     "ACT_DOTA_RUN"		
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_OVERRIDE_ANIMATION_RATE"		"1.0"
+				}	
+		
+				"States"
+				{
+					"MODIFIER_STATE_STUNNED"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_UNTARGETABLE"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_HEALTH_BAR"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_UNIT_COLLISION"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_INVULNERABLE"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/jtr/jtr_abilities"
+						"Function"		"OnQuickStrikesCreate"
+					}
+					
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/jtr/jtr_abilities"
+						"Function"		"OnQuickStrikesDestroy"
+					}
+				}
+			}
+		}
+    }
+    //========================================
+	// Jack: Quick Strikes (Curse) (Holy Mother SA)
+	//========================================
+	"jtr_quick_strikes_curse_upgrade"
+    {
+        "BaseClass"                     "ability_datadriven"
+        "MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
+		"AbilityTextureName"			"custom/jtr/jtr_slash"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_1"
+		"AbilityCastPoint"				"0.1"
+        "AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"        
+		"AbilityCooldown"				"22 20 18 16 14"
+		"AbilityManaCost"				"200"
+		"AbilityCastRange"				"600"
+
+		"precache"
+		{
+			
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{	
+				"var_type"			"FIELD_INTEGER"
+				"slashes"			"5 6 7 8 9"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"100 120 140 160 180"
+			}	
+			"04"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"interval"			"0.2"
+			}	
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"curse_duration"	"3.0"
+			}	
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"curse_slow"		"-5"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"curse_dps"			"5 10 15 20 25"
+			}		
+		}
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/jtr/jtr_abilities"
+				"Function"		"OnInvalidCast"
+			}
+		}
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/jtr/jtr_abilities"
+				"Function"		"OnQuickStrikesUpgrade"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/jtr/jtr_abilities"
+				"Function"		"OnQuickStrikesStart"
+			}
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/jtr/jtr_abilities"
+				"Function"		"OnQuickStrikesActive"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_jtr_curse"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Duration"			"%curse_duration"
+				"ThinkInterval"  "0.1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/jtr/jtr_abilities"
+						"Function"		"OnCurseThink"
+					}
+				}
+			}
+			"modifier_jtr_curse_slow"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Duration"			"%curse_duration"
+				"Properties"
+				{
+				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%curse_slow" 
+				}
+			}
+			"modifier_quick_strikes"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+
+				"OverrideAnimation"     "ACT_DOTA_RUN"		
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_OVERRIDE_ANIMATION_RATE"		"1.0"
+				}	
+		
+				"States"
+				{
+					"MODIFIER_STATE_STUNNED"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_UNTARGETABLE"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_HEALTH_BAR"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_UNIT_COLLISION"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_INVULNERABLE"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/jtr/jtr_abilities"
+						"Function"		"OnQuickStrikesCreate"
+					}					
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/jtr/jtr_abilities"
+						"Function"		"OnQuickStrikesDestroy"
+					}
+				}
+			}
+		}
+    }
+	//========================================
+	// Jack: The Mist
+	//========================================
+	"jtr_the_mist"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"			"custom/jtr/jtr_the_mist"
+		"AbilityCastAnimation" 			"ACT_DOTA_ITEM_PICKUP"
+		"AnimationPlaybackRate" 		"1.0"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+
+		"precache"
+		{
+			
+		}
+		
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"34"
+		"AbilityCastPoint"				"0.4"
+		"AbilityCastRange"				"700 900 1100 1300 1500"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"200"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"700 900 1100 1300 1500"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"8 9 10 11 12"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow_pct"				"-20 -25 -30 -35 -40"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"fade_time"				"0.8"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"vision_debuff"			"100"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"window"				"5"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/jtr/jtr_abilities"
+				"Function"		"OnTheMistStart"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_jtr_the_mist_aura_enemies"
+			{
+				"Aura"					"modifier_jtr_the_mist_debuff"
+				"Aura_Radius"			"%radius"
+				"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_BASIC"
+				"Attributes"			"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Passive"				"0"
+				"IsHidden"				"0"
+				"IsDebuff"				"0"
+				"Duration"				"%duration"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/jtr/jtr_abilities"
+						"Function"		"OnTheMistCreate"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/jtr/jtr_abilities"
+						"Function"		"OnTheMistDestroy"
+					}
+				}
+			}
+			"modifier_jtr_the_mist_debuff"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+			
+				"Properties"
+				{
+				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow_pct" 
+				    "MODIFIER_PROPERTY_FIXED_DAY_VISION"			"%vision_debuff"
+				    "MODIFIER_PROPERTY_FIXED_NIGHT_VISION"			"%vision_debuff"
+				}
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/jtr/jtr_abilities"
+						"Function"		"OnTheMistParticleBlindCreate"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/jtr/jtr_abilities"
+						"Function"		"OnTheMistParticleBlindDestroy"
+					}
+				}
+			}
+			"modifier_jtr_the_mist_checker"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Duration"			"%duration"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"ThinkInterval"  	"0.05"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/jtr/jtr_abilities"
+						"Function"		"OnTheMistSelfThink"
+					}
+				}
+				"OnAttackLanded"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/jtr/jtr_abilities"
+						"Function"		"OnTheMistSelfRemove"
+					}
+				}
+				"OnAbilityExecuted"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/jtr/jtr_abilities"
+						"Function"		"OnTheMistSelfRemove"
+					}
+				}
+				"OnTakeDamage"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/jtr/jtr_abilities"
+						"Function"		"OnTheMistSelfRemove"
+					}
+				}
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/jtr/jtr_abilities"
+						"Function"		"OnTheMistSelfCreate"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/jtr/jtr_abilities"
+						"Function"		"OnTheMistSelfDestroy"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/jtr/jtr_abilities"
+						"Function"		"OnTheMistSelfDeath"
+					}
+				}
+			}
+			"modifier_jtr_the_mist_invis"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"EffectName"			"particles/units/heroes/hero_pugna/pugna_decrepify.vpcf"	
+				"EffectAttachType"		"follow_overhead"
+				"States"
+				{
+					"MODIFIER_STATE_INVISIBLE"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_UNIT_COLLISION"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+			"modifier_jtr_the_mist_fade"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Duration"			"%fade_time"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/jtr/jtr_abilities"
+						"Function"		"OnTheMistFadeStart"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/jtr/jtr_abilities"
+						"Function"		"OnTheMistFadeDestroy"
+					}
+				}
+			}
+			"modifier_whitechapel_window"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Duration"			"%window"
+			
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/jtr/jtr_abilities"
+						"Function"		"OnWhiteChapelWindowCreate"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/jtr/jtr_abilities"
+						"Function"		"OnWhiteChapelWindowDestroy"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/jtr/jtr_abilities"
+						"Function"		"OnWhiteChapelWindowDeath"
+					}
+				}
+			}
+		}
+	}
+	//========================================
+	// Jack: The Mist (Murderer of the Misty Night SA)
+	//========================================
+	"jtr_the_mist_upgrade"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"			"custom/jtr/jtr_the_mist"
+		"AbilityCastAnimation" 			"ACT_DOTA_ITEM_PICKUP"
+		"AnimationPlaybackRate" 		"1.0"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+
+		"precache"
+		{
+
+		}
+		
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"34"
+		"AbilityCastPoint"				"0.4"
+		"AbilityCastRange"				"700 900 1100 1300 1500"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"200"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"700 900 1100 1300 1500"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"8 9 10 11 12"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow_pct"				"-20 -25 -30 -35 -40"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"fade_time"				"0.3"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"vision_debuff"			"100"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"window"				"5"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/jtr/jtr_abilities"
+				"Function"		"OnTheMistStart"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_jtr_the_mist_aura_enemies"
+			{
+				"Aura"					"modifier_jtr_the_mist_debuff"
+				"Aura_Radius"			"%radius"
+				"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_BASIC"
+				"Attributes"			"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Passive"				"0"
+				"IsHidden"				"0"
+				"IsDebuff"				"0"
+				"Duration"				"%duration"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/jtr/jtr_abilities"
+						"Function"		"OnTheMistCreate"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/jtr/jtr_abilities"
+						"Function"		"OnTheMistDestroy"
+					}
+				}
+			}
+			"modifier_jtr_the_mist_debuff"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+			
+				"Properties"
+				{
+				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow_pct" 
+				    "MODIFIER_PROPERTY_FIXED_DAY_VISION"			"%vision_debuff"
+				    "MODIFIER_PROPERTY_FIXED_NIGHT_VISION"			"%vision_debuff"
+				}
+				"States"
+				{
+					//"MODIFIER_STATE_BLIND"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/jtr/jtr_abilities"
+						"Function"		"OnTheMistParticleBlindCreate"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/jtr/jtr_abilities"
+						"Function"		"OnTheMistParticleBlindDestroy"
+					}
+				}
+			}
+			"modifier_jtr_the_mist_checker"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Duration"			"%duration"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"ThinkInterval"  	"0.05"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/jtr/jtr_abilities"
+						"Function"		"OnTheMistSelfThink"
+					}
+				}
+				"OnAttackLanded"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/jtr/jtr_abilities"
+						"Function"		"OnTheMistSelfRemove"
+					}
+				}
+				"OnAbilityExecuted"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/jtr/jtr_abilities"
+						"Function"		"OnTheMistSelfRemove"
+					}
+				}
+				"OnTakeDamage"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/jtr/jtr_abilities"
+						"Function"		"OnTheMistSelfRemove"
+					}
+				}
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/jtr/jtr_abilities"
+						"Function"		"OnTheMistSelfCreate"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/jtr/jtr_abilities"
+						"Function"		"OnTheMistSelfDestroy"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/jtr/jtr_abilities"
+						"Function"		"OnTheMistSelfDeath"
+					}
+				}
+			}
+			"modifier_jtr_the_mist_invis"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"EffectName"			"particles/units/heroes/hero_pugna/pugna_decrepify.vpcf"	
+				"EffectAttachType"		"follow_overhead"
+				"States"
+				{
+					"MODIFIER_STATE_INVISIBLE"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_UNIT_COLLISION"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+			"modifier_jtr_the_mist_fade"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Duration"			"%fade_time"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/jtr/jtr_abilities"
+						"Function"		"OnTheMistFadeStart"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/jtr/jtr_abilities"
+						"Function"		"OnTheMistFadeDestroy"
+					}
+				}
+			}
+			"modifier_whitechapel_window"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Duration"			"%window"
+			
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/jtr/jtr_abilities"
+						"Function"		"OnWhiteChapelWindowCreate"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/jtr/jtr_abilities"
+						"Function"		"OnWhiteChapelWindowDestroy"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/jtr/jtr_abilities"
+						"Function"		"OnWhiteChapelWindowDeath"
+					}
+				}
+			}
+		}
+	}
+	//========================================
+	// Jack: Maria The Ripper
+	//========================================
+	"jtr_maria_the_ripper"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/jtr/jtr_maria_the_ripper"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_4"
+		"AnimationPlaybackRate" 		"1.5"
+		
+		"AbilityCastPoint"				"0.7"
+		"AbilityCastRange"				"450"
+		"AbilityCastRangeBuffer"		"100"
+		"AbilityCooldown"				"42"
+		"AbilityManaCost"				"800"
+		
+		"precache"
+		{
+			
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_point"			"0.7"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"reduced_cast_point"	"0.4"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"450"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_per_hit"		"200 260 320 380 440"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"total_hit"				"4"
+			}
+		}	
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/jtr/jtr_abilities"
+				"Function"		"OnInvalidCast"
+			}
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/jtr/jtr_abilities"
+				"Function"		"OnMariaCast"
+			}
+		}	
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/jtr/jtr_abilities"
+				"Function"		"OnMariaUpgrade"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/jtr/jtr_abilities"
+				"Function"		"OnMariaStart"
+			}
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/jtr/jtr_abilities"
+				"Function"		"OnMariaActive"
+			}
+		}
+	}
+	//========================================
+	// Jack: Maria The Ripper (Holy Mother SA)
+	//========================================
+	"jtr_maria_the_ripper_upgrade_1"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/jtr/jtr_maria_the_ripper"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_4"
+		"AnimationPlaybackRate" 		"1.5"
+		
+		"AbilityCastPoint"				"0.7"
+		"AbilityCastRange"				"450"
+		"AbilityCastRangeBuffer"		"100"
+		"AbilityCooldown"				"42"
+		"AbilityManaCost"				"800"
+		
+		"precache"
+		{
+			
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_point"			"0.7"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"reduced_cast_point"	"0.4"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"450"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_per_hit"		"200 260 320 380 440"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"total_hit"				"4"
+			}
+		}	
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/jtr/jtr_abilities"
+				"Function"		"OnInvalidCast"
+			}
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/jtr/jtr_abilities"
+				"Function"		"OnMariaCast"
+			}
+		}	
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/jtr/jtr_abilities"
+				"Function"		"OnMariaUpgrade"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/jtr/jtr_abilities"
+				"Function"		"OnMariaStart"
+			}
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/jtr/jtr_abilities"
+				"Function"		"OnMariaActive"
+			}
+		}
+	}
+	//========================================
+	// Jack: Maria The Ripper (Murderer on Misty Night SA)
+	//========================================
+	"jtr_maria_the_ripper_upgrade_2"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/jtr/jtr_maria_the_ripper"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_4"
+		"AnimationPlaybackRate" 		"1.5"
+		
+		"AbilityCastPoint"				"0.7"
+		"AbilityCastRange"				"450"
+		"AbilityCastRangeBuffer"		"100"
+		"AbilityCooldown"				"42"
+		"AbilityManaCost"				"800"
+		
+		"precache"
+		{
+			
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_point"			"0.7"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"reduced_cast_point"	"0.4"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"450"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_per_hit"		"200 260 320 380 440"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"total_hit"				"4"
+			}
+		}	
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/jtr/jtr_abilities"
+				"Function"		"OnInvalidCast"
+			}
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/jtr/jtr_abilities"
+				"Function"		"OnMariaCast"
+			}
+		}	
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/jtr/jtr_abilities"
+				"Function"		"OnMariaUpgrade"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/jtr/jtr_abilities"
+				"Function"		"OnMariaStart"
+			}
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/jtr/jtr_abilities"
+				"Function"		"OnMariaActive"
+			}
+		}
+	}
+	//========================================
+	// Jack: Maria The Ripper (Holy Mother + Murderer on Misty Night SA)
+	//========================================
+	"jtr_maria_the_ripper_upgrade_3"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/jtr/jtr_maria_the_ripper"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_4"
+		"AnimationPlaybackRate" 		"1.5"
+		
+		"AbilityCastPoint"				"0.7"
+		"AbilityCastRange"				"450"
+		"AbilityCastRangeBuffer"		"100"
+		"AbilityCooldown"				"42"
+		"AbilityManaCost"				"800"
+		
+		"precache"
+		{
+			
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_point"			"0.7"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"reduced_cast_point"	"0.4"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"450"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_per_hit"		"200 260 320 380 440"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"total_hit"				"4"
+			}
+		}	
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/jtr/jtr_abilities"
+				"Function"		"OnInvalidCast"
+			}
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/jtr/jtr_abilities"
+				"Function"		"OnMariaCast"
+			}
+		}	
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/jtr/jtr_abilities"
+				"Function"		"OnMariaUpgrade"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/jtr/jtr_abilities"
+				"Function"		"OnMariaStart"
+			}
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/jtr/jtr_abilities"
+				"Function"		"OnMariaActive"
+			}
+		}
+	}
+	//========================================
+	// Jack: Maria The Ripper (Curse)
+	//========================================
+	"jtr_maria_the_ripper_curse"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/jtr/jtr_maria_the_ripper_curse"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_4"
+		"AnimationPlaybackRate" 		"1.5"
+		
+		"AbilityCastPoint"				"0.7"
+		"AbilityCastRange"				"450"
+		"AbilityCastRangeBuffer"		"100"
+		"AbilityCooldown"				"42"
+		"AbilityManaCost"				"800"
+		
+		"precache"
+		{
+			
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_point"			"0.7"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"reduced_cast_point"	"0.4"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"450"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_per_hit"		"200 260 320 380 440"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"total_hit"				"4"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"curse"				"30"
+			}
+		}	
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/jtr/jtr_abilities"
+				"Function"		"OnInvalidCast"
+			}
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/jtr/jtr_abilities"
+				"Function"		"OnMariaCast"
+			}
+		}	
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/jtr/jtr_abilities"
+				"Function"		"OnMariaUpgrade"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/jtr/jtr_abilities"
+				"Function"		"OnMariaStart"
+			}
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/jtr/jtr_abilities"
+				"Function"		"OnMariaActive"
+			}
+		}
+	}
+	//========================================
+	// Jack: Maria The Ripper (Curse) (Holy Mother SA)
+	//========================================
+	"jtr_maria_the_ripper_curse_upgrade_1"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/jtr/jtr_maria_the_ripper_curse"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_4"
+		"AnimationPlaybackRate" 		"1.5"
+		
+		"AbilityCastPoint"				"0.7"
+		"AbilityCastRange"				"450"
+		"AbilityCastRangeBuffer"		"100"
+		"AbilityCooldown"				"42"
+		"AbilityManaCost"				"800"
+		
+		"precache"
+		{
+			
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_point"			"0.7"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"reduced_cast_point"	"0.4"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"450"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_per_hit"		"200 260 320 380 440"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"total_hit"				"4"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"curse"				"30"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_curse"			"3"
+			}
+		}	
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/jtr/jtr_abilities"
+				"Function"		"OnInvalidCast"
+			}
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/jtr/jtr_abilities"
+				"Function"		"OnMariaCast"
+			}
+		}	
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/jtr/jtr_abilities"
+				"Function"		"OnMariaUpgrade"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/jtr/jtr_abilities"
+				"Function"		"OnMariaStart"
+			}
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/jtr/jtr_abilities"
+				"Function"		"OnMariaActive"
+			}
+		}
+	}
+	//========================================
+	// Jack: Maria The Ripper (Curse) (Murderer on Misty Night SA)
+	//========================================
+	"jtr_maria_the_ripper_curse_upgrade_2"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/jtr/jtr_maria_the_ripper_curse"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_4"
+		"AnimationPlaybackRate" 		"1.5"
+		
+		"AbilityCastPoint"				"0.4"
+		"AbilityCastRange"				"450"
+		"AbilityCastRangeBuffer"		"100"
+		"AbilityCooldown"				"42"
+		"AbilityManaCost"				"800"
+		
+		"precache"
+		{
+			
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_point"			"0.7"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"reduced_cast_point"	"0.4"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"450"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_per_hit"		"200 260 320 380 440"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"total_hit"				"4"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"curse"				"30"
+			}
+		}	
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/jtr/jtr_abilities"
+				"Function"		"OnInvalidCast"
+			}
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/jtr/jtr_abilities"
+				"Function"		"OnMariaCast"
+			}
+		}	
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/jtr/jtr_abilities"
+				"Function"		"OnMariaUpgrade"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/jtr/jtr_abilities"
+				"Function"		"OnMariaStart"
+			}
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/jtr/jtr_abilities"
+				"Function"		"OnMariaActive"
+			}
+		}
+	}
+	//========================================
+	// Jack: Maria The Ripper (Curse) (Holy Mother + Murderer on Misty Night SA)
+	//========================================
+	"jtr_maria_the_ripper_curse_upgrade_3"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/jtr/jtr_maria_the_ripper_curse"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_4"
+		"AnimationPlaybackRate" 		"1.5"
+		
+		"AbilityCastPoint"				"0.4"
+		"AbilityCastRange"				"450"
+		"AbilityCastRangeBuffer"		"100"
+		"AbilityCooldown"				"42"
+		"AbilityManaCost"				"800"
+		
+		"precache"
+		{
+			
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_point"			"0.7"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"reduced_cast_point"	"0.4"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"450"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_per_hit"		"200 260 320 380 440"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"total_hit"				"4"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"curse"					"30"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_curse"			"3"
+			}
+		}	
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/jtr/jtr_abilities"
+				"Function"		"OnInvalidCast"
+			}
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/jtr/jtr_abilities"
+				"Function"		"OnMariaCast"
+			}
+		}	
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/jtr/jtr_abilities"
+				"Function"		"OnMariaUpgrade"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/jtr/jtr_abilities"
+				"Function"		"OnMariaStart"
+			}
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/jtr/jtr_abilities"
+				"Function"		"OnMariaActive"
+			}
+		}
+	}
+	//========================================
+	// Jack: Whitechapel
+	//========================================
+	"jtr_whitechapel"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityTextureName"			"custom/jtr/jtr_whitechapel_murderer"
+		"AbilityCastAnimation" 			"ACT_DOTA_ITEM_PICKUP"
+		"AnimationPlaybackRate" 		"1.0"
+		"MaxLevel"						"1"
+
+		"precache"
+		{
+			
+		}
+		
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"150"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"200"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"15"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"crit_chance"			"35"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"crit_damage"			"200"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"vision_debuff"			"100"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/jtr/jtr_abilities"
+				"Function"		"OnWhiteChapelStart"
+			}
+		}
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/jtr/jtr_abilities"
+				"Function"		"OnWhiteChapelDie"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_jtr_whitechapel_enemies"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Duration"			"%duration"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			
+				"Properties"
+				{
+				    "MODIFIER_PROPERTY_FIXED_DAY_VISION"			"%vision_debuff"
+				    "MODIFIER_PROPERTY_FIXED_NIGHT_VISION"			"%vision_debuff"
+				}
+				"States"
+				{
+					"MODIFIER_STATE_BLIND"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+			"modifier_jtr_whitechapel_female_enemies"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Duration"			"%duration"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			
+				"Properties"
+				{
+				    "MODIFIER_PROPERTY_PROVIDES_FOW_POSITION"			"1"
+				}
+			}
+			"modifier_jtr_whitechapel_allies"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Duration"			"%duration"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			
+				"Properties"
+				{
+				    "MODIFIER_PROPERTY_FIXED_DAY_VISION"			"%vision_debuff"
+				    "MODIFIER_PROPERTY_FIXED_NIGHT_VISION"			"%vision_debuff"
+				}
+			}
+			"modifier_jtr_whitechapel_self"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"Duration"			"%duration"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/jtr/jtr_abilities"
+						"Function"		"OnWhiteChapelCreate"
+					}
+				}
+				"ThinkInterval"  "0.03"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/jtr/jtr_abilities"
+						"Function"		"OnWhiteChapelThink"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/jtr/jtr_abilities"
+						"Function"		"OnWhiteChapelDestroy"
+					}
+				}
+				"OnAttackStart"
+				{
+					"Random"
+					{
+						"Chance"			"%crit_chance"
+						"OnSuccess"
+						{
+							"ApplyModifier"
+							{
+								"ModifierName"	"modifier_jtr_whitechapel_self_crit"
+								"Target" 		"CASTER"
+								"Duration"		"1.0"
+							}
+						}
+					}
+				}
+				"States"
+				{
+					"MODIFIER_STATE_INVISIBLE"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+			"modifier_jtr_whitechapel_self_crit"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE" "%crit_damage"
+				}
+				"OnAttackLanded"
+				{
+			    	"FireEffect"
+			    	{
+			    		"EffectName"		"particles/units/heroes/hero_juggernaut/jugg_crit_blur_impact.vpcf"
+			    		"EffectAttachType"	"attach_hitloc"
+			    		"Target"			"TARGET"
+			    	}
+					"RemoveModifier"
+			        {
+			            "ModifierName"  	"modifier_jtr_whitechapel_self_crit"
+						"Target"
+ 						{
+ 							"Center"	"CASTER"
+ 							"Flags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+ 						}
+   			        }
+			    }
+			}
+			"modifier_jtr_whitechapel_cooldown"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE | MODIFIER_ATTRIBUTE_PERMANENT"
+			}
+		}
+	}
+	//========================================
+	// Jack: Ghost Walk (Combo skill set)
+	//========================================
+	"jtr_ghost_walk"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/jtr/jtr_ghost_walk"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_4"
+		"AnimationPlaybackRate" 		"1.5"
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"5 4 3 2 1"
+		"AbilityManaCost"				"100"
+		
+		"precache"
+		{
+
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"distance"				"850"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"min_distance"			"200"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"base_dmg"				"60 90 120 150 180"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"atk_ratio"				"1.0"
+			}
+		}	
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/jtr/jtr_abilities"
+				"Function"		"OnAbilityCastCheck"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/jtr/jtr_abilities"
+				"Function"		"GhostWalkStart"
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"	"0"
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/jtr/jtr_abilities"
+				"Function"		"GhostWalkHit"
+			}
+		}	
+	}
+	//=======================================
+	// Jack Attribute : Information Erase
+	//=======================================
+	"jtr_attribute_information_erase"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/jtr/jtr_attribute_information_erase"
+		
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"15"
+
+		"precache"
+		{
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"cast_range"		"550"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"cooldown_forced"	"5"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"cooldown"			"40"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/jtr/jtr_abilities"
+				"Function"		"OnInformationEraseAcquired"
+			}
+		}
+	}
+	//=======================================
+	// Jack : Information Erasure
+	//=======================================
+	"jtr_information_erase"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityTextureName"			"custom/jtr/jtr_attribute_information_erase"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_4"
+		"AnimationPlaybackRate" 		"1"
+
+		"AbilityCastPoint"				"0.35"
+		"AbilityCastRange"				"550"
+		"AbilityCooldown"				"40"
+		"AbilityManaCost"				"0"
+
+		"precache"
+		{
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"cast_range"		"550"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"cooldown_forced"	"5"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/jtr/jtr_abilities"
+				"Function"		"OnInformationEraseStart"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_information_erase_passive"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"States"
+				{
+					"MODIFIER_STATE_NOT_ON_MINIMAP_FOR_ENEMIES"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+		}
+	}
+	//=======================================
+	// Jack Attribute : Holy Mother
+	//=======================================
+	"jtr_attribute_holy_mother"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/jtr/jtr_attribute_holy_mother"
+		
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"15"
+
+		"precache"
+		{
+		}
+
+		"AbilitySpecial"
+		{
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"agi_per_stack"			"2"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_curse"			"3"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/jtr/jtr_abilities"
+				"Function"		"OnHolyMotherAcquired"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Holy Mother Passive
+	//=================================================================================================================
+	"jtr_holy_mother_passive"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityTextureName"			"custom/jtr/jtr_attribute_holy_mother"
+		"MaxLevel"						"1"
+		
+		"precache"
+		{
+		}
+
+		"AbilitySpecial"
+		{
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"agi_per_stack"			"2"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_jtr_holy_mother_passive"
+			{
+				"Passive"			"1"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE | MODIFIER_ATTRIBUTE_PERMANENT"
+		
+				"OnKill"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/jtr/jtr_abilities"
+						"Function"		"OnHolyMotherKill"
+					}
+				}
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_TOOLTIP" "%agi_per_stack"
+				}
+			}
+			"modifier_jtr_holy_mother_buff"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE | MODIFIER_ATTRIBUTE_PERMANENT"
+			
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS" "%agi_per_stack"
+				}
+			}
+		}
+	}
+
+	//=======================================
+	// Jack Attribute : Mental Pollution 
+	//=======================================
+	"jtr_attribute_mental_pollution"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/jtr/jtr_attribute_mental_pollution"
+		
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"11"
+
+		"precache"
+		{
+		}
+
+		"AbilitySpecial"
+		{
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cooldown"				"40"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/jtr/jtr_abilities"
+				"Function"		"OnMentalPollutionAcquired"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Jack : Mental Pollution Passive
+	//=================================================================================================================
+	"jtr_mental_pollution_passive"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityTextureName"			"custom/jtr/jtr_attribute_mental_pollution"
+		"MaxLevel"						"1"
+		"AbilityCooldown"				"40.0"
+		
+		"precache"
+		{
+		}
+
+		"AbilitySpecial"
+		{
+
+		}
+		"Modifiers"
+		{
+			"modifier_jtr_mental_pollution_passive"
+			{
+				"Passive"			"1"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE | MODIFIER_ATTRIBUTE_PERMANENT"
+		
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/jtr/jtr_abilities"
+						"Function"		"OnMentalPollutionDestroy"
+					}
+				}
+			}
+			"modifier_jtr_mental_pollution_cooldown"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE | MODIFIER_ATTRIBUTE_PERMANENT"
+			
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/jtr/jtr_abilities"
+						"Function"		"OnMentalPollutionCooldownDestroy"
+					}
+				}
+			}
+		}
+	}
+
+	//=======================================
+	// Jack Attribute : Soul Eater
+	//=======================================
+	"jtr_attribute_soul_eater"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/jtr/jtr_attribute_soul_eater"
+		
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"12"
+
+		"precache"
+		{
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"base_healing"			"35"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"agi_bonus"				"1.0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"healing_cap"			"8"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"healing_radius"		"300"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mana_drain"			"15"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/jtr/jtr_abilities"
+				"Function"		"OnSoulEaterAcquired"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Jack : Soul Eater Passive
+	//=================================================================================================================
+	"jtr_soul_eater_passive"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityTextureName"			"custom/jtr/jtr_attribute_soul_eater"
+		"MaxLevel"						"1"
+		
+		"precache"
+		{
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"base_healing"			"35"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"agi_bonus"				"100"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"healing_cap"			"8"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"healing_radius"		"300"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mana_drain"			"15"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_jtr_soul_eater_passive"
+			{
+				"Passive"			"1"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE | MODIFIER_ATTRIBUTE_PERMANENT"
+		
+				"OnDealDamage"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/jtr/jtr_abilities"
+						"Function"		"OnSoulEaterDealDamage"
+						"AttackDamage"	"%attack_damage"
+					}
+				}
+			}
+		}
+	}
+
+	//=======================================
+	// Jack Attribute: Murderer on Misty Night
+	//=======================================
+	"jtr_attribute_murderer_on_misty_night"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/jtr/jtr_attribute_murderer_on_misty_night"
+		
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"16"
+
+		"precache"
+		{
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"fade_time_reduction"	"0.5"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"reduced_cast_point"	"0.4"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"invis_agi_damage"		"1.3"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"active_time"			"3.0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"recharge_time"			"2.0"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/jtr/jtr_abilities"
+				"Function"		"OnMurdererOnMistyNightAcquired"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Jack: Murderer on Misty Night
+	//=================================================================================================================
+	"jtr_murderer_on_misty_night"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityTextureName"			"custom/jtr/jtr_attribute_murderer_on_misty_night"
+		"MaxLevel"						"1"
+		
+		"precache"
+		{
+		}
+
+		"AbilitySpecial"
+		{
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"invis_agi_damage"		"1.3"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"active_time"			"3.0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"recharge_time"			"2.0"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_jtr_murderer_mist_thinker"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE | MODIFIER_ATTRIBUTE_PERMANENT"
+		
+				"ThinkInterval"  "0.2"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/jtr/jtr_abilities"
+						"Function"		"OnAmbushThink"
+					}
+				}
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/jtr/jtr_abilities"
+						"Function"		"OnAmbushRespawn"
+					}
+				}
+				"OnRespawn"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/jtr/jtr_abilities"
+						"Function"		"OnAmbushRespawn"
+					}
+				}
+			}
+			"modifier_jtr_murderer_mist_buff"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"EffectName"		"particles/econ/items/phantom_assassin/pa_fall20_immortal_shoulders/pa_fall20_blur_ambient_smoke_body.vpcf"
+				"EffectAttachType"	"follow_origin"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE | MODIFIER_ATTRIBUTE_PERMANENT"
+			
+				"OnAttackLanded"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/jtr/jtr_abilities"
+						"Function"		"OnAmbushAttack"
+					}
+				}
+			}
+			"modifier_jtr_murderer_mist_buff_active"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"Duration"			"%active_time"
+				"EffectName"		"particles/econ/items/phantom_assassin/pa_fall20_immortal_shoulders/pa_fall20_blur_ambient_smoke_body.vpcf"
+				"EffectAttachType"	"follow_origin"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE | MODIFIER_ATTRIBUTE_PERMANENT"
+			
+				"OnAttackLanded"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/jtr/jtr_abilities"
+						"Function"		"OnAmbushAttack"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/jtr/jtr_abilities"
+						"Function"		"OnAmbushBroke"
+					}
+				}
+			}
+			"modifier_jtr_murderer_mist_cooldown"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE | MODIFIER_ATTRIBUTE_PERMANENT"
+			}
+			"modifier_jtr_murderer_mist_cooldown_recharge"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Duration"			"%recharge_time"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE | MODIFIER_ATTRIBUTE_PERMANENT"
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/jtr/jtr_abilities"
+						"Function"		"OnAmbushRechargeBroke"
+					}
+				}
+			}
+		}
+	}
+	//=======================================
+	// Precache
+	//=======================================
+	"jtr_precache"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"custom/medusa/medusa_attribute_monstrous_strength"
+
+		"precache"
+		{
+			"particle"				"particles/units/heroes/hero_phantom_assassin/phantom_assassin_stifling_dagger.vpcf"
+			"particle"				"particles/generic_gameplay/generic_sleep.vpcf"
+			"particle"				"particles/units/heroes/hero_siren/naga_siren_song_debuff.vpcf"
+			"particle"				"particles/custom/jtr/jtr_slash.vpcf"
+			"particle"				"particles/custom/jtr/invis_smoke.vpcf"
+			"particle"				"particles/units/heroes/hero_pugna/pugna_decrepify.vpcf"
+			"particle"				"particles/custom/jtr/jtr_invis_ring.vpcf"
+			"particle"  			"particles/custom/jtr/murderer_mist.vpcf"
+			"particle"  			"particles/custom/jtr/jtr_heal.vpcf"
+			"particle"  			"particles/custom/jtr/jtr_maria_a.vpcf"
+			"particle"  			"particles/custom/jtr/jtr_maria_b.vpcf"
+			"particle"  			"particles/custom/jtr/jtr_maria_c.vpcf"
+			"particle"  			"particles/custom/jtr/jtr_maria_d.vpcf"
+			"particle"				"particles/units/heroes/hero_riki/riki_backstab.vpcf"
+			"particle"				"particles/econ/items/dark_willow/dark_willow_ti8_immortal_head/dw_crimson_ti8_immortal_cursed_crownmarker.vpcf"
+			"particle"  			"particles/units/heroes/hero_juggernaut/jugg_crit_blur_impact.vpcf"
+			"particle"  			"particles/econ/items/phantom_assassin/pa_fall20_immortal_shoulders/pa_fall20_blur_ambient_smoke_body.vpcf"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_phantom_assassin.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_antimage.vsndevts"
+		}
+	}
+}

@@ -1,0 +1,970 @@
+"DOTAAbilities"
+{
+	//==================================================================================================================
+	// Miyamoto Musashi : Skill 1 : Accel Turn (Q)
+	//==================================================================================================================
+	"musashi_accel_turn"
+	{
+		//General-------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/musashi/musashi_abilities"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | 
+										 DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+		"AbilityTextureName"     		"custom/musashi/musashi_accel_turn"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+	
+		//Casting-------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"         		"100"
+		"AbilityCastRange"				"0"
+		"AbilityCastRangeBuffer"		"0"
+		"AbilityCastPoint"				"0.1"
+		"AbilityCastAnimation"			"ACT_DOTA_RUN"
+		"AnimationPlaybackRate"			"1.0"
+		"AnimationIgnoresModelScale" 	"1"
+
+		//Time----------------------------------------------------------------------------------------------------------
+		"AbilityChannelTime"			"0"
+		"AbilityCooldown"				"23 21 19 17 15"
+		"AbilityCharges"				"0"
+		"AbilityChargeRestoreTime"		"0"
+
+		//Targeting-----------------------------------------------------------------------------------------------------
+	    "AbilityUnitTargetTeam"  		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	    "AbilityUnitTargetType"  		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+	    "AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_NONE"
+	    "AbilityUnitDamageType"  		"DAMAGE_TYPE_MAGICAL"
+	    "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	    "SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+
+	    //AbilityMechanics----------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"Damage"					"200 250 300 350 400"
+			"Range"						"500 600 700 800 900"
+			"DashSpeed"					"75"
+			"ProjectileRadius"			"200"
+			"ProjectileSpeed"			"1500"
+		}
+
+		//Precache------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"particle"					"particles/custom/musashi/musashi_accel_turn_basic.vpcf"
+			"particle"					"particles/custom/musashi/musashi_accel_turn_unique.vpcf"
+		}
+	}
+
+	//==================================================================================================================
+	// Miyamoto Musashi : Skill 2 : Dai Go Sei (W)
+	//==================================================================================================================
+	"musashi_dai_go_sei"
+	{
+		//General-------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/musashi/musashi_abilities"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityTextureName"     		"custom/musashi/musashi_dai_go_sei"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+	
+		//Casting-------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"         		"200"
+		"AbilityCastRange"				"750"
+		"AbilityCastRangeBuffer"		"250"
+		"AbilityCastPoint"				"0.1"
+		"AbilityCastAnimation"			"ACT_DOTA_ATTACK_EVENT"
+		"AnimationPlaybackRate"			"1.0"
+		"AnimationIgnoresModelScale" 	"1"
+
+		//Time----------------------------------------------------------------------------------------------------------
+		"AbilityChannelTime"			"0"
+		"AbilityCooldown"				"20"
+		"AbilityCharges"				"0"
+		"AbilityChargeRestoreTime"		"0"
+
+		//Targeting-----------------------------------------------------------------------------------------------------
+	    "AbilityUnitTargetTeam"  		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	    "AbilityUnitTargetType"  		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+	    "AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+	    "AbilityUnitDamageType"  		"DAMAGE_TYPE_PURE"
+	    "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+	    "SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+
+	    //AbilityMechanics----------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"Damage"					"50 100 150 200 250"
+			"BonusAtkSpeed"				"20 40 60 80 100"
+			"BonusAtkDmg"				"20 40 60 80 100"
+			"HitsRequired"				"6"
+			"Radius"					"200"
+			"StunDuration"				"0.5"
+			"BuffDuration"				"10"
+		}
+
+		//Precache------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"particle"					"particles/custom/musashi/musashi_dai_go_sei_basic.vpcf"
+			"particle"					"particles/custom/musashi/musashi_dai_go_sei_blueorb_basic.vpcf"
+			"particle"					"particles/custom/musashi/musashi_dai_go_sei_redorb_basic.vpcf"
+			"particle"					"particles/custom/musashi/musashi_dai_go_sei_unique.vpcf"
+			"particle"					"particles/custom/musashi/musashi_dai_go_sei_blueorb_unique.vpcf"
+			"particle"					"particles/custom/musashi/musashi_dai_go_sei_redorb_unique.vpcf"
+		}
+	}
+
+	//==================================================================================================================
+	// Miyamoto Musashi : Skill 3 : Niou Kurikara (E)
+	//==================================================================================================================
+	"musashi_niou_kurikara"
+	{
+		//General-------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/musashi/musashi_abilities"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityTextureName"     		"custom/musashi/musashi_niou_kurikara"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+	
+		//Casting-------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"         		"400"
+		"AbilityCastRange"				"450"
+		"AbilityCastRangeBuffer"		"0"
+		"AbilityCastPoint"				"0.6"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+		"AnimationPlaybackRate"			"1.0"
+		"AnimationIgnoresModelScale" 	"1"
+
+		//Time----------------------------------------------------------------------------------------------------------
+		"AbilityChannelTime"			"0"
+		"AbilityCooldown"				"30"
+		"AbilityCharges"				"0"
+		"AbilityChargeRestoreTime"		"0"
+
+		//Targeting-----------------------------------------------------------------------------------------------------
+	    "AbilityUnitTargetTeam"  		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	    "AbilityUnitTargetType"  		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+	    "AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_NONE"
+	    "AbilityUnitDamageType"  		"DAMAGE_TYPE_MAGICAL"
+	    "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	    "SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+
+	    //AbilityMechanics----------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"DmgPerSlash"				"110 170 230 290 350"
+			"DmgReduceWhileSlashing"	"0"
+			"DmgReducePostSlashing"		"0"
+			"SlashCount"				"4"
+			"Radius"					"450"
+			"BuffDuration"				"0"
+		}
+
+		//Precache------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"particle"					"particles/custom/musashi/musashi_niou_kurikara_basic.vpcf"
+			"particle"					"particles/custom/musashi/musashi_niou_kurikara_unique_earth.vpcf"
+			"particle"					"particles/custom/musashi/musashi_niou_kurikara_unique_earth_crack.vpcf"
+			"particle"					"particles/custom/musashi/musashi_niou_kurikara_unique_water.vpcf"
+			"particle"					"particles/custom/musashi/musashi_niou_kurikara_unique_water_crack.vpcf"
+			"particle"					"particles/custom/musashi/musashi_niou_kurikara_unique_fire.vpcf"
+			"particle"					"particles/custom/musashi/musashi_niou_kurikara_unique_fire_crack.vpcf"
+			"particle"					"particles/custom/musashi/musashi_niou_kurikara_unique_wind.vpcf"
+			"particle"					"particles/custom/musashi/musashi_niou_kurikara_unique_wind_crack.vpcf"
+			"particle"					"particles/custom/musashi/musashi_niou_kurikara_fire_debuff_basic.vpcf"
+			"particle"					"particles/custom/musashi/musashi_niou_kurikara_fire_debuff_unique.vpcf"
+		}
+	}
+
+	//==================================================================================================================
+	// Miyamoto Musashi : Skill 4 : Tengan (D)
+	//==================================================================================================================
+	"musashi_tengan"
+	{
+		//General-------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/musashi/musashi_abilities"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityTextureName"     		"custom/musashi/musashi_tengan"
+		"MaxLevel"						"1"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+	
+		//Casting-------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"         		"0"
+		"AbilityCastRange"				"0"
+		"AbilityCastRangeBuffer"		"0"
+		"AbilityCastPoint"				"0.2"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
+		"AnimationPlaybackRate"			"1.0"
+		"AnimationIgnoresModelScale" 	"1"
+
+		//Time----------------------------------------------------------------------------------------------------------
+		"AbilityChannelTime"			"0"
+		"AbilityCooldown"				"0"
+		"AbilityCharges"				"0"
+		"AbilityChargeRestoreTime"		"0"
+
+		//Targeting-----------------------------------------------------------------------------------------------------
+	    "AbilityUnitTargetTeam"  		"DOTA_UNIT_TARGET_TEAM_NONE"
+	    "AbilityUnitTargetType"  		"DOTA_UNIT_TARGET_NONE"
+	    "AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_NONE"
+	    "AbilityUnitDamageType"  		"DAMAGE_TYPE_NONE"
+	    "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+	    "SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+
+	    //AbilityMechanics----------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"BaseDmg"					"250"
+			"BonusDmgPerAgi"			"0"
+			"RechargeTime"				"30"
+			"MaxCharges"				"2"
+			"TenganBonus"				"25"
+			"BuffDuration"				"10"
+		}
+
+		//Precache------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"particle"					"particles/custom/musashi/musashi_tengan_basic.vpcf"
+			"particle"					"particles/custom/musashi/musashi_tengan_overhead_basic.vpcf"
+			"particle"					"particles/custom/musashi/musashi_tengan_unique.vpcf"
+			"particle"					"particles/custom/musashi/musashi_tengan_overhead_unique.vpcf"
+		}
+	}
+
+	//==================================================================================================================
+	// Miyamoto Musashi : Skill 6 : Ganryuu Jima (R)
+	//==================================================================================================================
+	"musashi_ganryuu_jima"
+	{
+		//General-------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/musashi/musashi_abilities"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_VECTOR_TARGETING | 
+										 DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityTextureName"     		"custom/musashi/musashi_ganryuu_jima"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+	
+		//Casting-------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"         		"800"
+		"AbilityCastRange"				"0"
+		"AbilityCastRangeBuffer"		"0"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+		"AnimationPlaybackRate"			"1.0"
+		"AnimationIgnoresModelScale" 	"1"
+
+		//Time----------------------------------------------------------------------------------------------------------
+		"AbilityChannelTime"			"0"
+		"AbilityCooldown"				"40"
+		"AbilityCharges"				"0"
+		"AbilityChargeRestoreTime"		"0"
+
+		//Targeting-----------------------------------------------------------------------------------------------------
+	    "AbilityUnitTargetTeam"  		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	    "AbilityUnitTargetType"  		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+	    "AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_NONE"
+	    "AbilityUnitDamageType"  		"DAMAGE_TYPE_MAGICAL"
+	    "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	    "SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+
+	    //AbilityMechanics----------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"DmgPerSlash"				"400 500 600 700 800"
+			"BonusDmgPerAgi"			"0"
+			"SlashRange"				"850"
+			"SlashRadius"				"200"
+			"DebuffDmgDelay"			"0.6"
+			"DashSpeed"					"75"
+		}
+
+		//Precache------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"particle"					"particles/custom/musashi/musashi_ganryuu_jima_basic.vpcf"
+			"particle"					"particles/custom/musashi/musashi_ganryuu_jima_unique.vpcf"
+			"particle"					"particles/custom/musashi/musashi_ganryuu_jima_debuff_basic.vpcf"
+			"particle"					"particles/custom/musashi/musashi_ganryuu_jima_debuff_unique.vpcf"
+		}
+	}
+
+	//==================================================================================================================
+	// Miyamoto Musashi : Skill 7 : Mukyuu (F)
+	//==================================================================================================================
+	"musashi_mukyuu"
+	{
+		//General-------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/musashi/musashi_abilities"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | 
+										 DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN "
+		"AbilityTextureName"     		"custom/musashi/musashi_mukyuu"
+		"MaxLevel"						"1"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+	
+		//Casting-------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"         		"0"
+		"AbilityCastRange"				"0"
+		"AbilityCastRangeBuffer"		"0"
+		"AbilityCastPoint"				"0"
+		"AbilityCastAnimation"			""
+		"AnimationPlaybackRate"			"0"
+		"AnimationIgnoresModelScale" 	"1"
+
+		//Time----------------------------------------------------------------------------------------------------------
+		"AbilityChannelTime"			"0"
+		"AbilityCooldown"				"40"
+		"AbilityCharges"				"0"
+		"AbilityChargeRestoreTime"		"0"
+
+		//Targeting-----------------------------------------------------------------------------------------------------
+	    "AbilityUnitTargetTeam"  		"DOTA_UNIT_TARGET_TEAM_NONE"
+	    "AbilityUnitTargetType"  		"DOTA_UNIT_TARGET_NONE"
+	    "AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_NONE"
+	    "AbilityUnitDamageType"  		"DAMAGE_TYPE_NONE"
+	    "SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+
+	    //AbilityMechanics----------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"BuffDuration"				"1"
+		}
+
+		//Precache------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"particle"					"particles/custom/musashi/musashi_mukyuu_basic.vpcf"
+			"particle"					"particles/custom/musashi/musashi_mukyuu_unique.vpcf"
+		}
+	}
+
+	//==================================================================================================================
+	// Miyamoto Musashi : Skill 8 : Tenma Gogan (D)
+	//==================================================================================================================
+	"musashi_tenma_gogan"
+	{
+		//General-------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/musashi/musashi_abilities"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | 
+										 DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityTextureName"     		"custom/musashi/musashi_tenma_gogan"
+		"MaxLevel"						"1"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+	
+		//Casting-------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"         		"0"
+		"AbilityCastRange"				"0"
+		"AbilityCastRangeBuffer"		"0"
+		"AbilityCastPoint"				"0.2"
+		"AbilityCastAnimation"			""
+		"AnimationPlaybackRate"			"0"
+		"AnimationIgnoresModelScale" 	"1"
+
+		//Time----------------------------------------------------------------------------------------------------------
+		"AbilityChannelTime"			"0"
+		"AbilityCooldown"				"0"
+		"AbilityCharges"				"0"
+		"AbilityChargeRestoreTime"		"0"
+
+		//Targeting-----------------------------------------------------------------------------------------------------
+	    "AbilityUnitTargetTeam"  		"DOTA_UNIT_TARGET_TEAM_NONE"
+	    "AbilityUnitTargetType"  		"DOTA_UNIT_TARGET_NONE"
+	    "AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_NONE"
+	    "AbilityUnitDamageType"  		"DAMAGE_TYPE_NONE"
+	    "SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+
+	    //AbilityMechanics----------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"BuffDuration"				"5"
+			"DebuffDuration"			"2"
+		}
+
+		//Precache------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"particle"					"particles/custom/musashi/musashi_tenma_gogan_basic.vpcf"
+			"particle"					"particles/custom/musashi/musashi_tenma_gogan_unique.vpcf"
+			"particle"					"particles/custom/musashi/musashi_tenma_gogan_body.vpcf"
+		}
+	}
+
+	//==================================================================================================================
+	// Miyamoto Musashi : Skill 9 : Tengen No Hana (F)
+	//==================================================================================================================
+	"musashi_tengen_no_hana"
+	{
+		//General-------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/musashi/musashi_abilities"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN
+										 DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityTextureName"     		"custom/musashi/musashi_tengen_no_hana"
+		"MaxLevel"						"1"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+	
+		//Casting-------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"         		"0"
+		"AbilityCastRange"				"0"
+		"AbilityCastRangeBuffer"		"0"
+		"AbilityCastPoint"				"0"
+		"AbilityCastAnimation"			""
+		"AnimationPlaybackRate"			"0"
+		"AnimationIgnoresModelScale" 	"1"
+
+		//Time----------------------------------------------------------------------------------------------------------
+		"AbilityChannelTime"			"0"
+		"AbilityCooldown"				"0"
+		"AbilityCharges"				"0"
+		"AbilityChargeRestoreTime"		"0"
+
+		//Targeting-----------------------------------------------------------------------------------------------------
+	    "AbilityUnitTargetTeam"  		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	    "AbilityUnitTargetType"  		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+	    "AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_NONE"
+	    "AbilityUnitDamageType"  		"DAMAGE_TYPE_MAGICAL"
+	    "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	    "SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+
+	    //AbilityMechanics----------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"FullDamage"				"1000"
+			"StunDuration"				"1.5"
+			"Radius"					"500"
+			"RampUpInterval"			"1"
+			"BuffDuration"				"3"
+			"1SecPercentage"			"25"
+			"2SecPercentage"			"50"
+			"FullPercentage"			"100"
+		}
+
+		//Precache------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"particle"					"particles/custom/musashi/musashi_tengen_no_hana_basic.vpcf"
+			"particle"					"particles/custom/musashi/musashi_tengen_no_hana_aoe_basic.vpcf"
+			"particle"					"particles/custom/musashi/musashi_tengen_no_hana_aoemarker_basic.vpcf"
+			"particle"					"particles/custom/musashi/musashi_tengen_no_hana_unique1.vpcf"
+			"particle"					"particles/custom/musashi/musashi_tengen_no_hana_aoe_unique1.vpcf"
+			"particle"					"particles/custom/musashi/musashi_tengen_no_hana_aoemarker_unique1.vpcf"
+			"particle"					"particles/custom/musashi/musashi_tengen_no_hana_unique2.vpcf"
+			"particle"					"particles/custom/musashi/musashi_tengen_no_hana_aoe_unique2.vpcf"
+			"particle"					"particles/custom/musashi/musashi_tengen_no_hana_aoemarker_unique2.vpcf"
+		}
+	}
+
+	//==================================================================================================================
+	// Miyamoto Musashi : Skill 10 : Battle Continuation (SA)
+	//==================================================================================================================
+	"musashi_battle_continuation"
+	{
+		//General-------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/musashi/musashi_abilities"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | 
+										 DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityTextureName"     		"custom/musashi/musashi_battle_continuation"
+		"MaxLevel"						"1"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+	
+		//Casting-------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"         		"0"
+		"AbilityCastRange"				"0"
+		"AbilityCastRangeBuffer"		"0"
+		"AbilityCastPoint"				"0"
+		"AbilityCastAnimation"			""
+		"AnimationPlaybackRate"			"0"
+		"AnimationIgnoresModelScale" 	"1"
+
+		//Time----------------------------------------------------------------------------------------------------------
+		"AbilityChannelTime"			"0"
+		"AbilityCooldown"				"120"
+		"AbilityCharges"				"0"
+		"AbilityChargeRestoreTime"		"0"
+
+		//Targeting-----------------------------------------------------------------------------------------------------
+	    "AbilityUnitTargetTeam"  		"DOTA_UNIT_TARGET_TEAM_NONE"
+	    "AbilityUnitTargetType"  		"DOTA_UNIT_TARGET_NONE"
+	    "AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_NONE"
+	    "AbilityUnitDamageType"  		"DAMAGE_TYPE_NONE"
+	    "SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+
+	    //AbilityMechanics----------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"BuffDuration"				"3"
+			"DmgThreshold"				"1500"
+		}
+
+		//Precache------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"particle"					"particles/custom/musashi/musashi_battle_continuation_basic.vpcf"
+			"particle"					"particles/custom/musashi/musashi_battle_continuation_unique.vpcf"
+		}
+	}
+
+	//==================================================================================================================
+	// Miyamoto Musashi : Skill 11 : Niou (Innate)
+	//==================================================================================================================
+	"musashi_niou"
+	{
+		//General-------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/musashi/musashi_abilities"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_HIDDEN | 
+										 DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityTextureName"     		""
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+	
+		//Casting-------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"         		"0"
+		"AbilityCastRange"				"0"
+		"AbilityCastRangeBuffer"		"0"
+		"AbilityCastPoint"				"0"
+		"AbilityCastAnimation"			""
+		"AnimationPlaybackRate"			"0"
+		"AnimationIgnoresModelScale" 	"1"
+
+		//Time----------------------------------------------------------------------------------------------------------
+		"AbilityChannelTime"			"0"
+		"AbilityCooldown"				"0"
+		"AbilityCharges"				"0"
+		"AbilityChargeRestoreTime"		"0"
+
+		//Targeting-----------------------------------------------------------------------------------------------------
+	    "AbilityUnitTargetTeam"  		"DOTA_UNIT_TARGET_TEAM_NONE"
+	    "AbilityUnitTargetType"  		"DOTA_UNIT_TARGET_NONE"
+	    "AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_NONE"
+	    "AbilityUnitDamageType"  		"DAMAGE_TYPE_NONE"
+
+	    //AbilityMechanics----------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"ModelScale"				"2.5 2.875 3.25 3.625 4.0"
+		}
+	}
+
+	//==================================================================================================================
+	// Miyamoto Musashi : Skill 12 : Dai Go Sei Wave (Innate W)
+	//==================================================================================================================
+	"musashi_dai_go_sei_wave"
+	{
+		//General-------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/musashi/musashi_abilities"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_AOE | 
+										 DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityTextureName"     		"custom/musashi/musashi_dai_go_sei_wave"
+		"MaxLevel"						"1"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+	
+		//Casting-------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"         		"100 150 200 250 300"
+		"AbilityCastRange"				"1000"
+		"AbilityCastRangeBuffer"		"250"
+		"AbilityCastPoint"				"0.2"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		"AnimationPlaybackRate"			"1.0"
+		"AnimationIgnoresModelScale" 	"1"
+
+		//Time----------------------------------------------------------------------------------------------------------
+		"AbilityChannelTime"			"0"
+		"AbilityCooldown"				"0"
+		"AbilityCharges"				"0"
+		"AbilityChargeRestoreTime"		"0"
+
+		//Targeting-----------------------------------------------------------------------------------------------------
+	    "AbilityUnitTargetTeam"  		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	    "AbilityUnitTargetType"  		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+	    "AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_NONE"
+	    "AbilityUnitDamageType"  		"DAMAGE_TYPE_MAGICAL"
+	    "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	    "SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+
+	    //AbilityMechanics----------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"Damage"					"0"
+			"BaseDamage"				"0"
+			"BonusDmgFromAtkDmg"		"0"
+			"BonusDmgFromWBuff"			"0"
+			"Range"						"1000"
+			"ProjectileRadius"			"200"
+			"ProjectileSpeed"			"1500"	
+		}
+
+		//Precache------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"particle"					"particles/custom/musashi/musashi_dai_go_sei_wave_basic.vpcf"
+			"particle"					"particles/custom/musashi/musashi_dai_go_sei_wave_unique.vpcf"
+		}
+	}
+
+	//==================================================================================================================
+	// Miyamoto Musashi : Combo Skill : Ishana Daitenshou
+	//==================================================================================================================
+	"musashi_ishana_daitenshou"
+	{
+		//General-------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/musashi/musashi_abilities"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE | 
+										 DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityTextureName"     		"custom/musashi/musashi_ishana_daitenshou"
+		"MaxLevel"						"1"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+	
+		//Casting-------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"         		"700"
+		"AbilityCastRange"				"500"
+		"AbilityCastRangeBuffer"		"250"
+		"AbilityCastPoint"				"0"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
+		"AnimationPlaybackRate"			"1.0"
+		"AnimationIgnoresModelScale" 	"1"
+
+		//Time----------------------------------------------------------------------------------------------------------
+		"AbilityChannelTime"			"0"
+		"AbilityCooldown"				"180"
+		"AbilityCharges"				"0"
+		"AbilityChargeRestoreTime"		"0"
+
+		//Targeting-----------------------------------------------------------------------------------------------------
+	    "AbilityUnitTargetTeam"  		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	    "AbilityUnitTargetType"  		"DOTA_UNIT_TARGET_HERO"
+	    "AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+	    "AbilityUnitDamageType"  		"DAMAGE_TYPE_PURE"
+	    "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+	    "SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+
+	    //AbilityMechanics----------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"SearchRadius"				"1500"
+			"QuickSlashCount"			"5"
+			"QuickSlashInterval"		"0.1"
+			"QuickSlashMaxHpPercent"	"5"
+			"FinalSlashDmgDelay"		"0.5"
+			"FinalSlashMaxHpPercent"	"25"
+			"ExecuteThresholdPercent"	"25"
+			"MaxHpReductionPercent"		"-15"
+			"ExtraIncomingDmgPercent"	"15"
+			"DashSpeed"					"75"
+		}
+
+		//Precache------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"particle"					"particles/custom/musashi/musashi_ishana_daitenshou_marker_basic.vpcf"
+    		"particle"					"particles/custom/musashi/musashi_ishana_daitenshou_sword_basic.vpcf"
+    		"particle"					"particles/custom/musashi/musashi_ishana_daitenshou_body_basic.vpcf"
+    		"particle"					"particles/custom/musashi/musashi_ishana_daitenshou_slash_basic.vpcf"
+    		"particle"					"particles/custom/musashi/musashi_ishana_daitenshou_marker_unique.vpcf"
+    		"particle"					"particles/custom/musashi/musashi_ishana_daitenshou_sword_unique.vpcf"
+    		"particle"					"particles/custom/musashi/musashi_ishana_daitenshou_body_unique.vpcf"
+    		"particle"					"particles/custom/musashi/musashi_ishana_daitenshou_slash_unique.vpcf"
+		}
+	}
+
+	//==================================================================================================================
+	//Skill Attributes
+	//==================================================================================================================
+
+
+	//==================================================================================================================
+	// Miyamoto Musashi : Attribute 1 : Battle Continuation
+	//==================================================================================================================
+	"musashi_attributes_battle_continuation"
+	{
+		//General-------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/musashi/musashi_attributes"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | 
+										 DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"     		"custom/musashi/musashi_battle_continuation"
+		"MaxLevel"						"1"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+	
+		//Casting-------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"         		"12"
+		"AbilityCastRange"				"0"
+		"AbilityCastRangeBuffer"		"0"
+		"AbilityCastPoint"				"0.03"
+		"AbilityCastAnimation"			""
+		"AnimationPlaybackRate"			"0"
+		"AnimationIgnoresModelScale" 	"1"
+
+		//Time----------------------------------------------------------------------------------------------------------
+		"AbilityChannelTime"			"0"
+		"AbilityCooldown"				"9999"
+		"AbilityCharges"				"0"
+		"AbilityChargeRestoreTime"		"0"
+
+		//Targeting-----------------------------------------------------------------------------------------------------
+	    "AbilityUnitTargetTeam"  		"DOTA_UNIT_TARGET_TEAM_NONE"
+	    "AbilityUnitTargetType"  		"DOTA_UNIT_TARGET_NONE"
+	    "AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_NONE"
+	    "AbilityUnitDamageType"  		"DAMAGE_TYPE_NONE"
+
+	    //AbilityMechanics----------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"BuffDuration"				"3"
+			"DmgThreshold"				"1500"
+			"Cooldown"					"120"
+		}
+
+		//Precache------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+		}
+	}
+
+	//==================================================================================================================
+	// Miyamoto Musashi : Attribute 2 : Improve Tengan
+	//==================================================================================================================
+	"musashi_attributes_improve_tengan"
+	{
+		//General-------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/musashi/musashi_attributes"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | 
+										 DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"     		"custom/musashi/musashi_tenma_gogan"
+		"MaxLevel"						"1"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+	
+		//Casting-------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"         		"12"
+		"AbilityCastRange"				"0"
+		"AbilityCastRangeBuffer"		"0"
+		"AbilityCastPoint"				"0"
+		"AbilityCastAnimation"			""
+		"AnimationPlaybackRate"			"0"
+		"AnimationIgnoresModelScale" 	"1"
+
+		//Time----------------------------------------------------------------------------------------------------------
+		"AbilityChannelTime"			"0"
+		"AbilityCooldown"				"9999"
+		"AbilityCharges"				"0"
+		"AbilityChargeRestoreTime"		"0"
+
+		//Targeting-----------------------------------------------------------------------------------------------------
+	    "AbilityUnitTargetTeam"  		"DOTA_UNIT_TARGET_TEAM_NONE"
+	    "AbilityUnitTargetType"  		"DOTA_UNIT_TARGET_NONE"
+	    "AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_NONE"
+	    "AbilityUnitDamageType"  		"DAMAGE_TYPE_NONE"
+
+	    //AbilityMechanics----------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"TenganBonus"				"50"
+			"BonusDmgPerAgi"			"4"
+			"MaxCharges"				"4"
+			"RechargeTime"				"20"
+		}
+
+		//Precache------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+		}
+	}
+
+	//==================================================================================================================
+	// Miyamoto Musashi : Attribute 3 : Gorin No Sho
+	//==================================================================================================================
+	"musashi_attributes_gorin_no_sho"
+	{
+		//General-------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/musashi/musashi_attributes"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | 
+										 DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"     		"custom/musashi/musashi_gorin_no_sho"
+		"MaxLevel"						"1"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+	
+		//Casting-------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"         		"15"
+		"AbilityCastRange"				"0"
+		"AbilityCastRangeBuffer"		"0"
+		"AbilityCastPoint"				"0"
+		"AbilityCastAnimation"			""
+		"AnimationPlaybackRate"			"0"
+		"AnimationIgnoresModelScale" 	"1"
+
+		//Time----------------------------------------------------------------------------------------------------------
+		"AbilityChannelTime"			"0"
+		"AbilityCooldown"				"9999"
+		"AbilityCharges"				"0"
+		"AbilityChargeRestoreTime"		"0"
+
+		//Targeting-----------------------------------------------------------------------------------------------------
+	    "AbilityUnitTargetTeam"  		"DOTA_UNIT_TARGET_TEAM_NONE"
+	    "AbilityUnitTargetType"  		"DOTA_UNIT_TARGET_NONE"
+	    "AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_NONE"
+	    "AbilityUnitDamageType"  		"DAMAGE_TYPE_NONE"
+
+	    //AbilityMechanics----------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"DebuffDuration"			"1"
+			"EarthSlow"					"-50"
+			"PushSpeed"					"25"
+			"FireBurnDuration"			"3"
+			"FireBurnDmgPerSec"			"150"
+			"FireIncreaseDmgTaken"		"25"
+			"WindDuration"				"1.5"
+		}
+
+		//Precache------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+		}
+	}
+
+	//==================================================================================================================
+	// Miyamoto Musashi : Attribute 4 : Mukyuu
+	//==================================================================================================================
+	"musashi_attributes_mukyuu"
+	{
+		//General-------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/musashi/musashi_attributes"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | 
+										 DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"     		"custom/musashi/musashi_mukyuu"
+		"MaxLevel"						"1"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+	
+		//Casting-------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"         		"11"
+		"AbilityCastRange"				"0"
+		"AbilityCastRangeBuffer"		"0"
+		"AbilityCastPoint"				"0"
+		"AbilityCastAnimation"			""
+		"AnimationPlaybackRate"			"0"
+		"AnimationIgnoresModelScale" 	"1"
+
+		//Time----------------------------------------------------------------------------------------------------------
+		"AbilityChannelTime"			"0"
+		"AbilityCooldown"				"9999"
+		"AbilityCharges"				"0"
+		"AbilityChargeRestoreTime"		"0"
+
+		//Targeting-----------------------------------------------------------------------------------------------------
+	    "AbilityUnitTargetTeam"  		"DOTA_UNIT_TARGET_TEAM_NONE"
+	    "AbilityUnitTargetType"  		"DOTA_UNIT_TARGET_NONE"
+	    "AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_NONE"
+	    "AbilityUnitDamageType"  		"DAMAGE_TYPE_NONE"
+
+	    //AbilityMechanics----------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"DmgReduceWhileSlashing"	"-50"
+			"DmgReducePostSlashing"		"-25"
+			"BuffDuration"				"2"
+			"MukyuuDuration"			"1"
+		}
+
+		//Precache------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+		}
+	}
+
+	//==================================================================================================================
+	// Miyamoto Musashi : Attribute 5 : Niten_Ichiryuu
+	//==================================================================================================================
+	"musashi_attributes_niten_ichiryuu"
+	{
+		//General-------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/musashi/musashi_attributes"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | 
+										 DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"     		"custom/musashi/musashi_niten_ichiryuu"
+		"MaxLevel"						"1"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+	
+		//Casting-------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"         		"15"
+		"AbilityCastRange"				"0"
+		"AbilityCastRangeBuffer"		"0"
+		"AbilityCastPoint"				"0"
+		"AbilityCastAnimation"			""
+		"AnimationPlaybackRate"			"0"
+		"AnimationIgnoresModelScale" 	"1"
+
+		//Time----------------------------------------------------------------------------------------------------------
+		"AbilityChannelTime"			"0"
+		"AbilityCooldown"				"9999"
+		"AbilityCharges"				"0"
+		"AbilityChargeRestoreTime"		"0"
+
+		//Targeting-----------------------------------------------------------------------------------------------------
+	    "AbilityUnitTargetTeam"  		"DOTA_UNIT_TARGET_TEAM_NONE"
+	    "AbilityUnitTargetType"  		"DOTA_UNIT_TARGET_NONE"
+	    "AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_NONE"
+	    "AbilityUnitDamageType"  		"DAMAGE_TYPE_NONE"
+
+	    //AbilityMechanics----------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"HitsRequired"				"4"
+			"SlashRange"				"1100"
+			"SlashRadius"				"250"
+			"BonusDmgPerAgi"			"3"
+		}
+
+		//Precache------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+		}
+	}
+}

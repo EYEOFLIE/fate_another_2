@@ -1,0 +1,160 @@
+"DOTAAbilities"
+{	
+	//===================================================
+	// Karna : Combo : Vasavi Shakti 
+	//===================================================
+	"karna_combo_vasavi"
+	{		
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/karna/karna_combo_vasavi"
+		"MaxLevel"						"1"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY" 
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/karna/karna_vasavi_shakti_combo"
+		"AbilityCastAnimation" 			"ACT_DOTA_ITEM_PICKUP"
+		
+		"precache"
+		{
+				
+		}
+		
+		"AbilityCastPoint"				"0.5"
+		"AbilityCastRange"				"4000"
+		"AbilityCooldown"				"200"
+		"AbilityManaCost"				"800"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"beam_aoe"				"250"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range"					"4000"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"4000"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"beam_damage"			"2000"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"full_damage"			"4000"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"fire_delay"			"3.2"
+			}	
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"prefire_delay"			"2.3"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_point"			"0.5"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"end_radius"			"700"
+			}
+		}		
+	}
+	//===================================================
+	// Karna : Combo : Vasavi Shakti (Indra SA)
+	//===================================================
+	"karna_combo_vasavi_upgrade"
+	{		
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/karna/karna_combo_vasavi"
+		"MaxLevel"						"1"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY" 
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/karna/karna_vasavi_shakti_combo"
+		"AbilityCastAnimation" 			"ACT_DOTA_ITEM_PICKUP"
+		
+		"precache"
+		{
+				
+		}
+		
+		"AbilityCastPoint"				"0.5"
+		"AbilityCastRange"				"4000"
+		"AbilityCooldown"				"200"
+		"AbilityManaCost"				"800"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"beam_aoe"				"250"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range"					"4000"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"4000"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"beam_damage"			"4000"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"full_damage"			"8000"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_divine"			"20"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"fire_delay"			"3.2"
+			}	
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"prefire_delay"			"2.3"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_point"			"0.5"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"end_radius"			"700"
+			}
+		}		
+	}
+}

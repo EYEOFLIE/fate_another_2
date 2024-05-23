@@ -1,0 +1,343 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Diarmuid : Gae Buidhe
+	//=================================================================================================================
+	"diarmuid_gae_buidhe"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/diarmuid/diarmuid_gae_buidhe"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/diarmuid_gae_buidhe"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_4"
+		"AnimationPlaybackRate" 		"1.2"
+		
+		"precache"
+		{
+			"particle"					"particles/units/heroes/hero_chaos_knight/chaos_knight_reality_rift.vpcf"
+			"particle"					"particles/units/heroes/hero_axe/axe_culling_blade_kill.vpcf"
+			"particle"					"particles/custom/diarmuid/diarmuid_gae_cast.vpcf"
+			"particle"					"particles/custom/diarmuid/diarmuid_gae_buidhe.vpcf"
+			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_lion.vsndevts"
+		}
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"275"
+		"AbilityCastRangeBuffer"		"75"
+		//"AbilityCastPoint"				"0.5"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		//"AbilityCooldown"				"28"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		//"AbilityManaCost"				"500"
+		
+		"AbilitySpecial"
+		{	
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_time"				"0.75"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"500 625 750 875 1000"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"hp_dmg_lock"			"70"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range"					"275"
+			}		
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"manacost"				"600"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cooldown"				"30"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"doublespear_window"	"3"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"window_cooldown"		"0.5"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Diarmuid : Gae Buidhe (Golden Rose of Mortality SA)
+	//=================================================================================================================
+	"diarmuid_gae_buidhe_upgrade_1"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/diarmuid/diarmuid_gae_buidhe"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/diarmuid_gae_buidhe"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_4"
+		"AnimationPlaybackRate" 		"1.2"
+		
+		"precache"
+		{
+			"particle"					"particles/units/heroes/hero_chaos_knight/chaos_knight_reality_rift.vpcf"
+			"particle"					"particles/units/heroes/hero_axe/axe_culling_blade_kill.vpcf"
+			"particle"					"particles/custom/diarmuid/diarmuid_gae_cast.vpcf"
+			"particle"					"particles/custom/diarmuid/diarmuid_gae_buidhe.vpcf"
+			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_lion.vsndevts"
+		}
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"275"
+		"AbilityCastRangeBuffer"		"75"
+		
+		"AbilitySpecial"
+		{	
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_time"				"0.55"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"500 625 750 875 1000"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_per_stack"		"10"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"hp_dmg_lock"			"90"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range"					"275"
+			}		
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"manacost"				"500"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cooldown"				"30"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"doublespear_window"	"3"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"window_cooldown"		"0.5"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Diarmuid : Gae Buidhe (Master of Double Spearmanship SA)
+	//=================================================================================================================
+	"diarmuid_gae_buidhe_upgrade_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/diarmuid/diarmuid_gae_buidhe"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/diarmuid_gae_buidhe"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_4"
+		"AnimationPlaybackRate" 		"1.2"
+		
+		"precache"
+		{
+			"particle"					"particles/units/heroes/hero_chaos_knight/chaos_knight_reality_rift.vpcf"
+			"particle"					"particles/units/heroes/hero_axe/axe_culling_blade_kill.vpcf"
+			"particle"					"particles/custom/diarmuid/diarmuid_gae_cast.vpcf"
+			"particle"					"particles/custom/diarmuid/diarmuid_gae_buidhe.vpcf"
+			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_lion.vsndevts"
+		}
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"275"
+		"AbilityCastRangeBuffer"		"75"
+		//"AbilityCastPoint"				"0.5"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		//"AbilityCooldown"				"28"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		//"AbilityManaCost"				"500"
+		
+		"AbilitySpecial"
+		{	
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_time"				"0.75"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"500 625 750 875 1000"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"hp_dmg_lock"			"70"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range"					"275"
+			}		
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"manacost"				"600"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cooldown"				"30"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"doublespear_window"	"4"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"window_cooldown"		"0.5"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Diarmuid : Gae Buidhe (Golden Rose of Mortality + Master of Double Spears SA)
+	//=================================================================================================================
+	"diarmuid_gae_buidhe_upgrade_3"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/diarmuid/diarmuid_gae_buidhe"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/diarmuid_gae_buidhe"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_4"
+		"AnimationPlaybackRate" 		"1.2"
+		
+		"precache"
+		{
+			"particle"					"particles/units/heroes/hero_chaos_knight/chaos_knight_reality_rift.vpcf"
+			"particle"					"particles/units/heroes/hero_axe/axe_culling_blade_kill.vpcf"
+			"particle"					"particles/custom/diarmuid/diarmuid_gae_cast.vpcf"
+			"particle"					"particles/custom/diarmuid/diarmuid_gae_buidhe.vpcf"
+			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_lion.vsndevts"
+		}
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"275"
+		"AbilityCastRangeBuffer"		"75"
+		
+		"AbilitySpecial"
+		{	
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_time"				"0.55"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"500 625 750 875 1000"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_per_stack"		"10"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"hp_dmg_lock"			"90"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range"					"275"
+			}		
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"manacost"				"500"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cooldown"				"30"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"doublespear_window"	"4"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"window_cooldown"		"0.5"
+			}
+		}
+	}
+}

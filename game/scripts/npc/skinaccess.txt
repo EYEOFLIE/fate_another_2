@@ -1,0 +1,108 @@
+
+"SkinAccess"
+{
+	"FreeSkin"
+	{
+		"npc_dota_hero_skywrath_mage_1"	 		"1" // Casual Gilgamesh
+		//"npc_dota_hero_spectre_1" 	"1" // Event
+	}
+
+	"NormalSkin"
+	{
+		"npc_dota_hero_legion_commander_1" 	"1" // Casual Artoria
+		"npc_dota_hero_legion_commander_2" 	"1" // Suit Artoria
+		"npc_dota_hero_spectre_1" 			"1" // Casual Dress Artoria (Alter)
+		"npc_dota_hero_tusk_1" 				"1" // Casual Mordred
+		"npc_dota_hero_phantom_lancer_1" 	"1" // Moon Cell Cu Chulainn
+		"npc_dota_hero_crystal_maiden_1"	"1" // Uncaped Medea
+		"npc_dota_hero_dark_willow_1"		"1" // Sakura Okita
+		"npc_dota_hero_ember_spirit_1"		"1" // Counter Guardian Emiya
+		"npc_dota_hero_enchantress_1"		"1" // Casual Tamamo
+		"npc_dota_hero_enchantress_2"		"1" // Schoolgirl Tamamo
+		"npc_dota_hero_lina_1"				"1" // Emperor Nero
+		"npc_dota_hero_mirana_1"			"1" // White Jeanne
+		"npc_dota_hero_bloodseeker_1"		"1" // Gangster Li
+		"npc_dota_hero_queenofpain_1"		"1" // Schoolgirl Astolfo
+		"npc_dota_hero_shadow_shaman_1"		"1" // Abyssal Gilles
+		"npc_dota_hero_chen_1"				"1" // Salaryman Iskandar
+		"npc_dota_hero_bounty_hunter_1"		"1" // Hundred Face Hassan
+		"npc_dota_hero_death_prophet_1"		"1" // Schoolgirl Elizabeth
+		"npc_dota_hero_vengefulspirit_1"	"1" // Shirou Angra
+		"npc_dota_hero_sven_1"				"1" // Suit Lancelot
+		"npc_dota_hero_omniknight_1"		"1" // Samurai Gawain
+		"npc_dota_hero_beastmaster_1"		"1" // Bartender Karna
+		"npc_dota_hero_windrunner_1"		"1" // Alice NR
+		"npc_dota_hero_monkey_king_1"		"1" // Secretary Scathach
+		"npc_dota_hero_axe_1"				"1" // Warlord Lu Bu
+		"npc_dota_hero_troll_warlord_1"		"1" // Captain Drake
+		"npc_dota_hero_troll_warlord_2"		"1" // Pirate Drake
+		"npc_dota_hero_void_spirit_1"		"1" // Swimming Suit Kiyo
+	}
+
+	"HeroicSkin"
+	{
+		"npc_dota_hero_legion_commander_3"	"1" // Crown Artoria
+		"npc_dota_hero_tidehunter_1"		"1" // Dracula Vlad
+		"npc_dota_hero_lina_2"				"1" // King Nero
+		"npc_dota_hero_drow_ranger_1"		"1" // Atalanta (Alter)
+		"npc_dota_hero_spectre_2" 			"1" // Armorless Artoria (Alter)
+		"npc_dota_hero_tusk_2" 				"1" // Armorless Mordred
+		"npc_dota_hero_bloodseeker_2"		"1" // Boss Li
+		"npc_dota_hero_queenofpain_2"		"1" // Candy Pink Astolfo
+		"npc_dota_hero_shadow_shaman_2"		"1" // Pope Gilles
+		"npc_dota_hero_beastmaster_2"		"1" // Brahma God Karna
+		"npc_dota_hero_monkey_king_2"		"1" // Priestess Scathach
+		"npc_dota_hero_monkey_king_3"		"1" // Sergent Scathach
+		"npc_dota_hero_troll_warlord_3"		"1" // Cowgirl Drake
+		"npc_dota_hero_enigma_1"			"1" // Samurai Amakusa
+		"npc_dota_hero_legion_commander_4"	"1" // Artoria Lily
+		"npc_dota_hero_death_prophet_2"		"1" // Kilenc Elizabeth
+		"npc_dota_hero_sven_2"				"1" // Dragon Armor Lancelot
+		"npc_dota_hero_naga_siren_1"		"1" // Archer Card Illya
+		"npc_dota_hero_bounty_hunter_2"		"1" // Female Hassan	
+		"npc_dota_hero_enchantress_3"		"1" // Police Tamamo
+		"npc_dota_hero_enchantress_4"		"1" // Magical Girl Tamamo
+		"npc_dota_hero_disruptor_1"			"1" // Waver Velvet
+	}
+
+	"UltimateSkin"
+	{
+		"npc_dota_hero_templar_assassin_1"	"1" // Medusa Lily
+		"npc_dota_hero_crystal_maiden_2"	"1" // Medea Lily
+		"npc_dota_hero_lina_3"				"1" // Summer Dressed Nero
+		"npc_dota_hero_mirana_2"			"1" // Jeanne Santa
+		"npc_dota_hero_legion_commander_5"	"1" // Crane Wedding Artoria
+		"npc_dota_hero_legion_commander_6"	"1" // Arthur Pendragon
+		"npc_dota_hero_omniknight_2"		"1" // Summer Gawain
+		"npc_dota_hero_axe_2"				"1" // Mecha Lu Bu
+		"npc_dota_hero_troll_warlord_4"		"1" // Summer Drake
+		"npc_dota_hero_ember_spirit_2"		"1" // Emiya Shirou
+		"npc_dota_hero_monkey_king_4"		"1" // Summer Scathach
+		"npc_dota_hero_templar_assassin_2"	"1" // Rider Card Illya
+		"npc_dota_hero_phantom_lancer_2" 	"1" // Lancer Card Illya
+		"npc_dota_hero_enchantress_5"		"1" // Wedding Tamamo
+		"npc_dota_hero_enchantress_6"		"1" // Waifu Tamamo
+		"npc_dota_hero_enchantress_7"		"1" // Summer Tamamo
+		"npc_dota_hero_bounty_hunter_3"		"1" // Assassin Card Illya
+		"npc_dota_hero_dark_willow_2"		"1" // Okita Alter
+		"npc_dota_hero_ember_spirit_3"		"1" // Archer Card Emiya Shirou
+		"npc_dota_hero_doom_bringer_1"		"1"	// Berserker Card Illya
+		"npc_dota_hero_skywrath_mage_2"	 	"1" // Female Gilgamesh
+		"npc_dota_hero_crystal_maiden_3"	"1" // Caster Card Illya
+		"npc_dota_hero_templar_assassin_3"	"1" // Lancer Ana
+		"npc_dota_hero_axe_3"				"1" // Dynasty Warrior Lu Bu
+		"npc_dota_hero_spectre_3" 			"1" // Summer Artoria (Alter)
+		"npc_dota_hero_tusk_3" 				"1" // Summer Mordred
+		"npc_dota_hero_night_stalker_1"		"1" // [Legend] Count Edmond
+		"npc_dota_hero_doom_bringer_2"		"1" // [MEME] Bonk Doge Heracles
+	}
+	"LimitedSkin"
+	{
+		"npc_dota_hero_ember_spirit_4"	 	"1" // Cyber Emiya
+		"npc_dota_hero_lina_4"				"1" // Racing Nero
+		"npc_dota_hero_ember_spirit_5"	 	"1" // Senji Muramasa
+		"npc_dota_hero_templar_assassin_4"	"1" // [Limited] Ana
+		"npc_dota_hero_juggernaut_1"		"1" // [PEPE] Pepesaki
+		"npc_dota_hero_phantom_lancer_3" 	"1" // Lancer Card Rin
+	}
+}

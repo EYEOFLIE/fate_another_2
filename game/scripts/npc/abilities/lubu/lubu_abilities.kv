@@ -1,0 +1,2428 @@
+
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Lu bu : Nature of Rebellious Spirit
+	//=================================================================================================================
+	"lubu_rebel"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityTextureName"			"custom/lubu/lubu_rebel"
+		"MaxLevel"						"1"
+
+		"precache"
+		{
+			
+		}
+
+		"AbilitySpecial"
+		{
+
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_atk_per_death"	"20"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_aspd_per_death"	"20"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_gold_per_stack"	"20"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"str_per_stack"			"10"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_stack"				"3"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_lubu_rebel"
+			{
+				"Passive"		"1"
+				"IsHidden"		"1"
+				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"ThinkInterval"				"1.0"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/lubu/lubu_abilities"
+						"Function"		"OnRebelThink"
+					}
+				}
+			}
+			"modifier_lubu_rebel_buff"
+			{
+				"Passive"		"0"
+				"IsBuff"		"1"
+				"IsHidden"		"0"
+				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE" "%bonus_atk_per_death"
+				    "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%bonus_aspd_per_death" 
+				    "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"%str_per_stack"
+				}
+				"ThinkInterval"				"1.0"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/lubu/lubu_abilities"
+						"Function"		"OnRebelGoldTick"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/lubu/lubu_abilities"
+						"Function"		"OnRebelDeath"
+					}
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Lu Bu : Polearm: Circular Blade
+	//=================================================================================================================
+	"lubu_circular_blade"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/lubu/lubu_abilities"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"AbilityTextureName"			"custom/lubu/lubu_blade1"
+		"AbilityCastAnimation" 			"ACT_DOTA_ATTACK"
+		"AnimationPlaybackRate" 		"1.0"
+		"precache"
+		{
+			
+		}
+		
+		// Ability stats
+		//-------------------------------------------------------------------------------------------------------------
+		//"AbilityCastRange"			"700"
+		//"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"11"
+		"AbilityManaCost"				"100"
+		
+		// Ability special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{	
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"total_slash"				"3"
+			}		
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage_1"					"280 320 360 400 440"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"first_aoe"					"400"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"damage_2"					"280 320 360 400 440"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"second_aoe"				"400"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage_3"					"280 320 360 400 440"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"third_aoe"					"500"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"third_knock"				"1.0"
+			}
+			"08"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"window_duration"			"3.5"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Lu Bu : Polearm: Circular Blade (Houtengageki)
+	//=================================================================================================================
+	"lubu_circular_blade_upgrade" 
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/lubu/lubu_abilities"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"AbilityTextureName"			"custom/lubu/lubu_blade1"
+		"AbilityCastAnimation" 			"ACT_DOTA_ATTACK"
+		"AnimationPlaybackRate" 		"1.0"
+		"precache"
+		{
+
+		}
+		
+		// Ability stats
+		//-------------------------------------------------------------------------------------------------------------
+		//"AbilityCastRange"			"700"
+		//"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"11"
+		"AbilityManaCost"				"100"
+		
+		// Ability special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{	
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"total_slash"				"3"
+			}		
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage_1"					"280 320 360 400 440"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"first_aoe"					"400"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"damage_2"					"280 320 360 400 440"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"second_aoe"				"400"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage_3"					"280 320 360 400 440"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage_3_per_str"			"1.0"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"third_aoe"					"500"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"third_knock"				"1.0"
+			}
+			"08"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"window_duration"			"3.5"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Lu bu : Flying General
+	//=================================================================================================================
+	"lubu_flying"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/lubu/lubu_flying"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_2"
+		"AnimationPlaybackRate" 		"0.0"	
+		"AbilityCastPoint"				"0.1"
+		"AbilityCastRange"				"800"
+		"AbilityCooldown"				"20"
+		"AbilityManaCost"				"200"
+		
+		"precache"
+		{
+			
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"distance"				"800"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"3"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_ms"				"800"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dmg_red"				"0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"hit_damage"			"300 350 400 450 500"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slam_damage"			"300"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slam_aoe"				"400"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slam_stun"				"1.0 1.0 1.1 1.1 1.2"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/lubu/lubu_abilities"
+				"Function"		"OnFlyingSTart"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_lubu_fly"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"Duration"			"%duration"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				//"EffectName"		"particles/econ/items/windrunner/windranger_arcana/windranger_arcana_debut_screen_wipe_lines.vpcf"
+				//"EffectAttachType"	"follow_origin"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE" "%dmg_red"
+					"MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE"			"%bonus_ms"
+					"MODIFIER_PROPERTY_PROVIDES_FOW_POSITION"		"1"
+					"MODIFIER_PROPERTY_OVERRIDE_ANIMATION"			"ACT_DOTA_RUN"
+					"MODIFIER_PROPERTY_OVERRIDE_ANIMATION_RATE"		"2.0"
+				}
+				"States"
+				{
+					"MODIFIER_STATE_COMMAND_RESTRICTED"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_DISARMED"				"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_UNIT_COLLISION"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+				"ThinkInterval"  "0.033"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/lubu/lubu_abilities"
+						"Function"		"OnFlyingRun"
+					}
+				}
+			}
+			"modifier_lubu_fly_slam"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"States"
+				{
+					"MODIFIER_STATE_STUNNED"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_UNIT_COLLISION"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/lubu/lubu_abilities"
+						"Function"		"OnSlamAnim"
+					}
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Lu bu : Flying General
+	//=================================================================================================================
+	"lubu_flying_upgrade"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/lubu/lubu_flying"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_2"
+		"AnimationPlaybackRate" 		"0.0"	
+		"AbilityCastPoint"				"0.1"
+		"AbilityCastRange"				"800"
+		"AbilityCooldown"				"20"
+		"AbilityManaCost"				"200"
+		
+		"precache"
+		{
+			
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"distance"				"800"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"3"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_ms"				"800"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dmg_red"				"-30 -35 -40 -45 -50"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"hit_damage"			"300 350 400 450 500"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slam_damage"			"300"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slam_aoe"				"400"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slam_stun"				"1.0 1.0 1.1 1.1 1.2"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/lubu/lubu_abilities"
+				"Function"		"OnFlyingSTart"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_lubu_fly"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"Duration"			"%duration"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE" "%dmg_red"
+					"MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE"			"%bonus_ms"
+					"MODIFIER_PROPERTY_PROVIDES_FOW_POSITION"		"1"
+					"MODIFIER_PROPERTY_OVERRIDE_ANIMATION"			"ACT_DOTA_RUN"
+					"MODIFIER_PROPERTY_OVERRIDE_ANIMATION_RATE"		"2.0"
+				}
+				"States"
+				{
+					"MODIFIER_STATE_COMMAND_RESTRICTED"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_DISARMED"				"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_UNIT_COLLISION"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+				"ThinkInterval"  "0.033"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/lubu/lubu_abilities"
+						"Function"		"OnFlyingRun"
+					}
+				}
+			}
+			"modifier_lubu_fly_slam"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"States"
+				{
+					"MODIFIER_STATE_STUNNED"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_UNIT_COLLISION"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/lubu/lubu_abilities"
+						"Function"		"OnSlamAnim"
+					}
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Lu bu : Fallible Bow
+	//=================================================================================================================
+	"lubu_fallible_bow"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELED"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/lubu/lubu_fallible_bow"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_2"
+		"AnimationPlaybackRate" 		"0.7"
+		
+		"AbilityCastPoint"				"0.25"
+		"AbilityChannelTime"			"0.75"		
+		"AbilityCastRange"				"1200"
+		"AbilityCastRangeBuffer"		"500"
+		"AbilityCooldown"				"20"
+		"AbilityManaCost"				"200"
+		
+		"precache"
+		{
+			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_sven.vsndevts"
+			"particle"					"particles/units/heroes/hero_sven/sven_storm_bolt_projectile_explosion.vpcf"
+			"particle"					"particles/units/heroes/hero_clinkz/clinkz_searing_arrow.vpcf"
+			"particle"  				"particles/custom/lubu/lubu_arcana_powershot_channel_combo_v2.vpcf"
+			"particle"					"particles/custom/archer/archer_broken_phantasm/archer_broken_phantasm_crosshead.vpcf"
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"			"0.75"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"400 470 540 610 680"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"stun_duration"			"1.0 1.0 1.1 1.1 1.2"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range"					"1200"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/lubu/lubu_abilities"
+				"Function"		"OnFBCast"
+			}
+		}
+	
+		"OnChannelInterrupted"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/lubu/lubu_abilities"
+				"Function"		"OnFBInterrupted"
+			}
+		}
+		"OnChannelSucceeded"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/lubu/lubu_abilities"
+				"Function"		"OnFBStart"
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"RunScript"
+			{
+				"ScriptFile"    "abilities/lubu/lubu_abilities"
+				"Function"      "OnFBHit"
+			}
+			"FireSound"
+			{
+				"EffectName"	"Hero_Sven.StormBoltImpact"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_bow"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Duration"			"%cast_delay"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/lubu/lubu_abilities"
+						"Function"		"OnBowCreate"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/lubu/lubu_abilities"
+						"Function"		"OnBowDestroy"
+					}
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Lu bu : Fallible Bow (Dragon Tongue)
+	//=================================================================================================================
+	"lubu_fallible_bow_upgrade"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELED"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/lubu/lubu_fallible_bow"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_2"
+		"AnimationPlaybackRate" 		"0.7"
+		
+		"AbilityCastPoint"				"0.25"
+		"AbilityChannelTime"			"0.75"		
+		"AbilityCastRange"				"2000"
+		"AbilityCastRangeBuffer"		"500"
+		"AbilityCooldown"				"20"
+		"AbilityManaCost"				"200"
+		
+		"precache"
+		{
+			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_sven.vsndevts"
+			"particle"					"particles/units/heroes/hero_sven/sven_storm_bolt_projectile_explosion.vpcf"
+			"particle"					"particles/units/heroes/hero_clinkz/clinkz_searing_arrow.vpcf"
+			
+			"particle"					"particles/custom/archer/archer_broken_phantasm/archer_broken_phantasm_crosshead.vpcf"
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"			"0.75"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"600 670 740 810 880"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"stun_duration"			"1.0 1.0 1.1 1.1 1.2"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range"					"2000"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/lubu/lubu_abilities"
+				"Function"		"OnFBCast"
+			}
+		}
+	
+		"OnChannelInterrupted"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/lubu/lubu_abilities"
+				"Function"		"OnFBInterrupted"
+			}
+		}
+		"OnChannelSucceeded"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/lubu/lubu_abilities"
+				"Function"		"OnFBStart"
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"RunScript"
+			{
+				"ScriptFile"    "abilities/lubu/lubu_abilities"
+				"Function"      "OnFBHit"
+			}
+			"FireSound"
+			{
+				"EffectName"	"Hero_Sven.StormBoltImpact"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_bow"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Duration"			"%cast_delay"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/lubu/lubu_abilities"
+						"Function"		"OnBowCreate"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/lubu/lubu_abilities"
+						"Function"		"OnBowDestroy"
+					}
+				}
+			}
+		}
+	}
+	//========================================
+	// Lu Bu : Bravary
+	//========================================
+	"lubu_bravary"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"			"custom/lubu/lubu_bravary"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_3"
+		"AnimationPlaybackRate" 		"2.0"
+		"AbilityCastPoint"				"0.1"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"0"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"23"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"400"
+		"precache"
+		{
+			
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"6.0 6.5 7.0 7.5 8.0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_atk"				"30 35 40 45 50"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_aspd"			"20 25 30 35 40"
+			}
+
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_ms"				"20"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/lubu/lubu_abilities"
+				"Function"			"OnBravaryStart"
+			}
+			"FireSound"
+			{
+				"EffectName"		"Hero_Axe.Berserkers_Call"
+				"Target"			"CASTER"
+			}
+		}
+		
+		
+		
+		"Modifiers"
+		{
+			"modifier_lubu_bravary"
+			{
+				"Duration"		"%duration"
+				"IsDebuff"		"0"
+				"IsHidden"		"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"EffectName"        "particles/econ/items/spectre/spectre_arcana/spectre_arcana_ambient_v2.vpcf"
+						"EffectAttachType"  "follow_origin"
+						"Target"            "TARGET"
+					}
+					"AttachEffect"
+					{
+						"EffectName"        "particles/econ/items/spectre/spectre_arcana/spectre_arcana_ambient_v2_shoulder.vpcf"
+						"EffectAttachType"  "follow_origin"
+						"Target"            "TARGET"
+					}
+					"AttachEffect"
+					{
+						"EffectName"        "particles/custom/lubu/lubu_body_electric.vpcf"
+						"EffectAttachType"  "follow_origin"
+						"Target"            "TARGET"
+					}
+				}
+				"OnAttackStart"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/lubu/lubu_abilities"
+						"Function"		"OnBravaryAttack"
+					}
+				}
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE"	"%bonus_atk"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%bonus_aspd"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%bonus_ms"
+				}
+			}
+			"modifier_lubu_combo_window"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Duration"			"4"
+			
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/lubu/lubu_abilities"
+						"Function"		"OnGodForceComboWindow"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/lubu/lubu_abilities"
+						"Function"		"OnGodForceComboDestroy"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/lubu/lubu_abilities"
+						"Function"		"OnGodForceComboDeath"
+					}
+				}
+			}
+		}
+	}
+	//========================================
+	// Lu Bu : Bravary (Mad Enhancement)
+	//========================================
+	"lubu_bravary_upgrade"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"			"custom/lubu/lubu_bravary"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_3"
+		"AnimationPlaybackRate" 		"2.0"
+		"AbilityCastPoint"				"0.1"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"300"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"23"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"400"
+		"precache"
+		{
+			
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"6.0 6.5 7.0 7.5 8.0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_atk"				"50 55 60 65 70"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_aspd"			"40 45 50 55 60"
+			}
+
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_ms"				"40"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_str"				"4 8 12 16 20"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow_damage"			"300"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow_aoe"				"300"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow"					"-30"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow_duration"			"3"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/lubu/lubu_abilities"
+				"Function"			"OnBravaryStart"
+			}
+			"FireSound"
+			{
+				"EffectName"		"Hero_Axe.Berserkers_Call"
+				"Target"			"CASTER"
+			}
+		}
+		
+		
+		
+		"Modifiers"
+		{
+			"modifier_lubu_bravary"
+			{
+				"Duration"		"%duration"
+				"IsDebuff"		"0"
+				"IsHidden"		"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE"	"%bonus_atk"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%bonus_aspd"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%bonus_ms"
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_str"
+				}
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"EffectName"        "particles/econ/items/spectre/spectre_arcana/spectre_arcana_ambient_v2.vpcf"
+						"EffectAttachType"  "follow_origin"
+						"Target"            "TARGET"
+					}
+					"AttachEffect"
+					{
+						"EffectName"        "particles/econ/items/spectre/spectre_arcana/spectre_arcana_ambient_v2_shoulder.vpcf"
+						"EffectAttachType"  "follow_origin"
+						"Target"            "TARGET"
+					}
+					"AttachEffect"
+					{
+						"EffectName"        "particles/custom/lubu/lubu_body_electric.vpcf"
+						"EffectAttachType"  "follow_origin"
+						"Target"            "TARGET"
+					}
+				}
+				"OnAttackStart"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/lubu/lubu_abilities"
+						"Function"		"OnBravaryAttack"
+					}
+				}
+			}
+			"modifier_lubu_fear"
+			{
+				"Duration"		"%slow_duration"
+				"IsDebuff"		"1"
+				"IsHidden"		"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%slow"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%slow"
+				}
+				"EffectName"		"particles/custom/berserker/courage/debuff.vpcf"
+				"EffectAttachType"	"follow_origin"
+			}
+			"modifier_lubu_mad"
+			{
+				"Duration"		"%duration"
+				"IsDebuff"		"0"
+				"IsHidden"		"0"
+				"TextureName"	"custom/lubu/lubu_attribute_mad"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"EffectName"		"particles/units/heroes/hero_spectre/spectre_ambient.vpcf"
+				"EffectAttachType"	"follow_origin"
+			}
+			"modifier_lubu_combo_window"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Duration"			"4"
+			
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/lubu/lubu_abilities"
+						"Function"		"OnGodForceComboWindow"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/lubu/lubu_abilities"
+						"Function"		"OnGodForceComboDestroy"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/lubu/lubu_abilities"
+						"Function"		"OnGodForceComboDeath"
+					}
+				}
+			}
+		}
+	}
+	//===================================================
+	// Lu Bu : God Force
+	//===================================================
+	"lubu_god_force"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/lubu/lubu_god_force"
+		"AbilityCastAnimation" 			"ACT_DOTA_ITEM_PICKUP"
+		
+		"precache"
+		{
+			
+		}
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"450"
+		"AbilityCastPoint"				"0.55"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"40.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"800"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"cast_delay"		"0.55"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"total_hit"			"5"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"450"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"angle"				"170"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"100 120 140 160 180"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage_lasthit"	"440 550 660 770 880"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"mini_stun"			"0.5"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"stun_duration"		"1.5"
+			}
+			"10"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"knock"				"300"
+			}
+			"07"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"str_per_hit"		"6 7 8 9 10"
+			}
+			"08"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"god_str_duration"	"25"
+			}
+			"09"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"interval"			"0.3"
+			}
+			
+		}
+
+		"OnAbilityPhaseStart"
+		{
+		
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/lubu/lubu_abilities"
+				"Function"		"OnGodForceCast"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/lubu/lubu_abilities"
+				"Function"			"OnGodForceStart"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_lubu_god_str"
+			{
+				"Duration"		"%god_str_duration"
+				"IsDebuff"		"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"%str_per_hit"
+				}
+			}
+		}
+	}
+	//===================================================
+	// Lu Bu : God Force (Houtengageki)
+	//===================================================
+	"lubu_god_force_upgrade"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/lubu/lubu_god_force"
+		"AbilityCastAnimation" 			"ACT_DOTA_ITEM_PICKUP"
+		
+		"precache"
+		{
+			
+		}
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"450"
+		"AbilityCastPoint"				"0.55"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"40.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"800"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"cast_delay"		"0.55"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"total_hit"			"5"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"450"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"angle"				"170"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"100 120 140 160 180"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage_lasthit"	"440 550 660 770 880"
+			}
+			"10"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_damage_last"	"4"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"mini_stun"			"0.5"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"stun_duration"		"1.5"
+			}
+			"10"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"knock"				"300"
+			}
+			"07"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"str_per_hit"		"6 7 8 9 10"
+			}
+			"08"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"god_str_duration"	"25"
+			}
+			"09"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"interval"			"0.3"
+			}
+		}
+
+		"OnAbilityPhaseStart"
+		{
+		
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/lubu/lubu_abilities"
+				"Function"		"OnGodForceCast"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/lubu/lubu_abilities"
+				"Function"			"OnGodForceStart"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_lubu_god_str"
+			{
+				"Duration"		"%god_str_duration"
+				"IsDebuff"		"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"%str_per_hit"
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Lu bu : Immortal Red Hare
+	//=================================================================================================================
+	"lubu_immortal_red_hare"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityTextureName"			"custom/lubu/lubu_attribute_red_hare"
+		"MaxLevel"						"1"
+		"AbilityCooldown"				"120"
+		"precache"
+		{
+			
+		}
+		
+		"AbilitySpecial"
+		{		
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"invul_dur"				"1.0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"revive_health"			"30"
+			}	
+		}
+		
+		"Modifiers"
+		{
+			"modifier_lubu_immortal_cooldown"
+			{
+				"IsDebuff"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE | MODIFIER_ATTRIBUTE_PERMANENT"	  
+			}
+			"modifier_lubu_immortal_passive"
+			{
+				"Passive" 					"1"
+				"IsHidden"					"1"
+				"Attributes"				"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"OnTakeDamage"
+				{
+					"RunScript"
+					{
+						"ScriptFile"    "abilities/lubu/lubu_abilities"
+						"Function"      "ImmortalRedHareTakeDamage"
+						"DamageTaken"	"%attack_damage"
+					}
+				}	
+		  	}
+		  	"modifier_lubu_immortal"
+			{
+				"Duration"			"%invul_dur"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"States"
+				{
+					"MODIFIER_STATE_UNSELECTABLE" 	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_UNTARGETABLE" 	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_INVULNERABLE"   "MODIFIER_STATE_VALUE_ENABLED"
+				}		
+			}
+		}
+	}
+	//=======================================
+	// Lu Bu : Ruthless Warrior of Turbulent Times
+	//=======================================
+	"lubu_ruthless_warrior"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityTextureName"			"custom/lubu/lubu_attribute_ruthless"
+
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"0"
+		"AbilityManaCost"				"0"
+
+		"precache"
+		{
+			
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_mr"				"10"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_as_per_1"		"10"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_hp_regen_per_1"	"0.6"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"splash_aoe"			"200"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"splash_percentage"		"75"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"drain_hp"				"80"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"atk_count_drain_hp"	"3"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_lubu_ruthless_passive"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE | MODIFIER_ATTRIBUTE_PERMANENT"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS" "%bonus_mr"
+				}
+				"ThinkInterval"  "0.1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/lubu/lubu_abilities"
+						"Function"		"OnRuthlessThink"
+					}
+				}
+				"OnAttackLanded"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/lubu/lubu_abilities"
+						"Function"		"OnRuthlessAttack"
+						"Damage"		"%attack_damage"  
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/lubu/lubu_abilities"
+						"Function"		"OnRuthlessDeath"
+					}
+				}
+			}
+			"modifier_lubu_ruthless_stack"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE | MODIFIER_ATTRIBUTE_PERMANENT"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%bonus_as_per_1"
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT" "%bonus_hp_regen_per_1"
+				}
+			}
+			"modifier_lubu_ruthless_counter"
+			{
+				"Passive"			"1"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE | MODIFIER_ATTRIBUTE_PERMANENT"
+			}
+		}
+	}
+	//=======================================
+	// Lu bu: God Force: The Five Soldiers
+	//=======================================
+	"lubu_combo_god_force"
+	{
+	    "BaseClass"							"ability_datadriven"
+		"MaxLevel"							"1"
+	    "AbilityBehavior"				  	"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+	    "AbilityUnitTargetFlags"			"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+	    "AbilityUnitTargetTeam"				"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"				"DOTA_UNIT_TARGET_ALL"
+	    "AbilityTextureName"				"custom/lubu/lubu_combo_god_force"
+	    "AbilityUnitDamageType"   			"DAMAGE_TYPE_MAGICAL"
+	    "AbilityCastAnimation"				"ACT_DOTA_CAST_ABILITY_2"
+	    "AnimationPlaybackRate" 			"0.7"
+	    "AOERadius"							"%aoe"
+	    "AbilityCastPoint"					"0.3"
+	    "AbilityCooldown"				  	"180"
+	    "AbilityManaCost"				  	"800"
+	    "AbilityCastRange"					"2500"
+
+	    "precache"
+	    {
+	      	
+	    }
+
+	    "AbilitySpecial"
+	    {
+	    	"02"
+		    {
+		        "var_type"				"FIELD_FLOAT"
+		        "delay"				    "2.0"
+		    }
+		    "04"
+		    {
+		        "var_type"			   	"FIELD_INTEGER"
+		        "arrows"			    "5"
+		    }
+		    "01"
+		    {
+		        "var_type"			 	"FIELD_INTEGER"
+		        "range"				  	"2500"
+		    }
+		    "02"
+		    {
+		        "var_type"				"FIELD_FLOAT"
+		        "aoe"				    "800"
+		    }
+		    "03"
+		    {
+		        "var_type"				"FIELD_FLOAT"
+		        "arrow_aoe"				"800"
+		    }
+		    
+		    "05"
+		    {
+		        "var_type"			    "FIELD_INTEGER"
+		        "damage"			   	"1250"
+		    }
+	    }
+	    "OnAbilityPhaseStart"
+	    {
+	    	"RunScript"
+	    	{
+	    		"ScriptFile"	"abilities/lubu/lubu_abilities"
+	    		"Function"		"OnPhoebusCast"
+	    	}
+	    }
+	    "OnSpellStart"
+	    {
+	    	"RunScript"
+	    	{
+	    		"ScriptFile"	"abilities/lubu/lubu_abilities"
+	    		"Function"		"OnGodForceComboStart"
+	    	}
+	    }
+	    "OnProjectileHitUnit"
+	    {
+	    	"DeleteOnHit"	"1"
+	    	"RunScript"
+	    	{
+	    		"ScriptFile"	"abilities/lubu/lubu_abilities"
+	    		"Function"		"OnGodForceComboHit"
+	    	}
+	    }
+	    "Modifiers"
+	    {
+	    	"modifier_lubu_combo_cooldown"
+		  	{
+		  		"Passive"			"0"
+		  		"IsHidden"			"0"
+		  		"IsDebuff"			"1"
+		  		"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE | MODIFIER_ATTRIBUTE_PERMANENT"	  
+		  	}
+		  	"modifier_bow"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Duration"			"%delay"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/lubu/lubu_abilities"
+						"Function"		"OnBowCreate"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/lubu/lubu_abilities"
+						"Function"		"OnBowDestroy"
+					}
+				}
+			}
+	    }
+  	}
+  	//=======================================
+	// Lu bu: God Force: The Five Soldiers (Dragon Tongue)
+	//=======================================
+	"lubu_combo_god_force_upgrade"
+	{
+	    "BaseClass"							"ability_datadriven"
+		"MaxLevel"							"1"
+	    "AbilityBehavior"				  	"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+	    "AbilityUnitTargetFlags"			"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+	    "AbilityUnitTargetTeam"				"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"				"DOTA_UNIT_TARGET_ALL"
+	    "AbilityTextureName"				"custom/lubu/lubu_combo_god_force"
+	    "AbilityUnitDamageType"   			"DAMAGE_TYPE_MAGICAL"
+	    "AbilityCastAnimation"				"ACT_DOTA_CAST_ABILITY_2"
+	    "AnimationPlaybackRate" 		"0.7"
+	    "AOERadius"							"%aoe"
+	    "AbilityCastPoint"					"0.3"
+	    "AbilityCooldown"				  	"180"
+	    "AbilityManaCost"				  	"800"
+	    "AbilityCastRange"					"4000"
+
+	    "precache"
+	    {
+	      	
+	    }
+
+	    "AbilitySpecial"
+	    {
+	    	"02"
+		    {
+		        "var_type"				"FIELD_FLOAT"
+		        "delay"				    "2.0"
+		    }
+		    "01"
+		    {
+		        "var_type"			 	"FIELD_INTEGER"
+		        "range"				  	"4000"
+		    }
+		    "02"
+		    {
+		        "var_type"				"FIELD_FLOAT"
+		        "aoe"				    "800"
+		    }
+		    "03"
+		    {
+		        "var_type"				"FIELD_FLOAT"
+		        "arrow_aoe"				"800"
+		    }
+		    "04"
+		    {
+		        "var_type"			   	"FIELD_INTEGER"
+		        "arrows"			    "5"
+		    }
+		    "05"
+		    {
+		        "var_type"			    "FIELD_INTEGER"
+		        "damage"			   	"1800"
+		    }
+	    }
+	    "OnAbilityPhaseStart"
+	    {
+	    	"RunScript"
+	    	{
+	    		"ScriptFile"	"abilities/lubu/lubu_abilities"
+	    		"Function"		"OnPhoebusCast"
+	    	}
+	    }
+	    "OnSpellStart"
+	    {
+	    	"RunScript"
+	    	{
+	    		"ScriptFile"	"abilities/lubu/lubu_abilities"
+	    		"Function"		"OnGodForceComboStart"
+	    	}
+	    }
+	    "OnProjectileHitUnit"
+	    {
+	    	"DeleteOnHit"	"1"
+	    	"RunScript"
+	    	{
+	    		"ScriptFile"	"abilities/lubu/lubu_abilities"
+	    		"Function"		"OnGodForceComboHit"
+	    	}
+	    }
+	    "Modifiers"
+	    {
+	    	"modifier_lubu_combo_cooldown"
+		  	{
+		  		"Passive"			"0"
+		  		"IsHidden"			"0"
+		  		"IsDebuff"			"1"
+		  		"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE | MODIFIER_ATTRIBUTE_PERMANENT"	  
+		  	}
+		  	"modifier_bow"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Duration"			"%delay"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/lubu/lubu_abilities"
+						"Function"		"OnBowCreate"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/lubu/lubu_abilities"
+						"Function"		"OnBowDestroy"
+					}
+				}
+			}
+	    }
+  	}
+  	//=======================================
+	// Lu Bu Attribute : Houtengageki
+	//=======================================
+	"lubu_attribute_houtengageki"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/lubu/lubu_attribute_houtengageki"
+		
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"13"
+
+		"precache"
+		{
+		}
+
+		"AbilitySpecial"
+		{
+			"07"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"blade_3_per_str"			"1.0"
+			}
+			"10"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_hp_dmg"				"3"
+			}
+			"10"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_hp_last"				"10"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/lubu/lubu_abilities"
+				"Function"		"OnHoutengagekiAcquired"
+			}
+		}
+	}
+	//=======================================
+	// Lu Bu Attribute : Mad Enhancement
+	//=======================================
+	"lubu_attribute_mad_enhancement"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/lubu/lubu_attribute_mad"
+		
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"15"
+
+		"precache"
+		{
+		}
+
+		"AbilitySpecial"
+		{
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dmg_red"				"-30 -35 -40 -45 -50"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_atk"				"20"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_aspd"			"20"
+			}
+
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_ms"				"20"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_str"				"4 8 12 16 20"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow_damage"			"300"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow_aoe"				"300"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow"					"-30"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow_duration"			"3"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/lubu/lubu_abilities"
+				"Function"		"OnMadEnhancementAcquired"
+			}
+		}
+	}
+	//=======================================
+	// Lu Bu Attribute : Dragon Tongue Bow
+	//=======================================
+	"lubu_attribute_dragon_tongue"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/lubu/lubu_attribute_bow"
+		
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"7"
+
+		"precache"
+		{
+		}
+
+		"AbilitySpecial"
+		{
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"200"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range"					"800"
+			}
+			"01"
+		    {
+		        "var_type"			 	"FIELD_INTEGER"
+		        "combo_range"			"1500"
+		    }
+		    "05"
+		    {
+		        "var_type"			    "FIELD_INTEGER"
+		        "combo_damage"			"550"
+		    }
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/lubu/lubu_abilities"
+				"Function"		"OnDragonTongueBowAcquired"
+			}
+		}
+	}
+	//=======================================
+	// Lu Bu Attribute : Ruthless Warrior of Turbulent Times
+	//=======================================
+	"lubu_attribute_ruthless_warrior"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/lubu/lubu_attribute_ruthless"
+		
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"16"
+
+		"precache"
+		{
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_mr"				"10"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_as_per_1"		"10"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_hp_regen_per_1"	"0.6"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"splash_aoe"			"200"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"splash_percentage"		"75"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"drain_hp"				"80"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"atk_count_drain_hp"	"3"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/lubu/lubu_abilities"
+				"Function"		"OnRuthlessWarriorAcquired"
+			}
+		}
+	}
+	//=======================================
+	// Lu Bu Attribute : Immortal Red Hare
+	//=======================================
+	"lubu_attribute_immortal"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/lubu/lubu_attribute_red_hare"
+		
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"18"
+
+		"precache"
+		{
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"invul_dur"				"1.0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"revive_health"			"30"
+			}	
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/lubu/lubu_abilities"
+				"Function"		"OnImmortalAcquired"
+			}
+		}
+	}
+
+
+
+
+
+
+
+
+	//===================================================
+	// Lu Bu : God Force
+	//===================================================
+	"lubu_god_force_new"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/lubu/lubu_abilities"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/lubu/lubu_god_force"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_3"
+		"AnimationPlaybackRate" 			"1.0"
+		
+		"precache"
+		{
+
+		}
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"450"
+		"AbilityCastPoint"				"0.55"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"40.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"800"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"cast_delay"		"0.55"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"total_hit"			"5"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"450"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"angle"				"200"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"140 160 180 200 220"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"mini_stun"			"0.5"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage_spin"		"200 230 260 290 320"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"spin_stun"			"1.0"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"thrust_distance"	"700"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"thrust_width"		"400"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage_thrust"		"220 320 420 520 620"
+			}
+			
+			"06"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"thrust_stun"		"1.5"
+			}
+			"10"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"knock"				"200"
+			}
+			"09"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"interval"			"0.4"
+			}
+			
+		}
+	}
+	//===================================================
+	// Lu Bu : God Force
+	//===================================================
+	"lubu_god_force_new_upgrade"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/lubu/lubu_abilities"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/lubu/lubu_god_force"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_3"
+		"AnimationPlaybackRate" 			"1.0"
+		
+		"precache"
+		{
+			
+		}
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"450"
+		"AbilityCastPoint"				"0.55"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"40.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"800"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"cast_delay"		"0.55"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"total_hit"			"5"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"450"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"angle"				"200"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"140 160 180 200 220"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_hp_dmg"		"3"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"mini_stun"			"0.5"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage_spin"		"200 230 260 290 320"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"spin_stun"			"1.0"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"thrust_distance"	"700"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"thrust_width"		"400"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage_thrust"		"220 320 420 520 620"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_hp_thrust_dmg"	"10"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"thrust_stun"		"1.5"
+			}
+			"10"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"knock"				"200"
+			}
+			"09"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"interval"			"0.4"
+			}
+			
+		}
+	}
+	//=======================================
+	// Precache
+	//=======================================
+	"lubu_precache"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"custom/medusa/medusa_attribute_monstrous_strength"
+
+		"precache"
+		{
+			"model"					"models/lubu/general/lubu_flying_general.vmdl"
+			"model"					"models/lubu/mecha/mecha_lubu_zefiroft.vmdl"
+			"model"					"models/lubu/lubu_bow.vmdl"
+			"model"					"models/lubu/lubu_arrow2.vmdl"
+			"model"					"models/lubu/lubu_lance2.vmdl"
+			"particle"  			"particles/custom/lubu/lubu_rebel_buff.vpcf"
+			"particle"				"particles/econ/items/sven/sven_ti7_sword/sven_ti7_sword_spell_great_cleave_crit.vpcf"
+			"particle"				"particles/econ/items/earthshaker/egteam_set/hero_earthshaker_egset/earthshaker_echoslam_start_fallback_low_egset.vpcf"
+			"particle"  			"particles/custom/lubu/lubu_dash_lines.vpcf"
+			"particle"  			"particles/custom/lubu/lubu_lance.vpcf"
+			"particle"  			"particles/custom/lubu/lubu_spell_warcry_ti_5.vpcf"
+			"particle"  			"particles/custom/lubu/lubu_spell_warcry_ti_5b.vpcf"
+			"particle"  			"particles/custom/lubu/lubu_body_electric.vpcf"
+			"particle"  			"particles/econ/items/mars/mars_ti9_immortal/mars_ti9_immortal_ambient_random.vpcf"
+			"particle"				"particles/econ/items/spectre/spectre_arcana/spectre_arcana_ambient_v2_shoulder.vpcf"
+			"particle"				"particles/custom/berserker/courage/debuff.vpcf"
+			"particle"				"particles/econ/items/spectre/spectre_arcana/spectre_arcana_ambient_v2.vpcf"
+			"particle"				"particles/units/heroes/hero_spectre/spectre_ambient.vpcf"
+			"particle"  			"particles/items_fx/aegis_respawn.vpcf"
+			"particle"  			"particles/custom/vlad/vlad_bc_buff.vpcf"
+			"particle"				"particles/custom/vlad/vlad_im_splash.vpcf"
+			"particle"				"particles/econ/items/lifestealer/ls_ti9_immortal_gold/ls_ti9_open_wounds_gold_wisp.vpcf"
+			"particle"				"particles/units/heroes/hero_warlock/warlock_rainofchaos_start_breakout_fallback_mid.vpcf"
+	      	"particle"				"particles/units/heroes/hero_elder_titan/elder_titan_echo_stomp_cracks.vpcf"
+	      	"particle"				"particles/custom/lancer/lancer_gae_bolg_hit.vpcf"
+	      	"particle"				"particles/econ/items/rubick/rubick_force_gold_ambient/rubick_telekinesis_land_force_impact_d_gold.vpcf"
+	      	"particle"				"particles/custom/screen_green_splash.vpcf"
+	      	"particle"  			"particles/custom/lubu/lubu_arcana_powershot_channel_combo_v2.vpcf"
+	      	"particle"				"particles/units/heroes/hero_clinkz/clinkz_searing_arrow.vpcf"
+	      	"particle"  			"particles/custom/lubu/lubu_lightning_bolt.vpcf"
+	      	"particle"  			"models/heroes/dawnbreaker/debut/particles/battlemaiden_debut_intro_fall_ground_burn.vpcf"
+	      	"particle"				"particles/econ/items/oracle/oracle_ti10_immortal/oracle_ti10_immortal_purifyingflames_hit.vpcf"
+			"particle"  			"particles/units/heroes/hero_void_spirit/planeshift/void_spirit_planeshift_untargetable.vpcf"
+			"particle"  			"particles/custom/lubu/lubu_god_force_fx.vpcf"
+			"particle"  			"particles/custom/lubu/lubu_new_r_grow.vpcf"
+			"particle"  			"particles/custom/lubu/lubu_lance_b.vpcf"
+			"particle"  			"particles/custom/lubu/lubu_lightning.vpcf"
+			"particle"  			"particles/units/heroes/hero_beastmaster/beastmaster_primal_roar.vpcf"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_earth_spirit.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_ogre_magi.vsndevts"
+	      	"soundfile"				"soundevents/game_sounds_heroes/game_sounds_skywrath_mage.vsndevts"
+	      	"soundfile"				"soundevents/game_sounds_heroes/game_sounds_mirana.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_skeletonking.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_chen.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_earthshaker.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_axe.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_juggernaut.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_sven.vsndevts"
+
+		}
+	}
+}

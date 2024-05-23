@@ -1,0 +1,1011 @@
+#base "ishtar_w.kv"
+
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Ishtar : Gem creation (Q)
+	//=================================================================================================================
+	"ishtar_q"
+	{		
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT"
+		"AbilityTextureName"			"custom/ishtar/ishtar_q"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityCastPoint"				"0.1"
+		"AnimationPlaybackRate"			"1"
+		"AbilityCooldown"				"0"
+		"AbilityManaCost"				"0"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"gem_cost"				"300 275 250 225 200"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_time"				"0.1"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_r_impact_per_gem"	"15 20 25 30 35"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_e_per_gem"		"3 5 7 9 11"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_f_percentage_per_gem"		"1 2 3 4 5"
+			}
+		}
+
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/ishtar/ishtar_abilities"
+				"Function"		"OnIshtarQCheck"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/ishtar/ishtar_abilities"
+				"Function"		"OnIshtarQ"
+			}
+		}	
+	}	
+
+	//=================================================================================================================
+	// Ishtar : Gems of uruk (D - Innate passive)
+	//=================================================================================================================
+	"ishtar_d"
+	{		
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NO_TARGET  | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityTextureName"			"custom/ishtar/ishtar_d"
+		"MaxLevel"						"2"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityCastPoint"				"0.1"
+		"AnimationPlaybackRate"			"1"
+		"AbilityCooldown"				"0"
+		"AbilityManaCost"				"0"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_gem"				"5 10"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"gem_loss"				"100 50"
+			}
+		}
+
+		"Modifiers"
+		{	
+			"modifier_ishtar_gem"
+			{
+				"Passive"			"1"
+				"IsHidden"			"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+
+				"OnDeath"
+				{					
+					"RunScript"
+					{
+						"ScriptFile"		"abilities/ishtar/ishtar_abilities"
+						"Function"			"OnIshtarDead"
+					}
+				}
+			}
+		}
+	}	
+		
+	"ishtar_w"
+	{	
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/ishtar/ishtar_w"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+		"AbilityCastRange"				"1300"
+		"AbilityCastPoint"				"0"
+		"AbilityChannelTime"      		"1"
+
+		"AbilityCooldown"				"18 16 14 12 10"
+		"AbilityManaCost"				"200"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"			"0"
+			}
+			"03"
+			{				
+				"var_type"				"FIELD_FLOAT"
+				"speed"					"110"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"dash_duration"			"1.5"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"dash_range"			"1300"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"turn_rate_reduction"	"-100"
+			}
+		}
+
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/ishtar/ishtar_abilities"
+				"Function"		"OnDashUpgrade"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/ishtar/ishtar_abilities"
+				"Function"		"OnIshtarW"
+			}
+		}
+		
+		"OnChannelInterrupted"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/ishtar/ishtar_abilities"
+				"Function"			"OnIshtarWFinish"
+			}			
+		}
+		
+		"OnChannelSucceeded"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/ishtar/ishtar_abilities"
+				"Function"			"OnIshtarWFinish"
+			}
+		}
+			
+		"Modifiers"
+		{
+
+			"modifier_ishtar_dashing"
+			{
+				"EffectName"		"particles/ishtar/ishtar_dash_buff.vpcf"
+				"EffectAttachType"	"follow_origin"
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"Duration"			"%dash_duration"
+				"ThinkInterval"  	"0.015"
+
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/ishtar/ishtar_abilities"
+						"Function"		"OnIshtarWThink"
+					}
+				}
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_TURN_RATE_PERCENTAGE"		"%turn_rate_reduction"
+				}	
+			}
+
+			"modifier_ishtar_combo_cooldown"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"IsPurgable"		"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE | MODIFIER_ATTRIBUTE_PERMANENT"
+			}
+
+			"modifier_ishtar_combo_window"
+			{	
+				"IsHidden"				"1"
+				"Duration"				"5" 
+				"Attributes"			"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/ishtar/ishtar_abilities"
+						"Function"		"OnComboWindow"
+					}
+				}			
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"abilities/ishtar/ishtar_abilities"
+						"Function"		 	"OnComboWindowBroken"
+					}
+				}				
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"abilities/ishtar/ishtar_abilities"
+						"Function"		 	"OnComboWindowDeath"
+					}
+				}
+			}
+		}
+	}
+
+	"ishtar_e"
+	{	
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		"AbilityTextureName"			"custom/ishtar/ishtar_e"
+		"AbilityCastRange"				"950"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"38 35 32 29 26"
+		"AbilityManaCost"				"400"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"arrows"				"5 6 7 8 9"
+			}
+			"03"
+			{				
+				"var_type"				"FIELD_FLOAT"
+				"damage"				"100"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"			"0.4"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"speed"					"1800"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/ishtar/ishtar_abilities"
+				"Function"		"OnIshtarE"
+			}
+		}
+
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"	"1"
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/ishtar/ishtar_abilities"
+				"Function"		"OnIshtarEHit"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Ishtar : Ult R
+	//=================================================================================================================
+	"ishtar_r"
+	{	
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/ishtar/ishtar_r"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
+		"AbilityCastRange"				"2400"
+		"AbilityCastPoint"				"0.3"
+
+		"AbilityCooldown"				"52 50 48 46 44"
+		"AbilityManaCost"				"800"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"			"1.4"
+			}
+			"03"
+			{				
+				"var_type"				"FIELD_FLOAT"
+				"speed"					"2500"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"range_max"				"2400"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"width"					"190"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"impact_radius"			"400"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage"				"200 300 400 500 600"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage_impact"			"600 750 900 1050 1200"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/ishtar/ishtar_abilities"
+				"Function"		"OnIshtarR"
+			}
+		}
+
+		"OnProjectileHitUnit"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/ishtar/ishtar_abilities"
+				"Function"		"OnIshtarRHit"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_ishtar_casting"
+			{
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"IsPurgable"		"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE | MODIFIER_ATTRIBUTE_PERMANENT"
+				"Duration"			"1"	
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"Target"            "CASTER"
+						"EffectName"        "particles/ishtar/ishtar-r/ishtar_hand_buff_new2.vpcf"
+						"EffectAttachType"  "start_at_customorigin"
+						"ControlPointEntities"
+						{
+							"CASTER"				"attach_arrow"
+						}
+					}	
+					"AttachEffect"
+					{
+						"Target"            "CASTER"
+						"EffectName"        "particles/ishtar/ishtar-r/ishtar_hand_buff_new.vpcf"
+						"EffectAttachType"  "start_at_customorigin"
+						"ControlPointEntities"
+						{
+							"CASTER"				"attach_attack1"
+						}
+					}	
+				}
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Ishtar : Ult R (SA)
+	//=================================================================================================================
+	"ishtar_r_upgrade"
+	{	
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/ishtar/ishtar_r"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
+		"AbilityCastRange"				"2400"
+		"AbilityCastPoint"				"0.3"
+
+		"AbilityCooldown"				"52 50 48 46 44"
+		"AbilityManaCost"				"800"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"			"1.4"
+			}
+			"03"
+			{				
+				"var_type"				"FIELD_FLOAT"
+				"speed"					"2500"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"range_max"				"2400"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"width"					"190"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"impact_radius"			"400"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage"				"200 300 400 500 600"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage_impact"			"600 750 900 1050 1200"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"extra_range"			"800"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"extra_cast_delay"		"0.4"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"dash_back"				"200"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"invul_duration"			"0.7"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"extra_impact_damage_percentage"	"15"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"gem_cost_per_r"	"1"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_r_damage"		"50 100 150 200 250"
+			}		
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/ishtar/ishtar_abilities"
+				"Function"		"OnIshtarR"
+			}
+		}
+
+		"OnProjectileHitUnit"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/ishtar/ishtar_abilities"
+				"Function"		"OnIshtarRHit"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_ishtar_casting"
+			{
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"IsPurgable"		"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE | MODIFIER_ATTRIBUTE_PERMANENT"
+				"Duration"			"1"	
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"Target"            "CASTER"
+						"EffectName"        "particles/ishtar/ishtar-r/ishtar_hand_buff_new2.vpcf"
+						"EffectAttachType"  "start_at_customorigin"
+						"ControlPointEntities"
+						{
+							"CASTER"				"attach_arrow"
+						}
+					}	
+					"AttachEffect"
+					{
+						"Target"            "CASTER"
+						"EffectName"        "particles/ishtar/ishtar-r/ishtar_hand_buff_new.vpcf"
+						"EffectAttachType"  "start_at_customorigin"
+						"ControlPointEntities"
+						{
+							"CASTER"				"attach_attack1"
+						}
+					}	
+				}
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Ishtar : Passive (Goddess of beauty)
+	//=================================================================================================================
+	"ishtar_passive"
+	{		
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityTextureName"			"custom/ishtar/sa_goddess"
+		"MaxLevel"						"2"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityCastPoint"				"0.1"
+		"AnimationPlaybackRate"			"1"
+		"AbilityCooldown"				"0"
+		"AbilityManaCost"				"0"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"recover_damage_taken"	"0 15"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"buff_male_mr"			"0 9"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"buff_radius"			"800"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"recovery_per_second"	"0 60"
+			}
+		}
+
+		"Modifiers"
+		{	
+			"modifier_ishtar_passive"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"ThinkInterval"  		"0.9"
+
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/ishtar/ishtar_abilities"
+						"Function"		"OnPassiveThink"
+					}
+				}
+
+				"OnTakeDamage"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/ishtar/ishtar_abilities"
+						"Function"		"OnPassiveDamaged"
+						"DamageTaken"	"%attack_damage"		
+					}
+				}
+			}
+
+			"modifier_ishtar_passive_buff"
+			{
+				"Duration"				"1"
+				"IsHidden"				"0"
+				"IsBuff"				"1"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%buff_male_mr"
+				}
+			}
+
+			"modifier_ishtar_damage_stack"
+			{
+				"Passive"			"1"
+				"IsHidden"			"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"ThinkInterval"  	"0.25"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/ishtar/ishtar_abilities"
+						"Function"		"OnPassiveRegenThink"
+					}
+				}
+			}
+		}
+	}	
+
+	//=================================================================================================================
+	// Ishtar : Passive (Offering)
+	//=================================================================================================================
+	"ishtar_passive_gem_gain"
+	{		
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NO_TARGET  | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityTextureName"			"custom/ishtar/sa_offering"
+		"MaxLevel"						"2"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityCastPoint"				"0.1"
+		"AnimationPlaybackRate"			"1"
+		"AbilityCooldown"				"0"
+		"AbilityManaCost"				"0"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"time_per_gem"			"99 7"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"stack_gain"			"0 1"
+			}
+		}
+
+		"Modifiers"
+		{	
+			"modifier_ishtar_passive_gem_gain"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"ThinkInterval"  		"0.99"
+
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/ishtar/ishtar_abilities"
+						"Function"		"OnPassiveGemThink"
+					}
+				}
+			}
+		}
+	}	
+
+	//=================================================================================================================
+	// Ishtar : Combo (Goddess of beauty)
+	//=================================================================================================================
+	"ishtar_combo"
+	{	
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/ishtar/ishtar_combo"
+		"MaxLevel"						"1"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_VECTOR_TARGETING | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/ishtar/ishtar_combo"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
+		"AbilityCastRange"				"2000"
+		"AbilityCastPoint"				"0.2"
+
+		"AbilityCooldown"				"150"
+		"AbilityManaCost"				"800"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"			"4"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"max_teleport_range"	"1750"
+			}
+			"03"
+			{				
+				"var_type"				"FIELD_FLOAT"
+				"speed"					"4000"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"impact_radius"			"800"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage"				"2500"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage_per_gem"		"150"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"arrow_range"			"2000"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"dps"					"120"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"dps_duration"			"2.5"
+			}
+		}
+	}
+			
+	//=================================================
+	// Ishtar Attribute : Luxurious Gems
+	//=================================================
+	"ishtar_attribute_gems"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/ishtar/sa_gem"
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"14"
+
+		"precache"
+		{
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"reduced_gem_loss"		"50"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_max_gem"				"5"
+			}	
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/ishtar/ishtar_abilities"
+				"Function"		"OnGemsAcquired"
+			}
+		}
+	}
+
+	//=================================================
+	// Ishtar Attribute : Goddess worthy offerings
+	//=================================================
+	"ishtar_attribute_offering"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/ishtar/sa_offering"
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"11"
+
+		"precache"
+		{
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"gain_gem_each_second"	"7"
+			}	
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/ishtar/ishtar_abilities"
+				"Function"		"OnOfferingAcquired"
+			}
+		}
+	}
+
+	//=================================================
+	// Ishtar Attribute : Goddess of beauty
+	//=================================================
+	"ishtar_attribute_goddess"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/ishtar/sa_goddess"
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"13"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"recover_damage_taken"	"15"
+			}	
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"buff_male_mr"			"9"
+			}	
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"buff_radius"			"800"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"recovery_per_second"	"0 60"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/ishtar/ishtar_abilities"
+				"Function"		"OnGoddessAcquired"
+			}
+		}
+	}
+
+	//=================================================
+	// Ishtar Attribute : Goddess of venus
+	//=================================================
+	"ishtar_attribute_venus"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/ishtar/sa_venus"
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"15"
+
+		"AbilitySpecial"
+		{
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"extra_range"			"800"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"extra_cast_delay"		"0.4"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"dash_back"				"200"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"invul_duration"			"0.7"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"extra_impact_damage_percentage"	"15"
+			}	
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"gem_cost_per_r"	"1"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_r_damage"		"50 100 150 200 250"
+			}		
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/ishtar/ishtar_abilities"
+				"Function"		"OnVenusAcquired"
+			}
+		}
+	}	
+}
+
+
+	

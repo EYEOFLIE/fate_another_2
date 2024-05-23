@@ -1,0 +1,70 @@
+"DOTAAbilities"
+{	
+	"jtr_dagger_throw"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/jtr/jtr_dagger_throw"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityTextureName"			"custom/jtr/jtr_dagger_throw"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_3"	
+		"AbilityCastPoint"				"0.2"
+		"AbilityCooldown"				"1"
+		"AbilityManaCost"				"100"
+
+		"precache"
+		{
+			
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"cast_range"		"700"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"base_damage"		"80 110 140 170 200"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"dagger_ratio_1"	"75"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"dagger_ratio_2"	"100"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"1.0 1.5 2.0 2.5 3.0"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"slow_pct"			"-100"
+			}
+			"07"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"mark_duration"		"4.0"
+			}
+			"08"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"crit_damage"		"200"
+			}
+		}
+	}
+}

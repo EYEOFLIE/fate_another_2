@@ -1,0 +1,320 @@
+"DOTAUnits"
+{
+	"drake_golden_hind"
+	{
+		"Model"				"models/drake/drake_golden_hind.vmdl"
+		"BaseClass"			"npc_dota_creature"
+		"ModelScale"				"1.0"
+		"Level"						"1"
+		"HealthBarOffset"			"200"
+		"ConsideredHero"			"1"
+		"HasInventory"				"0"
+
+		// Bounds
+		//----------------------------------------------------------------
+		"BoundsHullName"			"DOTA_HULL_SIZE_BARRACKS"			// Hull type used for navigation/locomotion.
+		"HealthBarOffset"			"140"
+		"RingRadius"				"250"
+		"CollisionSize"				"500"
+
+		"AbilityLayout"				"6"
+		"Ability1"					"fate_empty1"			// Ability 1
+		"Ability2"					"fate_empty8"				// Ability 2
+		"Ability3"					"drake_golden_hind_bombard"			// Ability 3
+		"Ability4"					"drake_golden_hind_defensive_cannon"			// Ability 4
+		"Ability5"					"fate_empty6"
+		"Ability6"					"fate_empty7"
+		"Ability7"					"drake_golden_hind_drive"
+		"Ability8"					"drake_golden_hind_voyager_of_storm"
+		"Ability9"					"drake_golden_wild_hunt"
+		"Ability10"					"drake_golden_wild_hunt_upgrade"
+		"Ability11"					"drake_combo_golden_wild_hunt"
+		"Ability12"					"drake_combo_golden_wild_hunt_upgrade"
+
+		"ArmorPhysical"				"0"			// Physical protection.
+		"MagicalResistance"			"0"			
+
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_FLY" 
+		"MovementSpeed"				"300"		// Speed.
+		"MovementTurnRate"			"1500"		// Turning rate.
+
+		"AttackCapabilities"			"DOTA_UNIT_CAP_RANGED_ATTACK"	
+		"AttackRange"					"850"
+		"AttackDamageMin"				"100"
+		"AttackDamageMax"				"200"
+		"AttackRate"					"2.0"
+		"ProjectileModel"				"particles/units/heroes/hero_snapfire/hero_snapfire_base_attack.vpcf"				// Particle system model for projectile.
+		"ProjectileSpeed"				"3000"	
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"1700"		// Base health.
+		"StatusHealthRegen"			"10"		// Health regeneration rate.
+		"StatusMana"				"1000"			// Base mana.
+		"StatusManaRegen"			"5"			// Mana regeneration rate.	
+
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"400"
+		"BountyGoldMin"				"2000.0"
+		"BountyGoldMax"				"2100.0"
+
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"1200"		// Range of vision during day light.
+		"VisionNighttimeRange"		"1000"		// Range of vision at night time.
+	}
+	"drake_golden_hind_upgrade"
+	{
+		"Model"				"models/drake/drake_golden_hind.vmdl"
+		"BaseClass"			"npc_dota_creature"
+		"ModelScale"				"1.0"
+		"Level"						"1"
+		"HealthBarOffset"			"200"
+		"ConsideredHero"			"1"
+		"HasInventory"				"0"
+
+		// Bounds
+		//----------------------------------------------------------------
+		"BoundsHullName"			"DOTA_HULL_SIZE_BARRACKS"			// Hull type used for navigation/locomotion.
+		"HealthBarOffset"			"140"
+		"RingRadius"				"250"
+		"CollisionSize"				"500"
+
+		"AbilityLayout"				"6"
+		"Ability1"					"drake_golden_hind_passive"			// Ability 1
+		"Ability2"					"fate_empty8"				// Ability 2
+		"Ability3"					"drake_golden_hind_bombard"			// Ability 3
+		"Ability4"					"drake_golden_hind_defensive_cannon"			// Ability 4
+		"Ability5"					"fate_empty6"
+		"Ability6"					"fate_empty7"
+		"Ability7"					"drake_golden_hind_drive"
+		"Ability8"					"drake_golden_hind_voyager_of_storm"
+		"Ability9"					"drake_golden_wild_hunt"
+		"Ability10"					"drake_golden_wild_hunt_upgrade"
+		"Ability11"					"drake_combo_golden_wild_hunt"
+		"Ability12"					"drake_combo_golden_wild_hunt_upgrade"
+
+		"ArmorPhysical"				"5"			// Physical protection.
+		"MagicalResistance"			"5"			
+
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_FLY" 
+		"MovementSpeed"				"300"		// Speed.
+		"MovementTurnRate"			"500"		// Turning rate.
+
+		"AttackCapabilities"			"DOTA_UNIT_CAP_RANGED_ATTACK"	
+		"AttackRange"					"850"
+		"AttackDamageMin"				"200"
+		"AttackDamageMax"				"300"
+		"AttackRate"					"2.0"
+		"ProjectileModel"				"particles/units/heroes/hero_snapfire/hero_snapfire_base_attack.vpcf"				// Particle system model for projectile.
+		"ProjectileSpeed"				"3000"	
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"2000"		// Base health.
+		"StatusHealthRegen"			"10"		// Health regeneration rate.
+		"StatusMana"				"1300"			// Base mana.
+		"StatusManaRegen"			"5"			// Mana regeneration rate.	
+
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"500"
+		"BountyGoldMin"				"2050.0"
+		"BountyGoldMax"				"2150.0"
+
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"1200"		// Range of vision during day light.
+		"VisionNighttimeRange"		"1000"		// Range of vision at night time.
+	}
+	"drake_golden_hind_dummy"
+	{
+		// General
+		//----------------------------------------------------------------
+		"BaseClass"					"npc_dota_creature"
+		"Model"						"models/drake/drake_golden_hind.vmdl"
+		"ModelScale"				"1.0"
+		"Level"						"1"
+		"HealthBarOffset"			"140"
+		"ConsideredHero"			"0"
+		"HasInventory"				"0"
+		
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					"dummy_unit_passive"	 
+		"Ability2"					""	 
+		
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"5"
+		"MagicalResistance"			"0"
+		
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+		"AttackDamageMin"			"0.0"
+		"AttackDamageMax"			"0.0"
+		"AttackRate"				"1.0"
+		"AttackAnimationPoint"		"0.5"
+		"AttackAcquisitionRange"	"0"
+		"AttackRange"				"0"
+		
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"0"
+		"BountyGoldMin"				"0.0"
+		"BountyGoldMax"				"0.0"
+		
+		// Bounds
+		//----------------------------------------------------------------
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"RingRadius"				"70"
+		"CollisionSize"				"32"
+		"FormationRank"				"0"
+		
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"
+		"MovementSpeed"				"0"
+		"MovementTurnRate"			"0.5"
+		
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"1000000"
+		"StatusHealthRegen"			"0"
+		"StatusMana"				"0"
+		"StatusManaRegen"			"0"
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"500"
+		"VisionNighttimeRange"		"500"
+	}
+	"drake_wild_hunt_dummy"
+	{
+		// General
+		//----------------------------------------------------------------
+		"BaseClass"					"npc_dota_creature"
+		"Model"						"models/drake/drake_wild_hunt.vmdl"
+		"ModelScale"				"1.0"
+		"Level"						"1"
+		"HealthBarOffset"			"140"
+		"ConsideredHero"			"0"
+		"HasInventory"				"0"
+		
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					"dummy_unit_passive"	 
+		"Ability2"					""	 
+		
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"5"
+		"MagicalResistance"			"0"
+		
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+		"AttackDamageMin"			"0.0"
+		"AttackDamageMax"			"0.0"
+		"AttackRate"				"1.0"
+		"AttackAnimationPoint"		"0.5"
+		"AttackAcquisitionRange"	"0"
+		"AttackRange"				"0"
+		
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"0"
+		"BountyGoldMin"				"0.0"
+		"BountyGoldMax"				"0.0"
+		
+		// Bounds
+		//----------------------------------------------------------------
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"RingRadius"				"70"
+		"CollisionSize"				"32"
+		"FormationRank"				"0"
+		
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"
+		"MovementSpeed"				"0"
+		"MovementTurnRate"			"0.5"
+		
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"1000000"
+		"StatusHealthRegen"			"0"
+		"StatusMana"				"0"
+		"StatusManaRegen"			"0"
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"500"
+		"VisionNighttimeRange"		"500"
+	}
+	"drake_cannon_dummy"
+	{
+		// General
+		//----------------------------------------------------------------
+		"BaseClass"					"npc_dota_creature"
+		"Model"						"models/drake/drake_cannon.vmdl"
+		"ModelScale"				"0.5"
+		"Level"						"1"
+		"HealthBarOffset"			"140"
+		"ConsideredHero"			"0"
+		"HasInventory"				"0"
+		
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					"dummy_unit_passive"	 
+		"Ability2"					""	 
+		
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"5"
+		"MagicalResistance"			"0"
+		
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+		"AttackDamageMin"			"0.0"
+		"AttackDamageMax"			"0.0"
+		"AttackRate"				"1.0"
+		"AttackAnimationPoint"		"0.5"
+		"AttackAcquisitionRange"	"0"
+		"AttackRange"				"0"
+		
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"0"
+		"BountyGoldMin"				"0.0"
+		"BountyGoldMax"				"0.0"
+		
+		// Bounds
+		//----------------------------------------------------------------
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"RingRadius"				"70"
+		"CollisionSize"				"32"
+		"FormationRank"				"0"
+		
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"
+		"MovementSpeed"				"0"
+		"MovementTurnRate"			"0.5"
+		
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"1000000"
+		"StatusHealthRegen"			"0"
+		"StatusMana"				"0"
+		"StatusManaRegen"			"0"
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"500"
+		"VisionNighttimeRange"		"500"
+	}
+}

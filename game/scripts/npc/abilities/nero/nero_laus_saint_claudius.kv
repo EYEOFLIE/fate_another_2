@@ -1,0 +1,64 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Nero : Luas Saint Cladius
+	//=================================================================================================================
+	"nero_laus_saint_claudius"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/nero/nero_laus_saint_claudius"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/nero_laus_saint"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_3"
+		
+		// Ability stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"9999"
+		"AbilityCastRangeBuffer"		"9999"
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"150"
+		"AbilityManaCost"				"0"
+		
+		// Data driven
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"						
+		{
+			"particle"  		"particles/custom/tamamo/combo/fire_explosion.vpcf"
+			"particle"  		"particles/custom/nero/nero_scorched_earth_child_embers_rosa.vpcf"
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_lion.vsndevts"
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_ember_spirit.vsndevts"
+		}
+
+		// Ability special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"2250"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"stun_duration"		"1.5"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"burn_damage"		"500"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"5"
+			}
+		}		
+	}
+}

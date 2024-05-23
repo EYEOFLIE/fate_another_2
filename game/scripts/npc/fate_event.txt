@@ -1,0 +1,150 @@
+
+Event
+{
+	"Xmas_01"		
+	{
+		"EventName"		"Xmas"
+		"EventID"		"01"
+		"StartDate"		"20/12"
+		"EndDate"		"31/12"
+		"EventType"		"1" // Unlock Skin for duration
+		"EventSkin"		
+		{
+			"1"	"019" // Jeanne Santa
+		}
+	}
+	"Xmas_02"		
+	{
+		"EventName"		"Xmas"
+		"EventID"		"02"
+		"StartDate"		"01/12"
+		"EndDate"		"31/12"
+		"EventType"		"4" // PADORU
+		"EventDetail"		"padoru_detail"
+		"EventItem"		
+		{
+			"1"	"item_padoru_hat" // PADORU change model
+		}
+		"DetailLength"	"600"
+	}
+	"HNY_22"		
+	{
+		"EventName"		"happy_new_year"
+		"EventID"		"03"
+		"StartDate"		"01/01/22"
+		"EndDate"		"14/01/22"
+		"EventType"		"2" // Limited Skin Claim
+		"EventSkin"		"056"	 // Cyber Emiya
+	}
+	"Illya_01"		
+	{
+		"EventName"		"Illya"
+		"EventID"		"04"
+		"StartDate"		"23/09/22"
+		"EndDate"		"25/09/22"
+		"EventType"		"1" // Unlock Skin for duration
+		"EventSkin"		
+		{
+			"1"	"057" // Archer Card Illya
+			"2"	"058" // Rider Card Illya
+			"3"	"060" // Lancer Card Illya
+			"4"	"063" // Assassin Card Illya
+			"5"	"072" // Berserker Card Illya
+			"6"	"075" // Caster Card Illya
+		}
+	}
+	"CNY_22"		
+	{
+		"EventName"		"chinese_new_year"
+		"EventID"		"05"
+		"StartDate"		"01/02/22"
+		"EndDate"		"14/02/22"
+		"EventType"		"2" // Limited Skin Claim
+		"EventSkin"		"061"	 // Racing Nero
+	}
+	"CNY_02"		
+	{
+		"EventName"		"chinese_new_year"
+		"EventID"		"06"
+		"StartDate"		"31/01/22"
+		"EndDate"		"03/02/22"
+		"EventType"		"1" // Unlock Skin for duration
+		"EventSkin"		
+		{
+			"1"	"022" // Boss Li
+		}
+	}
+	"VLT_22"		
+	{
+		"EventName"		"Valentine"
+		"EventID"		"07"
+		"StartDate"		"13/02"
+		"EndDate"		"16/02"
+		"EventType"		"1" // Unlock Skin for duration
+		"EventSkin"		
+		{
+			"1"	"050" // Crane Wedding Artoria
+			"2"	"038" // Priestess Scathach
+			"3"	"017" // Summer Dress Nero
+			"4"	"062" // Wedding Tamamo
+		}
+	}
+	"SUMMER_01"		
+	{
+		"EventName"		"Summer"
+		"EventID"		"08"
+		"StartDate"		"13/04"
+		"EndDate"		"17/04"
+		"EventType"		"1" // Unlock Skin for duration
+		"EventSkin"		
+		{
+			"1"	"033" // Summer Gawain
+			"2"	"048" // Summer Drake
+			"3"	"017" // Summer Dress Nero
+			"4"	"053" // Summer Scathach
+		}
+	}
+	"WAIFU_TOUR_01"		
+	{
+		"EventName"		"waifu_tour"
+		"EventID"		"09"
+		"StartDate"		"06/10/22"
+		"EndDate"		"11/10/22"
+		"EventType"		"5" // Big board new + regist
+		"EventDetail"	"waifu_tour_01_detail"
+		"LinkSolo"		""
+		"LinkTeam"		""
+	}
+	"WAIFU_TOUR_GUESS_01"		
+	{
+		"EventName"		"waifu_tour_guess"
+		"EventID"		"10"
+		"StartDate"		"06/10/22"
+		"EndDate"		"14/10/22"
+		"EventType"		"5" // Big board new + regist
+		"EventDetail"	"waifu_tour_01_guess"
+		"LinkSolo"		""
+		"LinkTeam"		""
+	}
+	"APRIL_FOOL"		
+	{
+		"EventName"		"april_fool"
+		"EventID"		"11"
+		"StartDate"		"01/04"
+		"EndDate"		"07/04"
+		"EventType"		"6" // NEW Mode
+		"EventDetail"	"same_hero_detail"
+	}
+	"FATE_TOUR_03"		
+	{
+		"EventName"		"fate_tour"
+		"EventID"		"12"
+		"StartDate"		"26/10/23"
+		"EndDate"		"03/11/23"
+		"EventType"		"5" // Big board new + regist
+		"EventDetail"	"fate_tour_03_detail"
+		"LinkSolo"		"https://forms.gle/hSZedXX8Tu9RfG72A"
+		"LinkTeam"		"https://forms.gle/5MFkZ5Wss8V8Sav57"
+		"DetailLength"	"900"
+	}
+}

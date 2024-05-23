@@ -1,0 +1,5 @@
+Avkio
+{
+	"AI"		"Fate/Another II"
+	"AN"		"2216522008"
+}

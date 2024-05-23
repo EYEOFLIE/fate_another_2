@@ -1,0 +1,28 @@
+
+MVPReward
+{
+	"4"
+	{
+		"ID"			"1"
+		"RewardType"	"Master Mana"
+		"Reward"		"5"
+		"Cooldown"		"120"
+		"IsCooldown"	"0"
+	}
+	"2"
+	{
+		"ID"			"2"
+		"RewardType"	"Master Health"
+		"Reward"		"5"
+		"Cooldown"		"120"
+		"IsCooldown"	"0"
+	}
+	"3"
+	{
+		"ID"			"3"
+		"RewardType"	"Gold"
+		"Reward"		"3000"
+		"Cooldown"		"120"
+		"IsCooldown"	"0"
+	}
+}

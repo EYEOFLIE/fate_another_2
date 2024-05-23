@@ -1,0 +1,1355 @@
+#base "diarmuid_gae_buidhe.kv"
+#base "diarmuid_gae_dearg.kv"
+
+"DOTAAbilities"
+{	
+	//========================================
+	// Diarmuid - Love Spot
+	//========================================
+	"diarmuid_love_spot"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"			"custom/diarmuid_love_spot"
+		"MaxLevel"						"1"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_2"
+		"precache"
+		{
+			
+		}
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"20"
+		"AbilityCastPoint"				"0.1"
+		"AbilityCastRange"				"500"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"100"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"2"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"damage_reduction"	"50"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"500"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"interval"			"0.25"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"window"			"3"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/diarmuid/diarmuid_abilities"
+				"Function"			"OnLoveSpotStart"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_love_spot"
+			{
+				"IsBuff"			"1"
+				"IsHidden"			"0"
+				"Duration"			"%duration"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE | MODIFIER_ATTRIBUTE_PERMANENT"
+	            "ThinkInterval"		"%interval"
+	            "OnIntervalThink"
+	         	{
+					"RunScript"
+					{
+						"ScriptFile"		"abilities/diarmuid/diarmuid_abilities"
+						"Function"			"OnLovespotThink"
+					}
+				}				
+			}
+			"modifier_love_spot_charmed"
+			{
+				"IsHidden"		"0"
+				"Duration"		"%interval"		
+				"IsDebuff"		"1"	
+				"States"
+				{
+					"MODIFIER_STATE_SILENCED"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+			"modifier_rampant_warrior_window"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"IsPurgable"		"0"
+				"Duration"			"%window"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/diarmuid/diarmuid_abilities"
+						"Function"		"OnRampantWarriorWindowCreate"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/diarmuid/diarmuid_abilities"
+						"Function"		"OnRampantWarriorWindowDestroy"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/diarmuid/diarmuid_abilities"
+						"Function"		"OnRampantWarriorWindowDeath"
+					}
+				}
+			}
+		}
+	}
+	//========================================
+	// Diarmuid - Love Spot (Upgraded)
+	//========================================
+	"diarmuid_love_spot_upgrade"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"			"custom/diarmuid_love_spot"
+		"MaxLevel"						"1"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_2"
+		"precache"
+		{
+			
+		}
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"20"
+		"AbilityCastPoint"				"0.1"
+		"AbilityCastRange"				"500"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"100"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"4"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"damage_reduction"	"50"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"500"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"interval"			"0.25"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"window"			"3"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/diarmuid/diarmuid_abilities"
+				"Function"			"OnLoveSpotStart"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_love_spot"
+			{
+				"IsBuff"			"1"
+				"IsHidden"			"0"
+				"Duration"			"%duration"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE | MODIFIER_ATTRIBUTE_PERMANENT"
+	            "ThinkInterval"		"%interval"
+	            "OnIntervalThink"
+	         	{
+					"RunScript"
+					{
+						"ScriptFile"		"abilities/diarmuid/diarmuid_abilities"
+						"Function"			"OnLovespotThink"
+					}
+				}				
+			}
+			"modifier_love_spot_charmed"
+			{
+				"IsHidden"		"0"
+				"Duration"		"%interval"		
+				"IsDebuff"		"1"		
+				"States"
+				{
+					"MODIFIER_STATE_SILENCED"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+			"modifier_rampant_warrior_window"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"IsPurgable"		"0"
+				"Duration"			"%window"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/diarmuid/diarmuid_abilities"
+						"Function"		"OnRampantWarriorWindowCreate"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/diarmuid/diarmuid_abilities"
+						"Function"		"OnRampantWarriorWindowDestroy"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/diarmuid/diarmuid_abilities"
+						"Function"		"OnRampantWarriorWindowDeath"
+					}
+				}
+			}
+		}
+	}
+	//================================================
+	// Diarmuid Attribute : Mind's Eye
+	//================================================
+	"diarmuid_minds_eye"
+	{
+		"AbilityBehavior" 				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass" 					"ability_datadriven"
+		"AbilityTextureName"            "custom/diarmuid_attribute_minds_eye"
+		"MaxLevel"                      "1"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"evasion_rate"		"15"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"diarmuid_minds_eye_passive"
+			{
+				"Passive"                        "1"
+				"IsHidden"                       "0"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_EVASION_CONSTANT" "%evasion_rate"
+				}
+		  	}
+		}
+	}
+	//================================================
+	// Diarmuid Attribute : Mind's Eye (Improve Mind's Eye SA)
+	//================================================
+	"diarmuid_minds_eye_upgrade"
+	{
+		"AbilityBehavior" 				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"BaseClass" 					"ability_datadriven"
+		"AbilityTextureName"            "custom/diarmuid_attribute_minds_eye"
+		"MaxLevel"                      "1"
+		"AbilityCooldown"				"20"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"500"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+
+		"precache"
+		{
+			
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"evasion_rate"		"15"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"passive_vision"		"1000"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"active_evasion_rate"		"100"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"bonus_vision"		"250"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"2"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"vision_duration"			"5"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/diarmuid/diarmuid_abilities"
+				"Function"		"OnMindsEyeStart"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_diarmuid_minds_eye_passive"
+			{
+				"Passive"                        "1"
+				"IsHidden"                       "0"
+				"IsDebuff"			"0"
+				"IsBuff"			"1"
+				"Aura"				"modifier_diarmuid_minds_eye_vision"
+				"Aura_Radius"		"%passive_vision"
+				"Aura_Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types"		"DOTA_UNIT_TARGET_HERO"
+				"Aura_Flags"    	"DOTA_UNIT_TARGET_FLAG_NO_INVIS"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_EVASION_CONSTANT" "%evasion_rate"
+				}
+		  	}
+		  	"modifier_diarmuid_minds_eye_vision"
+		  	{
+		  		"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"IsPurgable"		"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PROVIDES_FOW_POSITION" "1"
+				}
+		  	}
+		  	"modifier_diarmuid_minds_eye_active"
+			{
+				"Passive"                       "0"
+				"IsHidden"                      "0"
+				"IsBuff"						"1"
+				"Duration"						"%duration"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_EVASION_CONSTANT" "%active_evasion_rate"
+				}
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"EffectName"        "particles/items_fx/immunity_sphere_buff.vpcf"
+						"EffectAttachType"	"start_at_customorigin"
+						"Target"            "TARGET"
+						"ControlPointEntities"
+						{
+							"TARGET"		"attach_hitloc"
+						}
+					}
+				}
+		  	}
+		  	"modifier_minds_eye_cooldown"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"IsPurgable"		"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE | MODIFIER_ATTRIBUTE_PERMANENT"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Diarmuid : Warrior's Charge
+	//=================================================================================================================
+	"diarmuid_warriors_charge"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/diarmuid_warriors_charge"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_1"
+		"AOERadius"						"%radius"
+		"AnimationPlaybackRate" 		"2.5"
+		
+		"precache"
+		{
+			
+		}
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"650"
+		"AbilityCastRangeBuffer"		"800"
+		"AbilityCastPoint"				"0.1"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"9.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"100"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"150 180 210 240 270"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"300"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"slow_amount"		"-50"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"slow_duration"		"2"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"stun_duration"		"0.5"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"charge_duration"	"2"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"charge_aspd"		"50"
+			}
+		}
+		"OnSpellStart"
+		{
+			 "RunScript"
+			 {
+			 	"ScriptFile"	"abilities/diarmuid/diarmuid_abilities"
+			 	"Function"		"OnChargeStart"
+			 }
+		}
+
+		"Modifiers"
+		{
+			"modifier_warriors_charge_slow"
+			{	
+				"Duration"				"%slow_duration"		
+				"IsDebuff"				"1"	
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%slow_amount"
+				}
+			}
+			"modifier_warriors_charge_buff"
+			{	
+				"Duration"				"%charge_duration"		
+				"IsDebuff"				"0"	
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%charge_aspd"
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Diarmuid : Warrior's Charge (Mind Eye SA)
+	//=================================================================================================================
+	"diarmuid_warriors_charge_upgrade"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/diarmuid_warriors_charge"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_1"
+		"AOERadius"						"%radius"
+		"AnimationPlaybackRate" 		"2.5"
+		
+		"precache"
+		{
+	
+		}
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"650"
+		"AbilityCastRangeBuffer"		"800"
+		"AbilityCastPoint"				"0.1"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"9.0"
+		"AbilityCharges"				"2"
+		"AbilityChargeRestoreTime"		"9.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"100"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"150 180 210 240 270"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"300"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"slow_amount"		"-50"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"slow_duration"		"2"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"stun_duration"		"0.5"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"charge_duration"	"2"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"charge_aspd"		"50"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"debuff_armor"		"-5"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"debuff_duration"	"3"
+			}
+		}
+		"OnSpellStart"
+		{
+			 "RunScript"
+			 {
+			 	"ScriptFile"	"abilities/diarmuid/diarmuid_abilities"
+			 	"Function"		"OnChargeStart"
+			 }
+		}
+
+		"Modifiers"
+		{
+			"modifier_warriors_charge_slow"
+			{	
+				"Duration"				"%slow_duration"		
+				"IsDebuff"				"1"	
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%slow_amount"
+				}
+			}
+			"modifier_warriors_charge_buff"
+			{	
+				"Duration"				"%charge_duration"		
+				"IsDebuff"				"0"	
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%charge_aspd"
+				}
+			}
+			"modifier_warriors_charge_debuff"
+			{	
+				"Duration"				"%debuff_duration"		
+				"IsDebuff"				"1"	
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%debuff_armor"
+				}
+			}
+		}
+	}
+	//========================================
+	// Diarmuid - Double Spearsmanship
+	//========================================
+	"diarmuid_double_spearsmanship"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"			"custom/diarmuid_double_spearsmanship"
+		"MaxLevel"						"5"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_2"
+		"precache"
+		{
+			
+		}
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"19"
+		"AbilityCastPoint"				"0.1"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"200"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"passive_proc_chance"		"15 20 25 30 35"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"active_proc_chance"		"100"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"duration"					"12"
+			}
+			"08"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"gae_window"				"3"
+			}
+		}
+
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/diarmuid/diarmuid_abilities"
+				"Function"			"OnDoubleSpearCast"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/diarmuid/diarmuid_abilities"
+				"Function"			"OnDoubleSpearStart"
+			}
+			"FireSound"
+			{
+				"EffectName"		"Hero_Invoker.Alacrity"
+				"Target"			"CASTER"
+			}
+		}
+
+		"Modifiers"
+		{
+			"diarmuid_double_spearsmanship_passive"
+			{
+				"Passive"                        "1"
+				"IsHidden"                       "1"
+				"OnAttackLanded"
+				{
+					"FireSound"
+					{
+						"EffectName"		"Hero_PhantomLancer.Attack"
+						"Target"			"CASTER"
+					}
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/diarmuid/diarmuid_abilities"
+						"Function"		"OnDoubleSpearProc"
+					}
+				}
+		  	}
+			"modifier_double_spearsmanship_active"
+			{
+				"IsBuff"			"1"
+				"Duration"			"%duration"
+				"EffectName"		"particles/units/heroes/hero_invoker/invoker_alacrity_buff.vpcf"
+				"EffectAttachType"	"follow_overhead"
+			}
+			"modifier_double_spearsmanship_cooldown"
+			{
+				"IsBuff"			"0"
+				"Duration"			"0.33"
+				"IsHidden"			"1"
+			}
+		}
+	}
+	//========================================
+	// Diarmuid - Double Spearsmanship (Master of Double Spears SA)
+	//========================================
+	"diarmuid_double_spearsmanship_upgrade"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"			"custom/diarmuid_double_spearsmanship"
+		"MaxLevel"						"5"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_2"
+		"precache"
+		{
+			
+		}
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"19"
+		"AbilityCastPoint"				"0.1"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"200"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"passive_proc_chance"		"15 20 25 30 35"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"active_proc_chance"		"100"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"duration"					"12"
+			}
+			"08"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_aspd"				"80"
+			}
+		}
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/diarmuid/diarmuid_abilities"
+				"Function"			"OnDoubleSpearCast"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/diarmuid/diarmuid_abilities"
+				"Function"			"OnDoubleSpearStart"
+			}
+			"FireSound"
+			{
+				"EffectName"		"Hero_Invoker.Alacrity"
+				"Target"			"CASTER"
+			}
+		}
+
+		"Modifiers"
+		{
+			"diarmuid_double_spearsmanship_passive"
+			{
+				"Passive"                        "1"
+				"IsHidden"                       "1"
+				"OnAttackLanded"
+				{
+					"FireSound"
+					{
+						"EffectName"		"Hero_PhantomLancer.Attack"
+						"Target"			"CASTER"
+					}
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/diarmuid/diarmuid_abilities"
+						"Function"		"OnDoubleSpearProc"
+					}
+				}
+		  	}
+			"modifier_double_spearsmanship_active"
+			{
+				"IsBuff"			"1"
+				"Duration"			"%duration"
+				"EffectName"		"particles/units/heroes/hero_invoker/invoker_alacrity_buff.vpcf"
+				"EffectAttachType"	"follow_overhead"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%bonus_aspd"
+				}
+			}
+			"modifier_double_spearsmanship_cooldown"
+			{
+				"IsBuff"			"0"
+				"Duration"			"0.66"
+				"IsHidden"			"1"
+			}
+		}
+	}
+	//========================================
+	// Diarmuid : Combo : Rampant Warrior
+	//========================================
+	"diarmuid_rampant_warrior"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityTextureName"			"custom/diarmuid_rampant_warrior"
+		"MaxLevel"						"1"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_2"
+		"precache"
+		{
+			
+		}
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"150"
+		"AbilityCastPoint"				"0.3"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"200"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"cast_reduc"		"67"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"spear_mana"		"350"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"spear_cd"			"1"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"atk_spd"			"100"
+			}
+			"07"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"12"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"crit_damage"		"175.0"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"bonus_aspd"		"100"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/diarmuid/diarmuid_abilities"
+				"Function"			"OnRampantWarriorStart"
+				
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_rampant_warrior_cooldown"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"IsPurgable"		"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE | MODIFIER_ATTRIBUTE_PERMANENT"
+			}
+
+			"modifier_rampant_warrior"
+			{
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"IsPurgable"		"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE | MODIFIER_ATTRIBUTE_PERMANENT"
+				"Duration"			"%duration"	
+				"OnCreated"
+				{
+
+					"AttachEffect"
+					{
+						"Target"            "CASTER"
+						"EffectName"        "particles/custom/diarmuid/diarmuid_red_trail.vpcf"
+						"EffectAttachType"  "start_at_customorigin"
+						"ControlPointEntities"
+						{
+							"CASTER"				"attach_attack2"
+						}
+					}	
+					"AttachEffect"
+					{
+						"Target"            "CASTER"
+						"EffectName"        "particles/custom/diarmuid/diarmuid_yellow_trail.vpcf"
+						"EffectAttachType"  "start_at_customorigin"
+						"ControlPointEntities"
+						{
+							"CASTER"				"attach_attack1"
+						}
+					}	
+				}
+				"OnAttackStart"
+				{
+					"RemoveModifier"
+					{
+						"ModifierName"	"modifier_rampant_warrior_crit_hit"
+						"Target"
+ 						{
+ 							"Center"	"CASTER"
+ 							"Flags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+ 						}
+					}
+
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_rampant_warrior_crit_hit"
+						"Target" 		"CASTER"
+					}
+				}
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%bonus_aspd"
+				}
+			}
+
+			"modifier_rampant_warrior_crit_hit"
+			{
+				"IsHidden"		"1"
+				"Attributes"	"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE" "%crit_damage"
+				}
+				"OnAttackLanded"
+				{
+			    	"FireEffect"
+			    	{
+			    		"EffectName"		"particles/units/heroes/hero_juggernaut/jugg_crit_blur_impact.vpcf"
+			    		"EffectAttachType"	"attach_hitloc"
+			    		"Target"			"TARGET"
+			    	}
+			        "RemoveModifier"
+			        {
+			            "ModifierName"  	"modifier_rampant_warrior_crit_hit"
+						"Target"
+ 						{
+ 							"Center"	"CASTER"
+ 							"Flags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+ 						}   
+			        }			
+				}
+			}
+		}
+	}
+
+	//=======================================
+	// Diarmuid Attribute : Improve Love Spot
+	//=======================================
+	"diarmuid_attribute_improve_love_spot"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/diarmuid_attribute_improve_love_spot"
+		
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"9"
+
+		"precache"
+		{
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"2.0"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/diarmuid/diarmuid_abilities"
+				"Function"		"OnLoveSpotImproved"
+			}
+		}
+	}
+
+	//=======================================
+	// Diarmuid Attribute : Improve Mind's Eye
+	//=======================================
+	"diarmuid_attribute_improve_minds_eye"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/diarmuid_attribute_minds_eye"
+		
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"12"
+
+		"precache"
+		{
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"evasion_rate"		"15"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"passive_vision"		"1000"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"active_evasion_rate"		"100"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"active_ignore_armor"		"50"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"bonus_vision"		"250"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"2"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"vision_duration"			"5"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"q_charges"				"2"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"q_debuff_armor"			"-5"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"q_debuff_duration"			"3"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/diarmuid/diarmuid_abilities"
+				"Function"		"OnMindEyeAcquired"
+			}
+		}
+	}
+	//=======================================
+	// Diarmuid Attribute : Golden Rose of Mortality
+	//=======================================
+	"diarmuid_attribute_golden_rose_of_mortality"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/diarmuid_attribute_golden_rose"
+		
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"12"
+
+		"precache"
+		{
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"damage_per_stack"			"10"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"cost_reduce"			"100"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"cast_reduce"			"0.2"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"bonus_hp_lock"		"20"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/diarmuid/diarmuid_abilities"
+				"Function"		"OnGoldenRoseAcquired"
+			}
+		}
+	}
+
+	//=======================================
+	// Diarmuid Attribute : Crimson Rose of Exorcism
+	//=======================================
+	"diarmuid_attribute_crimson_rose_of_exorcism"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/diarmuid_attribute_crimson_rose"
+		
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"12"
+
+		"precache"
+		{
+		}
+
+		"AbilitySpecial"
+		{
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"revoke_per_stack"		"0.5"
+			}
+			"08"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"mana_cut_per_stack"	"200"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"5"
+			}
+			
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"cost_reduce"			"100"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"cast_reduce"			"0.2"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/diarmuid/diarmuid_abilities"
+				"Function"		"OnCrimsonRoseAcquired"
+			}
+		}
+	}
+
+
+
+	//=======================================
+	// Diarmuid Attribute : Double Spear Strike
+	//=======================================
+	"diarmuid_attribute_double_spear_strike"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/diarmuid_attribute_double_spear_strike"
+		
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"17"
+
+		"precache"
+		{
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"doublespear_window"			"1"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"attack_speed"			"80"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/diarmuid/diarmuid_abilities"
+				"Function"		"OnDoubleSpearAcquired"
+			}
+		}
+	}
+	//=======================================
+	// Precache
+	//=======================================
+	"diarmuid_precache"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"custom/medusa/medusa_attribute_monstrous_strength"
+
+		"precache"
+		{
+			"particle"				"particles/units/heroes/hero_doom_bringer/doom_bringer_lvl_death.vpcf"
+			"particle"  			"particles/items_fx/immunity_sphere_buff.vpcf"
+			"particle"				"particles/units/heroes/hero_sven/sven_storm_bolt_projectile_explosion.vpcf"
+			"particle"				"particles/units/heroes/hero_invoker/invoker_alacrity_buff.vpcf"
+			"particle"				"particles/custom/diarmuid/diarmuid_red_trail.vpcf"
+			"particle"				"particles/custom/diarmuid/diarmuid_yellow_trail.vpcf"
+			"particle"				"particles/units/heroes/hero_juggernaut/jugg_crit_blur_impact.vpcf"
+			"particle"				"particles/units/heroes/hero_ursa/ursa_enrage_buff.vpcf"
+			"particle"				"particles/items_fx/aegis_respawn.vpcf"
+			"particle" 	 			"particles/units/heroes/hero_chaos_knight/chaos_knight_reality_rift.vpcf"
+			"particle"  			"particles/custom/diarmuid/diarmuid_gae_cast.vpcf"
+			"particle"  			"particles/custom/diarmuid/diarmuid_gae_buidhe.vpcf"
+			"particle"  			"particles/items_fx/dagon.vpcf"
+			"particle"  			"particles/custom/diarmuid/gae_dearg_slash.vpcf"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_clinkz.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_invoker.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_phantom_lancer.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_huskar.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_warlock.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_lion.vsndevts"
+		}
+	}
+}

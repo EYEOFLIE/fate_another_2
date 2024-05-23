@@ -1,0 +1,2846 @@
+"DOTAAbilities"
+{
+	//===================================================
+	// Semiramis : Dual Class (D) 
+	//===================================================
+	"semiramis_dual_class"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityTextureName"			"custom/semiramis/semiramis_dualclass"
+		"AbilityCastPoint"				"0.1"
+		"AbilityCooldown"				"10"
+		"AbilityManaCost"				"0"
+		"AbilityCastAnimation" 			"ACT_DOTA_ATTACK"
+		"AnimationPlaybackRate" 		"1.0"
+
+	    "AbilitySpecial"
+	    {	    
+		    "01"
+		    {
+		        "var_type"				  	"FIELD_FLOAT"
+		        "bonus_mana_regen"			"0"
+		    }		    
+		    "01"
+		    {
+		        "var_type"				  	"FIELD_FLOAT"
+		        "bonus_spd"					"0"
+		    }
+		    "01"
+		    {
+		        "var_type"				  	"FIELD_FLOAT"
+		        "bonus_int"					"0"
+		    }
+		    "01"
+		    {
+		        "var_type"				  	"FIELD_FLOAT"
+		        "bonus_agi"					"0"
+		    }
+	    }
+
+	   	"OnSpellStart"
+	    {
+    		"RunScript"
+		    {
+		    	"ScriptFile"	"abilities/semiramis/semiramis_abilities"
+		    	"Function"		"OnClassSwap"
+		    }
+		}
+
+		"Modifiers"
+		{				
+			"modifier_semiramis_class_caster"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE | MODIFIER_ATTRIBUTE_PERMANENT"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"	"%bonus_mana_regen"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"%bonus_int"
+				}	    		
+			}
+
+			"modifier_semiramis_class_assassin"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE | MODIFIER_ATTRIBUTE_PERMANENT"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%bonus_spd"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"		"%bonus_agi"
+				}	
+			}						
+
+			"modifier_dual_class_cooldown"
+			{
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			}		
+		}
+	}
+	//===================================================
+	// Semiramis : Dual Class (D) (Double Summon SA)
+	//===================================================
+	"semiramis_dual_class_upgrade"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityTextureName"			"custom/semiramis/semiramis_dualclass"
+		"AbilityCastPoint"				"0.1"
+		"AbilityCooldown"				"2"
+		"AbilityManaCost"				"0"
+		"AbilityCastAnimation" 			"ACT_DOTA_ATTACK"
+		"AnimationPlaybackRate" 		"1.0"
+
+	    "AbilitySpecial"
+	    {		    
+		    "01"
+		    {
+		        "var_type"				  	"FIELD_FLOAT"
+		        "bonus_mana_regen"			"10"
+		    }	
+		    "01"
+		    {
+		        "var_type"				  	"FIELD_FLOAT"
+		        "bonus_int"					"10"
+		    }	    
+		    "01"
+		    {
+		        "var_type"				  	"FIELD_FLOAT"
+		        "bonus_spd"					"60"
+		    }
+		    "01"
+		    {
+		        "var_type"				  	"FIELD_FLOAT"
+		        "bonus_agi"					"10"
+		    }
+	    }
+
+	   	"OnSpellStart"
+	    {
+    		"RunScript"
+		    {
+		    	"ScriptFile"	"abilities/semiramis/semiramis_abilities"
+		    	"Function"		"OnClassSwap"
+		    }
+		}
+
+		"Modifiers"
+		{				
+			"modifier_semiramis_class_caster"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE | MODIFIER_ATTRIBUTE_PERMANENT"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"	"%bonus_mana_regen"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"%bonus_int"
+				}	  		
+			}
+
+			"modifier_semiramis_class_assassin"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE | MODIFIER_ATTRIBUTE_PERMANENT"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"	"%bonus_spd"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"		"%bonus_agi"
+				}	
+			}						
+
+			"modifier_dual_class_cooldown"
+			{
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			}			
+		}
+	}
+	//===================================================
+	// Semiramis : Binding Chains (Q) 
+	//===================================================
+	"semiramis_binding_chains"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/semiramis/semiramis_binding_chains"
+		"AbilityCastAnimation" 			"ACT_DOTA_ATTACK2"
+		"AnimationPlaybackRate" 		"1.25"
+
+		"AbilityCastPoint"				"0.3"
+		"AbilityCastRange"				"800"
+		"AbilityCastRangeBuffer"		"100"
+		"AbilityCooldown"				"15"
+		"AbilityManaCost"				"100"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"max_dur"				"2 2.75 3.5 4.25 5"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"min_dur"				"1 1.25 1.5 1.75 2"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mr_red"				"0"
+			}
+		}		
+
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/semiramis/semiramis_abilities"
+				"Function"		"OnLevelupQCas"
+			}
+		}
+
+	   	"OnSpellStart"
+	    {
+    		"RunScript"
+		    {
+		    	"ScriptFile"	"abilities/semiramis/semiramis_abilities"
+		    	"Function"		"SemiramisChainsCast"
+		    }
+		}	
+	}
+	//===================================================
+	// Semiramis : Binding Chains (Q) (Charmer SA)
+	//===================================================
+	"semiramis_binding_chains_charm"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/semiramis/semiramis_binding_chains"
+		"AbilityCastAnimation" 			"ACT_DOTA_ATTACK2"
+		"AnimationPlaybackRate" 		"1.25"
+
+		"AbilityCastPoint"				"0.3"
+		"AbilityCastRange"				"800"
+		"AbilityCastRangeBuffer"		"100"
+		"AbilityCooldown"				"15"
+		"AbilityManaCost"				"100"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"max_dur"				"2 2.75 3.5 4.25 5"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"min_dur"				"1 1.25 1.5 1.75 2"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mr_red"				"0"
+			}
+		}	
+
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/semiramis/semiramis_abilities"
+				"Function"		"OnLevelupQCas"
+			}
+		}
+
+	   	"OnSpellStart"
+	    {
+    		"RunScript"
+		    {
+		    	"ScriptFile"	"abilities/semiramis/semiramis_abilities"
+		    	"Function"		"SemiramisChainsCast"
+		    }
+		}	
+	}
+	//===================================================
+	// Semiramis : Binding Chains (Q) (Charmer SA)
+	//===================================================
+	"semiramis_binding_chains_absolute"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/semiramis/semiramis_binding_chains"
+		"AbilityCastAnimation" 			"ACT_DOTA_ATTACK2"
+		"AnimationPlaybackRate" 		"1.25"
+
+		"AbilityCastPoint"				"0.3"
+		"AbilityCastRange"				"800"
+		"AbilityCastRangeBuffer"		"100"
+		"AbilityCooldown"				"15"
+		"AbilityManaCost"				"100"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"max_dur"				"2 2.75 3.5 4.25 5"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"min_dur"				"1 1.25 1.5 1.75 2"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mr_red"				"-20"
+			}
+		}	
+
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/semiramis/semiramis_abilities"
+				"Function"		"OnLevelupQCas"
+			}
+		}
+
+	   	"OnSpellStart"
+	    {
+    		"RunScript"
+		    {
+		    	"ScriptFile"	"abilities/semiramis/semiramis_abilities"
+		    	"Function"		"SemiramisChainsCast"
+		    }
+		}	
+	}
+	//===================================================
+	// Semiramis : Binding Chains (Q) (Absolute + Charmer SA)
+	//===================================================
+	"semiramis_binding_chains_upgrade"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/semiramis/semiramis_binding_chains"
+		"AbilityCastAnimation" 			"ACT_DOTA_ATTACK2"
+		"AnimationPlaybackRate" 		"1.25"
+
+		"AbilityCastPoint"				"0.3"
+		"AbilityCastRange"				"800"
+		"AbilityCastRangeBuffer"		"100"
+		"AbilityCooldown"				"15"
+		"AbilityManaCost"				"100"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"max_dur"				"2 2.75 3.5 4.25 5"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"min_dur"				"1 1.25 1.5 1.75 2"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mr_red"				"-20"
+			}
+		}	
+
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/semiramis/semiramis_abilities"
+				"Function"		"OnLevelupQCas"
+			}
+		}
+
+	   	"OnSpellStart"
+	    {
+    		"RunScript"
+		    {
+		    	"ScriptFile"	"abilities/semiramis/semiramis_abilities"
+		    	"Function"		"SemiramisChainsCast"
+		    }
+		}	
+	}
+	//===================================================
+	// Semiramis : Presence Concealment (Q)
+	//===================================================
+	"semiramis_presence_concealment"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityTextureName"			"custom/semiramis/semiramis_presence"
+	    "AbilityCastAnimation"      	"ACT_DOTA_CAST_ABILITY_1"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+
+		"AbilityCooldown"				"16 15 14 13 12"
+
+		"AbilityManaCost"				"100"		
+
+		"AbilitySpecial"
+		{
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"4 5 6 7 8"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_spd"				"10 14 18 22 26"
+			}
+		}
+
+		"precache"
+		{
+			
+		}
+
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/semiramis/semiramis_abilities"
+				"Function"		"OnLevelupQCas"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/semiramis/semiramis_abilities"
+				"Function"			"OnPresenceConcealmentStart"
+			}	
+		}
+
+		"Modifiers"
+		{
+			"modifier_semiramis_presence_concealment"
+			{
+				"IsDebuff"				"0"
+				"Passive"				"0"
+				"IsHidden"				"0"
+				"Duration"				"%duration" 
+				"Attributes"			"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"EffectName"			"particles/units/heroes/hero_pugna/pugna_decrepify.vpcf"	
+				"EffectAttachType"		"follow_overhead"
+
+				"States"
+			    {
+				    "MODIFIER_STATE_INVISIBLE" "MODIFIER_STATE_VALUE_ENABLED"
+				    "MODIFIER_STATE_NO_UNIT_COLLISION" "MODIFIER_STATE_VALUE_ENABLED"
+			    }
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%bonus_spd"
+				}
+
+			    "OnAttackStart"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"abilities/semiramis/semiramis_abilities"
+						"Function"			"OnPresenceConcealmentDeath"
+					}					
+				}				
+				"OnAbilityExecuted"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"abilities/semiramis/semiramis_abilities"
+						"Function"			"OnPresenceConcealmentDeath"
+					}								
+				}		
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"abilities/semiramis/semiramis_abilities"
+						"Function"			"OnPresenceConcealmentDeath"
+					}
+				}
+			}
+		}
+	}
+	//===================================================
+	// Semiramis : Mana Barrier (W)
+	//===================================================
+	"semiramis_barrier"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"			"custom/semiramis/semiramis_shield"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"22 20 18 16 14"
+		"AbilityManaCost"				"200"
+		"AbilityCastAnimation" 			"ACT_DOTA_ATTACK"
+		"AnimationPlaybackRate" 		"1.0"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"shield_amount"			"100 150 200 250 300"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_shield"			"200 300 400 500 600"
+			}			
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"regen"					"10 15 20 25 30"
+			}
+		}		
+
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/semiramis/semiramis_abilities"
+				"Function"		"OnLevelupWCas"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/semiramis/semiramis_abilities"
+				"Function"		"OnBarrierStart"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_semiramis_shield"
+			{
+				"Passive"		"0"
+				"IsDebuff"		"0"
+				"Attributes"	"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"EffectName"	"particles/semiramis/semiramis_shield.vpcf"
+				"EffectAttachType"	"follow_origin"
+				"OnTakeDamage"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/semiramis/semiramis_abilities"
+						"Function"		"OnBarrierDamaged"
+						"DamageTaken"	"%attack_damage"		
+					}
+				}
+
+				"ThinkInterval"  		"1.0"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/semiramis/semiramis_abilities"
+						"Function"		"OnBarrierThink"
+					}
+				}
+			}
+		}
+	}
+	//===================================================
+	// Semiramis : Mana Barrier (W) (Absolute SA)
+	//===================================================
+	"semiramis_barrier_upgrade"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"			"custom/semiramis/semiramis_shield"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"22 20 18 16 14"
+		"AbilityManaCost"				"200"
+		"AbilityCastAnimation" 			"ACT_DOTA_ATTACK"
+		"AnimationPlaybackRate" 		"1.0"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"shield_amount"			"100 150 200 250 300"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_shield"			"200 300 400 500 600"
+			}			
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"regen"					"20 30 40 50 60"
+			}
+		}		
+
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/semiramis/semiramis_abilities"
+				"Function"		"OnLevelupWCas"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/semiramis/semiramis_abilities"
+				"Function"		"OnBarrierStart"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_semiramis_shield"
+			{
+				"Passive"		"0"
+				"IsDebuff"		"0"
+				"Attributes"	"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"EffectName"	"particles/semiramis/semiramis_shield.vpcf"
+				"EffectAttachType"	"follow_origin"
+				"OnTakeDamage"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/semiramis/semiramis_abilities"
+						"Function"		"OnBarrierDamaged"
+						"DamageTaken"	"%attack_damage"		
+					}
+				}
+
+				"ThinkInterval"  		"1.0"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/semiramis/semiramis_abilities"
+						"Function"		"OnBarrierThink"
+					}
+				}
+			}
+		}
+	}
+	//===================================================
+	// Semiramis : Conjure Poisoned Wine (W)
+	//===================================================
+	"semiramis_snek_spit_poison"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityTextureName"			"custom/semiramis/semiramis_spit_poison"
+		"AbilityCastAnimation" 			"ACT_DOTA_ATTACK2"
+		"AnimationPlaybackRate" 		"1.25"
+
+		"AbilityCastPoint"				"0.15"
+		"AbilityCastRange"				"750"
+		"AbilityManaCost"				"200"
+		"AbilityCastRangeBuffer"		"100"
+		"AbilityCooldown"				"15"
+
+		"precache"
+		{
+			
+		}
+
+		"AbilitySpecial"
+		{
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range"					"1100"
+			}	
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aoe"					"220"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"200 250 300 350 400"
+			}				
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"2"
+			}	
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dps"					"30 35 40 45 50"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow"					"-20"
+			}
+		}	
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/semiramis/semiramis_abilities"
+				"Function"		"OnLevelupWCas"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/semiramis/semiramis_abilities"
+				"Function"		"OnSnakePoisonStart"
+			}
+		}	
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"	"0"
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/semiramis/semiramis_abilities"
+				"Function"		"OnSnakePoisonHit"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_semi_snek_poison"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Duration"			"%duration"
+		
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%slow"
+				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow" 
+				}
+		
+				"ThinkInterval"  "0.49"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/semiramis/semiramis_abilities"
+						"Function"		"OnSnakePoisonThink"
+					}
+				}
+			}
+		}
+	}
+	//===================================================
+	// Semiramis : Conjure Poisoned Wine (W) (Old SA)
+	//===================================================
+	"semiramis_snek_spit_poison_upgrade"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityTextureName"			"custom/semiramis/semiramis_spit_poison"
+		"AbilityCastAnimation" 			"ACT_DOTA_ATTACK2"
+		"AnimationPlaybackRate" 		"1.25"
+
+		"AbilityCastPoint"				"0.15"
+		"AbilityCastRange"				"750"
+		"AbilityManaCost"				"200"
+		"AbilityCastRangeBuffer"		"100"
+		"AbilityCooldown"				"15"
+
+		"precache"
+		{
+			
+		}
+
+		"AbilitySpecial"
+		{
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range"					"1100"
+			}	
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aoe"					"220"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"200 250 300 350 400"
+			}	
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_per_agi"		"2"
+			}				
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"3"
+			}	
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dps"					"50 55 60 65 70"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow"					"-20"
+			}				
+		}	
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/semiramis/semiramis_abilities"
+				"Function"		"OnLevelupWCas"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/semiramis/semiramis_abilities"
+				"Function"		"OnSnakePoisonStart"
+			}
+		}	
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"	"0"
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/semiramis/semiramis_abilities"
+				"Function"		"OnSnakePoisonHit"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_semi_snek_poison"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Duration"			"%duration"
+		
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%slow"
+				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow" 
+				}
+		
+				"ThinkInterval"  "0.49"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/semiramis/semiramis_abilities"
+						"Function"		"OnSnakePoisonThink"
+					}
+				}
+			}
+		}	
+	}
+	//===================================================
+	// Semiramis : Beam Bombard (E) 
+	//===================================================
+	"semiramis_beam_bombard"
+	{		
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/semiramis/semiramis_beam_bombard"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY" 
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/semiramis/semiramis_beam_bombard"
+
+		"AbilityCastAnimation" 			"ACT_DOTA_ATTACK_EVENT"
+		"AnimationPlaybackRate" 		"2"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"18"
+		"AbilityManaCost"				"400"
+		
+		"AbilitySpecial"
+		{
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_time"				"0.3"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"			"0.4"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"700 750 800 850 900"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"370 340 310 280 250"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"beam_numbers"			"5 5 6 6 7"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"100 125 150 175 200"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"beam_aoe"				"170 175 180 185 190"
+			}
+		}
+	}
+	//===================================================
+	// Semiramis : Beam Bombard (E) (Absolute SA)
+	//===================================================
+	"semiramis_beam_bombard_upgrade"
+	{		
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/semiramis/semiramis_beam_bombard"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY" 
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/semiramis/semiramis_beam_bombard"
+
+		"AbilityCastAnimation" 			"ACT_DOTA_ATTACK_EVENT"
+		"AnimationPlaybackRate" 		"2"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"18"
+		"AbilityManaCost"				"400"
+		
+		"AbilitySpecial"
+		{
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_time"				"0.3"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"			"0.4"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"700 750 800 850 900"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"370 340 310 280 250"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"beam_numbers"			"5 5 6 6 7"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_beam_int"		"30"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"100 125 150 175 200"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"beam_aoe"				"170 175 180 185 190"
+			}
+		}
+	}
+	//===================================================
+	// Semiramis : Poison Aura (E) 
+	//===================================================
+	"semiramis_poisonous_cloud"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityTextureName"			"custom/semiramis/semiramis_poisonous_cloud"
+	    "AbilityCastAnimation"      	"ACT_DOTA_CAST_ABILITY_1"
+		"AnimationPlaybackRate" 		"1.25"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityCastRange"				"800"
+		"AOERadius"						"%radius"
+		"AbilityCooldown"				"34 32 30 28 26"
+
+		"AbilityCastPoint"				"0.35"
+		"AbilityManaCost"				"400"		
+
+		"AbilitySpecial"
+		{			
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"			"0.38 0.36 0.34 0.32 0.3"
+			}	
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"radius"				"300 325 350 375 400"
+			}	
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"3 3.5 4 4.5 5"
+			}					
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage"				"200 225 250 275 300"
+			}								
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"debuff_duration"		"1.7 1.8 1.9 2.0 2.1"
+			}	
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"resist_reduct"			"-4 -8 -12 -16 -20"
+			}	
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow"					"-34 -38 -42 -46 -50"
+			}				
+		}
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/semiramis/semiramis_abilities"
+				"Function"		"OnLevelupECas"
+			}
+		}
+		"OnSpellStart"
+	    {
+    		"RunScript"
+		    {
+		    	"ScriptFile"	"abilities/semiramis/semiramis_abilities"
+		    	"Function"		"OnPoisonousCloudCast"
+		    }
+		}		
+
+		"Modifiers"
+		{	
+			"modifier_semiramis_poisonous_cloud_buff"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsBuff"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Duration"			"%duration"
+
+				"ThinkInterval"  		"0.24"
+
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/semiramis/semiramis_abilities"
+						"Function"		"OnPoisonCloudThink"
+					}
+				}
+			}
+
+			"modifier_semiramis_poisonous_cloud_debuff"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Duration"			"%debuff_duration"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%resist_reduct"
+				}
+			}
+			"modifier_semiramis_poisonous_cloud_slow"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Duration"			"%debuff_duration"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%slow"
+				}
+			}
+		}
+	}
+	//===================================================
+	// Semiramis : Poison Aura (E) (Oldest Poisoner SA)
+	//===================================================
+	"semiramis_poisonous_cloud_upgrade"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityTextureName"			"custom/semiramis/semiramis_poisonous_cloud"
+	    "AbilityCastAnimation"      	"ACT_DOTA_CAST_ABILITY_1"
+		"AnimationPlaybackRate" 		"1.25"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityCastRange"				"800"
+		"AOERadius"						"%radius"
+		"AbilityCooldown"				"34 32 30 28 26"
+
+		"AbilityCastPoint"				"0.35"
+		"AbilityManaCost"				"400"		
+
+		"AbilitySpecial"
+		{			
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"			"0.38 0.36 0.34 0.32 0.3"
+			}	
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"radius"				"300 325 350 375 400"
+			}	
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"3 3.5 4 4.5 5"
+			}					
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage"				"200 225 250 275 300"
+			}								
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"debuff_duration"		"1.7 1.8 1.9 2.0 2.1"
+			}	
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"resist_reduct"			"-4 -8 -12 -16 -20"
+			}	
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow"					"-34 -38 -42 -46 -50"
+			}	
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_poison"			"15"
+			}			
+		}
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/semiramis/semiramis_abilities"
+				"Function"		"OnLevelupECas"
+			}
+		}
+		"OnSpellStart"
+	    {
+    		"RunScript"
+		    {
+		    	"ScriptFile"	"abilities/semiramis/semiramis_abilities"
+		    	"Function"		"OnPoisonousCloudCast"
+		    }
+		}		
+
+		"Modifiers"
+		{	
+			"modifier_semiramis_poisonous_cloud_buff"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsBuff"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Duration"			"%duration"
+
+				"ThinkInterval"  		"0.24"
+
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/semiramis/semiramis_abilities"
+						"Function"		"OnPoisonCloudThink"
+					}
+				}
+			}
+
+			"modifier_semiramis_poisonous_cloud_debuff"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Duration"			"%debuff_duration"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%resist_reduct"
+				}
+			}
+			"modifier_semiramis_poisonous_cloud_amp"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Duration"			"%debuff_duration"
+			}
+			"modifier_semiramis_poisonous_cloud_slow"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Duration"			"%debuff_duration"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%slow"
+				}
+			}
+		}
+	}
+	//===================================================
+	// Semiramis : Hanging Garden (R) 
+	//===================================================
+	"semiramis_hanging_gardens"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityTextureName"			"custom/semiramis/semiramis_hanging_gardens"
+	    "AbilityCastAnimation"      	"ACT_DOTA_CAST_ABILITY_1"
+		"AnimationPlaybackRate" 		"0.25"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+
+		"AbilityCooldown"				"52 50 48 46 44"
+
+		"AbilityCastPoint"				"2.5"
+		"AbilityCastRange"				"800"
+		"AbilityManaCost"				"800"
+		"AOERadius"						"%damage_radius"		
+
+		"AbilitySpecial"
+		{						
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_point"			"2.5"
+			}	
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"			"1.85"
+			}		
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"garden_health"			"1400 1550 1700 1850 2000"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"garden_damage"			"50"
+			}					
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"garden_movespeed"		"260 280 300 320 340"
+			}				
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"35 44 53 62 71"
+			}					
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"quake_slow"			"-45"
+			}				
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"quake_duration"		"1.2"
+			}					
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"quake_radius"			"2500"
+			}						
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"300 400 500 600 700"
+			}					
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage_radius"			"800"
+			}			
+		}
+
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/semiramis/semiramis_abilities"
+				"Function"		"OnLevelupRCas"
+			}
+		}
+
+
+		"OnSpellStart"
+	    {
+    		"RunScript"
+		    {
+		    	"ScriptFile"	"abilities/semiramis/semiramis_abilities"
+		    	"Function"		"OnHangingGardensCast"
+		    }
+		}		
+
+		"Modifiers"
+		{	
+			"modifier_semiramis_garden_checker"
+			{
+				"IsHidden"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/semiramis/semiramis_abilities"
+						"Function"		"GardenCheck"
+					}
+				}
+			}
+			"modifier_semiramis_babylon_quake"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"EffectName"		"particles/units/heroes/hero_sniper/sniper_headshot_slow.vpcf"
+				"EffectAttachType"	"follow_overhead"
+				"Duration"			"%quake_duration"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%quake_slow"
+				}
+			}
+
+			"modifier_combo_window"
+			{	
+				"IsHidden"				"1"
+				"Attributes"			"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/semiramis/semiramis_abilities"
+						"Function"		"OnComboWindow"
+					}
+				}			
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"abilities/semiramis/semiramis_abilities"
+						"Function"		 	"OnComboWindowBroken"
+					}
+				}				
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"abilities/semiramis/semiramis_abilities"
+						"Function"		 	"OnComboWindowDeath"
+					}
+				}
+			}
+		}
+	}
+	//===================================================
+	// Semiramis : Hanging Garden (R) (Territory SA)
+	//===================================================
+	"semiramis_hanging_gardens_upgrade"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityTextureName"			"custom/semiramis/semiramis_hanging_gardens"
+	    "AbilityCastAnimation"      	"ACT_DOTA_CAST_ABILITY_1"
+		"AnimationPlaybackRate" 		"0.25"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+
+		"AbilityCooldown"				"52 50 48 46 44"
+
+		"AbilityCastPoint"				"1.2"
+		"AbilityCastRange"				"800"
+		"AbilityManaCost"				"800"	
+		"AOERadius"						"%damage_radius"		
+
+		"AbilitySpecial"
+		{			
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_point"			"1.2"
+			}	
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"			"1.5"
+			}		
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"garden_health"			"1600 1750 1900 2050 2200"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"garden_damage"			"70"
+			}					
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"garden_movespeed"		"260 280 300 320 340"
+			}				
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"40 50 60 70 80"
+			}					
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"quake_slow"			"-65"
+			}				
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"quake_duration"		"2"
+			}					
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"quake_radius"			"3500"
+			}						
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"300 400 500 600 700"
+			}					
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage_radius"			"800"
+			}			
+		}
+
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/semiramis/semiramis_abilities"
+				"Function"		"OnLevelupRCas"
+			}
+		}
+
+		"OnSpellStart"
+	    {
+    		"RunScript"
+		    {
+		    	"ScriptFile"	"abilities/semiramis/semiramis_abilities"
+		    	"Function"		"OnHangingGardensCast"
+		    }
+		}		
+
+		"Modifiers"
+		{	
+			"modifier_semiramis_garden_checker"
+			{
+				"IsHidden"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/semiramis/semiramis_abilities"
+						"Function"		"GardenCheck"
+					}
+				}
+			}
+			"modifier_semiramis_babylon_quake"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"EffectName"		"particles/units/heroes/hero_sniper/sniper_headshot_slow.vpcf"
+				"EffectAttachType"	"follow_overhead"
+				"Duration"			"%quake_duration"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%quake_slow"
+				}
+			}
+
+			"modifier_combo_window"
+			{	
+				"IsHidden"				"1"
+				"Attributes"			"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/semiramis/semiramis_abilities"
+						"Function"		"OnComboWindow"
+					}
+				}			
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"abilities/semiramis/semiramis_abilities"
+						"Function"		 	"OnComboWindowBroken"
+					}
+				}				
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"abilities/semiramis/semiramis_abilities"
+						"Function"		 	"OnComboWindowDeath"
+					}
+				}
+			}
+		}
+	}
+	//===================================================
+	// Semiramis : Sikera Ušum - Arrogant King's Alcohol (R)
+	//===================================================
+	"semiramis_poisonous_bite"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+		"AbilityTextureName"			"custom/semiramis/semiramis_claw"
+		"AbilityCastAnimation" 			"ACT_DOTA_ATTACK2"
+		"AnimationPlaybackRate" 		"1.25"
+
+		"AbilityCastPoint"				"0.3"
+		"AbilityCastRange"				"300 350 400 450 500"
+		"AbilityCastRangeBuffer"		"100"
+		"AbilityCooldown"				"45"
+		"AbilityManaCost"				"800"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"			"0.6"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"300 350 400 450 500"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"400 500 600 700 800"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"1.0"
+			}			
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_burst"			"400 525 650 775 900"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"350"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow"					"-20 -25 -30 -35 -40"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"stay_range"			"450 500 550 600 650"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"stay_dmg"				"100"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"out_dmg"				"30"
+			}
+		}		
+
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/semiramis/semiramis_abilities"
+				"Function"		"OnLevelupRCas"
+			}
+		}
+
+	   	"OnSpellStart"
+	    {
+    		"RunScript"
+		    {
+		    	"ScriptFile"	"abilities/semiramis/semiramis_abilities"
+		    	"Function"		"OnPoisonousBite"
+		    }
+		}
+
+		"Modifiers"
+		{				
+
+			"modifier_semiramis_poisonous_bite_debuff"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Duration"			"%duration"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%slow"
+				}	
+			}							
+		}
+	}
+	//===================================================
+	// Semiramis : Sikera Ušum - Arrogant King's Alcohol (R) (Charmer SA)
+	//===================================================
+	"semiramis_poisonous_bite_charm"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+		"AbilityTextureName"			"custom/semiramis/semiramis_claw"
+		"AbilityCastAnimation" 			"ACT_DOTA_ATTACK2"
+		"AnimationPlaybackRate" 		"1.25"
+
+		"AbilityCastPoint"				"0.3"
+		"AbilityCastRange"				"300 350 400 450 500"
+		"AbilityCastRangeBuffer"		"100"
+		"AbilityCooldown"				"45"
+		"AbilityManaCost"				"800"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"			"0.6"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"300 350 400 450 500"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"400 500 600 700 800"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_male"			"200"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"1.0"
+			}			
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_burst"			"400 525 650 775 900"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"350"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow"					"-20 -25 -30 -35 -40"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"stay_range"			"450 500 550 600 650"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"stay_dmg"				"100"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"out_dmg"				"30"
+			}
+		}		
+
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/semiramis/semiramis_abilities"
+				"Function"		"OnLevelupRCas"
+			}
+		}
+
+	   	"OnSpellStart"
+	    {
+    		"RunScript"
+		    {
+		    	"ScriptFile"	"abilities/semiramis/semiramis_abilities"
+		    	"Function"		"OnPoisonousBite"
+		    }
+		}
+
+		"Modifiers"
+		{				
+
+			"modifier_semiramis_poisonous_bite_debuff"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Duration"			"%duration"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%slow"
+				}	
+			}							
+		}
+	}
+	//===================================================
+	// Semiramis : Sikera Ušum - Arrogant King's Alcohol (R) (Oldest SA)
+	//===================================================
+	"semiramis_poisonous_bite_old"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+		"AbilityTextureName"			"custom/semiramis/semiramis_claw"
+		"AbilityCastAnimation" 			"ACT_DOTA_ATTACK2"
+		"AnimationPlaybackRate" 		"1.25"
+
+		"AbilityCastPoint"				"0.3"
+		"AbilityCastRange"				"200 250 300 350 400"
+		"AbilityCastRangeBuffer"		"100"
+		"AbilityCooldown"				"45"
+		"AbilityManaCost"				"600"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"			"0.6"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"200 250 300 350 400"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"400 500 600 700 800"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage_per_agi"		"3"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"1.0"
+			}			
+			
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_burst"			"600 725 850 975 1100"
+			}			
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"burst_per_int"			"3"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"350"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow"					"-20 -25 -30 -35 -40"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"stay_range"			"450 500 550 600 650"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"stay_dmg"				"100"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"out_dmg"				"30"
+			}
+		}		
+
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/semiramis/semiramis_abilities"
+				"Function"		"OnLevelupRCas"
+			}
+		}
+
+	   	"OnSpellStart"
+	    {
+    		"RunScript"
+		    {
+		    	"ScriptFile"	"abilities/semiramis/semiramis_abilities"
+		    	"Function"		"OnPoisonousBite"
+		    }
+		}
+
+		"Modifiers"
+		{				
+
+			"modifier_semiramis_poisonous_bite_debuff"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Duration"			"%duration"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%slow"
+				}	
+			}							
+		}
+	}
+
+	//===================================================
+	// Semiramis : Sikera Ušum - Arrogant King's Alcohol (R) (Oldest + Charm SA)
+	//===================================================
+	"semiramis_poisonous_bite_upgrade"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+		"AbilityTextureName"			"custom/semiramis/semiramis_claw"
+		"AbilityCastAnimation" 			"ACT_DOTA_ATTACK2"
+		"AnimationPlaybackRate" 		"1.25"
+
+		"AbilityCastPoint"				"0.3"
+		"AbilityCastRange"				"200 250 300 350 400"
+		"AbilityCastRangeBuffer"		"100"
+		"AbilityCooldown"				"45"
+		"AbilityManaCost"				"600"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"			"0.6"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"200 250 300 350 400"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"400 500 600 700 800"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_male"			"200"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage_per_agi"		"3"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"1.0"
+			}			
+			
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_burst"			"600 725 850 975 1100"
+			}			
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"burst_per_int"			"3"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"350"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow"					"-20 -25 -30 -35 -40"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"stay_range"			"450 500 550 600 650"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"stay_dmg"				"100"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"out_dmg"				"30"
+			}
+		}		
+
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/semiramis/semiramis_abilities"
+				"Function"		"OnLevelupRCas"
+			}
+		}
+
+	   	"OnSpellStart"
+	    {
+    		"RunScript"
+		    {
+		    	"ScriptFile"	"abilities/semiramis/semiramis_abilities"
+		    	"Function"		"OnPoisonousBite"
+		    }
+		}
+
+		"Modifiers"
+		{				
+
+			"modifier_semiramis_poisonous_bite_debuff"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Duration"			"%duration"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%slow"
+				}	
+			}							
+		}
+	}
+
+	//===================================================
+	// Semiramis : Combo (R > R)
+	//===================================================
+	"semiramis_combo"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityTextureName"			"custom/semiramis/semiramis_combo"
+		"MaxLevel"						"1"
+
+		"AbilityCooldown"				"190"
+
+		"AbilityCastPoint"				"0.6"
+		"AbilityCastRange"				"6000"
+		"AbilityManaCost"				"400"		
+		"AOERadius"						"%radius"
+
+		"AbilitySpecial"
+		{			
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"			"4.0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"semi_range"			"1000"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"minimum_range"			"1500"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"max_range"				"6000"
+			}		
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"radius"				"750"
+			}	
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"dps"					"3000"
+			}		
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"3.5"
+			}								
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow"					"-60"
+			}	
+		}
+
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/semiramis/semiramis_abilities"
+				"Function"		"OnComboConditionCheck"
+			}
+		}
+
+		"OnSpellStart"
+	    {
+    		"RunScript"
+		    {
+		    	"ScriptFile"	"abilities/semiramis/semiramis_abilities"
+		    	"Function"		"OnTiatumUmuCast"
+		    }
+		}
+
+		"Modifiers"
+		{	
+			"modifier_tiatum_umu_cast"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Duration"			"8"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%slow"
+				}
+			}
+
+			"modifier_tiatum_umu_execute"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Duration"			"%duration"
+			}
+
+			"modifier_tiatum_umu_cooldown"
+			{
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			}
+		}
+	}
+	//===================================================
+	// Semiramis : F : Absolute Queen 
+	//===================================================
+	"semiramis_absolute_queen"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"custom/semiramis/semiramis_absolute"
+		"AbilityCastAnimation" 			"ACT_DOTA_ATTACK"
+
+	    "AbilitySpecial"
+	    {
+		    "01"
+		    {
+		        "var_type"				  	"FIELD_FLOAT"
+		        "bonus_mr"					"10"
+		    }	
+		    "01"
+		    {
+		        "var_type"				  	"FIELD_FLOAT"
+		        "radius"					"1500"
+		    }	   
+	    }
+
+		"Modifiers"
+		{	
+			"modifier_semiramis_absolute_passive"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"Aura"					"modifier_semiramis_absolute_detect"
+				"Aura_Radius"			"20000"
+				"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"Aura_Types"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC "
+				"Aura_ApplyToCaster" 	"0"	
+			}
+			"modifier_semiramis_absolute_detect"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/semiramis/semiramis_abilities"
+						"Function"		"OnAbsoluteGardenDetect"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/semiramis/semiramis_abilities"
+						"Function"		"OnAbsoluteGardenDestroy"
+					}
+				}
+			}	
+			"modifier_semiramis_absolute_queen"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%bonus_mr"
+				}
+			}									
+		}
+	}
+
+
+	//=========================================================================================================================================================================================================
+
+	//=========================================================================================================================================================================================================
+
+	//=========================================================================================================================================================================================================
+
+	//=========================================================================================================================================================================================================
+
+	//=========================================================================================================================================================================================================
+
+	//=========================================================================================================================================================================================================
+
+	//=========================================================================================================================================================================================================
+
+	//=========================================================================================================================================================================================================
+	"hanging_gardens_bombard"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/semiramis/hanging_gardens_bombard"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityTextureName"			"custom/semiramis/semiramis_beam"
+		"MaxLevel"						"2"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+
+		"AbilityCooldown"				"11 9"
+
+		"AbilityCastPoint"				"0.15"
+		"AbilityCastRange"				"1200"
+		"AbilityManaCost"				"200"		
+
+		"AbilitySpecial"
+		{			
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"			"0.3"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_range"			"1200"
+			}		
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage"				"250 400"
+			}			
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"beam_aoe"				"300"
+			}		
+			"02"
+			{
+				"var_type"				"FIELD_INT"
+				"extra_beam"			"2 3"
+			}		
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"extra_beam_range"		"250"
+			}									
+		}
+	}
+
+	"semiramis_summon_birds"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/semiramis/semiramis_summon_birds"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityTextureName"			"custom/semiramis/semiramis_dove"
+		"MaxLevel"						"2"
+		"AbilityCooldown"				"16 14"
+		"AbilityCastRange"				"1500"
+		"AbilityCastPoint"				"0.25"
+		"AbilityManaCost"				"100"		
+
+		"AbilitySpecial"
+		{	
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bird_hp"				"100"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bird_vision"			"700"
+			}		
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"15 20"
+			}							
+		}
+	}
+
+	"hanging_gardens_mass_recall"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ALLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityTextureName"			"custom/semiramis/semiramis_recall"
+		"MaxLevel"						"2"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+
+		"AbilityCastAnimation" 			"ACT_DOTA_ATTACK_EVENT"
+		"AnimationPlaybackRate" 		"2"
+		"AbilityCastPoint"				"0.8"
+		"AbilityCastRange"				"1500"
+		"AbilityCooldown"				"48 35"
+		"AbilityManaCost"				"300"
+		"AOERadius"						"%radius"
+
+
+		"AbilitySpecial"
+		{			
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"delay"					"3.5 2.5"
+			}		
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"max_range"				"2500 3000"
+			}			
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"radius"				"375 425"
+			}						
+		}
+
+	    "OnSpellStart"
+	    {
+	    	"RunScript"
+			{
+				"ScriptFile"	"abilities/semiramis/semiramis_abilities"
+				"Function"		"OnMassRecallCast"
+			}
+	    }
+
+		"Modifiers"
+		{	
+			"modifier_semiramis_mass_recall"
+			{
+				"Passive"			"0"
+				"IsBuff"			"1"
+				"IsHidden"			"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"EffectName"		"particles/units/heroes/hero_chen/chen_teleport.vpcf"
+				"EffectAttachType"	"follow_origin"	
+				"Duration"			"%delay"
+
+				"ThinkInterval"  "0.45"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/semiramis/semiramis_abilities"
+						"Function"		"MassRecallThink"
+					}				
+				}
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/semiramis/semiramis_abilities"
+						"Function"		"OnRecallCreate"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/semiramis/semiramis_abilities"
+						"Function"		"OnRecallDestroy"
+						"MaxRange"		"%max_range"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/semiramis/semiramis_abilities"
+						"Function"		"OnRecallTakeDamage"
+					}
+				}
+			}		
+		}
+	}
+
+	"hanging_gardens_mount"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ALLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityTextureName"			"custom/semiramis/semiramis_mount"
+		"MaxLevel"						"2"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+
+		"AbilityCastPoint"				"0.5"
+		"AbilityCooldown"				"3"
+		"AbilityManaCost"				"0"
+
+		"AbilitySpecial"
+		{			
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"max_range"				"350 475"
+			}			
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_mana_regen"		"7 13"
+			}					
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_health_regen"	"10 30"
+			}									
+		}
+
+	    "OnSpellStart"
+	    {
+	    	"RunScript"
+			{
+				"ScriptFile"	"abilities/semiramis/semiramis_abilities"
+				"Function"		"OnMountStart"
+			}
+	    }
+
+		"Modifiers"
+		{	
+			"modifier_garden_mounted"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"	"%bonus_mana_regen"
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"	"%bonus_health_regen"
+				}	    		
+
+				"OnDeath"
+	    		{
+	    			"RunScript"
+	    			{
+	    				"ScriptFile"	"abilities/semiramis/semiramis_abilities"
+	    				"Function"		"OnGardenDeath"
+	    			}
+	    		}
+			}		
+
+			"modifier_semiramis_mounted"
+	    	{
+	    		//"Duration"			"90"
+				"IsHidden"			"0"
+	    		"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"States"
+				{
+					"MODIFIER_STATE_STUNNED"			"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_UNSELECTABLE" 		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_INVULNERABLE"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NOT_ON_MINIMAP" 	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_HEALTH_BAR"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_FLYING" 			"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_UNIT_COLLISION"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_COMMAND_RESTRICTED" "MODIFIER_STATE_VALUE_ENABLED"
+				}
+				"ThinkInterval"  "0.05"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/semiramis/semiramis_abilities"
+						"Function"		"GardenFollow"
+					}				
+				}	
+				"OnDeath"
+	    		{
+	    			"RunScript"
+	    			{
+	    				"ScriptFile"	"abilities/semiramis/semiramis_abilities"
+	    				"Function"		"OnMountedDestroy"
+	    			}
+	    		}
+	    	}	
+		}
+	}
+
+	"semiramis_hanging_garden_sikera_usum"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityTextureName"			"custom/semiramis/semiramis_basmu"
+		"MaxLevel"						"2"
+
+		"AbilityCooldown"				"34 29"
+
+		"AbilityCastPoint"				"0.5"
+		"AbilityCastRange"				"1000"
+		"AbilityManaCost"				"600"		
+		"AOERadius"						"%radius"
+
+		"AbilitySpecial"
+		{	
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_time"				"0.5"
+			}		
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"			"0.6"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_range"			"1000"
+			}		
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"dps"					"125 250"
+			}		
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage"				"250 500"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"3.5"
+			}				
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"radius"				"450"
+			}		
+		}
+
+		"OnSpellStart"
+	    {
+    		"RunScript"
+		    {
+		    	"ScriptFile"	"abilities/semiramis/semiramis_abilities"
+		    	"Function"		"OnHangingGardenSikeraUsum"
+		    }
+		}
+	}
+
+
+	"hanging_garden_presence"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"custom/semiramis/semiramis_garden_presence"
+		"AbilityCastAnimation" 			"ACT_DOTA_ATTACK"
+		"AnimationPlaybackRate" 		"1.0"
+
+	    "AbilitySpecial"
+	    {
+		    "01"
+		    {
+		        "var_type"				  	"FIELD_INTEGER"
+		        "mana_drain_per_second"		"0 10"
+		    }		   		   
+		    "01"
+		    {
+		        "var_type"				  	"FIELD_FLOAT"
+		        "slow"						"0 -20"
+		    }
+		     "01"
+		    {
+		        "var_type"				  	"FIELD_INTEGER"
+		        "radius"					"0 1600"
+		    }
+	    }
+
+		"Modifiers"
+		{	
+			"modifier_garden_presence"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+
+				"ThinkInterval"  		"0.9"
+
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/semiramis/semiramis_abilities"
+						"Function"		"OnGardenPresenceThink"
+					}
+				}
+			}						
+
+			"modifier_garden_mana_drain_debuff"
+			{
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Duration"			"1"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%slow"
+				}
+			}			
+		}
+	}
+
+	"hanging_garden_passive_laser"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"custom/semiramis/placeholder"
+		"AbilityCastAnimation" 			"ACT_DOTA_ATTACK"
+		"AnimationPlaybackRate" 		"1.0"
+
+	    "AbilitySpecial"
+	    {
+		    "01"
+		    {
+		        "var_type"				  	"FIELD_INTEGER"
+		        "damage"					"60 100"
+		    }		   		   
+		    "01"
+		    {
+		        "var_type"				  	"FIELD_FLOAT"
+		        "targets"					"2 3"
+		    }
+		     "01"
+		    {
+		        "var_type"				  	"FIELD_INTEGER"
+		        "radius"					"675 825"
+		    }
+	    }
+
+		"Modifiers"
+		{	
+			"modifier_garden_passive_laser"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+
+				"ThinkInterval"  		"1.35"
+
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/semiramis/semiramis_abilities"
+						"Function"		"OnLaserThink"
+					}
+				}
+
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/semiramis/semiramis_abilities"
+						"Function"		"OnDeathGarden"
+					}
+				}
+			}						
+		}
+	}
+
+	//=======================================
+	// Precache
+	//=======================================
+	"semiramis_precache"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"custom/medusa/medusa_attribute_monstrous_strength"
+
+		"precache"
+		{
+			"model"					"models/hanging/stolenbabylon.vmdl"
+			"model"					"models/items/beastmaster/hawk/fotw_eagle/fotw_eagle.vmdl"
+			"particle"  			"particles/units/heroes/hero_pugna/pugna_decrepify.vpcf"
+			"particle"  			"particles/semiramis/semiramis_shield.vpcf"
+			"particle"				"particles/semiramis/beam_barrage.vpcf"
+			"particle"				"particles/semiramis/basmu_claw_new.vpcf"
+			"particle"				"particles/custom/semiramis/open_wounds.vpcf"
+			"particle"				"particles/custom/semiramis/basmu_poison_d.vpcf"
+			"particle"				"particles/units/heroes/hero_venomancer/venomancer_venomous_gale.vpcf"
+			"particle"				"particles/econ/items/drow/drow_ti6/drow_ti6_silence_wave_ground_dust.vpcf"
+			"particle"				"particles/econ/items/venomancer/veno_ti8_immortal_head/veno_ti8_immortal_gale_explosion_venom.vpcf"
+			"particle"  			"particles/units/heroes/hero_sniper/sniper_headshot_slow.vpcf"
+			"particle"  			"particles/semiramis/hanging_garden_crack.vpcf"
+			"particle"  			"particles/semiramis/hanging_garden_build.vpcf"
+			"particle"  			"particles/semiramis/tiatum_umu_channel.vpcf"
+			"particle"  			"particles/semiramis/tiatum_umu_shine.vpcf"
+			"particle"  			"particles/semiramis/tiatum_umu_laser.vpcf"
+			"particle"  			"particles/semiramis/tiatum_umu_ground_flek.vpcf"
+			"particle"  			"particles/semiramis/tiatum_umu_explosion_area.vpcf"
+			"particle"  			"particles/semiramis/tiatum_umu_scorch.vpcf"
+			"particle"  			"particles/custom/semiramis/basmu_circle_parent.vpcf"
+			"particle"  			"particles/custom/semiramis/basmu_poison.vpcf"
+			"particle"  			"particles/custom/semiramis/laser/semiramis_laser.vpcf"
+			"particle"  			"particles/custom/semiramis/laser_beam.vpcf"
+			"particle"  			"particles/custom/amakusa/amakusa_set_cicle.vpcf"
+			"particle"  			"particles/custom/semiramis/binding_chains.vpcf"
+			"particle"  			"particles/units/heroes/hero_chen/chen_teleport.vpcf"
+			"particle"  			"particles/econ/events/diretide_2020/high_five/high_five_impact_burst.vpcf"
+		}
+	}	
+}

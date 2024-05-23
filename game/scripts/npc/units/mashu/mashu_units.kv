@@ -1,0 +1,66 @@
+"DOTAUnits"
+{
+	"mashu_shield_dummy"
+	{
+		"Model"				"models/development/invisiblebox.vmdl"
+		"BaseClass"			"npc_dota_creature"
+		"ModelScale"				"1.0"
+		"Level"						"1"
+		"HealthBarOffset"			"400"
+		"ConsideredHero"			"1"
+		"HasInventory"				"0"
+
+		// Bounds
+		//----------------------------------------------------------------
+		"BoundsHullName"			"DOTA_HULL_SIZE_BARRACKS"			// Hull type used for navigation/locomotion.
+		"RingRadius"				"250"
+		"CollisionSize"				"500"
+
+		"AbilityLayout"				"6"
+		"Ability1"					"mashu_dummy_shield_passive"			// Ability 1
+		"Ability2"					""
+
+		"ArmorPhysical"				"10"			// Physical protection.
+		"MagicalResistance"			"0"			
+
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE" 
+		"MovementSpeed"				"0"		// Speed.
+		"MovementTurnRate"			"3000"		// Turning rate.
+
+		"AttackCapabilities"			"DOTA_UNIT_CAP_NO_ATTACK"	
+		"AttackRange"					"0"
+		"AttackDamageMin"				"0"
+		"AttackDamageMax"				"0"
+		"AttackRate"					"0"
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"1050"		// Base health.
+		"StatusHealthRegen"			"0"		// Health regeneration rate.
+		"StatusMana"				"0"			// Base mana.
+		"StatusManaRegen"			"0"			// Mana regeneration rate.	
+
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"0"
+		"BountyGoldMin"				"0"
+		"BountyGoldMax"				"0"
+
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"300"		// Range of vision during day light.
+		"VisionNighttimeRange"		"300"		// Range of vision at night time.
+		"Creature"
+		{
+			//Level Up
+			"HPGain"					"50"
+			"DamageGain"				"0"
+			"ArmorGain"					"0"
+			"MagicResistGain"			"0"
+			"MoveSpeedGain"				"0"
+			"BountyGain"				"0"
+			"XPGain"					"0"
+			"DisableClumpingBehavior"	"0"
+		}
+	}
+}

@@ -1,0 +1,85 @@
+"DOTAAbilities"
+{
+	//========================================
+	// Berserker : Courage
+	//========================================
+	"heracles_courage"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/heracles/heracles_courage"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityTextureName"			"custom/berserker_5th_courage"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_2"
+		"AnimationPlaybackRate" 		"2.0"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"400"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"6 6 5 5 4"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"200"
+		"precache"
+		{
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_axe.vsndevts"
+			"particle"				"particles/custom/berserker/courage/buff.vpcf"
+			"particle"				"particles/custom/berserker/courage/debuff.vpcf"
+			"particle"				"particles/custom/berserker/courage/stun_explosion.vpcf"
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"armor_reduction"		"-2 -2 -3 -3 -4"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_reduction"		"-45 -60 -75 -90 -105"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"10 15 20 25 30"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow"					"-15 -20 -25 -30 -35"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"self_armor_reduc"		"-5"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_stack"				"5"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"12"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"enemy_duration"		"6"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"400"
+			}
+		}
+	}
+}

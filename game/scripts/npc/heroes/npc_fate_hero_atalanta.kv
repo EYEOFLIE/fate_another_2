@@ -1,0 +1,77 @@
+"DOTAHeroes"
+{
+	//=================================================================================================================
+	//	Archer of Red - Atalanta
+	//=================================================================================================================
+	"npc_dota_hero_atalanta"
+	{
+		"override_hero"				"npc_dota_hero_drow_ranger"
+		"DisableWearables" 			"1"
+		"Model"						"models/atalanta/new/atalanta_by_zefiroft.vmdl"
+		//"Model"					"models/development/invisiblebox.vmdl"
+		"ModelScale"				"1.12"
+		"DrawParticlesWhileHidden" 	"1"
+
+		"AbilityLayout"				"6"
+		"Ability1"					"atalanta_celestial_arrow"
+		"Ability2"					"atalanta_calydonian_hunt"
+		"Ability3"					"atalanta_tauropolos"
+		"Ability4"					"atalanta_crossing_arcadia"
+		"Ability5"					"fate_empty1" //atalanta_priestess_of_the_hunt
+		"Ability6"					"atalanta_phoebus_catastrophe_barrage"
+		"Ability7"					"atalanta_arrows_of_the_big_dipper"
+		"Ability8"					"atalanta_phoebus_catastrophe_snipe"
+		"Ability9"					"atalanta_calydonian_snipe"
+		"Ability10"					"atalanta_golden_apple"
+		"Ability11"					"presence_detection_passive"
+		"Ability12"					"attribute_bonus_custom"
+		"Ability13"					"atalanta_precache"
+
+		"TotalAbility"				"13"
+		"Combo"						"atalanta_phoebus_catastrophe_snipe"
+		"AttributeNumber"			"4"
+		"Attribute1"				"atalanta_attribute_arrows_of_the_big_dipper"
+		"Attribute2"				"atalanta_attribute_hunters_mark"
+		//"Attribute3"				"atalanta_attribute_golden_apple"
+		"Attribute3"				"atalanta_attribute_crossing_arcadia_plus"
+		"Attribute4"				"atalanta_attribute_calydonian_snipe"
+		"ManaCost"					"20"
+		"NP"						"3"
+		"Difficult"					"4"
+		"SType"						"carry,control,snipe"
+		"Trait"						""
+
+
+		"StatusHealth"					"1300"
+		"StatusHealthRegen"				"5"
+		"StatusMana"					"1000"
+		"StatusManaRegen"				"5.0"
+		
+		"ArmorPhysical"					"0"
+		"MagicalResistance"				"5"
+
+		"AttackCapabilities"			"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackRange"					"750"
+		"AttackDamageMin"				"55"
+		"AttackDamageMax"				"55"
+		"AttackRate"					"0.9"
+		"AttackAnimationPoint"			"0.3"
+		"AttackAcquisitionRange"		"1000"
+		"ProjectileModel"				"particles/custom/atalanta/normal_arrow.vpcf"
+		"ProjectileSpeed"				"2500"	
+		
+		"AttributePrimary"				"DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"			"0"
+		"AttributeStrengthGain"			"2.00"
+		"AttributeBaseAgility"			"0"
+		"AttributeAgilityGain"			"3.00"
+		"AttributeBaseIntelligence"		"0"
+		"AttributeIntelligenceGain"		"1.00"
+		
+		"MovementSpeed"					"340"
+		"MovementTurnRate"				"0.8"
+		
+		"VisionDaytimeRange"			"1250"
+		"VisionNighttimeRange"			"1250"
+	}
+}

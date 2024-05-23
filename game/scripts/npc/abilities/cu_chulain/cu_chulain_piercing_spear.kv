@@ -1,0 +1,87 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Lancer : Piercing Spear
+	//=================================================================================================================
+	"cu_chulain_piercing_spear"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/cu_chulain/cu_chulain_piercing_spear"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityTextureName"			"phantom_lancer_juxtapose"
+		
+		"AbilityCastPoint"				"0.1"
+		"AbilityManaCost"				"200"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_1"
+		"AnimationPlaybackRate" 		"1.0"
+		"AbilityCooldown"				"18 17 16 15 14"
+
+		"precache"
+		{
+
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type" 		"FIELD_INTEGER"
+				"distance"		"600 650 700 750 800"
+			}
+			"01"
+			{
+				"var_type" 		"FIELD_INTEGER"
+				"damage"		"300 350 400 450 500"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Lancer : Piercing Spear  (Rune Magic SA)
+	//=================================================================================================================
+	"cu_chulain_piercing_spear_upgrade"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/cu_chulain/cu_chulain_piercing_spear"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityTextureName"			"phantom_lancer_juxtapose"
+		
+		"AbilityCastPoint"				"0.1"
+		"AbilityManaCost"				"200"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_1"
+		"AnimationPlaybackRate" 		"1.0"
+		"AbilityCooldown"				"18 17 16 15 14"
+
+		"precache"
+		{
+
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type" 		"FIELD_INTEGER"
+				"distance"		"600 650 700 750 800"
+			}
+			"01"
+			{
+				"var_type" 		"FIELD_INTEGER"
+				"damage"		"300 350 400 450 500"
+			}
+			"01"
+			{
+				"var_type" 		"FIELD_INTEGER"
+				"bonus_atk"		"30 35 40 45 50"
+			}
+			"01"
+			{
+				"var_type" 		"FIELD_INTEGER"
+				"bonus_atk_dur"	"7 8 9 10 11"
+			}
+		}
+	}
+}

@@ -1,0 +1,554 @@
+
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Artoria : Innate : Charisma (D)
+	//=================================================================================================================
+	"artoria_charisma"
+	{
+		//General-------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/artoria/artoria_charisma"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityTextureName"			"custom/artoria/saber_charisma"
+		"MaxLevel"						"1"
+
+		//Casting-------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1000"
+
+		//Targeting-----------------------------------------------------------------------------------------------------
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	    "SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		
+		"precache"
+		{
+			"particle"					"particles/items2_fx/rod_of_atos_debuff_glow.vpcf"
+			"particle"					"particles/items2_fx/rod_of_atos_debuff_ground.vpcf"
+		}
+
+		"AbilityValues"
+		{
+			"range"						"1000"
+			"bonus_ms"					"10"
+			"bonus_aspd"				"10"
+		}
+	}
+	
+	//=================================================================================================================
+	// Artoria : Innate : Instinct (F)
+	//=================================================================================================================
+	"artoria_instinct"
+	{
+		//General-------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/artoria/musashi_abilities"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityTextureName"			"custom/artoria/saber_instinct"
+		"MaxLevel"						"1"
+
+		//Casting-------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"         		"0"
+
+		//Time----------------------------------------------------------------------------------------------------------
+		"AbilityChannelTime"			"0"
+		"AbilityCooldown"				"0"
+
+		//Targeting-----------------------------------------------------------------------------------------------------
+	    "AbilityUnitTargetTeam"  		"DOTA_UNIT_TARGET_TEAM_NONE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	    "SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+
+		"AbilityValues"
+		{
+			"evasion_rate"					"15"
+			"active_evasion_rate"			"100"
+			"crit_rate"						"45"
+			"crit_multiplier"				"200"
+			"spellshield_duration"			"1.5"
+			"cooldown"						"20"
+		}
+
+		"precache"
+		{
+			"particle"		"particles/items_fx/immunity_sphere_buff.vpcf"
+			"particle"		"particles/units/heroes/hero_juggernaut/jugg_crit_blur_impact.vpcf"
+		}
+	}
+	
+	//=================================================================================================================
+	// Artoria : Invisible Air (Q)
+	//=================================================================================================================
+	"artoria_invisible_air"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/artoria/musashi_abilities"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityTextureName"			"custom/artoria/saber_invisible_air"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		
+		//Casting-------------------------------------------------------------------------------------------------------
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_1"
+		"AnimationPlaybackRate"			"2.5"
+		"AbilityCastRange"				"1000"
+		"AbilityCastRangeBuffer"		"100"
+		"AbilityCastPoint"				"0.1"
+		"AbilityManaCost"				"100"
+
+		//Time----------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"5.0"
+
+		//Targeting-----------------------------------------------------------------------------------------------------
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_NONE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	    "SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+
+		// Ability stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"cast_time"					"0.1"
+			"cast_range"				"1000"
+			"tt_bonus_attack"			"0"
+			"tt_damage"					"0"
+			"bonus_attack"				"10 20 30 40 50"
+			"damage"					"200 250 300 350 400"
+			"speed"						"700"
+		}
+
+		"precache"						
+		{
+			"particle"				"particles/econ/items/windrunner/windrunner_cape_sparrowhawk/windrunner_windrun_blur_sparrowhawk.vpcf"
+			"particle"				"particles/custom/saber/saber_invisible_air_trail.vpcf"
+			"particle"				"particles/units/heroes/hero_invoker/invoker_tornado_trail.vpcf"
+			"particle"				"particles/units/heroes/hero_invoker/invoker_tornado_base.vpcf"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_windrunner.vsndevts"
+		}
+	}
+	//=================================================================================================================
+	// Artoria : Caliburn (W)
+	//=================================================================================================================
+	"artoria_caliburn"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/artoria/musashi_abilities"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityTextureName"			"custom/artoria/saber_caliburn"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		
+		//Casting-------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"250"
+		"AbilityCastRangeBuffer"		"75"
+		"AbilityCastPoint"				"0.4"
+		"AbilityManaCost"				"200"
+		"AbilityCastAnimation" 			"ACT_DOTA_ATTACK" // Change the animation from "ACT_DOTA_CAST_ABILITY_1" to match the timing of the ability
+		"AnimationPlaybackRate" 		"1.2"
+
+		//Time----------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"9"
+
+		//Targeting-----------------------------------------------------------------------------------------------------
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY" 
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_NONE"
+
+		"precache"
+		{
+			"particle"				"particles/units/heroes/hero_skywrath_mage/skywrath_mage_concussive_shot_impact.vpcf"
+			"particle"				"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
+			"particle"				"particles/units/heroes/hero_skywrath_mage/skywrath_mage_arcane_bolt_birds.vpcf"
+			"particle"				"particles/custom/saber/caliburn/explosion.vpcf"
+			"particle"				"particles/custom/saber/caliburn/slash.vpcf"
+		}
+
+		"AbilityValues"
+		{
+			"cast_time"					"0.4"
+			"cast_range"				"250"
+			"tt_damage"					"0"
+			"tt_slow"					"0"
+			"aoe_splash"				"50"
+			"aoe"						"200"
+			"damage"					"400 460 520 580 640"
+			"slow"						"-35 -40 -45 -50 -55"
+			"slow_duration"				"3"
+			"stun_duration"				"0.1"
+		}
+	}
+	//=================================================================================================================
+	// Artoria : Avalon (E)
+	//=================================================================================================================
+	"artoria_avalon"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/artoria/musashi_abilities"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityTextureName"			"custom/artoria/saber_avalon"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+
+		//Casting-------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.1"
+		"AbilityCastRange"				"3000"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_1"
+		"AnimationPlaybackRate" 		"1"
+		"AbilityManaCost"				"400"
+
+		//Time----------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"35"
+		
+		//Targeting-----------------------------------------------------------------------------------------------------
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY" 
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_NONE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+	
+		"precache"
+		{
+			"particle"					"particles/custom/saber_avalon_floor.vpcf"
+			"particle"					"particles/custom/saber_avalon_impact.vpcf"
+			"particle"					"particles/custom/saber_avalon_explosion.vpcf"
+			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_omniknight.vsndevts"
+		}
+
+		"AbilityValues"
+		{
+			"cast_time"					"0.1"
+			"tt_damage"					"0"
+			"duration"					"5"
+			"damage_threshold"			"300"
+			"range"						"3000"
+			"aoe"						"250"
+			"damage"					"800 950 1100 1250 1400"
+			"stun_duration"				"1.0"
+			"regen"						"0"
+		}
+	}
+	
+	//=================================================================================================================
+	// Artoria : Excalibur (R)
+	//=================================================================================================================
+	"artoria_excalibur"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/artoria/musashi_abilities"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityTextureName"			"custom/artoria/saber_excalibur"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+
+		//Casting-------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1800"
+		"AbilityCastPoint"				"0.2"
+		"AbilityManaCost"				"800"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_3"
+		"AnimationPlaybackRate" 		"1.1"	
+
+		//Time----------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"37.0"
+		
+		//Targeting-----------------------------------------------------------------------------------------------------
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_NONE"	
+
+		"precache"
+		{
+			"particle"				"particles/units/heroes/hero_skywrath_mage/skywrath_mage_concussive_shot_cast.vpcf"
+			"particle"				"particles/units/heroes/hero_wisp/wisp_overcharge.vpcf"
+			"particle"				"particles/units/heroes/hero_invoker/invoker_sun_strike_beam.vpcf"
+			"particle"				"particles/custom/saber_excalibur_charge.vpcf"
+			"particle"				"particles/custom/saber_excalibur.vpcf"
+			"particle"				"particles/custom/saber/excalibur/hit.vpcf"
+			"particle"				"particles/custom/saber/excalibur/shockwave.vpcf"
+			"particle"				"particles/units/heroes/hero_invoker/invoker_sun_strike_sparks.vpcf"
+		}
+		
+		"AbilityValues"
+		{
+			"cast_time"					"0.2"
+			"tt_damage"					"0"
+			"cast_delay"				"1.9"
+			"range"						"1800"
+			"width"						"400"
+			"damage"					"750 975 1200 1425 1650"
+			"speed"						"1200"
+			"bonus_mana"				"0"
+			"anim_duration"				"3.6"
+		}
+	}
+
+	//=================================================================================================================
+	// Artoria : Strike Air (D)
+	//=================================================================================================================
+	"artoria_strike_air"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/artoria/musashi_abilities"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityTextureName"			"custom/artoria/saber_strike_air"
+		"MaxLevel"						"1"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1200"
+		"AbilityCastPoint"				"0.3"
+		"AbilityManaCost"				"400"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"35.0"
+		
+		//Targeting-----------------------------------------------------------------------------------------------------
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_NONE"	
+		
+		"precache"
+		{
+			"particle"				"particles/custom/saber_strike_air_blast.vpcf"
+			"particle"				"particles/units/heroes/hero_windrunner/windrunner_windrun.vpcf"
+			"particle"				"particles/units/heroes/hero_invoker/invoker_deafening_blast_knockback_debuff.vpcf"
+			"particle"				"particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_illuminate_impact.vpcf"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_invoker.vsndevts"
+		}
+
+		"AbilityValues"
+		{
+			"cast_time"					"0.3"
+			"tt_damage"					"0"
+			"cast_delay"				"0.9"
+			"width"						"400"
+			"length"					"1200"
+			"speed"						"5000"
+			"base_damage"				"600"
+			"bonus_damage"				"100"
+			"bonus_agi"					"7"
+			"bonus_stack"				"100"
+			"max_stack"					"3"
+			"knock"						"500"
+			"wall_bonus_damage"			"200"
+			"wall_stun"					"2"
+			"base_up_damage"			"150"
+			"ad_ratio"					"1.5"
+			"knockup_duration"			"1.25"
+		}
+	}
+
+	//=================================================================================================================
+	// Artoria : Combo : Max Excalibur
+	//=================================================================================================================
+	"artoria_max_excalibur"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/artoria/musashi_abilities"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityTextureName"			"custom/artoria/saber_max_excalibur"
+		"MaxLevel"						"1"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"3000"
+		"AbilityCastPoint"				"0.1"
+		"AbilityManaCost"				"800"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_3"
+		"AnimationPlaybackRate" 		"0.9"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"180"
+
+		//Targeting-----------------------------------------------------------------------------------------------------
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_NONE"
+		
+		"precache"
+		{
+			"particle"				"particles/units/heroes/hero_skywrath_mage/skywrath_mage_concussive_shot_cast.vpcf"
+			"particle"				"particles/units/heroes/hero_wisp/wisp_overcharge.vpcf"
+			"particle"				"particles/custom/saber_excalibur_max_beam.vpcf"
+			"particle"				"particles/custom/saber_excalibur.vpcf"
+			"particle"				"particles/custom/saber_excalibur_max_charge.vpcf"
+			"particle"				"particles/custom/saber_excalibur_circle.vpcf"
+			"parictle"				"particles/custom/saber_excalibur_max_rock_emitter.vpcf"
+			"particle"				"particles/custom/saber_excalibur_max_burn.vpcf"
+			"particle"				"particles/custom/screen_yellow_splash.vpcf"
+			"particle"				"particles/custom/saber/max_excalibur/charge.vpcf"
+			"particle"				"particles/custom/saber/max_excalibur/shockwave_2_versiona.vpcf"
+			"particle"				"particles/custom/saber/max_excalibur/shockwave_2_versionc.vpcf"
+			"particle"				"particles/custom/saber/excalibur/hit.vpcf"
+		}
+		
+		"AbilityValues"
+		{
+			"cast_time"					"0.1"
+			"tt_damage"					"0"
+			"cast_delay"				"3.0"
+			"width"						"600"
+			"range"						"2500"
+			"speed"						"9000"
+			"damage"					"2500"
+		}
+	}
+	
+	//=======================================
+	// Artoria Attribute : Improve Excalibur
+	//=======================================
+	"artoria_attribute_improve_excalibur"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/artoria/musashi_abilities"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/artoria/saber_attribute_improve_excalibur"
+
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"12"
+
+		"AbilityValues"
+		{
+			"excal_bonus_damage"		"100"
+			"excal_bonus_mana"			"30"
+			"max_excal_bonus_damage"	"4500"
+		}
+	}
+
+	//=======================================
+	// Artoria Attribute : Improve Instinct
+	//=======================================
+	"artoria_attribute_improve_instinct"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/artoria/musashi_abilities"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/artoria/saber_attribute_improve_instinct"
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"10"
+
+		"AbilityValues"
+		{
+			"evasion_rate"			"35"
+			"crit_rate"				"45"
+			"crit_multiplier"		"200"
+			"spellshield_duration"	"1.5"
+			"cooldown"				"20"
+		}
+	}
+
+	//=======================================
+	// Artoria Attribute : Chivalry
+	//=======================================
+	"artoria_attribute_chivalry"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/artoria/musashi_abilities"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/saber_attribute_chivalry"
+	
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"8"
+
+		"AbilityValues"
+		{
+			"invis_air_bonus_damage"		"150"
+			"caliburn_bonus_damage"			"200"
+			"caliburn_slow"					"15"
+		}
+	}
+
+	//=======================================
+	// Artoria Attribute : Strike Air
+	//=======================================
+	"artoria_attribute_strike_air"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/artoria/musashi_abilities"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/artoria/saber_attribute_strike_air"
+
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"15"
+
+		"AbilityValues"
+		{
+			"cast_time"					"0.9"
+			"width"						"400"
+			"length"					"1200"
+			"speed"						"5000"
+			"base_damage"				"600"
+			"bonus_damage"				"100"
+			"bonus_agi"					"7"
+			"bonus_stack"				"100"
+			"max_stack"					"3"
+			"knock"						"500"
+			"wall_bonus_damage"			"200"
+			"wall_stun"					"2"
+			"base_up_damage"			"150"
+			"ad_ratio"					"1.5"
+			"knockup_duration"			"1.25"
+		}
+	}
+
+	//=======================================
+	// Artoria Attribute : Everdistant Utopia
+	//=======================================
+	"artoria_attribute_everdistant_utopia"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/artoria/musashi_abilities"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/artoria/everdistant_utopia"
+
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"15"
+
+		"AbilityValues"
+		{
+			"regen"					"300"
+		}
+	}
+}

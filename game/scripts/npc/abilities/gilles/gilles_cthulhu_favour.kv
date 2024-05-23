@@ -1,0 +1,157 @@
+"DOTAAbilities"
+{
+	//===================================================
+	// Gilles De Rais : Cthulhu Favour
+	//===================================================
+	"gilles_cthulhu_favour"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/gilles/gilles_cthulhu_favour"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"AbilityTextureName"			"custom/gilles/gilles_cthulhu"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_3"
+		"AnimationPlaybackRate" 		"1.5"
+		"AOERadius"						"%radius"		
+		
+		"precache"
+		{
+			
+		}
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"750"
+		"AbilityCastPoint"				"0.2"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"27.0"
+		"AbilityManaCost"				"50"
+
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"500"
+			}			
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"3.0 3.5 4.0 4.5 5.0"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"spawn_damage"		"75 100 125 150 175"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"spawn_interval"	"0.2"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"mana_cost"			"50"
+			}
+		}
+	}
+
+	//===================================================
+	// Gilles De Rais : Cthulhu Favour (Sunken City SA)
+	//===================================================
+	"gilles_cthulhu_favour_upgrade"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/gilles/gilles_cthulhu_favour"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"AbilityTextureName"			"custom/gilles/gilles_cthulhu"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_3"
+		"AnimationPlaybackRate" 		"1.5"
+		"AOERadius"						"%radius"		
+		
+		"precache"
+		{
+			
+		}
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"750"
+		"AbilityCastPoint"				"0.2"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"27.0"
+		"AbilityManaCost"				"50"
+
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"500"
+			}			
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"3.0 3.5 4.0 4.5 5.0"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"root"				"2.5"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"spawn_damage"		"75 100 125 150 175"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"spawn_interval"	"0.2"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"mr_red"			"-10"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"ms_red"			"-10"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"stun"				"1.5"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"stun_damage"		"300"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"mana_cost"			"50"
+			}
+		}
+	}
+}

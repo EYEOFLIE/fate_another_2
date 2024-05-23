@@ -1,0 +1,128 @@
+"DOTAAbilities"
+{	
+	//===================================================
+	// Karna : Vasavi Shakti
+	//===================================================
+	"karna_vasavi_shakti"
+	{		
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/karna/karna_vasavi_shakti"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY" 
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/karna/karna_vasavi_shakti"
+		
+		"precache"
+		{
+			
+		}
+		
+		"AbilityCastPoint"				"0.4"
+		"AbilityCastRange"				"1250"
+		"AbilityCooldown"				"52"
+		"AbilityManaCost"				"800"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_point"			"0.4"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"600"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"850 1050 1250 1450 1650"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_divine"			"0"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"remove_duration"		"35"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"1250"
+			}
+		}
+	}
+	//===================================================
+	// Karna : Vasavi Shakti (Indra SA)
+	//===================================================
+	"karna_vasavi_shakti_upgrade"
+	{		
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/karna/karna_vasavi_shakti"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY" 
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/karna/karna_vasavi_shakti"
+		
+		"precache"
+		{
+			
+		}
+		
+		"AbilityCastPoint"				"0.4"
+		"AbilityCastRange"				"1250"
+		"AbilityCooldown"				"52"
+		"AbilityManaCost"				"800"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_point"			"0.4"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"600"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"950 1150 1350 1550 1750"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_agi"				"9"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_divine"			"20"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"remove_duration"		"35"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"1250"
+			}
+		}
+	}
+}

@@ -1,0 +1,467 @@
+#base "gilles_prelati_spellbook.kv"
+#base "gilles_summon_jellyfish.kv"
+#base "gilles_rlyeh_text.kv"
+#base "gilles_cthulhu_favour.kv"
+#base "gilles_abyssal_contract.kv"
+
+"DOTAAbilities"
+{	
+	//=======================================
+	// Gilles De Rais Attribute : Eye for Art
+	//=======================================
+	"gilles_eye_for_art_attribute"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/gilles/gilles_attributes"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/gille_attribute_eye_for_art"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"9"
+
+		"precache"
+		{
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"2000"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"3.0"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Eye for Art Passive
+	//=================================================================================================================
+	"gilles_eye_for_art_passive"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/gilles/gilles_eye_for_art"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityTextureName"			"custom/gille_attribute_eye_for_art"
+		"MaxLevel"						"1"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"2000"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"3.0"
+			}
+		}
+	}
+
+	//=======================================
+	// Gilles De Rais Attribute : Outer God Favour
+	//=======================================
+	"gilles_outer_god_attribute"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/gilles/gilles_attributes"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/gilles/gilles_outer_god_favour"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"12"
+
+		"precache"
+		{
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"regen_pct"				"10"
+			}	
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"block_duration"		"5.0"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_mana"			"20"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_grief"			"1"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_torment"			"2"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_smother"			"1"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_misery"			"0.01"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_hysteria"		"1"
+			}
+		}
+	}
+
+	//=======================================
+	// Gilles De Rais Attribute : Demonic Horde
+	//=======================================
+	"gilles_demonic_horde_attribute"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/gilles/gilles_attributes"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/gilles/gilles_demonic_horde"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"15"
+
+		"precache"
+		{
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"summon_count"			"3"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"4.0"
+			}
+		}
+	}
+
+	//=======================================
+	// Gilles De Rais Attribute : Sunken City
+	//=======================================
+	"gilles_sunken_city_attribute"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/gilles/gilles_attributes"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/gilles/gilles_sunken_city"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"13"
+
+		"precache"
+		{
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"root_dur"				"2.5"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"stun_dur"				"1.5"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"mr_red"				"-10"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"ms_red"				"-10"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"end_damage"			"300"
+			}
+		}
+	}
+
+	//=======================================
+	// Gilles De Rais Attribute : Abyssal Connection
+	//=======================================
+	"gilles_abyssal_connection_attribute"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/gilles/gilles_attributes"
+		"MaxLevel"						"5"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/gilles/gilles_abyssal_connection"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"14"
+
+		"precache"
+		{
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"800"
+			}				
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"700 900 1100 1300 1500"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"10.0"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"movespeed"			"150"
+			}	
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"attackspeed"		"50"
+			}	
+			"06"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"health"			"500"
+			}	
+		}
+	}
+
+
+	//===================================================
+	// Gilles De Rais : L'Arret de Mort
+	//===================================================
+	"gille_larret_de_mort"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"RequiredLevel"					"25"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityTextureName"			"custom/gille_larret_de_mort"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_4"
+		"AnimationPlaybackRate" 		"1.0"
+		"AOERadius"						"%radius"		
+		
+		"precache"
+		{	
+			"particle"		"particles/units/heroes/hero_lina/lina_spell_dragon_slave.vpcf"
+			"particle"		"particles/units/heroes/hero_bloodseeker/bloodseeker_rupture.vpcf"
+			"particle"		"particles/units/heroes/hero_pugna/pugna_decrepify.vpcf"
+		}
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1000"
+		"AbilityCastPoint"				"0.3"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"180.0"
+
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"1000"
+			}			
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"knockup_duration"			"0.5"
+			}		
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"cast_delay"			"1.0"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"initial_damage"			"50"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"blood_duration"			"12.0"
+			}		
+			"06"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"damage_per_sec"			"10"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/gilles/gilles_attributes"
+				"Function"		"OnGilleComboStart"
+				"Damage"		"%initial_damage"
+				"KnockupDuration"	"%knockup_duration"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_larret_de_mort_cooldown"
+			{
+				"IsDebuff"	"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			}
+			"modifier_gille_combo"
+			{
+		        "EffectName"    "particles/units/heroes/hero_bloodseeker/bloodseeker_rupture.vpcf"
+		        "EffectAttachType"  "follow_origin"
+				"Duration"		"%blood_duration"
+				"IsDebuff"			"1"
+				"ThinkInterval"		"1.0"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/gilles/gilles_attributes"
+						"Function"		"OnGilleComboThink"
+						"DPS"			"%damage_per_sec"
+					}
+				}
+				"OnRespawn"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/gilles/gilles_attributes"
+						"Function"		"RemoveAllPoisons"
+					}
+				}
+			}
+			"modifier_gigantic_horror_freeze"
+			{
+				"EffectName"				"particles/units/heroes/hero_pugna/pugna_decrepify.vpcf"	
+				"EffectAttachType"			"follow_overhead"
+				"Duration"		"1.5"
+				"OverrideAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_OVERRIDE_ANIMATION_RATE"		"0.5"
+				}
+				"States"
+				{
+					"MODIFIER_STATE_STUNNED"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_UNSELECTABLE" "MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_INVULNERABLE"    "MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_HEALTH_BAR"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_COMMAND_RESTRICTED" "MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+		}
+	}	
+	//=======================================
+	// Precache
+	//=======================================
+	"gilles_precache"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"custom/medusa/medusa_attribute_monstrous_strength"
+
+		"precache"
+		{
+			"model"					"models/gilles/abyss/gilles_abyss_by_zefiroft.vmdl"
+			"model"					"models/gilles/pope/gilles_pope_by_zefiroft.vmdl"
+			"model"					"models/zc/tentacleking.vmdl"
+			"model"					"models/zc/tidehuntertentacle_reference.vmdl"
+			"model"					"models/items/courier/echo_wisp/echo_wisp_flying.vmdl"
+			"particle"				"particles/custom/gilles/abyssal_contract_smoke.vpcf"
+			"particle"				"particles/custom/gilles/abyssal_contract_sigil.vpcf"
+			"particle"				"particles/custom/gilles/abyssal_contract_pulse.vpcf"
+			"particle"				"particles/custom/gilles/abyssal_contract_tentacles.vpcf"
+			"particle"  			"particles/units/heroes/hero_tidehunter/tidehunter_spell_ravage_hit_wrap.vpcf"
+			"particle"  			"particles/units/heroes/hero_tidehunter/tidehunter_spell_ravage_hit.vpcf"
+			"particle"  			"particles/units/heroes/hero_oracle/oracle_purifyingflames_heal.vpcf"
+			"particle"				"particles/custom/gilles/squidlord_contaminate.vpcf"
+			"particle"				"particles/custom/gilles/contaminate_debuff"
+			"particle"				"particles/custom/gilles/cthulhu_favour_cast.vpcf"
+			"particle"				"particles/custom/gilles/cthulhu_favour_circle.vpcf"
+			"particle"				"particles/custom/gilles/cthulhu_favour_splash.vpcf"
+			"particle"  			"particles/custom/gilles/cthulhu_hellborn.vpcf"
+			"particle"				"particles/econ/items/sand_king/sandking_ti7_arms/sandking_ti7_caustic_finale_debuff.vpcf"
+			"particle"				"particles/units/heroes/hero_sandking/sandking_caustic_finale_explode.vpcf"
+			"particle"				"particles/units/heroes/hero_life_stealer/life_stealer_infested_unit.vpcf"
+			"particle"  			"particles/econ/items/warlock/warlock_ti9/warlock_ti9_shadow_word_debuff.vpcf"
+			"particle"  			"particles/econ/items/warlock/warlock_staff_hellborn/warlock_rain_of_chaos_hellborn_cast.vpcf"
+			"particle"				"particles/custom/avenger/avenger_verg_avesta_shield.vpcf"
+			"particle"				"particles/custom/gilles_prelati_shield_aura.vpcf"
+			"particle"				"particles/custom/generic/fate_red_shield.vpcf"
+			"particle"				"particles/custom/gilles/smother_ground_fire.vpcf"
+			"particle"				"particles/custom/gilles/smother_cast_warp.vpcf"
+			"particle"				"particles/custom/gilles/smother_debuff.vpcf"
+			"particle"				"particles/custom/gilles/smother_explode.vpcf"
+			"particle"				"particles/custom/gilles/gilles_summon_jellyfish.vpcf"
+			"particle"				"particles/custom/gilles/gilles_jellyfish_explode_blood.vpcf"
+			"particle"				"particles/custom/gilles/torment_debuffhellborn_debuff.vpcf"
+			"particle"				"particles/custom/gilles/torment_cast.vpcf"
+			"particle"  			"particles/custom/gilles/gilles_eye.vpcf"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_nevermore.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_necrolyte.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_warlock.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_bloodseeker.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_shadow_demon.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_venomancer.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_pudge.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_spectre.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_centaur.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_treant.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_warlock.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_tidehunter.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_lion.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_enigma.vsndevts"
+		}
+	}
+}

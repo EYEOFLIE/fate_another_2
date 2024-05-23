@@ -1,0 +1,4724 @@
+// Dota Heroes File
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Francis Drake : Innate : Military Tactic (D)
+	//=================================================================================================================
+	"drake_military_tactic"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		//หารูปมาใส่
+		"AbilityTextureName"			"custom/drake/drake_military_tactic"
+		"MaxLevel"						"1"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"15"
+		"AbilityManaCost"				"0"
+		"precache"
+		{
+		}
+		"AbilitySpecial"
+		{
+			
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/drake/drake_abilities"
+				"Function"		"OnMilitaryTacticStart"
+			}
+		}
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/drake/drake_abilities"
+				//"Function"		"OnMilitaryTacticUpgrade"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_military_tactic_check"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"IsBuff"			"1"
+				"IsPurgable"		"0" 
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+		
+				"OnCreated"
+				{ // change skill layout
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/drake/drake_abilities"
+						"Function"		"OnMilitaryTacticOpen"
+					}
+				}
+				"OnDestroy"
+				{ // change skill back to default
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/drake/drake_abilities"
+						"Function"		"OnMilitaryTacticClose"
+					}
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Francis Drake : Innate : Military Tactic (D) (Improve Military Tactice SA)
+	//=================================================================================================================
+	"drake_military_tactic_upgrade_1"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		//หารูปมาใส่
+		"AbilityTextureName"			"custom/drake/drake_military_tactic"
+		"MaxLevel"						"1"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"0"
+		"AbilityManaCost"				"0"
+		"precache"
+		{
+		}
+		"AbilitySpecial"
+		{
+			
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/drake/drake_abilities"
+				"Function"		"OnMilitaryTacticStart"
+			}
+		}
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/drake/drake_abilities"
+				//"Function"		"OnMilitaryTacticUpgrade"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_military_tactic_check"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"IsBuff"			"1"
+				"IsPurgable"		"0" 
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+		
+				"OnCreated"
+				{ // change skill layout
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/drake/drake_abilities"
+						"Function"		"OnMilitaryTacticOpen"
+					}
+				}
+				"OnDestroy"
+				{ // change skill back to default
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/drake/drake_abilities"
+						"Function"		"OnMilitaryTacticClose"
+					}
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Francis Drake : Innate : Military Tactic (D) (Logbook SA)
+	//=================================================================================================================
+	"drake_military_tactic_upgrade_2"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		//หารูปมาใส่
+		"AbilityTextureName"			"custom/drake/drake_military_tactic"
+		"MaxLevel"						"1"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"0"
+		"AbilityManaCost"				"0"
+		"precache"
+		{
+		}
+		"AbilitySpecial"
+		{
+			
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/drake/drake_abilities"
+				"Function"		"OnMilitaryTacticStart"
+			}
+		}
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/drake/drake_abilities"
+				"Function"		"OnMilitaryTacticUpgrade"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_military_tactic_check"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"IsBuff"			"1"
+				"IsPurgable"		"0" 
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+		
+				"OnCreated"
+				{ // change skill layout
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/drake/drake_abilities"
+						"Function"		"OnMilitaryTacticOpen"
+					}
+				}
+				"OnDestroy"
+				{ // change skill back to default
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/drake/drake_abilities"
+						"Function"		"OnMilitaryTacticClose"
+					}
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Francis Drake : Innate : Military Tactic (D) (Improve Military Tactice + Logbook SA)
+	//=================================================================================================================
+	"drake_military_tactic_upgrade_3"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		//หารูปมาใส่
+		"AbilityTextureName"			"custom/drake/drake_military_tactic"
+		"MaxLevel"						"1"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"0"
+		"AbilityManaCost"				"0"
+		"precache"
+		{
+		}
+		"AbilitySpecial"
+		{
+			
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/drake/drake_abilities"
+				"Function"		"OnMilitaryTacticStart"
+			}
+		}
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/drake/drake_abilities"
+				"Function"		"OnMilitaryTacticUpgrade"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_military_tactic_check"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"IsBuff"			"1"
+				"IsPurgable"		"0" 
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+		
+				"OnCreated"
+				{ // change skill layout
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/drake/drake_abilities"
+						"Function"		"OnMilitaryTacticOpen"
+					}
+				}
+				"OnDestroy"
+				{ // change skill back to default
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/drake/drake_abilities"
+						"Function"		"OnMilitaryTacticClose"
+					}
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Francis Drake : Military Tactic : Summon Cannon (Q)
+	//=================================================================================================================
+	"drake_military_tactic_summon_cannon"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		//หารูปมาใส่
+		"AbilityTextureName"			"custom/drake/drake_military_tactic_summon_cannon"
+		"MaxLevel"						"1"
+		"AbilityCastPoint"				"0.5"
+		"AbilityCooldown"				"20"
+		"AbilityManaCost"				"200"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_1"
+		"AnimationPlaybackRate" 		"1.0"
+		"precache"
+		{
+			"particle" 	"particles/custom/drake/drake_cannon.vpcf"
+			"particle"  "particles/custom/drake/drake_cannon_blast.vpcf"
+			"particle"  "particles/custom/drake/drake_cannon_bullet_yellow.vpcf"
+			"particle"  "particles/units/heroes/hero_snapfire/hero_snapfire_base_attack.vpcf"
+			"particle"  "particles/econ/courier/courier_mechjaw/mechjaw_death_sparks.vpcf"
+			"particle"  "particles/units/heroes/hero_gyrocopter/gyro_guided_missile_explosion.vpcf"
+			"particle"  "particles/custom/lancelot/lancelot_gatling.vpcf"
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_snapfire.vsndevts"	
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cannon_count"			"6"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cannon_dmg"			"100"
+			}	
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cannon_range"			"900.0"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cannon_aoe"			"300.0"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cannon_stun"			"0.8"
+			}
+			"06"
+			{  
+				"var_type"				"FIELD_FLOAT"
+				"cannon_delay"			"0.8"
+			}
+			"07"
+			{  
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"4.2"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cannon_width"			"150.0"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cannon_speed"			"900"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/drake/drake_abilities"
+				"Function"		"OnSummonCannonStart"
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"	"1"
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/drake/drake_abilities"
+				"Function"		"OnSummonCannonHit"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_military_tactic_cannon"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"IsBuff"			"1"
+				"IsPurgable"		"0"
+				"Duration"			"%duration"
+				"OverrideAnimation"     "ACT_DOTA_CAST_ABILITY_1"	
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_OVERRIDE_ANIMATION_RATE" "1.0"
+				}	
+				"States"
+				{
+					"MODIFIER_STATE_ROOTED"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_DISARMED"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_SILENCED"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+		
+				"OnCreated"
+				{ 
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/drake/drake_abilities"
+						"Function"		"OnSummonCannonCreate"
+					}
+
+				}
+				//"ThinkInterval"  "%cannon_delay"
+				//"OnIntervalThink"
+				//{ // create projectile
+				//	"RunScript"
+				//	{
+				//		"ScriptFile"	"heroes/hero_name/ability_name.lua"
+				//		"Function"		"AbilityName"
+				//	}
+				//}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/drake/drake_abilities"
+						"Function"		"OnSummonCannonDeath"
+					}
+				}
+			}
+			"modifier_cannon_check"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"		
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Francis Drake : Military Tactic : Summon Cannon (Q) (Improve Military Tactice SA)
+	//=================================================================================================================
+	"drake_military_tactic_summon_cannon_upgrade"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		//หารูปมาใส่
+		"AbilityTextureName"			"custom/drake/drake_military_tactic_summon_cannon"
+		"MaxLevel"						"1"
+		"AbilityCastPoint"				"0.5"
+		"AbilityCooldown"				"20"
+		"AbilityManaCost"				"200"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_1"
+		"AnimationPlaybackRate" 		"1.0"
+		"precache"
+		{
+			"particle" 	"particles/custom/drake/drake_cannon.vpcf"
+			"particle"  "particles/custom/drake/drake_cannon_blast.vpcf"
+			"particle"  "particles/custom/drake/drake_cannon_bullet_yellow.vpcf"
+			"particle"  "particles/units/heroes/hero_snapfire/hero_snapfire_base_attack.vpcf"
+			"particle"  "particles/econ/courier/courier_mechjaw/mechjaw_death_sparks.vpcf"
+			"particle"  "particles/units/heroes/hero_gyrocopter/gyro_guided_missile_explosion.vpcf"
+			"particle"  "particles/custom/lancelot/lancelot_gatling.vpcf"
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_snapfire.vsndevts"	
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cannon_count"			"6"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cannon_dmg"			"160"
+			}	
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cannon_range"			"900.0"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cannon_aoe"			"300.0"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cannon_stun"			"1.0"
+			}
+			"06"
+			{  
+				"var_type"				"FIELD_FLOAT"
+				"cannon_delay"			"0.8"
+			}
+			"07"
+			{  
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"4.2"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cannon_width"			"150.0"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cannon_speed"			"900"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/drake/drake_abilities"
+				"Function"		"OnSummonCannonStart"
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"	"1"
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/drake/drake_abilities"
+				"Function"		"OnSummonCannonHit"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_military_tactic_cannon"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"IsBuff"			"1"
+				"IsPurgable"		"0"
+				"Duration"			"%duration"
+				"OverrideAnimation"     "ACT_DOTA_CAST_ABILITY_1"	
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_OVERRIDE_ANIMATION_RATE" "1.0"
+				}	
+				"States"
+				{
+					"MODIFIER_STATE_ROOTED"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_DISARMED"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_SILENCED"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+		
+				"OnCreated"
+				{ // create cannon
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/drake/drake_abilities"
+						"Function"		"OnSummonCannonCreate"
+					}
+
+				}
+				//"ThinkInterval"  "%cannon_delay"
+				//"OnIntervalThink"
+				//{ // create projectile
+				//	"RunScript"
+				//	{
+				//		"ScriptFile"	"heroes/hero_name/ability_name.lua"
+				//		"Function"		"AbilityName"
+				//	}
+				//}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/drake/drake_abilities"
+						"Function"		"OnSummonCannonDeath"
+					}
+				}
+			}
+			"modifier_cannon_check"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"		
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Francis Drake : Military Tactic : Summon Boarding Ship (W)
+	//=================================================================================================================
+	"drake_military_tactic_summon_boarding_ship"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		//หารูปมาใส่
+		"AbilityTextureName"			"custom/drake/drake_military_tactic_summon_boarding_ship"
+		"MaxLevel"						"1"
+		"AbilityCastPoint"				"0.5"
+		"AbilityCooldown"				"20"
+		"AbilityManaCost"				"200"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_2"
+		"AnimationPlaybackRate" 		"2.0"
+		"precache"
+		{
+			"model"		"models/drake/drake_boat.vmdl"
+			"particle"  "particles/econ/courier/courier_flopjaw_gold/courier_flopjaw_ambient_water_gold.vpcf"
+			"particle"  "particles/econ/courier/courier_mechjaw/mechjaw_death_sparks.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_sniper.vsndevts"
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"boat_duration"			"4"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"boat_ms"				"650"
+			}	
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"impact_dmg"			"100"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"knockback"				"50"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range_dmg"				"80"
+			}
+			"06"
+			{  
+				"var_type"				"FIELD_FLOAT"
+				"gun_atk_delay"			"0.2"
+			}
+			"07"
+			{  
+				"var_type"				"FIELD_INTEGER"
+				"range_atk_aoe"			"500"
+			}
+			"08"
+			{  
+				"var_type"				"FIELD_INTEGER"
+				"impact_aoe"			"300"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/drake/drake_abilities"
+				"Function"		"OnBoardingShipStart"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_boarding_ship"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"IsBuff"			"1"
+				"IsPurgable"		"0"
+				"Duration"			"%boat_duration"
+				"OverrideAnimation"     "ACT_DOTA_CAST_ABILITY_2_END"	
+				"States"
+				{
+					"MODIFIER_STATE_DISARMED"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_SILENCED"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_UNIT_COLLISION"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+				"Properties"
+				{
+				    "MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE" "%boat_ms" 
+				    "MODIFIER_PROPERTY_MOVESPEED_MAX" "%boat_ms"
+				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" "%boat_ms"
+				    "MODIFIER_PROPERTY_OVERRIDE_ANIMATION_RATE" "1.0"
+				}
+				
+				"OnCreated"
+				{ //change model or animation
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/drake/drake_abilities"
+						"Function"		"OnBoardingShipCreate"
+					}
+				}
+				"OnUnitMoved"
+				// Example: Bloodseeker ult
+				{
+					
+				}
+				"ThinkInterval"  "%gun_atk_delay"
+				"OnIntervalThink"
+				{ // random target for range atk
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/drake/drake_abilities"
+						"Function"		"OnBoardingShipFire"
+					}
+				}
+				"OnDestroy"
+				{ //change model or animation
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/drake/drake_abilities"
+						"Function"		"OnBoardingShipDestroy"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/drake/drake_abilities"
+						"Function"		"OnBoardingShipDeath"
+					}
+				}
+			}
+			"modifier_boarding_ship_hit"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Duration"			"%boat_duration"
+				"ThinkInterval"  "1.0"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/drake/drake_abilities"
+						"Function"		"OnBoardingShipDrive"
+					}
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Francis Drake : Military Tactic : Summon Boarding Ship (W) (Improve Military Tactic SA)
+	//=================================================================================================================
+	"drake_military_tactic_summon_boarding_ship_upgrade"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		//หารูปมาใส่
+		"AbilityTextureName"			"custom/drake/drake_military_tactic_summon_boarding_ship"
+		"MaxLevel"						"1"
+		"AbilityCastPoint"				"0.5"
+		"AbilityCooldown"				"20"
+		"AbilityManaCost"				"200"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_2"
+		"AnimationPlaybackRate" 		"2.0"
+		"precache"
+		{
+			"model"		"models/drake/drake_boat.vmdl"
+			"particle"  "particles/econ/courier/courier_flopjaw_gold/courier_flopjaw_ambient_water_gold.vpcf"
+			"particle"  "particles/econ/courier/courier_mechjaw/mechjaw_death_sparks.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_sniper.vsndevts"
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"boat_duration"			"8"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"boat_ms"				"650"
+			}	
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"impact_dmg"			"200"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"knockback"				"50"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range_dmg"				"80"
+			}
+			"06"
+			{  
+				"var_type"				"FIELD_FLOAT"
+				"gun_atk_delay"			"0.2"
+			}
+			"07"
+			{  
+				"var_type"				"FIELD_INTEGER"
+				"range_atk_aoe"			"500"
+			}
+			"08"
+			{  
+				"var_type"				"FIELD_INTEGER"
+				"impact_aoe"			"300"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/drake/drake_abilities"
+				"Function"		"OnBoardingShipStart"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_boarding_ship"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"IsBuff"			"1"
+				"IsPurgable"		"0"
+				"Duration"			"%boat_duration"
+				"OverrideAnimation"     "ACT_DOTA_CAST_ABILITY_2_END"	
+				"States"
+				{
+					"MODIFIER_STATE_DISARMED"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_SILENCED"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_UNIT_COLLISION"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+				"Properties"
+				{
+				    "MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE" "%boat_ms" 
+				    "MODIFIER_PROPERTY_MOVESPEED_MAX" "%boat_ms"
+				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" "%boat_ms"
+				    "MODIFIER_PROPERTY_OVERRIDE_ANIMATION_RATE" "0.5"
+				}
+				
+				"OnCreated"
+				{ //change model or animation
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/drake/drake_abilities"
+						"Function"		"OnBoardingShipCreate"
+					}
+				}
+				"OnUnitMoved"
+				// Example: Bloodseeker ult
+				{
+					
+				}
+				"ThinkInterval"  "%gun_atk_delay"
+				"OnIntervalThink"
+				{ // random target for range atk
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/drake/drake_abilities"
+						"Function"		"OnBoardingShipFire"
+					}
+				}
+				"OnDestroy"
+				{ //change model or animation
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/drake/drake_abilities"
+						"Function"		"OnBoardingShipDestroy"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/drake/drake_abilities"
+						"Function"		"OnBoardingShipDeath"
+					}
+				}
+			}
+			"modifier_boarding_ship_hit"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Duration"			"%boat_duration"
+				"ThinkInterval"  "1.0"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/drake/drake_abilities"
+						"Function"		"OnBoardingShipDrive"
+					}
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Francis Drake : Military Tactic : Summon Golden Anchor (E)
+	//=================================================================================================================
+	"drake_military_tactic_summon_golden_anchor"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		//หารูปมาใส่
+		"AbilityTextureName"			"custom/drake/drake_military_tactic_summon_golden_anchor"
+		"MaxLevel"						"1"
+		"AbilityCastPoint"				"0.2"
+		"AbilityCooldown"				"20"
+		"AbilityCastRange"				"500"
+		"AbilityManaCost"				"200"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_3"
+		"AnimationPlaybackRate" 		"3.0"
+		"AOERadius"						"%aoe"
+		"precache"
+		{
+			"particle"  "particles/custom/drake/drake_anchor.vpcf"
+			"particle"  "particles/custom/drake/drake_anchor_dust_hit.vpcf"
+			"particle"  "particles/units/heroes/hero_magnataur/magnus_dust_hit_ring.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_snapfire.vsndevts"
+		}
+		"AbilitySpecial"
+		{
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aoe"					"300"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dmg"					"300"
+			}	
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"stun_duration"			"1.0"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"			"0.5"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/drake/drake_abilities"
+				"Function"		"OnGoldenAnchorStart"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Francis Drake : Military Tactic : Summon Golden Anchor (E) (Improve Military Tactice SA)
+	//=================================================================================================================
+	"drake_military_tactic_summon_golden_anchor_upgrade"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		//หารูปมาใส่
+		"AbilityTextureName"			"custom/drake/drake_military_tactic_summon_golden_anchor"
+		"MaxLevel"						"1"
+		"AbilityCastPoint"				"0.2"
+		"AbilityCooldown"				"20"
+		"AbilityCastRange"				"500"
+		"AbilityManaCost"				"200"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_3"
+		"AnimationPlaybackRate" 		"3.0"
+		"AOERadius"						"%aoe"
+		"precache"
+		{
+			"particle"  "particles/custom/drake/drake_anchor.vpcf"
+			"particle"  "particles/custom/drake/drake_anchor_dust_hit.vpcf"
+			"particle"  "particles/units/heroes/hero_magnataur/magnus_dust_hit_ring.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_snapfire.vsndevts"
+		}
+		"AbilitySpecial"
+		{
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aoe"					"500"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dmg"					"500"
+			}	
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"stun_duration"			"1.5"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"			"0.5"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/drake/drake_abilities"
+				"Function"		"OnGoldenAnchorStart"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Francis Drake : Military Tactic : Close Book (F)
+	//=================================================================================================================
+	"drake_military_tactic_close"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		//หารูปมาใส่
+		"AbilityTextureName"			"silencer_last_word"
+		"MaxLevel"						"1"
+		"AbilityCastPoint"				"0.0"
+		"AbilityManaCost"				"0"
+		"precache"
+		{
+		}
+		"AbilitySpecial"
+		{
+			
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{ // remove modifier military tactic check
+				"ScriptFile"	"abilities/drake/drake_abilities"
+				"Function"		"OnMilitaryTacticCloseStart"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Francis Drake : Military Tactic : Summon Golden Hind (R)
+	//=================================================================================================================
+	"drake_military_tactic_summon_golden_hind"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		//หารูปมาใส่
+		"AbilityTextureName"			"custom/drake/drake_military_tactic_summon_golden_hind"
+		"MaxLevel"						"1"
+		"AbilityCastPoint"				"1.0"
+		"AbilityCooldown"				"100"
+		"AbilityManaCost"				"400"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_6"
+		"AnimationPlaybackRate" 		"1.0"
+		"precache"
+		{
+			"model"		"models/drake/drake_golden_hind.vmdl"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_kunkka.vsndevts"
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"			"1.0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"hp"					"1700"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mana"					"1000"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"hp_reg"				"10"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mana_reg"				"5"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"armor"					"10"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mr"					"10"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"atk"					"150"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"atk_range"				"850"
+			}
+		}
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{ // create golden hind
+				"ScriptFile"	"abilities/drake/drake_abilities"
+				"Function"		"OnCastSummonGoldenHind"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{ // create golden hind
+				"ScriptFile"	"abilities/drake/drake_abilities"
+				"Function"		"OnSummonGoldenHindStart"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_golden_hind_check"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/drake/drake_abilities"
+						"Function"		"OnDrakeDeath"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/drake/drake_abilities"
+						"Function"		"OnGoldenHindDestroy"
+					}
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Francis Drake : Military Tactic : Summon Golden Hind (R) (Upgraded)
+	//=================================================================================================================
+	"drake_military_tactic_summon_golden_hind_upgrade"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		//หารูปมาใส่
+		"AbilityTextureName"			"custom/drake/drake_military_tactic_summon_golden_hind"
+		"MaxLevel"						"1"
+		"AbilityCastPoint"				"1.0"
+		"AbilityCooldown"				"100"
+		"AbilityManaCost"				"400"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_6"
+		"AnimationPlaybackRate" 		"1.0"
+		"precache"
+		{
+			"model"		"models/drake/drake_golden_hind.vmdl"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_kunkka.vsndevts"
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_delay"			"1.0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"hp"					"2000"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mana"					"1300"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"hp_reg"				"10"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mana_reg"				"5"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"armor"					"20"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mr"					"20"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"atk"					"250"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"atk_range"				"850"
+			}
+		}
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{ // create golden hind
+				"ScriptFile"	"abilities/drake/drake_abilities"
+				"Function"		"OnCastSummonGoldenHind"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{ // create golden hind
+				"ScriptFile"	"abilities/drake/drake_abilities"
+				"Function"		"OnSummonGoldenHindStart"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_golden_hind_check"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/drake/drake_abilities"
+						"Function"		"OnDrakeDeath"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/drake/drake_abilities"
+						"Function"		"OnGoldenHindDestroy"
+					}
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Francis Drake : The Golden Hind : Passive 
+	//=================================================================================================================
+	"drake_golden_hind_passive"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		//หารูปมาใส่
+		"AbilityTextureName"			"custom/drake/drake_military_tactic_summon_golden_hind"
+		"MaxLevel"						"1"
+		"precache"
+		{
+			"particle"  "particles/econ/courier/courier_mechjaw/mechjaw_death_sparks.vpcf"
+			"particle"  "particles/units/heroes/hero_gyrocopter/gyro_guided_missile_explosion.vpcf"
+			"particle"  "particles/econ/events/ti9/rock_golem_tower/radiant_tower_attack_explode_debris.vpcf"
+			"particle"  "particles/econ/events/ti9/rock_golem_tower/dire_tower_attack_explode_dust_b.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_snapfire.vsndevts"
+		}
+		"AbilitySpecial"
+		{
+			"07"
+			{  
+				"var_type"				"FIELD_INTEGER"
+				"bonus_hp_reg"			"50"
+			}	
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cannon_dmg"				"80"
+			}
+			"03"
+			{  
+				"var_type"				"FIELD_FLOAT"
+				"cannon_delay"			"1.5"
+			}
+			"04"
+			{  
+				"var_type"				"FIELD_INTEGER"
+				"cannon_aoe"			"150"
+			}
+			"05"
+			{  
+				"var_type"				"FIELD_INTEGER"
+				"bonus_hp"				"300"
+			}
+			"06"
+			{  
+				"var_type"				"FIELD_INTEGER"
+				"bonus_atk"				"100"
+			}	
+			
+			"08"
+			{  
+				"var_type"				"FIELD_INTEGER"
+				"bonus_mana"			"300"
+			}
+			"09"
+			{  
+				"var_type"				"FIELD_INTEGER"
+				"bonus_armor"			"5"
+			}
+			"10"
+			{  
+				"var_type"				"FIELD_INTEGER"
+				"bonus_mr"				"5"
+			}
+			"10"
+			{  
+				"var_type"				"FIELD_INTEGER"
+				"cannon_range"			"600"
+			}	
+			"10"
+			{  
+				"var_type"				"FIELD_FLOAT"
+				"cannon_stun"			"0.5"
+			}			
+		}
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"	"1"
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/drake/drake_abilities"
+				"Function"		"OnGoldenHindSideCannonHit"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_golden_hind_passive"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Properties"
+				{
+					//"MODIFIER_PROPERTY_HEALTH_BONUS" "%bonus_hp"
+				    //"MODIFIER_PROPERTY_MANA_BONUS" "%bonus_mana" 
+				    //"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "%bonus_atk"
+				    "MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT" "%bonus_hp_reg" 
+				    //"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%bonus_armor"
+				    //"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS" "%bonus_mr" 
+				}
+				"ThinkInterval"  "%cannon_delay"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/drake/drake_abilities"
+						"Function"		"OnGoldenHindPassiveThink"
+					}
+				}
+			}
+			"modifier_golden_hind_non_target"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"1"
+				"IsPurgable"		"0"
+				"Duration"			"%cannon_delay"
+			}
+			"modifier_golden_hind_right_target"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"1"
+				"IsPurgable"		"0"
+				"Duration"			"%cannon_delay"
+			}
+			"modifier_golden_hind_left_target"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"1"
+				"IsPurgable"		"0"
+				"Duration"			"%cannon_delay"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Francis Drake : The Golden Hind : Drive (W)
+	//=================================================================================================================
+	"drake_golden_hind_drive"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		//หารูปมาใส่
+		"AbilityTextureName"			"custom/drake/drake_golden_hind_drive"
+		"MaxLevel"						"1"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"20"
+		"AbilityManaCost"				"200"
+		"precache"
+		{
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"5"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"boat_ms"				"550"
+			}	
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"impact_dmg"			"250"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"knockback"				"300"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/drake/drake_abilities"
+				"Function"		"OnGoldenHindDriveStart"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_golden_hind_drive_cooldown"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Duration"			"0.6"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			}
+			"modifier_golden_hind_drive"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"IsBuff"			"1"
+				"IsPurgable"		"0"
+				"Duration"			"%duration"
+		
+				"Properties"
+				{
+				    "MODIFIER_PROPERTY_MOVESPEED_MAX" "%boat_ms" 
+				    "MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE" "%boat_ms"
+				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" "%boat_ms"
+				}
+				"OnUnitMoved"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/drake/drake_abilities"
+						"Function"		"OnGoldenHindDrive"
+					}
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Francis Drake : The Golden Hind : Bombard (E)
+	//=================================================================================================================
+	"drake_golden_hind_bombard"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		//หารูปมาใส่
+		"AbilityTextureName"			"custom/drake/drake_golden_hind_bombard"
+		"MaxLevel"						"1"
+		"AbilityCastPoint"				"0.0"
+		"AbilityChannelTime"			"3"
+		"AbilityCooldown"				"28"
+		"AbilityManaCost"				"200"
+		"AbilityCastRange"				"850"
+		"AOERadius"						"%aoe"
+		"precache"
+		{
+			"particle"  "particles/custom/drake/drake_cannon_blast.vpcf"
+			"particle"  "particles/custom/drake/drake_cannon_bullet_yellow.vpcf"
+			"particle"  "particles/econ/courier/courier_mechjaw/mechjaw_death_sparks.vpcf"
+			"particle"  "particles/units/heroes/hero_gyrocopter/gyro_guided_missile_explosion.vpcf"
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_snapfire.vsndevts"	
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cannon_interval"		"0.3"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aoe"					"500"
+			}	
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bomb_aoe"				"250"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bomb_dmg"				"220"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bomb_stun"				"0.2"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"3"
+			}
+		}
+		"OnSpellStart"
+		{ // start fire
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/drake/drake_abilities"
+				"Function"		"OnGoldenHindBombardStart"
+			}
+		}
+		"OnChannelInterrupted"
+		{ // get stun stop fire
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/drake/drake_abilities"
+				"Function"		"OnGoldenHindBombardCancel"
+			}
+		}
+		"OnChannelFinish"
+		{ // end channel stop fire
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/drake/drake_abilities"
+				"Function"		"OnGoldenHindBombardCancel"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_golden_hind_bombard"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"IsBuff"			"1"
+				"IsPurgable"		"0"
+				"Duration"			"%duration"
+		
+				"States"
+				{
+					"MODIFIER_STATE_ROOTED"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Francis Drake : The Golden Hind : Defensive Cannon (D)
+	//=================================================================================================================
+	"drake_golden_hind_defensive_cannon"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		//หารูปมาใส่
+		"AbilityTextureName"			"custom/drake/drake_golden_hind_defensive_cannon"
+		"MaxLevel"						"1"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"20"
+		"AbilityManaCost"				"300"
+		"AbilityCastRange"				"500"
+
+		"precache"
+		{
+			"particle"  "particles/econ/courier/courier_mechjaw/mechjaw_death_sparks.vpcf"
+			"particle"  "particles/units/heroes/hero_gyrocopter/gyro_guided_missile_explosion.vpcf"
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_snapfire.vsndevts"	
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aoe"					"500"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dmg"					"400"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"knockback"				"500"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/drake/drake_abilities"
+				"Function"		"OnGlenderHindDefensiveCannon"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Francis Drake : The Golden Hind : Voyager of Storm (F)
+	//=================================================================================================================
+	"drake_golden_hind_voyager_of_storm"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		//หารูปมาใส่
+		"AbilityTextureName"			"custom/drake/drake_voyager_of_storm"
+		"MaxLevel"						"1"
+		"AbilityCastPoint"				"0.5"
+		"AbilityCooldown"				"90"
+		"AbilityManaCost"				"200"
+		"AbilityCastRange"				"700"
+		"precache"
+		{
+			"particle"		"particles/econ/items/zeus/lightning_weapon_fx/zuus_lb_cfx_il.vpcf"
+			"particle"  	"particles/units/heroes/hero_zuus/zuus_lightning_bolt.vpcf"
+			"soundfile" 	"soundevents/game_sounds_heroes/game_sounds_zuus.vsndevts"
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"4"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"window_duration"		"4"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"700"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"debuff_slow"			"-20"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"lightning_aoe"				"200"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"lighning_dmg"			"100"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"lighning_count"			"8"
+			}
+
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/drake/drake_abilities"
+				"Function"		"OnVoyagerStart"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_storm_aura"
+			{
+				"Passive"				"0"
+				"IsHidden"				"1"
+				"Duration"				"%duration"
+				"IsPurgable"			"0"
+				"ThinkInterval"  		"1.0"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/drake/drake_abilities"
+						"Function"		"OnThunderStrike"
+					}
+				}
+				"Aura"					"modifier_storm_slow"
+				"Aura_Radius"			"%radius"
+				"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP "
+			}
+			"modifier_storm_slow"
+			{
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%debuff_slow"
+				}
+			}
+			"modifier_golden_wild_hunt_window"
+			{
+				"IsPurgable"		"0"
+				"IsBuff"			"1"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Duration"			"%window_duration"
+
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/drake/drake_abilities"
+						"Function"		"OnComboWindow"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/drake/drake_abilities"
+						"Function"		"OnComboWindowDestroy"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/drake/drake_abilities"
+						"Function"		"OnComboWindowDied"
+					}
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Francis Drake : Golden Hind : Golden Wild Hunt (R)
+	//=================================================================================================================
+	"drake_golden_hind_golden_wild_hunt"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/drake/drake_golden_wild_hunt"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_6"
+		"AnimationPlaybackRate" 		"2.0"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+
+		"AbilityCastPoint"              "0.5"
+        "AbilityManaCost"               "800"
+        "AbilityCooldown"               "52 50 48 46 44"
+        "AbilityCastRange"              "1900"
+        "AOERadius"						"%aoe"
+
+		"precache"
+		{
+			"model"						"models/drake/drake_wild_hunt.vmdl"
+			"particle"					"particles/units/heroes/hero_gyrocopter/gyro_guided_missile_explosion.vpcf"
+			"particle"					"particles/econ/courier/courier_mechjaw/mechjaw_death_sparks.vpcf"
+			"particle"					"particles/units/heroes/hero_snapfire/hero_snapfire_base_attack.vpcf"
+			"particle"					"particles/units/heroes/hero_snapfire/hero_snapfire_base_attack_core_b.vpcf"
+			"particle"					"particles/units/heroes/hero_snapfire/hero_snapfire_landing_page_shotgun_directional.vpcf"
+			"particle"					"particles/custom/drake/drake_cannon_blast.vpcf"
+			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_techies.vsndevts"
+			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_gyrocopter.vsndevts"
+			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_snapfire.vsndevts"
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"			"0.5"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"aoe"					"1000.0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bomb_count"			"4"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bomb_aoe"				"300.0"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bomb_interval"			"1.0"
+			}		
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bomb_dmg"				"100 130 160 190 220"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bomb_slow"				"0.5"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow_debuff"			"-30"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bomb_speed"			"1800"
+			}
+			"10"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cannon_count"			"3"
+			}
+			"11"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cannon_aoe"			"400.0"
+			}
+			"12"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cannon_interval"		"1.5"
+			}		
+			"13"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cannon_dmg"			"200 225 250 275 300"
+			}
+			"14"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cannon_stun"			"0.3"
+			}
+			"15"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cannon_speed"			"2500"
+			}
+		}
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{ 
+				"ScriptFile"	"abilities/drake/drake_abilities"
+				"Function"		"OnAbilityCastCheck"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{ 
+				"ScriptFile"	"abilities/drake/drake_abilities"
+				"Function"		"OnGoldenWildHuntStart"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_golden_wild_hunt_slow"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Duration"			"%bomb_slow"
+				"Properties"
+				{
+				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow_debuff" 
+				}
+			}
+			"modifier_golden_wild_hunt_check"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Duration"			"5.5"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/drake/drake_abilities"
+						"Function"		"OnGoldenWildHuntDestroy"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/drake/drake_abilities"
+						"Function"		"OnGoldenWildHuntDie"
+					}
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Francis Drake : Innate : Voyager of Storm (F)
+	//=================================================================================================================
+	"drake_voyager_of_storm"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		//หารูปมาใส่
+		"AbilityTextureName"			"custom/drake/drake_voyager_of_storm"
+		"MaxLevel"						"1"
+		"AbilityCastPoint"				"0.5"
+		"AbilityCooldown"				"90"
+		"AbilityManaCost"				"0"
+		"precache"
+		{
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"2"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"window_duration"		"4"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/drake/drake_abilities"
+				"Function"		"OnVoyagerStart"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_voyager_lucky"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"IsBuff"			"1"
+				"IsPurgable"		"0"
+				"Duration"			"%duration"
+				"ThinkInterval"  "0.03"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/drake/drake_abilities"
+						"Function"		"OnVoyagerLucky"
+					}
+				}
+				"OnTakeDamage"
+				// "%attack_damage" is set to the damage value after mitigation
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/drake/drake_abilities"
+						"Function"		"OnVoyagerLuckyTakeDamage"
+						"DamageTaken"	"%attack_damage"
+					}
+				}
+			}
+			"modifier_golden_wild_hunt_window"
+			{
+				"IsPurgable"		"0"
+				"IsBuff"			"1"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Duration"			"%window_duration"
+
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/drake/drake_abilities"
+						"Function"		"OnComboWindow"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/drake/drake_abilities"
+						"Function"		"OnComboWindowDestroy"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/drake/drake_abilities"
+						"Function"		"OnComboWindowDied"
+					}
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Francis Drake : Skill 1 : Pistol (Q) 
+	//=================================================================================================================
+	"drake_pistol"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		//หารูปมาใส่
+		"AbilityTextureName"			"custom/drake/drake_flintlock"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"0.5"
+		"AbilityManaCost"				"0"
+		"precache"
+		{
+			"particle"  "particles/units/heroes/hero_snapfire/hero_snapfire_base_attack.vpcf"
+			"particle"  "particles/units/heroes/hero_sniper/sniper_base_attack.vpcf"
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_range"			"500"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_dmg"				"20 30 40 50 60"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mana_cost"				"10"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"double_atk_chance"		"30"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{ 
+				"ScriptFile"	"abilities/drake/drake_abilities"
+				"Function"		"OnPistalStart"
+			}
+		}
+		"OnUpgrade"
+		{
+			"RunScript"
+			{ // lvlup sword
+				"ScriptFile"	"abilities/drake/drake_abilities"
+				"Function"		"OnPistalUpgrade"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_pistol_buff"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"IsBuff"			"1"
+				"IsPurgable"		"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACK_RANGE_BONUS" "%bonus_range"
+					"MODIFIER_PROPERTY_TRANSLATE_ACTIVITY_MODIFIERS"	"range"
+				}
+		
+				"OnCreated"
+				{ // change skill 2 + range atk
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/drake/drake_abilities"
+						"Function"		"OnPistalCreate"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/drake/drake_abilities"
+						"Function"		"OnPistalDestroy"
+					}
+				}
+				"OnAttackStart"
+				{ // reduce mana
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/drake/drake_abilities"
+						"Function"		"OnPistalAttackStart"
+					}
+				}
+				"OnAttackLanded"
+				// "%attack_damage" is set to the damage value before mitigation
+				{ // deal extra damage , random double atk
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/drake/drake_abilities"
+						"Function"		"OnPistalAttackLand"
+					}
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Francis Drake : Skill 1 : Pistol (Q) (Pioneer of Star SA)
+	//=================================================================================================================
+	"drake_pistol_upgrade"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		//หารูปมาใส่
+		"AbilityTextureName"			"custom/drake/drake_flintlock"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"0.5"
+		"AbilityManaCost"				"0"
+		"precache"
+		{
+			"particle"  "particles/units/heroes/hero_snapfire/hero_snapfire_base_attack.vpcf"
+			"particle"  "particles/units/heroes/hero_sniper/sniper_base_attack.vpcf"
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_range"			"500"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_dmg"				"20 30 40 50 60"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mana_cost"				"10"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"double_atk_chance"		"30"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{ 
+				"ScriptFile"	"abilities/drake/drake_abilities"
+				"Function"		"OnPistalStart"
+			}
+		}
+		"OnUpgrade"
+		{
+			"RunScript"
+			{ // lvlup sword
+				"ScriptFile"	"abilities/drake/drake_abilities"
+				"Function"		"OnPistalUpgrade"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_pistol_buff"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"IsBuff"			"1"
+				"IsPurgable"		"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACK_RANGE_BONUS" "%bonus_range"
+					"MODIFIER_PROPERTY_TRANSLATE_ACTIVITY_MODIFIERS"	"range"
+				}
+		
+				"OnCreated"
+				{ // change skill 2 + range atk
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/drake/drake_abilities"
+						"Function"		"OnPistalCreate"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/drake/drake_abilities"
+						"Function"		"OnPistalDestroy"
+					}
+				}
+				"OnAttackStart"
+				{ // reduce mana
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/drake/drake_abilities"
+						"Function"		"OnPistalAttackStart"
+					}
+				}
+				"OnAttackLanded"
+				// "%attack_damage" is set to the damage value before mitigation
+				{ // deal extra damage , random double atk
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/drake/drake_abilities"
+						"Function"		"OnPistalAttackLand"
+					}
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Francis Drake : Skill 1 : Sword (Q)
+	//=================================================================================================================
+	"drake_sword"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		//หารูปมาใส่
+		"AbilityTextureName"			"custom/drake/drake_sword"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"0.5"
+		"AbilityManaCost"				"0"
+		"precache"
+		{
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_aspd"			"20 40 60 80 100"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{ 
+				"ScriptFile"	"abilities/drake/drake_abilities"
+				"Function"		"OnSwordStart"
+			}
+		}
+		"OnUpgrade"
+		{
+			"RunScript"
+			{ // lvlup sword
+				"ScriptFile"	"abilities/drake/drake_abilities"
+				"Function"		"OnSwordUpgrade"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_sword_buff"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"IsBuff"			"1"
+				"IsPurgable"		"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%bonus_aspd"
+					"MODIFIER_PROPERTY_TRANSLATE_ACTIVITY_MODIFIERS"	"malee"
+				}
+		
+				"OnCreated"
+				{ // change skill 2 + range atk
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/drake/drake_abilities"
+						"Function"		"OnSwordCreate"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/drake/drake_abilities"
+						"Function"		"OnSwordDestroy"
+					}
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Francis Drake : Skill 2 : Crossing Fire (W)
+	//=================================================================================================================
+	"drake_crossing_fire"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation" 			"ACT_DOTA_ITEM_PICKUP"
+		//หารูปมาใส่
+		"AbilityTextureName"			"custom/drake/drake_crossing_fire"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"15"
+		"AbilityManaCost"				"200"
+		"precache"
+		{
+			"particle"  "particles/units/heroes/hero_snapfire/hero_snapfire_base_attack.vpcf"
+			"particle"  "particles/econ/courier/courier_mechjaw/mechjaw_death_sparks.vpcf"
+			"particle"  "particles/custom/drake/drake_cannon_bullet.vpcf"
+			"particle"  "particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
+			"particle"  "particles/custom/lancelot/lancelot_gatling.vpcf"
+			"particle"  "particles/units/heroes/hero_gyrocopter/gyro_guided_missile_explosion.vpcf"
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_ancient_apparition.vsndevts"	
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bullet_count"			"4"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"4.0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bullet_interval"		"1.0 0.9 0.8 0.7 0.6"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bullet_distance"		"1000"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bullet_speed"			"2000"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bullet_dmg"			"80 85 90 95 100"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bullet_mini_stun"		"0.1"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"ms_debuff"				"-20 -15 -10 -5 0"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{ 
+				"ScriptFile"	"abilities/drake/drake_abilities"
+				"Function"		"OnCrossingFireStart"
+			}
+		}
+		"OnUpgrade"
+		{
+			"RunScript"
+			{ // lvlup sword
+				"ScriptFile"	"abilities/drake/drake_abilities"
+				"Function"		"OnCrossingFireUpgrade"
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"	"1"
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/drake/drake_abilities"
+				"Function"		"OnCrossingFireHit"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_crossing_fire_buff"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"IsBuff"			"1"
+				"IsPurgable"		"0"
+				"Duration"			"%duration"
+				"Properties"
+				{
+				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%ms_debuff" 
+				}
+				"States"
+				{
+					"MODIFIER_STATE_DISARMED"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_SILENCED"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/drake/drake_abilities"
+						"Function"		"OnCrossingFireAnimate"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/drake/drake_abilities"
+						"Function"		"OnCrossingFireDestroy"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/drake/drake_abilities"
+						"Function"		"OnCrossingFireDeath"
+					}
+				}
+			}
+			"modifier_crossing_fire_check"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			}
+			"modifier_crossing_aura_front_check"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Aura"          	"modifier_crossing_front_check"
+				"Aura_Radius"   	"100"
+				"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types"    	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_CREEP"
+				"Aura_Flags"    	"DOTA_UNIT_TARGET_FLAG_NONE"
+				"Aura_ApplyToCaster" "0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			}
+			"modifier_crossing_front_check"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+			}
+			"modifier_crossing_aura_back_check"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Aura"          	"modifier_crossing_back_check"
+				"Aura_Radius"   	"100"
+				"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types"    	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_CREEP"
+				"Aura_Flags"    	"DOTA_UNIT_TARGET_FLAG_NONE"
+				"Aura_ApplyToCaster" "0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			}
+			"modifier_crossing_back_check"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+			}
+			"modifier_crossing_aura_right_check"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Aura"          	"modifier_crossing_right_check"
+				"Aura_Radius"   	"100"
+				"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types"    	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_CREEP"
+				"Aura_Flags"    	"DOTA_UNIT_TARGET_FLAG_NONE"
+				"Aura_ApplyToCaster" "0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			}
+			"modifier_crossing_right_check"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+			}
+			"modifier_crossing_aura_left_check"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Aura"          	"modifier_crossing_left_check"
+				"Aura_Radius"   	"100"
+				"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types"    	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_CREEP"
+				"Aura_Flags"    	"DOTA_UNIT_TARGET_FLAG_NONE"
+				"Aura_ApplyToCaster" "0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			}
+			"modifier_crossing_left_check"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Francis Drake : Skill 2 : Crossing Fire (W) (Pioneer of Star SA)
+	//=================================================================================================================
+	"drake_crossing_fire_upgrade"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation" 			"ACT_DOTA_ITEM_PICKUP"
+		//หารูปมาใส่
+		"AbilityTextureName"			"custom/drake/drake_crossing_fire"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"15"
+		"AbilityManaCost"				"200"
+		"precache"
+		{
+			"particle"  "particles/units/heroes/hero_snapfire/hero_snapfire_base_attack.vpcf"
+			"particle"  "particles/econ/courier/courier_mechjaw/mechjaw_death_sparks.vpcf"
+			"particle"  "particles/custom/drake/drake_cannon_bullet.vpcf"
+			"particle"  "particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
+			"particle"  "particles/custom/lancelot/lancelot_gatling.vpcf"
+			"particle"  "particles/units/heroes/hero_gyrocopter/gyro_guided_missile_explosion.vpcf"
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_ancient_apparition.vsndevts"	
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bullet_count"			"4"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"4.0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bullet_interval"		"1.0 0.9 0.8 0.7 0.6"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bullet_distance"		"1000"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bullet_speed"			"2000"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bullet_dmg"			"80 85 90 95 100"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bullet_mini_stun"		"0.1"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"ms_debuff"				"-20 -15 -10 -5 0"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{ 
+				"ScriptFile"	"abilities/drake/drake_abilities"
+				"Function"		"OnCrossingFireStart"
+			}
+		}
+		"OnUpgrade"
+		{
+			"RunScript"
+			{ // lvlup sword
+				"ScriptFile"	"abilities/drake/drake_abilities"
+				"Function"		"OnCrossingFireUpgrade"
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"	"1"
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/drake/drake_abilities"
+				"Function"		"OnCrossingFireHit"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_crossing_fire_buff"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"IsBuff"			"1"
+				"IsPurgable"		"0"
+				"Duration"			"%duration"
+				"Properties"
+				{
+				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%ms_debuff" 
+				}
+				"States"
+				{
+					"MODIFIER_STATE_DISARMED"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_SILENCED"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/drake/drake_abilities"
+						"Function"		"OnCrossingFireAnimate"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/drake/drake_abilities"
+						"Function"		"OnCrossingFireDestroy"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/drake/drake_abilities"
+						"Function"		"OnCrossingFireDeath"
+					}
+				}
+			}
+			"modifier_crossing_fire_check"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			}
+			"modifier_crossing_aura_front_check"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Aura"          	"modifier_crossing_front_check"
+				"Aura_Radius"   	"100"
+				"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types"    	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_CREEP"
+				"Aura_Flags"    	"DOTA_UNIT_TARGET_FLAG_NONE"
+				"Aura_ApplyToCaster" "0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			}
+			"modifier_crossing_front_check"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+			}
+			"modifier_crossing_aura_back_check"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Aura"          	"modifier_crossing_back_check"
+				"Aura_Radius"   	"100"
+				"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types"    	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_CREEP"
+				"Aura_Flags"    	"DOTA_UNIT_TARGET_FLAG_NONE"
+				"Aura_ApplyToCaster" "0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			}
+			"modifier_crossing_back_check"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+			}
+			"modifier_crossing_aura_right_check"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Aura"          	"modifier_crossing_right_check"
+				"Aura_Radius"   	"100"
+				"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types"    	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_CREEP"
+				"Aura_Flags"    	"DOTA_UNIT_TARGET_FLAG_NONE"
+				"Aura_ApplyToCaster" "0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			}
+			"modifier_crossing_right_check"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+			}
+			"modifier_crossing_aura_left_check"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Aura"          	"modifier_crossing_left_check"
+				"Aura_Radius"   	"100"
+				"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types"    	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_CREEP"
+				"Aura_Flags"    	"DOTA_UNIT_TARGET_FLAG_NONE"
+				"Aura_ApplyToCaster" "0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			}
+			"modifier_crossing_left_check"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Francis Drake : Skill 2 : Dance Macabre 1 (W)
+	//=================================================================================================================
+	"drake_dance_macabre_1"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/drake/drake_abilities"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"AbilityTextureName"			"custom/drake/drake_dance_macabre_1"
+		"AbilityCastAnimation" 			"ACT_DOTA_ITEM_DROP"
+		"AnimationPlaybackRate" 		"1.0"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+
+		//"AbilityCastPoint"                          "0.1"
+        "AbilityManaCost"                           "200"
+        "AbilityCooldown"                           "20"
+        //"AbilityCastRange"                          "200"
+
+		"precache"
+		{
+			"particle"					"particles/custom/false_assassin/tsubame_gaeshi/tsubame_gaeshi_windup_indicator_flare.vpcf"
+			"particle"					"particles/custom/archer/archer_hrunting_orb.vpcf"
+			"particle"					"particles/custom/drake/drake_dance_macabre_blur_1.vpcf"
+			"particle"					"particles/custom/drake/drake_dance_macabre_blur_2.vpcf"
+			"particle"					"particles/custom/drake/drake_dance_macabre_blur_3.vpcf"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_abaddon.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_mirana.vsndevts"
+		}
+
+		"AbilitySpecial"
+		{
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"total_slash"			"3"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"width"					"300"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dmg_1"					"150 200 250 300 350"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"knockback_1"			"200"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dmg_2"					"150 200 250 300 350"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"knockback_2"			"200"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dmg_3"					"150 200 250 300 350"
+			}		
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"knockback_3"			"300"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"stun_3"				"1.0"
+			}			
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"window_duration"		"4"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{ // knockback + change skill
+				"ScriptFile"	"abilities/drake/drake_abilities"
+				"Function"		"OnDanceMacabre1Start"
+			}
+		}
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/drake/drake_abilities"
+				"Function"		"OnDanceMacabreUpgrade"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_dance_macabre_1"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"IsPurgable"		"0"
+				"Duration"			"%window_duration"
+		
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/drake/drake_abilities"
+						"Function"		"AbilityName"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/drake/drake_abilities"
+						"Function"		"OnDanceMacabreDie"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/drake/drake_abilities"
+						"Function"		"OnDanceMacabreWindowDestroy"
+					}
+				}
+			}
+			"modifier_dance_macabre_knock_back_1"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"1"
+				"IsPurgable"		"0"
+				"Duration"			"0.6"
+				"States"
+				{
+					"MODIFIER_STATE_STUNNED"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Francis Drake : Skill 2 : Dance Macabre 1 (W) (Pioneer of Star SA)
+	//=================================================================================================================
+	"drake_dance_macabre_1_upgrade"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/drake/drake_abilities"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"AbilityTextureName"			"custom/drake/drake_dance_macabre_1"
+		"AbilityCastAnimation" 			"ACT_DOTA_ITEM_DROP"
+		"AnimationPlaybackRate" 		"1.0"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+
+		//"AbilityCastPoint"                          "0.1"
+        "AbilityManaCost"                           "200"
+        "AbilityCooldown"                           "20"
+        //"AbilityCastRange"                          "200"
+
+		"precache"
+		{
+			"particle"					"particles/custom/false_assassin/tsubame_gaeshi/tsubame_gaeshi_windup_indicator_flare.vpcf"
+			"particle"					"particles/custom/archer/archer_hrunting_orb.vpcf"
+			"particle"					"particles/custom/drake/drake_dance_macabre_blur_1.vpcf"
+			"particle"					"particles/custom/drake/drake_dance_macabre_blur_2.vpcf"
+			"particle"					"particles/custom/drake/drake_dance_macabre_blur_3.vpcf"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_abaddon.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_mirana.vsndevts"
+		}
+
+		"AbilitySpecial"
+		{
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"total_slash"			"3"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"width"					"300"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dmg_1"					"150 200 250 300 350"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"knockback_1"			"200"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dmg_2"					"150 200 250 300 350"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"knockback_2"			"200"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dmg_3"					"150 200 250 300 350"
+			}		
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"knockback_3"			"300"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"stun_3"				"1.0"
+			}			
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"window_duration"		"4"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"base_dmg"				"150"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"agi_ratio"				"2.0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"knock_duration"		"1.5"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{ // knockback + change skill
+				"ScriptFile"	"abilities/drake/drake_abilities"
+				"Function"		"OnDanceMacabre1Start"
+			}
+		}
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/drake/drake_abilities"
+				"Function"		"OnDanceMacabreUpgrade"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_dance_macabre_1"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"IsPurgable"		"0"
+				"Duration"			"%window_duration"
+		
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/drake/drake_abilities"
+						"Function"		"AbilityName"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/drake/drake_abilities"
+						"Function"		"OnDanceMacabreDie"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/drake/drake_abilities"
+						"Function"		"OnDanceMacabreWindowDestroy"
+					}
+				}
+			}
+			"modifier_dance_macabre_knock_back_1"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"1"
+				"IsPurgable"		"0"
+				"Duration"			"0.6"
+				"States"
+				{
+					"MODIFIER_STATE_STUNNED"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Francis Drake : Skill 2 : Dance Macabre 2 (W)
+	//=================================================================================================================
+	"drake_dance_macabre_2"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/drake/drake_dance_macabre"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_2"
+		"AnimationPlaybackRate" 		"1.0"
+		"MaxLevel"						"5"
+		//"RequiredLevel"					"1"
+		//"LevelsBetweenUpgrades"			"1"
+
+		"AbilityCastPoint"                          "0.1"
+        "AbilityManaCost"                           "200"
+        "AbilityCooldown"                           "20"
+        "AbilityCastRange"                          "200"
+
+		"precache"
+		{
+			"particle"					"particles/custom/drake/drake_dance_macabre_blur_2.vpcf"
+			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_abaddon.vsndevts"
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dmg"					"150 200 250 300 350"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"knockback"				"150"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"width"					"200"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"stun"					"0.5"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{ // knockback + change skill
+				"ScriptFile"	"abilities/drake/drake_abilities"
+				"Function"		"OnDanceMacabre2Start"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_dance_macabre_knock_back_2"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"1"
+				"IsPurgable"		"0"
+				"Duration"			"0.6"
+				"States"
+				{
+					"MODIFIER_STATE_STUNNED"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Francis Drake : Skill 2 : Dance Macabre 3 (W)
+	//=================================================================================================================
+	"drake_dance_macabre_3"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+		"AbilityTextureName"			"custom/drake/drake_dance_macabre"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_2"
+		"AnimationPlaybackRate" 		"1.0"
+		"MaxLevel"						"5"
+		//"RequiredLevel"					"1"
+		//"LevelsBetweenUpgrades"			"1"
+
+		"AbilityCastPoint"                          "0.1"
+        "AbilityManaCost"                           "200"
+        "AbilityCooldown"                           "20"
+        "AbilityCastRange"                          "200"
+
+		"precache"
+		{
+			"particle"					"particles/custom/drake/drake_dance_macabre_blur_3.vpcf"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_abaddon.vsndevts"
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dmg"					"200 250 300 350 400"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"knockback"				"300"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"width"					"350"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"stun"					"1.0"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{ // knockback + change skill
+				"ScriptFile"	"abilities/drake/drake_abilities"
+				"Function"		"OnDanceMacabre3Start"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_dance_macabre_knock_back_3"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"1"
+				"IsPurgable"		"0"
+				"Duration"			"0.6"
+				"States"
+				{
+					"MODIFIER_STATE_STUNNED"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Francis Drake : Skill 2 : Dance Macabre 3 (W) (Pioneer of Star SA)
+	//=================================================================================================================
+	"drake_dance_macabre_3_upgrade"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+		"AbilityTextureName"			"custom/drake/drake_dance_macabre"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_2"
+		"AnimationPlaybackRate" 		"1.0"
+		"MaxLevel"						"5"
+		//"RequiredLevel"					"1"
+		//"LevelsBetweenUpgrades"			"1"
+
+		"AbilityCastPoint"                          "0.1"
+        "AbilityManaCost"                           "200"
+        "AbilityCooldown"                           "20"
+        "AbilityCastRange"                          "200"
+
+		"precache"
+		{
+			"particle"					"particles/custom/drake/drake_dance_macabre_blur_3.vpcf"
+			"particle"					"particles/custom/saber/strike_air_upstream/strike_air_upstream.vpcf"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_abaddon.vsndevts"
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dmg"					"200 250 300 350 400"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"knockback"				"300"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"width"					"350"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"stun"					"1.0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"base_dmg"				"150"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"agi_ratio"				"2.0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"knock_duration"		"1.5"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{ // knockback + change skill
+				"ScriptFile"	"abilities/drake/drake_abilities"
+				"Function"		"OnDanceMacabre3Start"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_dance_macabre_knock_back_3"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"1"
+				"IsPurgable"		"0"
+				"Duration"			"0.6"
+				"States"
+				{
+					"MODIFIER_STATE_STUNNED"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Francis Drake : Skill 3 : Support Bombard (E)
+	//=================================================================================================================
+	"drake_support_bombard"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/drake/drake_support_bombard"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_5"
+		"AnimationPlaybackRate" 		"2.0"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+
+		"AbilityCastPoint"              "0.5"
+        "AbilityManaCost"               "400"
+        "AbilityCooldown"               "32 31 30 29 28"
+        "AbilityCastRange"              "600"
+        "AOERadius"						"%aoe"
+
+		"precache"
+		{
+			"particle"  "particles/custom/drake/drake_cannon_blast.vpcf"
+			"particle"  "particles/units/heroes/hero_snapfire/hero_snapfire_base_attack.vpcf"
+			"particle"  "particles/econ/courier/courier_mechjaw/mechjaw_death_sparks.vpcf"
+			"particle"  "particles/units/heroes/hero_gyrocopter/gyro_guided_missile_explosion.vpcf"
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_snapfire.vsndevts"	
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"			"1.0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bomb_count"			"5"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aoe"					"300"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bomb_interval"			"0.3"
+			}		
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bomb_dmg"				"100 130 160 190 220"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bomb_stun"				"0.4"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bomb_speed"			"1200"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"600"
+			}
+			
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{ // create cannon + run projectile at same position
+				"ScriptFile"	"abilities/drake/drake_abilities"
+				"Function"		"OnSummonBombardStart"
+			}
+		}
+		"OnProjectileHitUnit"
+		{ // do aoe dmg + stun
+			"DeleteOnHit"	"1"
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/drake/drake_abilities"
+				"Function"		"OnSummonBombardHit"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Francis Drake : Skill 3 : Support Bombard (E) (Improve Military Tactic SA)
+	//=================================================================================================================
+	"drake_support_bombard_upgrade"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/drake/drake_support_bombard"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_5"
+		"AnimationPlaybackRate" 		"2.0"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+
+		"AbilityCastPoint"              "0.5"
+        "AbilityManaCost"               "400"
+        "AbilityCooldown"               "32 31 30 29 28"
+        "AbilityCastRange"              "600"
+        "AOERadius"						"%aoe"
+
+		"precache"
+		{
+			"particle"  "particles/custom/drake/drake_cannon_blast.vpcf"
+			"particle"  "particles/units/heroes/hero_snapfire/hero_snapfire_base_attack.vpcf"
+			"particle"  "particles/econ/courier/courier_mechjaw/mechjaw_death_sparks.vpcf"
+			"particle"  "particles/units/heroes/hero_gyrocopter/gyro_guided_missile_explosion.vpcf"
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_snapfire.vsndevts"	
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"			"1.0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bomb_count"			"6"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aoe"					"300"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bomb_interval"			"0.3"
+			}		
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bomb_dmg"				"100 130 160 190 220"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bomb_stun"				"0.4"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bomb_speed"			"1200"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"600"
+			}
+			
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{ // create cannon + run projectile at same position
+				"ScriptFile"	"abilities/drake/drake_abilities"
+				"Function"		"OnSummonBombardStart"
+			}
+		}
+		"OnProjectileHitUnit"
+		{ // do aoe dmg + stun
+			"DeleteOnHit"	"1"
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/drake/drake_abilities"
+				"Function"		"OnSummonBombardHit"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Francis Drake : Skill 4 : Golden Wild Hunt : The Night of the Golden Hind and the Storm (R)
+	//=================================================================================================================
+	"drake_golden_wild_hunt"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/drake/drake_golden_wild_hunt"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_6"
+		"AnimationPlaybackRate" 		"2.0"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+
+		"AbilityCastPoint"              "0.5"
+        "AbilityManaCost"               "800"
+        "AbilityCooldown"               "52 50 48 46 44"
+        "AbilityCastRange"              "1500"
+        "AOERadius"						"%aoe"
+
+		"precache"
+		{
+			"model"						"models/drake/drake_wild_hunt.vmdl"
+			"particle"					"particles/units/heroes/hero_gyrocopter/gyro_guided_missile_explosion.vpcf"
+			"particle"					"particles/econ/courier/courier_mechjaw/mechjaw_death_sparks.vpcf"
+			"particle"					"particles/units/heroes/hero_snapfire/hero_snapfire_base_attack.vpcf"
+			"particle"					"particles/units/heroes/hero_snapfire/hero_snapfire_base_attack_core_b.vpcf"
+			"particle"					"particles/units/heroes/hero_snapfire/hero_snapfire_landing_page_shotgun_directional.vpcf"
+			"particle"					"particles/custom/drake/drake_red_laser.vpcf"
+			"particle"					"particles/custom/drake/drake_yellow_laser.vpcf"
+			"particle"					"particles/custom/drake/drake_blue_laser.vpcf"
+			"particle"					"particles/custom/drake/drake_golden_hind.vpcf"
+			"particle"					"particles/custom/drake/drake_big_ship.vpcf"
+			"particle"					"particles/custom/drake/drake_cannon_blast.vpcf"
+			"particle"					"particles/custom/drake/drake_cannon_bullet.vpcf"
+			"particle"					"particles/custom/drake/drake_laser.vpcf"
+			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_techies.vsndevts"
+			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_gyrocopter.vsndevts"
+			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_snapfire.vsndevts"
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"			"0.5"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"aoe"					"1000.0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bomb_count"			"4"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bomb_aoe"				"300.0"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bomb_interval"			"0.7"
+			}		
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bomb_dmg"				"100 130 160 190 220"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bomb_slow"				"0.5"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow_debuff"			"-30"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bomb_speed"			"1800"
+			}
+			"10"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cannon_count"			"3"
+			}
+			"11"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cannon_aoe"			"400.0"
+			}
+			"12"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cannon_interval"		"1.0"
+			}		
+			"13"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cannon_dmg"			"200 225 250 275 300"
+			}
+			"14"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cannon_stun"				"0.3"
+			}
+			"15"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cannon_speed"			"2500"
+			}
+			"16"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"lasthit_dmg"				"500"
+			}
+			
+		}
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{ 
+				"ScriptFile"	"abilities/drake/drake_abilities"
+				"Function"		"OnAbilityCastCheck"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{ 
+				"ScriptFile"	"abilities/drake/drake_abilities"
+				"Function"		"OnGoldenWildHuntStart"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_golden_wild_hunt_slow"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Duration"			"%bomb_slow"
+				"Properties"
+				{
+				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow_debuff" 
+
+				}
+			}
+			"modifier_golden_wild_hunt_check"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Duration"			"5.5"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/drake/drake_abilities"
+						"Function"		"OnGoldenWildHuntDestroy"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/drake/drake_abilities"
+						"Function"		"OnGoldenWildHuntDie"
+					}
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Francis Drake : Skill 4 : Golden Wild Hunt : The Night of the Golden Hind and the Storm (R) (Upgraded)
+	//=================================================================================================================
+	"drake_golden_wild_hunt_upgrade"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/drake/drake_golden_wild_hunt"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_6"
+		"AnimationPlaybackRate" 		"2.0"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+
+		"AbilityCastPoint"              "0.5"
+        "AbilityManaCost"               "800"
+        "AbilityCooldown"               "52 50 48 46 44"
+        "AbilityCastRange"              "1500"
+        "AOERadius"						"%aoe"
+
+		"precache"
+		{
+			"model"						"models/drake/drake_wild_hunt.vmdl"
+			"particle"					"particles/units/heroes/hero_gyrocopter/gyro_guided_missile_explosion.vpcf"
+			"particle"					"particles/econ/courier/courier_mechjaw/mechjaw_death_sparks.vpcf"
+			"particle"					"particles/units/heroes/hero_snapfire/hero_snapfire_base_attack.vpcf"
+			"particle"					"particles/units/heroes/hero_snapfire/hero_snapfire_base_attack_core_b.vpcf"
+			"particle"					"particles/units/heroes/hero_snapfire/hero_snapfire_landing_page_shotgun_directional.vpcf"
+			"particle"					"particles/custom/drake/drake_golden_hind.vpcf"
+			"particle"					"particles/custom/drake/drake_big_ship.vpcf"
+			"particle"					"particles/custom/drake/drake_red_laser.vpcf"
+			"particle"					"particles/custom/drake/drake_yellow_laser.vpcf"
+			"particle"					"particles/custom/drake/drake_blue_laser.vpcf"
+			"particle"					"particles/custom/drake/drake_cannon_blast.vpcf"
+			"particle"					"particles/custom/drake/drake_cannon_bullet.vpcf"
+			"particle"					"particles/custom/drake/drake_laser.vpcf"
+			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_techies.vsndevts"
+			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_gyrocopter.vsndevts"
+			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_snapfire.vsndevts"
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"			"0.5"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"aoe"					"1000.0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bomb_count"			"4"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bomb_aoe"				"300.0"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bomb_interval"			"0.7"
+			}		
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bomb_dmg"				"100 130 160 190 220"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bomb_slow"				"0.5"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow_debuff"			"-30"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bomb_speed"			"1800"
+			}
+			"10"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cannon_count"			"4"
+			}
+			"11"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cannon_aoe"			"400.0"
+			}
+			"12"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cannon_interval"		"1.0"
+			}		
+			"13"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cannon_dmg"			"200 225 250 275 300"
+			}
+			"14"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cannon_stun"				"0.3"
+			}
+			"15"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cannon_speed"			"2500"
+			}
+			"16"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"lasthit_dmg"				"500"
+			}
+			
+		}
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{ 
+				"ScriptFile"	"abilities/drake/drake_abilities"
+				"Function"		"OnAbilityCastCheck"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{ 
+				"ScriptFile"	"abilities/drake/drake_abilities"
+				"Function"		"OnGoldenWildHuntStart"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_golden_wild_hunt_slow"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Duration"			"%bomb_slow"
+				"Properties"
+				{
+				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow_debuff" 
+				}
+			}
+			"modifier_golden_wild_hunt_check"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Duration"			"5.5"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/drake/drake_abilities"
+						"Function"		"OnGoldenWildHuntDestroy"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/drake/drake_abilities"
+						"Function"		"OnGoldenWildHuntDie"
+					}
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Francis Drake Attribute : Improve Military Tactic
+	//=================================================================================================================
+	"drake_attribute_improve_military_tactic"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/drake/drake_attribute_improve_military_tactic"
+		
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"14"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bombard_bonus"		"1"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"cannon_bonus_dmg"	"60"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"board_bonus_duration"	"4"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"board_dmg"	"100"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"anchor_dmg"		"200"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"anchor_aoe"		"200"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"anchor_stun"		"0.5"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/drake/drake_abilities"
+				"Function"		"OnImproveMilitaryTacticAcquired"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Francis Drake Attribute : Pioneer of Star
+	//=================================================================================================================
+	"drake_attribute_pioneer"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/drake/drake_attribute_pioneer_of_star"
+		
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"13"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"double_atk_chance"		"30"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"airborne_base"			"150"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"airborne_bonus"		"2"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"airborne_duration"		"1.5"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/drake/drake_abilities"
+				"Function"		"OnPioneerOfStarAcquired"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Francis Drake Attribute : Logbook
+	//=================================================================================================================
+	"drake_attribute_logbook"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/drake/drake_attribute_logbook"
+		
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"10"
+
+		"AbilitySpecial"
+		{
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/drake/drake_abilities"
+				"Function"		"OnLogBookAcquired"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Francis Drake Attribute : Strengthen Golden Hind
+	//=================================================================================================================
+	"drake_attribute_strengthen_golden_hind"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/drake/drake_attribute_strengthen_golden_hind"
+		
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"15"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_hp"				"300"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_atk"				"100"
+			}
+			"07"
+			{  
+				"var_type"				"FIELD_INTEGER"
+				"bonus_hp_reg"			"5"
+			}	
+			"08"
+			{  
+				"var_type"				"FIELD_INTEGER"
+				"bonus_mana"			"300"
+			}
+			"09"
+			{  
+				"var_type"				"FIELD_INTEGER"
+				"bonus_armor"			"5"
+			}
+			"10"
+			{  
+				"var_type"				"FIELD_INTEGER"
+				"bonus_mr"				"5"
+			}
+			"10"
+			{  
+				"var_type"				"FIELD_INTEGER"
+				"bonus_wild_hunt"		"500"
+			}	
+			"10"
+			{  
+				"var_type"				"FIELD_INTEGER"
+				"bonus_combo"			"800"
+			}			
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/drake/drake_abilities"
+				"Function"		"OnStrengthenGoldenHindAcquired"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Francis Drake Combo : Golden Wild Hunt II : Temeroso el Drago (R)
+	//=================================================================================================================
+	"drake_combo_golden_wild_hunt"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/drake/drake_combo_golden_wild_hunt_2"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_6"
+		"AnimationPlaybackRate" 		"2.0"
+		"MaxLevel"						"1"
+		"RequiredLevel"					"26"
+
+		"AbilityCastPoint"              "0.5"
+        "AbilityManaCost"               "800"
+        "AbilityCooldown"               "240"
+        "AbilityCastRange"              "1500"
+        "AOERadius"						"%aoe"
+
+		"precache"
+		{
+			"model"						"models/drake/drake_wild_hunt.vmdl"
+			"particle"					"particles/units/heroes/hero_gyrocopter/gyro_guided_missile_explosion.vpcf"
+			"particle"					"particles/econ/courier/courier_mechjaw/mechjaw_death_sparks.vpcf"
+			"particle"					"particles/units/heroes/hero_snapfire/hero_snapfire_base_attack.vpcf"
+			"particle"					"particles/units/heroes/hero_snapfire/hero_snapfire_base_attack_core_b.vpcf"
+			"particle"					"particles/units/heroes/hero_snapfire/hero_snapfire_landing_page_shotgun_directional.vpcf"
+			"particle"					"particles/custom/drake/drake_red_laser.vpcf"
+			"particle"					"particles/custom/drake/drake_yellow_laser.vpcf"
+			"particle"					"particles/custom/drake/drake_blue_laser.vpcf"
+			"particle"					"particles/custom/drake/drake_golden_hind.vpcf"
+			"particle"					"particles/custom/drake/drake_big_ship.vpcf"
+			"particle"					"particles/custom/drake/drake_cannon_blast.vpcf"
+			"particle"					"particles/custom/drake/drake_cannon_bullet.vpcf"
+			"particle"					"particles/custom/drake/drake_fireship_model.vpcf"
+			"particle"					"particles/custom/drake/drake_fireship_test.vpcf"
+			"particle"					"particles/units/heroes/hero_crystalmaiden/maiden_freezing_field_snow.vpcf"
+			"particle"					"particles/econ/items/zeus/lightning_weapon_fx/zuus_lb_cfx_il.vpcf"
+			"particle"					"particles/units/heroes/hero_zuus/zuus_lightning_bolt.vpcf"
+			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_zuus.vsndevts"
+			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_crystalmaiden.vsndevts"
+			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_techies.vsndevts"
+			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_gyrocopter.vsndevts"
+			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_snapfire.vsndevts"
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"			"1.0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"aoe"					"1000.0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bomb_count"			"5"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bomb_interval"			"0.6"
+			}	
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bomb_aoe"				"250.0"
+			}	
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bomb_dmg"				"250"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bomb_speed"			"1800"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow_debuff"			"-30"
+			}
+			"10"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bomb_slow"				"0.5"
+			}
+			"11"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cannon_aoe"			"400.0"
+			}
+			"12"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cannon_count"			"4"
+			}
+			"13"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cannon_interval"		"1.0"
+			}		
+			"14"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cannon_dmg"			"450"
+			}
+			"15"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cannon_stun"			"0.9"
+			}
+			"16"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cannon_speed"			"2500"
+			}
+			
+			"17"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"lightning_aoe"			"250.0"
+			}
+			"18"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"lightning_count"		"10"
+			}
+			"19"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"lightning_interval"	"0.4"
+			}		
+			"20"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"lightning_dmg"			"250"
+			}
+			"21"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"lightning_stun"		"0.2"
+			}
+			"22"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"blizzard_aoe"			"200.0"
+			}
+			"23"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"blizzard_count"		"10"
+			}
+			"24"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"blizzard_interval"		"0.5"
+			}		
+			"25"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"blizzard_dmg"			"180"
+			}
+			"26"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"blizzard_slow"			"0.5"
+			}
+			"27"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"debuff_slow"			"-60"
+			}
+			"28"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"fireship_dmg"			"250"
+			}
+			"29"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"fireship_aoe"			"300.0"
+			}
+			"30"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"fireship_count"		"10"
+			}
+			"31"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"fireship_burn_dmg"		"100"
+			}
+			"32"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"fireship_burn_duration"	"5.0"
+			}
+			"33"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cooldown"				"240.0"
+			}
+			"34"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"lasthit_dmg"				"800"
+			}
+			
+		}
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{ 
+				"ScriptFile"	"abilities/drake/drake_abilities"
+				"Function"		"OnAbilityCastCheck"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{ 
+				"ScriptFile"	"abilities/drake/drake_abilities"
+				"Function"		"OnGoldenWildHuntIIStart"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_golden_wild_hunt_slow"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Duration"			"%bomb_slow"
+				"Properties"
+				{
+				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow_debuff" 
+				}
+			}
+			"modifier_blizzard_slow"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Duration"			"%blizzard_slow"
+				"Properties"
+				{
+				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%debuff_slow" 
+				}
+			}
+			"modifier_golden_wild_hunt_cooldown"
+			{
+				"IsDebuff"			"1"
+				"IsPurgable"		"0"
+				"Duration"			"%cooldown"
+				"TextureName" 		"custom/drake/drake_combo_golden_wild_hunt_2"
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			}
+			"modifier_golden_wild_hunt_burn"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Duration"			"%fireship_burn_duration"
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"ThinkInterval"  "0.2"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/drake/drake_abilities"
+						"Function"		"FireShipBurn"
+					}
+				}
+			}
+			"modifier_golden_wild_hunt_check"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Duration"			"6.0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/drake/drake_abilities"
+						"Function"		"OnGoldenWildHuntDestroy"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/drake/drake_abilities"
+						"Function"		"OnGoldenWildHuntDie"
+					}
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Francis Drake Combo : Golden Wild Hunt II : Temeroso el Drago (R) (Upgraded)
+	//=================================================================================================================
+	"drake_combo_golden_wild_hunt_upgrade"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/drake/drake_combo_golden_wild_hunt_2"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_6"
+		"AnimationPlaybackRate" 		"2.0"
+		"MaxLevel"						"1"
+		"RequiredLevel"					"26"
+
+		"AbilityCastPoint"              "0.5"
+        "AbilityManaCost"               "800"
+        "AbilityCooldown"               "240"
+        "AbilityCastRange"              "1500"
+        "AOERadius"						"%aoe"
+
+		"precache"
+		{
+			"model"						"models/drake/drake_wild_hunt.vmdl"
+			"particle"					"particles/units/heroes/hero_gyrocopter/gyro_guided_missile_explosion.vpcf"
+			"particle"					"particles/econ/courier/courier_mechjaw/mechjaw_death_sparks.vpcf"
+			"particle"					"particles/units/heroes/hero_snapfire/hero_snapfire_base_attack.vpcf"
+			"particle"					"particles/units/heroes/hero_snapfire/hero_snapfire_base_attack_core_b.vpcf"
+			"particle"					"particles/units/heroes/hero_snapfire/hero_snapfire_landing_page_shotgun_directional.vpcf"
+			"particle"					"particles/custom/drake/drake_red_laser.vpcf"
+			"particle"					"particles/custom/drake/drake_yellow_laser.vpcf"
+			"particle"					"particles/custom/drake/drake_blue_laser.vpcf"
+			"particle"					"particles/custom/drake/drake_golden_hind.vpcf"
+			"particle"					"particles/custom/drake/drake_big_ship.vpcf"
+			"particle"					"particles/custom/drake/drake_cannon_blast.vpcf"
+			"particle"					"particles/custom/drake/drake_cannon_bullet.vpcf"
+			"particle"					"particles/custom/drake/drake_fireship_model.vpcf"
+			"particle"					"particles/custom/drake/drake_fireship_test.vpcf"
+			"particle"					"particles/units/heroes/hero_crystalmaiden/maiden_freezing_field_snow.vpcf"
+			"particle"					"particles/econ/items/zeus/lightning_weapon_fx/zuus_lb_cfx_il.vpcf"
+			"particle"					"particles/units/heroes/hero_zuus/zuus_lightning_bolt.vpcf"
+			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_zuus.vsndevts"
+			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_crystalmaiden.vsndevts"
+			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_techies.vsndevts"
+			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_gyrocopter.vsndevts"
+			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_snapfire.vsndevts"
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"			"1.0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"aoe"					"1000.0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bomb_count"			"5"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bomb_interval"			"0.9"
+			}	
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bomb_aoe"				"250.0"
+			}	
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bomb_dmg"				"250"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bomb_speed"			"1800"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow_debuff"			"-30"
+			}
+			"10"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bomb_slow"				"0.5"
+			}
+			"11"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cannon_aoe"			"400.0"
+			}
+			"12"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cannon_count"			"5"
+			}
+			"13"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cannon_interval"		"1.0"
+			}		
+			"14"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cannon_dmg"			"450"
+			}
+			"15"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cannon_stun"			"1.0"
+			}
+			"16"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cannon_speed"			"2500"
+			}
+			
+			"17"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"lightning_aoe"			"250.0"
+			}
+			"18"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"lightning_count"		"10"
+			}
+			"19"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"lightning_interval"	"0.5"
+			}		
+			"20"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"lightning_dmg"			"250"
+			}
+			"21"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"lightning_stun"		"0.2"
+			}
+			"22"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"blizzard_aoe"			"200.0"
+			}
+			"23"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"blizzard_count"		"10"
+			}
+			"24"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"blizzard_interval"		"0.5"
+			}		
+			"25"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"blizzard_dmg"			"180"
+			}
+			"26"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"blizzard_slow"			"0.5"
+			}
+			"27"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"debuff_slow"			"-60"
+			}
+			"28"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"fireship_dmg"			"250"
+			}
+			"29"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"fireship_aoe"			"300.0"
+			}
+			"30"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"fireship_count"		"10"
+			}
+			"31"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"fireship_burn_dmg"		"100"
+			}
+			"32"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"fireship_burn_duration"	"5.0"
+			}
+			"33"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cooldown"				"240.0"
+			}
+			"34"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"lasthit_dmg"				"800"
+			}
+		}
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{ 
+				"ScriptFile"	"abilities/drake/drake_abilities"
+				"Function"		"OnAbilityCastCheck"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{ 
+				"ScriptFile"	"abilities/drake/drake_abilities"
+				"Function"		"OnGoldenWildHuntIIStart"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_golden_wild_hunt_slow"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Duration"			"%bomb_slow"
+				"Properties"
+				{
+				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow_debuff" 
+				}
+			}
+			"modifier_blizzard_slow"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Duration"			"%blizzard_slow"
+				"Properties"
+				{
+				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%debuff_slow" 
+				}
+			}
+			"modifier_golden_wild_hunt_cooldown"
+			{
+				"IsDebuff"			"1"
+				"IsPurgable"		"0"
+				"Duration"			"%cooldown"
+				"TextureName" 		"custom/drake/drake_combo_golden_wild_hunt_2"
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			}
+			"modifier_golden_wild_hunt_burn"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Duration"			"%fireship_burn_duration"
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"ThinkInterval"  "0.2"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/drake/drake_abilities"
+						"Function"		"FireShipBurn"
+					}
+				}
+			}
+			"modifier_golden_wild_hunt_check"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Duration"			"6.1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/drake/drake_abilities"
+						"Function"		"OnGoldenWildHuntDestroy"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/drake/drake_abilities"
+						"Function"		"OnGoldenWildHuntDie"
+					}
+				}
+			}
+		}
+	}
+}

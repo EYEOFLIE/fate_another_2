@@ -1,0 +1,287 @@
+
+	//====================================
+		//	Apocrypha - Raging Cat
+		//====================================
+		"npc_dota_hero_ursa"		"Atalanta Alter"
+
+		"npc_dota_hero_ursa_hype"	""
+		"npc_dota_hero_ursa_bio"	""
+
+		"DOTA_Tooltip_Ability_atalanta_roar"	"<font color='#58ACFA'>Roar</font>"
+		"DOTA_Tooltip_Ability_atalanta_roar_Description"	"Roars loudly, slowing down all the enemies in the path, damaging, pulling and applying stacks of <font color='#FFFF28'>Curse of the Calydonian Boar</font>."
+		"DOTA_Tooltip_Ability_atalanta_roar_base_damage"	"Damage:"
+		"DOTA_Tooltip_Ability_atalanta_roar_cast_range"	"Roar cast range:"
+		"DOTA_Tooltip_Ability_atalanta_roar_distance"	"Roar distance:"
+		"DOTA_Tooltip_Ability_atalanta_roar_width"	"Roar width:"
+		"DOTA_Tooltip_Ability_atalanta_roar_ms_slow"	"%MS slow:"
+		"DOTA_Tooltip_Ability_atalanta_roar_as_slow"	"ASPD slow:"
+		"DOTA_Tooltip_Ability_atalanta_roar_duration"	"Slow duration:"
+		//"DOTA_Tooltip_Ability_atalanta_roar_duration_locked"	"Lock duration:"
+		"DOTA_Tooltip_Ability_atalanta_roar_base_stacks"	"Curse stack count:"
+
+		"DOTA_Tooltip_Ability_atalanta_roar_upgrade"	"<font color='#9FFFCC'>Roar</font>"
+		"DOTA_Tooltip_Ability_atalanta_roar_upgrade_Description"	"Roars loudly, slowing down all the enemies in the path, damaging, pulling and applying stacks of <font color='#FFFF28'>Curse of the Calydonian Boar</font>. Deals more echoing damage based on amount of enemies hit."
+		"DOTA_Tooltip_Ability_atalanta_roar_upgrade_base_damage"	"Damage:"
+		"DOTA_Tooltip_Ability_atalanta_roar_upgrade_echo_damage"	"Echo damage:"
+		"DOTA_Tooltip_Ability_atalanta_roar_upgrade_cast_range"	"Roar cast range:"
+		"DOTA_Tooltip_Ability_atalanta_roar_upgrade_distance"	"Roar distance:"
+		"DOTA_Tooltip_Ability_atalanta_roar_upgrade_width"	"Roar width:"
+		"DOTA_Tooltip_Ability_atalanta_roar_upgrade_ms_slow"	"%MS slow:"
+		"DOTA_Tooltip_Ability_atalanta_roar_upgrade_as_slow"	"ASPD slow:"
+		"DOTA_Tooltip_Ability_atalanta_roar_upgrade_duration"	"Slow duration:"
+		"DOTA_Tooltip_Ability_atalanta_roar_upgrade_base_stacks"	"Curse stack count:"
+
+		"DOTA_Tooltip_Ability_atalanta_ora"	"Attack of the Beast"
+		"DOTA_Tooltip_Ability_atalanta_ora_Description"	"Atalanta enters enraged state, significantly increasing her attack speed, attack range and dealing additional magic damage with her attacks.\nDeals 1 additional damage per curse stack."
+		"DOTA_Tooltip_Ability_atalanta_ora_duration"	"Duration:"
+		"DOTA_Tooltip_Ability_atalanta_ora_base_damage"	"Base damage:"
+		"DOTA_Tooltip_Ability_atalanta_ora_as_bonus"	"ASPD bonus:"
+		"DOTA_Tooltip_Ability_atalanta_ora_attack_range_bonus"	"Attack range bonus:"
+		//"DOTA_Tooltip_Ability_atalanta_ora_base_attack_count" "Base attack count:"
+		//"DOTA_Tooltip_Ability_atalanta_ora_attack_rate"	"Attack rate:"
+		//"DOTA_Tooltip_Ability_atalanta_ora_total_damage"	"%Outgoing damage:"
+		//"DOTA_Tooltip_Ability_atalanta_ora_reduce_damage"	"%Incoming damage:"
+		//"DOTA_Tooltip_Ability_atalanta_ora_radius"	"Attack search radius:"
+
+		"DOTA_Tooltip_Ability_atalanta_pull"	"Hunter's Curse"
+		"DOTA_Tooltip_Ability_atalanta_pull_Description"	"Atalanta tries to use Mana Burst. Though she does not have enough mana to use it properly, her power is enough to annihilate some air. Deals damage to all enemies in radius, slows and curses them."
+		"DOTA_Tooltip_Ability_atalanta_pull_radius" "Radius:"
+		"DOTA_Tooltip_Ability_atalanta_pull_damage" "Damage:"
+		"DOTA_Tooltip_Ability_atalanta_pull_slow"	"%MS slow:"
+		"DOTA_Tooltip_Ability_atalanta_pull_slow_dur"	"Slow duration:"
+		"DOTA_Tooltip_Ability_atalanta_pull_curse_stacks"	"Curse stack count:"
+
+		"DOTA_Tooltip_Ability_atalanta_jump"	"Crossing Arcadia"
+		"DOTA_Tooltip_Ability_atalanta_jump_Description"	"Atalanta leaps to the target location. Deals damage and curses targets at the destination point."
+		"DOTA_Tooltip_Ability_atalanta_jump_damage"	"Damage:"
+		"DOTA_Tooltip_Ability_atalanta_jump_radius"	"Radius:"
+		"DOTA_Tooltip_Ability_atalanta_jump_curse_stacks"	"Curse stack count:"
+
+		"DOTA_Tooltip_Ability_atalanta_curse"	"<font color='#58ACFA'>Curse of the Calydonian Boar</font>"
+		"DOTA_Tooltip_Ability_atalanta_curse_Description"	"<font color='#58ACFA'>PASSIVE</font>: By attacking or by using abilities Atalanta applies <font color='#FFFF28'>Curse of the Calydonian Boar</font>. Each stack of curse increases damage dealt to the target, double if Atalanta is the source of the damage. Curse stacks are applied after all other actions ability or attack induces.\n<font color='#58ACFA'>ACTIVE</font>: after 5 seconds of chanting all curse stacks on the enemies will explode, dealing magic damage. Explosion damage is not amplified by Curse damage amplify.\nAtalanta remains active while chanting."
+		"DOTA_Tooltip_Ability_atalanta_curse_duration"	"Curse duration:"
+		"DOTA_Tooltip_Ability_atalanta_curse_amplify_per_stack"	"%Damage amplify per stack:"
+		"DOTA_Tooltip_Ability_atalanta_curse_detonate_damage"	"Active damage per stack:"		
+		"DOTA_Tooltip_Ability_atalanta_curse_max_stack"	"Max stack:"
+
+		"DOTA_Tooltip_Ability_atalanta_curse_upgrade"	"<font color='#9FFFCC'>Curse of the Calydonian Boar</font>"
+		"DOTA_Tooltip_Ability_atalanta_curse_upgrade_Description"	"<font color='#58ACFA'>PASSIVE</font>: By attacking or by using abilities Atalanta applies <font color='#FFFF28'>Curse of the Calydonian Boar</font>. Each stack of curse increases damage dealt to the target, double if Atalanta is the source of the damage. Curse stacks are applied after all other actions ability or attack induces. If a target has a certain stacks or more, Atalanta will gain vision of the target. \n<font color='#58ACFA'>ACTIVE</font>: after 5 seconds of chanting all curse stacks on the enemies will explode, dealing magic damage. Explosion damage is not amplified by Curse damage amplify.\nAtalanta remains active while chanting.\nCannot be reset."
+		"DOTA_Tooltip_Ability_atalanta_curse_upgrade_duration"	"Curse duration:"
+		"DOTA_Tooltip_Ability_atalanta_curse_upgrade_amplify_per_stack"	"%Damage amplify per stack:"
+		"DOTA_Tooltip_Ability_atalanta_curse_upgrade_detonate_damage"	"Active damage per stack:"		
+		"DOTA_Tooltip_Ability_atalanta_curse_upgrade_max_stack"	"Max stack:"
+		"DOTA_Tooltip_Ability_atalanta_curse_upgrade_vision"	"Stack for vision:"	
+
+
+		"DOTA_Tooltip_Ability_atalanta_tauropolos_alter" "<font color='#58ACFA'>Tauropolos - Arrow Rain</font>"
+		"DOTA_Tooltip_Ability_atalanta_tauropolos_alter_Description"	"Atalanta causes rain of arrows to attack her current location. Each arrow deals damage and curses enemies in a small radius.\nOnly one instance of Tauropolos - Arrow Rain can exist at time and it can't be re-casted while previous still exists.\nStops if Atalanta dies."
+		"DOTA_Tooltip_Ability_atalanta_tauropolos_alter_duration"	"Duration:"
+		"DOTA_Tooltip_Ability_atalanta_tauropolos_alter_damage"	"Damage per arrow:"
+		"DOTA_Tooltip_Ability_atalanta_tauropolos_alter_max_dist"	"Radius:"
+		"DOTA_Tooltip_Ability_atalanta_tauropolos_alter_explosion_radius"	"Arrow damage radius:"
+		"DOTA_Tooltip_Ability_atalanta_tauropolos_alter_curse_stacks"	"Curse stack count per arrow:"
+
+		"DOTA_Tooltip_Ability_atalanta_tauropolos_alter_upgrade" "<font color='#9FFFCC'>Tauropolos - Arrow Rain</font>"
+		"DOTA_Tooltip_Ability_atalanta_tauropolos_alter_upgrade_Description"	"Atalanta causes rain of arrows to attack her current location. Each arrow deals damage and curses enemies in a small radius.\nOnly one instance of Tauropolos - Arrow Rain can exist at time and it can't be re-casted while previous still exists.\nStops if Atalanta dies."
+		"DOTA_Tooltip_Ability_atalanta_tauropolos_alter_upgrade_duration"	"Duration:"
+		"DOTA_Tooltip_Ability_atalanta_tauropolos_alter_upgrade_damage"	"Damage per arrow:"
+		"DOTA_Tooltip_Ability_atalanta_tauropolos_alter_upgrade_max_dist"	"Radius:"
+		"DOTA_Tooltip_Ability_atalanta_tauropolos_alter_upgrade_explosion_radius"	"Arrow damage radius:"
+		"DOTA_Tooltip_Ability_atalanta_tauropolos_alter_upgrade_curse_stacks"	"Curse stack count per arrow:"
+
+		"DOTA_Tooltip_Ability_atalanta_skia"	"Combo - Tauropolos Skia Thermokrasia"
+		"DOTA_Tooltip_Ability_atalanta_skia_Description"	"<font color='#58ACFA'>Combo Requirement : 25 all stats</font>\n<font color='#58ACFA'>Combo Sequence : D -> E in 4 seconds.</font>\nAtalanta absorbs Tauropolos into her own body, launching herself to the target location as a ballistic missile. Opponents damaged by this Noble Phantasm will be cursed powerfully."
+		"DOTA_Tooltip_Ability_atalanta_skia_damage"	"Damage:"
+		"DOTA_Tooltip_Ability_atalanta_skia_radius"	"Radius:"
+		"DOTA_Tooltip_Ability_atalanta_skia_curse_stacks"	"Curse stack count:"
+		"DOTA_Tooltip_Ability_atalanta_skia_fly_duration"	"Fly duration:"
+
+		"DOTA_Tooltip_Ability_atalanta_evolution_attribute"	"<font color='#9FFFCC'>Attribute: Self-Evolution</font>"
+		"DOTA_Tooltip_Ability_atalanta_evolution_attribute_Description"	"Atalanta now heals herself with damages by 10% of magical damage she dealt.\n<font color='#58ACFA'>Crossing Arcadia</font>: Stun all enemies in radius for 0.5 seconds.\n <font color='#58ACFA'>Tauropolos Skia Thermocrasia</font>: Stun all enemies in radius for 0.5 seconds."
+
+		"DOTA_Tooltip_Ability_atalanta_tornado_attribute"	"<font color='#9FFFCC'>Attribute: Beast of the hunt</font>"
+		"DOTA_Tooltip_Ability_atalanta_tornado_attribute_Description"	"Atalanta gains <font color='#58ACFA'>Beast of the hunt</font>.\n <font color='#58ACFA'>Beast of the hunt</font>: Atalanta's base attack pull target towards her. Increased from curse stack amount on target. \n<font color='#58ACFA'>Crossing Arcadia</font>: pulls enemies towards Atalanta and applies extra curse stacks.\n<font color='#58ACFA'>Tauropolos Skia Thermokrasia</font>: pulls enemies in radius towards Atalanta.\n<font color='#58ACFA'>Roar</font>: pulls its targets by the bonus distance equal to the Curse stacks on them and applies extra curse stacks."
+		"DOTA_Tooltip_Ability_atalanta_tornado_attribute_e_pull"	"Crossing Arcadia pull:"
+		"DOTA_Tooltip_Ability_atalanta_tornado_attribute_e_extra_curse"	"Crossing Arcadia bonus curse:"
+		"DOTA_Tooltip_Ability_atalanta_tornado_attribute_q_pull"	"Roar pull:"
+		"DOTA_Tooltip_Ability_atalanta_tornado_attribute_q_extra_curse"	"Roar bonus curse:"
+		"DOTA_Tooltip_Ability_atalanta_tornado_attribute_combo_pull"	"Tauropolos Skia Thermokrasia pull:"
+		"DOTA_Tooltip_Ability_atalanta_tornado_attribute_attack_pull"	"Attacks pull:"
+		"DOTA_Tooltip_Ability_atalanta_tornado_attribute_attack_pull_from_curse"	"Attacks bonus pull from curse:"
+
+		"DOTA_Tooltip_Ability_atalanta_passive_beast"	"<font color='#9FFFCC'> Beast of the hunt</font>"
+		"DOTA_Tooltip_Ability_atalanta_passive_beast_Description"	"\n<font color='#58ACFA'>PASSIVE</font>: Atalanta's base attack pull target towards her. Increased from curse stack amount on target. \n<font color='#58ACFA'>Crossing Arcadia</font>: pulls enemies towards Atalanta and applies extra curse stacks.\n<font color='#58ACFA'>Tauropolos Skia Thermokrasia</font>: pulls enemies in radius towards Atalanta.\n<font color='#58ACFA'>Roar</font>: pulls its targets by the bonus distance equal to the Curse stacks on them and applies extra curse stacks."
+		"DOTA_Tooltip_Ability_atalanta_passive_beast_e_pull"	"Crossing Arcadia pull:"
+		"DOTA_Tooltip_Ability_atalanta_passive_beast_e_extra_curse"	"Crossing Arcadia bonus curse:"
+		"DOTA_Tooltip_Ability_atalanta_passive_beast_q_pull"	"Roar pull:"
+		"DOTA_Tooltip_Ability_atalanta_passive_beast_q_extra_curse"	"Roar bonus curse:"
+		"DOTA_Tooltip_Ability_atalanta_passive_beast_combo_pull"	"Tauropolos Skia Thermokrasia pull:"
+		"DOTA_Tooltip_Ability_atalanta_passive_beast_attack_pull"	"Attacks pull:"
+		"DOTA_Tooltip_Ability_atalanta_passive_beast_attack_pull_from_curse"	"Attacks bonus pull from curse:"
+
+		"DOTA_Tooltip_Ability_atalanta_vision_attribute"	"<font color='#9FFFCC'>Attribute: Beastly Enchancement</font>"
+		"DOTA_Tooltip_Ability_atalanta_vision_attribute_Description"	"<font color='#58ACFA'>Curse of the Calydonian Boar</font>: If Atalanta is alive, position each enemy with 10 or more Curse stacks will be revealed for Atalanta and her team automatically. Curse explosion will deal additional damage per stack. Gain bonus duration."
+		"DOTA_Tooltip_Ability_atalanta_vision_attribute_extra_curse_damage"	"Extra damage:"
+		"DOTA_Tooltip_Ability_atalanta_vision_attribute_curse_vision"	"Stack for vision:"
+		"DOTA_Tooltip_Ability_atalanta_vision_attribute_curse_bonus_duration"	"Bonus duration:"
+		
+		"DOTA_Tooltip_Ability_atalanta_moon_attribute"	"<font color='#9FFFCC'>Attribute: Cursed Moon</font>"
+		"DOTA_Tooltip_Ability_atalanta_moon_attribute_Description"	"<font color='#58ACFA'>Roar</font>: Deals bonus damage and applies bonus Curse stack per each unit in its radius.\n<font color='#58ACFA'>Tauropolos - Arrow Rain</font>: applies more Curse stacks per impact and deals additional damage per impact."
+		"DOTA_Tooltip_Ability_atalanta_moon_attribute_roar_damage"	"Roar bonus damage per unit:"
+		"DOTA_Tooltip_Ability_atalanta_moon_attribute_tauropolos_curse"	"Tauropolos bonus curse stacks:"
+		"DOTA_Tooltip_Ability_atalanta_moon_attribute_tauropolos_bonus_damage"	"Tauropolos bonus damage per arrow:"
+
+        //====================================   MODIFIERS   ====================================
+
+		"DOTA_Tooltip_modifier_atalanta_skia_cd"															"Tauropolos Skia Thermocrasia Cooldown"
+
+		"DOTA_Tooltip_modifier_atalanta_ora"															"Attack of the beast buff"
+		"DOTA_Tooltip_modifier_atalanta_ora_Description"												"Being enraged."
+
+		"DOTA_Tooltip_modifier_atalanta_ora"															"Attack of the beast buff"
+		"DOTA_Tooltip_modifier_atalanta_ora_Description"												"Being enraged."
+
+		"DOTA_Tooltip_modifier_atalanta_curse"															"Curse of the Calydonian Boar"
+		"DOTA_Tooltip_modifier_atalanta_curse_Description"												"Taking amplified damage, might take burst damage."
+
+		"DOTA_Tooltip_modifier_roar_slow"															"Slowed from roar"
+		"DOTA_Tooltip_modifier_roar_slow_Description"												"Slowed."
+
+
+		//====================================
+        //      Senji Muramasa
+        //====================================
+        "npc_dota_hero_kunkka"             "Senji Muramasa"
+        "npc_dota_hero_kunkka_summon"		"Servant <font color='#58ACFA'>Senji Muramasa</font> has been summoned."
+        "npc_dota_hero_kunkka_enable_combo"	"Enable Combo: Tsumukari Muramasa - Baseless Bladeworks"
+
+        ////////////////// INNATE ///////////////////
+
+        "DOTA_Tooltip_Ability_muramasa_chant"			"<font color='#FFFFFF'>Tsumukari Muramasa - Chant</font>"
+        "DOTA_Tooltip_ability_muramasa_chant_Description"		"Chants for a few seconds, being <font color='#FF3399'>stunned</font> and <font color='#FF3399'>revoke</font> for a while and gain a stack of <font color='#FFFF28'>Tsumukari Muramasa - Chant</font>. When having 4 chants will turn into <font color='#FFFF28'>Tsumukari Muramasa</font>, gaining bonuses on abilities and able to cast your ultimate. When turning into <font color='#FFFF28'>Tsumukari Muramasa</font>, this ability swaps into <font color='#9FFFCC'>Tengu kiri</font>. \n\n<font color='#9FFFCC'>Upgradable with Attribute: Blaze</font>."
+        "DOTA_Tooltip_ability_muramasa_chant_duration"			"CHANT DURATION:"
+        "DOTA_Tooltip_ability_muramasa_chant_chant_duration"			"TSUMUKARI MURAMASA CHANT DURATION:"
+        "DOTA_Tooltip_ability_muramasa_chant_marble_duration"			"TSUMUKARI MURAMASA DURATION:"
+
+        "DOTA_Tooltip_Ability_muramasa_chant_upgrade"			"<font color='#9FFFCC'>Tsumukari Muramasa - Chant</font>"
+        "DOTA_Tooltip_ability_muramasa_chant_upgrade_Description"		"Chants and gain a stack of <font color='#FFFF28'>Tsumukari Muramasa - Chant</font> granting movespeed. When having 4 chants will turn into <font color='#FFFF28'>Tsumukari Muramasa</font>, gaining bonuses on abilities and able to cast your ultimate and reducing it's cooldown if it is on cooldown. When turning into <font color='#FFFF28'>Tsumukari Muramasa</font>, this ability swaps into <font color='#9FFFCC'>Tengukiri</font> grants bonus magic resist and movespeed."
+        "DOTA_Tooltip_ability_muramasa_chant_upgrade_duration"			"CHANT DURATION:"
+        "DOTA_Tooltip_ability_muramasa_chant_upgrade_chant_duration"			"TSUMUKARI MURAMASA CHANT DURATION:"
+        "DOTA_Tooltip_ability_muramasa_chant_upgrade_marble_duration"			"TSUMUKARI MURAMASA DURATION:"
+        "DOTA_Tooltip_ability_muramasa_chant_upgrade_bonus_speed"				"BONUS MOVESPEED PER STACK:"
+        "DOTA_Tooltip_ability_muramasa_chant_upgrade_bonus_mr"					"BONUS MAGIC RESIST:"
+        "DOTA_Tooltip_ability_muramasa_chant_upgrade_cd_reduce"					"CD REDUCE:"
+
+        "DOTA_Tooltip_Ability_muramasa_tengu"			"<font color='#9FFFCC'>Tengu Kiri</font>"
+        "DOTA_Tooltip_ability_muramasa_tengu_Description"		"Summons a bunch of swords around, flying towards the area dealing damage when hitting an enemy."
+        "DOTA_Tooltip_ability_muramasa_tengu_Lore"		"Shares level with <font color='#9FFFCC'>Tsumukari Muramasa - Chant</font>."
+        "DOTA_Tooltip_ability_muramasa_damage"			"DAMAGE PER SWORD:"
+        "DOTA_Tooltip_ability_muramasa_swords"			"SWORD AMOUNT:"
+        "DOTA_Tooltip_ability_muramasa_radius"			"RADIUS:"
+        "DOTA_Tooltip_ability_muramasa_range"			"FLIGHT RANGE:"
+
+        "DOTA_Tooltip_Ability_muramasa_dash"			"<font color='#9FFFCC'>Sword Dance</font>"
+        "DOTA_Tooltip_ability_muramasa_dash_Description"		"Dash towards a target point, slashing an area upon arrival dealing damage. With <font color='#FFFF28'>Tsumukari Muramasa</font>, gain extra dash range."
+        "DOTA_Tooltip_ability_muramasa_damage_radius"			"DAMAGE RADIUS:"
+        "DOTA_Tooltip_ability_muramasa_damage"			"DAMAGE:"
+        "DOTA_Tooltip_ability_muramasa_dash_range"			"DASH:"
+        "DOTA_Tooltip_ability_muramasa_range_marble"			"DASH RANGE:"
+
+        "DOTA_Tooltip_Ability_muramasa_cut"			"<font color='#9FFFCC'>Kesi Giri</font>"
+        "DOTA_Tooltip_ability_muramasa_cut_Description"		"Jumps, moving to target position while doing a heavy downward slash dealing damage in a radius. With <font color='#FFFF28'>Tsumukari Muramasa</font>, an extra aftershock will occer on landing spot dealing minor extra damage."
+        "DOTA_Tooltip_ability_muramasa_cut_cast_delay"			"CAST DELAY:"
+        "DOTA_Tooltip_ability_muramasa_cut_damage"			"DAMAGE:"
+        "DOTA_Tooltip_ability_muramasa_cut_aoe"			"RADIUS:"
+        "DOTA_Tooltip_ability_muramasa_cut_aftershock_delay"			"AFTERSHOCK DELAY:"
+        "DOTA_Tooltip_ability_muramasa_cut_aftershock_damage"			"AFTERSHOCK DAMAGE:"
+        "DOTA_Tooltip_ability_muramasa_cut_range"			"AFTERSHOCK RANGE:"
+
+        "DOTA_Tooltip_Ability_muramasa_d"			"<font color='#9FFFCC'>Unsheathe</font>"
+        "DOTA_Tooltip_ability_muramasa_d_Description"		"<font color='#58ACFA'>ACTIVE</font>: Senji unsheathe his blade gaining bonus armor and movement speed. <font color='#58ACFA'>PASSIVE</font>: Grants bonus damage to <font color='#9FFFCC'>Tengu Kiri</font> and <font color='#9FFFCC'>Kesi Giri</font>."
+        "DOTA_Tooltip_ability_muramasa_d_gain_armor"			"BONUS ARMOR:"
+        "DOTA_Tooltip_ability_muramasa_d_gain_movespeed"			"BONUS MOVESPEED:"
+        "DOTA_Tooltip_ability_muramasa_d_buff_duration"			"BUFF DURATION:"
+        "DOTA_Tooltip_ability_muramasa_d_bonus_e_damage_passive"			"KESI GIRI BONUS DAMAGE:"
+        "DOTA_Tooltip_ability_muramasa_d_bonus_tengu_damage_passive"			"TENGU KIRI BONUS DAMAGE:"
+
+        "DOTA_Tooltip_Ability_muramasa_r"			"<font color='#FFFFFF'>Tsumukari Muramasa</font>"
+        "DOTA_Tooltip_ability_muramasa_r_Description"		"<font color='#9FFFCC'>Requires <font color='#FFFF28'>Tsumukari Muramasa</font></font>.\n Charges up and do a swift slash into the ground, dealing pure damage to enemies in a line, while also  <font color='#FF3399'>slowing</font> and <font color='#FF3399'>silencing</font> them. then after a short delay, explode and deal additional magical damage to enemies in line. \n\n<font color='#9FFFCC'>Upgradable with Attribute: Tameshi Mono</font>."
+        "DOTA_Tooltip_ability_muramasa_r_cast_delay"			"CAST DELAY:"
+        "DOTA_Tooltip_ability_muramasa_r_damage_pure"			"PURE DAMAGE:"
+        "DOTA_Tooltip_ability_muramasa_r_damage_magical"			"MAGICAL DAMAGE:"
+        "DOTA_Tooltip_ability_muramasa_r_delay_explosion"			"EXPLOSION DELAY:"
+        "DOTA_Tooltip_ability_muramasa_r_slow"			"%SLOW AMOUNT:"
+        "DOTA_Tooltip_ability_muramasa_r_debuff_duration"			"SLOW DURATION:"
+        "DOTA_Tooltip_ability_muramasa_r_silence"			"SILENCE DURATION:"
+        "DOTA_Tooltip_ability_muramasa_r_range"			"RANGE:"
+        "DOTA_Tooltip_ability_muramasa_r_width"			"WIDTH:"
+
+        "DOTA_Tooltip_Ability_muramasa_r_upgrade"			"<font color='#9FFFCC'>Tsumukari Muramasa</font>"
+        "DOTA_Tooltip_ability_muramasa_r_upgrade_Description"		"<font color='#9FFFCC'>When cast without <font color='#FFFF28'>Tsumukari Muramasa</font>, will take a portion of your current health and deal less damage</font>.\n Charges up and do a swift slash into the ground, dealing pure damage to enemies in a line, while also <font color='#FF3399'>slowing</font> and <font color='#FF3399'>silencing</font> them. then after a short delay, explode and deal additional magical damage to enemies in line. This ability deals bonus to servants with reality marbles. When cast with <font color='#FFFF28'>Tsumukari Muramasa</font> gains bonus damage."
+        "DOTA_Tooltip_ability_muramasa_r_upgrade_cast_delay"			"CAST DELAY:"
+        "DOTA_Tooltip_ability_muramasa_r_upgrade_damage_pure"			"PURE DAMAGE:"
+        "DOTA_Tooltip_ability_muramasa_r_upgrade_upgrade_damage_magical"			"MAGICAL DAMAGE:"
+        "DOTA_Tooltip_ability_muramasa_r_upgrade_delay_explosion"			"EXPLOSION DELAY:"
+        "DOTA_Tooltip_ability_muramasa_r_upgrade_slow"			"%SLOW AMOUNT:"
+        "DOTA_Tooltip_ability_muramasa_r_upgrade_debuff_duration"			"SLOW DURATION:"
+        "DOTA_Tooltip_ability_muramasa_r_upgrade_silence"			"SILENCE DURATION:"
+        "DOTA_Tooltip_ability_muramasa_r_upgrade_range"			"RANGE:"
+        "DOTA_Tooltip_ability_muramasa_r_upgrade_width"			"WIDTH:"
+        "DOTA_Tooltip_ability_muramasa_r_upgrade_bonus_isekai"			"%BONUS DAMAGE TO MARBLE HEROES:"
+        "DOTA_Tooltip_ability_muramasa_r_upgrade_max_health_cost"			"%CURRENT HEALTH DAMAGE:"
+        "DOTA_Tooltip_ability_muramasa_r_upgrade_damage_penalty"			"%DAMAGE PENALTY:"
+        "DOTA_Tooltip_ability_muramasa_r_upgrade_damage_bonus_marble"			"%BONUS DAMAGE WITH TSUMUKARI MURAMASA:"
+
+        "DOTA_Tooltip_Ability_muramasa_combo"			"<font color='#9FFFCC'>Tsumukari Muramasa - Baseless Blade Works</font>"
+        "DOTA_Tooltip_ability_muramasa_combo_Description"		"<font color='#FF04EF'>Combo Requirements: 25 or more in all stats, not having <font color='#FFFF28'>Tsumukari Muramasa</font> or <font color='#FFFF28'>Tsumukari Muramasa - Chant</font>.</font>\n<font color='#FF04EF'>Combo Sequence: D -> Q in 5 seconds.</font>\n, Become invulnerable for a long delay, chanting. After chanting gains <font color='#FFFF28'>Tsumukari Muramasa - Baseless Blade Works</font>, gaining movement speed, magic resistance, reduced <font color='#9FFFCC'>Tsumukari Muramasa</font> cooldown. <font color='#9FFFCC'>Tsumukari Muramasa</font> also gains extra range when cast."
+        "DOTA_Tooltip_ability_muramasa_combo_chant_duration"			"CHANT DURATION:"
+        "DOTA_Tooltip_ability_muramasa_combo_combo_duration"			"BUFF DURATION:"
+        "DOTA_Tooltip_ability_muramasa_combo_ult_cd"			"REDUCED COOLDOWN:"
+        "DOTA_Tooltip_ability_muramasa_combo_bonus_speed_x4"			"BONUS MOVE SPEED:"
+        "DOTA_Tooltip_ability_muramasa_combo_bonus_mr"			"BONUS MAGIC RESIST:"
+
+        "DOTA_Tooltip_Ability_muramasa_f"			"<font color='#9FFFCC'>Karmic Vision</font>"
+        "DOTA_Tooltip_ability_muramasa_f_Description"		"<font color='#58ACFA'>PASSIVE</font>: When not on cooldown, this passive grants an extra bonus pure damage to <font color='#9FFFCC'>Tsumukari Muramasa</font> when cast. This ability also reduces <font color='#9FFFCC'>Tsumukari Muramasa</font> cooldown and refreshes it's own cooldown whenever you get a kill."
+        "DOTA_Tooltip_ability_muramasa_f_bonus_pure_damage"			"BONUS PURE DAMAGE:"
+        "DOTA_Tooltip_ability_muramasa_f_cd_reduce_on_kill"			"COOLDOWN REDUCTION:"
+
+        "DOTA_Tooltip_Ability_muramasa_tameshi_mono"			"<font color='#9FFFCC'>Attribute: Tameshi Mono</font>"
+        "DOTA_Tooltip_ability_muramasa_tameshi_mono_Description"		"<font color='#58ACFA'>Tsumukari Muramasa</font>: Gain extra range, deals bonus damage when cast with <font color='#FFFF28'>Tsumukari Muramasa</font>, deals extra damage to servants with reality marble and, can now be cast without <font color='#FFFF28'>Tsumukari Muramasa</font> dealing less damage, and costing a percentage of the caster current health."
+        "DOTA_Tooltip_ability_muramasa_tameshi_mono_r_bonus_range"			"BONUS RANGE:"
+        "DOTA_Tooltip_ability_muramasa_tameshi_mono_bonus_to_isekai"			"%BONUS DAMAGE TO MARBLE:"
+        "DOTA_Tooltip_ability_muramasa_tameshi_mono_max_health_cost"			"%CURRENT HEALTH COST:"
+        "DOTA_Tooltip_ability_muramasa_tameshi_mono_damage_penalty"			"%DAMAGE PENALTY:"
+        "DOTA_Tooltip_ability_muramasa_tameshi_mono_damage_bonus_marble"			"%BONUS DAMAGE:"
+
+        "DOTA_Tooltip_Ability_muramasa_karmic_vision"			"<font color='#9FFFCC'>Attribute: Karmic Vision</font>"
+        "DOTA_Tooltip_ability_muramasa_karmic_vision_Description"		"<font color='#58ACFA'>PASSIVE</font>: When not on cooldown, this passive grants an extra bonus pure damage to <font color='#9FFFCC'>Tsumukari Muramasa</font> when cast. This ability also reduces <font color='#9FFFCC'>Tsumukari Muramasa</font> cooldown and refreshes it's own cooldown whenever you get a kill."
+        "DOTA_Tooltip_ability_muramasa_karmic_vision_r_bonus_pure"			"BONUS PURE DAMAGE:"
+        "DOTA_Tooltip_ability_muramasa_karmic_vision_cooldown"			"KARMIC VISION COOLDOWN:"
+        "DOTA_Tooltip_ability_muramasa_karmic_cd_reduce_on_kill"			"COOLDOWN REDUCTION:"
+
+        "DOTA_Tooltip_Ability_muramasa_blaze"			"<font color='#9FFFCC'>Attribute: Blaze</font>"
+        "DOTA_Tooltip_ability_muramasa_blaze_Description"		"<font color='#58ACFA'>Tsumukari Muramasa - Chant</font>: No longer revokes and stuns self and reduce the cooldown of <font color='#9FFFCC'>Tsumukari Muramasa</font>, gains extra move speed per stack. <font color='#FFFF28'>Tsumukari Muramasa</font> also gives bonus magic resistance."
+        "DOTA_Tooltip_ability_muramasa_blaze_marble_bonus_mr"			"BONUS MR:"
+        "DOTA_Tooltip_ability_muramasa_blaze_bonus_speed"			"BONUS MOVESPEED PER CHANT:"
+        "DOTA_Tooltip_ability_muramasa_blaze_cd_reduce"			"CD REDUCE:"
+
+        "DOTA_Tooltip_Ability_muramasa_pride"			"<font color='#9FFFCC'>Attribute: Swordsmith's Pride</font>"
+        "DOTA_Tooltip_ability_muramasa_pride_Description"		"<font color='#58ACFA'>Unsheathe</font>:  Levelled up, gaining extra armor,move speed, duration. Also grants extra damage for <font color='#58ACFA'>Tengu Kiri</font> and <font color='#58ACFA'>Kesi Giri</font>."
+        "DOTA_Tooltip_ability_muramasa_pride_bonus_damage_q"			"BONUS TENGU KIRI DAMAGE:"
+        "DOTA_Tooltip_ability_muramasa_pride_bonus_damage_e"			"BONUS KESI GIRI DAMAGE:"
+
+        ////////////////// MODIFIERS ///////////////////
+
+		"DOTA_Tooltip_modifier_muramasa_chant"													"Tsumukari Muramasa - Chant"
+
+		"DOTA_Tooltip_modifier_muramasa_marble"													"Tsumukari Muramasa"
+
+		"DOTA_Tooltip_modifier_muramasa_unsheathe"														"Unsheathe"
+		"DOTA_Tooltip_modifier_muramasa_unsheathe_Description"									"Gaining bonus movement speed and armor"
+
+		"DOTA_Tooltip_modifier_muramasa_r_slow"														"Tsumukari Muramasa Slow"
+		"DOTA_Tooltip_modifier_muramasa_r_slow_Description"											"Slowed"
+
+		"DOTA_Tooltip_modifier_muramasa_combo"														"Tsumukari Muramasa - Baseless Blade Works"
+
+		"DOTA_Tooltip_modifier_muramasa_combo_cooldown"												"Tsumukari Muramasa - Baseless Blade Works Cooldown"

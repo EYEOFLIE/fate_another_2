@@ -1,0 +1,14 @@
+"item_categories"
+{
+	// Order of categories here determines order they display as in game
+	
+	"Consumables"
+	{
+		"name"		"#DOTA_SHOP_CATEGORY_CONSUMABLES"
+		"tags"
+		{
+			// only one sub-tag - won't display in the tags section
+			"consumable"	"#DOTA_SHOP_TAG_CONSUMABLE"
+		}
+	}
+}

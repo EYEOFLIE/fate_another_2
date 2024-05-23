@@ -1,0 +1,29 @@
+"DOTAAbilities"
+{
+	"robin_parkour_shot"
+	{
+		"BaseClass"     					"ability_lua"
+		"ScriptFile"    					"abilities/robin/vector_targeting_lua"
+		"SpellImmunityType"  				"SPELL_IMMUNITY_ENEMIES_NO"
+		"FightRecapLevel"    				"1"
+		"AbilityTextureName"				"custom/kinghassan/eveningbell"
+		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_VECTOR_TARGETING"
+		"AbilityUnitDamageType"				"DAMAGE_TYPE_PHYSICAL"
+		"AbilityCastPoint"					"0.15"
+	    "AbilityCooldown"				   	"24 23 22 21 20"
+	    "AbilityManaCost"				   	"200"
+		"MaxLevel"							"5"
+		"LevelsBetweenUpgrades"				"1"
+
+		//AbilitySpecial
+		//-------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"    					"FIELD_INTEGER"
+				"damage" 						"200 250 300 350 400"
+			}
+		}
+	}
+}

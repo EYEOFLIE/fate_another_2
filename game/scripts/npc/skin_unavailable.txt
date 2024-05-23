@@ -1,0 +1,70 @@
+
+SkinUnavailable
+{
+	"UnAvai"
+	{
+		"039"		"npc_dota_hero_legion_commander_6"	// [Legend] Arthur Pendragon
+		"056"		"npc_dota_hero_ember_spirit_4"		// [Limited] Cyber Emiya
+		"061"		"npc_dota_hero_lina_4"				// [Limited] Racing Nero
+		"066"		"npc_dota_hero_ember_spirit_5"		// [Limited] Senji Muramasa
+		"078"		"npc_dota_hero_templar_assassin_4"	// [Limited] Ana
+		"084"		"npc_dota_hero_phantom_lancer_3"	// [Limited] Lancer Card Rin
+		//"077"		"npc_dota_hero_night_stalker_1"		// [Limited] Count Edmond
+	}
+	"Pepe"
+	{
+		"083"		"npc_dota_hero_juggernaut_1"		// [PEPE] Pepesaki
+	}
+	"WK1"
+	{
+		"SkinTheme"		"Summer"
+		"StartDate"		"01"
+		"EndDate"		"07"
+		"AvaiSkin"		
+		{
+			"017"	"npc_dota_hero_lina_3" 			// Summer Dress Nero
+			"033"	"npc_dota_hero_omniknight_2" 	// Summer Gawain
+			"048"	"npc_dota_hero_troll_warlord_4" // Summer Drake
+			"053"	"npc_dota_hero_monkey_king_4" 	// Summer Scathach
+			"071"	"npc_dota_hero_enchantress_7"	// Summer Tamamo
+		}
+	}
+	"WK2"
+	{
+		"SkinTheme"		"Kid"
+		"StartDate"		"08"
+		"EndDate"		"14"
+		"AvaiSkin"		
+		{
+			"015"	"npc_dota_hero_templar_assassin_1" 	// Medusa Lily
+			"016"	"npc_dota_hero_crystal_maiden_2" 	// Medea Lily
+			"019"	"npc_dota_hero_mirana_2" 			// Santa Jeanne
+			"051"	"npc_dota_hero_legion_commander_4" 	// Artoria Lily
+			"052"	"npc_dota_hero_ember_spirit_2" 		// Emiya Shirou
+		}
+	}
+	"WK3"
+	{
+		"SkinTheme"		"Illya"
+		"StartDate"		"15"
+		"EndDate"		"21"
+		"AvaiSkin"		
+		{
+			"057"	"npc_dota_hero_naga_siren_1" 		// Archer Card Illya
+			"058"	"npc_dota_hero_templar_assassin_2" 	// Rider Card Illya
+			"060"	"npc_dota_hero_phantom_lancer_2" 	// Lancer Card Illya
+			"072"	"npc_dota_hero_doom_bringer_0" 		// Berserker Card Illya
+		}
+	}
+	"WK4"
+	{
+		"SkinTheme"		"Wedding"
+		"StartDate"		"22"
+		"EndDate"		"31"
+		"AvaiSkin"		
+		{
+			"050"	"npc_dota_hero_legion_commander_5" 	// Crane Wedding Artoria
+			"062"	"npc_dota_hero_enchantress_2" 		// Wedding Tamamo
+		}
+	}
+}

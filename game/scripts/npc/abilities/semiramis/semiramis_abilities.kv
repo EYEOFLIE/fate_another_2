@@ -1,0 +1,311 @@
+#base "semiramis_binding_chains.kv"
+	
+"DOTAAbilities"
+{
+	//=======================================
+	// Semiramis Attribute - Placeholder
+	//=======================================
+	"semiramis_attribute_dual_class"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/semiramis/semiramis_dualclass"
+		
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"15"
+
+		"AbilitySpecial"
+		{				   
+		 	"01"
+		    {
+		        "var_type"				  	"FIELD_INTEGER"
+		        "hard_cooldown"					"2"
+		    }		    
+		    "01"
+		    {
+		        "var_type"				  	"FIELD_FLOAT"
+		        "bonus_mana_regen"			"10"
+		    }
+		    "01"
+		    {
+		        "var_type"				  	"FIELD_FLOAT"
+		        "bonus_int"					"10"
+		    }		    
+		    "01"
+		    {
+		        "var_type"				  	"FIELD_FLOAT"
+		        "bonus_spd"					"60"
+		    }
+		    "01"
+		    {
+		        "var_type"				  	"FIELD_FLOAT"
+		        "bonus_agi"					"10"
+		    }
+		}
+
+	    "OnSpellStart"
+	    {
+	    	"RunScript"
+			{
+				"ScriptFile"	"abilities/semiramis/semiramis_abilities"
+				"Function"		"OnDualClassAcquired"
+			}
+	    }
+	}
+
+	//=======================================
+	// Semiramis Attribute - Placeholder
+	//=======================================
+	"semiramis_attribute_territory"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/semiramis/semiramis_garden_presence"
+		
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"13"
+
+		"AbilitySpecial"
+		{				
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"ability_level_increase"			"1"
+			}		
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"			"1.5"
+			}			
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_point"			"1.2"
+			}	
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"garden_health"			"1600 1750 1900 2050 2200"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"garden_damage"			"70"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"quake_slow"			"-65"
+			}				
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"quake_duration"		"2"
+			}					
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"quake_radius"			"3500"
+			}	
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"40 50 60 70 80"
+			}	
+		    "01"
+		    {
+		        "var_type"				  	"FIELD_INTEGER"
+		        "mana_drain_per_second"		"10"
+		    }		   
+		    "01"
+		    {
+		        "var_type"				  	"FIELD_INTEGER"
+		        "radius"					"1600"
+		    }	
+		    "01"
+		    {
+		        "var_type"				  	"FIELD_INTEGER"
+		        "slow"						"-20"
+		    }		
+		}
+
+	    "OnSpellStart"
+	    {
+	    	"RunScript"
+			{
+				"ScriptFile"	"abilities/semiramis/semiramis_abilities"
+				"Function"		"OnTerritoryAcquired"
+			}
+	    }		
+	}
+
+	//=======================================
+	// Semiramis Attribute - Placeholder
+	//=======================================
+	"semiramis_attribute_absolute"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/semiramis/semiramis_absolute"
+		
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"12"
+
+		"AbilitySpecial"
+		{		
+		    "01"
+		    {
+		        "var_type"				  	"FIELD_INTEGER"
+		        "bonus_mr"					"10"
+		    }		   
+		    "01"
+		    {
+		        "var_type"				  	"FIELD_FLOAT"
+		        "radius"					"1500"
+		    }
+		    "01"
+		    {
+		        "var_type"				  	"FIELD_FLOAT"
+		        "chain_mr"					"-20"
+		    }
+		    "01"
+		    {
+		        "var_type"				  	"FIELD_FLOAT"
+		        "mana_shield"				"10 15 20 25 30"
+		    }
+		    "01"
+		    {
+		        "var_type"				  	"FIELD_INTEGER"
+		        "bonus_beam_per_int"		"30"
+		    }
+		}	
+
+	    "OnSpellStart"
+	    {
+	    	"RunScript"
+			{
+				"ScriptFile"	"abilities/semiramis/semiramis_abilities"
+				"Function"		"OnAbsoluteAcquired"
+			}
+	    }		
+	}
+
+	//=======================================
+	// Semiramis Attribute - Placeholder
+	//=======================================
+	"semiramis_attribute_charmer"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/semiramis/semiramis_charmer"
+		
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"9"
+
+		"AbilitySpecial"
+		{		
+			
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_male"		"200"
+			}
+		}
+		"OnSpellStart"
+	    {
+	    	"RunScript"
+			{
+				"ScriptFile"	"abilities/semiramis/semiramis_abilities"
+				"Function"		"OnCharmerAcquired"
+			}
+	    }	
+	}	
+	//=======================================
+	// Semiramis Attribute - Placeholder
+	//=======================================
+	"semiramis_attribute_poisoner"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/semiramis/placeholder"
+		
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"13"
+
+		"AbilitySpecial"
+		{	
+			//ass W
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"snek_bonus_agi"		"2"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"snek_bonus_dps"		"20"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"snek_bonus_dur"		"1"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_poison"			"15"
+			}	
+			//ass R	
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bite_mana"				"200"
+			}
+		    "05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bite_hit_agi"			"3"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bite_burst"			"200"
+			}			
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bite_burst_int"		"3"
+			}				
+		}	
+
+	    "OnSpellStart"
+	    {
+	    	"RunScript"
+			{
+				"ScriptFile"	"abilities/semiramis/semiramis_abilities"
+				"Function"		"OnOldestPoisonerAcquired"
+			}
+	    }		
+	}
+		
+}

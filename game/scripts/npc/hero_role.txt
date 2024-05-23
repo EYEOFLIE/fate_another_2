@@ -1,0 +1,1834 @@
+HeroRoles  							
+{		
+	// Role of heroes in Fate will be use to calculate MMR	
+	// Role show in UI
+	//		- assassin : single target burst damage
+	//		- burst : burst aoe damage also include beam and jump
+	//		- beamer : beam like ability (long range linear projectile)
+	//		- counter : ability to return burst damage to attacker
+	//		- control : debuff AOE or multi target (single target debuff not include)
+	//		- carry : Ability to support AA scaling
+	//		- dps : high Damage Per Sec
+	//		- jumper : ability that need to jump and become invulnerable
+	//		- mobility : dash, location blink, high movespeed (target blink not include)
+	//		- reality_marble : hero is stronger in his zone
+	//		- survivality : self linken, self heal, BC
+	//		- support : buff, heal, dmg reduction to allies
+	//		- snipe : 1.5k range single target or 2k range aoe
+	//		- tank : self damage reduction, super regen
+	//
+	// Role to calculate MMR: some roles will be calculate under certain role
+	//		- Tank: tank + counter + survivality
+	//			- Focus on high dTake and low Death
+	//		- Burst: burst + beamer + jumper + aoe
+	//			- Focus on high dDeal, high KD ratio and medium Assist
+	//		- Carry: carry + reality_marble + dps
+	//			- Focus on high dDeal, medium KD ratio and low Death
+	//		- Assassin: assassin + snipe
+	//			- Focus on high KD ratio, low Death, medium dDeal
+	//		- Support
+	//			- Focus on high Assist, high heal/shield to allies, avarice taken, liken usage, ward usage
+	//		- Control
+	//			- Focus on high CC (stun, root, slow, silence, lock) time
+	//		- Mobility
+	//			- Focus on low Death
+	//
+	//	Base MMR = +10(win) and -10(lose)
+	//	Bonus MMR = 0 - 10 (calculate from role and weight)
+	//	MVP MMR = 5 (most KDA from each team: 3K + A - 2D)
+	//	Weight and Criteria
+	//	total weight = 100% and divide it in to each role
+	//	Each role has criterias, fulfil the criteria will get bonus MMR based on weight
+	//		- dDeal (damage Dealer) : has average damage deal more than certain damage will get MMR
+	//		- KD (Kill/Death ratio) : has KD ratio more than certain number will get MMR
+	//		- Assist : has total Assist more than certain number will get MMR
+	//		- dTake (damage taken) : has percentage of average damage taken per max hp more than certain number will get MMR
+	//		- Death : has percentage of total death per total round less than certain number will get MMR
+	//		- CC (control time) : has average control time more than certain number will get MMR
+	//		- Heal : has average heal amount (heal scroll include) more than certain number will get MMR
+	//		- Avarice : take avarice grail will get MMR
+	//		- Link : Use link per round more than certain number will get MMR
+	// 		- Ward : place ward per round more than certain number will get MMR
+	//
+	//	Trait : hero trait that affecting game
+	//		- arthur : Arthur and Artoria pendragon take bonus damage from Clarent Blood Arthur
+	//		- dragon : take bonus damage from Arondright Overload
+	//		- divine : Divinity take bonus damage from god slayer and some abilities
+	//		- human : Pseudo servant hero take damage from Avenger
+	//		- manaless : this hero has no mana (can not use Seal 4 and can not be burn mana)
+	//		- no_atk : this hero can not do normal attack
+	//		- god_slayer : this hero has ability/SA to deal bonus damage to Divinity
+	//		- female_slayer : this hero has ability/SA to take advantage on female
+	//		- human_slayer : this hero has ability/SA to deal bonus damage to Pseudo servant
+	//		- shinsengumi : this hero is consider as shinsengumi that can be gain some effect
+	//		- vampire : take bonus damage from Kyrie Eleision
+
+					
+	"npc_dota_hero_legion_commander"							
+	{															
+		"Sex"			"Female"								
+		"Class"			"Saber"	
+		"Trait"			"arthur,dragon" // trait affecting game	
+		"Roles"			"beamer,tank" 	// Show in tooltip 		
+		"Role" 							// to calculate MMR 	
+		{ 														
+			"1"													
+			{													
+				"burst"											
+				{												
+					"weight"	"60"	// weight to calculate 	
+					"criteria"	"3"
+					"dDeal"		"4500"	// > avg dmg deal per round == get mmr
+					"KD"		"1.5"	// > total KD 				== get mmr
+					"Assist"	"40"	// > Assist 				== get mmr
+				}
+			}
+			"2"	
+			{			
+				"tank"	
+				{
+					"weight"	"40"	// weight to calculate
+					"criteria"	"2"
+					"dTake"		"130"	// > avg dmg taken(%max hp) per round
+					"Death"		"80"	// < death of total round
+				}
+			}
+		}	
+	}		
+	"npc_dota_hero_spectre"				
+	{
+		"Sex"			"Female"
+		"Class"			"Saber"
+		"Trait"			"arthur,dragon" 
+		"Roles"			"beamer,burst,tank" 	
+		"Role" 							
+		{
+			"1"
+			{			
+				"burst"	
+				{
+					"weight"	"70"	// weight to calculate
+					"criteria"	"3"
+					"dDeal"		"5000"	// > avg dmg deal per round
+					"KD"		"1.5"	// > total KD
+					"Assist"	"40"	// > Assist
+				}		
+			}
+			"2"	
+			{			
+				"tank"	
+				{
+					"weight"	"30"	// weight to calculate
+					"criteria"	"2"
+					"dTake"		"130"	// > avg dmg taken(%max hp) per round
+					"Death"		"80"	// < death of total round
+				}
+			}
+		}
+	}
+	"npc_dota_hero_lina"				
+	{
+		"Sex"			"Female"
+		"Class"			"Saber"
+		"Trait"			"" 
+		"Roles"			"carry,reality_marble,tank" 	
+		"Role" 							
+		{
+			"1"
+			{			
+				"carry"	
+				{
+					"weight"	"80"	// weight to calculate
+					"criteria"	"3"
+					"dDeal"		"4000"	// > avg dmg deal per round
+					"KD"		"1.5"	// > total KD
+					"Assist"	"38"	// > Assist
+				}			
+			}
+			"2"	
+			{			
+				"tank"	
+				{
+					"weight"	"20"	// weight to calculate
+					"criteria"	"2"
+					"dTake"		"130"	// > avg dmg taken(%max hp) per round
+					"Death"		"80"	// < death of total round
+				}
+			}
+		}
+	}	
+	"npc_dota_hero_omniknight"			
+	{
+		"Sex"			"Male"
+		"Class"			"Saber"
+		"Trait"			"" 
+		"Roles"			"tank,beamer,control" 	
+		"Role" 							
+		{
+			"1"
+			{			
+				"tank"	
+				{
+					"weight"	"60"	// weight to calculate
+					"criteria"	"2"
+					"dTake"		"150"	// > avg dmg taken(%max hp) per round
+					"Death"		"80"	// < death of total round
+				}		
+			}
+			"2"	
+			{			
+				"burst"	
+				{
+					"weight"	"30"	// weight to calculate
+					"criteria"	"3"
+					"dDeal"		"4500"	// > avg dmg deal per round
+					"KD"		"1.5"	// > total KD
+					"Assist"	"40"	// > Assist
+				}
+			}
+			"3"	
+			{			
+				"control"	
+				{
+					"weight"	"10"	// weight to calculate
+					"criteria"	"1"
+					"CC1"		"30"	// > avg CC duration per round
+				}
+			}
+			
+		}
+	}	
+	"npc_dota_hero_tusk"				
+	{
+		"Sex"			"Female"
+		"Class"			"Saber"
+		"Trait"			"dragon" 
+		"Roles"			"beamer,tank,control" 	
+		"Role" 							
+		{
+			"1"
+			{			
+				"burst"	
+				{
+					"weight"	"60"	// weight to calculate
+					"criteria"	"3"
+					"dDeal"		"4500"	// > avg dmg deal per round
+					"KD"		"1.5"	// > total KD
+					"Assist"	"40"	// > Assist
+				}		
+			}
+			"2"	
+			{			
+				"tank"	
+				{
+					"weight"	"20"	// weight to calculate
+					"criteria"	"2"
+					"dTake"		"130"	// > avg dmg taken(%max hp) per round
+					"Death"		"80"	// < death of total round
+				}
+			}
+			"3"	
+			{			
+				"control"	
+				{
+					"weight"	"20"	// weight to calculate
+					"criteria"	"2"
+					"CC1"		"30"	// > avg CC duration per round
+					"CC2"		"45"	// > avg CC duration per round
+				}
+			}
+		}
+	}
+	"npc_dota_hero_dark_willow"			
+	{
+		"Sex"			"Female"
+		"Class"			"Saber"
+		"Trait"			"shinsengumi" 
+		"Roles"			"assassin,mobility" 	
+		"Role" 							
+		{
+			"1"
+			{			
+				"assassin"	
+				{
+					"weight"	"80"	// weight to calculate
+					"criteria"	"3"
+					"dDeal"		"4000"	// > avg dmg deal per round
+					"KD"		"2.0"	// > total KD
+					"Death"		"50"	// < death of total round
+				}		
+			}
+			"2"	
+			{			
+				"mobility"	
+				{
+					"weight"	"20"	// weight to calculate
+					"criteria"	"1"
+					"Death"		"35"	// < death of total round
+				}
+			}
+		}
+	}
+	"npc_dota_hero_ember_spirit"		
+	{
+		"Sex"			"Male"
+		"Class"			"Archer"
+		"Trait"			"" 
+		"Roles"			"reality_marble,snipe" 	
+		"Role" 							
+		{
+			"1"
+			{			
+				"carry"	
+				{
+					"weight"	"60"	// weight to calculate
+					"criteria"	"3"
+					"dDeal"		"8000"	// > avg dmg deal per round
+					"KD"		"1.5"	// > total KD
+					"Assist"	"38"	// > Assist
+				}	
+			}
+			"2"	
+			{			
+				"assassin"	
+				{
+					"weight"	"40"	// weight to calculate
+					"criteria"	"3"
+					"dDeal"		"4000"	// > avg dmg deal per round
+					"KD"		"2.0"	// > total KD
+					"Death"		"50"	// < death of total round
+				}	
+			}
+		}
+	}
+	"npc_dota_hero_skywrath_mage"		
+	{
+		"Sex"			"Male"
+		"Class"			"Archer"
+		"Trait"			"divine" 
+		"Roles"			"beamer,control" 	
+		"Role" 							
+		{
+			"1"
+			{			
+				"burst"	
+				{
+					"weight"	"80"	// weight to calculate
+					"criteria"	"3"
+					"dDeal"		"6000"	// > avg dmg deal per round
+					"KD"		"1.5"	// > total KD
+					"Assist"	"40"	// > Assist
+				}			
+			}
+			"2"	
+			{			
+				"control"	
+				{
+					"weight"	"20"	// weight to calculate
+					"criteria"	"2"
+					"CC1"		"18"	// > avg CC duration per round
+					"CC2"		"25"	// > avg CC duration per round
+				}
+			}
+		}
+	}
+	"npc_dota_hero_drow_ranger"			
+	{
+		"Sex"			"Female"
+		"Class"			"Archer"
+		"Trait"			"" 
+		"Roles"			"carry,snipe,control" 	
+		"Role" 							
+		{
+			"1"
+			{			
+				"carry"	
+				{
+					"weight"	"50"	// weight to calculate
+					"criteria"	"3"
+					"dDeal"		"5000"	// > avg dmg deal per round
+					"KD"		"1.5"	// > total KD
+					"Assist"	"38"	// > Assist
+				}		
+			}
+			"2"	
+			{			
+				"assassin"	
+				{
+					"weight"	"40"	// weight to calculate
+					"criteria"	"3"
+					"dDeal"		"8000"	// > avg dmg deal per round
+					"KD"		"2.0"	// > total KD
+					"Death"		"50"	// < death of total round
+				}
+			}
+			"2"	
+			{			
+				"control"	
+				{
+					"weight"	"10"	// weight to calculate
+					"criteria"	"1"
+					"CC"		"40"	// > avg CC duration per round
+				}
+			}
+		}
+	}
+	"npc_dota_hero_naga_siren"			
+	{
+		"Sex"			"Female"
+		"Class"			"Archer"
+		"Trait"			"human" 
+		"Roles"			"snipe,burst,control" 	
+		"Role" 							
+		{
+			"1"	
+			{			
+				"assassin"	
+				{
+					"weight"	"60"	// weight to calculate
+					"criteria"	"3"
+					"dDeal"		"4000"	// > avg dmg deal per round
+					"KD"		"2.0"	// > total KD
+					"Death"		"50"	// < death of total round
+				}
+			}
+			"2"
+			{			
+				"burst"	
+				{
+					"weight"	"30"	// weight to calculate
+					"criteria"	"3"
+					"dDeal"		"8000"	// > avg dmg deal per round
+					"KD"		"1.5"	// > total KD
+					"Assist"	"38"	// > Assist
+				}		
+			}
+			"3"	
+			{			
+				"control"	
+				{
+					"weight"	"10"	// weight to calculate
+					"criteria"	"1"
+					"CC"		"30"	// > avg CC duration per round
+				}
+			}	
+		}
+	}
+	"npc_dota_hero_sniper"			
+	{
+		"Sex"			"Male"
+		"Class"			"Archer"
+		"Trait"			"" 
+		"Roles"			"carry,snipe" 	
+		"Role" 							
+		{
+			"1"
+			{			
+				"carry"	
+				{
+					"weight"	"60"	// weight to calculate
+					"criteria"	"3"
+					"dDeal"		"8000"	// > avg dmg deal per round
+					"KD"		"1.5"	// > total KD
+					"Assist"	"38"	// > Assist
+				}	
+			}
+			"2"	
+			{			
+				"assassin"	
+				{
+					"weight"	"40"	// weight to calculate
+					"criteria"	"3"
+					"dDeal"		"4000"	// > avg dmg deal per round
+					"KD"		"2.0"	// > total KD
+					"Death"		"50"	// < death of total round
+				}	
+			}
+		}
+	}		
+	"npc_dota_hero_phantom_lancer"		
+	{
+		"Sex"			"Male"
+		"Class"			"Lancer"
+		"Trait"			"divine" 
+		"Roles"			"jumper,assassin" 	
+		"Role" 							
+		{
+			"1"
+			{			
+				"burst"	
+				{
+					"weight"	"50"	// weight to calculate
+					"criteria"	"3"
+					"dDeal"		"8000"	// > avg dmg deal per round
+					"KD"		"1.5"	// > total KD
+					"Assist"	"38"	// > Assist
+				}		
+			}
+			"2"	
+			{			
+				"assassin"	
+				{
+					"weight"	"50"	// weight to calculate
+					"criteria"	"3"
+					"dDeal"		"4000"	// > avg dmg deal per round
+					"KD"		"2.0"	// > total KD
+					"Death"		"50"	// < death of total round
+				}
+			}
+		}
+	}	
+	"npc_dota_hero_huskar"				
+	{
+		"Sex"			"Male"
+		"Class"			"Lancer"
+		"Trait"			"female_slayer" 
+		"Roles"			"assassin,carry" 	
+		"Role" 							
+		{
+			"1"	
+			{			
+				"assassin"	
+				{
+					"weight"	"50"	// weight to calculate
+					"criteria"	"3"
+					"dDeal"		"4000"	// > avg dmg deal per round
+					"KD"		"2.0"	// > total KD
+					"Death"		"50"	// < death of total round
+				}
+			}
+			"2"
+			{			
+				"carry"	
+				{
+					"weight"	"50"	// weight to calculate
+					"criteria"	"3"
+					"dDeal"		"8000"	// > avg dmg deal per round
+					"KD"		"1.5"	// > total KD
+					"Assist"	"38"	// > Assist
+				}		
+			}
+		}
+	}	
+	"npc_dota_hero_beastmaster"			
+	{
+		"Sex"			"Male"
+		"Class"			"Lancer"
+		"Trait"			"divine,god_slayer" 
+		"Roles"			"jumper,snipe,carry" 	
+		"Role" 							
+		{
+			"1"
+			{			
+				"burst"	
+				{
+					"weight"	"40"	// weight to calculate
+					"criteria"	"3"
+					"dDeal"		"4000"	// > avg dmg deal per round
+					"KD"		"1.5"	// > total KD
+					"Assist"	"38"	// > Assist
+				}		
+			}
+			"2"	
+			{			
+				"assassin"	
+				{
+					"weight"	"40"	// weight to calculate
+					"criteria"	"3"
+					"dDeal"		"6500"	// > avg dmg deal per round
+					"KD"		"2.0"	// > total KD
+					"Death"		"50"	// < death of total round
+				}
+			}
+			"3"
+			{			
+				"carry"	
+				{
+					"weight"	"20"	// weight to calculate
+					"criteria"	"3"
+					"dDeal"		"8000"	// > avg dmg deal per round
+					"KD"		"2.5"	// > total KD
+					"Assist"	"50"	// > Assist
+				}		
+			}
+		}
+	}	
+	"npc_dota_hero_tidehunter"			
+	{
+		"Sex"			"Male"
+		"Class"			"Lancer"
+		"Trait"			"vampire" 
+		"Roles"			"tank,burst,control" 	
+		"Role" 							
+		{
+			"1"	
+			{			
+				"tank"	
+				{
+					"weight"	"60"	// weight to calculate
+					"criteria"	"2"
+					"dTake"		"200"	// > avg dmg taken(%max hp) per round
+					"Death"		"80"	// < death of total round
+				}
+			}
+			"2"
+			{			
+				"burst"	
+				{
+					"weight"	"30"	// weight to calculate
+					"criteria"	"3"
+					"dDeal"		"4000"	// > avg dmg deal per round
+					"KD"		"1.5"	// > total KD
+					"Assist"	"38"	// > Assist
+				}		
+			}
+			"3"	
+			{			
+				"control"	
+				{
+					"weight"	"10"	// weight to calculate
+					"criteria"	"1"
+					"CC1"		"30"	// > avg CC duration per round
+				}
+			}
+		}
+	}	
+	"npc_dota_hero_monkey_king"			
+	{
+		"Sex"			"Female"
+		"Class"			"Lancer"
+		"Trait"			"god_slayer" 
+		"Roles"			"jumper,assassin" 	
+		"Role" 							
+		{
+			"1"
+			{			
+				"burst"	
+				{
+					"weight"	"50"	// weight to calculate
+					"criteria"	"3"
+					"dDeal"		"8000"	// > avg dmg deal per round
+					"KD"		"1.5"	// > total KD
+					"Assist"	"38"	// > Assist
+				}		
+			}
+			"2"	
+			{			
+				"assassin"	
+				{
+					"weight"	"50"	// weight to calculate
+					"criteria"	"3"
+					"dDeal"		"4000"	// > avg dmg deal per round
+					"KD"		"2.0"	// > total KD
+					"Death"		"50"	// < death of total round
+				}
+			}
+		}
+	}	
+	"npc_dota_hero_death_prophet"		
+	{
+		"Sex"			"Female"
+		"Class"			"Lancer"
+		"Trait"			"vampire,dragon" 
+		"Roles"			"beamer,control" 	
+		"Role" 							
+		{
+			"1"
+			{			
+				"burst"	
+				{
+					"weight"	"70"	// weight to calculate
+					"criteria"	"3"
+					"dDeal"		"4000"	// > avg dmg deal per round
+					"KD"		"1.5"	// > total KD
+					"Assist"	"38"	// > Assist
+				}		
+			}
+			"2"	
+			{			
+				"control"	
+				{
+					"weight"	"30"	// weight to calculate
+					"criteria"	"3"
+					"CC1"		"20"	// > avg CC duration per round
+					"CC2"		"30"	// > avg CC duration per round
+					"CC3"		"40"	// > avg CC duration per round
+				}
+			}
+		}
+	}	
+	"npc_dota_hero_templar_assassin"	
+	{
+		"Sex"			"Female"
+		"Class"			"Rider"
+		"Trait"			"divine" 
+		"Roles"			"jumper,mobility,control" 	
+		"Role" 							
+		{
+			"1"
+			{			
+				"burst"	
+				{
+					"weight"	"70"	// weight to calculate
+					"criteria"	"3"
+					"dDeal"		"4000"	// > avg dmg deal per round
+					"KD"		"1.5"	// > total KD
+					"Assist"	"38"	// > Assist
+				}		
+			}
+			"2"	
+			{			
+				"mobility"	
+				{
+					"weight"	"10"	// weight to calculate
+					"criteria"	"1"
+					"Death"		"35"	// < death of total round
+				}
+			}
+			"3"	
+			{			
+				"control"	
+				{
+					"weight"	"20"	// weight to calculate
+					"criteria"	"2"
+					"CC1"		"35"	// > avg CC duration per round
+					"CC2"		"70"	// > avg CC duration per round
+				}
+			}
+		}
+	}	
+	"npc_dota_hero_chen"				
+	{
+		"Sex"			"Male"
+		"Class"			"Rider"
+		"Trait"			"divine" 
+		"Roles"			"reality_marble,burst,tank" 	
+		"Role" 							
+		{
+			"1"
+			{			
+				"carry"	
+				{
+					"weight"	"40"	// weight to calculate
+					"criteria"	"3"
+					"dDeal"		"7000"	// > avg dmg deal per round
+					"KD"		"2.0"	// > total KD
+					"Assist"	"38"	// > Assist
+				}			
+			}
+			"2"
+			{			
+				"burst"	
+				{
+					"weight"	"30"	// weight to calculate
+					"criteria"	"3"
+					"dDeal"		"4000"	// > avg dmg deal per round
+					"KD"		"1.5"	// > total KD
+					"Assist"	"50"	// > Assist
+				}		
+			}
+			"3"	
+			{			
+				"tank"	
+				{
+					"weight"	"30"	// weight to calculate
+					"criteria"	"2"
+					"dTake"		"130"	// > avg dmg taken(%max hp) per round
+					"Death"		"80"	// < death of total round
+				}
+			}
+		}
+	}	
+	"npc_dota_hero_troll_warlord"		
+	{
+		"Sex"			"Female"
+		"Class"			"Rider"
+		"Trait"			"" 
+		"Roles"			"control,snipe" 	
+		"Role" 							
+		{
+			"1"
+			{			
+				"control"	
+				{
+					"weight"	"40"	// weight to calculate
+					"criteria"	"4"
+					"CC1"		"20"	// > avg CC duration per round
+					"CC2"		"30"	// > avg CC duration per round
+					"CC3"		"40"	// > avg CC duration per round
+					"CC4"		"50"	// > avg CC duration per round
+				}		
+			}
+			"2"	
+			{			
+				"assassin"	
+				{
+					"weight"	"60"	// weight to calculate
+					"criteria"	"3"
+					"dDeal"		"4000"	// > avg dmg deal per round
+					"KD"		"1.5"	// > total KD
+					"Death"		"50"	// < death of total round
+				}
+			}
+		}
+	}	
+	"npc_dota_hero_queenofpain"			
+	{
+		"Sex"			"Male"
+		"Class"			"Rider"
+		"Trait"			"" 
+		"Roles"			"control,burst,mobility" 	
+		"Role" 							
+		{
+			"1"
+			{			
+				"control"	
+				{
+					"weight"	"40"	// weight to calculate
+					"criteria"	"4"
+					"CC1"		"30"	// > avg CC duration per round
+					"CC2"		"45"	// > avg CC duration per round
+					"CC3"		"60"	// > avg CC duration per round
+					"CC4"		"75"	// > avg CC duration per round
+				}		
+			}
+			"2"	
+			{			
+				"burst"	
+				{
+					"weight"	"50"	// weight to calculate
+					"criteria"	"3"
+					"dDeal"		"4000"	// > avg dmg deal per round
+					"KD"		"1.5"	// > total KD
+					"Assist"	"60"	// > Assist
+				}
+			}
+			"3"	
+			{			
+				"mobility"	
+				{
+					"weight"	"10"	// weight to calculate
+					"criteria"	"1"
+					"Death"		"35"	// < death of total round
+				}
+			}
+		}
+	}	
+	"npc_dota_hero_crystal_maiden"		
+	{
+		"Sex"			"Female"
+		"Class"			"Caster"
+		"Trait"			"" 
+		"Roles"			"control,jumper,support" 	
+		"Role" 							
+		{
+			"1"
+			{			
+				"burst"	
+				{
+					"weight"	"40"	// weight to calculate
+					"criteria"	"3"
+					"dDeal"		"4000"	// > avg dmg deal per round
+					"KD"		"1.5"	// > total KD
+					"Assist"	"38"	// > Assist
+				}		
+			}
+			"2"	
+			{			
+				"support"	
+				{
+					"weight"	"50"	// weight to calculate
+					"criteria"	"5"
+					"Assist"	"60"	// > Assist
+					"Heal"		"2400"	// < death of total round
+					"Avarice"	"1"		// > Avarice
+					"Link"		"1"		// > link per round
+					"Ward"		"1"		// > ward per round
+				}
+			}
+			"3"	
+			{			
+				"control"	
+				{
+					"weight"	"10"	// weight to calculate
+					"criteria"	"1"
+					"CC1"		"30"	// > avg CC duration per round
+				}
+			}
+		}
+	}	
+	"npc_dota_hero_shadow_shaman"		
+	{
+		"Sex"			"Male"
+		"Class"			"Caster"
+		"Trait"			"manaless,no_attack" 
+		"Roles"			"control,dps,burst" 	
+		"Role" 							
+		{
+			"1"
+			{			
+				"burst"	
+				{
+					"weight"	"30"	// weight to calculate
+					"criteria"	"3"
+					"dDeal"		"4000"	// > avg dmg deal per round
+					"KD"		"2.0"	// > total KD
+					"Assist"	"40"	// > Assist
+				}		
+			}
+			"2"
+			{			
+				"carry"	
+				{
+					"weight"	"50"	// weight to calculate
+					"criteria"	"3"
+					"dDeal"		"7000"	// > avg dmg deal per round
+					"KD"		"1.5"	// > total KD
+					"Assist"	"60"	// > Assist
+				}			
+			}
+			"3"	
+			{			
+				"control"	
+				{
+					"weight"	"20"	// weight to calculate
+					"criteria"	"2"
+					"CC1"		"30"	// > avg CC duration per round
+					"CC2"		"45"	// > avg CC duration per round
+				}
+			}
+		}
+	}		
+	"npc_dota_hero_windrunner"			
+	{
+		"Sex"			"Female"
+		"Class"			"Caster"
+		"Trait"			"" 
+		"Roles"			"reality_marble,control" 	
+		"Role" 							
+		{
+			"1"
+			{			
+				"control"	
+				{
+					"weight"	"20"	// weight to calculate
+					"criteria"	"2"
+					"CC1"		"20"	// > avg CC duration per round
+					"CC2"		"30"	// > avg CC duration per round
+				}		
+			}
+			"2"	
+			{			
+				"carry"
+				{
+					"weight"	"80"	// weight to calculate
+					"criteria"	"3"
+					"dDeal"		"6000"	// > avg dmg deal per round
+					"KD"		"1.5"	// > total KD
+					"Assist"	"38"	// > Assist
+				}
+			}
+		}
+	}
+	"npc_dota_hero_enchantress"			
+	{
+		"Sex"			"Female"
+		"Class"			"Caster"
+		"Trait"			"divine" 
+		"Roles"			"control,support" 	
+		"Role" 							
+		{
+			"1"	
+			{			
+				"support"	
+				{
+					"weight"	"70"	// weight to calculate
+					"criteria"	"5"
+					"Assist"	"60"	// > Assist
+					"Heal"		"4000"	// < death of total round
+					"Avarice"	"1"		// > Avarice
+					"Link"		"1"		// > link per round
+					"Ward"		"1"		// > ward per round
+				}
+			}
+			"2"	
+			{			
+				"control"	
+				{
+					"weight"	"30"	// weight to calculate
+					"criteria"	"3"
+					"CC1"		"30"	// > avg CC duration per round
+					"CC2"		"50"	// > avg CC duration per round
+					"CC3"		"70"	// > avg CC duration per round
+				}
+			}
+		}
+	}	
+	"npc_dota_hero_disruptor"			
+	{
+		"Sex"			"Male"
+		"Class"			"Caster"
+		"Trait"			"human" 
+		"Roles"			"support,control,dps" 	
+		"Role" 							
+		{
+			"1"	
+			{			
+				"support"	
+				{
+					"weight"	"50"	// weight to calculate
+					"criteria"	"5"
+					"Assist"	"60"	// > Assist
+					"Heal"		"2000"	// < death of total round
+					"Avarice"	"1"		// > Avarice
+					"Link"		"1"		// > link per round
+					"Ward"		"1"		// > ward per round
+				}
+			}
+			"2"
+			{			
+				"carry"	
+				{
+					"weight"	"30"	// weight to calculate
+					"criteria"	"3"
+					"dDeal"		"4000"	// > avg dmg deal per round
+					"KD"		"1.5"	// > total KD
+					"Assist"	"38"	// > Assist
+				}			
+			}
+			"3"	
+			{			
+				"control"	
+				{
+					"weight"	"20"	// weight to calculate
+					"criteria"	"2"
+					"CC1"		"20"	// > avg CC duration per round
+					"CC2"		"30"	// > avg CC duration per round
+				}
+			}
+		}
+	}	
+	"npc_dota_hero_necrolyte"			
+	{
+		"Sex"			"Male"
+		"Class"			"Caster"
+		"Trait"			"" 
+		"Roles"			"support,control,dps" 	
+		"Role" 							
+		{
+			"1"	
+			{			
+				"support"	
+				{
+					"weight"	"70"	// weight to calculate
+					"criteria"	"5"
+					"Assist"	"60"	// > Assist
+					"Heal"		"5000"	// < death of total round
+					"Avarice"	"1"		// > Avarice
+					"Link"		"1"		// > link per round
+					"Ward"		"1"		// > ward per round
+				}
+			}
+			"2"
+			{			
+				"carry"	
+				{
+					"weight"	"20"	// weight to calculate
+					"criteria"	"3"
+					"dDeal"		"4000"	// > avg dmg deal per round
+					"KD"		"1.5"	// > total KD
+					"Assist"	"38"	// > Assist
+				}			
+			}
+			"3"	
+			{			
+				"control"	
+				{
+					"weight"	"10"	// weight to calculate
+					"criteria"	"1"
+					"CC1"		"20"	// > avg CC duration per round
+				}
+			}
+		}
+	}	
+	"npc_dota_hero_juggernaut"			
+	{
+		"Sex"			"Male"
+		"Class"			"Assassin"
+		"Trait"			"manaless" 
+		"Roles"			"assassin,carry" 	
+		"Role" 							
+		{
+			"1"	
+			{			
+				"assassin"	
+				{
+					"weight"	"60"	// weight to calculate
+					"criteria"	"3"
+					"dDeal"		"4000"	// > avg dmg deal per round
+					"KD"		"2.0"	// > total KD
+					"Death"		"50"	// < death of total round
+				}
+			}
+			"2"
+			{			
+				"carry"	
+				{
+					"weight"	"40"	// weight to calculate
+					"criteria"	"3"
+					"dDeal"		"6000"	// > avg dmg deal per round
+					"KD"		"1.5"	// > total KD
+					"Assist"	"38"	// > Assist
+				}		
+			}
+		}
+	}			
+	"npc_dota_hero_bounty_hunter"		
+	{
+		"Sex"			"Male"
+		"Class"			"Assassin"
+		"Trait"			"" 
+		"Roles"			"assassin,carry" 	
+		"Role" 							
+		{
+			"1"	
+			{			
+				"assassin"	
+				{
+					"weight"	"60"	// weight to calculate
+					"criteria"	"3"
+					"dDeal"		"4000"	// > avg dmg deal per round
+					"KD"		"2.0"	// > total KD
+					"Death"		"50"	// < death of total round
+				}
+			}
+			"2"
+			{			
+				"carry"	
+				{
+					"weight"	"40"	// weight to calculate
+					"criteria"	"3"
+					"dDeal"		"6000"	// > avg dmg deal per round
+					"KD"		"1.5"	// > total KD
+					"Assist"	"38"	// > Assist
+				}		
+			}
+		}
+	}		
+	"npc_dota_hero_bloodseeker"			
+	{
+		"Sex"			"Male"
+		"Class"			"Assassin"
+		"Trait"			"" 
+		"Roles"			"assassin,carry" 	
+		"Role" 							
+		{
+			"1"	
+			{			
+				"assassin"	
+				{
+					"weight"	"60"	// weight to calculate
+					"criteria"	"3"
+					"dDeal"		"4000"	// > avg dmg deal per round
+					"KD"		"2.0"	// > total KD
+					"Death"		"50"	// < death of total round
+				}
+			}
+			"2"
+			{			
+				"carry"	
+				{
+					"weight"	"40"	// weight to calculate
+					"criteria"	"3"
+					"dDeal"		"6000"	// > avg dmg deal per round
+					"KD"		"1.5"	// > total KD
+					"Assist"	"38"	// > Assist
+				}		
+			}
+		}
+	}		
+	"npc_dota_hero_riki"				
+	{
+		"Sex"			"Female"
+		"Class"			"Assassin"
+		"Trait"			"female_slayer" 
+		"Roles"			"assassin,carry" 	
+		"Role" 							
+		{
+			"1"	
+			{			
+				"assassin"	
+				{
+					"weight"	"60"	// weight to calculate
+					"criteria"	"3"
+					"dDeal"		"4000"	// > avg dmg deal per round
+					"KD"		"2.0"	// > total KD
+					"Death"		"50"	// < death of total round
+				}
+			}
+			"2"
+			{			
+				"carry"	
+				{
+					"weight"	"40"	// weight to calculate
+					"criteria"	"3"
+					"dDeal"		"6000"	// > avg dmg deal per round
+					"KD"		"1.5"	// > total KD
+					"Assist"	"38"	// > Assist
+				}		
+			}
+		}
+	}	
+	"npc_dota_hero_skeleton_king"		
+	{
+		"Sex"			"Male"
+		"Class"			"Assassin"
+		"Trait"			"" 
+		"Roles"			"tank,assassin" 	
+		"Role" 							
+		{
+			"1"	
+			{			
+				"assassin"	
+				{
+					"weight"	"60"	// weight to calculate
+					"criteria"	"3"
+					"dDeal"		"4500"	// > avg dmg deal per round
+					"KD"		"2.0"	// > total KD
+					"Death"		"50"	// < death of total round
+				}
+			}
+			"2"
+			{			
+				"tank"	
+				{
+					"weight"	"40"	// weight to calculate
+					"criteria"	"2"
+					"dTake"		"170"	// > avg dmg taken(%max hp) per round
+					"Death"		"80"	// < death of total round
+				}	
+			}
+		}
+	}	
+	"npc_dota_hero_phantom_assassin"		
+	{
+		"Sex"			"Female"
+		"Class"			"Assassin"
+		"Trait"			"divine" 
+		"Roles"			"assassin,dps" 	
+		"Role" 							
+		{
+			"1"	
+			{			
+				"assassin"	
+				{
+					"weight"	"60"	// weight to calculate
+					"criteria"	"3"
+					"dDeal"		"4000"	// > avg dmg deal per round
+					"KD"		"2.0"	// > total KD
+					"Death"		"50"	// < death of total round
+				}
+			}
+			"2"
+			{			
+				"carry"	
+				{
+					"weight"	"40"	// weight to calculate
+					"criteria"	"3"
+					"dDeal"		"6000"	// > avg dmg deal per round
+					"KD"		"1.5"	// > total KD
+					"Assist"	"40"	// > Assist
+				}			
+			}
+		}
+	}		
+	"npc_dota_hero_doom_bringer"		
+	{
+		"Sex"			"Male"
+		"Class"			"Berserker"
+		"Trait"			"divine" 
+		"Roles"			"tank,control" 	
+		"Role" 							
+		{
+			"1"	
+			{			
+				"tank"	
+				{
+					"weight"	"80"	// weight to calculate
+					"criteria"	"2"
+					"dTake"		"200"	// > avg dmg taken(%max hp) per round
+					"Death"		"80"	// < death of total round
+				}
+			}
+			"2"
+			{			
+				"control"	
+				{
+					"weight"	"20"	// weight to calculate
+					"criteria"	"2"
+					"CC1"		"15"	// > avg CC duration per round
+					"CC2"		"25"	// > avg CC duration per round
+				}	
+			}
+		}
+	}			
+	"npc_dota_hero_sven"				
+	{
+		"Sex"			"Male"
+		"Class"			"Berserker"
+		"Trait"			"" 
+		"Roles"			"tank,assassin,carry" 	
+		"Role" 							
+		{
+			"1"	
+			{			
+				"tank"	
+				{
+					"weight"	"20"	// weight to calculate
+					"criteria"	"2"
+					"dTake"		"150"	// > avg dmg taken(%max hp) per round
+					"Death"		"80"	// < death of total round
+				}
+			}
+			"2"
+			{			
+				"assassin"	
+				{
+					"weight"	"40"	// weight to calculate
+					"criteria"	"3"
+					"dDeal"		"4000"	// > avg dmg deal per round
+					"KD"		"2.0"	// > total KD
+					"Death"		"50"	// < death of total round
+				}
+			}
+			"3"	
+			{			
+				"carry"
+				{
+					"weight"	"40"	// weight to calculate
+					"criteria"	"3"
+					"dDeal"		"7000"	// > avg dmg deal per round
+					"KD"		"1.5"	// > total KD
+					"Assist"	"38"	// > Assist
+				}
+			}
+		}
+	}	
+	"npc_dota_hero_zuus"				
+	{
+		"Sex"			"Female"
+		"Class"			"Berserker"
+		"Trait"			"" 
+		"Roles"			"tank,control" 	
+		"Role" 							
+		{
+			"1"	
+			{			
+				"tank"	
+				{
+					"weight"	"80"	// weight to calculate
+					"criteria"	"2"
+					"dTake"		"200"	// > avg dmg taken(%max hp) per round
+					"Death"		"80"	// < death of total round
+				}
+			}
+			"2"
+			{			
+				"control"	
+				{
+					"weight"	"20"	// weight to calculate
+					"criteria"	"2"
+					"CC1"		"15"	// > avg CC duration per round
+					"CC2"		"25"	// > avg CC duration per round
+				}	
+			}
+		}
+	}		
+	"npc_dota_hero_axe"					
+	{
+		"Sex"			"Male"
+		"Class"			"Berserker"
+		"Trait"			"" 
+		"Roles"			"tank,carry" 	
+		"Role" 							
+		{
+			"1"	
+			{			
+				"tank"	
+				{
+					"weight"	"60"	// weight to calculate
+					"criteria"	"2"
+					"dTake"		"200"	// > avg dmg taken(%max hp) per round
+					"Death"		"80"	// < death of total round
+				}
+			}
+			"2"
+			{			
+				"carry"	
+				{
+					"weight"	"40"	// weight to calculate
+					"criteria"	"3"
+					"dDeal"		"4000"	// > avg dmg deal per round
+					"KD"		"1.5"	// > total KD
+					"Assist"	"38"	// > Assist
+				}		
+			}
+		}
+	}				
+	"npc_dota_hero_vengefulspirit"		
+	{
+		"Sex"			"Male"
+		"Class"			"Avenger"
+		"Trait"			"human_slayer" 
+		"Roles"			"tank,carry" 	
+		"Role" 							
+		{
+			"1"	
+			{			
+				"tank"	
+				{
+					"weight"	"60"	// weight to calculate
+					"criteria"	"2"
+					"dTake"		"200"	// > avg dmg taken(%max hp) per round
+					"Death"		"80"	// < death of total round
+				}
+			}
+			"2"
+			{			
+				"carry"	
+				{
+					"weight"	"40"	// weight to calculate
+					"criteria"	"3"
+					"dDeal"		"4000"	// > avg dmg deal per round
+					"KD"		"1.5"	// > total KD
+					"Assist"	"38"	// > Assist
+				}		
+			}
+		}
+	}	
+	"npc_dota_hero_night_stalker"		
+	{
+		"Sex"			"Male"
+		"Class"			"Avenger"
+		"Trait"			"human_slayer" 
+		"Roles"			"carry,assassin" 	
+		"Role" 							
+		{
+			"1"	
+			{			
+				"assassin"	
+				{
+					"weight"	"40"	// weight to calculate
+					"criteria"	"3"
+					"dDeal"		"4000"	// > avg dmg deal per round
+					"KD"		"2.0"	// > total KD
+					"Death"		"50"	// < death of total round
+				}
+			}
+			"2"
+			{			
+				"carry"	
+				{
+					"weight"	"60"	// weight to calculate
+					"criteria"	"3"
+					"dDeal"		"6000"	// > avg dmg deal per round
+					"KD"		"1.5"	// > total KD
+					"Assist"	"38"	// > Assist
+				}		
+			}
+		}
+	}	
+	"npc_dota_hero_mirana"				
+	{
+		"Sex"			"Female"
+		"Class"			"Ruler"
+		"Trait"			"" 
+		"Roles"			"support,tank,control" 	
+		"Role" 							
+		{
+			"1"	
+			{			
+				"support"	
+				{
+					"weight"	"60"	// weight to calculate
+					"criteria"	"5"
+					"Assist"	"60"	// > Assist
+					"Heal"		"5000"	// < death of total round
+					"Avarice"	"1"		// > Avarice
+					"Link"		"1"		// > link per round
+					"Ward"		"1"		// > ward per round
+				}
+			}
+			"2"
+			{			
+				"tank"	
+				{
+					"weight"	"30"	// weight to calculate
+					"criteria"	"2"
+					"dTake"		"130"	// > avg dmg taken(%max hp) per round
+					"Death"		"80"	// < death of total round
+				}	
+			}
+			"3"	
+			{			
+				"control"	
+				{
+					"weight"	"10"	// weight to calculate
+					"criteria"	"1"
+					"CC1"		"20"	// > avg CC duration per round
+				}
+			}
+		}
+	}	
+	"npc_dota_hero_enigma"
+	{
+		"Sex"			"Male"
+		"Class"			"Ruler"
+		"Trait"			"anti_ruler" 
+		"Roles"			"carry,assassin,mobility" 	
+		"Role" 							
+		{
+			"1"
+			{			
+				"assassin"	
+				{
+					"weight"	"50"	// weight to calculate
+					"criteria"	"3"
+					"dDeal"		"4000"	// > avg dmg deal per round
+					"KD"		"2.0"	// > total KD
+					"Death"		"50"	// < death of total round
+				}		
+			}
+			"2"	
+			{			
+				"carry"
+				{
+					"weight"	"40"	// weight to calculate
+					"criteria"	"3"
+					"dDeal"		"8000"	// > avg dmg deal per round
+					"KD"		"1.5"	// > total KD
+					"Assist"	"38"	// > Assist
+				}
+			}
+			"3"	
+			{			
+				"mobility"	
+				{
+					"weight"	"10"	// weight to calculate
+					"criteria"	"1"
+					"Death"		"35"	// < death of total round
+				}
+			}
+		}
+	}
+	"npc_dota_hero_gyrocopter"
+	{
+		"Sex"			"Female"
+		"Class"			"Archer"
+		"Trait"			"god_slayer" 
+		"Roles"			"snipe,burst" 	
+		"Role" 							
+		{
+			"1"	
+			{			
+				"carry"
+				{
+					"weight"	"85"	// weight to calculate
+					"criteria"	"3"
+					"dDeal"		"6000"	// > avg dmg deal per round
+					"KD"		"1.5"	// > total KD
+					"Assist"	"20"	// > Assist
+				}
+			}
+			"2"	
+			{			
+				"mobility"	
+				{
+					"weight"	"7"	// weight to calculate
+					"criteria"	"1"
+					"Death"		"20"	// < death of total round
+				}
+			}
+			"3"	
+			{			
+				"support"	
+				{
+					"weight"	"8"	// weight to calculate
+					"criteria"	"4"
+					"Assist"	"20"	// > Assist
+					"Heal"		"1000"	// < death of total round
+					"Avarice"	"1"		// > Avarice
+					"Ward"		"1"		// > ward per round
+				}
+			}
+		}
+	}	
+	"npc_dota_hero_terrorblade"			
+	{
+		"Sex"			"Male"
+		"Class"			"Saber"
+		"Trait"			"shinsengumi" 
+		"Roles"			"burst,control,support" 	
+		"Role" 							
+		{
+			"1"
+			{			
+				"burst"	
+				{
+					"weight"	"40"	// weight to calculate
+					"criteria"	"3"
+					"dDeal"		"5000"	// > avg dmg deal per round
+					"KD"		"1.5"	// > total KD
+					"Assist"	"30"	// > Assist
+				}		
+			}
+			"2"
+			{			
+				"control"	
+				{
+					"weight"	"35"	// weight to calculate
+					"criteria"	"1"
+					"CC1"		"25"	// > avg CC duration per round
+				}		
+			}			
+			"3"	
+			{			
+				"support"	
+				{
+					"weight"	"25"	// weight to calculate
+					"criteria"	"4"
+					"Assist"	"30"	// > Assist
+					"Heal"		"500"	// < death of total round
+					"Avarice"	"1"		// > Avarice
+					"Ward"		"1"		// > ward per round
+				}
+			}
+		}
+	}			
+	"npc_dota_hero_dragon_knight"			
+	{
+		"Sex"			"Female"
+		"Class"			"Shielder"
+		"Trait"			"Human" 
+		"Roles"			"tank,control,support" 	
+		"Role" 							
+		{
+			"1"
+			{			
+				"tank"	
+				{
+					"weight"	"65"	// weight to calculate
+					"criteria"	"2"
+					"dTake"		"170"	// > avg dmg taken(%max hp) per round
+					"Death"		"80"	// < death of total round
+				}		
+			}
+			"2"	
+			{			
+				"control"	
+				{
+					"weight"	"20"	// weight to calculate
+					"criteria"	"1"
+					"CC1"		"25"	// > avg CC duration per round
+				}
+			}
+			"3"	
+			{			
+				"support"	
+				{
+					"weight"	"15"	// weight to calculate
+					"criteria"	"2"
+					"Assist"	"20"	// > Assist
+					"Heal"		"1000"	// < death of total round
+				}
+			}
+		}
+	}
+	"npc_dota_hero_antimage"			
+	{
+		"Sex"			"Female"
+		"Class"			"Saber"
+		"Trait"			"Human" 
+		"Roles"			"carry,mobility,tank" 	
+		"Role" 							
+		{
+			"1"
+			{			
+				"tank"	
+				{
+					"weight"	"30"	// weight to calculate
+					"criteria"	"2"
+					"dTake"		"170"	// > avg dmg taken(%max hp) per round
+					"Death"		"80"	// < death of total round
+				}		
+			}
+			"2"	
+			{			
+				"carry"
+				{
+					"weight"	"50"	// weight to calculate
+					"criteria"	"3"
+					"dDeal"		"5000"	// > avg dmg deal per round
+					"KD"		"1.5"	// > total KD
+					"Assist"	"35"	// > Assist
+				}
+			}
+			"3"	
+			{			
+				"mobility"	
+				{
+					"weight"	"10"	// weight to calculate
+					"criteria"	"1"
+					"Death"		"35"	// < death of total round
+				}
+			}
+		}
+	}	
+	"npc_dota_hero_oracle"			
+	{
+		"Sex"			"Female"
+		"Class"			"Archer"
+		"Trait"			"divine" 
+		"Roles"			"jumper,snipe" 	
+		"Role" 							
+		{
+			"1"
+			{			
+				"burst"	
+				{
+					"weight"	"50"	// weight to calculate
+					"criteria"	"3"
+					"dDeal"		"4000"	// > avg dmg deal per round
+					"KD"		"1.5"	// > total KD
+					"Assist"	"38"	// > Assist
+				}		
+			}
+			"2"	
+			{			
+				"assassin"	
+				{
+					"weight"	"50"	// weight to calculate
+					"criteria"	"3"
+					"dDeal"		"3000"	// > avg dmg deal per round
+					"KD"		"2.0"	// > total KD
+					"Death"		"50"	// < death of total round
+				}
+			}
+		}
+	}	
+	"npc_dota_hero_ursa"			
+	{
+		"Sex"			"Female"
+		"Class"			"Berserker"
+		"Trait"			"" 
+		"Roles"			"jumper,tank" 	
+		"Role" 							
+		{
+			"1"
+			{			
+				"burst"	
+				{
+					"weight"	"50"	// weight to calculate
+					"criteria"	"3"
+					"dDeal"		"3500"	// > avg dmg deal per round
+					"KD"		"1.3"	// > total KD
+					"Assist"	"45"	// > Assist
+				}		
+			}
+			"2"	
+			{			
+				"tank"	
+				{
+					"weight"	"50"	// weight to calculate
+					"criteria"	"2"
+					"dTake"		"130"	// > avg dmg taken(%max hp) per round
+					"Death"		"80"	// < death of total round
+				}
+			}
+		}
+	}	
+	"npc_dota_hero_kunkka"			
+	{
+		"Sex"			"Male"
+		"Class"			"Saber"
+		"Trait"			"" 
+		"Roles"			"burst,tank" 	
+		"Role" 							
+		{
+			"1"
+			{			
+				"burst"	
+				{
+					"weight"	"80"	// weight to calculate
+					"criteria"	"3"
+					"dDeal"		"4000"	// > avg dmg deal per round
+					"KD"		"1.3"	// > total KD
+					"Assist"	"40"	// > Assist
+				}		
+			}
+			"2"	
+			{			
+				"tank"	
+				{
+					"weight"	"20"	// weight to calculate
+					"criteria"	"2"
+					"dTake"		"110"	// > avg dmg taken(%max hp) per round
+					"Death"		"60"	// < death of total round
+				}
+			}
+		}
+	}	
+	"npc_dota_hero_void_spirit"			
+	{
+		"Sex"			"Female"
+		"Class"			"Lancer"
+		"Trait"			"dragon" 
+		"Roles"			"burst, carry" 	
+		"Role" 							
+		{
+			"1"
+			{			
+				"burst"	
+				{
+					"weight"	"50"	// weight to calculate
+					"criteria"	"3"
+					"dDeal"		"3500"	// > avg dmg deal per round
+					"KD"		"2.0"	// > total KD
+					"Assist"	"40"	// > Assist
+				}		
+			}
+			"2"
+			{			
+				"carry"	
+				{
+					"weight"	"50"	// weight to calculate
+					"criteria"	"3"
+					"dDeal"		"5000"	// > avg dmg deal per round
+					"KD"		"1.5"	// > total KD
+					"Assist"	"40"	// > Assist
+				}			
+			}
+		}
+	}
+	"npc_dota_hero_nyx_assassin"
+	{
+		"Sex"			"Female"
+		"Class"			"AlterEgo"
+		"Trait"			"divine" 
+		"Roles"			"burst" 	
+		"Role" 							
+		{
+			"1"
+			{			
+				"burst"	
+				{
+					"weight"	"100"	// weight to calculate
+					"criteria"	"3"
+					"dDeal"		"999999999"	// > avg dmg deal per round
+					"KD"		"99.0"	// > total KD
+					"Assist"	"9999"	// > Assist
+				}		
+			}
+		}
+	}
+}

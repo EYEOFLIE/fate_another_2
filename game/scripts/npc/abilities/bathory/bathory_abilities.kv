@@ -1,0 +1,2098 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Elizabeth Bathory: Innate : Battle Continuation
+	//=================================================================================================================
+	"bathory_battle_continuation"
+	{
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityTextureName"			"custom/bathory/bathory_battle_continuation"
+		"AbilityCooldown"				"100"
+
+		"precache"
+		{
+			
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_damage"			"1200"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"revive_health"			"300"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"dash_back"				"600"
+			}
+		}
+
+		"OnSpellStart"
+		{
+		}
+
+		"Modifiers"
+		{
+			"modifier_bathory_battle_continuation"
+			{
+				"Passive"	"1"
+				"IsHidden"	"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"OnTakeDamage"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/bathory/bathory_abilities"
+						"Function"		"BathoryTakeDamage"
+						"DamageTaken"	"%attack_damage"
+					}
+				}
+			}
+			"modifier_bathory_battle_continuation_cooldown"
+			{
+				"IsDebuff"	"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			}	
+		}
+	}
+	//=================================================================================================================
+	// Elizabeth Bathory : Innocent Monster
+	//=================================================================================================================
+	"bathory_innocent"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE "
+		"AbilityTextureName"			"custom/bathory/bathory_innocent"
+		"MaxLevel"						"1"
+		"AbilityCooldown"				"50"
+		"precache"
+		{
+			
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"6"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"bonus_attack"		"50"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"bonus_arm"			"10"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"bonus_mr"			"10"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/bathory/bathory_abilities"
+				"Function"			"OnInnocentStart"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_bathory_innocent"
+			{
+				"Duration"			"%duration"
+				"IsBuff"			"1"
+				"EffectName"		"particles/units/heroes/hero_spectre/spectre_ambient.vpcf"
+				"EffectAttachType"	"follow_origin"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"	"%bonus_attack"
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%bonus_arm"
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%bonus_mr"
+				}		
+			}
+			"modifier_bathory_bloody_window"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"IsPurgable"		"0"
+				"Duration"			"4"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/bathory/bathory_abilities"
+						"Function"		"OnBloodWindowCreate"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/bathory/bathory_abilities"
+						"Function"		"OnBloodWindowDestroy"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/bathory/bathory_abilities"
+						"Function"		"OnBloodWindowDeath"
+					}
+				}
+			}
+			"modifier_bathory_innocent_cooldown"
+			{
+				"IsDebuff"	"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Elizabeth Bathory : Innocent Monster (Mental Disorder)
+	//=================================================================================================================
+	"bathory_innocent_upgrade"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE "
+		"AbilityTextureName"			"custom/bathory/bathory_innocent"
+		"MaxLevel"						"1"
+		"AbilityCooldown"				"50"
+		"precache"
+		{
+			
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"6"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"bonus_attack"		"50"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"bonus_arm"			"20"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"bonus_mr"			"20"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"crit_rate"			"60"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"crit_dmg"			"180"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/bathory/bathory_abilities"
+				"Function"			"OnInnocentStart"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_bathory_innocent"
+			{
+				"Duration"			"%duration"
+				"IsBuff"			"1"
+				"EffectName"		"particles/units/heroes/hero_spectre/spectre_ambient.vpcf"
+				"EffectAttachType"	"follow_origin"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"	"%bonus_attack"
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%bonus_arm"
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%bonus_mr"
+				}		
+			}
+			"modifier_bathory_berserk"
+			{
+				"Duration"			"%duration"
+				"IsBuff"			"1"
+				"IsHidden"			"0"		
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"TextureName"		"custom/bathory/bathory_attribute_mental"
+			}
+			"modifier_bathory_innocent_crit"
+			{
+				"IsHidden"	"1"
+				"Passive"	"1"
+				"OnAttackStart"
+				{
+					"RemoveModifier"
+					{
+						"ModifierName"	"modifier_bathory_innocent_crit_hit"
+						"Target"
+ 						{
+ 							"Center"	"CASTER"
+ 							"Flags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+ 						}
+					}
+					"Random"
+					{
+						"Chance"	"%crit_rate"
+						"OnSuccess"
+						{
+							"RunScript"
+							{
+								"ScriptFile"			"abilities/bathory/bathory_abilities"
+								"Function"				"OnInnocentAttack"
+							}
+						}
+					}
+				}
+			}
+
+			"modifier_bathory_innocent_crit_hit"
+			{
+				"IsHidden"		"1"
+				"Attributes"	"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE" "%crit_dmg"
+				}
+				"OnAttackLanded"
+				{
+			    	"FireEffect"
+			    	{
+			    		"EffectName"		"particles/units/heroes/hero_juggernaut/jugg_crit_blur_impact.vpcf"
+			    		"EffectAttachType"	"attach_hitloc"
+			    		"Target"			"TARGET"
+			    	}
+			        "RemoveModifier"
+			        {
+			            "ModifierName"  	"modifier_bathory_innocent_crit_hit"
+						"Target"
+ 						{
+ 							"Center"	"CASTER"
+ 							"Flags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+ 						}
+   			        }			
+				}
+			}
+			"modifier_bathory_innocent_cooldown"
+			{
+				"IsDebuff"	"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			}
+			"modifier_bathory_bloody_window"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"IsPurgable"		"0"
+				"Duration"			"4"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/bathory/bathory_abilities"
+						"Function"		"OnBloodWindowCreate"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/bathory/bathory_abilities"
+						"Function"		"OnBloodWindowDestroy"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/bathory/bathory_abilities"
+						"Function"		"OnBloodWindowDeath"
+					}
+				}
+			}
+		}
+	}
+	//=====================================
+	// Elizabeth Bathory: Estet Repulse
+	//=====================================
+	"bathory_fly"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/bathory/bathory_fly"
+		"AbilityCastAnimation" 			"ACT_DOTA_ITEM_PICKUP"
+		"AnimationPlaybackRate" 		"0.5"
+
+		"precache"
+		{
+			
+		}
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"900"
+		"AbilityCastPoint"				"0.1"
+		"AbilityManaCost"				"100"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"13 12 11 10 9"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"300 370 440 510 580"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"dmg_rdc"				"10"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"distance"						"900"
+			}
+			"05"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"width"							"150"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"speed"							"1600"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"slow"							"-20"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow_dur"				"1.1 1.3 1.5 1.7 1.9"
+			}
+			
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/bathory/bathory_abilities"
+				"Function"		"OnNightFlyStart"
+			}
+		}	
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"	"0"
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/bathory/bathory_abilities"
+				"Function"		"OnNightFlyHit"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_fly_slow"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"Duration"			"%slow_dur"
+		
+				"Properties"
+				{
+				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow" 
+				}
+			}
+		}
+	}
+	//=====================================
+	// Elizabeth Bathory: Estet Repulse (Torture Technique SA)
+	//=====================================
+	"bathory_fly_upgrade"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/bathory/bathory_fly"
+		"AbilityCastAnimation" 			"ACT_DOTA_ITEM_PICKUP"
+		"AnimationPlaybackRate" 		"0.5"
+
+		"precache"
+		{
+			
+		}
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"900"
+		"AbilityCastPoint"				"0.1"
+		"AbilityManaCost"				"100"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"13 12 11 10 9"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"300 370 440 510 580"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"dmg_rdc"				"10"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"distance"						"900"
+			}
+			"05"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"width"							"150"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"speed"							"1600"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"slow"							"-20"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow_dur"				"1.1 1.3 1.5 1.7 1.9"
+			}
+			
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/bathory/bathory_abilities"
+				"Function"		"OnNightFlyStart"
+			}
+		}	
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"	"0"
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/bathory/bathory_abilities"
+				"Function"		"OnNightFlyHit"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_fly_slow"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"Duration"			"%slow_dur"
+		
+				"Properties"
+				{
+				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow" 
+				}
+			}
+			"modifier_fly_girl"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"ThinkInterval"  "0.1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/bathory/bathory_abilities"
+						"Function"		"OnNightFlyCatch"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/bathory/bathory_abilities"
+						"Function"		"OnNightFlyCatchStop"
+					}
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Elizabeth Bathory : Tail Slap
+	//=================================================================================================================
+	"bathory_tail_slap"
+	{
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/bathory/bathory_tail_slap"
+		"AbilityCastAnimation" 			"ACT_DOTA_ITEM_PICKUP"
+		"AnimationPlaybackRate" 		"0.5"
+		"AbilityCastRange"				"300"
+		"AbilityCastPoint"				"0.1"
+		"AbilityManaCost"				"200"
+		"AbilityCooldown"				"13"
+		"AOERadius"						"%aoe"
+		"precache"
+		{
+			
+		}
+		"AbilitySpecial"
+		{
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"total_hit"				"3"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aoe"					"300"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dmg"					"200 230 260 290 320"
+			}	
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow"					"-30"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow_duration"			"1.0"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"stun_stack"			"3"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"stun_duration"			"1.0"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/bathory/bathory_abilities"
+				"Function"		"OnTailSlapStart"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_bathory_slap_slow"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"Duration"			"%slow_duration"
+				"Properties"
+				{
+				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow" 
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Elizabeth Bathory : Iron Maiden
+	//=================================================================================================================
+	"bathory_iron_maiden"
+	{
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/bathory/bathory_iron_maiden"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_3"
+		"AnimationPlaybackRate" 		"2.0"
+		"AbilityCastRange"				"600"
+		"AbilityCastPoint"				"0.3"
+		"AbilityManaCost"				"400"
+		"AbilityCooldown"				"23 22 21 20 19"
+		"AOERadius"						"%aoe"
+		"precache"
+		{
+			
+		}
+		"AbilitySpecial"
+		{
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_time"				"0.3"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"delay"					"0.5"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aoe"					"300"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"min_duration"			"1.0"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"max_duration"			"2.0 2.3 2.6 2.9 3.2"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dps"					"200"
+			}	
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"hp_drain"				"50"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cage_health"			"500 700 900 1100 1300"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"stun_duration"			"1.0"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/bathory/bathory_abilities"
+				"Function"		"OnIronMaidenStart"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_bathory_cage_check"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/bathory/bathory_abilities"
+						"Function"		"OnIronMaidenDestroy"
+					}
+				}
+			}
+			"modifier_bathory_cage_dummy"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"States"
+				{
+					"MODIFIER_STATE_STUNNED"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_UNIT_COLLISION"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+				"ThinkInterval"  "0.1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/bathory/bathory_abilities"
+						"Function"		"OnIronMaidenDummyThink"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/bathory/bathory_abilities"
+						"Function"		"OnIronMaidenDeath"
+					}
+				}
+			}
+			"modifier_bathory_cage_target"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+
+				"States"
+				{
+					"MODIFIER_STATE_STUNNED"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_INVULNERABLE"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_UNTARGETABLE"		"MODIFIER_STATE_VALUE_ENABLED"
+					//"MODIFIER_STATE_NO_HEALTH_BAR"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_UNIT_COLLISION"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+				"ThinkInterval"  "0.1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/bathory/bathory_abilities"
+						"Function"		"OnIronMaidenThink"
+					}
+				}
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/bathory/bathory_abilities"
+						"Function"		"OnIronMaidenCageStart"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/bathory/bathory_abilities"
+						"Function"		"OnIronMaidenCageEnd"
+					}
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Elizabeth Bathory : Iron Maiden
+	//=================================================================================================================
+	"bathory_iron_maiden_upgrade"
+	{
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/bathory/bathory_iron_maiden"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_3"
+		"AnimationPlaybackRate" 		"2.0"
+		"AbilityCastRange"				"600"
+		"AbilityCastPoint"				"0.3"
+		"AbilityManaCost"				"400"
+		"AbilityCooldown"				"23 22 21 20 19"
+		"AOERadius"						"%aoe"
+		"precache"
+		{
+
+		}
+		"AbilitySpecial"
+		{
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_time"				"0.3"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"delay"					"0.5"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aoe"					"300"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"min_duration"			"1.0"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"max_duration"			"3.0 3.3 3.6 3.9 4.2"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dps"					"200"
+			}	
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"hp_drain"				"80"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cage_health"			"500 700 900 1100 1300"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cage_armor"			"20"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cage_mr"				"20"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"stun_duration"			"1.0"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/bathory/bathory_abilities"
+				"Function"		"OnIronMaidenStart"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_bathory_cage_check"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/bathory/bathory_abilities"
+						"Function"		"OnIronMaidenDestroy"
+					}
+				}
+			}
+			"modifier_bathory_cage_dummy"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"States"
+				{
+					"MODIFIER_STATE_STUNNED"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_UNIT_COLLISION"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%cage_armor"
+				    "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS" "%cage_mr" 
+				}
+				"ThinkInterval"  "0.1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/bathory/bathory_abilities"
+						"Function"		"OnIronMaidenDummyThink"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/bathory/bathory_abilities"
+						"Function"		"OnIronMaidenDeath"
+					}
+				}
+			}
+			"modifier_bathory_cage_target"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+
+				"States"
+				{
+					"MODIFIER_STATE_STUNNED"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_INVULNERABLE"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_UNTARGETABLE"		"MODIFIER_STATE_VALUE_ENABLED"
+					//"MODIFIER_STATE_NO_HEALTH_BAR"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_UNIT_COLLISION"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+				"ThinkInterval"  "0.1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/bathory/bathory_abilities"
+						"Function"		"OnIronMaidenThink"
+					}
+				}
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/bathory/bathory_abilities"
+						"Function"		"OnIronMaidenCageStart"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/bathory/bathory_abilities"
+						"Function"		"OnIronMaidenCageEnd"
+					}
+				}
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/bathory/bathory_abilities"
+						"Function"		"OnIronMaidenCageEnd"
+					}
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Elizabeth Bathory : Dragon Cry Thunder Voice
+	//=================================================================================================================
+	"bathory_dragon_cry"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/bathory/bathory_dragon_cry"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_4"
+		"AnimationPlaybackRate" 		"1.0"
+
+		
+		"precache"
+		{
+			
+		}
+		
+		"AbilityCastPoint"				"0.15"
+		"AbilityCooldown"				"41"
+		"AbilityManaCost"				"800"
+		"AbilityCastRange"				"1500"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"			"1.5"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"total_damage"			"800 1050 1300 1550 1800"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_range"				"1500"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"start_radius"			"250"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"end_radius"			"450"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow"					"-100"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow_duration"			"1"
+			}
+			
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"speed"					"3000"
+			}
+		}	
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"    		"abilities/bathory/bathory_abilities"
+				"Function"      		"OnDragonCryStart"
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"	"0"
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/bathory/bathory_abilities"
+				"Function"		"OnDragonCryHit"
+			}
+		}
+		
+		"Modifiers"
+		{	
+			"modifier_bathory_lance"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/bathory/bathory_abilities"
+						"Function"		"OnLanceOff"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/bathory/bathory_abilities"
+						"Function"		"OnLanceOn"
+					}
+				}
+			}	
+			"modifier_bathory_dragon_voice_slow"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Properties"
+				{
+				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow" 
+				}
+			}
+			"modifier_bathory_dragon_voice_deaf"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"States"
+				{
+					"MODIFIER_STATE_SILENCED"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Elizabeth Bathory : Dragon Cry Thunder Voice (Dragon Breath SA)
+	//=================================================================================================================
+	"bathory_dragon_cry_upgrade"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/bathory/bathory_dragon_cry"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_4"
+		"AnimationPlaybackRate" 		"1.0"
+
+		
+		"precache"
+		{
+			
+		}
+		
+		"AbilityCastPoint"				"0.15"
+		"AbilityCooldown"				"41"
+		"AbilityManaCost"				"800"
+		"AbilityCastRange"				"1500"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"			"1.5"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"total_damage"			"900 1150 1400 1650 1900"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_mana"			"35"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"start_radius"			"250"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"end_radius"			"450"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_range"				"1500"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow"					"-100"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow_duration"			"1"
+			}
+			
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"speed"					"3000"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"knock"					"500"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"    		"abilities/bathory/bathory_abilities"
+				"Function"      		"OnDragonCryStart"
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"	"0"
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/bathory/bathory_abilities"
+				"Function"		"OnDragonCryHit"
+			}
+		}
+		
+		"Modifiers"
+		{	
+			"modifier_bathory_lance"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/bathory/bathory_abilities"
+						"Function"		"OnLanceOff"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/bathory/bathory_abilities"
+						"Function"		"OnLanceOn"
+					}
+				}
+			}	
+			"modifier_bathory_dragon_voice_slow"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Properties"
+				{
+				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow" 
+				}
+			}
+			"modifier_bathory_dragon_voice_deaf"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"States"
+				{
+					"MODIFIER_STATE_SILENCED"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Elizabeth Bathory : Combo : Fresh Blood Demoness
+	//=================================================================================================================
+	"bathory_combo_fresh_blood"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/bathory/bathory_combo_fresh_blood"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_5"
+		"AnimationPlaybackRate" 		"1.0"
+
+		
+		"precache"
+		{
+			
+		}
+		
+		"AbilityCastPoint"				"0.15"
+		"AbilityCooldown"				"180"
+		"AbilityManaCost"				"800"
+		"AbilityCastRange"				"2000"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"			"3"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"total_damage"			"2500"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"start_radius"			"250"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"end_radius"			"450"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_range"				"2000"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow"					"-10"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow_duration"			"1"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"speed"					"4000"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"debuff_stack"			"10"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"debuff_mr"				"-30"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"debuff_arm"			"-30"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"debuff_slow"			"-50"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"debuff_duration"		"10"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"    		"abilities/bathory/bathory_abilities"
+				"Function"      		"OnFreshBloodStart"
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"	"0"
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/bathory/bathory_abilities"
+				"Function"		"OnFreshBloodHit"
+			}
+		}
+		
+		"Modifiers"
+		{		
+			"modifier_bathory_lance"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/bathory/bathory_abilities"
+						"Function"		"OnLanceOff"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/bathory/bathory_abilities"
+						"Function"		"OnLanceOn"
+					}
+				}
+			}
+			"modifier_bathory_fresh_blood_count"
+			{
+				"Duration"		"1"
+				"IsDebuff"		"1"
+				"IsHidden"		"0"
+				"Properties"
+				{
+				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow" 
+				}
+				"States"
+				{
+					"MODIFIER_STATE_SILENCED"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+			"modifier_bathory_fresh_blood_debuff"
+			{
+				"IsDebuff"		"1"
+				"IsHidden"		"0"
+				"Duration"		"%debuff_duration"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%debuff_slow"
+				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%debuff_slow" 
+				    "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS" "%debuff_mr" 
+				    "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%debuff_arm"
+				}
+			}
+			"modifier_bathory_combo_cooldown"
+			{
+				"IsDebuff"	"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Elizabeth Bathory : Combo : Fresh Blood Demoness (Dragon Breath)
+	//=================================================================================================================
+	"bathory_combo_fresh_blood_upgrade"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/bathory/bathory_combo_fresh_blood"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_5"
+		"AnimationPlaybackRate" 		"1.0"
+
+		
+		"precache"
+		{
+			
+		}
+		
+		"AbilityCastPoint"				"0.15"
+		"AbilityCooldown"				"180"
+		"AbilityManaCost"				"800"
+		"AbilityCastRange"				"2000"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"			"3"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"total_damage"			"2500"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_mana"			"100"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"start_radius"			"250"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"end_radius"			"450"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow"					"-10"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow_duration"			"1"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_range"				"2000"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"speed"					"4000"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"knock"					"500"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"debuff_stack"			"10"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"debuff_arm"			"-30"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"debuff_mr"				"-30"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"debuff_slow"			"-50"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"debuff_duration"		"10"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"    		"abilities/bathory/bathory_abilities"
+				"Function"      		"OnFreshBloodStart"
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"	"0"
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/bathory/bathory_abilities"
+				"Function"		"OnFreshBloodHit"
+			}
+		}
+		
+		"Modifiers"
+		{		
+			"modifier_bathory_lance"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/bathory/bathory_abilities"
+						"Function"		"OnLanceOff"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/bathory/bathory_abilities"
+						"Function"		"OnLanceOn"
+					}
+				}
+			}
+			"modifier_bathory_fresh_blood_count"
+			{
+				"Duration"		"1"
+				"IsDebuff"		"1"
+				"IsHidden"		"0"
+				"Properties"
+				{
+				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow" 
+				}
+				"States"
+				{
+					"MODIFIER_STATE_SILENCED"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+			"modifier_bathory_fresh_blood_debuff"
+			{
+				"IsDebuff"		"1"
+				"IsHidden"		"0"
+				"Duration"		"%debuff_duration"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%debuff_slow"
+				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%debuff_slow" 
+				    "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS" "%debuff_mr" 
+				    "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%debuff_arm"
+				}
+			}
+			"modifier_bathory_combo_cooldown"
+			{
+				"IsDebuff"	"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Elizabeth Bathory : Sadism Charisma
+	//=================================================================================================================
+	"bathory_charisma"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityTextureName"			"custom/bathory/bathory_attribute_sadism_charisma"
+		"MaxLevel"						"1"
+
+		"precache"
+		{
+			
+		}
+		
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"1000"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_atk"				"30"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_aspd"			"40"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_female"			"10"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_bathory_charisma_aura"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"Aura"					"modifier_bathory_charisma_check"
+				"Aura_Radius"			"%radius"
+				"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"Aura_Types"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP "
+				"Attributes"			"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Aura_ApplyToCaster"	"1"
+			}	
+			"modifier_bathory_charisma_check"
+			{
+				"IsDebuff"			"1"
+				"IsHidden"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/bathory/bathory_abilities"
+						"Function"		"OnCharismaCreate"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/bathory/bathory_abilities"
+						"Function"		"OnCharismaDestroy"
+					}
+				}
+			}
+			"modifier_bathory_charisma_girl"
+			{
+				"IsDebuff"			"0"
+				"IsHidden"			"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%bonus_aspd"
+					"MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE"	"%bonus_atk"
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Elizabeth Bathory : Territory
+	//=================================================================================================================
+	"bathory_territory"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityTextureName"			"custom/bathory/bathory_attribute_territory"
+		"MaxLevel"						"1"
+
+		"precache"
+		{
+			
+		}
+		
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"bonus_mana"		"400"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"bonus_mana_reg"	"1"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_bathory_territory"
+			{
+				"Passive"				"1"
+				"IsHidden"				"0"
+				"IsDebuff"				"0"
+				"Attributes"			"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MANA_BONUS" "%bonus_mana"
+				    "MODIFIER_PROPERTY_MANA_REGEN_TOTAL_PERCENTAGE" "%bonus_mana_reg" 
+				}
+			}	
+		}
+	}
+	//=======================================
+	// Elizabeth Bathory Attribute : Territory Creation
+	//=======================================
+	"bathory_attribute_territory"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/bathory/bathory_attribute_territory"
+		
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"13"
+
+		"precache"
+		{
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"bonus_mana"		"400"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"bonus_mana_reg"	"1"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/bathory/bathory_abilities"
+				"Function"		"OnTerritoryCreationAcquired"
+			}
+		}
+	}
+	//=======================================
+	// Elizabeth Bathory Attribute : Dragon Breath
+	//=======================================
+	"bathory_attribute_dragon_breath"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/bathory/bathory_attribute_dragon_breath"
+		
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"15"
+
+		"precache"
+		{
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"cry_bonus"			"100"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"cry_bonus_mana"	"35"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"cry_knock"			"500"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"combo_bonus_mana"	"100"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"combo_knock"		"500"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/bathory/bathory_abilities"
+				"Function"		"OnDragonBreathAcquired"
+			}
+		}
+	}
+	//=======================================
+	// Elizabeth Bathory Attribute : Mental Disorder
+	//=======================================
+	"bathory_attribute_mental"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/bathory/bathory_attribute_mental"
+		
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"7"
+
+		"precache"
+		{
+		}
+
+		"AbilitySpecial"
+		{
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"bonus_arm"			"10"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"bonus_mr"			"10"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"crit_rate"			"60"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"crit_dmg"			"180"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/bathory/bathory_abilities"
+				"Function"		"OnMentalAcquired"
+			}
+		}
+	}
+	//=======================================
+	// Elizabeth Bathory Attribute : Sadism Charisma
+	//=======================================
+	"bathory_attribute_sadism_charisma"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/bathory/bathory_attribute_sadism_charisma"
+		
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"9"
+
+		"precache"
+		{
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"1000"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_atk"				"30"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_aspd"			"40"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_female"			"10"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/bathory/bathory_abilities"
+				"Function"		"OnSadismAcquired"
+			}
+		}
+	}
+	//=======================================
+	// Elizabeth Bathory Attribute : Torture Technique
+	//=======================================
+	"bathory_attribute_torture"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/bathory/bathory_attribute_torture"
+		
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"13"
+
+		"precache"
+		{
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"girl_lock"				"1"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cage_bonus_dur"		"1"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cage_bonus_armor"		"20"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cage_bonus_mr"			"20"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cage_bonus_drain"		"30"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/bathory/bathory_abilities"
+				"Function"		"OnTortureAcquired"
+			}
+		}
+	}
+	//=======================================
+	// Precache
+	//=======================================
+	"bathory_precache"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"custom/medusa/medusa_attribute_monstrous_strength"
+
+		"precache"
+		{
+			"model"					"models/bathory/school/bathory_schoolgirl_by_zefiroft.vmdl"
+			"model"					"models/bathory/hunter/bathory_hunter_by_zefiroft.vmdl"
+			"model"					"models/bathory/default/bathory_wing_by_zefiroft.vmdl"
+			"model"					"models/bathory/school/bathory_schoolgirl_wing_by_zefiroft.vmdl"
+			"model"					"models/bathory/hunter/bathory_hunter_wing_by_zefiroft.vmdl"
+			"model"					"models/bathory/bathory_weapon.vmdl"
+			"model"					"models/bathory/bathory_iron_maiden.vmdl"
+			"particle"				"particles/items_fx/aegis_respawn.vpcf"
+			"particle"  			"particles/custom/false_assassin/fa_quickdraw.vpcf"
+			"particle"				"particles/units/heroes/hero_spectre/spectre_ambient.vpcf"
+			"particle"  			"particles/units/heroes/hero_juggernaut/jugg_crit_blur_impact.vpcf"
+			"particle"  			"particles/custom/bathory/bathory_tail_slap.vpcf"
+			"particle"  			"particles/custom/bathory/bathory_iron_maiden.vpcf"
+			"particle"				"particles/custom/bathory/bathory_dragon_cry.vpcf"
+			"particle"				"particles/custom/bathory/bathory_dragon_cry_spiral.vpcf"
+			"particle"				"particles/custom/bathory/bathory_castle.vpcf"
+			"particle"				"particles/custom/bathory/bathory_magic_circle.vpcf"
+			"particle"				"particles/custom/bathory/bathory_fresh_blood_spiral.vpcf"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_sniper.vsndevts"			
+		}
+	}
+}
+
+	

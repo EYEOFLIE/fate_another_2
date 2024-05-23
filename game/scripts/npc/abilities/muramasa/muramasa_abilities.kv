@@ -1,0 +1,1140 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Muramasa - Chant (Q) 
+	//=================================================================================================================
+	"muramasa_chant"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityTextureName"			"custom/muramasa/muramasa_q"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityManaCost"				"100"
+		"AbilityCooldown"				"4"
+		"AbilityCastPoint"				"0.1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"1"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"chant_duration"	"6 6.75 7.5 8.25 9"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"marble_duration"	"8 10 12 14 16"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/muramasa/muramasa_abilities"
+				"Function"		"OnChant"
+			}
+		}		
+
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/muramasa/muramasa_abilities"
+				"Function"		"OnQUpgrade"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_muramasa_chant"
+			{
+				"IsHidden"			"0"
+				"IsBuff"			"1"
+				"Duration"			"%chant_duration"	
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			}
+			"modifier_muramasa_marble"
+			{
+				"IsHidden"			"0"
+				"IsBuff"			"1"
+				"Duration"			"%marble_duration"	
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Properties"
+				{
+					//  "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"  "%bonus_speed"
+				}	
+
+				"OnCreated"
+				{					
+					"AttachEffect"
+					{
+						"Target"            "CASTER"
+						"EffectName"        "particles/muramasa/handbuff/muramasa_hand_buff.vpcf"
+						"EffectAttachType"  "start_at_customorigin"
+						"ControlPointEntities"
+						{
+							"CASTER"				"attach_attack1"
+						}
+					}	
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/muramasa/muramasa_abilities"
+						"Function"		"OnMarbleStart"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"abilities/muramasa/muramasa_abilities"
+						"Function"			"OnMarbleEnd"
+					}
+				}	
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Muramasa - Chant (Q) (SA Blaze)
+	//=================================================================================================================
+	"muramasa_chant_upgrade"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityTextureName"			"custom/muramasa/muramasa_q"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_4"
+		"AnimationPlaybackRate" 		"1.0"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityManaCost"				"100"
+		"AbilityCooldown"				"4"
+		"AbilityCastPoint"				"0.1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"1"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"chant_duration"	"6 6.75 7.5 8.25 9"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"marble_duration"	"8 10 12 14 16"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_speed"		"8 10 12 14 16"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_speed_x4"		"32 40 48 58 64"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_mr"			"15"
+			}	
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"cd_reduce"		"2"
+			}	
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/muramasa/muramasa_abilities"
+				"Function"		"OnChant"
+			}
+		}		
+
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/muramasa/muramasa_abilities"
+				"Function"		"OnQUpgrade"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_muramasa_chant"
+			{
+				"IsHidden"			"0"
+				"IsBuff"			"1"
+				"Duration"			"%chant_duration"	
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"  "%bonus_speed"
+				}
+			}
+			"modifier_muramasa_marble"
+			{
+				"IsHidden"			"0"
+				"IsBuff"			"1"
+				"Duration"			"%marble_duration"	
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"  "%bonus_mr"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"  "%bonus_speed_x4"
+				}	
+
+				"OnCreated"
+				{					
+					"AttachEffect"
+					{
+						"Target"            "CASTER"
+						"EffectName"        "particles/muramasa/handbuff/muramasa_hand_buff.vpcf"
+						"EffectAttachType"  "start_at_customorigin"
+						"ControlPointEntities"
+						{
+							"CASTER"				"attach_attack1"
+						}
+					}	
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/muramasa/muramasa_abilities"
+						"Function"		"OnMarbleStart"
+					}
+				}
+
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"abilities/muramasa/muramasa_abilities"
+						"Function"			"OnMarbleEnd"
+					}
+				}	
+			}
+		}
+	}
+	//=================================================================================================================
+	// Muramasa - Tengu Kiri (Q2) 
+	//=================================================================================================================
+	"muramasa_tengu"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityTextureName"			"custom/muramasa/muramasa_tengu"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_2"
+		"AnimationPlaybackRate" 		"1.0"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityManaCost"				"100"
+		"AbilityCooldown"				"7"
+		"AbilityCastPoint"				"0.15"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"cast_delay"		"0"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"damage"			"80 100 120 140 160"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"swords"			"4 4 5 5 6"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"135"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"range"				"1200"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/muramasa/muramasa_abilities"
+				"Function"		"OnQMarble"
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"	"1"
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/muramasa/muramasa_abilities"
+				"Function"		"OnQMarbleHit"
+			}
+		}			
+	}
+
+	//=================================================================================================================
+	// Muramasa - dash (W) 
+	//=================================================================================================================
+	"muramasa_dash"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/muramasa/muramasa_dash"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityTextureName"			"custom/muramasa/muramasa_w"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_2"
+		"AnimationPlaybackRate" 		"1.0"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityManaCost"				"200"
+		"AbilityCastRange"				"9000"
+		"AbilityCooldown"				"1"
+		"AbilityCastPoint"				"0.1"
+		"AbilityCharges"				"2"
+		"AbilityChargeRestoreTime"		"17 16 15 14 13"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"dash_speed"		"1550"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"200 275 350 425 500"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage_radius"		"275"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"range"				"450"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"range_marble"		"675"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Muramasa - cut (e) 
+	//=================================================================================================================
+	"muramasa_cut"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityTextureName"			"custom/muramasa/muramasa_e"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_2"
+		"AnimationPlaybackRate" 		"1.0"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityManaCost"				"400"
+		"AbilityCastRange"				"750"
+		"AbilityCooldown"				"25 23 21 19 17"
+		"AbilityCastPoint"				"0.1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"cast_delay"		"0.3"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"stun"				"0.5"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"damage"			"400 500 600 700 800"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"aoe"				"450"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"aftershock_delay"		"0.5"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"aftershock_damage"		"200 240 280 320 360"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"range"				"600"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/muramasa/muramasa_abilities"
+				"Function"		"OnE"
+			}
+		}	
+	}
+
+	//=================================================================================================================
+	// Muramasa - Unsheate (d) 
+	//=================================================================================================================
+	"muramasa_d"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE "
+		"AbilityTextureName"			"custom/muramasa/muramasa_d"
+		"AnimationPlaybackRate" 		"1.0"
+		"MaxLevel"						"2"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityCooldown"				"40"
+		"AbilityCastPoint"				"0.2"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"gain_armor"		"5 15"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"gain_movespeed"	"10 30"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"buff_duration"		"10 25"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"bonus_e_damage_passive"	"0 200"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"bonus_tengu_damage_passive"	"0 30"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+			 	"ScriptFile"	"abilities/muramasa/muramasa_abilities"
+			 	"Function"		"OnBuffSelf"
+			}	
+		}
+
+		"Modifiers"
+		{
+			"modifier_muramasa_unsheathe"
+			{
+				"IsHidden"			"0"
+				"IsBuff"			"1"
+				"Duration"			"%buff_duration"	
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"  "%gain_movespeed"
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"  "%gain_armor"
+				}
+
+			}
+
+			"modifier_combo_window"
+			{	
+				"IsHidden"				"1"
+				"Attributes"			"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/muramasa/muramasa_abilities"
+						"Function"		"OnComboWindow"
+					}
+				}			
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"abilities/muramasa/muramasa_abilities"
+						"Function"		 	"OnComboWindowBroken"
+					}
+				}				
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"abilities/muramasa/muramasa_abilities"
+						"Function"		 	"OnComboWindowDeath"
+					}
+				}
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Muramasa - Tsumukari Muramasa (R) 
+	//=================================================================================================================
+	"muramasa_r"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityTextureName"			"custom/muramasa/muramasa_r"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_2"
+		"AnimationPlaybackRate" 		"1.0"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityManaCost"				"600"
+		"AbilityCastRange"				"900"
+		"AbilityCooldown"				"43 41 39 37 35"
+		"AbilityCastPoint"				"0.2"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"cast_delay"		"0.4"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"damage_pure"		"400 450 500 550 600"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"damage_magical"	"600 700 800 900 1000"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"delay_explosion"	"1.05"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"slow"				"-30 -40 -50 -60 -70"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"silence"			"0.6"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"debuff_duration"	"1"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"range"	"1000"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"width"	"250"
+			}
+		}
+
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{
+			 	"ScriptFile"	"abilities/muramasa/muramasa_abilities"
+			 	"Function"		"OnRCheck"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+			 	"ScriptFile"	"abilities/muramasa/muramasa_abilities"
+			 	"Function"		"OnR"
+			}	
+		}
+
+		"Modifiers"
+		{
+			"modifier_muramasa_r_slow"
+			{
+				"IsHidden"			"0"
+				"IsBuff"			"1"
+				"Duration"			"%debuff_duration"	
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Properties"
+				{
+				  "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"  "%slow"
+				}	
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Muramasa - Tsumukari Muramasa (R) (SA Tameshi)
+	//=================================================================================================================
+	"muramasa_r_upgrade"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityTextureName"			"custom/muramasa/muramasa_r"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_2"
+		"AnimationPlaybackRate" 		"1.0"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityManaCost"				"600"
+		"AbilityCastRange"				"1100"
+		"AbilityCooldown"				"43 41 39 37 35"
+		"AbilityCastPoint"				"0.2"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"cast_delay"		"0.4"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"damage_pure"		"400 450 500 550 600"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"damage_magical"	"600 700 800 900 1000"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"delay_explosion"	"1.05"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"slow"				"-30 -40 -50 -60 -70"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"silence"			"0.6"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"debuff_duration"	"1"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"range"	"1200"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"width"	"250"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"bonus_isekai"	"20"
+			}
+			"02"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"max_health_cost"		"30"
+			}
+			"02"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"damage_penalty"		"16"
+			}
+			"02"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"damage_bonus_marble"		"16"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+			 	"ScriptFile"	"abilities/muramasa/muramasa_abilities"
+			 	"Function"		"OnR"
+			}	
+		}
+
+		"Modifiers"
+		{
+			"modifier_muramasa_r_slow"
+			{
+				"IsHidden"			"0"
+				"IsBuff"			"1"
+				"Duration"			"%debuff_duration"	
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"  "%slow"
+				}	
+			}
+		}
+	}
+	//=================================================================================================================
+	// Muramasa - Baseless Bladeworks 
+	//=================================================================================================================
+	"muramasa_combo"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityTextureName"			"custom/muramasa/muramasa_combo"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_2"
+		"AnimationPlaybackRate" 		"1.0"
+		"MaxLevel"						"1"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityManaCost"				"600"
+		"AbilityCastRange"				"0"
+		"AbilityCooldown"				"170"
+		"AbilityCastPoint"				"0.1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"chant_duration"	"8"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"combo_duration"	"17"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"ult_cd"			"8"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"range_bonus"		"0"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_speed_x4"	"70"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_mr"			"20"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"sword_duration"			"6"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"sword_mana_recovery"			"250"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"sword_duration"			"6"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"sword_get_range"	"200"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+			 	"ScriptFile"	"abilities/muramasa/muramasa_abilities"
+			 	"Function"		"OnCombo"
+			}	
+		}
+
+		"Modifiers"
+		{
+			"modifier_muramasa_combo"
+			{
+				"IsHidden"			"0"
+				"IsBuff"			"1"
+				"Duration"			"%combo_duration"	
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"  "%bonus_mr"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"  "%bonus_speed_x4"
+				}	
+
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"Target"            "CASTER"
+						"EffectName"        "particles/muramasa/handbuff/muramasa_hand_buff.vpcf"
+						"EffectAttachType"  "start_at_customorigin"
+						"ControlPointEntities"
+						{
+							"CASTER"				"attach_attack1"
+						}
+					}	
+
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/muramasa/muramasa_abilities"
+						"Function"		"OnMarbleStart"
+					}
+				}
+
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"abilities/muramasa/muramasa_abilities"
+						"Function"			"OnMarbleEnd"
+					}
+				}	
+
+			}
+			"modifier_muramasa_combo_cooldown"
+			{
+				"IsDebuff"				"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			}
+
+			"modifier_muramasa_sword"
+			{
+				"IsHidden"			"0"
+				"IsBuff"			"1"
+				"Duration"			"%sword_duration"	
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/muramasa/muramasa_abilities"
+						"Function"		"OnSwordCreate"
+					}
+				}	
+
+
+				"ThinkInterval"  		"0.1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/muramasa/muramasa_abilities"
+						"Function"		"OnSwordThink"
+					}
+				}
+
+
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/muramasa/muramasa_abilities"
+						"Function"		"OnSwordDestroy"
+					}
+				}	
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Muramasa - Karmic Vision
+	//=================================================================================================================
+	"muramasa_f"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityTextureName"			"custom/muramasa/muramasa_karmic"
+		"MaxLevel"						"1"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityCooldown"				"27"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"bonus_pure_damage"	"200"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"cd_reduce_on_kill"	"0"
+			}
+		}
+
+
+		"Modifiers"
+		{
+			"modifier_karmic_check"
+			{
+				"TextureName"		"custom/kinghassan/attheboundary"	
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE | MODIFIER_ATTRIBUTE_PERMANENT"
+
+				"OnKill"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/muramasa/muramasa_abilities"
+						"Function"		"OnKarmicKill"
+					}
+				}
+			}
+		}
+	}
+
+
+
+
+	//------------------------------------------------------------- SA ---------------------------------------------------
+
+
+
+
+	//=======================================
+	// Attribute : Tameshi Mono
+	//=======================================
+	"muramasa_tameshi_mono"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/muramasa/muramasa_tameshi"
+	    "AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"19"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"r_bonus_range"			"200"
+			}		
+			"02"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"bonus_to_isekai"		"20"
+			}	
+			"02"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"max_health_cost"		"21"
+			}
+			"02"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"damage_penalty"		"16"
+			}
+			"02"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"damage_bonus_marble"		"16"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+			 	"ScriptFile"	"abilities/muramasa/muramasa_abilities"
+			 	"Function"		"OnTameshiSA"
+			}
+		}
+	}	
+
+	//=======================================
+	// Attribute : Karmic Vision
+	//=======================================
+	"muramasa_karmic_vision"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/muramasa/muramasa_karmic"
+	    "AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"11"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"r_bonus_pure"			"200"
+			}		
+			"02"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"cooldown"		"30"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+			 	"ScriptFile"	"abilities/muramasa/muramasa_abilities"
+			 	"Function"		"OnKarmicSA"
+			}
+		}
+	}	
+
+	//=======================================
+	// Attribute : Blaze
+	//=======================================
+	"muramasa_blaze"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/muramasa/muramasa_blaze"
+	    "AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"16"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"marble_bonus_mr"		"15"
+			}	
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"bonus_speed"		"8 10 12 14 16"
+			}	
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"cd_reduce"		"2"
+			}	
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+			 	"ScriptFile"	"abilities/muramasa/muramasa_abilities"
+			 	"Function"		"OnBlazeSA"
+			}
+		}
+	}
+
+	//=======================================
+	// Attribute : Swordsmith's Pride
+	//=======================================
+	"muramasa_pride"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/muramasa/muramasa_pride"
+	    "AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"10"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"bonus_damage_q"		"30"
+			}	
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"bonus_damage_e"		"200"
+			}	
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+			 	"ScriptFile"	"abilities/muramasa/muramasa_abilities"
+			 	"Function"		"OnPrideSA"
+			}
+		}
+	}
+}

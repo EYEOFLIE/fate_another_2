@@ -1,0 +1,220 @@
+"DOTAUnits"
+{
+	"okita_flag"
+	{
+		"Model"				"models/okita/okita_flag.vmdl"
+		"BaseClass"			"npc_dota_creature"
+		"HasInventory"				"0"
+
+		// Bounds
+		//----------------------------------------------------------------
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"			// Hull type used for navigation/locomotion.
+		"HealthBarOffset"			"140"
+
+
+		"Ability1"					"okita_flag_of_sincerity_passive"			// Ability 1
+		"Ability2"					""				// Ability 2
+		"Ability3"					""			// Ability 3
+		"Ability4"					""			// Ability 4
+
+		"ArmorPhysical"				"0"			// Physical protection.
+
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE" 
+		"MovementSpeed"				"0"		// Speed.
+		"MovementTurnRate"			"100"		// Turning rate.
+
+		"AttackCapabilities"			"DOTA_UNIT_CAP_NO_ATTACK"	
+		"AttackRange"					"0"
+		"AttackDamageMin"				"0"
+		"AttackDamageMax"				"0"
+		"AttackRate"					"0"
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"500"		// Base health.
+		"StatusHealthRegen"			"0"		// Health regeneration rate.
+		"StatusMana"				"0"			// Base mana.
+		"StatusManaRegen"			"0"			// Mana regeneration rate.	
+
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"600"		// Range of vision during day light.
+		"VisionNighttimeRange"		"600"		// Range of vision at night time.
+	}
+	"okita_shinsengumi"
+	{
+		// General
+		//----------------------------------------------------------------
+		"BaseClass"					"npc_dota_creature"
+		"Model"						"models/heroes/juggernaut/juggernaut.vmdl"
+		"ModelScale"				"1.0"
+		"Level"						"1"
+		"HealthBarOffset"			"140"
+		"ConsideredHero"			"0"
+		"HasInventory"				"0"
+		
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					"okita_shinsengumi_passive"	 
+		"Ability2"					""	 
+		
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"5"
+		"MagicalResistance"			"0"
+		
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"50"
+		"AttackDamageMax"			"59"
+		"AttackRate"				"1.0"
+		"AttackAnimationPoint"		"0.5"
+		"AttackAcquisitionRange"	"1200"
+		"AttackRange"				"150"
+		
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"5"
+		"BountyGoldMin"				"20"
+		"BountyGoldMax"				"25"
+		
+		// Bounds
+		//----------------------------------------------------------------
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"RingRadius"				"70"
+		"CollisionSize"				"32"
+		"FormationRank"				"0"
+		
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"350"
+		"MovementTurnRate"			"0.5"
+		
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"800"
+		"StatusHealthRegen"			"0"
+		"StatusMana"				"0"
+		"StatusManaRegen"			"0"
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"800"
+		"VisionNighttimeRange"		"800"
+
+		// Creature Data
+		//----------------------------------------------------------------
+		"Creature"
+		{
+			//Level Up
+			"HPGain"					"200"
+			"DamageGain"				"10"
+			"ArmorGain"					"1.5"
+			"MagicResistGain"			"0.3"
+			"MoveSpeedGain"				"5"
+			"BountyGain"				"5"
+			"XPGain"					"5"
+			"DisableClumpingBehavior"	"1"
+			"AttachWearables"
+			{
+				"Wearable1"		{	"ItemDef"		"4395"		} // belt+legs
+				"Wearable2"		{	"ItemDef"		"4401"		} // weapon
+				"Wearable3" 	{	"ItemDef"		"4411"		} // gloves
+				"Wearable4"		{	"ItemDef"		"4425"		} // mask
+				"Wearable5"		{	"ItemDef"		"4904"		} // shoulder
+			}
+		}
+	}
+	"okita_hijikata"
+	{
+		// General
+		//----------------------------------------------------------------
+		"BaseClass"					"npc_dota_creature"
+		"Model"						"models/heroes/juggernaut/juggernaut.vmdl"
+		"ModelScale"				"1.1"
+		"Level"						"1"
+		"HealthBarOffset"			"140"
+		"ConsideredHero"			"1"
+		"HasInventory"				"0"
+		
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					"okita_head_shinsengumi_passive"	 
+		"Ability2"					"okita_law_of_shinsengumi_passive"	
+		"Ability3"					"fate_empty1"	
+		"Ability4"					"fate_empty7"	
+		"Ability5"					"fate_empty8"	
+		"Ability6"					"okita_hijikata_undying_sincerity"	 
+		
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"10"
+		"MagicalResistance"			"3"
+		
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"120.0"
+		"AttackDamageMax"			"120.0"
+		"AttackRate"				"1.0"
+		"AttackAnimationPoint"		"0.7"
+		"AttackAcquisitionRange"	"1200"
+		"AttackRange"				"180"
+		
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"100"
+		"BountyGoldMin"				"1200.0"
+		"BountyGoldMax"				"1200.0"
+		
+		// Bounds
+		//----------------------------------------------------------------
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"RingRadius"				"70"
+		"CollisionSize"				"32"
+		"FormationRank"				"0"
+		
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"350"
+		"MovementTurnRate"			"0.5"
+		
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"1200"
+		"StatusHealthRegen"			"0"
+		"StatusMana"				"800"
+		"StatusManaRegen"			"0"
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"800"
+		"VisionNighttimeRange"		"800"
+
+		// Creature Data
+		//----------------------------------------------------------------
+		"Creature"
+		{
+			//Level Up
+			"HPGain"					"200"
+			"DamageGain"				"10"
+			"ArmorGain"					"1.5"
+			"MagicResistGain"			"0.3"
+			"MoveSpeedGain"				"5"
+			"BountyGain"				"10"
+			"XPGain"					"10"
+			"DisableClumpingBehavior"	"1"
+			"AttachWearables"
+			{
+				"Wearable1"		{	"ItemDef"		"17914"		}
+				"Wearable2"		{	"ItemDef"		"17910"		}
+				"Wearable3" 	{	"ItemDef"		"17911"		}
+				"Wearable4"		{	"ItemDef"		"17913"		}
+				"Wearable5"		{	"ItemDef"		"17912"		}
+			}
+		}
+	}
+}

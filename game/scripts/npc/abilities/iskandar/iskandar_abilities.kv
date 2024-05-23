@@ -1,0 +1,3012 @@
+
+"DOTAAbilities"
+{
+	//================================================
+	// Iskandar : Charisma
+	//================================================
+	"iskandar_charisma"
+	{
+		"AbilityBehavior" 		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass" 					"ability_datadriven"
+		"AbilityTextureName"            "custom/iskandar/iskander_charisma"
+		"MaxLevel"                      "1"
+		"AbilityCastRange"				"1000"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"1000"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_ms"			"15"
+			}
+		}	
+		"Modifiers"
+		{
+			"modifier_iskandar_charisma_aura"
+			{
+				"Passive"           "1"
+				"IsHidden"          "0"
+				"Aura"          	"modifier_charisma_movespeed"
+				"Aura_Radius"   	"%radius"
+				"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"Aura_Types"    	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"Aura_Flags"    	"DOTA_UNIT_TARGET_FLAG_NONE"
+				"Aura_ApplyToCaster" "0"		
+		  	}
+			"modifier_charisma_movespeed"
+			{		
+				"IsHidden"				"0"	
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%bonus_ms"
+				}
+			}
+		}
+	}
+	//================================================
+	// Iskandar : Charisma (Improve Charisma SA)
+	//================================================
+	"iskandar_charisma_upgrade"
+	{
+		"AbilityBehavior" 		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass" 					"ability_datadriven"
+		"AbilityTextureName"            "custom/iskandar/iskander_charisma"
+		"MaxLevel"                      "1"
+		"AbilityCastRange"				"1000"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"1000"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_ms"			"15"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_atk"			"20"
+			}
+		}	
+		"Modifiers"
+		{
+			"modifier_iskandar_charisma_aura"
+			{
+				"Passive"           "1"
+				"IsHidden"          "0"
+				"Aura"          	"modifier_charisma_movespeed"
+				"Aura_Radius"   	"%radius"
+				"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"Aura_Types"    	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"Aura_Flags"    	"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+				"Aura_ApplyToCaster" "0"		
+		  	}
+			"modifier_charisma_movespeed"
+			{		
+				"IsHidden"				"0"	
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%bonus_ms"
+					"MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE" "%bonus_atk"
+				}
+			}
+		}
+	}
+
+	//================================================
+	// Iskandar : Spatha 
+	//================================================
+	"iskandar_spatha"
+	{
+		"AbilityBehavior" 				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"BaseClass" 					"ability_datadriven"
+		"MaxLevel"                      "1"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/iskandar/iskandar_spatha"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_2"
+		"AnimationPlaybackRate" 		"1.5"
+		"AbilityCooldown"				"15"
+		"AbilityCastRange"				"600"
+		"AbilityCastPoint"				"0.4"
+		"AbilityManaCost"				"100"
+		"AOERadius"						"%radius"
+
+		"precache"
+		{
+			
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"cast"				"0.4"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"range"				"600"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"275"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"300"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"root"				"1.0"
+			}
+		}	
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/iskandar/iskandar_abilities"
+				"Function"		"OnSpathaStart"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_isk_spatha_cooldown"
+			{
+				"IsDebuff"	"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			}
+		}
+	}
+
+	//========================================
+	// Iskandar - Forward!
+	//========================================
+	"iskandar_forward"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityTextureName"			"custom/iskandar/iskander_forward"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_1"
+		"precache"
+		{
+			
+		}
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"16 15 14 13 12"
+		"AbilityCastRange"				"500 575 650 725 800"
+		"AbilityCastPoint"				"0.3"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"100"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"5.0 6.0 7.0 8.0 9.0"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"movespeed"			"45"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"500 575 650 725 800"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_damage"		"20 25 30 35 40"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/iskandar/iskandar_abilities"
+				"Function"			"OnForwardStart"
+				"Radius"			"%radius"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_forward"
+			{	
+				"EffectName"			"particles/units/heroes/hero_dark_seer/dark_seer_surge.vpcf"
+				"EffectAttachType"		"follow_origin"	
+				"Duration"				"%duration"			
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%movespeed"
+				}
+			}
+		}
+	}
+
+	//========================================
+	// Iskandar - Forward! (Improve Charisma SA)
+	//========================================
+	"iskandar_forward_upgrade"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityTextureName"			"custom/iskandar/iskander_forward"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_1"
+		"precache"
+		{
+			
+		}
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"16 15 14 13 12"
+		"AbilityCastRange"				"1000 1150 1300 1450 1600"
+		"AbilityCastPoint"				"0.3"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"100"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"5.0 6.0 7.0 8.0 9.0"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"movespeed"			"45"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"1000 1150 1300 1450 1600"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_damage"		"20 25 30 35 40"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/iskandar/iskandar_abilities"
+				"Function"			"OnForwardStart"
+				"Radius"			"%radius"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_forward"
+			{	
+				"EffectName"			"particles/units/heroes/hero_dark_seer/dark_seer_surge.vpcf"
+				"EffectAttachType"		"follow_origin"	
+				"Duration"				"%duration"			
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%movespeed"
+				}
+			}
+		}
+	}
+	//====================================
+	// Iskandar - Phalanx
+	//====================================
+	"iskandar_phalanx"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/iskandar/iskander_phalanx"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_2"
+		"AnimationPlaybackRate" 		"1.5"
+		"precache"
+		{
+			
+		}
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"900"
+		"AbilityCastPoint"				"0.3"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"17 15 13 11 9"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"200"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"200 275 350 425 500"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"width"				"525"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"total_number"		"8"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"3.0"
+			}
+		}
+
+		"OnAbilityPhaseStart"
+		{
+			"FireSound"
+			{
+				"EffectName"	"Hero_LegionCommander.Overwhelming.Cast"
+				"Target"		"CASTER"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+			 	"ScriptFile"	"abilities/iskandar/iskandar_abilities"
+			 	"Function"		"OnPhalanxStart"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_phalanx_wall"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Duration"			"%duration"
+			
+				"States"
+				{
+					"MODIFIER_STATE_INVULNERABLE"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NOT_ON_MINIMAP"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_HEALTH_BAR"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_UNSELECTABLE"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_STUNNED"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+		}
+	}
+	//====================================
+	// Iskandar - Phalanx (Bond Beyond the Time SA)
+	//====================================
+	"iskandar_phalanx_upgrade"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/iskandar/iskander_phalanx"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_2"
+		"AnimationPlaybackRate" 		"1.5"
+		"precache"
+		{
+
+		}
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"900"
+		"AbilityCastPoint"				"0.3"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"17 15 13 11 9"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"200"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"200 275 350 425 500"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"width"				"525"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"total_number"		"8"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"9.0"
+			}
+		}
+
+		"OnAbilityPhaseStart"
+		{
+			"FireSound"
+			{
+				"EffectName"	"Hero_LegionCommander.Overwhelming.Cast"
+				"Target"		"CASTER"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+			 	"ScriptFile"	"abilities/iskandar/iskandar_abilities"
+			 	"Function"		"OnPhalanxStart"
+			}
+		}
+		
+		"Modifiers"
+		{
+			
+		}
+	}
+
+	//========================================
+	// Iskandar - Gordius Wheel
+	//========================================
+	"iskandar_gordius_wheel"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"			"custom/iskandar/iskander_gordius_wheel"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_1"
+		"precache"
+		{
+			
+		}
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"34"
+		"AbilityCastPoint"				"0.01"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"400"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"cast_delay"			"1.0"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"10.0"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_armor"		"15"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_mr"			"40"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"movespeed_per_second"			"12 14 16 18 20"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"max_damage_radius"			"100"
+			}
+			"07"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"max_damage"			"200 300 400 500 600"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"min_damage_radius"			"350"
+			}
+			"08"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"min_damage"			"100 150 200 250 300"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/iskandar/iskandar_abilities"
+				"Function"			"OnChariotStart"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_gordius_wheel"
+			{		
+				"Duration"			"%duration"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Properties"
+	    		{
+	    			"MODIFIER_PROPERTY_TURN_RATE_PERCENTAGE"		"-350"
+	    			"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%bonus_mr"
+	    			"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"     	"%bonus_armor"
+	    		}
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/iskandar/iskandar_abilities"
+						"Function"		"OnChariotCreate"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"abilities/iskandar/iskandar_abilities"
+						"Function"			"OnChariotEnd"
+					}				
+				}
+			}
+			"modifier_gordius_wheel_cap"
+	    	{
+	    		"Passive"			"0"
+	    		"IsHidden"			"1"
+	    		"IsDebuff"			"0"
+	    		"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+	    		"Duration"			"%duration"
+	    		"Properties"
+	    		{
+	    		    "MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE" "1" 
+	    		}
+	    	}
+			"modifier_gordius_wheel_speed_boost"
+			{
+				"IsHidden"		"1"
+				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%movespeed_per_second"
+				}	
+			}
+			"modifier_gordius_wheel_mitigation"
+			{		
+				"Duration"		"6"
+				"IsHidden"		"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Properties"
+	    		{
+	    			"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"-10"
+	    			"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"     	"-4"
+	    		}
+			}
+			"modifier_gordius_wheel_thunder_slow"
+			{
+				"Duration"		"0.25"
+				"IsDebuff"		"1"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"-99"
+				}
+			}
+		}
+	}
+	//========================================
+	// Iskandar - Gordius Wheel (Thunder God Wrath SA)
+	//========================================
+	"iskandar_gordius_wheel_upgrade"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"			"custom/iskandar/iskander_gordius_wheel"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_1"
+		"precache"
+		{
+			
+		}
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"34"
+		"AbilityCastPoint"				"0.01"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"400"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"cast_delay"			"1.0"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"10.0"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_armor"		"15"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_mr"			"40"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"movespeed_per_second"			"12 14 16 18 20"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"max_damage_radius"			"100"
+			}
+			"07"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"max_damage"			"200 300 400 500 600"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"min_damage_radius"			"350"
+			}
+			"08"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"min_damage"		"100 150 200 250 300"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"stomp_radius"		"150"
+			}
+			"07"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"stomp_damage"		"150"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"thunder_radius"	"400"
+			}
+			"08"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"thunder_damage"	"12"
+			}
+			"09"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"slow"				"-100"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/iskandar/iskandar_abilities"
+				"Function"			"OnChariotStart"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_gordius_wheel"
+			{		
+				"Duration"			"%duration"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Properties"
+	    		{
+	    			"MODIFIER_PROPERTY_TURN_RATE_PERCENTAGE"		"-350"
+	    			"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%bonus_mr"
+	    			"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"     	"%bonus_armor"
+	    		}
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/iskandar/iskandar_abilities"
+						"Function"		"OnChariotCreate"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"abilities/iskandar/iskandar_abilities"
+						"Function"			"OnChariotEnd"
+					}				
+				}
+			}
+			"modifier_gordius_wheel_cap"
+	    	{
+	    		"Passive"			"0"
+	    		"IsHidden"			"1"
+	    		"IsDebuff"			"0"
+	    		"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+	    		"Duration"			"%duration"
+	    		"Properties"
+	    		{
+	    		    "MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE" "1" 
+	    		}
+	    	}
+			"modifier_gordius_wheel_speed_boost"
+			{
+				"IsHidden"		"1"
+				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%movespeed_per_second"
+				}	
+			}
+			"modifier_gordius_wheel_mitigation"
+			{		
+				"Duration"		"6"
+				"IsHidden"		"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Properties"
+	    		{
+	    			"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"-10"
+	    			"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"     	"-4"
+	    		}
+			}
+			"modifier_gordius_wheel_thunder_slow"
+			{
+				"Duration"		"0.25"
+				"IsDebuff"		"1"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%slow"
+				}
+			}
+		}
+	}
+
+	//====================================
+	// Iskandar - Via Expugnatio
+	//====================================
+	"iskandar_via_expugnatio"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/iskandar/iskander_via_expugnatio"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_4"
+		"AnimationPlaybackRate" 		"1.0"
+		"precache"
+		{
+			
+		}
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1800"
+		"AbilityCastPoint"				"0.15"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"36"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"400"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"charge_damage"			"95"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_charge"			"50"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"trail_damage"			"20"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"range"				"1800"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"width"				"400"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"stun"				"1.5"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"self_stun"			"0.7"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"trail_duration"	"3.0"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+			 	"ScriptFile"	"abilities/iskandar/iskandar_abilities"
+			 	"Function"		"OnChariotChargeStart"
+			}
+		}
+		
+		"Modifiers"
+		{
+		}
+	}
+
+	//========================================
+	// Iskandar - Army of the King
+	//========================================
+	"iskandar_army_of_the_king"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityTextureName"			"custom/iskandar/iskander_army_of_the_king"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_4"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"precache"
+		{
+			
+		}
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"56"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"800"
+		"AbilityCastRange"				"1150"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"				"2"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"1150"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"12.0"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"soldier_count"		"10"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"sustain_limit"		"7"
+			}
+			"05"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"infantry_bonus_health"		"150"
+			}
+			"10"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"infantry_bonus_damage"		"5"	
+			}
+			"09"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"archer_bonus_health"		"50"
+			}
+			"06"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"archer_bonus_damage"		"12"
+			}
+			"07"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"maharaja_bonus_health"		"250"
+			}
+			"08"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"maharaja_bonus_damage"		"15"	
+			}
+			"11"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"cavalry_bonus_health"		"200"
+			}
+			"12"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"cavalry_bonus_damage"		"18"	
+			}
+			"13"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"hepha_bonus_health"		"300"
+			}
+			"14"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"hepha_bonus_damage"		"20"	
+			}
+			"15"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"mage_bonus_health"		"100"
+			}
+			"16"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"mage_bonus_damage"		"12"	
+			}
+			"17"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"waver_bonus_health"		"150"
+			}
+			"18"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"waver_bonus_damage"		"15"	
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/iskandar/iskandar_abilities"
+				"Function"			"OnAOTKCastStart"
+				"Radius"			"%radius"
+			}
+		}
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/iskandar/iskandar_abilities"
+				"Function"		"OnAOTKLevelUp"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_army_of_the_king_freeze"
+			{
+				"Duration"				"%cast_delay"
+				"OverrideAnimation"		"ACT_DOTA_CAST_ABILITY_4"
+
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"Target"			"TARGET"
+						"EffectName"		""
+						"EffectAttachType"	"start_at_origin"
+						"EffectRadius"		"%radius"
+					}
+				}
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_OVERRIDE_ANIMATION_RATE"		"0.5"
+				}
+			}
+			"modifier_army_of_the_king_death_checker"
+			{
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"EffectName"		"particles/units/heroes/hero_sandking/sandking_sandstorm.vpcf"
+						"EffectAttachType"	"start_at_customorigin"
+						"Target"			"CASTER"
+						"ControlPoints"
+						{
+							"01"			"1500 1500 1500"
+						}
+					}
+				}
+			
+				"Duration"	"%duration"
+				
+				"OnDestroy"
+				{
+					"RemoveModifier"
+					{
+						"ModifierName"		"modifier_army_of_the_king_death_checker"
+						"Target"			"CASTER"
+					}
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/iskandar/iskandar_abilities"
+						"Function"		"OnAOTKDeath"
+					}
+				}
+			}
+			"modifier_army_of_the_king_infantry_bonus_stat"
+			{
+				"Duration"			"15.0"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"	"%infantry_bonus_damage"
+					//"MODIFIER_PROPERTY_HEALTH_BONUS"		"%infantry_bonus_health"
+				}
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/iskandar/iskandar_abilities"
+						"Function"		"ModifySoldierHealth"
+						"HealthBonus"	"%infantry_bonus_health"
+					}					
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/iskandar/iskandar_abilities"
+						"Function"		"OnAOTKSoldierDeath"
+						"SustainLimit"	"%sustain_limit"
+					}
+				}
+			}
+			"modifier_army_of_the_king_maharaja_bonus_stat"
+			{
+				"Duration"			"15.0"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"	"%maharaja_bonus_damage"
+					//"MODIFIER_PROPERTY_HEALTH_BONUS"		"%maharaja_bonus_health"
+				}
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/iskandar/iskandar_abilities"
+						"Function"		"ModifySoldierHealth"
+						"HealthBonus"	"%maharaja_bonus_health"
+					}					
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/iskandar/iskandar_abilities"
+						"Function"		"OnAOTKSoldierDeath"
+						"SustainLimit"	"%sustain_limit"
+					}
+				}
+			}
+			"modifier_army_of_the_king_archer_bonus_stat"
+			{
+				"Duration"			"15.0"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"	"%archer_bonus_damage"
+					//"MODIFIER_PROPERTY_HEALTH_BONUS"		"%archer_bonus_health"
+				}
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/iskandar/iskandar_abilities"
+						"Function"		"ModifySoldierHealth"
+						"HealthBonus"	"%archer_bonus_health"
+					}					
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/iskandar/iskandar_abilities"
+						"Function"		"OnAOTKSoldierDeath"
+						"SustainLimit"	"%sustain_limit"
+					}
+				}
+			}
+			"modifier_army_of_the_king_cavalry_bonus_stat"
+			{
+				"Duration"			"15.0"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"	"%cavalry_bonus_damage"
+					//"MODIFIER_PROPERTY_HEALTH_BONUS"		"%cavalry_bonus_health"
+				}
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/iskandar/iskandar_abilities"
+						"Function"		"ModifySoldierHealth"
+						"HealthBonus"	"%cavalry_bonus_health"
+					}					
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/iskandar/iskandar_abilities"
+						"Function"		"OnAOTKSoldierDeath"
+						"SustainLimit"	"%sustain_limit"
+					}
+				}
+			}
+			"modifier_army_of_the_king_hepha_bonus_stat"
+			{
+				"Duration"			"15.0"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"	"%hepha_bonus_damage"
+					//"MODIFIER_PROPERTY_HEALTH_BONUS"		"%hepha_bonus_health"
+				}
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/iskandar/iskandar_abilities"
+						"Function"		"ModifySoldierHealth"
+						"HealthBonus"	"%hepha_bonus_health"
+					}					
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/iskandar/iskandar_abilities"
+						"Function"		"OnAOTKSoldierDeath"
+						"SustainLimit"	"%sustain_limit"
+					}
+				}
+			}
+			"modifier_army_of_the_king_mage_bonus_stat"
+			{
+				"Duration"			"15.0"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"	"%mage_bonus_damage"
+					//"MODIFIER_PROPERTY_HEALTH_BONUS"		"%mage_bonus_health"
+				}
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/iskandar/iskandar_abilities"
+						"Function"		"ModifySoldierHealth"
+						"HealthBonus"	"%mage_bonus_health"
+					}					
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/iskandar/iskandar_abilities"
+						"Function"		"OnAOTKSoldierDeath"
+						"SustainLimit"	"%sustain_limit"
+					}
+				}
+			}
+			"modifier_army_of_the_king_waver_bonus_stat"
+			{
+				"Duration"			"15.0"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"	"%waver_bonus_damage"
+					//"MODIFIER_PROPERTY_HEALTH_BONUS"		"%waver_bonus_health"
+				}
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/iskandar/iskandar_abilities"
+						"Function"		"ModifySoldierHealth"
+						"HealthBonus"	"%waver_bonus_health"
+					}					
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/iskandar/iskandar_abilities"
+						"Function"		"OnAOTKSoldierDeath"
+						"SustainLimit"	"%sustain_limit"
+					}
+				}
+			}
+		}
+	}
+	//========================================
+	// Iskandar - Army of the King (Bond Beyond the Time SA)
+	//========================================
+	"iskandar_army_of_the_king_upgrade"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityTextureName"			"custom/iskandar/iskander_army_of_the_king"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_4"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"precache"
+		{
+
+		}
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"56"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"800"
+		"AbilityCastRange"				"1150"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_delay"				"2"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"1150"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"12.0"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"soldier_count"		"14"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"sustain_limit"		"7"
+			}
+			"05"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"bonus_health"		"23"
+			}
+			"05"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"infantry_bonus_health"		"150"
+			}
+			"10"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"infantry_bonus_damage"		"5"	
+			}
+			"09"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"archer_bonus_health"		"50"
+			}
+			"06"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"archer_bonus_damage"		"12"
+			}
+			"07"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"maharaja_bonus_health"		"250"
+			}
+			"08"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"maharaja_bonus_damage"		"15"	
+			}
+			"11"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"cavalry_bonus_health"		"200"
+			}
+			"12"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"cavalry_bonus_damage"		"18"	
+			}
+			"13"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"hepha_bonus_health"		"300"
+			}
+			"14"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"hepha_bonus_damage"		"20"	
+			}
+			"15"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"mage_bonus_health"		"100"
+			}
+			"16"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"mage_bonus_damage"		"12"	
+			}
+			"17"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"waver_bonus_health"		"150"
+			}
+			"18"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"waver_bonus_damage"		"15"	
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/iskandar/iskandar_abilities"
+				"Function"			"OnAOTKCastStart"
+				"Radius"			"%radius"
+			}
+		}
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/iskandar/iskandar_abilities"
+				"Function"		"OnAOTKLevelUp"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_army_of_the_king_freeze"
+			{
+				"Duration"				"%cast_delay"
+				"OverrideAnimation"		"ACT_DOTA_CAST_ABILITY_4"
+
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"Target"			"TARGET"
+						"EffectName"		""
+						"EffectAttachType"	"start_at_origin"
+						"EffectRadius"		"%radius"
+					}
+				}
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_OVERRIDE_ANIMATION_RATE"		"0.5"
+				}
+			}
+			"modifier_army_of_the_king_death_checker"
+			{
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"EffectName"		"particles/units/heroes/hero_sandking/sandking_sandstorm.vpcf"
+						"EffectAttachType"	"start_at_customorigin"
+						"Target"			"CASTER"
+						"ControlPoints"
+						{
+							"01"			"1500 1500 1500"
+						}
+					}
+				}
+			
+				"Duration"	"%duration"
+				
+				"OnDestroy"
+				{
+					"RemoveModifier"
+					{
+						"ModifierName"		"modifier_army_of_the_king_death_checker"
+						"Target"			"CASTER"
+					}
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/iskandar/iskandar_abilities"
+						"Function"		"OnAOTKDeath"
+					}
+				}
+			}
+			"modifier_army_of_the_king_infantry_bonus_stat"
+			{
+				"Duration"			"15.0"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"	"%infantry_bonus_damage"
+					//"MODIFIER_PROPERTY_HEALTH_BONUS"		"%infantry_bonus_health"
+				}
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/iskandar/iskandar_abilities"
+						"Function"		"ModifySoldierHealth"
+						"HealthBonus"	"%infantry_bonus_health"
+					}					
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/iskandar/iskandar_abilities"
+						"Function"		"OnAOTKSoldierDeath"
+						"SustainLimit"	"%sustain_limit"
+					}
+				}
+			}
+			"modifier_army_of_the_king_maharaja_bonus_stat"
+			{
+				"Duration"			"15.0"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"	"%maharaja_bonus_damage"
+					//"MODIFIER_PROPERTY_HEALTH_BONUS"		"%maharaja_bonus_health"
+				}
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/iskandar/iskandar_abilities"
+						"Function"		"ModifySoldierHealth"
+						"HealthBonus"	"%maharaja_bonus_health"
+					}					
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/iskandar/iskandar_abilities"
+						"Function"		"OnAOTKSoldierDeath"
+						"SustainLimit"	"%sustain_limit"
+					}
+				}
+			}
+			"modifier_army_of_the_king_archer_bonus_stat"
+			{
+				"Duration"			"15.0"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"	"%archer_bonus_damage"
+					//"MODIFIER_PROPERTY_HEALTH_BONUS"		"%archer_bonus_health"
+				}
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/iskandar/iskandar_abilities"
+						"Function"		"ModifySoldierHealth"
+						"HealthBonus"	"%archer_bonus_health"
+					}					
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/iskandar/iskandar_abilities"
+						"Function"		"OnAOTKSoldierDeath"
+						"SustainLimit"	"%sustain_limit"
+					}
+				}
+			}
+			"modifier_army_of_the_king_cavalry_bonus_stat"
+			{
+				"Duration"			"15.0"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"	"%cavalry_bonus_damage"
+					//"MODIFIER_PROPERTY_HEALTH_BONUS"		"%cavalry_bonus_health"
+				}
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/iskandar/iskandar_abilities"
+						"Function"		"ModifySoldierHealth"
+						"HealthBonus"	"%cavalry_bonus_health"
+					}					
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/iskandar/iskandar_abilities"
+						"Function"		"OnAOTKSoldierDeath"
+						"SustainLimit"	"%sustain_limit"
+					}
+				}
+			}
+			"modifier_army_of_the_king_hepha_bonus_stat"
+			{
+				"Duration"			"15.0"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"	"%hepha_bonus_damage"
+					//"MODIFIER_PROPERTY_HEALTH_BONUS"		"%hepha_bonus_health"
+				}
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/iskandar/iskandar_abilities"
+						"Function"		"ModifySoldierHealth"
+						"HealthBonus"	"%hepha_bonus_health"
+					}					
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/iskandar/iskandar_abilities"
+						"Function"		"OnAOTKSoldierDeath"
+						"SustainLimit"	"%sustain_limit"
+					}
+				}
+			}
+			"modifier_army_of_the_king_mage_bonus_stat"
+			{
+				"Duration"			"15.0"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"	"%mage_bonus_damage"
+					//"MODIFIER_PROPERTY_HEALTH_BONUS"		"%mage_bonus_health"
+				}
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/iskandar/iskandar_abilities"
+						"Function"		"ModifySoldierHealth"
+						"HealthBonus"	"%mage_bonus_health"
+					}					
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/iskandar/iskandar_abilities"
+						"Function"		"OnAOTKSoldierDeath"
+						"SustainLimit"	"%sustain_limit"
+					}
+				}
+			}
+			"modifier_army_of_the_king_waver_bonus_stat"
+			{
+				"Duration"			"15.0"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"	"%waver_bonus_damage"
+					//"MODIFIER_PROPERTY_HEALTH_BONUS"		"%waver_bonus_health"
+				}
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/iskandar/iskandar_abilities"
+						"Function"		"ModifySoldierHealth"
+						"HealthBonus"	"%waver_bonus_health"
+					}					
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/iskandar/iskandar_abilities"
+						"Function"		"OnAOTKSoldierDeath"
+						"SustainLimit"	"%sustain_limit"
+					}
+				}
+			}
+		}
+	}
+
+	//================================================
+	// Iskandar : Eumenes's Passive
+	//================================================
+	"iskandar_maharaja_passive"
+	{
+		"AbilityBehavior" 		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass" 					"ability_datadriven"
+		"AbilityTextureName"            "custom/iskandar/iskander_phalanx"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"25"
+		"LevelsBetweenUpgrades"			"1"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_damage"			"30"
+			}
+		}	
+		"Modifiers"
+		{
+			"modifier_maharaja_passive"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"Attributes"			"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Aura"					"modifier_maharaja_soldier_check"
+				"Aura_Radius"			"3000"
+				"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"Aura_Types"			"DOTA_UNIT_TARGET_BASIC"
+			}
+			"modifier_maharaja_soldier_check"
+			{
+				"IsHidden"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/iskandar/iskandar_abilities"
+						"Function"		"OnSoldierCheck"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/iskandar/iskandar_abilities"
+						"Function"		"OnEumenesBuffDestroy"
+					}
+				}
+			}
+			
+			"modifier_maharaja_passive_buff"
+			{
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE"	"%bonus_damage"
+				}
+			}
+		}
+	}
+
+	//====================================
+	// Iskandar - Battle Horn
+	//====================================
+	"iskandar_battle_horn"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"25"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityTextureName"			"legion_commander_press_the_attack"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_2"
+		"AnimationPlaybackRate" 		"1.5"
+		"precache"
+		{
+	
+		}
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.1"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"4"
+
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"pct_armor_reduction"		"18 21 24 27 30"
+			}
+			"02"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"ms_duration"		"1"
+			}
+			"02"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"duration"		"4"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"armor_reduction"			"-3 -6 -9 -12 -15"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"slow"				"-30"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+			 	"ScriptFile"	"abilities/iskandar/iskandar_abilities"
+			 	"Function"		"OnBattleHornStart"
+			 	"Target"		"POINT"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_battle_horn_armor_reduction"
+			{
+				"Duration"		"%duration"
+				"IsDebuff"		"1"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"     		"-1"
+				}
+			}
+			"modifier_battle_horn_movespeed_buff"
+			{	
+				"EffectName"			"particles/units/heroes/hero_dark_seer/dark_seer_surge.vpcf"
+				"Duration"				"%ms_duration"
+				"EffectAttachType"		"follow_origin"			
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"600"
+					"MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE"			"600"
+				}
+			}
+			"modifier_battle_horn_movespeed_debuff"
+			{	
+				"EffectName"		"particles/custom/rider/rider_breaker_gorgon_debuff.vpcf"
+				"EffectAttachType"	"follow_origin"
+				"Duration"		"%duration"	
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%slow"
+				}
+			}
+		}
+	}
+	//====================================
+	// Iskandar - Summon Hephaestion
+	//====================================
+	"iskandar_summon_hephaestion"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"25"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityTextureName"			"custom/iskandar/iskander_summon_hephaestion"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_2"
+		"AnimationPlaybackRate" 		"1.5"
+		"AOERadius"						"%radius"
+		"precache"
+		{
+			
+		}
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"500"
+		"AbilityCastPoint"				"0.1"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"16"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"150"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"hero_health"			"700 825 950 1075 1200"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"cavalry_count"			"6"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+			 	"ScriptFile"	"abilities/iskandar/iskandar_abilities"
+			 	"Function"		"OnCavalrySummon"
+			 	"Target"		"POINT"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_annihilate_window"
+			{
+				"IsPurgable"		"0"
+				"IsBuff"			"1"
+				"IsHidden"			"1"
+				"Duration"			"5"
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/iskandar/iskandar_abilities"
+						"Function"		"OnAnnihilateWindowCreate"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/iskandar/iskandar_abilities"
+						"Function"		"OnAnnihilateWindowDestroy"
+					}
+				}
+			}
+		}
+	}
+	//================================================
+	// Iskandar : Hephaestion Passive
+	//================================================
+	"iskandar_hephaestion_passive"
+	{
+		"AbilityBehavior" 		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass" 					"ability_datadriven"
+		"AbilityTextureName"            "custom/iskandar/iskander_phalanx"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"25"
+		"LevelsBetweenUpgrades"			"1"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_mspd"			"20"
+			}
+		}	
+		"Modifiers"
+		{
+			"modifier_hephaestion_passive"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"Aura"					"modifier_hephaestion_soldier_check"
+				"Aura_Radius"			"3000"
+				"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"Aura_Types"			"DOTA_UNIT_TARGET_BASIC"
+			}
+			"modifier_hephaestion_soldier_check"
+			{
+				"IsHidden"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/iskandar/iskandar_abilities"
+						"Function"		"OnSoldierCheck"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/iskandar/iskandar_abilities"
+						"Function"		"OnEumenesBuffDestroy"
+					}
+				}
+			}
+			
+			"modifier_hephaestion_passive_buff"
+			{
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%bonus_aspd"
+				}
+			}
+		}
+	}
+	//====================================
+	// Iskandar - Hammer and Anvil
+	//====================================
+	"iskandar_hammer_and_anvil"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"25"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"			"chaos_knight_phantasm"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_2"
+		"AnimationPlaybackRate" 		"1.5"
+		"precache"
+		{
+			
+		}
+		
+		"AbilityCastPoint"				"0.1"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"16"
+
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"200 300 400 500 600"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_damage"			"50"
+			}
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"stun"				"1.0"
+			}
+		}
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/iskandar/iskandar_abilities"
+				"Function"		"OnHammerAttachEffect"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+			 	"ScriptFile"	"abilities/iskandar/iskandar_abilities"
+			 	"Function"		"OnHammerStart"
+			 	"Damage"		"%damage"
+			}
+		}
+		
+		"Modifiers"
+		{
+		}
+	}
+	//====================================
+	// Iskandar - Summon Waver
+	//====================================
+	"iskandar_summon_waver"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"25"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityTextureName"			"custom/iskandar/iskander_summon_waver"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_1"
+		"AnimationPlaybackRate" 		"1.5"
+		"AOERadius"						"%radius"
+		"precache"
+		{
+			
+		}
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"500"
+		"AbilityCastPoint"				"0.1"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"16"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"150"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"hero_health"			"500 600 700 800 900"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"cavalry_health"			"250 325 400 475 550"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"mage_count"			"6"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+			 	"ScriptFile"	"abilities/iskandar/iskandar_abilities"
+			 	"Function"		"OnMageSummon"
+			 	"Target"		"POINT"
+			}
+		}
+		
+		"Modifiers"
+		{
+		}
+	}
+	//================================================
+	// Iskandar : Waver Passive
+	//================================================
+	"iskandar_waver_passive"
+	{
+		"AbilityBehavior" 		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass" 					"ability_datadriven"
+		"AbilityTextureName"            "custom/iskandar/iskander_phalanx"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"25"
+		"LevelsBetweenUpgrades"			"1"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_mr"			"28"
+			}
+		}	
+		"Modifiers"
+		{
+			"modifier_waver_passive"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"Aura"					"modifier_waver_soldier_check"
+				"Aura_Radius"			"3000"
+				"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"Aura_Types"			"DOTA_UNIT_TARGET_ALL"
+			}
+			"modifier_waver_soldier_check"
+			{
+				"IsHidden"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/iskandar/iskandar_abilities"
+						"Function"		"OnSoldierCheck"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/iskandar/iskandar_abilities"
+						"Function"		"OnEumenesBuffDestroy"
+					}
+				}
+			}
+			
+			"modifier_waver_passive_buff"
+			{
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%bonus_mr"
+				}
+			}
+		}
+	}
+	//====================================
+	// Iskandar - Brilliance of the King
+	//====================================
+	"iskandar_brilliance_of_the_king"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"25"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityTextureName"			"keeper_of_the_light_illuminate"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BASIC"
+		"AbilityCastPoint"				"0.2"
+		"AbilityCooldown"				"10"
+		"AbilityCastRange"				"3000"
+		"AbilityChannelTime"			"2.0 2.5 3.0 3.5 4.0"	
+		"AbilityCastAnimation" 			"ACT_DOTA_ATTACK"
+		"AnimationPlaybackRate" 		"0.5"
+
+
+		"precache"
+		{
+			
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"duration"		"1.5 1.75 2 2.25 2.5"
+			}
+			"02"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"income_dmg"	"100"
+			}
+			"03"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"base_arm_red"	"5"
+			}
+			"03"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"arm_red_lvl"	"0.5"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/iskandar/iskandar_abilities"
+				"Function"	"OnBrillianceStart"
+			}
+
+			"FireSound"
+			{
+				"EffectName"	"Hero_Omniknight.GuardianAngel.Cast"
+				"Target" 		"CASTER"
+			}
+		}
+		"OnChannelInterrupted"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/iskandar/iskandar_abilities"
+				"Function"		"OnBrillianceInterrupt"
+			}
+		}
+		"OnChannelFinish"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/iskandar/iskandar_abilities"
+				"Function"		"OnBrillianceEnd"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_waver_big_bad_voodoo"
+			{
+				"StatusEffectName"     "particles/status_fx/status_effect_guardian_angel.vpcf"
+		
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"EffectName"        "particles/units/heroes/hero_witchdoctor/witchdoctor_voodoo_restoration_aura.vpcf"
+						"EffectAttachType"  "follow_origin"
+						"Target"            "CASTER"
+					}
+
+					"AttachEffect"
+					{
+						"EffectName"		"particles/units/heroes/hero_warlock/warlock_shadow_word_buff.vpcf"
+						"EffectAttachType"	"follow_origin"
+						"Target"            "CASTER"
+					}
+
+					"AttachEffect"
+					{
+						"EffectName"        "particles/units/heroes/hero_witchdoctor/witchdoctor_voodoo_restoration.vpcf"
+						"EffectAttachType"  "start_at_customorigin"
+						"Target"            "CASTER"
+						"ControlPoints"
+						{
+							"01"	"3000 0 0"
+						}				
+					}
+				}
+
+				"OnDestroy"
+				{
+
+				}
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE"		"%income_dmg"
+				}
+
+				"Aura"          	"modifier_waver_soldier_vodo_check"
+				"Aura_Radius"   	"3000"
+				"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"Aura_Types"    	"DOTA_UNIT_TARGET_BASIC"
+				"Aura_ApplyToCaster" "0"
+				"Duration"			"%duration"
+			}
+			"modifier_waver_soldier_vodo_check"
+			{
+				"IsHidden"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/iskandar/iskandar_abilities"
+						"Function"		"OnBrillianceCheck"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/iskandar/iskandar_abilities"
+						"Function"		"OnBrillianceDestroy"
+					}
+				}
+			}
+
+			"modifier_waver_big_bad_voodoo_invulnerability"
+			{
+				"EffectName"		"particles/units/heroes/hero_omniknight/omniknight_guardian_angel_buff_j.vpcf"
+				"EffectAttachType"	"follow_origin"
+		
+				"States"
+				{
+					"MODIFIER_STATE_INVULNERABLE"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+
+			"modifier_waver_silence_aura"
+			{
+				"IsHidden"			"1"
+				"Aura"          	"modifier_waver_silence"
+				"Aura_Radius"   	"3000"
+				"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types"    	"DOTA_UNIT_TARGET_ALL"
+				"Aura_ApplyToCaster" "0"
+				"Duration"			"%duration"				
+			}
+			"modifier_waver_silence"
+			{			
+
+				"EffectName"		"particles/generic_gameplay/generic_silenced.vpcf"
+				"EffectAttachType"	"follow_overhead"
+				"IsDebuff"			"1"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/iskandar/iskandar_abilities"
+						"Function"		"OnWaverSilence"
+					}
+				}
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "-1"
+				}
+				"States"
+				{
+					"MODIFIER_STATE_SILENCED"		"MODIFIER_STATE_VALUE_ENABLED"
+				}	
+			}
+
+			"modifier_waver_root_aura"
+			{
+				"Aura"          	"modifier_waver_root"
+				"Aura_Radius"   	"3000"
+				"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types"    	"DOTA_UNIT_TARGET_ALL"
+				"Aura_ApplyToCaster" "0"
+				"Duration"			"%duration"				
+			}
+			"modifier_waver_root"
+			{			
+				"EffectName"		"particles/units/heroes/hero_oracle/oracle_purifyingflames_heal.vpcf"
+				"EffectAttachType"	"follow_origin"
+				"IsDebuff"			"1"
+				"States"
+				{
+					"MODIFIER_STATE_ROOTED"		"MODIFIER_STATE_VALUE_ENABLED"
+				}	
+			}
+		}
+	}
+	//=================================================================================================================
+	// Iskandar : Bucephalus
+	//=================================================================================================================
+	"iskandar_bucephalus"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/iskandar/iskandar_bucephalus"
+		"AOERadius"						"%radius"
+
+		"precache"
+		{
+			
+		}
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"500 550 600 650 700"
+		"AbilityCastPoint"				"0.2"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"12"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"200"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"300"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"range"				"500 550 600 650 700"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"400 450 500 550 600"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"stun"				"0.1"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/iskandar/iskandar_abilities"
+				"Function"			"OnBucephalusStart"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_iskandar_bucephalus"
+			{
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/iskandar/iskandar_abilities"
+						"Function"		"OnBucephalusCreate"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/iskandar/iskandar_abilities"
+						"Function"		"OnBucephalusDestroy"
+					}
+				}
+			}
+		}
+	}
+	//=====================================
+	// Iskandar Arrow Bombard
+	//=====================================
+	"iskandar_arrow_bombard"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"AbilityTextureName"			"custom/iskandar/arrow_bombard"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_2"
+		"AnimationPlaybackRate" 		"1.0"
+		"precache"
+		{
+			
+		}
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"						"1200"
+		"AbilityCastPoint"						"0.1"
+		"AOERadius"								"%radius"
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"						"4"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"						"50"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"damage"						"200 300 400 500 600"
+			}
+			
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"radius"						"600"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"root_dur"						"2.0"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/iskandar/iskandar_abilities"
+				"Function"			"OnArrowBombard"
+			}
+		}
+	}
+	//========================================
+	// Iskandar : Annihilate!
+	//========================================
+	"iskandar_annihilate"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityTextureName"			"custom/iskandar/iskander_annihilate"
+		"MaxLevel"						"1"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_6"
+		"precache"
+		{
+			
+		}
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"150"
+		"AbilityCastPoint"				"0.3"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"100"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"damage"		"300"
+			}
+			"03"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"arrow_count"	"100"
+			}
+			"02"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"aoe"			"200"
+			}
+			"02"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"hammer_cd"		"3"
+			}
+			"03"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"mute_delay"	"1"
+			}
+			"03"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"duration"		"6"
+			}
+			"03"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"arrow_delay"	"3"
+			}
+			
+			"03"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"arrow_duration"	"4"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/iskandar/iskandar_abilities"
+				"Function"			"OnAnnihilateStart"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_annihilate_cooldown"
+			{
+				"IsDebuff"	"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			}
+
+			"modifier_annihilate_caster"
+			{
+				"Duration"		"12.0"
+				"IsHidden"		"1"
+			}
+			"modifier_annihilate"
+			{		
+                "EffectName" "particles/custom/iskandar/iskandar_combo_invul.vpcf"
+                "EffectAttachType" "follow_origin"
+				"Duration" 	"12.0"
+				"States"
+				{
+					"MODIFIER_STATE_INVULNERABLE"    "MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+			"modifier_annihilate_mute"
+			{
+				"Duration"		"%duration"
+				"IsDebuff"		"1"
+				"States"
+				{
+					"MODIFIER_STATE_MUTED"    "MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+		}
+	}
+	//=======================================
+	// Iskandar : Improve Charisma
+	//=======================================
+	"iskandar_attribute_improve_charisma"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/iskandar/iskander_attribute_improve_charisma"
+		
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"14"
+
+		"precache"
+		{
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"bonus_ms"		"15"
+			}
+			"02"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"bonus_damage"		"20"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/iskandar/iskandar_abilities"
+				"Function"		"OnIskanderCharismaImproved"
+			}
+		}
+	}
+
+	//=======================================
+	// Iskandar : Thundergod's Wrath
+	//=======================================
+	"iskandar_attribute_thundergods_wrath"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/iskandar/iskander_attribute_thundergods_wrath"
+		
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"15"
+
+		"precache"
+		{
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"damage"		"150"
+			}
+			"02"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"radius"		"150"
+			}
+			"03"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"thunder_damage"		"12"
+			}
+			"04"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"thunder_radius"		"400"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/iskandar/iskandar_abilities"
+				"Function"		"OnThundergodAcquired"
+			}
+		}
+	}
+
+
+	//=======================================
+	// Iskandar : Via Expugnatio
+	//=======================================
+	"iskandar_attribute_via_expugnatio"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/iskandar/iskander_via_expugnatio"
+		
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"9"
+
+		"precache"
+		{
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"charge_damage"			"95"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_charge"			"50"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"trail_damage"			"20"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"range"				"1500"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"width"				"400"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"stun"				"1.5"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"self_stun"			"0.7"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"trail_duration"	"3.0"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"iskander_ability"
+				"Function"		"OnChariotChargeAcquired"
+			}
+		}
+	}
+
+	//=======================================
+	// Iskandar : Bond Beyond Time
+	//=======================================
+	"iskandar_attribute_bond_beyond_time"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/iskandar/iskander_attribute_bond_beyond_time"
+		
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"15"
+
+		"precache"
+		{
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"bonus_soldier"		"4"
+			}
+			"01"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"health_bonus"		"23"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/iskandar/iskandar_abilities"
+				"Function"		"OnBeyondTimeAcquired"
+			}
+		}
+	}
+	//=======================================
+	// Precache
+	//=======================================
+	"iskandar_precache"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"custom/medusa/medusa_attribute_monstrous_strength"
+
+		"precache"
+		{
+			"model"					"models/iskandar/default/iskandar_new_by_zefiroft.vmdl"
+			"model"					"models/iskandar/salary/iskandar_salary_by_zefiroft.vmdl"
+			"model"					"models/iskandar/default/iskandar_gordius.vmdl"
+			"model"					"models/iskandar/salary/iskandar_salary_gordius.vmdl"
+			"model"					"models/iskandar/horse/horse.vmdl"
+			"model"					"models/heroes/chaos_knight/chaos_knight.vmdl"
+			"model"					"models/items/chaos_knight/blade_of_entropy/blade_of_entropy.vmdl"
+			"model"					"models/items/chaos_knight/chaos_legion_helm/chaos_legion_helm.vmdl"
+			"model"					"models/items/chaos_knight/rising_chaos_steed/rising_chaos_steed.vmdl"
+			"model"					"models/heroes/silencer/silencer.vmdl"
+			"model"					"models/items/silencer/whispertribunal_shoulder/whispertribunal_shoulder.vmdl"
+			"model"					"models/items/silencer/whispertribunal__weapon/whispertribunal__weapon.vmdl"
+			"model"					"models/items/silencer/whispertribunal_arms/whispertribunal_arms.vmdl"
+			"model"					"models/items/silencer/whispertribunal_belt/whispertribunal_belt.vmdl"
+			"model"					"models/items/silencer/whispertribunal_head/whispertribunal_head.vmdl"
+			"particle"  			"particles/custom/iskandar/iskandar_spatha.vpcf"
+			"particle"				"particles/units/heroes/hero_legion_commander/legion_commander_press_sphere.vpcf"
+			"particle"				"particles/units/heroes/hero_dark_seer/dark_seer_surge.vpcf"
+			"particle"				"particles/items_fx/aegis_respawn.vpcf"
+			"particle"				"particles/units/heroes/hero_brewmaster/brewmaster_thunder_clap.vpcf"
+			"particle"				"particles/units/heroes/hero_zuus/zuus_thundergods_wrath_start.vpcf"
+			"particle"				"particles/units/heroes/hero_disruptor/disruptor_thunder_strike_bolt.vpcf"
+			"particle"				"particles/units/heroes/hero_razor/razor_storm_lightning_strike.vpcf"
+			"particle"  			"particles/units/heroes/hero_zuus/zuus_static_field_c.vpcf"
+			"particle"				"particles/units/heroes/hero_zuus/zuus_static_field.vpcf"
+			"particle"				"particles/custom/iskandar/iskandar_aotk.vpcf"
+			"particle"				"particles/custom/iskandar/iskandar_aotk_explosion.vpcf"
+			"particle"				"particles/custom/iskandar/iskandar_aotk_ring_1.vpcf"
+			"particle"				"particles/custom/iskandar/iskandar_aotk_ring_2.vpcf"
+			"particle"				"particles/units/heroes/hero_sandking/sandking_sandstorm.vpcf"
+			"particle"				"particles/units/heroes/hero_chen/chen_base_attack.vpcf"
+			"particle"				"particles/units/heroes/hero_windrunner/windrunner_base_attack.vpcf"
+			"particle"				"particles/econ/items/tinker/boots_of_travel/teleport_end_bots_dust.vpcf"
+			"particle"				"particles/units/heroes/hero_chaos_knight/chaos_knight_reality_rift.vpcf"
+			"particle"				"particles/units/heroes/hero_silencer/silencer_glaives_of_wisdom.vpcf"
+			"particle"				"particles/units/heroes/hero_invoker/invoker_base_attack.vpcf"
+			"particle" 				"particles/units/heroes/hero_shadowshaman/unused_field_4.vpcf"
+			"particle"				"particles/units/heroes/hero_warlock/warlock_shadow_word_buff.vpcf"
+			"particle"				"particles/units/heroes/hero_oracle/oracle_purifyingflames_heal.vpcf"
+			"particle"				"particles/units/heroes/hero_omniknight/omniknight_guardian_angel_buff_j.vpcf"
+			"particle"				"particles/generic_gameplay/generic_silenced.vpcf"
+			"particle"				"particles/custom/rider/rider_breaker_gorgon_debuff.vpcf"
+			"particle"  			"particles/units/heroes/hero_witchdoctor/witchdoctor_voodoo_restoration_aura.vpcf"
+			"particle"  			"particles/units/heroes/hero_witchdoctor/witchdoctor_voodoo_restoration.vpcf"
+			"particle"  			"particles/status_fx/status_effect_guardian_angel.vpcf"
+			"particle"				"particles/custom/archer/archer_overedge_slash.vpcf"
+			"particle"				"particles/units/heroes/hero_centaur/centaur_warstomp.vpcf"
+			"particle"				"particles/custom/iskandar/arrow_volley.vpcf"
+			"particle"				"particles/custom/iskandar/iskandar_combo_invul.vpcf"
+			"particle"				"particles/custom/iskandar/iskandar_combo_arrow.vpcf"
+			"particle"  			"particles/custom/iskandar/iskandar_combo_mute.vpcf"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_phantom_lancer.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_keeper_of_the_light.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_silencer.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_omniknight.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_sandking.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_zuus.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_centaur.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_legion_commander.vsndevts"
+		}
+	}
+}

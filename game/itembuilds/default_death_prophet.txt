@@ -1,0 +1,59 @@
+"itembuilds"
+{
+	"author"		"Valve"
+	"hero"			"npc_dota_hero_beastmaster"
+	"Title"			"Recommended items for Beastmaster"
+	
+	"Items"
+	{		
+		"#DOTA_Item_Build_Starting_Items"
+		{
+			"item"		"item_phase_boots"
+			"item"		"item_anime_bokko"
+		}
+		
+		"#DOTA_Item_Build_Early_Game"
+		{
+			"item"		"item_anime_tear"
+			"item"		"item_anime_alchemy"
+		}
+		
+		"#DOTA_Item_Build_Mid_Items"
+		{
+			"item"		"item_black_king_bar"
+        	"item"		"item_anime_grimmuar_black"
+        	"item"		"item_anime_mirror"
+        	"item"		"item_heart"
+        	"item"		"item_anime_spectator"
+        	"item"		"item_anime_blue_spear"
+		}
+		
+		"#DOTA_Item_Build_Late_Items"
+		{
+			"item"  	"item_anime_spiral"
+			"item"		"item_anime_akame"
+			"item"		"item_anime_amon"
+			"item"		"item_anime_grail"
+			"item"		"item_anime_nepsword"
+			"item"		"item_anime_scissor_red"
+			"item"		"item_anime_scissor_purple"
+			"item"		"item_anime_scissors"
+			"item"		"item_anime_dragonslayer"
+			"item"		"item_anime_dark_repulser"
+			"item"		"item_anime_elucidator"
+			"item"		"item_anime_dual_swords"
+			"item"		"item_anime_stick_knife"
+			"item"		"item_anime_eyeoflie"
+			"item"		"item_anime_magic_gauge"
+			"item"		"item_anime_red_spear"
+			"item"		"item_anime_hamon"
+			"item"		"item_anime_overstaff"
+			"item"		"item_anime_pumpkin"
+		}
+		
+		"DOTA_Item_Build_Other_Items"
+		{
+		}
+	}
+}
+

@@ -1,0 +1,9 @@
+
+GoalWin
+{
+	"fate_elim_6v6"				"12"
+	"fate_elim_7v7"				"12"
+	"fate_ffa"					"30"
+	"fate_trio_rumble_3v3v3v3"	"60"
+	"fate_trio"					"45"
+}
