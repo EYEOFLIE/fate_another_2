@@ -11,15 +11,17 @@ CDOTA_Ability_Lua = IsServer() and CDOTA_Ability_Lua or C_DOTA_Ability_Lua
 --[:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::]
 CDOTA_Item_Lua = IsServer() and CDOTA_Item_Lua or C_DOTA_Item_Lua
 
-CDOTA_BaseNPC_Hero = IsServer() and CDOTA_BaseNPC_Hero or CDOTA_BaseNPC_Hero
+CDOTA_BaseNPC_Hero = IsServer() and CDOTA_BaseNPC_Hero or C_DOTA_BaseNPC_Hero
 
-local VALVE_Say = Say
-Say = function(hEntity, StringMessage, bteamOnly)
-    if hEntity == nil then 
-    --    print('Say: no player')
-        return nil
-    else
-        return VALVE_Say(hEntity, StringMessage, bteamOnly)
+if IsServer() then
+    local VALVE_Say = Say
+    Say = function(hEntity, StringMessage, bteamOnly)
+        if hEntity == nil then 
+        --    print('Say: no player')
+            return nil
+        else
+            return VALVE_Say(hEntity, StringMessage, bteamOnly)
+        end
     end
 end
 
@@ -100,13 +102,15 @@ CDOTA_BaseNPC.AddNewModifier = function(self, hCaster, hAbility, pszScriptName, 
     end
 end
 
-local VALVE_SetModifierStackCount = CDOTA_BaseNPC.SetModifierStackCount
-CDOTA_BaseNPC.SetModifierStackCount = function(self, pszScriptName, hCaster, nStackCount)
-    if self:IsNull() or self == nil then
-    	print('set modifier stack count error: no target')
-    	return nil
-    else
-        return VALVE_SetModifierStackCount(self, pszScriptName, hCaster, nStackCount)
+if IsServer() then
+    local VALVE_SetModifierStackCount = CDOTA_BaseNPC.SetModifierStackCount
+    CDOTA_BaseNPC.SetModifierStackCount = function(self, pszScriptName, hCaster, nStackCount)
+        if self:IsNull() or self == nil then
+        	print('set modifier stack count error: no target')
+        	return nil
+        else
+            return VALVE_SetModifierStackCount(self, pszScriptName, hCaster, nStackCount)
+        end
     end
 end
 
@@ -133,56 +137,55 @@ end
 --!------------------------------------------------------------
 
 local VALVE_GetIntellect = CDOTA_BaseNPC_Hero.GetIntellect
-CDOTA_BaseNPC_Hero.GetIntellect = function(self, unknown1)
-    --print(unknown1)
-    if unknown1 == nil then 
-        unknown1 = true 
-    end
-    return VALVE_GetIntellect(self, unknown1)
+CDOTA_BaseNPC_Hero.GetIntellect = function(self, skipNoConsume)
+    --print("TESTING INTELLECT")
+    skipNoConsume = skipNoConsume or false
+    return VALVE_GetIntellect(self, skipNoConsume)
 end
---!!----------------------------------------------------------------------------------------------------------------------------------------------------------
-local VALVE_EmitSound = CBaseEntity.EmitSound
-CBaseEntity.EmitSound = function(self, soundname)
-    if self:IsNull() or self == nil then
-    	print('emit sound: no target')
-    	return nil
-    else
-        return VALVE_EmitSound(self, soundname)
-    end
-end
-
---!!----------------------------------------------------------------------------------------------------------------------------------------------------------
-
-local VALVE_ApplyDataDrivenModifier = CDOTABaseAbility.ApplyDataDrivenModifier
-CDOTABaseAbility.ApplyDataDrivenModifier = function(self, hCaster, hTarget, pszModifierName, hModifierTable)
-    if hTarget:IsNull() or hTarget == nil then
-    	print('apply data driven modifier error: no target')
-    	return nil
-    else
-        local dur = hModifierTable["Duration"] or hModifierTable["duration"]
-        if hTarget:IsRealHero() and hCaster:IsRealHero() and dur ~= nil and hCaster:GetTeam() ~= hTarget:GetTeam() and CCModifierStatic[pszScriptName] == true then 
-            hCaster.ServStat:doControl(dur)
+if IsServer() then
+    --!!----------------------------------------------------------------------------------------------------------------------------------------------------------
+    local VALVE_EmitSound = CBaseEntity.EmitSound
+    CBaseEntity.EmitSound = function(self, soundname)
+        if self:IsNull() or self == nil then
+        	print('emit sound: no target')
+        	return nil
+        else
+            return VALVE_EmitSound(self, soundname)
         end
-        return VALVE_ApplyDataDrivenModifier(self, hCaster, hTarget, pszModifierName, hModifierTable)
-    end
-end
-
-CDOTA_BaseNPC.FateHeal = function(self, fHeal, hSource, bStatic)
-    if bStatic == true and self:IsRealHero() and hSource:IsRealHero() then 
-        local missing_hp = self:GetMaxHealth() - self:GetHealth()
-        hSource.ServStat:onHeal(math.min(fHeal, missing_hp))
     end
 
-    if self:HasModifier("modifier_zhuge_liang_array_heal_debuff") then 
-        print('heal cut')
-        print('heal before cut =' .. fHeal)
-        local debuff = self:FindModifierByName("modifier_zhuge_liang_array_heal_debuff")
-        local heal_debuff = debuff:GetStackCount()/100 
-        fHeal = fHeal * heal_debuff
-        print('heal after cut =' .. fHeal)
+    --!!----------------------------------------------------------------------------------------------------------------------------------------------------------
+    local VALVE_ApplyDataDrivenModifier = CDOTABaseAbility.ApplyDataDrivenModifier
+    CDOTABaseAbility.ApplyDataDrivenModifier = function(self, hCaster, hTarget, pszModifierName, hModifierTable)
+        if hTarget:IsNull() or hTarget == nil then
+        	print('apply data driven modifier error: no target')
+        	return nil
+        else
+            local dur = hModifierTable["Duration"] or hModifierTable["duration"]
+            if hTarget:IsRealHero() and hCaster:IsRealHero() and dur ~= nil and hCaster:GetTeam() ~= hTarget:GetTeam() and CCModifierStatic[pszScriptName] == true then 
+                hCaster.ServStat:doControl(dur)
+            end
+            return VALVE_ApplyDataDrivenModifier(self, hCaster, hTarget, pszModifierName, hModifierTable)
+        end
     end
 
-    self:Heal(fHeal, hSource)
+    CDOTA_BaseNPC.FateHeal = function(self, fHeal, hSource, bStatic)
+        if bStatic == true and self:IsRealHero() and hSource:IsRealHero() then 
+            local missing_hp = self:GetMaxHealth() - self:GetHealth()
+            hSource.ServStat:onHeal(math.min(fHeal, missing_hp))
+        end
+
+        if self:HasModifier("modifier_zhuge_liang_array_heal_debuff") then 
+            print('heal cut')
+            print('heal before cut =' .. fHeal)
+            local debuff = self:FindModifierByName("modifier_zhuge_liang_array_heal_debuff")
+            local heal_debuff = debuff:GetStackCount()/100 
+            fHeal = fHeal * heal_debuff
+            print('heal after cut =' .. fHeal)
+        end
+
+        self:Heal(fHeal, hSource)
+    end
 end
 --!!----------------------------------------------------------------------------------------------------------------------------------------------------------
 --[[CDOTABaseAbility.GetCastRangeBonus = function(self, hTarget) --Crashes normal addons, because gaben released new patch with error in 24.02.2022 pizdec, only for LUA ABILITY, For items i think all fne.... cringe

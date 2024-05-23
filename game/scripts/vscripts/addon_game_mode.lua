@@ -5,7 +5,7 @@ require('master_ability')
 --require('gille_ability')
 --require('lancelot_ability')
 --require('nursery_rhyme_ability')
-require("libraries/fate_functions_server_client") --fix cast range bonus
+
 require('libraries/notifications')
 --require("martin_ban_module")
 require('items')

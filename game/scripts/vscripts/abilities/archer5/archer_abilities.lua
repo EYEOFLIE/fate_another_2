@@ -143,11 +143,14 @@ function OnHruntingFilter (keys)
 	end
 end
 
-function OnHruntCast(keys)
+function OnHruntCast(keys, kek)
 	local caster = keys.caster
 	local ability = keys.ability
 	local target = keys.target
 	local ply = caster:GetPlayerOwner()
+
+	caster:SetCursorCastTarget(target)
+	ability.___hFIX_CURSOR_TARGET = target
 
 	ability:EndCooldown()
 	-- Show hrunting cast
@@ -176,10 +179,10 @@ function OnHruntCast(keys)
 	end
 end
 
-function OnHruntStart(keys)
+function OnHruntStart(keys, kek)
 	local caster = keys.caster
 	local ability = keys.ability
-	local target = keys.target
+	local target = keys.target or ability:GetCursorTarget() or caster:GetCursorCastTarget() or ability.___hFIX_CURSOR_TARGET
 	local ply = caster:GetPlayerOwner()
 
 	ParticleManager:DestroyParticle(caster.hruntingCrosshead, true)
@@ -228,14 +231,15 @@ function OnHruntStart(keys)
 
 	--EmitGlobalSound("Archer.Hrunting_Fireoff")
 	--caster:EmitSound("Emiya_Hrunt2")
-	if keys.target:IsHero() and ply ~= nil then
-		Say(ply, "Hrunting fired at " .. FindName(keys.target:GetName()) .. ".", true)
+	if target:IsHero() and ply ~= nil then
+		Say(ply, "Hrunting fired at " .. FindName(target:GetName()) .. ".", true)
 	end
 end
 
-function OnHruntInterrupted(keys)
+function OnHruntInterrupted(keys, kek)
 	local caster = keys.caster
-	local target = keys.target
+	local ability = keys.ability
+	local target = keys.target or ability:GetCursorTarget() or caster:GetCursorCastTarget() or ability.___hFIX_CURSOR_TARGET
 	local ply = caster:GetPlayerOwner()
 	ParticleManager:DestroyParticle( caster.hrunting_particle, false )
 	ParticleManager:ReleaseParticleIndex( caster.hrunting_particle )
@@ -585,6 +589,10 @@ function OnBPCast(keys)
 	local ability = keys.ability
 	local target = keys.target
 	local ply = caster:GetPlayerOwner()
+
+	caster:SetCursorCastTarget(target)
+	ability.___hFIX_CURSOR_TARGET = target
+
 	ability:EndCooldown()
 	caster:GiveMana(ability:GetManaCost(1))
 
@@ -592,8 +600,8 @@ function OnBPCast(keys)
 
 	ParticleManager:SetParticleControl( caster.BPparticle, 0, target:GetAbsOrigin() + Vector(0,0,100)) 
 	ParticleManager:SetParticleControl( caster.BPparticle, 1, target:GetAbsOrigin() + Vector(0,0,100)) 
-	if keys.target:IsHero() then
-		Say(ply, "Broken Phantasm targets " .. FindName(keys.target:GetName()) .. ".", true)
+	if target:IsHero() then
+		Say(ply, "Broken Phantasm targets " .. FindName(target:GetName()) .. ".", true)
 	end
 	if caster:HasModifier("modifier_alternate_01") or caster:HasModifier("modifier_alternate_02") or caster:HasModifier("modifier_alternate_03") or caster:HasModifier("modifier_alternate_04") then 
 		ability:ApplyDataDrivenModifier(caster, caster, "modifier_bow", {})
@@ -602,9 +610,11 @@ end
 
 function OnBPStart(keys)
 	local caster = keys.caster
-	local target = keys.target
 	local ability = keys.ability
+	local target = keys.target or ability:GetCursorTarget() or caster:GetCursorCastTarget() or ability.___hFIX_CURSOR_TARGET
 	local ply = caster:GetPlayerOwner()
+
+	print("BP START", target:GetDebugName())
 	ParticleManager:DestroyParticle(caster.BPparticle, true)
 
 	if not IsValidEntity(target) or target:IsNull() or not target:IsAlive() then return end
@@ -617,7 +627,7 @@ function OnBPStart(keys)
 	ability:StartCooldown(ability:GetCooldown(1))
 	caster:SetMana(caster:GetMana() - ability:GetManaCost(1))
 	local info = {
-		Target = keys.target,
+		Target = target,
 		Source = keys.caster, 
 		Ability = keys.ability,
 		EffectName = "particles/units/heroes/hero_clinkz/clinkz_searing_arrow.vpcf",
@@ -637,14 +647,15 @@ function OnBPStart(keys)
 		OnUBWChantTrigger (caster)
 	end
 	
-	if keys.target:IsHero() then
-		Say(ply, "Broken Phantasm fired at " .. FindName(keys.target:GetName()) .. ".", true)
+	if target:IsHero() then
+		Say(ply, "Broken Phantasm fired at " .. FindName(target:GetName()) .. ".", true)
 	end
 end
 
 function OnBPInterrupted(keys)
 	local caster = keys.caster
-	local target = keys.target
+	local ability = keys.ability
+	local target = keys.target or ability:GetCursorTarget() or caster:GetCursorCastTarget() or ability.___hFIX_CURSOR_TARGET
 	local ply = caster:GetPlayerOwner()
 	ParticleManager:DestroyParticle(caster.BPparticle, true)
 	Say(ply, "Broken Phantasm failed.", true)
