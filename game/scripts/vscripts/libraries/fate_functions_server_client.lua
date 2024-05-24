@@ -186,6 +186,14 @@ if IsServer() then
 
         self:Heal(fHeal, hSource)
     end
+
+    local VALVE_CDOTA_BaseNPC_SpendMana = CDOTA_BaseNPC.SpendMana
+    CDOTA_BaseNPC.SpendMana = function(flManaSpent, hAbility)
+        if type(hAbility) == "table" and not hAbility:IsNull() then
+            --NOTE: Can use Script_ReduceMana(mana: float, ability: handle): also if u want, but also can maybe crash, not sure
+            return VALVE_CDOTA_BaseNPC_SpendMana(self, flManaSpent, hAbility)
+        end
+    end
 end
 --!!----------------------------------------------------------------------------------------------------------------------------------------------------------
 --[[CDOTABaseAbility.GetCastRangeBonus = function(self, hTarget) --Crashes normal addons, because gaben released new patch with error in 24.02.2022 pizdec, only for LUA ABILITY, For items i think all fne.... cringe
