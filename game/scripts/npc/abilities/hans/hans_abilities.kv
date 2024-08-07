@@ -13,7 +13,7 @@
 		"MaxLevel"						"5"
 		"RequiredLevel"					"1"
 		"LevelsBetweenUpgrades"			"1"
-		"AbilityCastRange"				"800"
+		"AbilityCastRange"				"600"
 		"AbilityCastPoint"				"0.2"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
 		"AnimationPlaybackRate"			"1"
@@ -23,34 +23,14 @@
 		{
 			
 		}
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"cast_range"			"600"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"cast_time"				"0.2"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"mana_restore"			"300 400 500 600 700"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"han_bonus"				"50"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"cd_reduction"			"0"
-			}
-		}
+		"AbilityValues"
+        {
+            "cast_range" "600"
+            "cast_time" "0.2"
+            "mana_restore" "200 275 350 425 500"
+            "han_bonus" "50"
+            "cd_reduction" "0"
+        }
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -109,7 +89,7 @@
 		"MaxLevel"						"5"
 		"RequiredLevel"					"1"
 		"LevelsBetweenUpgrades"			"1"
-		"AbilityCastRange"				"1200"
+		"AbilityCastRange"				"800"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
 		"AnimationPlaybackRate"			"1"
 		"AbilityCooldown"				"11"
@@ -118,29 +98,13 @@
 		{
 			
 		}
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"cast_range"			"850"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"mana_restore"			"300 400 500 600 700"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"han_bonus"				"50"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"cd_reduction"			"10 15 20 25 30"
-			}
-		}
+		"AbilityValues"
+        {
+            "cast_range" "800"
+            "mana_restore" "200 275 350 425 500"
+            "han_bonus" "50"
+            "cd_reduction" "10 15 20 25 30"
+        }
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -199,50 +163,22 @@
 		"RequiredLevel"					"1"
 		"LevelsBetweenUpgrades"			"1"
 		"AbilityCastPoint"				"0.2"
-		"AbilityCastRange"				"800"
+		"AbilityCastRange"				"600"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
 		"AnimationPlaybackRate"			"1"
 		"AbilityCooldown"				"28 27 26 25 24"
 		"AbilityManaCost"				"200"
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"cast_delay"			"0.3"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_mr"				"6 10 14 16 20"
-			}			
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_arm"				"4 5 6 7 8"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_spell_amp"		"6 10 14 18 22"
-			}				
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_hp_regen"		"10 13 16 19 22"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"duration"				"12"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_snow_queen_damage"		"0 50 100 150 200"
-			}
-		}
+		"AbilityValues"
+        {
+            "cast_delay" "0.3"
+            "bonus_mr" "4 7 10 13 16"
+            "bonus_arm" "4 5 6 7 8"
+            "bonus_spell_amp" "8 10 12 14 16"
+            "bonus_hp_regen" "10 13 16 19 22"
+            "duration" "12"
+            "bonus_snow_queen_damage" "0 50 100 150 200"
+        }
 		"OnAbilityPhaseStart"
 		{
 			"RunScript"
@@ -294,51 +230,23 @@
 		"MaxLevel"						"5"
 		"RequiredLevel"					"1"
 		"LevelsBetweenUpgrades"			"1"
-		"AbilityCastPoint"				"0.2"
-		"AbilityCastRange"				"1200"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCastRange"				"800"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
 		"AnimationPlaybackRate"			"1"
 		"AbilityCooldown"				"28 27 26 25 24"
 		"AbilityManaCost"				"200"
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"cast_delay"			"0.3"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_mr"				"14 18 22 26 30"
-			}			
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_arm"				"4 5 6 7 8"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_spell_amp"		"13 16 19 22 25"
-			}	
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_hp_regen"		"10 13 16 19 22"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"duration"				"17"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_snow_queen_damage"		"0 50 100 150 200"
-			}
-		}
+		"AbilityValues"
+        {
+            "cast_delay" "0.3"
+            "bonus_mr" "4 7 10 13 16"
+            "bonus_arm" "4 5 6 7 8"
+            "bonus_spell_amp" "13 15 17 19 21"
+            "bonus_hp_regen" "10 13 16 19 22"
+            "duration" "15"
+            "bonus_snow_queen_damage" "0 50 100 150 200"
+        }
 
 		"OnAbilityPhaseStart"
 		{
@@ -567,36 +475,20 @@
 		"MaxLevel"						"5"
 		"RequiredLevel"					"1"
 		"LevelsBetweenUpgrades"			"2"
-		"AbilityCastPoint"				"0.1"
+		"AbilityCastPoint"				"0.2"
 		"AbilityCastRange"				"700"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
 		"AnimationPlaybackRate"			"1"
 		"AbilityCooldown"				"28"
-		"AbilityManaCost"				"200"
+		"AbilityManaCost"				"300"
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"cast_delay"			"0.2"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"cast_range"			"700"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"220 240 260 280 300"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"2.5 3 3.5 4 4.5"
-			}
-		}
+		"AbilityValues"
+        {
+            "cast_delay" "0.2"
+            "cast_range" "700"
+            "damage" "220 240 260 280 300"
+            "duration" "2.5 3 3.5 4 4.5"
+        }
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -640,52 +532,24 @@
 		"MaxLevel"						"5"
 		"RequiredLevel"					"1"
 		"LevelsBetweenUpgrades"			"2"
-		"AbilityCastPoint"				"0.25"
+		"AbilityCastPoint"				"0.3"
 		"AbilityCastRange"				"700"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
 		"AnimationPlaybackRate"			"1"
 		"AbilityCooldown"				"24"
-		"AbilityManaCost"				"250 300 350 400 450"
+		"AbilityManaCost"				"400"
 		"AOERadius"						"%radius"
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"cast_delay"			"0.3"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"cast_range"			"700"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"400 475 550 625 700"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"slow"					"-12 -15 -18 -21 -24"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"2 3 4 5 6"
-			}			
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"turn_rate_reduction"	"-25 -30 -35 -40 -45"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"300"
-			}
-		}
+		"AbilityValues"
+        {
+            "cast_delay" "0.3"
+            "cast_range" "700"
+            "damage" "400 475 550 625 700"
+            "slow" "-12 -15 -18 -21 -24"
+            "duration" "2 3 4 5 6"
+            "turn_rate_reduction" "-25 -30 -35 -40 -45"
+            "radius" "300"
+        }
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -724,50 +588,22 @@
 		"MaxLevel"						"5"
 		"RequiredLevel"					"1"
 		"LevelsBetweenUpgrades"			"1"
-		"AbilityCastRange"				"800"
+		"AbilityCastRange"				"700"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
 		"AnimationPlaybackRate"			"1"
 		"AbilityCooldown"				"14"
-		"AbilityManaCost"				"300"
+		"AbilityManaCost"				"400"
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"cast_range"			"800"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"health_restore"		"400 500 600 700 800"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"int_scale"				"4"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"health_restore_from_max_health"	"0 5 10 15 20"
-			}			
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_reduction"		"-20"
-			}
-			"05"			
-			{
-				"var_type"				"FIELD_INTEGER"
-				"buff_duration"			"3"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bonus_duration_per_int"			"0.025"
-			}
-		}
+		"AbilityValues"
+        {
+            "cast_range" "700"
+            "health_restore" "400 500 600 700 800"
+            "int_scale" "4"
+            "health_restore_from_max_health" "2 4 6 8 10"
+            "damage_reduction" "-15"
+            "buff_duration" "2"
+            "bonus_duration_per_int" "0.025"
+        }
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -815,42 +651,18 @@
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
 		"AnimationPlaybackRate"			"1"
 		"AbilityCooldown"				"32"
-		"AbilityManaCost"				"350"
+		"AbilityManaCost"				"400"
 		"AOERadius"						"%radius"
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"cast_delay"			"0.4"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"cast_range"			"650"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"450"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"stun"					"1 1.1 1.2 1.3 1.4"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"revoke"				"0.2 0.25 0.3 0.35 0.4"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"radius"				"350"
-			}
-		}
+		"AbilityValues"
+        {
+            "cast_delay" "0.4"
+            "cast_range" "700"
+            "damage" "450"
+            "stun" "1 1.1 1.2 1.3 1.4"
+            "revoke" "0.2 0.25 0.3 0.35 0.4"
+            "radius" "350"
+        }
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -897,35 +709,19 @@
 		"RequiredLevel"					"1"
 		"LevelsBetweenUpgrades"			"2"
 		"AbilityCastPoint"				"0.1"
-		"AbilityCastRange"				"900"
+		"AbilityCastRange"				"800"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
 		"AnimationPlaybackRate"			"1"
 		"AbilityCooldown"				"28"
-		"AbilityManaCost"				"200"
+		"AbilityManaCost"				"300"
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"cast_delay"			"0.2"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"cast_range"			"850"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"220 240 260 280 300"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"2.5 3 3.5 4 4.5"
-			}
-		}
+		"AbilityValues"
+        {
+            "cast_delay" "0.2"
+            "cast_range" "800"
+            "damage" "220 240 260 280 300"
+            "duration" "2.5 3 3.5 4 4.5"
+        }
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -971,51 +767,23 @@
 		"RequiredLevel"					"1"
 		"LevelsBetweenUpgrades"			"2"
 		"AbilityCastPoint"				"0.3"
-		"AbilityCastRange"				"900"
+		"AbilityCastRange"				"800"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
 		"AnimationPlaybackRate"			"1"
 		"AbilityCooldown"				"24"
-		"AbilityManaCost"				"250 300 350 400 450"
+		"AbilityManaCost"				"400"
 		"AOERadius"						"%radius"
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"cast_delay"			"0.2"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"cast_range"			"850"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"450 525 600 675 750"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"slow"					"-12 -15 -18 -21 -24"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"2 3 4 5 6"
-			}			
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"turn_rate_reduction"	"-25 -30 -35 -40 -45"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"300"
-			}
-		}
+		"AbilityValues"
+        {
+            "cast_delay" "0.2"
+            "cast_range" "800"
+            "damage" "450 525 600 675 750"
+            "slow" "-12 -15 -18 -21 -24"
+            "duration" "2 3 4 5 6"
+            "turn_rate_reduction" "-25 -30 -35 -40 -45"
+            "radius" "300"
+        }
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -1055,53 +823,25 @@
 		"MaxLevel"						"5"
 		"RequiredLevel"					"1"
 		"LevelsBetweenUpgrades"			"1"
-		"AbilityCastRange"				"1200"
+		"AbilityCastRange"				"800"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
 		"AnimationPlaybackRate"			"1"
 		"AbilityCooldown"				"14"
-		"AbilityManaCost"				"300"
+		"AbilityManaCost"				"400"
 		"precache"
 		{
 			
 		}
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"cast_range"			"800"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"health_restore"		"400 500 600 700 800"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"int_scale"				"4"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"health_restore_from_max_health"	"0 5 10 15 20"
-			}			
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_reduction"		"-20"
-			}
-			"05"			
-			{
-				"var_type"				"FIELD_INTEGER"
-				"buff_duration"			"6"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bonus_duration_per_int"			"0.04"
-			}
-		}
+		"AbilityValues"
+        {
+            "cast_range" "800"
+            "health_restore" "400 500 600 700 800"
+            "int_scale" "3"
+            "health_restore_from_max_health" "2 4 6 8 10"
+            "damage_reduction" "-15"
+            "buff_duration" "3"
+            "bonus_duration_per_int" "0.04"
+        }
 
 		"OnSpellStart"
 		{
@@ -1146,46 +886,22 @@
 		"RequiredLevel"					"1"
 		"LevelsBetweenUpgrades"			"2"
 		"AbilityCastPoint"				"0.3"
-		"AbilityCastRange"				"900"
+		"AbilityCastRange"				"800"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
 		"AnimationPlaybackRate"			"1"
 		"AbilityCooldown"				"32"
 		"AbilityManaCost"				"350"
 		"AOERadius"						"%radius"
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"cast_delay"			"0.4"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"cast_range"			"900"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"450"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"stun"					"1 1.1 1.2 1.3 1.4"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"revoke"				"0.2 0.25 0.3 0.35 0.4"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"radius"				"350"
-			}
-		}
+		"AbilityValues"
+        {
+            "cast_delay" "0.4"
+            "cast_range" "800"
+            "damage" "450"
+            "stun" "1 1.1 1.2 1.3 1.4"
+            "revoke" "0.2 0.25 0.3 0.35 0.4"
+            "radius" "350"
+        }
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -1209,28 +925,16 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"MaxLevel"						"1"
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_2"
-		"AbilityCooldown"				"20"
-		"AbilityManaCost"				"200"
+		"AbilityCooldown"				"30"
+		"AbilityManaCost"				"300"
 		"AbilityCastPoint"				"0.2"
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"illusion_duration"		"10"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"illusion_amount" 		"2"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"invis_duration"  		"6"
-			}
-		}
+		"AbilityValues"
+        {
+            "illusion_duration" "10"
+            "illusion_amount" "2"
+            "invis_duration" "6"
+        }
 		
 		"OnSpellStart"
 		{
@@ -1315,20 +1019,13 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
 		"AbilityTextureName"			"custom/hans/territory"
 		"MaxLevel"						"1"
+		"AbilityCooldown"				"1"
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"bonus_mana"		"200"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"bonus_mana_reg"	"1"
-			}
-		}
+		"AbilityValues"
+        {
+            "bonus_mana" "200"
+            "bonus_mana_reg" "1"
+        }
 		
 		"Modifiers"
 		{
@@ -1360,49 +1057,19 @@
 		"AbilityCooldown"				"40"
 		"AbilityManaCost"				"300"
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"bonus_mana"		"400"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"bonus_mana_reg"	"4"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"mr_reduction"		"-20"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"bonus_mr"			"20"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"radius"			"1000"
-			}
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"duration"			"9"
-			}			
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"cast_delay"		"0.4"
-			}			
-			"07"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"revoke_duration"	"2"
-			}
-		}
+		"AbilityValues"
+        {
+            "bonus_mana" "200"
+            "bonus_mana_reg" "3"
+            "mr_reduction" "-20"
+            "bonus_mr" "20"
+            "ally_bonus_reg" "3"
+            "radius" "1000"
+            "duration" "9"
+            "cast_delay" "0.4"
+            "debuff_duration" "2"
+            "root_duration" "1"
+        }
 
 		"OnSpellStart"
 		{
@@ -1437,6 +1104,7 @@
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%bonus_mr"
+					"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE" "%ally_bonus_reg" 
 				}
 			}
 
@@ -1475,39 +1143,15 @@
 		"RequiredLevel"					"1"
 		"LevelsBetweenUpgrades"			"2"
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_mana_regen_out_of_combat"		"1 1 1 1 1"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"out_of_combat_range"	"800"
-			}			
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_mr"			"0 0 10 10 10"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_spell_damage"	"0 0 0 0 250"
-			}			
-			"05"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_all_stats"	"0 3 3 5 5"
-			}			
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"bonus_movespeed"	"0 0 40 40 40"
-			}
-		}
+		"AbilityValues"
+        {
+            "bonus_mana_regen_out_of_combat" "1"
+            "out_of_combat_range" "800"
+            "bonus_mr" "0 0 10 10 10"
+            "bonus_spell_damage" "0 0 0 0 250"
+            "bonus_all_stats" "0 3 3 5 5"
+            "bonus_movespeed" "0 0 40 40 40"
+        }
 
 		"OnUpgrade"
 		{
@@ -1570,54 +1214,19 @@
 		"AbilityCooldown"				"9999"
 		"AbilityManaCost"				"14"
 
-		"AbilitySpecial"
-		{
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"cast_delay"		"0.4"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"radius"			"1000"
-			}
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"duration"			"9"
-			}	
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_mana"			"200"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_mana_reg"		"3"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"mr_reduction"		"-20"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"bonus_mr"			"20"
-			}		
-			"06"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"cooldown"			"40"
-			}
-			"07"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"revoke_duration"	"2"
-			}
-		}
+		"AbilityValues"
+        {
+            "cast_delay" "0.4"
+            "radius" "1000"
+            "duration" "9"
+            "bonus_mana_reg" "3"
+            "mr_reduction" "-20"
+            "bonus_mr" "20"
+            "ally_bonus_reg" "3"
+            "cooldown" "40"
+            "debuff_duration" "2"
+            "root_duration" "1"
+        }
 		
 		"OnSpellStart"
 		{
@@ -1644,24 +1253,12 @@
 		"AbilityCooldown"				"9999"
 		"AbilityManaCost"				"11"
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_duration"		"5"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_spell_amp"		"8"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_cast_range"		"400"
-			}
-		}
+		"AbilityValues"
+        {
+            "bonus_duration" "3"
+            "bonus_spell_amp" "5"
+            "bonus_cast_range" "200"
+        }
 		
 		"OnSpellStart"
 		{
@@ -1688,39 +1285,16 @@
 		"AbilityCooldown"				"9999"
 		"AbilityManaCost"				"13"
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"cast_delay"			"0.3"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"450"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"stun"					"1 1.1 1.2 1.3 1.4"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"revoke"				"0.2 0.25 0.3 0.35 0.4"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"radius"				"350"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"cooldown"				"32"
-			}
-		}
+		"AbilityValues"
+        {
+            "cast_delay" "0.3"
+            "damage" "450"
+            "stun" "1 1.1 1.2 1.3 1.4"
+            "revoke" "0.2 0.25 0.3 0.35 0.4"
+            "radius" "350"
+            "mana" "400"
+            "cooldown" "32"
+        }
 		
 		"OnSpellStart"
 		{
@@ -1751,29 +1325,13 @@
 		{
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bonus_cast_range"			"200"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"int_scale_nightingale"				"4"
-			}			
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"nightingale_bonus_buff_duration"				"3"
-			}			
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"nightingale_bonus_duration_per_int"				"0.4"
-			}
-		}
+		"AbilityValues"
+        {
+            "bonus_cast_range" "100"
+            "int_scale_nightingale" "3"
+            "nightingale_bonus_buff_duration" "1"
+            "nightingale_bonus_duration_per_int" "0.4"
+        }
 		
 		"OnSpellStart"
 		{
@@ -1800,44 +1358,16 @@
 		"AbilityCooldown"				"9999"
 		"AbilityManaCost"				"14"
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_master_mana_gain"		"1"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_master_health_gain"		"1"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"4"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_duration"		"9"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_mr"				"5"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_max_health"	"50"
-			}					
-			"06"
-			{				
-				"var_type"			"FIELD_INTEGER"
-				"bonus_magical_damage"	"25"
-			}
-		}
+		"AbilityValues"
+        {
+            "bonus_master_mana_gain" "1"
+            "bonus_master_health_gain" "1"
+            "bonus_all_stats" "4"
+            "bonus_duration" "9"
+            "bonus_mr" "5"
+            "bonus_max_health" "50"
+            "bonus_magical_damage" "25"
+        }
 		
 		"OnSpellStart"
 		{
@@ -1869,89 +1399,25 @@
 		"AbilityCooldown"				"180"
 		"AbilityManaCost"				"1200"
 		
-		"AbilitySpecial"
-		{			
-			"10"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"cast_delay"		"1.8"
-			}
-			"10"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"cast_range"		"600"
-			}
-			"07"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"duration"			"18"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_mana_regen_out_of_combat"		"45"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_health_regen_out_of_combat"		"100"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"out_of_combat_range"	"800"
-			}			
-			"04"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_mr"			"10"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_health_regen"	"20"
-			}
-			"06"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_arm"			"10"
-			}
-			"08"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_all_stats"	"3"
-			}
-			"11"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_max_hp"		"100"
-			}
-			"11"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"bonus_cd_red"		"2.5"
-			}
-			"09"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"master_mana_gain"	"1"
-			}			
-			"10"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"master_health_gain"	"0"
-			}				
-			"11"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_magical_damage"	"0"
-			}	
-			"11"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"bonus_duration_per_int"	"0.1"
-			}			
-		}
+		"AbilityValues"
+        {
+            "cast_delay" "1.8"
+            "cast_range" "600"
+            "duration" "18"
+            "bonus_mana_regen_out_of_combat" "45"
+            "bonus_health_regen_out_of_combat" "100"
+            "out_of_combat_range" "800"
+            "bonus_mr" "10"
+            "bonus_health_regen" "20"
+            "bonus_arm" "10"
+            "bonus_all_stats" "3"
+            "bonus_max_hp" "100"
+            "bonus_cd_red" "2.5"
+            "master_mana_gain" "1"
+            "master_health_gain" "0"
+            "bonus_magical_damage" "0"
+            "bonus_duration_per_int" "0.1"
+        }
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -2059,89 +1525,25 @@
 		"AbilityCooldown"				"180"
 		"AbilityManaCost"				"1200"
 		
-		"AbilitySpecial"
-		{
-			"10"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"cast_delay"		"1.8"
-			}
-			"10"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"cast_range"		"600"
-			}
-			"07"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"duration"			"26"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_mana_regen_out_of_combat"		"45"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_health_regen_out_of_combat"		"100"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"out_of_combat_range"	"800"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_mr"			"15"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_health_regen"	"20"
-			}
-			"06"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_arm"			"10"
-			}
-			"08"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_all_stats"	"7"
-			}
-			"11"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_max_hp"		"150"
-			}
-			"11"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"bonus_cd_red"		"2.5"
-			}
-			"09"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"master_mana_gain"	"2"
-			}			
-			"10"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"master_health_gain"	"1"
-			}						
-			"11"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_magical_damage"	"25"
-			}	
-			"11"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"bonus_duration_per_int"	"0.1"
-			}		
-		}
+		"AbilityValues"
+        {
+            "cast_delay" "1.8"
+            "cast_range" "600"
+            "duration" "26"
+            "bonus_mana_regen_out_of_combat" "45"
+            "bonus_health_regen_out_of_combat" "100"
+            "out_of_combat_range" "800"
+            "bonus_mr" "15"
+            "bonus_health_regen" "20"
+            "bonus_arm" "10"
+            "bonus_all_stats" "7"
+            "bonus_max_hp" "150"
+            "bonus_cd_red" "2.5"
+            "master_mana_gain" "2"
+            "master_health_gain" "1"
+            "bonus_magical_damage" "25"
+            "bonus_duration_per_int" "0.1"
+        }
 		"OnSpellStart"
 		{
 			"RunScript"

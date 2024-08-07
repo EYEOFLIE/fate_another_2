@@ -265,6 +265,7 @@ function OnFlyingAttack(keys)
 	local anim_duration = 0.4
 	DoDamage(caster, target, hit_damage, DAMAGE_TYPE_MAGICAL, 0, ability, false)
 	ability:ApplyDataDrivenModifier(caster, target, "modifier_lubu_fly_slam", {Duration = anim_duration})
+	OnSlamAnim(keys)
 	giveUnitDataDrivenModifier(caster, caster, "pause_sealenabled", anim_duration + 0.1) 
 
 	Timers:CreateTimer(anim_duration, function()
@@ -293,13 +294,12 @@ end
 function OnSlamAnim(keys)
 	local caster = keys.caster	
 	local target = keys.target
-	local caster_angle = caster:GetAnglesAsVector().y
+	caster.tick_count = 0
+	--[[local caster_angle = caster:GetAnglesAsVector().y
 	local target_loc = GetRotationPoint(caster:GetAbsOrigin(), 100, caster_angle + 45)
 	local height = 0
 	local tick_count = 0
-	Timers:CreateTimer('lubu_grip' .. caster:GetPlayerOwnerID(), {
-		endTime = 0,
-		callback = function()
+	Timers:CreateTimer(0, function()
 	   	if target:IsAlive() and caster:IsAlive() and tick_count < 0.4 then 
 	   		target_loc = GetRotationPoint(caster:GetAbsOrigin(), 160, caster_angle - 60)
 	   		if tick_count < 0.2 then 
@@ -319,9 +319,37 @@ function OnSlamAnim(keys)
 			target:RemoveModifierByName("modifier_lubu_fly_slam")
 			return nil
 		end
-		tick_count = tick_count + 0.033
-		return 0.033
-	end})
+		tick_count = tick_count + 0.1
+		return 0.1
+	end)]]
+end
+
+function OnSlamThink(keys)
+	local caster = keys.caster	
+	local target = keys.target
+	local caster_angle = caster:GetAnglesAsVector().y
+
+	caster.tick_count = caster.tick_count + 0.033
+	if target:IsAlive() and caster:IsAlive() and caster.tick_count < 0.4 then 
+		local height = target:GetAbsOrigin().z
+		local target_loc = GetRotationPoint(caster:GetAbsOrigin(), 160, caster_angle - 60)
+		if caster.tick_count < 0.2 then 
+	   		height = height + 30
+	   		if caster.tick_count > 0.1 then 
+	   			target:SetAngles(-90, 0, 0)
+	   		end
+	   	else
+	   		target:SetAngles(-90, 0, 0)
+	   		height = height - 30
+	   	end
+	   	target:SetAbsOrigin(target_loc + Vector(0,0,height))
+	else
+		target:SetAngles(0, 0, 0)
+		local ground = GetGroundPosition(target:GetOrigin(), target)
+		target:SetAbsOrigin(ground)
+		target:RemoveModifierByName("modifier_lubu_fly_slam")
+		return nil
+	end
 end
 
 function OnFlyingCreate(keys)
@@ -742,7 +770,7 @@ function OnGodForceComboStart(keys)
   	EmitGlobalSound('Lubu.PreCombo')
 
 	giveUnitDataDrivenModifier(caster, caster, "pause_sealdisabled", delay + 0.3)
-	if caster.Skin == 3 then 
+	if caster:HasModifier("modifier_alternate_03") or caster.Skin == 3 then 
 		StartAnimation(caster, {duration=delay + 0.3, activity=ACT_DOTA_CAST_ABILITY_3, rate= 1 / delay})
 		local bodyfx = ParticleManager:CreateParticle('particles/econ/items/oracle/oracle_ti10_immortal/oracle_ti10_immortal_purifyingflames_hit.vpcf', PATTACH_POINT_FOLLOW, caster)
 		ParticleManager:SetParticleControl(bodyfx, 0, caster:GetAbsOrigin() + Vector(0,0,80))
@@ -862,268 +890,7 @@ function OnGodForceComboHit(keys)
 	end
 end
 
-lubu_circular_blade = class({})
-lubu_circular_blade_upgrade = class({})
-LinkLuaModifier("modifier_lubu_circular_window", "abilities/lubu/lubu_abilities", LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier("modifier_lubu_circular_tracker", "abilities/lubu/lubu_abilities", LUA_MODIFIER_MOTION_NONE)
 
-function lubu_blade_wrapper(blade)
-	function blade:GetCastPoint()
-		if self:CheckSequence() == 2 then
-			return 0.1
-		elseif self:CheckSequence() == 1 then
-			return 0.2
-		else
-			return 0.2
-		end
-	end
-
-	function blade:CheckSequence()
-		local caster = self:GetCaster()
-
-		if caster:HasModifier("modifier_lubu_circular_tracker") then
-			local stack = caster:GetModifierStackCount("modifier_lubu_circular_tracker", caster)
-
-			return stack
-		else
-			return 0
-		end	
-	end
-
-	function blade:GetPlaybackRateOverride()
-		if self:CheckSequence() == 2 then
-			return 2.6
-		elseif self:CheckSequence() == 1 then
-			return 2.5
-		else
-			return 2.5
-		end
-	end
-
-	function blade:GetCastAnimation()
-		if self:CheckSequence() == 2 then
-			return ACT_DOTA_CAST_ABILITY_1
-		elseif self:CheckSequence() == 1 then
-			return ACT_DOTA_ATTACK
-		else
-			return ACT_DOTA_ATTACK2
-		end
-	end
-
-	function blade:GetCastRange(vLocation, hTarget)
-		if self:CheckSequence() == 2 then
-			return self:GetSpecialValueFor("third_aoe")
-		elseif self:CheckSequence() == 1 then
-			return self:GetSpecialValueFor("second_aoe")
-		else
-			return self:GetSpecialValueFor("first_aoe")
-		end
-	end
-
-	function blade:GetAbilityTextureName()
-		if self:CheckSequence() == 2 then
-			return "custom/lubu/lubu_blade3"
-		elseif self:CheckSequence() == 1 then
-			return "custom/lubu/lubu_blade2"
-		else
-			return "custom/lubu/lubu_blade1"
-		end
-	end
-
-	function blade:OnSpellStart()
-		local caster = self:GetCaster()
-		local ability = self
-		local total_slash = self:GetSpecialValueFor("total_slash")
-		local first_aoe = self:GetSpecialValueFor("first_aoe")
-		local second_aoe = self:GetSpecialValueFor("second_aoe")
-		local third_aoe = self:GetSpecialValueFor("third_aoe")
-		local damage_1 = self:GetSpecialValueFor("damage_1")
-		local damage_2 = self:GetSpecialValueFor("damage_2")
-		local damage_3 = self:GetSpecialValueFor("damage_3")
-		local third_knock = self:GetSpecialValueFor("third_knock")
-		local window_duration = self:GetSpecialValueFor("window_duration")
-		local radius = first_aoe
-		local damage = damage_1
-		local origin = caster:GetAbsOrigin()
-		local delay = 0.2
-		local blade_hit = false
-
-		giveUnitDataDrivenModifier(caster, caster, "pause_sealenabled", delay)
-
-		if self:CheckSequence() == total_slash - 1 then
-			caster:SetModifierStackCount("modifier_lubu_circular_tracker", caster, 3)
-			radius = third_aoe
-			damage = damage_3
-			Timers:CreateTimer(delay, function()
-				origin = GetRotationPoint(origin, caster:GetBaseAttackRange(),caster:GetAnglesAsVector().y)
-			end)
-			ability:EndCooldown()
-			caster:RemoveModifierByName('modifier_lubu_circular_window')
-		elseif self:CheckSequence() == total_slash - 2 then
-			caster:SetModifierStackCount("modifier_lubu_circular_tracker", caster, 2)
-			radius = second_aoe
-			damage = damage_2
-			ability:EndCooldown()
-			Timers:CreateTimer(delay, function()
-				origin = caster:GetAbsOrigin()
-			end)
-		else
-			caster:AddNewModifier(caster, self, "modifier_lubu_circular_window", {Duration = window_duration})
-			caster:AddNewModifier(caster, self, "modifier_lubu_circular_tracker", {Duration = window_duration})
-			caster:SetModifierStackCount("modifier_lubu_circular_tracker", caster, 1)
-			ability:EndCooldown()
-			Timers:CreateTimer(delay, function()
-				origin = caster:GetAbsOrigin()
-			end)
-		end
-
-		local dash = Physics:Unit(caster)
-		caster:PreventDI()
-		caster:SetPhysicsFriction(0)
-		caster:SetPhysicsVelocity(caster:GetForwardVector()*500)
-		caster:SetNavCollisionType(PHYSICS_NAV_BOUNCE)
-		caster:FollowNavMesh(false)
-
-		if self:CheckSequence() < total_slash then 
-			DoCleaveAttack(caster, caster, self, 0, 180, radius, radius, "particles/econ/items/sven/sven_ti7_sword/sven_ti7_sword_spell_great_cleave_crit.vpcf")
-		end
-
-		Timers:CreateTimer(delay, function()
-			caster:OnPreBounce(nil)
-			caster:OnPhysicsFrame(nil)
-			caster:SetBounceMultiplier(0)
-			caster:PreventDI(false)
-			caster:SetPhysicsVelocity(Vector(0,0,0))
-			FindClearSpaceForUnit(caster, caster:GetAbsOrigin(), true)
-			caster:EmitSound('Lubu.Blade')
-			if caster:IsAlive() then
-				local targets = FindUnitsInRadius(caster:GetTeam(), origin, nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_ANY_ORDER, false)
-				for k,v in pairs(targets) do
-					if self:CheckSequence() >= total_slash then 
-						if IsValidEntity(v) and not v:IsNull() then
-							if not v:IsMagicImmune() and not IsImmuneToCC(v) then
-								ApplyAirborne(caster, v, third_knock)
-							end
-							if caster.IsHoutengagekiAcquired then 
-								local damage_3_per_str = ability:GetSpecialValueFor("damage_3_per_str")
-								damage = damage + (damage_3_per_str * caster:GetStrength())
-							end
-							DoDamage(caster, v, damage, DAMAGE_TYPE_MAGICAL, 0, ability, false)
-							if caster.IsRuthlessWarriorAcquired then
-								local MR = v:GetBaseMagicalResistanceValue()/100
-			            		local dmg_deal = damage * (1-MR) 
-								if k == 1 then 
-									OnRuthlessDrain(caster, 1, dmg_deal)
-									v:EmitSound('Hero_EarthShaker.Fissure')
-								else
-									OnRuthlessDrain(caster, 0, dmg_deal)
-								end
-							end
-						end
-					else
-						if IsValidEntity(v) and not v:IsNull() then
-							local angle = 180
-							local caster_angle = caster:GetAnglesAsVector().y
-							--print('lubu angle ' .. caster_angle)
-					        local origin_difference = caster:GetAbsOrigin() - v:GetAbsOrigin()
-
-					        local origin_difference_radian = math.atan2(origin_difference.y, origin_difference.x)
-
-					        origin_difference_radian = origin_difference_radian * 180
-					        local enemy_angle = origin_difference_radian / math.pi
-
-					        enemy_angle = enemy_angle + 180.0
-					        --print('enemy angle ' .. enemy_angle)
-
-					        if (caster_angle < angle/2 and enemy_angle > 360 - angle/2) then
-					        	enemy_angle = 360 - enemy_angle
-					        elseif (enemy_angle < angle/2 and caster_angle > 360 - angle/2) then 
-					        	caster_angle = 360 - caster_angle 
-					        end
-
-							local result_angle = enemy_angle - caster_angle
-							result_angle = math.abs(result_angle)
-
-							if result_angle <= angle/2 then
-								DoDamage(caster, v, damage, DAMAGE_TYPE_PHYSICAL, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, ability, false)
-								if caster.IsRuthlessWarriorAcquired then
-									local reduction = GetPhysicalDamageReduction(v:GetPhysicalArmorValue(false))
-			            			local dmg_deal = damage * (1-reduction) 
-									if blade_hit == false then
-										blade_hit = true
-										OnRuthlessDrain(caster, 1, dmg_deal)
-										v:EmitSound('Hero_Sven.Attack')
-									else
-										OnRuthlessDrain(caster, 0, dmg_deal) 
-									end
-								end
-							end
-						end
-					end
-				end
-				if self:CheckSequence() >= total_slash then 
-					if caster:HasModifier('modifier_lubu_circular_tracker') then 
-						caster:RemoveModifierByName('modifier_lubu_circular_tracker')
-					end
-					local smashfx = ParticleManager:CreateParticle('particles/econ/items/earthshaker/egteam_set/hero_earthshaker_egset/earthshaker_echoslam_start_fallback_low_egset.vpcf', PATTACH_ABSORIGIN, caster)
-					ParticleManager:SetParticleControl(smashfx, 0, GetRotationPoint(caster:GetAbsOrigin(), caster:GetBaseAttackRange(),caster:GetAnglesAsVector().y))
-					Timers:CreateTimer(1.0, function()
-						ParticleManager:DestroyParticle(smashfx, false)
-						ParticleManager:ReleaseParticleIndex(smashfx)
-					end)
-				end
-			end
-		end)
-	end
-end
-	
-lubu_blade_wrapper(lubu_circular_blade_upgrade)
-lubu_blade_wrapper(lubu_circular_blade)		
-
-modifier_lubu_circular_window = class({})	
-
-function modifier_lubu_circular_window:GetAttributes() 
-	return {MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE, MODIFIER_ATTRIBUTE_PERMANENT}
-end
-
-function modifier_lubu_circular_window:IsHidden()
-	return false 
-end
-
-function modifier_lubu_circular_window:IsDebuff()
-	return false 
-end
-
-function modifier_lubu_circular_window:RemoveOnDeath()
-	return true 
-end
-
-if IsServer() then
-	function modifier_lubu_circular_window:OnDestroy()
-		self.parent = self:GetParent()
-		self.ability = self:GetAbility()
-		local time = self:GetDuration() - self:GetRemainingTime()
-		self.ability:StartCooldown(self.ability:GetCooldown(self.ability:GetLevel()) - time)
-	end
-end
-
-modifier_lubu_circular_tracker = class({})	
-
-function modifier_lubu_circular_tracker:GetAttributes() 
-	return {MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE, MODIFIER_ATTRIBUTE_PERMANENT}
-end
-
-function modifier_lubu_circular_tracker:IsHidden()
-	return true 
-end
-
-function modifier_lubu_circular_tracker:IsDebuff()
-	return false 
-end
-
-function modifier_lubu_circular_tracker:RemoveOnDeath()
-	return true 
-end
 
 function OnHoutengagekiAcquired(keys)
 	local caster = keys.caster
@@ -1233,318 +1000,3 @@ function OnImmortalAcquired(keys)
 end
 
 
---ATTEMPT ON LUA
-
-LinkLuaModifier("modifier_lubu_god_force", "abilities/lubu/lubu_abilities", LUA_MODIFIER_MOTION_NONE)
-
-modifier_lubu_god_force = class({})
-
-function modifier_lubu_god_force:IsHidden()
-	return false 
-end
-
-function modifier_lubu_god_force:IsPurgable()
-    return false
-end
-
-function modifier_lubu_god_force:RemoveOnDeath()
-    return true
-end
-
-function modifier_lubu_god_force:OnCreated()
-    local ability = self:GetAbility()
-
-    if ability and not ability:IsNull() then
-        self.movespeed_bonus = ability:GetSpecialValueFor("movespeed_bonus")
-        self.turn_rate_reduction = ability:GetSpecialValueFor("turn_rate_reduction")
-    else
-        self.movespeed_bonus = 150 -- Default value if ability is missing
-        self.turn_rate_reduction = -200 -- Default value if ability is missing
-    end
-end
-
-function modifier_lubu_god_force:DeclareFunctions()
-    local funcs = {
-        MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE,
-        MODIFIER_PROPERTY_TURN_RATE_PERCENTAGE,
-    }
-
-    return funcs
-end
-
-function modifier_lubu_god_force:GetModifierMoveSpeed_Absolute()
-    return self.movespeed_bonus
-end
-
-function modifier_lubu_god_force:GetModifierTurnRate_Percentage()
-    return self.turn_rate_reduction
-end
-
-function modifier_lubu_god_force:CheckState()
-    local state = {
-        [MODIFIER_STATE_DISARMED] = true,
-        [MODIFIER_STATE_SILENCED] = true,
-        [MODIFIER_STATE_MUTED] = true,
-    }
-
-    return state
-end
-
-
-lubu_god_force_new = class({})
-lubu_god_force_new_upgrade = class({})
-
-function lubu_god_force_new_wrapper(ability)
-
-	 function ability:GetAbilityTextureName()
-        if self:GetCaster():HasModifier("modifier_alternate_03") then
-            return "custom/lubu/lubu_god_force_skin"
-        else
-            return "custom/lubu/lubu_god_force"
-        end
-    end    
-
-    function ability:OnSpellStart()
-	local caster = self:GetCaster()
-	local ability = self
-	local radius = ability:GetSpecialValueFor("radius")
-	local interval = ability:GetSpecialValueFor("interval")
-	local angle = ability:GetSpecialValueFor("angle")
-	local total_hit = ability:GetSpecialValueFor("total_hit")
-	local damage = ability:GetSpecialValueFor("damage")
-	local damage_spin = ability:GetSpecialValueFor("damage_spin")
-	local damage_thrust = ability:GetSpecialValueFor("damage_thrust")
-	local mini_stun = ability:GetSpecialValueFor("mini_stun")
-	local spin_stun = ability:GetSpecialValueFor("spin_stun")
-	local thrust_stun = ability:GetSpecialValueFor("thrust_stun")
-	local thrust_distance = ability:GetSpecialValueFor("thrust_distance")
-	local thrust_width = ability:GetSpecialValueFor("thrust_width")
-	local knock = ability:GetSpecialValueFor("knock")	
-	local bonus_dmg = 0
-	local hit_count = 0
-	local targets
-	local sound = false
-
-    local modifierDuration = (total_hit + 1) * interval
-    print("Modifier Duration: " .. modifierDuration) -- Print out the modifier duration for debugging purposes
-
-    caster:AddNewModifier(caster, ability, "modifier_lubu_god_force", {Duration = modifierDuration})
-	giveUnitDataDrivenModifier(caster,caster,"revoked", (total_hit + 1) * interval)
-
-	local markfx = ParticleManager:CreateParticle('particles/units/heroes/hero_void_spirit/planeshift/void_spirit_planeshift_untargetable.vpcf', PATTACH_ABSORIGIN_FOLLOW, caster)
-	ParticleManager:SetParticleControl(markfx, 0, caster:GetAbsOrigin())
-	ParticleManager:SetParticleControl(markfx, 1, caster:GetAbsOrigin())
-	Timers:CreateTimer(interval * total_hit, function()
-		ParticleManager:DestroyParticle(markfx, false)
-		ParticleManager:ReleaseParticleIndex(markfx)
-	end)
-
-	Timers:CreateTimer( function()
-		if caster:IsAlive() and hit_count < total_hit + 1 then 
-			local caster_angle = caster:GetAnglesAsVector().y
-			caster:EmitSound("Hero_PhantomLancer.Attack")
-			targets = FindUnitsInRadius(caster:GetTeam(), caster:GetAbsOrigin(), nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_ALL, 0, FIND_ANY_ORDER, false)
-			if hit_count < 3 then 
-				if caster.IsHoutengagekiAcquired then 
-					local bonus_hp_dmg = ability:GetSpecialValueFor("bonus_hp_dmg")	/ 100 
-					bonus_dmg = caster:GetMaxHealth() * bonus_hp_dmg
-				end
-
-				if hit_count == 0 then 
-					if caster:HasModifier("modifier_alternate_03") then 
-						print('dynasty lubu')
-						StartAnimation(caster, {duration= (3*interval) - 0.05, activity=ACT_DOTA_CAST_ABILITY_6, rate=1.5})
-					else
-						StartAnimation(caster, {duration= (3*interval) - 0.05, activity=ACT_DOTA_CAST_ABILITY_4, rate=2.3})
-					end
-				end
-				local slashfxx = ParticleManager:CreateParticle("particles/custom/lubu/lubu_new_r_grow.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
-				ParticleManager:SetParticleControl(slashfxx, 0, caster:GetAbsOrigin())
-				ParticleManager:SetParticleControl(slashfxx, 1, Vector(radius, 12, 0))
-				ParticleManager:SetParticleControl(slashfxx, 2, Vector((30 * hit_count) / math.max(1,hit_count), caster_angle + 180,((hit_count + 1) % 2) * 180)) --(roll,pitch,yaw)
-				Timers:CreateTimer(1.0, function()
-					ParticleManager:DestroyParticle(slashfxx, false)
-					ParticleManager:ReleaseParticleIndex(slashfxx)
-				end)
-				for k,v in pairs(targets) do
-					if IsValidEntity(v) and not v:IsNull() then
-						local caster_angle = caster:GetAnglesAsVector().y
-							--print('lubu angle ' .. caster_angle)
-					    local origin_difference = caster:GetAbsOrigin() - v:GetAbsOrigin()
-
-					    local origin_difference_radian = math.atan2(origin_difference.y, origin_difference.x)
-
-					    origin_difference_radian = origin_difference_radian * 180
-					    local enemy_angle = origin_difference_radian / math.pi
-
-					    enemy_angle = enemy_angle + 180.0
-					        --print('enemy angle ' .. enemy_angle)
-
-					    if (caster_angle < angle/2 and enemy_angle > 360 - angle/2) then
-					        enemy_angle = 360 - enemy_angle
-					    elseif (enemy_angle < angle/2 and caster_angle > 360 - angle/2) then 
-					      	caster_angle = 360 - caster_angle 
-					    end
-
-					    local result_angle = math.abs(enemy_angle - caster_angle)
-
-					    if result_angle <= angle/2 then
-					        if not v:IsMagicImmune() and not IsImmuneToCC(v) then
-								v:AddNewModifier(caster, ability, "modifier_stunned", {Duration = mini_stun})
-							end
-							if sound == false  then 
-								v:EmitSound("Hero_Juggernaut.OmniSlash.Damage")
-								sound = true 
-							end
-					        if caster.IsRuthlessWarriorAcquired then 
-								local MR = v:GetBaseMagicalResistanceValue()/100
-				            	local dmg_deal = (damage + bonus_dmg) * (1-MR) 
-				            	if godforce_hit == false then
-				            		OnRuthlessDrain(caster, 1, dmg_deal)
-				            	else
-				            		OnRuthlessDrain(caster, 0, dmg_deal)
-				            	end
-				            end
-				            DoDamage(caster, v, damage + bonus_dmg, DAMAGE_TYPE_MAGICAL, 0, ability, false)
-					    end
-					end
-				end
-				sound = false
-			elseif hit_count == 3 then 
-				if caster.IsHoutengagekiAcquired then 
-					local bonus_hp_dmg = ability:GetSpecialValueFor("bonus_hp_dmg")	/ 100 
-					bonus_dmg = caster:GetHealth() * bonus_hp_dmg
-				end
-				if caster:HasModifier("modifier_alternate_03") then
-					StartAnimation(caster, {duration= (2*interval), activity=ACT_DOTA_CAST_ABILITY_4_END, rate=1.0})
-					local angle = caster:GetAnglesAsVector().y
-					for i = 0,15 do 
-						Timers:CreateTimer(i * 0.04, function()
-							caster:SetAngles(0, angle + (i * 24), 0)
-						end)
-						if i == 15 then
-							caster:SetAngles(0, 0, 0)
-						end
-					end
-				else
-					StartAnimation(caster, {duration= (2*interval), activity=ACT_DOTA_CAST_ABILITY_4_END, rate=3.0})
-				end
-				
-				local slashfxx = ParticleManager:CreateParticle("particles/custom/lubu/lubu_new_r_grow.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
-				ParticleManager:SetParticleControl(slashfxx, 0, caster:GetAbsOrigin())
-				ParticleManager:SetParticleControl(slashfxx, 1, Vector(radius, 7, 0))
-				ParticleManager:SetParticleControl(slashfxx, 2, Vector(0, caster_angle, 0)) --(roll,pitch,yaw)
-				Timers:CreateTimer(1.0, function()
-					ParticleManager:DestroyParticle(slashfxx, false)
-					ParticleManager:ReleaseParticleIndex(slashfxx)
-				end)
-				
-				for k,v in pairs(targets) do
-					if IsValidEntity(v) and not v:IsNull()then
-						if not v:IsMagicImmune() and not IsImmuneToCC(v) then
-							v:AddNewModifier(caster, ability, "modifier_stunned", {Duration = spin_stun})
-						end
-					        
-					    if caster.IsRuthlessWarriorAcquired then 
-							local MR = v:GetBaseMagicalResistanceValue()/100
-				           	local dmg_deal = (damage_spin + bonus_dmg) * (1-MR) 
-				           	if godforce_hit == false then
-				           		OnRuthlessDrain(caster, 1, dmg_deal)
-				           	else
-				           		OnRuthlessDrain(caster, 0, dmg_deal)
-				           	end
-				        end
-
-				        if k == 1 then 
-				           	v:EmitSound("Hero_Juggernaut.OmniSlash.Damage")
-				        end
-				        DoDamage(caster, v, damage_spin + bonus_dmg, DAMAGE_TYPE_MAGICAL, 0, ability, false)
-				    end
-				end
-			elseif hit_count == 4 then 
-				if caster:HasModifier("modifier_alternate_03") then
-					--[[local lancetip = ParticleManager:CreateParticle("particles/custom/lubu/lubu_lance_b.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
-					ParticleManager:SetParticleControlEnt(lancetip, 0, caster, PATTACH_POINT_FOLLOW	, "attach_lance", caster:GetAbsOrigin(),false)
-					Timers:CreateTimer(1.0, function()
-						ParticleManager:DestroyParticle(lancetip, false)
-						ParticleManager:ReleaseParticleIndex(lancetip)
-					end)]]
-				else
-					local lance = Attachments:GetCurrentAttachment(caster, "attach_lance")
-					local lancetip = ParticleManager:CreateParticle("particles/custom/lubu/lubu_lance_b.vpcf", PATTACH_ABSORIGIN_FOLLOW, lance)
-					ParticleManager:SetParticleControlEnt(lancetip, 0, lance, PATTACH_POINT_FOLLOW	, "attach_lance_tip", lance:GetAbsOrigin(),false)
-					Timers:CreateTimer(1.0, function()
-						ParticleManager:DestroyParticle(lancetip, false)
-						ParticleManager:ReleaseParticleIndex(lancetip)
-					end)
-				end
-			elseif hit_count == 5 then
-				EmitGlobalSound('Lubu.GodForce')
-				caster:EmitSound("Hero_PrimalBeast.Uproar.Projectile.Split")
-				local lance = Attachments:GetCurrentAttachment(caster, "attach_lance")
-				local end_point = GetRotationPoint(caster:GetAbsOrigin(), thrust_distance, caster:GetAnglesAsVector().y)
-				local thrustfx = ParticleManager:CreateParticle("particles/units/heroes/hero_beastmaster/beastmaster_primal_roar.vpcf", PATTACH_WORLDORIGIN, caster)
-				--ParticleManager:SetParticleControlEnt(thrustfx, 0, lance, PATTACH_POINT_FOLLOW	, "attach_lance_tip", lance:GetAbsOrigin(),false)
-				ParticleManager:SetParticleControl(thrustfx, 0, caster:GetAbsOrigin() + Vector(0,0,100))
-				ParticleManager:SetParticleControl(thrustfx, 1, end_point + Vector(0,0,100))
-				Timers:CreateTimer(1.0, function()
-					ParticleManager:DestroyParticle(thrustfx, false)
-					ParticleManager:ReleaseParticleIndex(thrustfx)
-				end)
-				if caster.IsHoutengagekiAcquired then 
-					local bonus_hp_thrust_dmg = ability:GetSpecialValueFor("bonus_hp_thrust_dmg")	/ 100 
-					bonus_dmg = caster:GetHealth() * bonus_hp_thrust_dmg
-				end
-				targets = FindUnitsInLine(caster:GetTeam(), caster:GetAbsOrigin(), end_point, nil, thrust_width, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_NONE)
-				for k,v in pairs(targets) do
-					if IsValidEntity(v) and not v:IsNull()then
-						if not v:IsMagicImmune() and not IsImmuneToCC(v) then
-							v:AddNewModifier(caster, ability, "modifier_stunned", {Duration = thrust_stun})
-						end
-					        
-					    if caster.IsRuthlessWarriorAcquired then 
-							local MR = v:GetBaseMagicalResistanceValue()/100
-				           	local dmg_deal = (damage_thrust + bonus_dmg) * (1-MR) 
-				           	if godforce_hit == false then
-				           		OnRuthlessDrain(caster, 1, dmg_deal)
-				           	else
-				           		OnRuthlessDrain(caster, 0, dmg_deal)
-				           	end
-				        end
-
-				        if k == 1 then 
-				           	v:EmitSound("Hero_Juggernaut.OmniSlash.Damage")
-				        end
-				        DoDamage(caster, v, damage_thrust + bonus_dmg, DAMAGE_TYPE_MAGICAL, 0, ability, false)
-				        if IsValidEntity(v) and not v:IsNull() and not IsKnockbackImmune(v) and not v:IsMagicImmune() then
-							local pushback = Physics:Unit(v)
-							v:PreventDI()
-							v:SetPhysicsFriction(0)
-							v:SetPhysicsVelocity((v:GetAbsOrigin() - caster:GetAbsOrigin()):Normalized() * knock)
-							v:SetNavCollisionType(PHYSICS_NAV_NOTHING)
-							v:FollowNavMesh(false)
-							Timers:CreateTimer(0.5, function()  
-								if IsValidEntity(v) then
-									v:PreventDI(false)
-									v:SetPhysicsVelocity(Vector(0,0,0))
-									v:OnPhysicsFrame(nil)
-									FindClearSpaceForUnit(v, v:GetAbsOrigin(), true)
-								end
-							end)
-						end
-				    end
-				end
-
-			end
-
-			hit_count = hit_count + 1 
-			return interval
-		else
-			return nil 
-		end
-	end)
-    end
-end
-
-lubu_god_force_new_wrapper(lubu_god_force_new)
-lubu_god_force_new_wrapper(lubu_god_force_new_upgrade)

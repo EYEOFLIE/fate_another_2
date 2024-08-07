@@ -183,6 +183,7 @@ function OnLightningShotStart(keys)
 		Ability = ability,
         --EffectName = "particles/custom/fran/fran_lightning_shot.vpcf",
         vSpawnOrigin = caster:GetAbsOrigin(),
+        iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_ATTACK_1,
         fDistance = distance - width,
         fStartRadius = width,
         fEndRadius = width,
@@ -294,7 +295,7 @@ function OnSmashStart(keys)
 
 	--caster:EmitSound("Hero_PhantomLancer.Doppelwalk") 
 
-	StartAnimation(caster, {duration=0.7, activity=ACT_DOTA_CAST_ABILITY_2, rate=1.6})
+	StartAnimation(caster, {duration=0.7, activity=ACT_DOTA_CAST_ABILITY_2, rate=0.8})
 
 	Timers:CreateTimer({
 		endTime = 0.6,
@@ -409,6 +410,7 @@ function OnElectricFieldStart(keys)
 	end
 
 	giveUnitDataDrivenModifier(caster, caster, "pause_sealenabled", delay)
+	StartAnimation(caster, {duration=delay, activity=ACT_DOTA_CAST_ABILITY_2, rate=1.0})
 	caster:EmitSound("Fran.Mad")
 
 	local preParticleIndex = ParticleManager:CreateParticle( particle_pre, PATTACH_CUSTOMORIGIN, caster )
@@ -530,7 +532,13 @@ function OnBlastedTreeStart(keys)
 		if caster:IsAlive() then 
 			for i = 1, base_lightning + bonus_lightning do 
 				Timers:CreateTimer(interval * i, function()
-					BlastedLightning(caster, ability, RandomPointInCircle(position, radius), lightning_dmg, lightning_aoe, "particles/custom/fran/fran_arc_lightning.vpcf")
+					local lightning_loc = RandomPointInCircle(position, radius)
+					if i%8 == 0 then 
+						if (caster:GetAbsOrigin() - position):Length2D() <= radius then
+							lightning_loc = caster:GetAbsOrigin() 
+						end
+					end
+					BlastedLightning(caster, ability, lightning_loc, lightning_dmg, lightning_aoe, "particles/custom/fran/fran_arc_lightning.vpcf")
 				end)
 			end
         end
@@ -556,7 +564,7 @@ function BlastedLightning(caster, ability, point, damage, aoe, particle)
 	 				if damage > void_health then 
 	 					local shield_gain = ability:GetSpecialValueFor("shield_gain")/100
 	 					ability:ApplyDataDrivenModifier(caster, thundertarget, "modifier_fran_elect_shield", {})
-	 					caster.ElectricShieldAmount = caster.ElectricShieldAmount + ((damage - void_health) * shield_gain)
+	 					caster.ElectricShieldAmount = math.min(caster.ElectricShieldAmount + ((damage - void_health) * shield_gain), caster:GetMaxHealth())
 	 					print('shield = ' .. caster.ElectricShieldAmount)
 	 					caster:SetModifierStackCount("modifier_fran_elect_shield", caster, caster.ElectricShieldAmount)
 	 				end
@@ -666,6 +674,7 @@ function OnComboStart(keys)
 	caster:RemoveModifierByName("modifier_blasted_tree_window")
 
 	giveUnitDataDrivenModifier(caster, caster, "pause_sealenabled", delay + thunder_duration)
+	StartAnimation(caster, {duration=delay + thunder_duration, activity=ACT_DOTA_CAST_ABILITY_5, rate=1.0})
 
 	local lockenemies = FindUnitsInRadius(caster:GetTeam(), caster:GetAbsOrigin(), nil, lock_radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
  	if lockenemies[1] ~= nil then 
@@ -694,7 +703,11 @@ function OnComboStart(keys)
 		ParticleManager:SetParticleControl(BlastFX, 0, caster:GetAbsOrigin())
 		for i = 1, total_thunder do 
 			Timers:CreateTimer(interval * i, function()
-				BlastedLightning(caster, ability, RandomPointInCircle(caster:GetAbsOrigin(), radius), lightning_dmg, lightning_aoe, "particles/custom/fran/fran_arc_lightning_green.vpcf")	
+				local lightning_loc = RandomPointInCircle(caster:GetAbsOrigin(), radius)
+				if i%8 == 0 then 
+					lightning_loc = caster:GetAbsOrigin() 
+				end
+				BlastedLightning(caster, ability, lightning_loc, lightning_dmg, lightning_aoe, "particles/custom/fran/fran_arc_lightning_green.vpcf")	
 			end)
 		end
 	end)

@@ -42,6 +42,9 @@ function OnMindsEyeStart(keys)
 	local caster = keys.caster
 	local ability = keys.ability 
 	local duration = ability:GetSpecialValueFor("duration")
+	local dash = ability:GetSpecialValueFor("dash")
+	local dash_dur = 0.2
+	local target_loc = ability:GetCursorPosition()
 	local bonus_vision = ability:GetSpecialValueFor("bonus_vision")
 	local vision_duration = ability:GetSpecialValueFor("vision_duration")
 	local sightdummy = CreateUnitByName("sight_dummy_unit", caster:GetAbsOrigin(), false, caster, caster, caster:GetTeamNumber())
@@ -53,6 +56,24 @@ function OnMindsEyeStart(keys)
 
 	ability:ApplyDataDrivenModifier(caster, caster, "modifier_diarmuid_minds_eye_active", {})
 	ability:ApplyDataDrivenModifier(caster, caster, "modifier_minds_eye_cooldown", {Duration = ability:GetCooldown(1)})
+
+	giveUnitDataDrivenModifier(caster, caster, "drag_pause", dash_dur)
+	StartAnimation(caster, {duration=dash_dur, activity=ACT_DOTA_CAST_ABILITY_1, rate=1.0})
+
+	local dash = Physics:Unit(caster)
+	caster:PreventDI()
+	caster:SetPhysicsFriction(0)
+	caster:SetPhysicsVelocity(caster:GetForwardVector() * 1400)
+	caster:SetNavCollisionType(PHYSICS_NAV_NOTHING)
+	caster:FollowNavMesh(false)
+	ProjectileManager:ProjectileDodge(caster)
+
+	Timers:CreateTimer(dash_dur, function()  
+		caster:PreventDI(false)
+		caster:SetPhysicsVelocity(Vector(0,0,0))
+		caster:OnPhysicsFrame(nil)
+		FindClearSpaceForUnit(caster, caster:GetAbsOrigin(), true)
+	end)
 
 	Timers:CreateTimer(function() 
 		if not IsValidEntity(sightdummy) then return end

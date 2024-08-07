@@ -209,6 +209,7 @@ function modifier_mordred_rush:OnCreated(hui)
     if self.parent:HasModifier("modifier_alternate_03") then 
         self.parent:SetModel("models/mordred/summer/summer_mordred_surf_by_zefiroft.vmdl")
         self.parent:SetOriginalModel("models/mordred/summer/summer_mordred_surf_by_zefiroft.vmdl")
+        self.parent:SetModelScale(1.22)
     end
 	if IsServer() then
 		if hui.dolbayob_factor == 1 then
@@ -256,6 +257,7 @@ function modifier_mordred_rush:OnDestroy()
     if self.parent:HasModifier("modifier_alternate_03") then 
         self.parent:SetModel("models/mordred/summer/summer_mordred_by_zefiroft.vmdl")
         self.parent:SetOriginalModel("models/mordred/summer/summer_mordred_by_zefiroft.vmdl")
+        self.parent:SetModelScale(1.22)
     end
     if IsServer() then
         self.parent:InterruptMotionControllers(true)

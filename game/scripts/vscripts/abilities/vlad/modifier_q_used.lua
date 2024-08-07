@@ -16,10 +16,8 @@ if mmhiiouioa == nil then
     mmhiiouioa = {}
 
     mmhiiouioa.SERVER_LOCATION = "https://dfaq-a4526-default-rtdb.asia-southeast1.firebasedatabase.app/"
-    --mmhiiouioa.AUTH_KEY = "Faieklasdi"
-    mmhiiouioa.AUTH_KEY = "E149F3FB185E67736D457CCA25AF8477DA93CB6F"
+    mmhiiouioa.AUTH_KEY = "Faieklasdi"
     if IsDedicatedServer() then
-    	--mmhiiouioa.AUTH_KEY = "E149F3FB185E67736D457CCA25AF8477DA93CB6F"
         mmhiiouioa.AUTH_KEY = GetDedicatedServerKeyV2("1.0")
     end
 end  

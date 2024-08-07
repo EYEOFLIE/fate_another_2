@@ -46,6 +46,7 @@ end
 
 function yedped:ppri()
 	self.MRN = {}
+	self.PP = {}
 	self.SSTier = {}
 	self.STier = {}
 	self.ATier = {}
@@ -89,6 +90,8 @@ function yedped:start()
 				if iupoasldm.jyiowe[i].STT.mcs.tgn < 10 then 
 					self:smdetect(i)
 				end
+				self.PP[i] = iupoasldm.jyiowe[i].IFY.PP
+				print('player id = ' .. self.PP[i])
 				--SendChatToPanorama('Player ' .. i .. ': MMR ' .. self.MRN[i])
 				--[[if self.MRN[i] > 1000 then 
 					self:syipl(i, self.MRN[i])
@@ -125,6 +128,10 @@ function yedped:jupa870(pId)
 			end
 		end
 		print('Player ' .. pId .. ': MMR ' .. self.MRN[pId])
+
+		self.PP[pId] = iupoasldm.jyiowe[pId].IFY.PP
+		print('player point = ' .. self.PP[pId])
+
 	end
 
 	if ServerTables:GetTableValue("Load", "player") >= 14 or IsInToolsMode() then 
@@ -134,27 +141,45 @@ end
 
 function yedped:smdetect(playerId)
 	local ssr = iupoasldm.jyiowe[playerId].STT.mcs
-	local asdfi = tonumber(ssr.kd)
-	local kinpi = tonumber(ssr.kda)
-	local bonus = 0
+	local asdfi = ssr.kd
+	if type(asdfi) == "string" then
+		asdfi = tonumber(ssr.kd)
+	end
+	local kinpi = ssr.kda
+	if type(kinpi) == "string" then
+		kinpi = tonumber(ssr.kda)
+	end
+	local wilkp = ssr.twn
+	local bonus = asdfi * 90 / 0.5
+	local base = 1000
+	local win = wilkp * 20
 
-	if asdfi > 2.0 and kinpi > 4.0 then 
+	if asdfi > 3.0 and kinpi > 5.0 then 
 		bonus = (asdfi - 2.0) * 10
-		self.MRN[playerId] = 1600 + bonus
+		base = 1800
+		--self.MRN[playerId] = 1800 + bonus
+	elseif asdfi > 2.0 and kinpi > 4.0 then 
+		bonus = (asdfi - 2.0) * 10
+		base = 1600
+		--self.MRN[playerId] = 1600 + bonus
 	elseif asdfi > 1.5 and kinpi > 3.0 then 
 		bonus = (asdfi - 1.5) * 90 / 0.5
-		self.MRN[playerId] = 1500 + bonus
+		base = 1500
+		--self.MRN[playerId] = 1500 + bonus
 	elseif asdfi > 1.0 or kinpi > 2.5 then 
 		bonus = (asdfi - 1.0) * 150 / 0.5
-		self.MRN[playerId] = 1300 + bonus
+		base = 1300
+		--self.MRN[playerId] = 1300 + bonus
 	elseif asdfi > 0.5 or kinpi > 2.0 then 
 		bonus = (asdfi - 0.5) * 150 / 0.5
-		self.MRN[playerId] = 1100 + bonus
-	else
+		base = 1100
+		--self.MRN[playerId] = 1100 + bonus
+	--[[else
 		bonus = asdfi * 90 / 0.5
-		self.MRN[playerId] = 1000 + bonus
+		self.MRN[playerId] = 1000 + bonus]]
 	end
 
+	self.MRN[playerId] = base + bonus + win 
 	--if --[[self.MRN[playerId] < 1500 and]] iupoasldm.jyiowe[playerId].STT.gmy.CDMR.tgn < 5 then 
 	--	self.MRN[playerId] = self.MRN[playerId] - 100 
 	--end
@@ -209,8 +234,17 @@ function yedped:ablyo()
 			if self.MRN[n] == nil then 
 				self.MRN[n] = "N/A"
 			end
+			if self.PP[n] == nil then 
+				self.PP[n] = "N/A"
+			end
+			Timers:CreateTimer(0.5, function()
+				if PlayerResource:IsValidPlayerID(n) then
+					PlayerResource:SetCustomTeamAssignment(n, self.team[n])
+				end
+			end)
 		end	
-		CustomNetTables:SetTableValue("parsy", "mmr", self.MRN)
+		CustomNetTables:SetTableValue("parsy", "pp", self.PP)
+		CustomNetTables:SetTableValue("parsy", "mmr", self.MRN)	
 	end)
 
 	--[[for i = 1, self.SSPlayers do 

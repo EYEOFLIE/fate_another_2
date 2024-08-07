@@ -18,34 +18,14 @@
 		"AbilityCooldown"				"0"
 		"AbilityManaCost"				"0"
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"gem_cost"				"300 275 250 225 200"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"cast_time"				"0.1"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_r_impact_per_gem"	"15 20 25 30 35"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_e_per_gem"		"3 5 7 9 11"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bonus_f_percentage_per_gem"		"1 2 3 4 5"
-			}
-		}
+		"AbilityValues"
+        {
+            "gem_cost" "300 275 250 225 200"
+            "cast_time" "0.1"
+            "bonus_r_impact_per_gem" "12 16 20 24 28"
+            "bonus_e_per_gem" "3 5 7 9 11"
+            "bonus_f_percentage_per_gem" "1 2 3 4 5"
+        }
 
 		"OnAbilityPhaseStart"
 		{
@@ -82,19 +62,11 @@
 		"AbilityCooldown"				"0"
 		"AbilityManaCost"				"0"
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"max_gem"				"5 10"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"gem_loss"				"100 50"
-			}
-		}
+		"AbilityValues"
+        {
+            "max_gem" "5 10"
+            "gem_loss" "100 50"
+        }
 
 		"Modifiers"
 		{	
@@ -134,34 +106,14 @@
 
 		"AbilityCooldown"				"18 16 14 12 10"
 		"AbilityManaCost"				"200"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"cast_delay"			"0"
-			}
-			"03"
-			{				
-				"var_type"				"FIELD_FLOAT"
-				"speed"					"110"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"dash_duration"			"1.5"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"dash_range"			"1300"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"turn_rate_reduction"	"-100"
-			}
-		}
+		"AbilityValues"
+        {
+            "cast_delay" "0"
+            "speed" "110"
+            "dash_duration" "1.5"
+            "dash_range" "1300"
+            "turn_rate_reduction" "-100"
+        }
 
 		"OnUpgrade"
 		{
@@ -286,29 +238,13 @@
 		"AbilityCastPoint"				"0.3"
 		"AbilityCooldown"				"38 35 32 29 26"
 		"AbilityManaCost"				"400"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"arrows"				"5 6 7 8 9"
-			}
-			"03"
-			{				
-				"var_type"				"FIELD_FLOAT"
-				"damage"				"100"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"cast_delay"			"0.4"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"speed"					"1800"
-			}
-		}
+		"AbilityValues"
+        {
+            "arrows" "5 6 7 8 9"
+            "damage" "100"
+            "cast_delay" "0.4"
+            "speed" "1800"
+        }
 
 		"OnSpellStart"
 		{
@@ -350,44 +286,16 @@
 
 		"AbilityCooldown"				"52 50 48 46 44"
 		"AbilityManaCost"				"800"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"cast_delay"			"1.4"
-			}
-			"03"
-			{				
-				"var_type"				"FIELD_FLOAT"
-				"speed"					"2500"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"range_max"				"2400"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"width"					"190"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"impact_radius"			"400"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"damage"				"200 300 400 500 600"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"damage_impact"			"600 750 900 1050 1200"
-			}
-		}
+		"AbilityValues"
+        {
+            "cast_delay" "1.4"
+            "speed" "2500"
+            "range_max" "2200"
+            "width" "190"
+            "impact_radius" "400"
+            "damage" "200 300 400 500 600"
+            "damage_impact" "550 700 850 1000 1150"
+        }
 
 		"OnSpellStart"
 		{
@@ -463,79 +371,23 @@
 
 		"AbilityCooldown"				"52 50 48 46 44"
 		"AbilityManaCost"				"800"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"cast_delay"			"1.4"
-			}
-			"03"
-			{				
-				"var_type"				"FIELD_FLOAT"
-				"speed"					"2500"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"range_max"				"2400"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"width"					"190"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"impact_radius"			"400"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"damage"				"200 300 400 500 600"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"damage_impact"			"600 750 900 1050 1200"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"extra_range"			"800"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"extra_cast_delay"		"0.4"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"dash_back"				"200"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"invul_duration"			"0.7"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"extra_impact_damage_percentage"	"15"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"gem_cost_per_r"	"1"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bonus_r_damage"		"50 100 150 200 250"
-			}		
-		}
+		"AbilityValues"
+        {
+            "cast_delay" "1.4"
+            "speed" "2500"
+            "range_max" "2200"
+            "width" "190"
+            "impact_radius" "400"
+            "damage" "200 300 400 500 600"
+            "damage_impact" "550 700 850 1000 1150"
+            "extra_range" "600"
+            "extra_cast_delay" "0.45"
+            "dash_back" "200"
+            "invul_duration" "0.7"
+            "extra_impact_damage_percentage" "12"
+            "gem_cost_per_r" "1"
+            "bonus_r_damage" "80 110 140 170 200"
+        }
 
 		"OnSpellStart"
 		{
@@ -607,29 +459,13 @@
 		"AbilityCooldown"				"0"
 		"AbilityManaCost"				"0"
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"recover_damage_taken"	"0 15"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"buff_male_mr"			"0 9"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"buff_radius"			"800"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"recovery_per_second"	"0 60"
-			}
-		}
+		"AbilityValues"
+        {
+            "recover_damage_taken" "0 15"
+            "buff_male_mr" "0 9"
+            "buff_radius" "800"
+            "recovery_per_second" "0 60"
+        }
 
 		"Modifiers"
 		{	
@@ -706,19 +542,11 @@
 		"AbilityCooldown"				"0"
 		"AbilityManaCost"				"0"
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"time_per_gem"			"99 7"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"stack_gain"			"0 1"
-			}
-		}
+		"AbilityValues"
+        {
+            "time_per_gem" "99 7"
+            "stack_gain" "0 1"
+        }
 
 		"Modifiers"
 		{	
@@ -762,54 +590,18 @@
 
 		"AbilityCooldown"				"150"
 		"AbilityManaCost"				"800"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"cast_delay"			"4"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"max_teleport_range"	"1750"
-			}
-			"03"
-			{				
-				"var_type"				"FIELD_FLOAT"
-				"speed"					"4000"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"impact_radius"			"800"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"damage"				"2500"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"damage_per_gem"		"150"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"arrow_range"			"2000"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"dps"					"120"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"dps_duration"			"2.5"
-			}
-		}
+		"AbilityValues"
+        {
+            "cast_delay" "4"
+            "max_teleport_range" "1750"
+            "speed" "4000"
+            "impact_radius" "800"
+            "damage" "2500"
+            "damage_per_gem" "150"
+            "arrow_range" "2000"
+            "dps" "120"
+            "dps_duration" "2.5"
+        }
 	}
 			
 	//=================================================
@@ -831,19 +623,11 @@
 		{
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"reduced_gem_loss"		"50"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_max_gem"				"5"
-			}	
-		}
+		"AbilityValues"
+        {
+            "reduced_gem_loss" "50"
+            "bonus_max_gem" "5"
+        }
 		
 		"OnSpellStart"
 		{
@@ -874,14 +658,10 @@
 		{
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"gain_gem_each_second"	"7"
-			}	
-		}
+		"AbilityValues"
+        {
+            "gain_gem_each_second" "7"
+        }
 		
 		"OnSpellStart"
 		{
@@ -908,29 +688,13 @@
 		"AbilityCooldown"				"9999"
 		"AbilityManaCost"				"13"
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"recover_damage_taken"	"15"
-			}	
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"buff_male_mr"			"9"
-			}	
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"buff_radius"			"800"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"recovery_per_second"	"0 60"
-			}
-		}
+		"AbilityValues"
+        {
+            "recover_damage_taken" "15"
+            "buff_male_mr" "9"
+            "buff_radius" "800"
+            "recovery_per_second" "0 60"
+        }
 		
 		"OnSpellStart"
 		{
@@ -957,44 +721,16 @@
 		"AbilityCooldown"				"9999"
 		"AbilityManaCost"				"15"
 
-		"AbilitySpecial"
-		{
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"extra_range"			"800"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"extra_cast_delay"		"0.4"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"dash_back"				"200"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"invul_duration"			"0.7"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"extra_impact_damage_percentage"	"15"
-			}	
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"gem_cost_per_r"	"1"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bonus_r_damage"		"50 100 150 200 250"
-			}		
-		}
+		"AbilityValues"
+        {
+            "extra_range" "600"
+            "extra_cast_delay" "0.4"
+            "dash_back" "200"
+            "invul_duration" "0.7"
+            "extra_impact_damage_percentage" "12"
+            "gem_cost_per_r" "1"
+            "bonus_r_damage" "80 110 140 170 200"
+        }
 		
 		"OnSpellStart"
 		{
@@ -1003,6 +739,39 @@
 				"ScriptFile"	"abilities/ishtar/ishtar_abilities"
 				"Function"		"OnVenusAcquired"
 			}
+		}
+	}
+	//=======================================
+	// Precache
+	//=======================================
+	"ishtar_precache"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"custom/medusa/medusa_attribute_monstrous_strength"
+
+		"precache"
+		{
+			"particle"				"particles/ishtar/ishtar_dash_buff.vpcf"
+			"particle"  			"particles/ishtar/ishtar-r/ishtar_hand_buff_new2.vpcf"
+			"particle"  			"particles/ishtar/ishtar-r/ishtar_hand_buff_new.vpcf"
+			"particle"  			"particles/ishtar/ishtar_proj_track.vpcf"
+			"particle"  			"particles/ishtar/ishtar_e_cast.vpcf"
+			"particle"  			"particles/ishtar/ishtar_proj_laser_spawn.vpcf"
+			"particle"  			"particles/ishtar/ishtar_proj_spawn.vpcf"
+			"particle"  			"particles/econ/events/newbloom_2015/shivas_guard_impact_nian2015.vpcf"
+			"particle"  			"particles/ishtar/ishtar_dash_star.vpcf"
+			"particle"  			"particles/ishtar/ishtar-r/r_cast_gather.vpcf"
+			"particle"  			"particles/ishtar/ishtar-r/r_cast_gather2.vpcf"
+			"particle"  			"particles/ishtar/ishtar-r/ishtar_hand_buff.vpcf"
+			"particle" 			 	"particles/ishtar/ishtar-r/ishtar_r_cast.vpcf"
+			"particle"  			"particles/ishtar/ishtar-r/ishtar_r_projectile_model2.vpcf"
+			"particle"  			"particles/ishtar/ishtar-r/impact/ishtar_r_impact_parent.vpcf"
+			"particle"  			"particles/units/heroes/heroes_underlord/abbysal_underlord_portal_ambient.vpcf"
+			"particle"  			"particles/econ/items/windrunner/windrunner_ti6/windrunner_spell_powershot_ti6_leading.vpcf"
+			"particle"  			"particles/ishtar/ishtar_combo/ishtar_combo_projectile.vpcf"
 		}
 	}	
 }

@@ -39,7 +39,7 @@ SkinID
 	"036"		"npc_dota_hero_windrunner_1"		// [Normal] Alice NR
 	"037"		"npc_dota_hero_monkey_king_1"		// [Normal] Secretary Scathach
 	"038"		"npc_dota_hero_monkey_king_2"		// [Heroic] Priestess Scathach
-	"039"		"npc_dota_hero_legion_commander_6"	// [Legend] Arthur Pendragon
+	"039"		"npc_dota_hero_legion_commander_6"	// [Limited] Arthur Pendragon
 	"040"		"npc_dota_hero_legion_commander_2"	// [Normal] Suit Artoria
 	"041"		"npc_dota_hero_lina_2"				// [Heroic] King Nero
 	"042"		"npc_dota_hero_monkey_king_3"		// [Heroic] Sergeant Scathach
@@ -86,4 +86,19 @@ SkinID
 	"083"		"npc_dota_hero_juggernaut_1"		// [PEPE] Pepesaki
 	"084"		"npc_dota_hero_phantom_lancer_3"	// [Limited] Lancer Card Rin
 	"085"		"npc_dota_hero_doom_bringer_2"		// [MEME] Bonk Doge
+	"086"		"npc_dota_hero_disruptor_2"			// [Myth] Koihime Koumei
+	"087"		"npc_dota_hero_queenofpain_3"		// [Heroic] Sailor Astolfo
+	"088"		"npc_dota_hero_queenofpain_4"		// [Legend] Summer Astolfo 
+	"089"		"npc_dota_hero_death_prophet_3"		// [Legend] Summer Elizabeth
+	"090"		"npc_dota_hero_nyx_assassin_1"		// [Normal] White Meltryllis
+	"091"		"npc_dota_hero_ursa_1"				// [Heroic] Armor Atalanta Alter
+	"092"		"npc_dota_hero_bloodseeker_3"		// [Heroic] Old Li
+	"093"		"npc_dota_hero_bloodseeker_4"		// [Legend] Coated Old Li
+	"094"		"npc_dota_hero_zuus_1"				// [Heroic] Gladiator Fran
+	"095"		"npc_dota_hero_doom_bringer_3"		// [Limited] Guts Herc
+	"096"		"npc_dota_hero_oracle_1"			// [Legend] Zettai Ryouiki Rin
+	"097"		"npc_dota_hero_sniper_1"			// [Normal] Capeless Robin
+	"098"		"npc_dota_hero_sniper_2"			// [Heroic] Casual Robin
+	"099"		"npc_dota_hero_sniper_3"			// [Limited] Ninja Robin
+	"100"		"npc_dota_hero_beastmaster_3"		// [Legend] Super Karna
 }

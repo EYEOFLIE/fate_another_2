@@ -35,33 +35,13 @@
 	    	"particle"		"particles/units/heroes/hero_lich/lich_frost_armor.vpcf"
 	    	"particle"		"particles/units/heroes/hero_abaddon/abaddon_borrowed_time.vpcf"
 	    }
-	    "AbilitySpecial"
+	    "AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"hpregen"				"500"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"manaregen"				"500"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"healduration"			"2.0"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"armorbonus"			"50"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"armorduration"			"10.0"
-			}
+			"hpregen"				"500"
+			"manaregen"				"500"
+			"healduration"			"2.0"
+			"armorbonus"			"50"
+			"armorduration"			"10"
 		}
 	}
 }

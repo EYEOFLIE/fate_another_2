@@ -395,7 +395,7 @@ function OnCombo(keys)
     local chant_duration = ability:GetSpecialValueFor("chant_duration")
 
 	giveUnitDataDrivenModifier(caster, caster, "jump_pause", chant_duration)
-    StartAnimation(caster, {duration=2, activity=ACT_DOTA_CAST_ABILITY_5, rate=1})
+    StartAnimation(caster, {duration=chant_duration, activity=ACT_DOTA_CAST_ABILITY_5, rate=1})
     Timers:CreateTimer(0.7, function()
         FreezeAnimation(caster,chant_duration-1)
     end)
@@ -419,6 +419,17 @@ function OnCombo(keys)
         end)
     end
 
+    for i = 1, 5 do
+        Timers:CreateTimer(RandomFloat(1.5, 1.5) * i, function()
+            local swordpoint = caster:GetAbsOrigin()
+            local swordParticle = ParticleManager:CreateParticle("particles/muramasa/muramasa_combo_anvil_smash.vpcf", PATTACH_ABSORIGIN, caster)
+            ParticleManager:SetParticleControl(swordParticle, 0, swordpoint)
+            ParticleManager:SetParticleControl(swordParticle, 1, caster:GetAbsOrigin())
+    		EmitGlobalSound("Muramasa.Anvil" .. math.random(1,6))
+    		EmitGlobalSound("Muramasa.AnvilEcho" .. math.random(1,2))
+        end)
+    end
+
     Timers:CreateTimer(chant_duration + 0.2, function()
         ParticleManager:DestroyParticle(particleeff1, true)
         ParticleManager:ReleaseParticleIndex(particleeff1)
@@ -429,6 +440,8 @@ function OnCombo(keys)
         ParticleManager:SetParticleControl(landingParticle, 0, caster:GetAbsOrigin())
 
         ability:ApplyDataDrivenModifier(caster, caster, "modifier_muramasa_combo", {})
+
+	    --EmitGlobalSound("Muramasa.DrawswordF")
 
         if caster.IsTameshiAcquired then
             caster:FindAbilityByName("muramasa_r_upgrade"):EndCooldown()
@@ -566,7 +579,7 @@ function OnPrideSA(keys)
 	if not MasterCannotUpgrade(hero, caster, keys.ability, hero.IsPrideAcquired) then
 
 		hero.IsPrideAcquired = true
-		hero:FindAbilityByName("muramasa_d"):SetLevel(hero:FindAbilityByName("muramasa_d"):GetLevel() + 1)
+		hero:FindAbilityByName("muramasa_d"):SetLevel(2)
 
 		NonResetAbility(hero)
 

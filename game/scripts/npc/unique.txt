@@ -11,14 +11,24 @@ UniqueID
 			//"96116520" 		"1"
 		}
 	}
-	//"02" //edmond
-	//{
-	//	"hero"			"npc_dota_hero_night_stalker"
-	//	"skin"			"1"
-	//	"owner"
-	//	{
-			//"39181514"		"1" //NISE
-			//"96116520" 		"1"
-	//	}
-	//}
+	"02" //Guts
+	{
+		"hero"			"npc_dota_hero_doom_bringer"
+		"skin"			"3"
+		"owner"
+		{
+			"181266012"		"1" //Goeniko
+			"96116520" 		"1"
+		}
+	}
+	"03" //Arthur
+	{
+		"hero"			"npc_dota_hero_legion_commander"
+		"skin"			"6"
+		"owner"
+		{
+			"238102534"		"1" //Rorax
+			"96116520" 		"1"
+		}
+	}
 }

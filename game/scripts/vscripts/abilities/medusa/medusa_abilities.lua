@@ -330,6 +330,8 @@ function OnBloodfortCast( keys )
 	ParticleManager:SetParticleControl( caster.sparkFxIndex, 0, caster:GetAbsOrigin() )
 	ParticleManager:SetParticleControl( caster.sparkFxIndex, 1, caster:GetAbsOrigin() )
 
+	ability:ApplyDataDrivenModifier(caster, caster, "modifier_bloodfort_tracker", {Duration=ability:GetSpecialValueFor("delay") - 0.04})
+
 end
 
 function OnBloodfortInterrupt(keys)
@@ -342,6 +344,11 @@ end
 function OnBloodfortStart(keys)
 	local caster = keys.caster
 	local ability = keys.ability
+
+	if caster:HasModifier("modifier_bloodfort_tracker") then 
+		OnBloodfortInterrupt(keys)
+		return nil 
+	end
 	
 	ParticleManager:DestroyParticle( caster.sparkFxIndex, true )
 	ParticleManager:ReleaseParticleIndex( caster.sparkFxIndex )
@@ -402,7 +409,7 @@ function OnBloodfortStart(keys)
 				ability:ApplyDataDrivenModifier(caster,v, "modifier_bloodfort_slow", {}) 
 			end
 
-			v:SpendMana(mp_absorb, nil)
+			v:SpendMana(mp_absorb, ability)
 				
 			caster:ApplyHeal(absorb, caster)
 			caster:GiveMana(mp_absorb)
@@ -460,7 +467,7 @@ function OnBloodfortSuck(keys)
 				ability:ApplyDataDrivenModifier(caster,v, "modifier_bloodfort_slow", {}) 
 			end
 
-			v:SpendMana(mp_absorb, nil)
+			v:SpendMana(mp_absorb, ability)
 			DoDamage(caster, v, damage, DAMAGE_TYPE_MAGICAL, 0, ability, false)
 			
 			caster:ApplyHeal(absorb, caster)
@@ -523,6 +530,8 @@ function OnBelle2Cast( keys )
 
 	caster.chargeFxIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_invoker/invoker_emp_charge.vpcf", PATTACH_ABSORIGIN, caster )
 	caster.eyeFxIndex = ParticleManager:CreateParticle( "particles/items_fx/dust_of_appearance_true_sight.vpcf", PATTACH_ABSORIGIN, caster )
+
+	ability:ApplyDataDrivenModifier(caster, caster, "modifier_bellerophon_2_tracker", {Duration=ability:GetSpecialValueFor("cast_delay") - 0.04})
 end
 
 function OnBelle2Interrupt(keys)
@@ -538,6 +547,11 @@ end
 function OnBelle2Start(keys)
 	local caster = keys.caster
 	local ability = keys.ability
+
+	if caster:HasModifier("modifier_bellerophon_2_tracker") then 
+		OnBelle2Interrupt(keys)
+		return nil 
+	end
 
 	caster:FindAbilityByName(caster.WSkill):StartCooldown(caster:FindAbilityByName(caster.WSkill):GetCooldown(caster:FindAbilityByName(caster.WSkill):GetLevel()))
 	
@@ -902,7 +916,22 @@ function medusa_bellerophon_wrapper(ability)
         return self:GetSpecialValueFor("radius")
     end
 
-    function ability:OnAbilityPhaseStart()
+    function ability:CastFilterResultLocation(hLocation)
+        local caster = self:GetCaster()
+        if IsServer() and not IsInSameRealm(caster:GetAbsOrigin(), hLocation) then
+            return UF_FAIL_CUSTOM
+        elseif IsOutOfMap(hLocation) then 
+            return UF_FAIL_CUSTOM
+        else
+            return UF_SUCESS
+        end
+    end
+
+    function ability:GetCustomCastErrorLocation(hLocation)
+        return "#Invalid_Target_Location"
+    end
+
+    --[[function ability:OnAbilityPhaseStart()
     	local caster = self:GetCaster()
 		local ability = self
 		local targetPoint = ability:GetCursorPosition()
@@ -912,7 +941,7 @@ function medusa_bellerophon_wrapper(ability)
 			SendErrorMessage(caster:GetPlayerOwnerID(), "#Invalid_Target_Location")
 			return
 		end
-    end
+    end]]
 
     function ability:OnSpellStart()
 	local caster = self:GetCaster()
@@ -1018,6 +1047,11 @@ function medusa_bellerophon_wrapper(ability)
 				caster:SetAbsOrigin(currentPosition)
 				FindClearSpaceForUnit(caster, currentPosition, true)
 			end
+			if IsOutOfMap(caster:GetOrigin()) then 
+	            local border = GetBorderMap(caster:GetOrigin())
+	            caster:SetAbsOrigin(border)
+	            FindClearSpaceForUnit(caster, border, true)
+	        end
 		else
 			FindClearSpaceForUnit(caster, caster:GetAbsOrigin(), true)
 		end

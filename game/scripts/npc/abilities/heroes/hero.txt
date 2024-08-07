@@ -49,4 +49,5 @@ HeroesID
 	"47"		"npc_dota_hero_kunkka"
 	"48"		"npc_dota_hero_void_spirit"
 	"49"		"npc_dota_hero_nyx_assassin"
+	"50"		"npc_dota_hero_muerta"
 }

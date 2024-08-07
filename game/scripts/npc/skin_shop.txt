@@ -39,7 +39,7 @@ SkinShop
 	"036"		"1000"		// [Normal] Alice NR
 	"037"		"1000"		// [Normal] Secretary Scathach
 	"038"		"2000"		// [Heroic] Priestess Scathach
-	"039"		"8000"		// [Legend] Arthur Pendragon
+	"039"		"limit"		// [Limited] Arthur Pendragon
 	"040"		"1000"		// [Normal] Suit Artoria
 	"041"		"2000"		// [Heroic] King Nero
 	"042"		"2000"		// [Heroic] Sergeant Scathach
@@ -79,11 +79,26 @@ SkinShop
 	"076"		"6000"		// [Legend] Lancer Ana
 	"077"		"4000"		// [Legend] Count Edmond
 	"078"		"limit"		// [Limited] Ana
-	"079"		"15000"		// [Legend] Dynasty Warrior Lu Bu
+	"079"		"10000"		// [Myth] Dynasty Warrior Lu Bu
 	"080"		"1000"		// [Normal] Swimming Suit Kiyohime
 	"081"		"6000"		// [Legend] Summer Artoria (Alter)
 	"082"		"6000"		// [Legend] Summer Mordred
 	"083"		"15000"		// [PEPE] Pepesaki
 	"084"		"limit"		// [Limited] Lancer Card Rin
 	"085"		"15000"		// [MEME] Bonk Doge Herc
+	"086"		"10000"		// [Myth] Koihime Koumei
+	"087"		"2000"		// [Heroic] Sailor Astolfo
+	"088"		"6000"		// [Legend] Summer Astolfo
+	"089"		"6000"		// [Legend] Summer Bathory
+	"090"		"1000"		// [Normal] White Meltryllis
+	"091"		"2000"		// [Heroic] Armor Atalanta Alter
+	"092"		"3000"		// [Heroic] Old Li
+	"093"		"6000"		// [Legend] Coated Old Li
+	"094"		"2000"		// [Heroic] Gladiator Fran
+	"095"		"limit"		// [Limited] Guts Herc
+	"096"		"6000"		// [Legend] Zettai Ryouiki Rin
+	"097"		"1000"		// [Normal] Capeless Robin
+	"098"		"2000"		// [Heroic] Casual Robin
+	"099"		"4000"		// [Legend] Ninja Robin
+	"100"		"6000"		// [Legend] Super Karna
 }

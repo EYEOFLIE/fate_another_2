@@ -10,42 +10,17 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
 		"AbilityTextureName"			"custom/lubu/lubu_rebel"
 		"MaxLevel"						"1"
+		"AbilityCooldown"				"1"
 
-		"precache"
+		"AbilityValues"
 		{
-			
+			"max_stack"				"3"
+			"bonus_atk_per_death"	"15"
+			"bonus_aspd_per_death"	"15"
+			"bonus_gold_per_stack"	"20"
+			"str_per_stack"			"10"
 		}
 
-		"AbilitySpecial"
-		{
-
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_atk_per_death"	"20"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_aspd_per_death"	"20"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_gold_per_stack"	"20"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"str_per_stack"			"10"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"max_stack"				"3"
-			}
-		}
-		
 		"Modifiers"
 		{
 			"modifier_lubu_rebel"
@@ -103,7 +78,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_lua"
-		"ScriptFile"					"abilities/lubu/lubu_abilities"
+		"ScriptFile"					"abilities/lubu/lubu_blade"
 		"MaxLevel"						"5"
 		"RequiredLevel"					"1"
 		"LevelsBetweenUpgrades"			"1"
@@ -114,67 +89,21 @@
 		"AbilityTextureName"			"custom/lubu/lubu_blade1"
 		"AbilityCastAnimation" 			"ACT_DOTA_ATTACK"
 		"AnimationPlaybackRate" 		"1.0"
-		"precache"
-		{
-			
-		}
-		
-		// Ability stats
-		//-------------------------------------------------------------------------------------------------------------
-		//"AbilityCastRange"			"700"
-		//"AbilityCastPoint"				"0.3"
+
 		"AbilityCooldown"				"11"
 		"AbilityManaCost"				"100"
-		
-		// Ability special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{	
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"total_slash"				"3"
-			}		
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"damage_1"					"280 320 360 400 440"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"first_aoe"					"400"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"damage_2"					"280 320 360 400 440"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"second_aoe"				"400"
-			}
-			"06"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"damage_3"					"280 320 360 400 440"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"third_aoe"					"500"
-			}
-			"07"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"third_knock"				"1.0"
-			}
-			"08"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"window_duration"			"3.5"
-			}
+
+		"AbilityValues"
+		{
+			"total_slash"				"3"
+			"damage_1"					"280 320 360 400 440"
+			"first_aoe"					"400"
+			"damage_2"					"280 320 360 400 440"
+			"second_aoe"				"400"
+			"damage_3"					"280 320 360 400 440"
+			"third_aoe"					"500"
+			"third_knock"				"1.0"
+			"window_duration"			"3.5"
 		}
 	}
 	//=================================================================================================================
@@ -185,7 +114,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_lua"
-		"ScriptFile"					"abilities/lubu/lubu_abilities"
+		"ScriptFile"					"abilities/lubu/lubu_blade"
 		"MaxLevel"						"5"
 		"RequiredLevel"					"1"
 		"LevelsBetweenUpgrades"			"1"
@@ -196,72 +125,22 @@
 		"AbilityTextureName"			"custom/lubu/lubu_blade1"
 		"AbilityCastAnimation" 			"ACT_DOTA_ATTACK"
 		"AnimationPlaybackRate" 		"1.0"
-		"precache"
-		{
-
-		}
 		
-		// Ability stats
-		//-------------------------------------------------------------------------------------------------------------
-		//"AbilityCastRange"			"700"
-		//"AbilityCastPoint"				"0.3"
 		"AbilityCooldown"				"11"
 		"AbilityManaCost"				"100"
-		
-		// Ability special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{	
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"total_slash"				"3"
-			}		
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"damage_1"					"280 320 360 400 440"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"first_aoe"					"400"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"damage_2"					"280 320 360 400 440"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"second_aoe"				"400"
-			}
-			"06"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"damage_3"					"280 320 360 400 440"
-			}
-			"07"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"damage_3_per_str"			"1.0"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"third_aoe"					"500"
-			}
-			"07"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"third_knock"				"1.0"
-			}
-			"08"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"window_duration"			"3.5"
-			}
+
+		"AbilityValues"
+		{
+			"total_slash"				"3"
+			"damage_1"					"280 320 360 400 440"
+			"first_aoe"					"400"
+			"damage_2"					"280 320 360 400 440"
+			"second_aoe"				"400"
+			"damage_3"					"280 320 360 400 440"
+			"damage_3_per_str"			"1.0"
+			"third_aoe"					"500"
+			"third_knock"				"1.0"
+			"window_duration"			"3.5"
 		}
 	}
 	//=================================================================================================================
@@ -270,7 +149,8 @@
 	"lubu_flying"
 	{
 		// General		//------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"ability_datadriven"
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/lubu/lubu_fly"
 		"MaxLevel"						"5"
 		"RequiredLevel"					"1"
 		"LevelsBetweenUpgrades"			"1"
@@ -286,53 +166,16 @@
 		"AbilityCooldown"				"20"
 		"AbilityManaCost"				"200"
 		
-		"precache"
+		"AbilityValues"
 		{
-			
-		}
-
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"distance"				"800"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"3"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bonus_ms"				"800"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"dmg_red"				"0"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"hit_damage"			"300 350 400 450 500"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"slam_damage"			"300"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"slam_aoe"				"400"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"slam_stun"				"1.0 1.0 1.1 1.1 1.2"
-			}
+			"distance"				"800"
+			"duration"				"3"
+			"bonus_ms"				"800"
+			"dmg_red"				"0"
+			"hit_damage"			"300 350 400 450 500"
+			"slam_damage"			"300"
+			"slam_aoe"				"400"
+			"slam_stun"				"1.0 1.0 1.1 1.1 1.2"
 		}
 
 		"OnSpellStart"
@@ -396,6 +239,15 @@
 						"Function"		"OnSlamAnim"
 					}
 				}
+				"ThinkInterval"  "0.033"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/lubu/lubu_abilities"
+						"Function"		"OnSlamThink"
+					}
+				}
 			}
 		}
 	}
@@ -405,7 +257,8 @@
 	"lubu_flying_upgrade"
 	{
 		// General		//------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"ability_datadriven"
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/lubu/lubu_fly"
 		"MaxLevel"						"5"
 		"RequiredLevel"					"1"
 		"LevelsBetweenUpgrades"			"1"
@@ -421,53 +274,16 @@
 		"AbilityCooldown"				"20"
 		"AbilityManaCost"				"200"
 		
-		"precache"
+		"AbilityValues"
 		{
-			
-		}
-
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"distance"				"800"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"3"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bonus_ms"				"800"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"dmg_red"				"-30 -35 -40 -45 -50"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"hit_damage"			"300 350 400 450 500"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"slam_damage"			"300"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"slam_aoe"				"400"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"slam_stun"				"1.0 1.0 1.1 1.1 1.2"
-			}
+			"distance"				"800"
+			"duration"				"3"
+			"bonus_ms"				"800"
+			"dmg_red"				"-30 -35 -40 -45 -50"
+			"hit_damage"			"300 350 400 450 500"
+			"slam_damage"			"300"
+			"slam_aoe"				"400"
+			"slam_stun"				"1.0 1.0 1.1 1.1 1.2"
 		}
 
 		"OnSpellStart"
@@ -530,6 +346,15 @@
 						"Function"		"OnSlamAnim"
 					}
 				}
+				"ThinkInterval"  "0.033"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/lubu/lubu_abilities"
+						"Function"		"OnSlamThink"
+					}
+				}
 			}
 		}
 	}
@@ -567,29 +392,13 @@
 			"particle"					"particles/custom/archer/archer_broken_phantasm/archer_broken_phantasm_crosshead.vpcf"
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"cast_delay"			"0.75"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"400 470 540 610 680"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"stun_duration"			"1.0 1.0 1.1 1.1 1.2"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"range"					"1200"
-			}
-		}
+		"AbilityValues"
+        {
+            "cast_delay" "0.75"
+            "damage" "400 470 540 610 680"
+            "stun_duration" "1.0 1.0 1.1 1.1 1.2"
+            "range" "1200"
+        }
 
 		"OnSpellStart"
 		{
@@ -691,29 +500,13 @@
 			"particle"					"particles/custom/archer/archer_broken_phantasm/archer_broken_phantasm_crosshead.vpcf"
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"cast_delay"			"0.75"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"600 670 740 810 880"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"stun_duration"			"1.0 1.0 1.1 1.1 1.2"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"range"					"2000"
-			}
-		}
+		"AbilityValues"
+        {
+            "cast_delay" "0.75"
+            "damage" "600 670 740 810 880"
+            "stun_duration" "1.0 1.0 1.1 1.1 1.2"
+            "range" "2000"
+        }
 
 		"OnSpellStart"
 		{
@@ -806,34 +599,12 @@
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"400"
-		"precache"
+		"AbilityValues"
 		{
-			
-		}
-		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"6.0 6.5 7.0 7.5 8.0"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_atk"				"30 35 40 45 50"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_aspd"			"20 25 30 35 40"
-			}
-
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bonus_ms"				"20"
-			}
+			"duration"				"6.0 6.5 7.0 7.5 8.0"
+			"bonus_atk"				"20 25 30 35 40"
+			"bonus_aspd"			"20 25 30 35 40"
+			"bonus_ms"				"20"
 		}
 
 		"OnSpellStart"
@@ -955,59 +726,17 @@
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"400"
-		"precache"
+		"AbilityValues"
 		{
-			
-		}
-		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"6.0 6.5 7.0 7.5 8.0"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_atk"				"50 55 60 65 70"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_aspd"			"40 45 50 55 60"
-			}
-
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bonus_ms"				"40"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bonus_str"				"4 8 12 16 20"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"slow_damage"			"300"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"slow_aoe"				"300"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"slow"					"-30"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"slow_duration"			"3"
-			}
+			"slow_aoe"				"300"
+			"slow_damage"			"300"
+			"slow"					"-30"
+			"slow_duration"			"3"
+			"duration"				"6.0 6.5 7.0 7.5 8.0"
+			"bonus_atk"				"40 45 50 55 60"
+			"bonus_aspd"			"40 45 50 55 60"
+			"bonus_ms"				"30"
+			"bonus_str"				"3 6 9 12 15"
 		}
 
 		"OnSpellStart"
@@ -1148,11 +877,6 @@
 		"AbilityTextureName"			"custom/lubu/lubu_god_force"
 		"AbilityCastAnimation" 			"ACT_DOTA_ITEM_PICKUP"
 		
-		"precache"
-		{
-			
-		}
-		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"450"
@@ -1166,70 +890,21 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"800"
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"cast_delay"		"0.55"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"total_hit"			"5"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"radius"			"450"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"angle"				"170"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage"			"100 120 140 160 180"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage_lasthit"	"440 550 660 770 880"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"mini_stun"			"0.5"
-			}
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"stun_duration"		"1.5"
-			}
-			"10"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"knock"				"300"
-			}
-			"07"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"str_per_hit"		"6 7 8 9 10"
-			}
-			"08"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"god_str_duration"	"25"
-			}
-			"09"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"interval"			"0.3"
-			}
-			
-		}
+		"AbilityValues"
+        {
+            "cast_delay" "0.55"
+            "total_hit" "5"
+            "radius" "450"
+            "angle" "170"
+            "damage" "100 120 140 160 180"
+            "damage_lasthit" "440 550 660 770 880"
+            "mini_stun" "0.5"
+            "stun_duration" "1.5"
+            "knock" "300"
+            "str_per_hit" "6 7 8 9 10"
+            "god_str_duration" "25"
+            "interval" "0.3"
+        }
 
 		"OnAbilityPhaseStart"
 		{
@@ -1299,74 +974,22 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"800"
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"cast_delay"		"0.55"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"total_hit"			"5"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"radius"			"450"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"angle"				"170"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage"			"100 120 140 160 180"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage_lasthit"	"440 550 660 770 880"
-			}
-			"10"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_damage_last"	"4"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"mini_stun"			"0.5"
-			}
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"stun_duration"		"1.5"
-			}
-			"10"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"knock"				"300"
-			}
-			"07"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"str_per_hit"		"6 7 8 9 10"
-			}
-			"08"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"god_str_duration"	"25"
-			}
-			"09"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"interval"			"0.3"
-			}
-		}
+		"AbilityValues"
+        {
+            "cast_delay" "0.55"
+            "total_hit" "5"
+            "radius" "450"
+            "angle" "170"
+            "damage" "100 120 140 160 180"
+            "damage_lasthit" "440 550 660 770 880"
+            "bonus_damage_last" "4"
+            "mini_stun" "0.5"
+            "stun_duration" "1.5"
+            "knock" "300"
+            "str_per_hit" "6 7 8 9 10"
+            "god_str_duration" "25"
+            "interval" "0.3"
+        }
 
 		"OnAbilityPhaseStart"
 		{
@@ -1409,25 +1032,12 @@
 		"AbilityTextureName"			"custom/lubu/lubu_attribute_red_hare"
 		"MaxLevel"						"1"
 		"AbilityCooldown"				"120"
-		"precache"
+		"AbilityValues"
 		{
-			
+			"invul_dur"				"1.0"
+			"revive_health"			"30"
 		}
-		
-		"AbilitySpecial"
-		{		
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"invul_dur"				"1.0"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"revive_health"			"30"
-			}	
-		}
-		
+
 		"Modifiers"
 		{
 			"modifier_lubu_immortal_cooldown"
@@ -1479,49 +1089,17 @@
 		"AbilityCooldown"				"0"
 		"AbilityManaCost"				"0"
 
-		"precache"
+		"AbilityValues"
 		{
-			
+			"bonus_mr"				"10"
+			"bonus_as_per_1"		"10"
+			"bonus_hp_regen_per_1"	"0.6"
+			"splash_aoe"			"200"
+			"splash_percentage"		"75"
+			"drain_hp"				"80"
+			"atk_count_drain_hp"	"3"
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bonus_mr"				"10"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bonus_as_per_1"		"10"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bonus_hp_regen_per_1"	"0.6"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"splash_aoe"			"200"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"splash_percentage"		"75"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"drain_hp"				"80"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"atk_count_drain_hp"	"3"
-			}
-		}
 		"Modifiers"
 		{
 			"modifier_lubu_ruthless_passive"
@@ -1603,45 +1181,16 @@
 	    "AbilityManaCost"				  	"800"
 	    "AbilityCastRange"					"2500"
 
-	    "precache"
-	    {
-	      	
-	    }
+	    "AbilityValues"
+		{
+			"delay"				    "2.0"
+			"range"				  	"2500"
+			"aoe"				    "800"
+			"arrows"			    "5"
+			"arrow_aoe"				"800"
+			"damage"			   	"1250"
+		}
 
-	    "AbilitySpecial"
-	    {
-	    	"02"
-		    {
-		        "var_type"				"FIELD_FLOAT"
-		        "delay"				    "2.0"
-		    }
-		    "04"
-		    {
-		        "var_type"			   	"FIELD_INTEGER"
-		        "arrows"			    "5"
-		    }
-		    "01"
-		    {
-		        "var_type"			 	"FIELD_INTEGER"
-		        "range"				  	"2500"
-		    }
-		    "02"
-		    {
-		        "var_type"				"FIELD_FLOAT"
-		        "aoe"				    "800"
-		    }
-		    "03"
-		    {
-		        "var_type"				"FIELD_FLOAT"
-		        "arrow_aoe"				"800"
-		    }
-		    
-		    "05"
-		    {
-		        "var_type"			    "FIELD_INTEGER"
-		        "damage"			   	"1250"
-		    }
-	    }
 	    "OnAbilityPhaseStart"
 	    {
 	    	"RunScript"
@@ -1724,44 +1273,16 @@
 	    "AbilityManaCost"				  	"800"
 	    "AbilityCastRange"					"4000"
 
-	    "precache"
-	    {
-	      	
-	    }
+	    "AbilityValues"
+		{
+			"delay"				    "2.0"
+			"range"				  	"4000"
+			"aoe"				    "800"
+			"arrows"			    "5"
+			"arrow_aoe"				"800"
+			"damage"			   	"1800"
+		}
 
-	    "AbilitySpecial"
-	    {
-	    	"02"
-		    {
-		        "var_type"				"FIELD_FLOAT"
-		        "delay"				    "2.0"
-		    }
-		    "01"
-		    {
-		        "var_type"			 	"FIELD_INTEGER"
-		        "range"				  	"4000"
-		    }
-		    "02"
-		    {
-		        "var_type"				"FIELD_FLOAT"
-		        "aoe"				    "800"
-		    }
-		    "03"
-		    {
-		        "var_type"				"FIELD_FLOAT"
-		        "arrow_aoe"				"800"
-		    }
-		    "04"
-		    {
-		        "var_type"			   	"FIELD_INTEGER"
-		        "arrows"			    "5"
-		    }
-		    "05"
-		    {
-		        "var_type"			    "FIELD_INTEGER"
-		        "damage"			   	"1800"
-		    }
-	    }
 	    "OnAbilityPhaseStart"
 	    {
 	    	"RunScript"
@@ -1839,27 +1360,11 @@
 		"AbilityCooldown"				"9999"
 		"AbilityManaCost"				"13"
 
-		"precache"
+		"AbilityValues"
 		{
-		}
-
-		"AbilitySpecial"
-		{
-			"07"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"blade_3_per_str"			"1.0"
-			}
-			"10"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_hp_dmg"				"3"
-			}
-			"10"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_hp_last"				"10"
-			}
+			"blade_3_per_str"			"1.0"
+			"bonus_hp_dmg"				"3"
+			"bonus_hp_last"				"10"
 		}
 		
 		"OnSpellStart"
@@ -1887,60 +1392,19 @@
 		"AbilityCooldown"				"9999"
 		"AbilityManaCost"				"15"
 
-		"precache"
+		"AbilityValues"
 		{
+			"dmg_red"				"-30 -35 -40 -45 -50"
+			"slow_damage"			"300"
+			"slow_aoe"				"300"
+			"slow_duration"			"3"
+			"slow"					"-30"
+			"bonus_atk"				"20"
+			"bonus_aspd"			"20"
+			"bonus_ms"				"10"
+			"bonus_str"				"3 6 9 12 15"
 		}
 
-		"AbilitySpecial"
-		{
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"dmg_red"				"-30 -35 -40 -45 -50"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_atk"				"20"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_aspd"			"20"
-			}
-
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bonus_ms"				"20"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bonus_str"				"4 8 12 16 20"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"slow_damage"			"300"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"slow_aoe"				"300"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"slow"					"-30"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"slow_duration"			"3"
-			}
-		}
-		
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -1966,34 +1430,12 @@
 		"AbilityCooldown"				"9999"
 		"AbilityManaCost"				"7"
 
-		"precache"
+		"AbilityValues"
 		{
+			"combo_range"			"1500"
+			"combo_damage"			"550"
 		}
 
-		"AbilitySpecial"
-		{
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"200"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"range"					"800"
-			}
-			"01"
-		    {
-		        "var_type"			 	"FIELD_INTEGER"
-		        "combo_range"			"1500"
-		    }
-		    "05"
-		    {
-		        "var_type"			    "FIELD_INTEGER"
-		        "combo_damage"			"550"
-		    }
-		}
-		
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -2019,49 +1461,17 @@
 		"AbilityCooldown"				"9999"
 		"AbilityManaCost"				"16"
 
-		"precache"
+		"AbilityValues"
 		{
+			"bonus_mr"				"10"
+			"bonus_as_per_1"		"10"
+			"bonus_hp_regen_per_1"	"0.6"
+			"splash_aoe"			"200"
+			"splash_percentage"		"75"
+			"drain_hp"				"80"
+			"atk_count_drain_hp"	"3"
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bonus_mr"				"10"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bonus_as_per_1"		"10"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bonus_hp_regen_per_1"	"0.6"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"splash_aoe"			"200"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"splash_percentage"		"75"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"drain_hp"				"80"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"atk_count_drain_hp"	"3"
-			}
-		}
-		
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -2087,22 +1497,10 @@
 		"AbilityCooldown"				"9999"
 		"AbilityManaCost"				"18"
 
-		"precache"
+		"AbilityValues"
 		{
-		}
-
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"invul_dur"				"1.0"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"revive_health"			"30"
-			}	
+			"invul_dur"				"1.0"
+			"revive_health"			"30"
 		}
 		
 		"OnSpellStart"
@@ -2130,7 +1528,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_lua"
-		"ScriptFile"					"abilities/lubu/lubu_abilities"
+		"ScriptFile"					"abilities/lubu/lubu_god_force"
 		"MaxLevel"						"5"
 		"RequiredLevel"					"1"
 		"LevelsBetweenUpgrades"			"2"
@@ -2142,12 +1540,7 @@
 		"AbilityTextureName"			"custom/lubu/lubu_god_force"
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_3"
 		"AnimationPlaybackRate" 			"1.0"
-		
-		"precache"
-		{
 
-		}
-		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"450"
@@ -2160,81 +1553,23 @@
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"800"
-		
-		"AbilitySpecial"
+
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"cast_delay"		"0.55"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"total_hit"			"5"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"radius"			"450"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"angle"				"200"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage"			"140 160 180 200 220"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"mini_stun"			"0.5"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage_spin"		"200 230 260 290 320"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"spin_stun"			"1.0"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"thrust_distance"	"700"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"thrust_width"		"400"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage_thrust"		"220 320 420 520 620"
-			}
-			
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"thrust_stun"		"1.5"
-			}
-			"10"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"knock"				"200"
-			}
-			"09"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"interval"			"0.4"
-			}
-			
+			"cast_delay"		"0.55"
+			"total_hit"			"5"
+			"radius"			"450"
+			"angle"				"200"
+			"damage"			"140 160 180 200 220"
+			"mini_stun"			"0.5"
+			"damage_spin"		"200 230 260 290 320"
+			"spin_stun"			"1.0"
+			"thrust_distance"	"700"
+			"thrust_width"		"400"
+			"damage_thrust"		"220 320 420 520 620"
+			"thrust_stun"		"1.5"
+			"knock"				"200"
+			"interval"			"0.4"
 		}
 	}
 	//===================================================
@@ -2245,7 +1580,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_lua"
-		"ScriptFile"					"abilities/lubu/lubu_abilities"
+		"ScriptFile"					"abilities/lubu/lubu_god_force"
 		"MaxLevel"						"5"
 		"RequiredLevel"					"1"
 		"LevelsBetweenUpgrades"			"2"
@@ -2257,12 +1592,7 @@
 		"AbilityTextureName"			"custom/lubu/lubu_god_force"
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_3"
 		"AnimationPlaybackRate" 			"1.0"
-		
-		"precache"
-		{
-			
-		}
-		
+
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"450"
@@ -2275,90 +1605,25 @@
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"800"
-		
-		"AbilitySpecial"
+
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"cast_delay"		"0.55"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"total_hit"			"5"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"radius"			"450"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"angle"				"200"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage"			"140 160 180 200 220"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_hp_dmg"		"3"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"mini_stun"			"0.5"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage_spin"		"200 230 260 290 320"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"spin_stun"			"1.0"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"thrust_distance"	"700"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"thrust_width"		"400"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage_thrust"		"220 320 420 520 620"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_hp_thrust_dmg"	"10"
-			}
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"thrust_stun"		"1.5"
-			}
-			"10"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"knock"				"200"
-			}
-			"09"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"interval"			"0.4"
-			}
-			
+			"cast_delay"		"0.55"
+			"total_hit"			"5"
+			"radius"			"450"
+			"angle"				"200"
+			"damage"			"140 160 180 200 220"
+			"bonus_hp_dmg"		"3"
+			"mini_stun"			"0.5"
+			"damage_spin"		"200 230 260 290 320"
+			"spin_stun"			"1.0"
+			"thrust_distance"	"700"
+			"thrust_width"		"400"
+			"damage_thrust"		"220 320 420 520 620"
+			"bonus_hp_thrust_dmg"	"10"
+			"thrust_stun"		"1.5"
+			"knock"				"200"
+			"interval"			"0.4"
 		}
 	}
 	//=======================================

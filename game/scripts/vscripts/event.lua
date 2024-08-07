@@ -4,92 +4,134 @@ if not FateEvent then
 end
 
 function FateEvent:Construct()
-
-		local event_table = LoadKeyValues("scripts/npc/fate_event.txt")
-		local today = tostring(GetSystemDate())
-		local date = tonumber(string.sub(today, 4, -4))
-		local month = tonumber(string.sub(today, 0, -7))
-		local year = tonumber(string.sub(today, 7)) 
+	print('event check')
+	local event_table = LoadKeyValues("scripts/npc/fate_event.txt")
+	self.ionlopi = LoadKeyValues("scripts/npc/abilities/heroes/kakaroto.txt")
+	self.ionlopi_table = {}
+	local today = tostring(GetSystemDate())
+	local date = tonumber(string.sub(today, 4, -4))
+	local month = tonumber(string.sub(today, 0, -7))
+	local year = tonumber(string.sub(today, 7)) 
+	if year > 66 then 
+		year = year - 43 
+	end
 		--print("today :" .. today)
 		--print(date)
 		--print(month)
 		--print(year)
 
-		for k,v in pairs(event_table) do 
-			--print(k,v)
-			local event_start = v.StartDate
+	CustomGameEventManager:RegisterListener("code_claim", function(id, ...)
+	    Dynamic_Wrap(self, "ClaimGiftCode")(self, ...) 
+	end)
+
+	for k,v in pairs(event_table) do 
+		if self:CheckingAvailable(v, date, month, year) then 
+			--print(v.EventID)
+			self:RegistEvent(v.EventID, v.EventType, v)
+		end
+	end
+
+	for j,o in pairs(self.ionlopi) do 
+		print('checking gift code')
+		--if self:CheckingAvailable(o, date, month, year) then 
+			--print(o.Code, o.GiftID, o.RewardCP)
+			self:RegistCode(o, date, month, year)
+		--end
+	end
+end
+
+function FateEvent:CheckingAvailable(event_table, date, month, year)
+	local event_start = event_table.StartDate
 			--print(event_start)
-			local event_end = v.EndDate
-			local event_start_date = tonumber(string.sub(event_start, 0, -4))
-			local event_end_date = tonumber(string.sub(event_end, 0, -4))
-			local event_start_month = tonumber(string.sub(event_start, 4))
-			local event_end_month = tonumber(string.sub(event_end, 4))
-			local event_start_year
-			local event_end_year
-			--[[print("date :" .. event_start_date)
+	local event_end = event_table.EndDate
+	--[[local event_start_date = tonumber(string.sub(event_start, 0, -4))
+	local event_end_date = tonumber(string.sub(event_end, 0, -4))
+	local event_start_month = tonumber(string.sub(event_start, 4))
+	local event_end_month = tonumber(string.sub(event_end, 4))
+	local event_start_year = nil 
+	local event_end_year = nil
+			print("date :" .. event_start_date)
 			print("date :" .. event_end_date)
 			print("month :" .. event_start_month)
 			print("month :" .. event_end_month)]]
-			if string.len(event_start) > 5 then 
+	if string.len(event_start) > 5 then 
 				--print('year?')
-				event_start_date = tonumber(string.sub(event_start, 0, -7))
-				event_end_date = tonumber(string.sub(event_end, 0, -7))
-				event_start_month = tonumber(string.sub(event_start, 4, -4))
-				event_end_month = tonumber(string.sub(event_end, 4, -4))
-				event_start_year = tonumber(string.sub(event_start, 7))
-				event_end_year = tonumber(string.sub(event_end, 7))
-			end
+		local event_start_date = tonumber(string.sub(event_start, 0, -7))
+		local event_end_date = tonumber(string.sub(event_end, 0, -7))
+		local event_start_month = tonumber(string.sub(event_start, 4, -4))
+		local event_end_month = tonumber(string.sub(event_end, 4, -4))
+		local event_start_year = tonumber(string.sub(event_start, 7))
+		local event_end_year = tonumber(string.sub(event_end, 7))
 
-			if event_start_year ~= nil then 
-				if event_start_year == event_end_year then 
-					if year == event_start_year then
-						--if (month == event_start_month and date >= event_start_date) or (month > event_start_month and month < event_end_month) or (month == event_end_month and date <= event_end_date) then 
-						if event_start_month == event_end_month then 
-							if month == event_start_month and date >= event_start_date and date <= event_end_date then 
-								self:RegistEvent(v.EventID, v.EventType, v)
-								--print('same year same month event date: ' .. date)
-							end
-						else
-							if (month == event_start_month and date >= event_start_date) then
-								self:RegistEvent(v.EventID, v.EventType, v)
-								--print('same year event date: ' .. date)
-							elseif (month > event_start_month and month < event_end_month) then 
-								self:RegistEvent(v.EventID, v.EventType, v)
-								--print('same year event month: ' .. month)
-							elseif (month == event_end_month and date <= event_end_date) then 
-								self:RegistEvent(v.EventID, v.EventType, v)
-								--print('same year event end month: ' .. date)
-							end
-						end
+		--[[print("date :" .. event_start_date)
+			print("date :" .. event_end_date)
+			print("month :" .. event_start_month)
+			print("month :" .. event_end_month)
+			print("year :" .. event_start_year)
+			print("year :" .. event_end_year)]]
+
+		if event_start_year == event_end_year then 
+			if year == event_start_year then
+				--if (month == event_start_month and date >= event_start_date) or (month > event_start_month and month < event_end_month) or (month == event_end_month and date <= event_end_date) then 
+				if event_start_month == event_end_month then 
+					if month == event_start_month and date >= event_start_date and date <= event_end_date then 
+						return true
+						--print('same year same month event date: ' .. date)
 					end
 				else
-					if year == event_start_year then
-						if (month == event_start_month and date >= event_start_date) or (month > event_start_month) then 
-							self:RegistEvent(v.EventID, v.EventType, v)
-							--print('cross year event ' .. event_start_year)
-						end
-					elseif year > event_start_year and year <= event_end_year then 
-						if (month < event_end_month) or (month == event_end_month and date <= event_end_date) then 
-							self:RegistEvent(v.EventID, v.EventType, v)
-							--print('cross year event ' .. event_end_year)
-						end
+					if (month == event_start_month and date >= event_start_date) then
+						return true
+						--print('same year event date: ' .. date)
+					elseif (month > event_start_month and month < event_end_month) then 
+						return true
+						--print('same year event month: ' .. month)
+					elseif (month == event_end_month and date <= event_end_date) then 
+						return true
+						--print('same year event end month: ' .. date)
 					end
 				end
-			else
-				if (month == event_start_month and month == event_end_month) then
-					if date >= event_start_date and date <= event_end_date then 
-						self:RegistEvent(v.EventID, v.EventType, v)
-					end
-				else
-					if (month == event_start_month and date >= event_start_date) or (month > event_start_month and month < event_end_month) or (month == event_end_month and date <= event_end_date) then 
-						self:RegistEvent(v.EventID, v.EventType, v)
-						--print('every year event')
-					end
+			end
+		else
+			if year == event_start_year then
+				if (month == event_start_month and date >= event_start_date) or (month > event_start_month) then 
+					return true
+							--print('cross year event ' .. event_start_year)
+				end
+			elseif year > event_start_year and year <= event_end_year then 
+				if (month < event_end_month) or (month == event_end_month and date <= event_end_date) then 
+					return true
+							--print('cross year event ' .. event_end_year)
 				end
 			end
 		end
 
+			--[[print("date :" .. event_start_date)
+			print("date :" .. event_end_date)
+			print("month :" .. event_start_month)
+			print("month :" .. event_end_month)
+			print("year :" .. event_start_year)
+			print("year :" .. event_end_year)]]
+	else
+		local event_start_date = tonumber(string.sub(event_start, 0, -4))
+		local event_end_date = tonumber(string.sub(event_end, 0, -4))
+		local event_start_month = tonumber(string.sub(event_start, 4))
+		local event_end_month = tonumber(string.sub(event_end, 4))
+
+		if (month == event_start_month and month == event_end_month) then
+			print('same month')
+			if date >= event_start_date and date <= event_end_date then 
+				return true
+			end
+		else
+			if (month == event_start_month and date >= event_start_date) or (month > event_start_month and month < event_end_month) or (month == event_end_month and date <= event_end_date) then 
+				return true
+			end
+		end
+	end
+
+	return false
 end
+
 
 function FateEvent:RegistEvent(EventID, EventType, EventContents)
 	ServerTables:CreateTable("Event" .. EventContents.EventID, EventContents)
@@ -221,6 +263,23 @@ function FateEvent:RegistEvent(EventID, EventType, EventContents)
 	end
 end
 
+function FateEvent:RegistCode(Contents, date, month, year)
+	local GID = tostring(Contents.GiftID)
+	if string.len(GID) == 1 then 
+		GID = "0" .. GID 
+	end
+	self.ionlopi_table = self.ionlopi_table or {}
+	self.ionlopi_table[Contents.Code] = GID
+	--[[for k,v in pairs (self.ionlopi_table) do
+		print(k,v)
+	end]]
+	print(Contents.Code, GID, Contents.RewardCP)
+	if self:CheckingAvailable(Contents, date, month, year) == false then 
+		print('code ' .. Contents.Code .. ' is expired.')
+		self.ionlopi_table[Contents.Code] = "0"
+	end
+end
+
 function FateEvent:StartLimitedSkinEvent(playerId, EventContents)	
 	--print('raw SID ' .. EventContents.EventSkin)
 	local SID = tostring(EventContents.EventSkin)
@@ -259,6 +318,46 @@ function FateEvent:StartLimitedSkinEvent(playerId, EventContents)
 	PlayerTables:CreateTable("limitedevent" .. EventContents.EventID, event_data, playerId)
 	local ply = PlayerResource:GetPlayer(playerId)
 	CustomGameEventManager:Send_ServerToPlayer(ply, "fate_event", event_data)
+end
+
+function FateEvent:ClaimGiftCode(args)
+	local input = args.text 
+	local playerId = args.playerId
+	local ply = PlayerResource:GetPlayer(playerId)
+	local status = 0
+
+	print('input code: ' .. input)
+
+	if PlayerTables:GetTableValue("database", "db", playerId) == true then 
+		if self.ionlopi_table[input] ~= nil then 
+			print('correct gift code')
+			print('gift code: ' .. input)
+			--local code_id = self.ionlopi_table[input]
+			print('gift code id: ' .. self.ionlopi_table[input])
+			if self.ionlopi_table[input] == "0" then 
+				print('reward expired')
+				status = -2
+			else
+				if iupoasldm.jyiowe[playerId].IFY.GCA[self.ionlopi_table[input]] == false then 
+					print('code ' .. input .. ' not claimed')
+					iupoasldm.jyiowe[playerId].IFY.GCA[self.ionlopi_table[input]] = true 
+					local reward = self.ionlopi[self.ionlopi_table[input]].RewardCP
+					print('get reward ' .. reward .. ' CP')
+					iupoasldm.jyiowe[playerId].IFY.CRY.CP = iupoasldm.jyiowe[playerId].IFY.CRY.CP + reward
+					PlayerTables:SetTableValue("CP", "CP", iupoasldm.jyiowe[playerId].IFY.CRY.CP, playerId, true)
+					CustomGameEventManager:Send_ServerToPlayer(ply, "fate_player_cp", {CP=iupoasldm.jyiowe[playerId].IFY.CRY.CP})
+					iupoasldm:FastUpdate(playerId)
+					status = 1
+				else
+					print('already claimed')
+					status = -1
+				end
+			end
+		else
+			print('invalid code: ' .. input)
+		end
+	end
+	CustomGameEventManager:Send_ServerToPlayer(ply, "fate_code", {status = status})	
 end
 
 function FateEvent:ClaimLimitedSkin(args)

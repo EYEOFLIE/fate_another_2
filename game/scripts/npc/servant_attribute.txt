@@ -398,21 +398,21 @@ ServantAttribute
 	}
 	"npc_dota_hero_oracle"			
 	{
-		"SA1"	"ishtar_attribute_offering"
-		"SA2"	"ishtar_attribute_gems"
-		"SA3"	"ishtar_attribute_goddess"
-		"SA4"	"ishtar_attribute_venus"
-		"SA5"	"fate_empty1"
+		"SA1"	"ishtar_attribute_gems"
+		"SA2"	"ishtar_attribute_goddess"
+		"SA3"	"ishtar_attribute_crown"
+		"SA4"	"ishtar_attribute_mana_burst"
+		"SA5"	"ishtar_attribute_venus"
 		"SCombo"	"ishtar_combo"
 	}
 	"npc_dota_hero_ursa"			
 	{
 		"SA1"	"atalanta_evolution_attribute"
-		"SA2"	"atalanta_tornado_attribute"
-		"SA3"	"atalanta_vision_attribute"
-		"SA4"	"atalanta_moon_attribute"
-		"SA5"	"fate_empty1"
-		"SCombo"	"atalanta_skia"
+		"SA2"	"atalanta_beast_attribute"
+		"SA3"	"atalanta_moon_attribute"
+		"SA4"	"atalanta_logic_attribute"
+		"SA5"	"atalanta_bow_attribute"
+		"SCombo"	"atalanta_alter_skia"
 	}
 	"npc_dota_hero_kunkka"			
 	{
@@ -440,5 +440,14 @@ ServantAttribute
 		"SA4"	"melt_attribute_sadistic"
 		"SA5"	"melt_attribute_saint_graph"
 		"SCombo"	"melt_combo"
+	}
+	"npc_dota_hero_muerta"
+	{
+		"SA1"	"billy_sa_hand"
+		"SA2"	"billy_sa_pistol"
+		"SA3"	"billy_sa_thunderer"
+		"SA4"	"billy_sa_eagle_eyes"
+		"SA5"	"billy_sa_gambit"
+		"SCombo"	"billy_combo"
 	}
 }

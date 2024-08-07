@@ -9,50 +9,19 @@
 	    "MaxLevel"						"1"
 	    "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	    "AbilityTextureName"			"custom/fran/fran_galvanism"
+	    "AbilityCooldown"				"1"
 	    
-	    "precache"
-	    {
-	    	
-	    }
+	    "AbilityValues"
+		{
+			"electric_power"	"10"
+			"recharge_time"    	"5"
+			"dysfunction_slow"  "-20"
+			"mark_duration"    	"3"
+			"mark_slow"    		"-15"
+			"mark_max"    		"6"
+			"mark_max_stun"    	"1.2"
+		}
 
-	    "AbilitySpecial"
-	    {
-	    	"01"
-	    	{
-	        	"var_type"			"FIELD_INTEGER"
-	        	"electric_power"	"10"
-	      	}
-	      	"02"
-	      	{
-	        	"var_type"        	"FIELD_FLOAT"
-	        	"recharge_time"    	"5"
-	      	}
-	      	"02"
-	      	{
-	        	"var_type"        	"FIELD_FLOAT"
-	        	"dysfunction_slow"  "-20"
-	      	}
-	      	"02"
-	      	{
-	        	"var_type"        	"FIELD_FLOAT"
-	        	"mark_duration"    	"3"
-	      	}
-	      	"02"
-	      	{
-	        	"var_type"        	"FIELD_FLOAT"
-	        	"mark_slow"    		"-15"
-	      	}
-	      	"02"
-	      	{
-	        	"var_type"        	"FIELD_FLOAT"
-	        	"mark_max"    		"6"
-	      	}
-	      	"02"
-	      	{
-	        	"var_type"        	"FIELD_FLOAT"
-	        	"mark_max_stun"    	"1.2"
-	      	}
-	    }
 	    "Modifiers"
 	    {
 	    	"modifier_fran_attack"
@@ -166,61 +135,22 @@
 	    "MaxLevel"						"1"
 	    "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	    "AbilityTextureName"			"custom/fran/fran_galvanism"
+	    "AbilityCooldown"				"1"
 	    
-	    "precache"
-	    {
-	    	
-	    }
-
-	    "AbilitySpecial"
-	    {
-	    	"01"
-	    	{
-	        	"var_type"			"FIELD_INTEGER"
-	        	"electric_power"	"13"
-	      	}
-	      	"02"
-	      	{
-	        	"var_type"        	"FIELD_FLOAT"
-	        	"recharge_time"    	"5"
-	      	}
-	      	"03"
-	      	{
-	        	"var_type"        	"FIELD_FLOAT"
-	        	"hp_reg"    		"7"
-	      	}
-	      	"04"
-	      	{
-	        	"var_type"        	"FIELD_FLOAT"
-	        	"mana_reg"    		"3"
-	      	}
-	      	"02"
-	      	{
-	        	"var_type"        	"FIELD_FLOAT"
-	        	"dysfunction_slow"  "-20"
-	      	}
-	      	"05"
-	      	{
-	        	"var_type"        	"FIELD_FLOAT"
-	        	"mark_duration"    	"3"
-	      	}
-	      	"06"
-	      	{
-	        	"var_type"        	"FIELD_FLOAT"
-	        	"mark_slow"    		"-15"
-	      	}
-	      	"07"
-	      	{
-	        	"var_type"        	"FIELD_FLOAT"
-	        	"mark_max"    		"6"
-	      	}
-	      	"08"
-	      	{
-	        	"var_type"        	"FIELD_FLOAT"
-	        	"mark_max_stun"    	"1.2"
-	      	}	
-	    }
-	    "Modifiers"
+	    "AbilityValues"
+		{
+			"electric_power"	"13"
+			"recharge_time"    	"4"
+			"hp_reg"    		"7"
+			"mana_reg"    		"3"
+			"dysfunction_slow"  "-20"
+			"mark_duration"    	"3"
+			"mark_slow"    		"-15"
+			"mark_max"    		"6"
+			"mark_max_stun"    	"1.2"
+		}
+	   
+	  	"Modifiers"
 	    {
 	    	"modifier_fran_attack"
 	    	{
@@ -348,38 +278,19 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
 		"MaxLevel"						"1"
-		"AbilityCastAnimation" 			"ACT_DOTA_ITEM_DROP"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_5"
 		"AnimationPlaybackRate" 		"1.0"
 		"AbilityCooldown"				"30"
 		"AbilityManaCost"				"100"
 		"AbilityCastRange"				"500"
 		"AbilityCastPoint"				"0.1"
 		
-
-		"precache"
+		"AbilityValues"
 		{
-			
+			"radius"				"500"
+			"duration"				"1.3"
+			"slow"					"-30"
 		}
-
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"500"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"2"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"slow"					"-30"
-			}
-		}
-
 		
 		"OnSpellStart"
 		{
@@ -444,33 +355,12 @@
 		"AbilityTextureName"			"custom/fran/fran_attribute_bridal_chest"
 		"MaxLevel"						"1"
 
-		"precache"
+		"AbilityValues"
 		{
-			
-		}
-
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"chance"				"50"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"base_damage"			"20"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bonus_per_stack"		"8"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"recharge_chance"		"50"
-			}
+			"chance"				"50"
+			"base_damage"			"20"
+			"bonus_per_stack"		"8"
+			"recharge_chance"		"50"
 		}
 
 		"Modifiers"
@@ -521,46 +411,22 @@
 		"MaxLevel"						"5"
 		"RequiredLevel"					"1"
 		"LevelsBetweenUpgrades"			"1"
-		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_2"
-		"AnimationPlaybackRate" 		"1.0"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_1"
+		"AnimationPlaybackRate" 		"0.8"
 		"AbilityCooldown"				"3 3 2 2 1"
 		"AbilityManaCost"				"100"
 		"AbilityCastPoint"				"0.2"
 		"AbilityCastRange"				"900"
 
-		"precache"
+		"AbilityValues"
 		{
-			
+			"electric_power"		"1"
+			"distance"				"900"
+			"width"					"200"
+			"speed"					"1700"
+			"damage"				"110 130 150 170 190"
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"electric_power"		"1"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"distance"				"900"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"110 130 150 170 190"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"width"					"200"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"speed"					"1700"
-			}
-		}
 		"OnAbilityPhaseStart"
 		{
 			"RunScript"
@@ -606,50 +472,21 @@
 		"MaxLevel"						"5"
 		"RequiredLevel"					"1"
 		"LevelsBetweenUpgrades"			"1"
-		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_2"
-		"AnimationPlaybackRate" 		"1.0"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_1"
+		"AnimationPlaybackRate" 		"0.8"
 		"AbilityCooldown"				"3 3 2 2 1"
 		"AbilityManaCost"				"100"
 		"AbilityCastPoint"				"0.2"
 		"AbilityCastRange"				"900"
 
-		"precache"
+		"AbilityValues"
 		{
-			
-		}
-
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"electric_power"		"1"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"hp_cost"				"10"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"distance"				"900"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"210 230 250 270 290"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"width"					"200"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"speed"					"1700"
-			}
+			"electric_power"		"1"
+			"hp_cost"				"10"
+			"distance"				"900"
+			"width"					"200"
+			"speed"					"1700"
+			"damage"				"210 230 250 270 290"
 		}
 
 		"OnSpellStart"
@@ -689,62 +526,25 @@
 		"RequiredLevel"					"1"
 		"LevelsBetweenUpgrades"			"1"
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_2"
-		"AnimationPlaybackRate" 		"0.8"
+		"AnimationPlaybackRate" 		"0.5"
 		"AbilityCooldown"				"18 17 16 15 14"
 		"AbilityManaCost"				"200"
 		"AbilityCastRange"				"1000"
 		"AbilityCastPoint"				"0.2"
 		"AOERadius"						"%radius"
 
-		"precache"
+		"AbilityValues"
 		{
-			
+			"electric_power"		"2"
+			"distance"				"1000"
+			"radius"				"500"
+			"outer_stun"			"0.2"
+			"damage"				"300 355 410 465 520"
+			"inner_radius"			"200"
+			"inner_stun"			"0.8"
+			"lightning_damage_per_charge"		"80 100 120 140 160"
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"electric_power"		"2"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"distance"				"1000"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"300 355 410 465 520"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"lightning_damage_per_charge"		"80 100 120 140 160"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"500"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"inner_radius"			"200"
-			}			
-			"07"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"inner_stun"			"0.8"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"outer_stun"			"0.2"
-			}
-		}
-		
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -769,65 +569,24 @@
 		"RequiredLevel"					"1"
 		"LevelsBetweenUpgrades"			"1"
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_2"
-		"AnimationPlaybackRate" 		"0.8"
+		"AnimationPlaybackRate" 		"0.5"
 		"AbilityCooldown"				"18 17 16 15 14"
 		"AbilityManaCost"				"200"
 		"AbilityCastRange"				"1000"
 		"AbilityCastPoint"				"0.2"
 		"AOERadius"						"%radius"
 
-		"precache"
+		"AbilityValues"
 		{
-
-		}
-
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"electric_power"		"2"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"hp_cost"				"10"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"distance"				"1000"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"300 355 410 465 520"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"lightning_damage_per_charge"		"180 200 220 240 260"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"500"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"inner_radius"			"200"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"inner_stun"			"0.8"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"outer_stun"			"0.2"
-			}
+			"electric_power"		"2"
+			"hp_cost"				"10"
+			"distance"				"1000"
+			"radius"				"500"
+			"outer_stun"			"0.2"
+			"damage"				"300 355 410 465 520"
+			"inner_radius"			"200"
+			"inner_stun"			"0.8"
+			"lightning_damage_per_charge"		"180 200 220 240 260"
 		}
 		
 		"OnSpellStart"
@@ -853,83 +612,29 @@
 		"MaxLevel"						"5"
 		"RequiredLevel"					"1"
 		"LevelsBetweenUpgrades"			"2"
-		"AbilityCastAnimation" 			"ACT_DOTA_ITEM_DROP"
-		"AnimationPlaybackRate" 		"1.0"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_3"
+		"AnimationPlaybackRate" 		"0.7"
 		"AbilityCooldown"				"22 21 20 19 18"
 		"AbilityManaCost"				"400"
 		"AbilityCastRange"				"400"
 		"AbilityCastPoint"				"0.2"
 		
-
-		"precache"
+		"AbilityValues"
 		{
-			
+			"electric_power"		"4"
+			"delay"					"0.5"
+			"radius"				"400"
+			"dmg_per_charge"		"100 120 140 160 180"
+			"heal_per_charge"		"100 120 140 160 180"
+			"duration_per_charge"	"1"
+			"atk_per_charge"		"10 12 14 16 18"
+			"hp_reg_per_charge"		"5 7 9 11 13"
+			"mspd_per_charge"		"5 6 7 8 9"
+			"aspd_per_charge"		"9 10 11 12 13"
+			"def_per_charge"		"2 3 4 5 6"
+			"charge_gain_per_duration"		"1"
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"electric_power"		"4"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"delay"					"0.5"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"400"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"dmg_per_charge"		"100 120 140 160 180"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"heal_per_charge"		"100 120 140 160 180"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration_per_charge"	"1"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"atk_per_charge"		"10 12 14 16 18"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"hp_reg_per_charge"		"5 7 9 11 13"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"mspd_per_charge"		"5 6 7 8 9"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"aspd_per_charge"		"9 10 11 12 13"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"def_per_charge"		"2 3 4 5 6"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"charge_gain_per_duration"		"1"
-			}
-		}
-		
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -1046,96 +751,30 @@
 		"MaxLevel"						"5"
 		"RequiredLevel"					"1"
 		"LevelsBetweenUpgrades"			"2"
-		"AbilityCastAnimation" 			"ACT_DOTA_ITEM_DROP"
-		"AnimationPlaybackRate" 		"1.0"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_3"
+		"AnimationPlaybackRate" 		"0.7"
 		"AbilityCooldown"				"22 21 20 19 18"
 		"AbilityManaCost"				"400"
 		"AbilityCastRange"				"400"
 		"AbilityCastPoint"				"0.2"
 		
-
-		"precache"
+		"AbilityValues"
 		{
-			
-		}
-
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"electric_power"		"4"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"delay"					"0.5"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"400"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"dmg_per_charge"		"100 120 140 160 180"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"heal_per_charge"		"100 120 140 160 180"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration_per_charge"	"1"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"atk_per_charge"		"10 12 14 16 18"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"hp_reg_per_charge"		"5 7 9 11 13"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"mspd_per_charge"		"5 6 7 8 9"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"aspd_per_charge"		"9 10 11 12 13"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"def_per_charge"		"2 3 4 5 6"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"charge_gain_per_duration"		"1"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"mad_duration"			"4"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"mad_ms"				"40"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"mad_aspd"				"60"
-			}
+			"electric_power"		"4"
+			"delay"					"0.5"
+			"radius"				"400"
+			"dmg_per_charge"		"100 120 140 160 180"
+			"heal_per_charge"		"100 120 140 160 180"
+			"duration_per_charge"	"1"
+			"atk_per_charge"		"10 12 14 16 18"
+			"hp_reg_per_charge"		"5 7 9 11 13"
+			"mspd_per_charge"		"5 6 7 8 9"
+			"aspd_per_charge"		"9 10 11 12 13"
+			"def_per_charge"		"2 3 4 5 6"
+			"charge_gain_per_duration"		"1"
+			"mad_duration"			"4"
+			"mad_ms"				"40"
+			"mad_aspd"				"60"
 		}
 		
 		"OnSpellStart"
@@ -1304,88 +943,30 @@
 		"MaxLevel"						"5"
 		"RequiredLevel"					"1"
 		"LevelsBetweenUpgrades"			"2"
-		"AbilityCastAnimation" 			"ACT_DOTA_ITEM_DROP"
-		"AnimationPlaybackRate" 		"1.0"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_3"
+		"AnimationPlaybackRate" 		"0.7"
 		"AbilityCooldown"				"22 21 20 19 18"
 		"AbilityManaCost"				"400"
 		"AbilityCastRange"				"400"
 		"AbilityCastPoint"				"0.2"
 		
-
-		"precache"
+		"AbilityValues"
 		{
-			
+			"electric_power"		"4"
+			"hp_cost"				"10"
+			"delay"					"0.5"
+			"radius"				"400"
+			"dmg_per_charge"		"200 220 240 260 280"
+			"heal_per_charge"		"200 220 240 260 280"
+			"duration_per_charge"	"2"
+			"atk_per_charge"		"10 12 14 16 18"
+			"hp_reg_per_charge"		"5 7 9 11 13"
+			"mspd_per_charge"		"5 6 7 8 9"
+			"aspd_per_charge"		"9 10 11 12 13"
+			"def_per_charge"		"2 3 4 5 6"
+			"charge_gain_per_duration"		"1"
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"electric_power"		"4"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"hp_cost"				"10"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"delay"					"0.5"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"400"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"dmg_per_charge"		"200 220 240 260 280"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"heal_per_charge"		"200 220 240 260 280"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration_per_charge"	"2"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"atk_per_charge"		"10 12 14 16 18"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"hp_reg_per_charge"		"5 7 9 11 13"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"mspd_per_charge"		"5 6 7 8 9"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"aspd_per_charge"		"9 10 11 12 13"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"def_per_charge"		"2 3 4 5 6"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"charge_gain_per_duration"		"1"
-			}
-		}
-		
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -1502,101 +1083,31 @@
 		"MaxLevel"						"5"
 		"RequiredLevel"					"1"
 		"LevelsBetweenUpgrades"			"2"
-		"AbilityCastAnimation" 			"ACT_DOTA_ITEM_DROP"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_3"
 		"AnimationPlaybackRate" 		"1.0"
 		"AbilityCooldown"				"22 21 20 19 18"
 		"AbilityManaCost"				"400"
 		"AbilityCastRange"				"400"
 		"AbilityCastPoint"				"0.2"
 		
-
-		"precache"
+		"AbilityValues"
 		{
-			
-		}
-
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"electric_power"		"4"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"hp_cost"				"10"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"delay"					"0.5"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"400"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"dmg_per_charge"		"200 220 240 260 280"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"heal_per_charge"		"200 220 240 260 280"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"atk_per_charge"		"10 12 14 16 18"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"def_per_charge"		"2 3 4 5 6"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration_per_charge"	"2"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"hp_reg_per_charge"		"5 7 9 11 13"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"mspd_per_charge"		"5 6 7 8 9"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"aspd_per_charge"		"9 10 11 12 13"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"charge_gain_per_duration"		"1"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"mad_duration"			"4"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"mad_ms"				"40"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"mad_aspd"				"60"
-			}
+			"electric_power"		"4"
+			"hp_cost"				"10"
+			"delay"					"0.5"
+			"radius"				"400"
+			"dmg_per_charge"		"200 220 240 260 280"
+			"heal_per_charge"		"200 220 240 260 280"
+			"duration_per_charge"	"2"
+			"atk_per_charge"		"10 12 14 16 18"
+			"hp_reg_per_charge"		"5 7 9 11 13"
+			"mspd_per_charge"		"5 6 7 8 9"
+			"aspd_per_charge"		"9 10 11 12 13"
+			"def_per_charge"		"2 3 4 5 6"
+			"charge_gain_per_duration"		"1"
+			"mad_duration"			"4"
+			"mad_ms"				"40"
+			"mad_aspd"				"60"
 		}
 		
 		"OnSpellStart"
@@ -1765,7 +1276,7 @@
 		"MaxLevel"						"5"
 		"RequiredLevel"					"1"
 		"LevelsBetweenUpgrades"			"2"
-		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_1"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_4"
 		"AnimationPlaybackRate" 		"1.0"
 		"AbilityCooldown"				"49 48 47 46 45"
 		"AbilityManaCost"				"800"
@@ -1773,49 +1284,18 @@
 		"AbilityCastPoint"				"0.2"
 		"AOERadius"						"%radius"
 
-		"precache"
+		"AbilityValues"
 		{
+			"electric_power"		"4"
+			"delay"					"1.0"
+			"radius"				"800"
+			"base_lightning"		"15 16 17 18 19"
+			"bonus_lightning_per_stack"		"3"
+			"lightning_aoe"			"300"
+			"lightning_dmg"			"200 210 220 230 240"
 			
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"electric_power"		"4"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"delay"					"1.0"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"radius"				"800"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"base_lightning"		"15 16 17 18 19"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_lightning_per_stack"		"4"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"lightning_dmg"			"200 220 240 260 280"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"lightning_aoe"			"300"
-			}
-		}
 		"OnAbilityPhaseStart"
 		{
 			"RunScript"
@@ -1866,7 +1346,7 @@
 		"MaxLevel"						"5"
 		"RequiredLevel"					"1"
 		"LevelsBetweenUpgrades"			"2"
-		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_1"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_4"
 		"AnimationPlaybackRate" 		"1.0"
 		"AbilityCooldown"				"49 48 47 46 45"
 		"AbilityManaCost"				"800"
@@ -1874,64 +1354,20 @@
 		"AbilityCastPoint"				"0.2"
 		"AOERadius"						"%radius"
 
-		"precache"
+		"AbilityValues"
 		{
-			
+			"electric_power"		"4"
+			"delay"					"1.0"
+			"radius"				"800"
+			"base_lightning"		"15 16 17 18 19"
+			"bonus_lightning_per_stack"		"3"
+			"lightning_aoe"			"300"
+			"lightning_dmg"			"200 210 220 230 240"
+			"bonus_dmg_per_stack"	"5"
+			"shield_gain"			"70"
+			"shield_duration"		"10"
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"electric_power"		"4"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"delay"					"1.0"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"radius"				"800"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"base_lightning"		"15 16 17 18 19"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_lightning_per_stack"		"4"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"lightning_dmg"			"200 220 240 260 280"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_dmg_per_stack"	"10"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"lightning_aoe"			"300"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"shield_gain"			"70"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"shield_duration"		"10"
-			}
-		}
 		"OnAbilityPhaseStart"
 		{
 			"RunScript"
@@ -2014,101 +1450,33 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"MaxLevel"						"1"
-		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_1"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_6"
 		"AnimationPlaybackRate" 		"1.0"
-		"AbilityCooldown"				"240"
+		"AbilityCooldown"				"270"
 		"AbilityManaCost"				"800"
 		"AbilityCastRange"				"1200"
 		"AbilityCastPoint"				"0.2"
 
-		"precache"
+		"AbilityValues"
 		{
-			
+			"electric_power"		"1"
+			"delay"					"1.0"
+			"radius"				"800"
+			"base_lightning"		"60"
+			"bonus_lightning_per_stack"		"2"
+			"lightning_aoe"			"300"
+			"lightning_dmg"			"280"
+			"lock_radius"			"200"
+			"blast_damage"			"100" 
+			"hr"					"800" // high radius
+			"hd"					"100" //high damage
+			"lr"					"1200" //low damage radius
+			"ld"					"50" //low damage
+			"max_revive"			"1"
+			"revive_delay"			"1"
+			"lightning_resist"			"15"
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"electric_power"		"1"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"delay"					"1.0"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"radius"				"800"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"base_lightning"		"60"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_lightning_per_stack"		"2"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"lightning_dmg"			"280"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"lightning_aoe"			"300"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"lock_radius"			"200"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"blast_damage"			"100"
-			}
-			"01" //high damage radius
-			{
-				"var_type"				"FIELD_FLOAT"
-				"hr"					"800"
-			}
-			"01" //high damage
-			{
-				"var_type"				"FIELD_FLOAT"
-				"hd"					"100"
-			}
-			"01" //low damage radius
-			{
-				"var_type"				"FIELD_FLOAT"
-				"lr"					"1200"
-			}
-			"01" //low damage
-			{
-				"var_type"				"FIELD_FLOAT"
-				"ld"					"50"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"max_revive"			"1"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"revive_delay"			"1"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"lightning_resist"			"15"
-			}
-		}
 		"OnAbilityPhaseStart"
 		{
 			"RunScript"
@@ -2201,101 +1569,33 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"MaxLevel"						"1"
-		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_1"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_6"
 		"AnimationPlaybackRate" 		"1.0"
-		"AbilityCooldown"				"240"
+		"AbilityCooldown"				"270"
 		"AbilityManaCost"				"800"
 		"AbilityCastRange"				"1200"
 		"AbilityCastPoint"				"0.2"
 
-		"precache"
+		"AbilityValues"
 		{
-			
+			"electric_power"		"1"
+			"delay"					"1.0"
+			"radius"				"800"
+			"base_lightning"		"60"
+			"bonus_lightning_per_stack"		"2"
+			"lightning_aoe"			"300"
+			"lightning_dmg"			"280"
+			"lock_radius"			"200"
+			"blast_damage"			"100" 
+			"hr"					"800" // high radius
+			"hd"					"100" //high damage
+			"lr"					"1200" //low damage radius
+			"ld"					"50" //low damage
+			"max_revive"			"2"
+			"revive_delay"			"1"
+			"lightning_resist"		"15"
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"electric_power"		"1"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"delay"					"1.0"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"radius"				"800"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"base_lightning"		"60"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_lightning_per_stack"		"2"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"lightning_dmg"			"280"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"lightning_aoe"			"300"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"lock_radius"			"200"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"blast_damage"			"100"
-			}
-			"01" //high damage radius
-			{
-				"var_type"				"FIELD_FLOAT"
-				"hr"					"800"
-			}
-			"01" //high damage
-			{
-				"var_type"				"FIELD_FLOAT"
-				"hd"					"100"
-			}
-			"01" //low damage radius
-			{
-				"var_type"				"FIELD_FLOAT"
-				"lr"					"1200"
-			}
-			"01" //low damage
-			{
-				"var_type"				"FIELD_FLOAT"
-				"ld"					"50"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"max_revive"			"2"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"revive_delay"			"1"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"lightning_resist"			"15"
-			}
-		}
 		"OnAbilityPhaseStart"
 		{
 			"RunScript"
@@ -2386,55 +1686,23 @@
 		"MaxLevel"						"1"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 		"AbilityTextureName"			"custom/fran/fran_attribute_bridal_chest"
-		
-		
+				
 		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"9999"
 		"AbilityManaCost"				"15"
 
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"chance"				"50"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"base_damage"			"20"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bonus_per_stack"		"8"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"shield_gain"			"70"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"shield_duration"		"10"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"recharge_chance"		"50"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"blasted_tree_bonus"	"10"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"combo_revive"			"1"
-			}
+			"chance"				"50"
+			"base_damage"			"20"
+			"bonus_per_stack"		"8"
+			"recharge_chance"		"50"
+			"blasted_tree_bonus"	"5"
+			"shield_gain"			"70"
+			"shield_duration"		"10"
+			"combo_revive"			"1"
 		}
+
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -2455,29 +1723,17 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 		"AbilityTextureName"			"custom/fran/fran_attribute_mad_enhancement"
 		
-		
 		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"9999"
 		"AbilityManaCost"				"11"
 
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"mad_duration"			"4"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"mad_ms"				"40"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"mad_aspd"				"60"
-			}
+			"mad_duration"			"4"
+			"mad_ms"				"40"
+			"mad_aspd"				"60"
 		}
+
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -2498,44 +1754,20 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 		"AbilityTextureName"			"custom/fran/fran_attribute_overload"
 		
-		
 		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"9999"
 		"AbilityManaCost"				"15"
 
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"hp_cost"			"10"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"shot_damage"		"100"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"smash_damage"		"100"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"field_heal"		"100"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"field_damage"		"100"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"field_duration"		"1"
-			}
+			"hp_cost"			"10"
+			"shot_damage"		"100"
+			"smash_damage"		"100"
+			"field_heal"		"100"
+			"field_damage"		"100"
+			"field_duration"	"1"
 		}
+
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -2555,35 +1787,19 @@
 		"MaxLevel"						"1"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 		"AbilityTextureName"			"custom/fran/fran_attribute_lament"
-		
-		
+				
 		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"9999"
 		"AbilityManaCost"				"10"
 
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"500"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"2"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"slow"					"-30"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"cooldown"				"30"
-			}
+			"radius"				"500"
+			"duration"				"1.3"
+			"slow"					"-30"
+			"cooldown"				"30"
 		}
+
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -2602,36 +1818,20 @@
 		"BaseClass"						"ability_datadriven"
 		"MaxLevel"						"1"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
-		"AbilityTextureName"			"custom/fran/fran_attribute_galvanism"
-		
+		"AbilityTextureName"			"custom/fran/fran_attribute_galvanism"	
 		
 		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"9999"
 		"AbilityManaCost"				"13"
 
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-	    	{
-	        	"var_type"			"FIELD_INTEGER"
-	        	"electric_power"	"13"
-	      	}
-	      	"02"
-	      	{
-	        	"var_type"        	"FIELD_FLOAT"
-	        	"recharge_time"    	"4"
-	      	}
-	      	"03"
-	      	{
-	        	"var_type"        	"FIELD_FLOAT"
-	        	"hp_reg"    		"7"
-	      	}
-	      	"04"
-	      	{
-	        	"var_type"        	"FIELD_FLOAT"
-	        	"mana_reg"    		"3"
-	      	}
+			"electric_power"	"13"
+			"recharge_time"    	"4"
+			"hp_reg"    		"7"
+			"mana_reg"    		"3"
 		}
+
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -2654,6 +1854,7 @@
 
 		"precache"
 		{
+			"model"					"models/fran/gladiator/fran_gladiator_by_zefiroft.vmdl"
 			"particle"  			"particles/items_fx/diffusal_slow.vpcf"
 			"particle"				"particles/units/heroes/hero_dark_willow/dark_willow_wisp_spell_fear_debuff.vpcf"
 			"particle"				"particles/custom/fran/fran_weapon_elec.vpcf"

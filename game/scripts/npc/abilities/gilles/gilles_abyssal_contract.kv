@@ -18,60 +18,21 @@
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AnimationPlaybackRate" 		"1.0"
 		"AOERadius"						"%radius"		
-		
-		"precache"
-		{
-
-		}
-		
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
+	
 		"AbilityCastRange"				"700"
 		"AbilityCastPoint"				"0.2"
-
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"45.0"
 		"AbilityManaCost"				"100"
 
-		
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"summon_delay"		"2.5"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"radius"			"1000"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"stun"				"2"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage"			"700 900 1100 1300 1500"
-			}			
-			"04"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"max_health"		"1500 1800 2100 2400 2700"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"attack_damage"		"150 225 300 375 450"
-			}
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"summon_duration"	"90"
-			}
+			"summon_delay"		"2.5"
+			"radius"			"1000"
+			"stun"				"2"
+			"damage"			"700 900 1100 1300 1500"
+			"max_health"		"1500 1800 2100 2400 2700"
+			"attack_damage"		"150 225 300 375 450"
+			"summon_duration"	"90"
 		}
 	}
 	//===================================================
@@ -93,59 +54,20 @@
 		"AnimationPlaybackRate" 		"1.0"
 		"AOERadius"						"%radius"		
 		
-		"precache"
-		{
-
-		}
-		
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"700"
 		"AbilityCastPoint"				"0.2"
-
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"45.0"
 		"AbilityManaCost"				"100"
 
-		
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"summon_delay"		"2.5"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"radius"			"1000"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"stun"				"2"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage"			"700 900 1100 1300 1500"
-			}			
-			"04"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"max_health"		"1500 1800 2100 2400 2700"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"attack_damage"		"150 225 300 375 450"
-			}
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"summon_duration"	"90"
-			}
+			"summon_delay"		"2.5"
+			"radius"			"1000"
+			"stun"				"2"
+			"damage"			"700 900 1100 1300 1500"
+			"max_health"		"1500 1800 2100 2400 2700"
+			"attack_damage"		"150 225 300 375 450"
+			"summon_duration"	"90"
 		}
 	}
 
@@ -168,27 +90,13 @@
 		"AbilityCastPoint"				"0.3"
 		"AbilityCooldown"				"10.0"
 
-	    "precache"
-	    {
-	    }		
-		"AbilitySpecial"
+	    "AbilityValues"
 		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"range"				"1000"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"speed"				"1800"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"width"				"150"
-			}			
-		}
+			"range"				"1000"
+			"speed"				"1800"
+			"width"				"150"
+		}		
+
 		"OnSpellStart"
 		{
             "RunScript"
@@ -229,17 +137,11 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_ATTACK2"
 		"AnimationPlaybackRate" 		"1.0"
 
-	    "precache"
-	    {
-	    }		
-		"AbilitySpecial"
+	    "AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"root_duration"			"1.5 1.75 2.0 2.25 2.5"
-			}			
-		}
+			"root_duration"			"1.5 1.75 2.0 2.25 2.5"
+		}	
+
 		"OnSpellStart"
 		{
             "RunScript"
@@ -283,40 +185,18 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_1"
 		"AnimationPlaybackRate" 		"1.0"
 		
-		"precache"
-		{
-		}
-		
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1000"
 		"AbilityCooldown"				"25"
 		"AbilityCastPoint"				"0.3"
-
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"29.0"
 
-		
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"range"				"1000"
-			}	
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage"			"300 400 500 600 700"
-			}				
-			"03"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"stun_duration"		"1.1 1.2 1.3 1.4 1.5"
-			}
-		}
-
+			"range"				"1000"
+			"damage"			"300 400 500 600 700"
+			"stun_duration"		"1.1 1.2 1.3 1.4 1.5"
+		}	
+		
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -355,29 +235,12 @@
 	    "AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 	    "AbilityCooldown"		"2"
 
-	    "precache"
-	    {
-	    	
-	    }
-
-		"AbilitySpecial"
+	    "AbilityValues"
 		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"movespeed"			"150"
-			}	
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"attackspeed"		"50"
-			}	
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"health"			"500"
-			}	
-		}
+			"movespeed"			"150"
+			"attackspeed"		"50"
+			"health"			"500"
+		}	
 
 	    "OnSpellStart"
 	    {
@@ -453,24 +316,12 @@
 		"BaseClass" 					"ability_datadriven"
 		"AbilityTextureName"            "undying_decay"
 		"MaxLevel"                      "5"
-		"precache"
+		
+		"AbilityValues"
 		{
-			
-		}
-
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"health_regen"			"13"
-			}			
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"additional_damage"		"130"
-			}
-		}
+			"health_regen"			"13"
+			"additional_damage"		"130"
+		}	
 
 		"Modifiers"
 		{
@@ -517,38 +368,15 @@
 		"RequiredLevel"					"1"
 		"LevelsBetweenUpgrades"			"2"
 
-		"precache"
-		{
-			
-		}
-
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"30.0"
 		"AbilityCastPoint"				"0.35"
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
 
-		
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"radius"			"800"
-			}				
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage"			"700 900 1100 1300 1500"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"duration"			"10.0"
-			}
-		}
+			"radius"			"800"
+			"damage"			"700 900 1100 1300 1500"
+			"duration"			"10.0"
+		}	
 	}
 }

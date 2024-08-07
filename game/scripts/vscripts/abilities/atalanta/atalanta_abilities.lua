@@ -1212,6 +1212,7 @@ function OnCalydonianSnipeCast(keys)
 	local caster = keys.caster 
 	local ability = keys.ability 
 	local target = keys.target 
+    ability.target = target
     --local charge_delay = ability:GetCastPoint()
     local ply = caster:GetPlayerOwner()
     local playerId = caster:GetPlayerOwnerID()
@@ -1227,6 +1228,8 @@ function OnCalydonianSnipeCast(keys)
     ParticleManager:SetParticleControl( caster.BPparticle, 0, target:GetAbsOrigin() + Vector(0,0,500)) 
     ParticleManager:SetParticleControl( caster.BPparticle, 1, target:GetAbsOrigin() + Vector(0,0,500)) 
 
+    ability:ApplyDataDrivenModifier(caster, caster, "modifier_calydonian_snipe_tracker", {Duration = ability:GetSpecialValueFor("cast_delay") - 0.04})
+
     caster.ChargeParticle = ParticleManager:CreateParticle("particles/econ/items/windrunner/windranger_arcana/windranger_arcana_powershot_channel_combo_v2.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
 	ParticleManager:SetParticleControlEnt(caster.ChargeParticle, 0, caster, PATTACH_POINT_FOLLOW, "attach_attack1", caster:GetAbsOrigin(),false)
     ParticleManager:SetParticleControl(caster.ChargeParticle, 1, GetRotationPoint(caster:GetAbsOrigin() + Vector(0,0,80), 350, caster:GetAnglesAsVector().y)) 
@@ -1236,19 +1239,24 @@ function OnCalydonianSnipeCast(keys)
         ParticleManager:ReleaseParticleIndex( ChargeParticle )
     end)]]
 
-    if keys.target:IsHero() and PlayerResource:GetConnectionState(playerId) == 2 then
-        Say(ply, "Calydonian Snipe targets " .. FindName(keys.target:GetName()) .. ".", true)
+    if target:IsHero() and PlayerResource:GetConnectionState(playerId) == 2 then
+        Say(ply, "Calydonian Snipe targets " .. FindName(target:GetName()) .. ".", true)
     end
 end
 
 function OnCalydonianSnipeStart(keys)
 	local caster = keys.caster 
 	local ability = keys.ability 
-	local target = keys.target 
+	local target = ability.target
 	local arrow_cost = ability:GetSpecialValueFor("arrow_cost")
 	local speed = ability:GetSpecialValueFor("speed")
     local ply = caster:GetPlayerOwner()
     local playerId = caster:GetPlayerOwnerID()
+
+    if caster:HasModifier("modifier_calydonian_snipe_tracker") then 
+        OnCalydonianSnipeInterrupted(keys)
+        return nil 
+    end
 	caster:StopSound("Ability.PowershotPull.Lyralei")
 	caster:EmitSound("Ability.Powershot.Alt")
 	--AddArrowStack(keys, -arrow_cost)
@@ -1272,15 +1280,15 @@ function OnCalydonianSnipeStart(keys)
 	else
 		caster:RemoveModifierByName("modifier_atalanta_calydonian_snipe_window")
 	end
-
+    local arrow_loc = caster:GetAttachmentOrigin(caster:ScriptLookupAttachment("attach_bow"))
 	local projectile = {
     	Target = target,
-		Source = caster,
+		--Source = caster,
 		Ability = ability,	
         EffectName = "particles/custom/atalanta/rainbow_arrow.vpcf",
         iMoveSpeed = speed,
-		vSourceLoc= caster:GetAbsOrigin(),
-        iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_ATTACK_1,
+		vSourceLoc= arrow_loc,
+        --iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_ATTACK_1,
 		bDrawsOnMinimap = false,
         bDodgeable = true,
         bIsAttack = false,
@@ -1291,8 +1299,8 @@ function OnCalydonianSnipeStart(keys)
     }
     ProjectileManager:CreateTrackingProjectile(projectile)
 
-    if keys.target:IsHero() and PlayerResource:GetConnectionState(playerId) == 2 then
-        Say(ply, "Calydonian Snipe at " .. FindName(keys.target:GetName()) .. ".", true)
+    if target:IsHero() and PlayerResource:GetConnectionState(playerId) == 2 then
+        Say(ply, "Calydonian Snipe at " .. FindName(target:GetName()) .. ".", true)
     end
 end
 
@@ -1366,6 +1374,7 @@ function OnPhoebusSnipeCast(keys)
 		SendErrorMessage(caster:GetPlayerOwnerID(), "#Cannot_Be_Cast_Now")
 		return 
 	end
+    EmitGlobalSound("Atalanta.PreCombo")
 end
 
 function OnPhoebusSnipeStart(keys)

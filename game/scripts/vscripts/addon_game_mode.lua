@@ -5,7 +5,7 @@ require('master_ability')
 --require('gille_ability')
 --require('lancelot_ability')
 --require('nursery_rhyme_ability')
-
+require("libraries/fate_functions_server_client") --fix cast range bonus
 require('libraries/notifications')
 --require("martin_ban_module")
 require('items')
@@ -300,7 +300,7 @@ function Precache( context , pc)
     PrecacheResource("soundfile", "soundevents/hero_robin.vsndevts", context )
     PrecacheResource("soundfile", "soundevents/hero_oda_nobunaga.vsndevts", context )
     PrecacheResource("soundfile", "soundevents/hero_ishtar.vsndevts", context )
-
+    PrecacheResource("soundfile", "soundevents/hero_billy.vsndevts", context)
                         --============ Lancer ==============--  
     PrecacheResource("soundfile", "soundevents/hero_lancer.vsndevts", context)                
     PrecacheResource("soundfile", "soundevents/hero_zl.vsndevts", context)
@@ -365,7 +365,7 @@ function Precache( context , pc)
     PrecacheResource( "soundfile", "soundevents/voscripts/game_sounds_vo_sniper.vsndevts", context )
     PrecacheResource( "soundfile", "soundevents/voscripts/game_sounds_vo_gyrocopter.vsndevts", context )
     PrecacheResource( "soundfile", "soundevents/voscripts/game_sounds_vo_oracle.vsndevts", context )
-
+    PrecacheResource( "soundfile", "soundevents/voscripts/game_sounds_vo_muerta.vsndevts", context )
                         --============ Lancer ==============--  
     PrecacheResource( "soundfile", "soundevents/voscripts/game_sounds_vo_beastmaster.vsndevts", context )
     PrecacheResource( "soundfile", "soundevents/voscripts/game_sounds_vo_huskar.vsndevts", context )
@@ -587,6 +587,9 @@ function FateGameMode:OnAllPlayersLoaded()
             maxkey = maxkey - ((max_player - total_player) * 2 )
             --print('goal win after reduction = ' .. maxkey)
         end
+    end
+    if IsInToolsMode() then 
+        maxkey = 3
     end
    -- local votePool = nil
     --[[if _G.GameMap == "fate_elim_6v6" or _G.GameMap == "fate_elim_7v7" then
@@ -838,6 +841,29 @@ function FateGameMode:OnGameInProgress()
     end
 end
 
+function FateGameMode:RageQuit(playerId, quit_count, max_player)
+
+    kjlpluo1596:rqinitialize(playerId, quit_count<= 4 and true)
+
+    SendChatToPanorama("total rage quit player: " .. quit_count)
+    --Timers:CreateTimer(0.5, function()
+        
+        if quit_count == 4 then 
+            ServerTables:SetTableValue("GameState", "safe_to_leave", 1)
+            GameRules:SendCustomMessage("This game can be continue", 0, 0)
+            GameRules:SendCustomMessage("This game is safe to leave.", 0, 0)
+        elseif quit_count == 6 then 
+            GameRules:SendCustomMessage("NO MMR calculate in this game.", 0, 0)    
+            GameRules:SendCustomMessage("Game will be shut down", 0, 0)   
+            GameRules:SendCustomMessage("Everyone gain 10CP as compensation.", 0, 0)   
+            GameRules:SetGameWinner( DOTA_TEAM_GOODGUYS )
+            for i = 0, 13 do 
+                kjlpluo1596:rqinitialize(i, false)
+            end
+        end
+    --end)
+end
+
 -- Cleanup a player when they leave
 --"userid"    "player_controller"     // user ID on server
 --"reason"    "short"     // see networkdisconnect enum protobuf
@@ -857,11 +883,15 @@ function FateGameMode:OnDisconnect(keys)
     local connection_data = PlayerTables:GetAllTableValues("connection", playerId)
     local dc_time = 0
     local quit_round = connection_data["qRound"]
+    
     --PlayerTables:CreateTable("connection", {cstate = "connect", dTime = 0, qRound = 1}, i)
-    PlayerTables:SetTableValue("connection", "qRound", self.nCurrentRound, playerId, true)
-
-    Timers:CreateTimer(function()
+    --PlayerTables:SetTableValue("connection", "qRound", self.nCurrentRound, playerId, true)
+    PlayerTables:SetTableValue("connection", "cstate", "disconnect", playerId, true)
+    
+     Timers:CreateTimer(function()
         local conn_state = PlayerResource:GetConnectionState(playerId)
+        local game_state = ServerTables:GetTableValue("GameState", "state")
+        if game_state == "FATE_END_GAME" then return nil end
 
         --0 = No connection
         --1 = Bot
@@ -870,25 +900,80 @@ function FateGameMode:OnDisconnect(keys)
         --4 = Abandoned
         --5 = Load
         --6 = Fail
-
-        if conn_state == 3 then 
-            dc_time = dc_time + 1
-            PlayerTables:SetTableValue("connection", "cstate", "disconnect", playerId, true)
+        if conn_state == 4 or conn_state == 0 or keys.RQTest == 1 then 
+            PlayerTables:SetTableValue("connection", "cstate", "rage_quit", playerId, true)
+            PlayerTables:SetTableValue("connection", "qRound", self.nCurrentRound, playerId, true)
+            local total_player = ServerTables:GetTableValue("Players", "total_player")
+            local quit_count = ServerTables:GetTableValue("GameState", "quit_count")
+            if IsInToolsMode() or (string.match(GetMapName(), "fate_elim") and total_player == 14) then
+                if self.nRadiantScore == 11 or self.nDireScore == 11 and PlayerResource:GetPlayer(playerId):GetAssignedHero():IsAlive() then 
+                    if ServerTables:GetTableValue("GameState", "state") == "FATE_END_GAME" then return nil end
+                    Timers:CreateTimer(ROUND_DURATION, function()
+                        if ServerTables:GetTableValue("GameState", "state") == "FATE_END_GAME" then return nil end
+                        if ServerTables:GetTableValue("GameState", "state") == "FATE_ROUND_ONGOING" then 
+                            ServerTables:SetTableValue("GameState", "quit_count", quit_count + 1)  
+                            self:RageQuit(playerId, quit_count + 1) 
+                            SendChatToPanorama("player " .. playerId .. " '" .. keys.name .. "' " .. " is rage quit")
+                        end
+                    end)
+                    return nil
+                else
+                    ServerTables:SetTableValue("GameState", "quit_count", quit_count + 1)  
+                    self:RageQuit(playerId, quit_count + 1) 
+                    SendChatToPanorama("player " .. playerId .. " '" .. keys.name .. "' " .. " is rage quit")
+                end
+            end
+            return nil
+        elseif conn_state == 3 or conn_state == 5 then 
             return 1
-        elseif conn_state == 0 then 
-            PlayerTables:SetTableValue("connection", "cstate", "rage_quit", playerId, true)
-            PlayerTables:SetTableValue("connection", "qRound", self.nCurrentRound, playerId, true)
-            return nil
-        elseif conn_state == 4 then 
-            PlayerTables:SetTableValue("connection", "cstate", "rage_quit", playerId, true)
-            PlayerTables:SetTableValue("connection", "qRound", self.nCurrentRound, playerId, true)
-            return nil
-        else
-            PlayerTables:SetTableValue("connection", "dTime", dc_time + connection_data["dTime"], playerId, true)
+        elseif conn_state == 2 then 
             PlayerTables:SetTableValue("connection", "cstate", "connect", playerId, true)
             return nil
         end
-    end)     
+    end)   
+    --[[Timers:CreateTimer(function() ------ RQ System
+        local conn_state = PlayerResource:GetConnectionState(playerId)
+        local game_state = ServerTables:GetTableValue("GameState", "state")
+        if game_state == "FATE_END_GAME" then return nil end
+        if conn_state == 4 or conn_state == 0 or keys.RQTest == 1 then 
+            PlayerTables:SetTableValue("connection", "cstate", "rage_quit", playerId, true)
+            local total_player = ServerTables:GetTableValue("Players", "total_player")
+            local quit_count = ServerTables:GetTableValue("GameState", "quit_count")
+            if IsInToolsMode() or (string.match(GetMapName(), "fate_elim") and total_player == 14) then
+                if self.nRadiantScore == 11 or self.nDireScore == 11 then 
+                    Timers:CreateTimer(ROUND_DURATION, function()
+                        if ServerTables:GetTableValue("GameState", "state") == "FATE_ROUND_ONGOING" then 
+                            ServerTables:SetTableValue("GameState", "quit_count", quit_count + 1)  
+                            self:RageQuit(playerId, quit_count + 1, max_player) 
+                            SendChatToPanorama("player " .. playerId .. " '" .. keys.name .. "' " .. " is rage quit")
+                        end
+                    end)
+                    return nil
+                else
+                    ServerTables:SetTableValue("GameState", "quit_count", quit_count + 1)  
+                    self:RageQuit(playerId, quit_count + 1, max_player) 
+                    SendChatToPanorama("player " .. playerId .. " '" .. keys.name .. "' " .. " is rage quit")
+                end
+            end
+            return nil
+        elseif conn_state == 3 or conn_state == 5 then 
+            return 1
+        elseif conn_state == 2 then 
+            return nil
+        end
+    end)]]
+
+
+    --[[Timers:CreateTimer(60*10, function()    -- kick DC
+        if PlayerResource:GetConnectionState(playerId) == 3 then 
+            if IsServer() then
+                DisconnectClient(playerId, true)
+                SendChatToPanorama("player " .. playerId .. " '" .. keys.name .. "' " .. " has been kick due to long disconnect time.")
+                --self:OnDisconnect({PlayerID=plyID})
+            end
+        end
+    end)]]
+    --end)     
     --local playerID = self.vPlayerList[userid]
     --print(name .. " just got disconnected from game! Player ID: " .. playerID)
     --PlayerResource:GetSelectedHeroEntity(playerID):ForceKill(false)
@@ -1037,6 +1122,14 @@ function FateGameMode:OnPlayerChat(keys)
             local hat_pos = hero:GetAbsOrigin()
             local drop = CreateItemOnPositionForLaunch( hat_pos + Vector(0,0,500), padoru_hat )
             padoru_hat:LaunchLootInitialHeight( false, 500, 50, 0.5, hat_pos )
+        end
+    end
+
+    if text == "-devtest" then 
+        if PlayerTables:GetTableValue("authority", 'alvl', plyID) == 5 and tostring(PlayerResource:GetSteamAccountID(playerid)) == "96116520" then 
+            VICTORY_CONDITION = 1
+            victoryConditionData.victoryCondition = VICTORY_CONDITION
+            CustomGameEventManager:Send_ServerToAllClients( "victory_condition_set", victoryConditionData )
         end
     end
 
@@ -1477,9 +1570,21 @@ function FateGameMode:OnPlayerChat(keys)
         end
     end
 
+    if text == "-dbtest" then
+        if GameRules:IsCheatMode() or IsInToolsMode() then
+            kjlpluo1596:initialize(plyID,1)
+        end
+    end
+
     if text == "-dc" then
         if GameRules:IsCheatMode() or IsInToolsMode() then
             self:OnDisconnect({PlayerID=plyID})
+        end
+    end
+
+    if text == "-rq" then
+        if GameRules:IsCheatMode() or IsInToolsMode() then
+            self:OnDisconnect({PlayerID=plyID, RQTest=1})
         end
     end
 
@@ -1537,6 +1642,7 @@ function FateGameMode:OnPlayerChat(keys)
                 serv:AddAbility("alternative_0" .. tonumber(alterna))
                 serv:FindAbilityByName("alternative_0" .. tonumber(alterna)):SetLevel(1)
             end
+            return false
         end
     end
 
@@ -1592,6 +1698,13 @@ function FateGameMode:OnPlayerChat(keys)
         if alvl == 5 and IsInToolsMode() then 
             --yedped:ablyo()
             CustomGameEventManager:Send_ServerToAllClients("restart_scoreboard", {reset = true})
+        end
+    end
+
+    if text == "-origin" then 
+        if alvl == 5 and IsInToolsMode() then 
+            --yedped:ablyo()
+            print('origin = ' .. tostring(hero:GetOrigin()))
         end
     end
 
@@ -1899,9 +2012,10 @@ function FateGameMode:OnHeroInGame(hero)
     if self.vBots[hero:GetPlayerID()] == 1 then
         print((hero:GetPlayerID()) .." is a bot!")
         self.vPlayerList[hero:GetPlayerID()] = hero:GetPlayerID()
+        PlayerTables:CreateTable("hHero", {io = "nil", hero = "nil", hid = 0, skin = 0, hhero = "nil", master1 = "nil", master2 = "nil", master3 = "nil"}, hero:GetPlayerID())
     end
     if hero:GetName() == "npc_dota_hero_wisp" then
-        PlayerTables:CreateTable("hHero", {io = hero:entindex(), hero = "nil", skin = 0, hhero = "nil", master1 = "nil", master2 = "nil", master3 = "nil"}, hero:GetPlayerOwnerID())
+        PlayerTables:CreateTable("hHero", {io = hero:entindex(), hero = "nil", hid = 0, skin = 0, hhero = "nil", master1 = "nil", master2 = "nil", master3 = "nil"}, hero:GetPlayerOwnerID())
         local dummyPause = hero:GetAbilityByIndex(0)
         dummyPause:SetLevel(1)
         dummyPause:ApplyDataDrivenModifier(hero, hero, "modifier_dummy_pause", {duration=9999})
@@ -1914,11 +2028,11 @@ function FateGameMode:OnHeroInGame(hero)
         if abil == nil then 
             break 
         end
-        if string.match(abil:GetAbilityName(), "special_bonus_unique") or string.match(abil:GetAbilityName(),string.gsub(hero:GetName(), "npc_dota_hero_", "")) then
+        --if string.match(abil:GetAbilityName(), "special_bonus_unique") or string.match(abil:GetAbilityName(),string.gsub(hero:GetName(), "npc_dota_hero_", "")) then
             hero:RemoveAbility(abil:GetAbilityName())
-            print('ability ' .. i .. ': abil_name ' .. abil:GetAbilityName() .. " deleted")
-        end
-        print('ability ' .. i .. ': abil_name' .. abil:GetAbilityName())
+        --    print('ability ' .. i .. ': abil_name ' .. abil:GetAbilityName() .. " deleted")
+       -- end
+        --print('ability ' .. i .. ': abil_name' .. abil:GetAbilityName())
     end
 
     -- Initialize stuffs
@@ -2130,7 +2244,7 @@ function FateGameMode:OnHeroInGame(hero)
 
     if _G.GameMap == "fate_elim_6v6" or _G.GameMap == "fate_elim_7v7" then
         if self.nCurrentRound == 0 and _G.CurrentGameState == "FATE_PRE_GAME" then
-            giveUnitDataDrivenModifier(hero, hero, "round_pause", 85)
+            giveUnitDataDrivenModifier(hero, hero, "round_pause", 100)
         else
             giveUnitDataDrivenModifier(hero, hero, "round_pause", 10)
         end
@@ -2139,7 +2253,7 @@ function FateGameMode:OnHeroInGame(hero)
     elseif _G.GameMap == "fate_ffa" or _G.GameMap == "fate_trio_rumble_3v3v3v3" or _G.GameMap == "fate_trio" then
         -- This is timed such that you can start moving when pick screen times out. If you pick a hero late and that game already started, math.max(0,<some negative number>) == 0 thus no pause.
         if _G.CurrentGameState == "FATE_PRE_GAME" then
-            giveUnitDataDrivenModifier(hero, hero, "round_pause", 10)
+            giveUnitDataDrivenModifier(hero, hero, "round_pause", 20)
         end
     end
 
@@ -2217,7 +2331,7 @@ function FateGameMode:OnHeroInGame(hero)
             end]]
         elseif hero:GetName() == "npc_dota_hero_queenofpain" then
             Attachments:AttachProp(hero, "attach_sword", "models/astolfo/astolfo_sword.vmdl")
-            if not hero:HasModifier('modifier_alternate_01') and not hero:HasModifier("modifier_alternate_02") and not hero:HasModifier("modifier_alternate_03") then 
+            if not hero:HasModifier('modifier_alternate_01') and not hero:HasModifier("modifier_alternate_02") and not hero:HasModifier("modifier_alternate_03") and not hero:HasModifier("modifier_alternate_04") then 
                 Attachments:AttachProp(hero, "attach_scabbard", "models/astolfo/astolfo_scabbard.vmdl")
             end
         elseif hero:GetName() == "npc_dota_hero_naga_siren" then
@@ -2270,6 +2384,9 @@ function FateGameMode:PlayTeamPickSound(hero)
                         break
                     elseif hero:GetName() == "npc_dota_hero_ember_spirit" then
                         playerHero:EmitSound("Saber_Ally_Emiya")
+                        break
+                    elseif hero:GetName() == "npc_dota_hero_tusk" and playerHero:HasModifier("modifier_alternate_06") then
+                        playerHero:EmitSound("Arthur_Ally_Mordred")
                         break
                     end                    
                 elseif playerHero:GetName() == "npc_dota_hero_omniknight" then
@@ -2446,6 +2563,19 @@ function FateGameMode:OnItemLock(keys)
     --[[for k,v in pairs (keys) do
         print(k,v)
     end]]
+end
+
+function FateGameMode:OnGamePause(keys)
+    print("Game Pause Start")
+    for k,v in pairs (keys) do
+        print(k,v)
+    end
+    local playerId = keys.userid
+    local pm = PlayerTables:GetTableValue("player_mark", "PM", playerId) or 0 
+    if pm < 0 or (IsInToolsMode() and PlayerTables:GetTableValue("authority", 'alvl', plyID) == 5) then 
+        print('fck u can not pause')
+        PauseGame(false)
+    end
 end
 
 -- An item was picked up off the ground
@@ -2655,7 +2785,7 @@ end
 function FateGameMode:OnPlayerReconnect(keys)
   --  print ( '[BAREBONES] OnPlayerReconnect' )
     --PrintTable(keys)
-
+    local playerId = keys.PlayerID
     if GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME then 
         --print('reconnect test')
         Timers:CreateTimer(0.1, function()
@@ -2734,6 +2864,8 @@ function FateGameMode:OnPlayerReconnect(keys)
             self:OnEventChecking()
         end)
     end
+
+    PlayerTables:SetTableValue("connection", "cstate", "connect", playerId, true)
 end
 
 function FateGameMode:InitialiseMissingPanoramaData(ply,hero,masterUnit)
@@ -3247,6 +3379,24 @@ function FateGameMode:OnLastHit(keys)
     local player = PlayerResource:GetPlayer(keys.PlayerID)
 end
 
+function FateGameMode:OnItemUsed(keys) -- not working
+    local playerID = keys.PlayerID
+    local itemName = keys.itemname
+
+    print('item use check!')
+
+    local hero = PlayerResource:GetSelectedHeroEntity(playerID)
+    if not hero:IsRealHero() then return end
+
+    for i = 0, 17 do
+        local item = hero:GetItemInSlot(i)
+        if item ~= nil and item:GetName() == itemName then
+            item:EndCooldown()
+            item:StartCooldown(item:GetCooldown(1))
+        end
+    end
+end
+
 -- A player picked a hero
 function FateGameMode:OnPlayerPickHero(keys)
    -- print ('[BAREBONES] OnPlayerPickHero')
@@ -3284,7 +3434,7 @@ function FateGameMode:OnEntityKilled( keys )
     end
     -- Check if Caster(4th) is around and grant him 1 Madness
     if not string.match(killedUnit:GetUnitName(), "dummy") then
-        local targets = FindUnitsInRadius(0, killedUnit:GetAbsOrigin(), nil, 800, DOTA_UNIT_TARGET_TEAM_BOTH, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_ANY_ORDER, false)
+        local targets = FindUnitsInRadius(0, killedUnit:GetAbsOrigin(), nil, 900, DOTA_UNIT_TARGET_TEAM_BOTH, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_ANY_ORDER, false)
         for k,v in pairs(targets) do
             if v:GetName() == "npc_dota_hero_shadow_shaman" and not v:HasModifier("modifier_prelati_regen_block") then
                 local prelatiabil = v:FindAbilityByName("gilles_prelati_spellbook") or v:FindAbilityByName("gilles_prelati_spellbook_upgrade")
@@ -3408,19 +3558,23 @@ function FateGameMode:OnEntityKilled( keys )
             killerEntity.ServStat:onKill()
             killedUnit.ServStat:onDeath()
             -- Add to death count
-            if killedUnit.DeathCount == nil then
+            --[[if killedUnit.DeathCount == nil then
                 killedUnit.DeathCount = 1
                 killedUnit.GetShard = 0
-            elseif killedUnit:GetName() == "npc_dota_hero_doom_bringer" then
+            else]]
+            if killedUnit:GetName() == "npc_dota_hero_doom_bringer" then
                 if not killedUnit.bIsGHReady or IsTeamWiped(killedUnit) or killedUnit.GodHandStock == 0 then
-                    killedUnit.DeathCount = killedUnit.DeathCount + 1
+                    --killedUnit.DeathCount = killedUnit.DeathCount + 1
+                    killedUnit.ServStat:onActualDeath()
                 end
             elseif killedUnit:GetName() == "npc_dota_hero_vengefulspirit" then
                 if not killedUnit.DeathInLoop or IsTeamWiped(killedUnit) or killedUnit.LoopStocks == 0 then
-                    killedUnit.DeathCount = killedUnit.DeathCount + 1
+                    --killedUnit.DeathCount = killedUnit.DeathCount + 1
+                    killedUnit.ServStat:onActualDeath()
                 end
             else
-                killedUnit.DeathCount = killedUnit.DeathCount + 1
+                --killedUnit.DeathCount = killedUnit.DeathCount + 1
+                killedUnit.ServStat:onActualDeath()
             end      
 
             if ServerTables:GetTableValue("PEPE", "pepe") == true and ServerTables:GetTableValue("PEPE", "slayer") == true then
@@ -3434,16 +3588,16 @@ function FateGameMode:OnEntityKilled( keys )
 
             -- check if unit can receive a shard
             if ServerTables:GetTableValue("GameMode", "mode") == "draft" then 
-                if killedUnit.DeathCount == 7 and not killedUnit.GetGrailDeath then
+                if killedUnit.ServStat:getActualDeath() == 7 and not killedUnit.GetGrailDeath then
                     killedUnit.ShardAmount = (killedUnit.ShardAmount or 0) + 1
                     killedUnit.GetGrailDeath = true
                     local statTable = CreateTemporaryStatTable(killedUnit)
                     CustomGameEventManager:Send_ServerToPlayer( killedUnit:GetPlayerOwner(), "servant_stats_updated", statTable ) -- Send the current stat info to JS
                 end
             else
-                if killedUnit.DeathCount % 7 == 0 and killedUnit.DeathCount / 7 > killedUnit.GetShard then
+                if killedUnit.ServStat:getActualDeath() % 7 == 0 and killedUnit.ServStat:getActualDeath() / 7 > killedUnit.ServStat:getConGrail() then
                     killedUnit.ShardAmount = (killedUnit.ShardAmount or 0) + 1
-                    killedUnit.GetShard = killedUnit.GetShard + 1
+                    killedUnit.ServStat:onConGrail()
                     local statTable = CreateTemporaryStatTable(killedUnit)
                     CustomGameEventManager:Send_ServerToPlayer( killedUnit:GetPlayerOwner(), "servant_stats_updated", statTable ) -- Send the current stat info to JS
                 end
@@ -3586,6 +3740,7 @@ function FateGameMode:OnEntityKilled( keys )
             --print(PlayerResource:GetTeamKills(killerEntity:GetTeam()))
             --print(VICTORY_CONDITION)
             if PlayerResource:GetTeamKills(killerEntity:GetTeam()) >= VICTORY_CONDITION then
+                self:PauseAllHero()
                 ServerTables:SetTableValue("GameState", "state", "FATE_END_GAME", true)
                 local max_player = ServerTables:GetTableValue("MaxPlayers", "total_player")
                 for i = 0, max_player - 1 do 
@@ -3911,6 +4066,7 @@ function FateGameMode:InitGameMode()
     GameRules:GetGameModeEntity():SetCustomGameForceHero("npc_dota_hero_wisp")
     GameRules:SetHeroSelectionTime(0)
     Convars:SetInt("dota_max_physical_items_purchase_limit", 200)
+    Convars:SetInt("dota_max_disconnected_time", 600)
     -- Set music off
     SendToServerConsole("dota_music_battle_enable 0")
     SendToConsole("dota_music_battle_enable 0")  
@@ -3954,7 +4110,8 @@ function FateGameMode:InitGameMode()
     ListenToGameEvent('player_disconnect', Dynamic_Wrap(FateGameMode, 'OnDisconnect'), self)
     ListenToGameEvent('dota_item_purchased', Dynamic_Wrap(FateGameMode, 'OnItemPurchased'), self)
     ListenToGameEvent('dota_item_picked_up', Dynamic_Wrap(FateGameMode, 'OnItemPickedUp'), self)
-    ListenToGameEvent('dota_action_item', Dynamic_Wrap(FateGameMode, 'OnItemLock'), self)
+    ListenToGameEvent('dota_action_item', Dynamic_Wrap(FateGameMode, 'OnItemLock'), self) 
+    ListenToGameEvent('dota_pause_event', Dynamic_Wrap(FateGameMode, 'OnGamePause'), self)
     --ListenToGameEvent('dota_inventory_player_got_item', Dynamic_Wrap(FateGameMode, 'OnItemAdded'), self)
     --ListenToGameEvent('last_hit', Dynamic_Wrap(FateGameMode, 'OnLastHit'), self)
     --ListenToGameEvent('dota_non_player_used_ability', Dynamic_Wrap(FateGameMode, 'OnNonPlayerUsedAbility'), self)
@@ -3970,7 +4127,8 @@ function FateGameMode:InitGameMode()
     ListenToGameEvent('dota_player_pick_hero', Dynamic_Wrap(FateGameMode, 'OnPlayerPickHero'), self)
     ListenToGameEvent('dota_team_kill_credit', Dynamic_Wrap(FateGameMode, 'OnTeamKillCredit'), self)
     ListenToGameEvent("player_reconnected", Dynamic_Wrap(FateGameMode, 'OnPlayerReconnect'), self)
-    ListenToGameEvent('player_chat', Dynamic_Wrap(FateGameMode, 'OnPlayerChat'), self)
+    ListenToGameEvent('player_chat', Dynamic_Wrap(FateGameMode, 'OnPlayerChat'), self) 
+    ListenToGameEvent('dota_item_used', Dynamic_Wrap(FateGameMode, 'OnItemUsed'), self) -- not working
     --ListenToGameEvent('player_spawn', Dynamic_Wrap(FateGameMode, 'OnPlayerSpawn'), self)
     --ListenToGameEvent('dota_unit_event', Dynamic_Wrap(FateGameMode, 'OnDotaUnitEvent'), self)
     --ListenToGameEvent('nommed_tree', Dynamic_Wrap(FateGameMode, 'OnPlayerAteTree'), self)
@@ -4050,6 +4208,7 @@ function FateGameMode:InitGameMode()
     self.vSteamIds = {}
     self.vBots = {}
     self.vBroadcasters = {}
+    self.IsGameEnd = false
 
     self.vPlayers = {}
     self.vRadiant = {}
@@ -4075,7 +4234,7 @@ function FateGameMode:InitGameMode()
     self.MVPB = {}
 
     ServerTables:CreateTable("GameMap", {map = _G.GameMap})
-    ServerTables:CreateTable("GameState", {state = "FATE_PRE_GAME"})
+    ServerTables:CreateTable("GameState", {state = "FATE_PRE_GAME", quit_count = 0, safe_to_leave = 0})
     ServerTables:CreateTable("Players", {total_player = 0})
     ServerTables:CreateTable("LaPucelle", {active = false})
     ServerTables:CreateTable("GameMode", {mode = 'classic'})
@@ -4225,6 +4384,14 @@ end
 function FateGameMode:OnGameTimerThink()
     -- Stop thinking if game is paused
     if GameRules:IsGamePaused() == true then
+        print('pausing')
+        local xxx = CommandLineCheck("CDOTAGameRules")
+        print('sdf' .. xxx)
+        if CommandLineCheck("CDOTAGameRules") == true then 
+            print('yes found it!')
+            local playerid = CommandLineStr("Pause", "PlayerId")
+            print(playerid)
+        end
         return 1
     end
     CountdownTimer()
@@ -4330,6 +4497,9 @@ function FateGameMode:TakeDamageFilter(filterTable)
 end
 
 function FateGameMode:ExecuteOrderFilter(filterTable)
+    --[[for k,v in pairs(filterTable) do
+        print(k,v)
+    end]]
     local ability = EntIndexToHScript(filterTable.entindex_ability) -- the handle of item
     local target = EntIndexToHScript(filterTable.entindex_target)
     local units = filterTable.units
@@ -4401,6 +4571,17 @@ function FateGameMode:ExecuteOrderFilter(filterTable)
         ability:RemoveSelf()
         SaveStashState(caster)
         return false
+    --[[elseif orderType == 8 then  -- cast no target
+        if ability:IsItem() and caster:IsRealHero() then 
+            for i=0, 17 do 
+                if caster:GetItemInSlot(i) ~= nil and caster:GetItemInSlot(i) ~= ability and caster:GetItemInSlot(i):GetAbilityName() == ability:GetAbilityName() then
+                    caster:GetItemInSlot(i):EndCooldown()
+                    caster:GetItemInSlot(i):StartCooldown(ability:GetCooldown(1))
+                end
+            end
+            return true
+        end
+        return true]]
     end
 
     if orderType == DOTA_UNIT_ORDER_CAST_POSITION then
@@ -4963,9 +5144,11 @@ function FateGameMode:FinishRound(IsTimeOut, winner)
     if self.nRadiantScore == VICTORY_CONDITION then
         ServerTables:SetTableValue("GameState", "state", "FATE_END_GAME", true)
         GameRules:SendCustomMessage("Red Faction Victory!",0,0)
-        kjlpluo1596:calcMVP()
+        kjlpluo1596:calcMVP()  
+        self:PauseAllHero()
         self:LoopOverPlayers(function(player, playerID, playerHero)
             local hero = playerHero
+            --giveUnitDataDrivenModifier(hero, hero, "round_pause", 20)
             if hero:GetTeam() == DOTA_TEAM_GOODGUYS then
                 hero.ServStat:EndOfGame("Won")
                 kjlpluo1596:initialize(playerID,1)
@@ -4975,22 +5158,23 @@ function FateGameMode:FinishRound(IsTimeOut, winner)
                 kjlpluo1596:initialize(playerID,0)
                 --PlayerTables:CreateTable("EndScore", {won = 0}, playerID)
             end
-            hero.ServStat:printconsole()
-            giveUnitDataDrivenModifier(hero, hero, "round_pause", 10)
-        end)
-        
+            hero.ServStat:printconsole()          
+        end)    
         my_http_post()
-        Timers:CreateTimer(3.0, function()
+        Timers:CreateTimer(5.0, function()
             GameRules:SetSafeToLeave( true )
             GameRules:SetGameWinner( DOTA_TEAM_GOODGUYS )
         end)
         return
     elseif self.nDireScore == VICTORY_CONDITION then
+
         ServerTables:SetTableValue("GameState", "state", "FATE_END_GAME", true)
         GameRules:SendCustomMessage("Black Faction Victory!",0,0)
         kjlpluo1596:calcMVP()
+        self:PauseAllHero()
         self:LoopOverPlayers(function(player, playerID, playerHero)
             local hero = playerHero
+            --giveUnitDataDrivenModifier(hero, hero, "round_pause", 20)
             if hero:GetTeam() == DOTA_TEAM_BADGUYS then
                 hero.ServStat:EndOfGame("Won")
                 --PlayerTables:CreateTable("EndScore", {won = 1}, playerID)
@@ -5001,11 +5185,9 @@ function FateGameMode:FinishRound(IsTimeOut, winner)
                 kjlpluo1596:initialize(playerID,0)
             end
             hero.ServStat:printconsole()
-            giveUnitDataDrivenModifier(hero, hero, "round_pause", 10)
         end)
-        
         my_http_post()
-        Timers:CreateTimer(3.0, function()
+        Timers:CreateTimer(5.0, function()
             GameRules:SetSafeToLeave( true )
             GameRules:SetGameWinner( DOTA_TEAM_BADGUYS )
         end)
@@ -5253,6 +5435,15 @@ function FateGameMode:OnPlayerConnects()
             end
         end)
     end)
+end
+
+function FateGameMode:PauseAllHero()
+    local all_hero = FindUnitsInRadius(2, Vector(0,0,0), nil, 20000, DOTA_UNIT_TARGET_TEAM_BOTH, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_DEAD + DOTA_UNIT_TARGET_FLAG_INVULNERABLE + DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_ANY_ORDER, false)
+    for k,v in pairs(all_hero) do
+        if v:IsRealHero() then 
+            giveUnitDataDrivenModifier(v, v, "round_pause", 60)
+        end
+    end
 end
 
 -- This function is called 1 to 2 times as the player connects initially but before they

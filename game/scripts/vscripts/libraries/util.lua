@@ -1,6 +1,8 @@
 -- where the misc functios gather
 heroList = LoadKeyValues("scripts/npc/herolist.txt")
 testList = LoadKeyValues("scripts/npc/herotest.txt")
+aotkCenter = Vector(500, -4800, 208)
+ubwCenter = Vector(5600, -4398, 200)
 fate_ability_count = LoadKeyValues("scripts/npc/fate_ability_count.txt")
 require('libraries/modifiers/modifier_ndm')
 
@@ -89,6 +91,9 @@ strongdispellable = {
     "modifier_jeanne_charisma_str_flag",
     "modifier_jeanne_charisma_agi_flag",
     "modifier_jeanne_charisma_int_flag",
+    "modifier_jeanne_charisma",
+    "modifier_jeanne_gods_resolution_buff",
+    "modifier_jeanne_gods_resolution_buff2",
     "modifier_mordred_shield",
     "modifier_gladiusanus_blauserum",
     "modifier_pari_tenu_blauserum",
@@ -138,7 +143,9 @@ strongdispellable = {
     "modifier_atalanta_ora",
     "modifier_kiyohime_q_buff",
     "modifier_semiramis_shield",
-
+    "modifier_atalanta_beast",
+    "modifier_atalanta_beast_buff",
+    "modifier_atalanta_beast_enhance",
     -- items
     "modifier_b_scroll",
 
@@ -166,6 +173,8 @@ cleansable = {
     "rooted",
     "stunned",
     "silenced",
+    "muted",
+    "modifier_medea_trap_lock",
     --"modifier_sword_barrage_confine",
     "modifier_mordred_mb_silence",
     "modifier_frostbite_root",
@@ -263,7 +272,9 @@ slowmodifier = {
     "modifier_gordius_wheel_thunder_slow",
     "modifier_battle_horn_movespeed_debuff",
     "modifier_purge_the_unjust_slow",
+    "modifier_jeanne_purge_slow",
     "modifier_gods_resolution_slow",
+    "modifier_jeanne_gods_resolution_slow",
     "modifier_la_pucelle_slow",
     "modifier_jtr_curse_slow",
     "modifier_jtr_dagger_slow",
@@ -307,6 +318,7 @@ slowmodifier = {
     "modifier_nobu_slow",
     "modifier_mashu_bunker_bolt_slow",
     "modifier_roar_slow",
+    "modifier_atalanta_jump_slow",
     "musashi_modifier_earth_debuff",
 }
 
@@ -323,6 +335,7 @@ revokes = {
     "modifier_tres_fontaine_nero",
     "modifier_bathory_cage_target",
     "modifier_hippogriff_vanish_banish",
+    "modifier_atalanta_beast",
 }
 
 locks = {
@@ -359,6 +372,7 @@ locks = {
     "modifier_mashu_taunt",
     "modifier_mashu_protect_self",
     "modifier_melt_combo_slow",
+    "modifier_medea_trap_lock",
 }
 
 no_tp = {
@@ -526,6 +540,9 @@ donotlevel = {
     "semiramis_poisonous_bite",
     "semiramis_absolute_queen",
     "nobu_strat",
+    "atalanta_passive_evolution",
+    "ishtar_beauty",
+    "ishtar_crown",
 }
 
 tModifierCooldown = {
@@ -575,7 +592,7 @@ tModifierCooldown = {
     "modifier_meltdown_cooldown",
     "modifier_combo_galatine_cooldown",
     "modifier_raging_dragon_strike_cooldown",
-    "modifier_phoebus_catastrophe_cooldown",
+    "modifier_atalanta_phoebus_snipe_cooldown",
     "modifier_mordred_bc_cooldown",
     "modifier_delusional_illusion_cooldown",
     "modifier_sasaki_quickdraw_cooldown",
@@ -609,6 +626,7 @@ tModifierCooldown = {
     "modifier_muramasa_combo_cooldown",
     "modifier_kiyohime_combo_cooldown",
     "modifier_melt_combo_cooldown",
+    "modifier_billy_combo_cooldown",
 }
 
 CannotReset = {
@@ -821,9 +839,14 @@ CannotReset = {
     "musashi_battle_continuation",
     "musashi_ishana_daitenshou",
     "atalanta_skia",
-    "atalanta_curse",
-    "atalanta_curse_upgrade",
+    "atalanta_alter_skia_upgrade",
+    "atalanta_alter_curse",
+    "atalanta_alter_curse_upgrade_1",
+    "atalanta_alter_curse_upgrade_2",
+    "atalanta_alter_curse_upgrade_3",
     "melt_combo",
+    "billy_f",
+    "billy_combo",
 }
 
 femaleservant = {
@@ -897,6 +920,8 @@ tArrow = {
     "robin_yew_bow_taxine",
     "robin_yew_bow_guerilla",
     "robin_yew_bow_upgrade",
+    "atalanta_tauropolos_alter",
+    "atalanta_tauropolos_alter_upgrade",
 }
 
 tPoison = {
@@ -1270,6 +1295,7 @@ tArcherClass = {
     "npc_dota_hero_naga_siren",
     "npc_dota_hero_sniper",
     "npc_dota_hero_gyrocopter",
+    "npc_dota_hero_muerta",
 }
 
 tLancerClass = {
@@ -1979,6 +2005,10 @@ function IsImmuneToCC(target)
         return true
     elseif target:HasModifier("modifier_okita_headband_upgrade") and target:IsRealHero() then 
         return true
+    elseif target:HasModifier("modifier_atalanta_beast") and target.BeastEnhancementAcquired then 
+        return true
+    elseif target:HasModifier("modifier_jeanne_gods_resolution_buff") and target:HasModifier("modifier_jeanne_luminosite_channel") and target.IsDivineSymbolAcquired then 
+        return true
     --elseif target:HasModifier("modifier_mashu_protect_ally") then 
     --    return true
     else
@@ -2237,6 +2267,29 @@ end
 -- check whether two locations belong in same realm
 -- loc 1 = vector
 -- loc 2 = vector
+function IsOutOfMap(vLoc)
+    if vLoc.x < -8300 or vLoc.x > 8300 then 
+        return true 
+    elseif vLoc.y < -5700 or vLoc.y > 7250 then 
+        return true
+    end
+
+    return false
+end
+
+function GetBorderMap(vLoc)
+    if vLoc.x < -8300  then 
+        return Vector(-8100,vLoc.y,vLoc.z) 
+    elseif vLoc.x > 8300 then 
+        return Vector(8100,vLoc.y,vLoc.z)  
+    elseif vLoc.y < -5700 then 
+        return Vector(vLoc.x,-5700,vLoc.z) 
+    elseif vLoc.y > 7240 then 
+        return Vector(vLoc.x,7100,vLoc.z) 
+    end
+    return vLoc
+end
+
 function IsInSameRealm(loc1, loc2)
     -- above -2000 normal map
     if loc1.y > -2000 and loc2.y > -2000 then
@@ -2886,22 +2939,15 @@ function DoDamage(source, target , dmg, dmg_type, dmg_flag, abil, isLoop)
                 local hLinkTarget = target.linkTable[i]
                 -- do ApplyDamage if it's primary target since the shield processing is already done
                 if target.linkTable[i] == target then
+                    dmgtable.damage_flags = bit.bor(dmg_flag, DOTA_DAMAGE_FLAG_NON_LETHAL)
                     ApplyDamage(dmgtable)
+                    if target:GetHealth() == 1 then 
+                        target:RemoveModifierByName("modifier_share_damage")
+                    end
                 -- for other linked targets, we need DoDamage
                 else
                     if target.linkTable[i] ~= nil and IsValidEntity(target.linkTable[i]) then
-                        if hLinkTarget:GetHealth() == 1 then
-                            --hLinkTarget:SetHealth(1)
-                            hLinkTarget:RemoveModifierByName("modifier_share_damage")
-                            RemoveHeroFromLinkTables(hLinkTarget)
-                        elseif hLinkTarget:GetHealth() >= CalculateDamagePostReduction(DAMAGE_TYPE_MAGICAL, damageToAllies, hLinkTarget) then
-                            --DoDamage(source, hLinkTarget, damageToAllies,  DAMAGE_TYPE_MAGICAL, 0, abil, true)
-                            DoDamage(target, hLinkTarget, damageToAllies,  DAMAGE_TYPE_MAGICAL, 0, abil, true)
-                        elseif hLinkTarget:GetHealth() < CalculateDamagePostReduction(DAMAGE_TYPE_MAGICAL, damageToAllies, hLinkTarget) then
-                            hLinkTarget:RemoveModifierByName("modifier_share_damage")
-                            RemoveHeroFromLinkTables(hLinkTarget)
-                            hLinkTarget:SetHealth(1)
-                        end
+                        DoDamage(target, hLinkTarget, damageToAllies,  DAMAGE_TYPE_MAGICAL, DOTA_DAMAGE_FLAG_NON_LETHAL, abil, true)
                     end 
                 end
             end
@@ -2992,12 +3038,14 @@ function DoMashuShieldDamage(source, target , dmg, dmg_type, dmg_flag, abil, mas
     end
 end
 
-function GetRotationPoint( ... )
-    local originPoint, radius, angle = ...
+function GetRotationPoint(originPoint, radius, angle)
+    --local originPoint, radius, angle = ...
     local radAngle = math.rad(angle)
-    local x = math.cos(radAngle) * radius + originPoint.x
-    local y = math.sin(radAngle) * radius + originPoint.y
+    local x = (math.cos(radAngle) * radius) + originPoint.x
+    local y = (math.sin(radAngle) * radius) + originPoint.y
     local position = Vector(x, y, originPoint.z)
+    --local position = RotatePosition( originPoint, QAngle( 0, angle, 0 ),originPoint + Vector(-radius,0,0))
+
     return position
 end
 
@@ -3631,6 +3679,11 @@ function MasterCannotUpgrade(hero, caster, ability, AcquireSA)
         caster:SetMana(caster:GetMana() + ability:GetManaCost(ability:GetLevel()))
         ability:EndCooldown()
         return true   
+    elseif hero:GetName() == "npc_dota_hero_mirana" and hero:HasModifier("modifier_jeanne_luminosite_buff") then 
+        SendErrorMessage(caster:GetPlayerOwnerID(), "#Cannot_Upgrade_Now")
+        caster:SetMana(caster:GetMana() + ability:GetManaCost(ability:GetLevel()))
+        ability:EndCooldown()
+        return true   
     end
  
     return false
@@ -3831,6 +3884,7 @@ local heroNames = {
     ["npc_dota_hero_kunkka"] = "Muramasa",
     ["npc_dota_hero_void_spirit"] = "Kiyohime",
     ["npc_dota_hero_nyx_assassin"] = "Melt",
+    ["npc_dota_hero_muerta"] = "Billy",
 }
 
 
@@ -4182,7 +4236,7 @@ function GenerateAbilitiesData(hTarget)
     hTarget.DSkill = hTarget:GetAbilityByIndex(3):GetAbilityName()
     hTarget.FSkill = hTarget:GetAbilityByIndex(4):GetAbilityName()
     hTarget.RSkill = hTarget:GetAbilityByIndex(5):GetAbilityName()
-    hTarget.ComboSkill = GetUnitKV(hTarget:GetUnitName(), "Combo")
+    hTarget.ComboSkill = ServantAttribute[hTarget:GetName()]["SCombo"]
 end
 
 function IsKnockbackImmune(hTarget)

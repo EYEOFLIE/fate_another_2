@@ -14,24 +14,12 @@
 		"RequiredLevel"					"25"
 		"LevelsBetweenUpgrades"			"1"
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"Range"					"500"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"mana_regen_bonus"		"15"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"armor"					"0 20"
-			}
-		}
+		"AbilityValues"
+        {
+            "Range" "500"
+            "mana_regen_bonus" "15"
+            "armor" "0 20"
+        }
 		
 		"OnSpelLStart"
 		{
@@ -93,29 +81,13 @@
 		"AbilityCooldown"				"17"
 		"AbilityManaCost"				"200 300"
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"cast_delay"				"1.0"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"450"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"explosion_count"				"5"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"13"
-			}
-		}
+		"AbilityValues"
+        {
+            "cast_delay" "1.0"
+            "radius" "450"
+            "explosion_count" "5"
+            "damage" "13"
+        }
 		
 		"OnSpellStart"
 		{			
@@ -192,9 +164,9 @@
 		"AbilityTextureName"			"custom/saber_alter_darklight_passive"
 		"MaxLevel"						"1"
 		
-		"AbilitySpecial"
-		{
-		}
+		"AbilityValues"
+        {
+        }
 		
 		"Modifiers"
 		{
@@ -286,34 +258,14 @@
 			"particle"				"particles/custom/saber_alter/saber_alter_mana_catalyst.vpcf"
 		}
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"aspd_modifier"			"5 10 15 20 25"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"mspd_modifier"			"3 6 9 12 15"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"dmg_modifier"			"20 40 60 80 100"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"armor_reduction"		"-2 -4 -6 -8 -10"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"maximum_charges"		"9"
-			}
-		}
+		"AbilityValues"
+        {
+            "aspd_modifier" "5 10 15 20 25"
+            "mspd_modifier" "3 6 9 12 15"
+            "dmg_modifier" "20 40 60 80 100"
+            "armor_reduction" "-2 -4 -6 -8 -10"
+            "maximum_charges" "9"
+        }
 		
 		"OnSpellStart"
 		{
@@ -432,24 +384,12 @@
 		"AbilityCooldown"				"10"
 		"AbilityManaCost"				"200"
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"delay"					"0.3"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"400"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"300 380 460 540 620"
-			}
-		}
+		"AbilityValues"
+        {
+            "delay" "0.3"
+            "radius" "400"
+            "damage" "300 380 460 540 620"
+        }
 		
 		"OnAbilityPhaseStart"
 		{
@@ -542,19 +482,11 @@
 		"AbilityCooldown"				"180"
 		"AbilityManaCost"				"200"
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"1700"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mana_ratio"				"1.0"
-			}
-		}
+		"AbilityValues"
+        {
+            "radius" "1700"
+            "mana_ratio" "1.0"
+        }
 		
 		"OnAbilityPhaseStart"
 		{
@@ -664,34 +596,14 @@
 		"AbilityManaCost"				"400"
 		"AbilityCastRange"				"600"
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"600"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"450 550 650 750 850"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"low_end"				"75"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"high_end"				"125"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"stun_duration"			"0.6"
-			}
-		}
+		"AbilityValues"
+        {
+            "radius" "600"
+            "damage" "450 550 650 750 850"
+            "low_end" "75"
+            "high_end" "125"
+            "stun_duration" "0.6"
+        }
 		
 		"OnSpellStart"
 		{
@@ -784,40 +696,15 @@
 		
 		// Ability Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"delay"					"2.7"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"width"					"550"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"length"				"1800"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"speed"					"1100"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"900 1300 1700 2100 2500"
-			}
-			// Extra variables
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"pause_duration"		"4.0"
-			}
-		}
+		"AbilityValues"
+        {
+            "delay" "2.7"
+            "width" "550"
+            "length" "1800"
+            "speed" "1100"
+            "damage" "900 1300 1700 2100 2500"
+            "pause_duration" "4.0"
+        }
 		
 		// Data driven
 		//-------------------------------------------------------------------------------------------------------------
@@ -999,34 +886,14 @@
 		{
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"bonus_armor"					"20"
-			}
-			"02"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"bonus_mr"						"5"
-			}
-			"03"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"bonus_radius"					"200"
-			}
-			"04"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"mana_burst_int_ratio"			"3"
-			}
-			"06"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"bonus_mana"					"500"
-			}
-		}
+		"AbilityValues"
+        {
+            "bonus_armor" "20"
+            "bonus_mr" "5"
+            "bonus_radius" "200"
+            "mana_burst_int_ratio" "3"
+            "bonus_mana" "500"
+        }
 		
 		"OnSpellStart"
 		{
@@ -1059,44 +926,16 @@
 		{
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"catalyst_numbers_gen_min"		"1"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"catalyst_numbers_gen_max"		"3"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"max_catalyst"			"7"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bonus_ms"				"10"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"catalyst_damage"		"150"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mana_burst_mana_ratio"	"0.2"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mana_max_burst_mana_ratio"	"1.5"
-			}
-		}
+		"AbilityValues"
+        {
+            "catalyst_numbers_gen_min" "1"
+            "catalyst_numbers_gen_max" "3"
+            "max_catalyst" "7"
+            "bonus_ms" "10"
+            "catalyst_damage" "150"
+            "mana_burst_mana_ratio" "0.2"
+            "mana_max_burst_mana_ratio" "1.5"
+        }
 		
 		"OnSpellStart"
 		{
@@ -1128,34 +967,14 @@
 		{
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"							"FIELD_FLOAT"
-				"vortigern_bonus_damage"			"100"
-			}
-			"02"
-			{
-				"var_type"							"FIELD_FLOAT"
-				"vortigern_bonus_stun_duration"		"0.3"
-			}
-			"03"
-			{
-				"var_type"							"FIELD_FLOAT"
-				"uf_mana_cost"						"100"
-			}
-			"04"
-			{
-				"var_type"							"FIELD_FLOAT"
-				"uf_int_ratio"						"1.5"
-			}
-			"05"
-			{
-				"var_type"							"FIELD_FLOAT"
-				"uf_str_ratio"						"1.5"
-			}
-		}
+		"AbilityValues"
+        {
+            "vortigern_bonus_damage" "100"
+            "vortigern_bonus_stun_duration" "0.3"
+            "uf_mana_cost" "100"
+            "uf_int_ratio" "1.5"
+            "uf_str_ratio" "1.5"
+        }
 		
 		"OnSpellStart"
 		{
@@ -1187,29 +1006,13 @@
 		{
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"bonus_damage"				"75"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"crit_rate"					"35"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"crit_damage"				"175"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"excalibur_bonus_damage"	"400"
-			}
-		}
+		"AbilityValues"
+        {
+            "bonus_damage" "75"
+            "crit_rate" "35"
+            "crit_damage" "175"
+            "excalibur_bonus_damage" "400"
+        }
 		
 		"OnSpellStart"
 		{

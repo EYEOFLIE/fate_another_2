@@ -28,34 +28,14 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"100"
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"duration"			"2"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"damage_reduction"	"50"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"radius"			"500"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"interval"			"0.25"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"window"			"3"
-			}
-		}
+		"AbilityValues"
+        {
+            "duration" "2"
+            "damage_reduction" "50"
+            "radius" "500"
+            "interval" "0.25"
+            "window" "3"
+        }
 		
 		"OnSpellStart"
 		{
@@ -153,34 +133,14 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"100"
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"duration"			"4"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"damage_reduction"	"50"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"radius"			"500"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"interval"			"0.25"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"window"			"3"
-			}
-		}
+		"AbilityValues"
+        {
+            "duration" "4"
+            "damage_reduction" "50"
+            "radius" "500"
+            "interval" "0.25"
+            "window" "3"
+        }
 		
 		"OnSpellStart"
 		{
@@ -262,15 +222,12 @@
 		"BaseClass" 					"ability_datadriven"
 		"AbilityTextureName"            "custom/diarmuid_attribute_minds_eye"
 		"MaxLevel"                      "1"
+		"AbilityCooldown"				"1"
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"evasion_rate"		"15"
-			}
-		}
+		"AbilityValues"
+        {
+            "evasion_rate" "15"
+        }
 		
 		"Modifiers"
 		{
@@ -290,12 +247,12 @@
 	//================================================
 	"diarmuid_minds_eye_upgrade"
 	{
-		"AbilityBehavior" 				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityBehavior" 				"DOTA_ABILITY_BEHAVIOR_POINT"
 		"BaseClass" 					"ability_datadriven"
 		"AbilityTextureName"            "custom/diarmuid_attribute_minds_eye"
 		"MaxLevel"                      "1"
 		"AbilityCooldown"				"20"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastPoint"				"0.05"
 		"AbilityCastRange"				"500"
 
 		// Cost
@@ -307,39 +264,16 @@
 			
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"evasion_rate"		"15"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"passive_vision"		"1000"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"active_evasion_rate"		"100"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"bonus_vision"		"250"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"duration"			"2"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"vision_duration"			"5"
-			}
-		}
+		"AbilityValues"
+        {
+            "evasion_rate" "15"
+            "passive_vision" "1000"
+            "active_evasion_rate" "100"
+            "dash" "300"
+            "bonus_vision" "250"
+            "duration" "2"
+            "vision_duration" "5"
+        }
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -452,44 +386,16 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"100"
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage"			"150 180 210 240 270"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"radius"			"300"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"slow_amount"		"-50"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"slow_duration"		"2"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"stun_duration"		"0.5"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"charge_duration"	"2"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"charge_aspd"		"50"
-			}
-		}
+		"AbilityValues"
+        {
+            "damage" "150 180 210 240 270"
+            "radius" "300"
+            "slow_amount" "-50"
+            "slow_duration" "2"
+            "stun_duration" "0.5"
+            "charge_duration" "2"
+            "charge_aspd" "50"
+        }
 		"OnSpellStart"
 		{
 			 "RunScript"
@@ -562,54 +468,18 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"100"
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage"			"150 180 210 240 270"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"radius"			"300"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"slow_amount"		"-50"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"slow_duration"		"2"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"stun_duration"		"0.5"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"charge_duration"	"2"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"charge_aspd"		"50"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"debuff_armor"		"-5"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"debuff_duration"	"3"
-			}
-		}
+		"AbilityValues"
+        {
+            "damage" "150 180 210 240 270"
+            "radius" "300"
+            "slow_amount" "-50"
+            "slow_duration" "2"
+            "stun_duration" "0.5"
+            "charge_duration" "2"
+            "charge_aspd" "50"
+            "debuff_armor" "-5"
+            "debuff_duration" "3"
+        }
 		"OnSpellStart"
 		{
 			 "RunScript"
@@ -675,29 +545,13 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"200"
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"passive_proc_chance"		"15 20 25 30 35"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"active_proc_chance"		"100"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"duration"					"12"
-			}
-			"08"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"gae_window"				"3"
-			}
-		}
+		"AbilityValues"
+        {
+            "passive_proc_chance" "15 20 25 30 35"
+            "active_proc_chance" "100"
+            "duration" "12"
+            "gae_window" "3"
+        }
 
 		"OnAbilityPhaseStart"
 		{
@@ -782,29 +636,13 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"200"
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"passive_proc_chance"		"15 20 25 30 35"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"active_proc_chance"		"100"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"duration"					"12"
-			}
-			"08"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_aspd"				"80"
-			}
-		}
+		"AbilityValues"
+        {
+            "passive_proc_chance" "15 20 25 30 35"
+            "active_proc_chance" "100"
+            "duration" "12"
+            "bonus_aspd" "80"
+        }
 		"OnAbilityPhaseStart"
 		{
 			"RunScript"
@@ -891,44 +729,16 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"200"
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"cast_reduc"		"67"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"spear_mana"		"350"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"spear_cd"			"1"
-			}
-			"06"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"atk_spd"			"100"
-			}
-			"07"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"duration"			"12"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"crit_damage"		"175.0"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"bonus_aspd"		"100"
-			}
-		}
+		"AbilityValues"
+        {
+            "cast_reduc" "67"
+            "spear_mana" "350"
+            "spear_cd" "1"
+            "atk_spd" "100"
+            "duration" "12"
+            "crit_damage" "175.0"
+            "bonus_aspd" "100"
+        }
 		
 		"OnSpellStart"
 		{
@@ -1056,14 +866,10 @@
 		{
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"duration"			"2.0"
-			}
-		}
+		"AbilityValues"
+        {
+            "duration" "2.0"
+        }
 		
 		"OnSpellStart"
 		{
@@ -1095,59 +901,20 @@
 		{
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"evasion_rate"		"15"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"passive_vision"		"1000"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"active_evasion_rate"		"100"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"active_ignore_armor"		"50"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"bonus_vision"		"250"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"duration"			"2"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"vision_duration"			"5"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"q_charges"				"2"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"q_debuff_armor"			"-5"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"q_debuff_duration"			"3"
-			}
-		}
+		"AbilityValues"
+        {
+            "evasion_rate" "15"
+            "passive_vision" "1000"
+            "dash" "300"
+            "active_evasion_rate" "100"
+            "active_ignore_armor" "50"
+            "bonus_vision" "250"
+            "duration" "2"
+            "vision_duration" "5"
+            "q_charges" "2"
+            "q_debuff_armor" "-5"
+            "q_debuff_duration" "3"
+        }
 		
 		"OnSpellStart"
 		{
@@ -1178,29 +945,13 @@
 		{
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"damage_per_stack"			"10"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"cost_reduce"			"100"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"cast_reduce"			"0.2"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"bonus_hp_lock"		"20"
-			}
-		}
+		"AbilityValues"
+        {
+            "damage_per_stack" "10"
+            "cost_reduce" "100"
+            "cast_reduce" "0.2"
+            "bonus_hp_lock" "20"
+        }
 		
 		"OnSpellStart"
 		{
@@ -1232,35 +983,14 @@
 		{
 		}
 
-		"AbilitySpecial"
-		{
-			"07"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"revoke_per_stack"		"0.5"
-			}
-			"08"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"mana_cut_per_stack"	"200"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"5"
-			}
-			
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"cost_reduce"			"100"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"cast_reduce"			"0.2"
-			}
-		}
+		"AbilityValues"
+        {
+            "revoke_per_stack" "0.5"
+            "mana_cut_per_stack" "200"
+            "duration" "5"
+            "cost_reduce" "100"
+            "cast_reduce" "0.2"
+        }
 		
 		"OnSpellStart"
 		{
@@ -1294,19 +1024,11 @@
 		{
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"doublespear_window"			"1"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"attack_speed"			"80"
-			}
-		}
+		"AbilityValues"
+        {
+            "doublespear_window" "1"
+            "attack_speed" "80"
+        }
 
 		"OnSpellStart"
 		{

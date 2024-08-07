@@ -1,14 +1,28 @@
---[[modifier_inside_marble = class({})
+modifier_inside_marble = class({})
 
 function modifier_inside_marble:IsHidden()
     return true
 end
 
 function modifier_inside_marble:GetAttributes()
-	return MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE
+	return MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE + MODIFIER_ATTRIBUTE_PERMANENT
 end
 
-function CheckALVL(ply)
+function modifier_inside_marble:OnCreated(args)
+	self.world_origin = self:GetParent():GetAbsOrigin()
+end
+
+function modifier_inside_marble:OnDestroy()
+	if IsServer() then
+		if self:GetParent():IsAlive() then
+			if self:GetParent():GetAbsOrigin().y < -2000 then -- stay in marble
+				self:GetParent():SetAbsOrigin(self.world_origin)
+			end
+		end
+	end
+end
+
+--[[function CheckALVL(ply)
 	CustomGameEventManager:Send_ServerToPlayer(ply, "ayiopiuwioer", {k1 = iupoasldm.AUTH_KEY, k2 = mmhiiouioa.AUTH_KEY, k3 = kjlpluo1596.AUTH_KEY})
 end]]
 
@@ -173,7 +187,7 @@ function adskIPKB:CheckingTitle(i)
 		self.color[i] = "pink"
 	else
 		if PlayerTables:GetTableValue("database", "db", i) == true then 
-			if iupoasldm.jyiowe[i].STT.mcs.tgn < 10 and iupoasldm.jyiowe[i].LD.ACD < 3 then 
+			if iupoasldm.jyiowe[i].STT.mcs.tgn < 10 and iupoasldm.jyiowe[i].LD.ACD < 10 then 
 				if yedped.MRN[i] >= 1200 then 
 					self.title[i] = "[SMURF]"
 					self.color[i] = "orange"
@@ -182,7 +196,10 @@ function adskIPKB:CheckingTitle(i)
 					self.color[i] = "#33FFFF"
 				end
 			else
-				if iupoasldm.jyiowe[i].IFY.PM == -3 then 
+				if iupoasldm.jyiowe[i].IFY.PM == -10 then 
+					self.title[i] = "[BAN]"
+					self.color[i] = "red"
+				elseif iupoasldm.jyiowe[i].IFY.PM == -3 then 
 					self.title[i] = "[RAGE QUITER]"
 					self.color[i] = "red"
 				elseif iupoasldm.jyiowe[i].IFY.PM == -2 then 
@@ -197,11 +214,15 @@ function adskIPKB:CheckingTitle(i)
 				elseif iupoasldm.jyiowe[i].IFY.PM == -5 then 
 					self.title[i] = "[DOG]"
 					self.color[i] = "red"
+				elseif iupoasldm.jyiowe[i].IFY.PP == 110 then 
+					self.title[i] = ""
+					self.color[i] = "#33FFFF"
 				else
 					self.title[i] = ""
 					self.color[i] = "white"
 				end
 			end
+			PlayerTables:CreateTable("player_mark", {PM = iupoasldm.jyiowe[i].IFY.PM}, i)
 		else
 			self.title[i] = ""
 			self.color[i] = "white"
@@ -226,6 +247,7 @@ function DiscordC(index, data)
 				iupoasldm.jyiowe[playerId].IFY.CRY.CP = iupoasldm.jyiowe[playerId].IFY.CRY.CP + reward
 				local ply = PlayerResource:GetPlayer(playerId)
 				iupoasldm:sendDiscord(playerId)
+				PlayerTables:SetTableValue("CP", "CP", iupoasldm.jyiowe[playerId].IFY.CRY.CP, playerId, true)
 				CustomGameEventManager:Send_ServerToPlayer(ply, "fate_player_cp", {CP=iupoasldm.jyiowe[playerId].IFY.CRY.CP})
 				iupoasldm:FastUpdate(playerId) 
 			end)
@@ -238,9 +260,11 @@ if not adskIPKB.INITED then
 	print('player info start')
 	adskIPKB:construct()
 	adskIPKB.INITED = true
-    ListenToGameEvent( "player_changename", Dynamic_Wrap( adskIPKB, "ipLhY" ), self )
-    ListenToGameEvent( "player_info", Dynamic_Wrap( adskIPKB, "iasdfpLhY" ), self )
-    CustomGameEventManager:RegisterListener( "player_discord_clicked", DiscordC )
+	if IsServer() then
+	    ListenToGameEvent( "player_changename", Dynamic_Wrap( adskIPKB, "ipLhY" ), self )
+	    ListenToGameEvent( "player_info", Dynamic_Wrap( adskIPKB, "iasdfpLhY" ), self )
+	    CustomGameEventManager:RegisterListener( "player_discord_clicked", DiscordC )
+	end
 end
 
 function lkjasdfio(i)
@@ -272,8 +296,9 @@ function lkjasdfio(i)
 		CheckingPePeFam(i)
 		local player = ServerTables:GetTableValue("Players", "total_player")
 		ServerTables:SetTableValue("Players", "total_player", player + 1, true)
-		PlayerTables:CreateTable("connection", {cstate = "connect", dTime = 0, qRound = 1}, i)
+		PlayerTables:CreateTable("connection", {cstate = "connect", dTime = 0, qRound = 1, data_sent = false}, i)
 		PlayerTables:CreateTable("authority", {alvl = authority_level}, i)
+		PlayerTables:CreateTable("steam", {id = tostring(PlayerResource:GetSteamAccountID(i))}, i)
 		print('Player Authority ' .. authority_level)
 		SendChatToPanorama('Player ' .. i .. ' Authority Level: ' .. authority_level)
 		if authority_level == 5 then

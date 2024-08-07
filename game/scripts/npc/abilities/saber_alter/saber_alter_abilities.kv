@@ -11,16 +11,13 @@
 		"MaxLevel"						"1"
 		"RequiredLevel"					"25"
 		"LevelsBetweenUpgrades"			"1"
-		
-		"AbilitySpecial"
+		"AbilityCooldown"				"1"
+
+		"AbilityValues"
 		{
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"mana_regen_bonus"		"10"
-			}
+			"mana_regen_bonus"		"10"
 		}
-		
+
 		"Modifiers"
 		{
 			"modifier_mana_shroud"
@@ -47,26 +44,15 @@
 		"MaxLevel"						"1"
 		"RequiredLevel"					"25"
 		"LevelsBetweenUpgrades"			"1"
-		
-		"AbilitySpecial"
+		"AbilityCooldown"				"1"
+
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_mana"			"300"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"mana_regen_bonus"		"15"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"armor"					"20"
-			}
+			"mana_regen_bonus"		"15"
+			"bonus_mana"			"300"
+			"armor"					"20"
 		}
-		
+
 		"Modifiers"
 		{
 			"modifier_mana_shroud_upgrade"
@@ -104,41 +90,20 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_6"
 		"AnimationPlaybackRate" 		"1.5"
 		"AOERadius"						"%radius"
-		
-		"precache"
-		{
-			
-		}
-		
+
 		"AbilityCastPoint"				"1.0"
 		"AbilityCooldown"				"17"
 		"AbilityManaCost"				"200"
 		"AbilityCastRange"				"450"
-		
-		"AbilitySpecial"
+
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"cast_delay"				"1.0"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"450"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"explosion_count"				"5"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"13"
-			}
+			"cast_delay"				"1.0"
+			"radius"					"450"
+			"explosion_count"			"5"
+			"damage"					"13"
 		}
-		
+
 		"OnSpellStart"
 		{			
 			"RunScript"
@@ -253,49 +218,20 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_6"
 		"AnimationPlaybackRate" 		"1.5"
 		"AOERadius"						"%radius"
-		
-		"precache"
-		{
-		
-		}
-		
+
 		"AbilityCastPoint"				"0.5"
 		"AbilityCooldown"				"17"
 		"AbilityManaCost"				"300"
 		"AbilityCastRange"				"450"
-		
-		"AbilitySpecial"
+
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"cast_delay"			"0.5"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"450"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"explosion_count"		"5"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"13"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bonus_str"				"1.5"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bonus_int"				"1.5"
-			}
+			"cast_delay"				"0.5"
+			"radius"					"450"
+			"explosion_count"			"5"
+			"damage"					"13"
+			"bonus_str"					"1.5"
+			"bonus_int"					"1.5"
 		}
 		
 		"OnSpellStart"
@@ -412,39 +348,15 @@
 		"AbilityCooldown"				"40"
 		"AbilityManaCost"				"400"
 		"AbilityCastRange"				"1000"
-		
-		"AbilitySpecial"
+
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"cast"					"0.3"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"range"					"1000"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"width"					"300"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"speed"					"1500"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"based_damage"			"500"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_int"				"10"
-			}
+			"cast"					"0.3"
+			"range"					"1000"
+			"width"					"300"
+			"speed"					"1500"
+			"based_damage"			"500"
+			"bonus_int"				"10"
 		}
 
 		"OnSpellStart"
@@ -492,26 +404,14 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 		"AbilityTextureName"			"custom/saber_alter_darklight_passive"
 		"MaxLevel"						"1"
-		
-		"AbilitySpecial"
+
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_atk"				"75"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"crit_rate"				"35"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"crit_dmg"				"175"
-			}
+			"bonus_atk"				"75"
+			"crit_rate"				"35"
+			"crit_dmg"				"175"
 		}
-		
+				
 		"Modifiers"
 		{
 			"modifier_darklight"
@@ -597,38 +497,13 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_1"
 		"AnimationPlaybackRate" 		"1.0"
 
-		"precache"
+		"AbilityValues"
 		{
-			
-		}
-		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"aspd_modifier"			"10 15 20 25 30"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"mspd_modifier"			"4 8 12 16 20"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"dmg_modifier"			"20 40 60 80 100"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"armor_reduction"		"-2 -4 -6 -8 -10"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"duration"				"11 12 13 14 15"
-			}
+			"duration"				"11 12 13 14 15"
+			"dmg_modifier"			"20 40 60 80 100"
+			"aspd_modifier"			"10 15 20 25 30"
+			"mspd_modifier"			"4 8 12 16 20"
+			"armor_reduction"		"-2 -4 -6 -8 -10"
 		}
 		
 		"OnSpellStart"
@@ -729,45 +604,16 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_1"
 		"AnimationPlaybackRate" 		"1.0"
 
-		"precache"
+		"AbilityValues"
 		{
-			
+			"duration"				"11 12 13 14 15"
+			"dmg_modifier"			"20 40 60 80 100"
+			"aspd_modifier"			"10 15 20 25 30"
+			"mspd_modifier"			"4 8 12 16 20"
+			"bonus_mr"				"3 6 9 12 15"
+			"armor_reduction"		"-2 -4 -6 -8 -10"
 		}
-		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"aspd_modifier"			"10 15 20 25 30"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"mspd_modifier"			"4 8 12 16 20"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"dmg_modifier"			"20 40 60 80 100"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"armor_reduction"		"-2 -4 -6 -8 -10"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"duration"				"11 12 13 14 15"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_mr"				"3 6 9 12 15"
-			}
-		}
-		
+
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -867,65 +713,20 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_1"
 		"AnimationPlaybackRate" 		"1.0"
 
-		"precache"
+		"AbilityValues"
 		{
-			
+			"duration"				"11 12 13 14 15"
+			"dmg_modifier"			"20 40 60 80 100"
+			"aspd_modifier"			"10 15 20 25 30"
+			"mspd_modifier"			"4 8 12 16 20"
+			"armor_reduction"		"-2 -4 -6 -8 -10"
+			"maximum_charges"		"9"
+			"min_charge"			"2"
+			"max_charge"			"3"
+			"bonus_ms"				"10"
+			"mana_orb_dmg"			"150"
 		}
-		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"aspd_modifier"			"10 15 20 25 30"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"mspd_modifier"			"4 8 12 16 20"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"dmg_modifier"			"20 40 60 80 100"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"armor_reduction"		"-2 -4 -6 -8 -10"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"duration"				"11 12 13 14 15"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"min_charge"			"2"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"max_charge"			"3"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"maximum_charges"		"9"
-			}
-			"09"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_ms"				"10"
-			}
-			"10"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"mana_orb_dmg"			"150"
-			}
-		}
-		
+				
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -1069,68 +870,19 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_1"
 		"AnimationPlaybackRate" 		"1.0"
 
-		"precache"
+		"AbilityValues"
 		{
-			
-		}
-		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"aspd_modifier"			"10 15 20 25 30"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"mspd_modifier"			"4 8 12 16 20"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"dmg_modifier"			"20 40 60 80 100"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"armor_reduction"		"-2 -4 -6 -8 -10"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"duration"				"11 12 13 14 15"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_mr"				"3 6 9 12 15"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"min_charge"			"2"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"max_charge"			"3"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"maximum_charges"		"9"
-			}
-			"09"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_ms"				"10"
-			}
-			"10"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"mana_orb_dmg"			"150"
-			}
+			"duration"				"11 12 13 14 15"
+			"dmg_modifier"			"20 40 60 80 100"
+			"aspd_modifier"			"10 15 20 25 30"
+			"mspd_modifier"			"4 8 12 16 20"
+			"bonus_mr"				"3 6 9 12 15"
+			"armor_reduction"		"-2 -4 -6 -8 -10"
+			"maximum_charges"		"9"
+			"min_charge"			"2"
+			"max_charge"			"3"
+			"bonus_ms"				"10"
+			"mana_orb_dmg"			"150"
 		}
 		
 		"OnSpellStart"
@@ -1277,53 +1029,21 @@
 		"AOERadius"						"%radius"
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_6"
 		"AnimationPlaybackRate" 		"1.5"
-		"precache"
-		{
 			
-		}
-		
 		"AbilityCastPoint"				"0.3"
 		"AbilityCooldown"				"10"
 		"AbilityManaCost"				"200"
 		"AbilityCastRange"				"400"
-		
-		"AbilitySpecial"
+
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"delay"					"0.3"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"400"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"300 380 460 540 620"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_int"				"3"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_mana"			"20"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_cost"			"40"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"stun"					"0.2"
-			}
+			"delay"					"0.3"
+			"radius"				"400"
+			"damage"				"300 380 460 540 620"
+			"bonus_int"				"3"
+			"bonus_mana"			"10"
+			"bonus_cost"			"20"
+			"stun"					"0.2"
 		}
 		
 		"OnAbilityPhaseStart"
@@ -1380,55 +1100,23 @@
 		"AOERadius"						"%radius"
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_6"
 		"AnimationPlaybackRate" 		"1.5"
-		"precache"
-		{
-			
-		}
 		
 		"AbilityCastPoint"				"0.3"
 		"AbilityCooldown"				"10"
 		"AbilityManaCost"				"200"
 		"AbilityCastRange"				"600"
-		
-		"AbilitySpecial"
+
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"delay"					"0.3"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"600"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"300 380 460 540 620"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_int"				"3"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_mana"			"10"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_cost"			"20"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"stun"					"0.2"
-			}
+			"delay"					"0.3"
+			"radius"				"600"
+			"damage"				"300 380 460 540 620"
+			"bonus_int"				"3"
+			"bonus_mana"			"10"
+			"bonus_cost"			"20"
+			"stun"					"0.2"
 		}
-		
+				
 		"OnAbilityPhaseStart"
 		{
 			"FireEffect"
@@ -1483,58 +1171,22 @@
 		"AOERadius"						"%radius"
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_6"
 		"AnimationPlaybackRate" 		"1.5"
-		"precache"
-		{
-			
-		}
 		
 		"AbilityCastPoint"				"0.3"
 		"AbilityCooldown"				"10"
 		"AbilityManaCost"				"200"
 		"AbilityCastRange"				"400"
 		
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"delay"					"0.3"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"400"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"300 380 460 540 620"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_int"				"3"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_mana"			"10"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_cost"			"20"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"stun"					"0.5"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"derange_dmg"			"150"
-			}
+			"delay"					"0.3"
+			"radius"				"400"
+			"damage"				"300 380 460 540 620"
+			"bonus_int"				"3"
+			"bonus_mana"			"10"
+			"bonus_cost"			"20"
+			"stun"					"0.5"
+			"derange_dmg"			"150"
 		}
 		
 		"OnAbilityPhaseStart"
@@ -1591,58 +1243,22 @@
 		"AOERadius"						"%radius"
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_6"
 		"AnimationPlaybackRate" 		"1.5"
-		"precache"
-		{
-			
-		}
-		
+
 		"AbilityCastPoint"				"0.3"
 		"AbilityCooldown"				"10"
 		"AbilityManaCost"				"200"
 		"AbilityCastRange"				"600"
 		
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"delay"					"0.3"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"600"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"300 380 460 540 620"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_int"				"3"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_mana"			"10"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_cost"			"20"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"stun"					"0.5"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"derange_dmg"			"150"
-			}
+			"delay"					"0.3"
+			"radius"				"600"
+			"damage"				"300 380 460 540 620"
+			"bonus_int"				"3"
+			"bonus_mana"			"10"
+			"bonus_cost"			"20"
+			"stun"					"0.5"
+			"derange_dmg"			"150"
 		}
 		
 		"OnAbilityPhaseStart"
@@ -1697,53 +1313,21 @@
 		"AbilityTextureName"			"custom/saber_alter_max_mana_burst"
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_6"
 		"AnimationPlaybackRate" 		"0.5"
-		"precache"
-		{
-			
-		}
-		
+
 		"AbilityCastPoint"				"1.0"
 		"AbilityCooldown"				"180"
 		"AbilityManaCost"				"200"
 		"AbilityCastRange"				"1700"
-		
-		"AbilitySpecial"
+
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"1700"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"mana_ratio"				"100"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"moderate"				"85"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"inner_range"			"600"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"low"					"70"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"medium_range"			"1100"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"high"					"100"
-			}
+			"radius"				"1700"
+			"mana_ratio"			"100"
+			"moderate"				"85"
+			"inner_range"			"600"
+			"low"					"70"
+			"medium_range"			"1100"
+			"high"					"100"
 		}
 		
 		"OnAbilityPhaseStart"
@@ -1847,55 +1431,22 @@
 		"AbilityTextureName"			"custom/saber_alter_max_mana_burst"
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_6"
 		"AnimationPlaybackRate" 		"0.5"
-		"precache"
-		{
-			
-		}
-		
+
 		"AbilityCastPoint"				"1.0"
 		"AbilityCooldown"				"180"
 		"AbilityManaCost"				"200"
 		"AbilityCastRange"				"1700"
 		
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"1700"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"mana_ratio"			"160"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"moderate"				"85"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"inner_range"			"600"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"low"					"70"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"medium_range"			"1100"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"high"					"100"
-			}
+			"radius"				"1700"
+			"mana_ratio"			"160"
+			"moderate"				"85"
+			"inner_range"			"600"
+			"low"					"70"
+			"medium_range"			"1100"
+			"high"					"100"
 		}
-		
 		"OnAbilityPhaseStart"
 		{
 			"FireEffect"
@@ -2000,46 +1551,21 @@
 		"AbilityTextureName"			"custom/saber_alter_vortigern"
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_3"
 		"AnimationPlaybackRate" 		"1.5"
-		
-		"precache"
-		{
-			
-		}
-		
+
 		"AbilityCastPoint"				"0.2"
 		"AbilityCooldown"				"27"
 		"AbilityManaCost"				"400"
 		"AbilityCastRange"				"600"
-		
-		"AbilitySpecial"
+
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"600"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"450 550 650 750 850"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"low_end"				"80"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"high_end"				"125"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"stun_duration"			"0.6"
-			}
+			"radius"				"600"
+			"damage"				"450 550 650 750 850"
+			"low_end"				"80"
+			"high_end"				"125"
+			"stun_duration"			"0.6"
 		}
-		
+
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -2083,55 +1609,22 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_3"
 		"AnimationPlaybackRate" 		"1.5"
 		
-		"precache"
-		{
-			
-		}
-		
 		"AbilityCastPoint"				"0.2"
 		"AbilityCooldown"				"27"
 		"AbilityManaCost"				"200"
 		"AbilityCastRange"				"600"
 		"AbilityCharges"				"3"
 		"AbilityChargeRestoreTime"		"5"
-		
-		"AbilitySpecial"
+
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"600"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"297 363 429 495 561"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"low_end"				"80"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"high_end"				"125"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"stun_duration"			"0.6"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"recharge_time"			"5.0"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"max_charge"			"3"
-			}
+			"radius"				"600"
+			"damage"				"297 363 429 495 561"
+			"low_end"				"80"
+			"high_end"				"125"
+			"stun_duration"			"0.6"
+			"max_charge"			"3"
+			"recharge_time"			"5.0"
 		}
 		
 		"OnSpellStart"
@@ -2223,62 +1716,22 @@
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityCastAnimation" 			"ACT_DOTA_ITEM_DROP"
 		"AnimationPlaybackRate" 		"0.9"
-		"precache"
-		{
-			
-		}
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
+		
 		"AbilityCastRange"				"1800"
 		"AbilityCastPoint"				"0.2"
-
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"45.0"
-		
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"800"
 		
-		// Ability Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"delay"					"2.7"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"width"					"400"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"length"				"1800"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"speed"					"3600"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"1000 1200 1400 1600 1800"
-			}
-			// Extra variables
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"pause_duration"		"4.0"
-			}
+			"delay"					"2.7"
+			"width"					"400"
+			"length"				"1800"
+			"speed"					"3600"
+			"damage"				"1000 1200 1400 1600 1800"
+			"pause_duration"		"4.0"
 		}
-		
-		// Data driven
-		//-------------------------------------------------------------------------------------------------------------
+
 		"OnSpellStart"
 		{		
 			"RunScript"
@@ -2470,67 +1923,23 @@
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityCastAnimation" 			"ACT_DOTA_ITEM_DROP"
 		"AnimationPlaybackRate" 		"0.9"
-		"precache"
-		{
-			
-		}
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
+		
 		"AbilityCastRange"				"1800"
 		"AbilityCastPoint"				"0.2"
-
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"45.0"
-		
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"800"
-		
-		// Ability Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"delay"					"2.7"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"width"					"400"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"length"				"1800"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"speed"					"3600"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"1000 1200 1400 1600 1800"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_mana"			"30"
-			}
-			// Extra variables
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"pause_duration"		"4.0"
-			}
+			"delay"					"2.7"
+			"width"					"400"
+			"length"				"1800"
+			"speed"					"3600"
+			"damage"				"1000 1200 1400 1600 1800"
+			"bonus_mana"			"30"
+			"pause_duration"		"4.0"
 		}
 		
-		// Data driven
-		//-------------------------------------------------------------------------------------------------------------
 		"OnSpellStart"
 		{		
 			"RunScript"
@@ -2716,49 +2125,20 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 		"AbilityTextureName"			"custom/saber_alter_attribute_mana_shroud"
 		
-		
 		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"9999"
 		"AbilityManaCost"				"12"
 
-		"precache"
+		"AbilityValues"
 		{
+			"bonus_armor"					"20"
+			"bonus_mana_reg"				"5"
+			"bonus_mana"					"300"
+			"bonus_radius"					"200"
+			"mana_burst_int_ratio"			"3"
+			"bonus_mr"						"3 6 9 12 15"
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"bonus_armor"					"20"
-			}
-			"06"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"bonus_mana_reg"				"5"
-			}
-			"06"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"bonus_mana"					"300"
-			}
-			"03"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"bonus_radius"					"200"
-			}
-			"04"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"mana_burst_int_ratio"			"3"
-			}
-			"03"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"bonus_mr"						"3 6 9 12 15"
-			}
-		}
-		
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -2780,61 +2160,23 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 		"AbilityTextureName"			"custom/saber_alter_attribute_mana_blast"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
-		
-		
+				
 		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"9999"
 		"AbilityManaCost"				"15"
 
-		"precache"
+		"AbilityValues"
 		{
+			"max_catalyst"					"9"
+			"catalyst_numbers_gen_min"		"2"
+			"catalyst_numbers_gen_max"		"3"
+			"bonus_ms"						"10"
+			"catalyst_damage"				"150"
+			"mana_burst_mana_ratio"			"10"
+			"extra_mana_cost"				"20"
+			"mana_max_burst_mana_ratio"		"160"
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"catalyst_numbers_gen_min"		"2"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"catalyst_numbers_gen_max"		"3"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"max_catalyst"			"9"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bonus_ms"				"10"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"catalyst_damage"		"150"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mana_burst_mana_ratio"	"10"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"extra_mana_cost"		"20"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mana_max_burst_mana_ratio"	"160"
-			}
-			
-		}
-		
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -2855,48 +2197,18 @@
 		"MaxLevel"						"1"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 		"AbilityTextureName"			"custom/saber_alter_attribute_improve_ferocity"
-		
-		
+			
 		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"9999"
 		"AbilityManaCost"				"12"
 
-		"precache"
+		"AbilityValues"
 		{
-		}
-
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"							"FIELD_FLOAT"
-				"vortigern_reduce_damage"			"34"
-			}
-			"02"
-			{
-				"var_type"							"FIELD_FLOAT"
-				//"vortigern_bonus_stun_duration"		"0.3"
-			}
-			"03"
-			{
-				"var_type"							"FIELD_FLOAT"
-				"vortigern_mana_cost"				"200"
-			}
-			"04"
-			{
-				"var_type"							"FIELD_FLOAT"
-				"uf_mana_cost"						"100"
-			}
-			"05"
-			{
-				"var_type"							"FIELD_FLOAT"
-				"uf_int_ratio"						"1.5"
-			}
-			"06"
-			{
-				"var_type"							"FIELD_FLOAT"
-				"uf_str_ratio"						"1.5"
-			}
+			"vortigern_reduce_damage"			"34"
+			"vortigern_mana_cost"				"200"
+			"uf_mana_cost"						"100"
+			"uf_int_ratio"						"1.5"
+			"uf_str_ratio"						"1.5"
 		}
 		
 		"OnSpellStart"
@@ -2925,32 +2237,12 @@
 		"AbilityCooldown"				"9999"
 		"AbilityManaCost"				"11"
 
-		"precache"
+		"AbilityValues"
 		{
-		}
-
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"bonus_damage"				"75"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"crit_rate"					"35"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"crit_damage"				"175"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"excalibur_bonus_damage"	"30"
-			}
+			"bonus_damage"				"75"
+			"crit_rate"					"35"
+			"crit_damage"				"175"
+			"excalibur_bonus_damage"	"30"
 		}
 		
 		"OnSpellStart"
@@ -2976,39 +2268,15 @@
 		
 		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"9999"
-		"AbilityManaCost"				"10"
+		"AbilityManaCost"				"9"
 
-		"precache"
+		"AbilityValues"
 		{
-		}
-
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"cast"					"0.3"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"range"					"1000"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"cooldown"				"40"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"based_damage"			"500"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_int"				"10"
-			}
+			"cast"					"0.3"
+			"range"					"1000"
+			"based_damage"			"500"
+			"bonus_int"				"10"
+			"cooldown"				"40"
 		}
 		
 		"OnSpellStart"

@@ -122,8 +122,8 @@ function nobu_3000_wrapper(ability)
                 if(self.dummies[i] == nil ) then return end
                 Timers:CreateTimer(0.0165 * i, function()
                     if(self.dummies[i] == nil ) then return end
-                    local facing =  self.dummies[i]:GetForwardVector()
-                    facing.z = 0
+                    --local facing =  self.dummies[i]:GetForwardVector()
+                    --facing.z = 0
                     if(self.caster.is3000Acquired) then
                         self.dummies[i]:EmitSound("nobu_shoot_laser")
                     else

@@ -30,7 +30,7 @@ if IsServer() then
 		if self.Caster:HasModifier("modifier_padoru") then 
 
 		else
-			if not self.Caster:HasModifier('modifier_alternate_01') and not self.Caster:HasModifier('modifier_alternate_02') then 
+			if not self.Caster:HasModifier('modifier_alternate_01') and not self.Caster:HasModifier('modifier_alternate_02') and not self.Caster:HasModifier('modifier_alternate_03') then 
 				self.Caster:SetModel("models/karna/default/karna_by_zefiroft.vmdl")
 				self.Caster:SetOriginalModel("models/karna/default/karna_by_zefiroft.vmdl")
 				self.Caster:SetModelScale(1.20)	
@@ -54,7 +54,7 @@ if IsServer() then
 		if self.Caster:HasModifier("modifier_padoru") then 
 
 		else
-			if not self.Caster:HasModifier('modifier_alternate_01') and not self.Caster:HasModifier('modifier_alternate_02') then 
+			if not self.Caster:HasModifier('modifier_alternate_01') and not self.Caster:HasModifier('modifier_alternate_02') and not self.Caster:HasModifier('modifier_alternate_03') then 
 				self.Caster:SetModel("models/karna/default/karna_armorless_by_zefiroft.vmdl")
 				self.Caster:SetOriginalModel("models/karna/default/karna_armorless_by_zefiroft.vmdl")
 				self.Caster:SetModelScale(1.20)	

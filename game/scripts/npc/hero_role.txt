@@ -1721,7 +1721,7 @@ HeroRoles
 		"Sex"			"Female"
 		"Class"			"Berserker"
 		"Trait"			"" 
-		"Roles"			"jumper,tank" 	
+		"Roles"			"jumper,carry" 	
 		"Role" 							
 		{
 			"1"
@@ -1737,12 +1737,13 @@ HeroRoles
 			}
 			"2"	
 			{			
-				"tank"	
+				"carry"
 				{
 					"weight"	"50"	// weight to calculate
-					"criteria"	"2"
-					"dTake"		"130"	// > avg dmg taken(%max hp) per round
-					"Death"		"80"	// < death of total round
+					"criteria"	"3"
+					"dDeal"		"5000"	// > avg dmg deal per round
+					"KD"		"1.5"	// > total KD
+					"Assist"	"35"	// > Assist
 				}
 			}
 		}
@@ -1815,6 +1816,36 @@ HeroRoles
 		"Sex"			"Female"
 		"Class"			"AlterEgo"
 		"Trait"			"divine" 
+		"Roles"			"burst, mobility" 	
+		"Role" 							
+		{
+			"1"
+			{			
+				"burst"	
+				{
+					"weight"	"80"	// weight to calculate
+					"criteria"	"3"
+					"dDeal"		"5000"	// > avg dmg deal per round
+					"KD"		"2.0"	// > total KD
+					"Assist"	"40"	// > Assist
+				}		
+			}
+			"2"	
+			{			
+				"mobility"	
+				{
+					"weight"	"20"	// weight to calculate
+					"criteria"	"1"
+					"Death"		"35"	// < death of total round
+				}
+			}
+		}
+	}
+	"npc_dota_hero_muerta"
+	{
+		"Sex"			"Male"
+		"Class"			"Archer"
+		"Trait"			"" 
 		"Roles"			"burst" 	
 		"Role" 							
 		{

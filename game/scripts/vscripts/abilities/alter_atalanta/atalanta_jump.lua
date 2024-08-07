@@ -1,32 +1,38 @@
 LinkLuaModifier("modifier_atalanta_jump", "abilities/alter_atalanta/atalanta_jump", LUA_MODIFIER_MOTION_BOTH)
 
 atalanta_jump = class({})
+atalanta_jump_upgrade = class({})
 
-function atalanta_jump:OnSpellStart()
-	local caster = self:GetCaster()
+function atalanta_jump_wrapper(abil)
+    function abil:OnSpellStart()
+    	local caster = self:GetCaster()
 
-	caster:AddNewModifier(caster, self, "modifier_atalanta_jump", {})
-end
+    	caster:AddNewModifier(caster, self, "modifier_atalanta_jump", {})
+    end
 
-function atalanta_jump:GetAOERadius()
-    return self:GetSpecialValueFor("radius")
-end
+    function abil:GetAOERadius()
+        return self:GetSpecialValueFor("radius")
+    end
 
-function atalanta_jump:CastFilterResultLocation(hLocation)
-    local caster = self:GetCaster()
-    if IsServer() and not IsInSameRealm(caster:GetAbsOrigin(), hLocation) then
-        return UF_FAIL_CUSTOM
-    else
-        return UF_SUCESS
+    function abil:CastFilterResultLocation(hLocation)
+        local caster = self:GetCaster()
+        if IsServer() and not IsInSameRealm(caster:GetAbsOrigin(), hLocation) then
+            return UF_FAIL_CUSTOM
+        else
+            return UF_SUCESS
+        end
+    end
+
+    function abil:GetCustomCastErrorLocation(hLocation)
+    	if self:GetCaster():GetAbsOrigin().y < -2000 then
+    		return "#Inside_Reality_Marble"
+    	end
+        return "#Wrong_Target_Location"
     end
 end
 
-function atalanta_jump:GetCustomCastErrorLocation(hLocation)
-	if self:GetCaster():GetAbsOrigin().y < -2000 then
-		return "#Inside_Reality_Marble"
-	end
-    return "#Wrong_Target_Location"
-end
+atalanta_jump_wrapper(atalanta_jump)
+atalanta_jump_wrapper(atalanta_jump_upgrade)
 
 modifier_atalanta_jump = class({})
 function modifier_atalanta_jump:IsHidden() return true end
@@ -160,7 +166,11 @@ function modifier_atalanta_jump:PlayEffects()
                                 ParticleManager:ReleaseParticleIndex(destruct_pfx)]]
 
         EmitSoundOnLocationWithCaster(self.point, "Hero_Leshrac.Split_Earth2", self.parent)
-        EmitSoundOnLocationWithCaster(self.point, "Hero_Leshrac.Split_Earth3", self.parent)
+        EmitSoundOnLocationWithCaster(self.point, "Hero_Leshrac.Split_Earth3", self.parent) 
+
+        local slam_fx = ParticleManager:CreateParticle("particles/atalanta/atalanta_alter_slam.vpcf", PATTACH_ABSORIGIN, self.parent )
+        ParticleManager:SetParticleControl( slam_fx, 0, GetGroundPosition(self.parent:GetAbsOrigin(), self.parent))
+        ParticleManager:SetParticleControl( slam_fx, 7, Vector(self:GetAbility():GetSpecialValueFor("radius"), 0, 0))
 
         local hit_fx = ParticleManager:CreateParticle("particles/atalanta/atalanta_earthshock.vpcf", PATTACH_ABSORIGIN, self.parent )
 		ParticleManager:SetParticleControl( hit_fx, 0, GetGroundPosition(self.parent:GetAbsOrigin(), self.parent))

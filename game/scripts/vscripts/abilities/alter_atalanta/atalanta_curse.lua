@@ -27,33 +27,32 @@ function atalanta_curse_wrapper(ability)
 				unit:RemoveModifierByName("modifier_atalanta_curse")
 	        end
 	    end)
-	    if caster:GetStrength() >= 24.1 and caster:GetAgility() >= 24.1 and caster:GetIntellect() >= 24.1 then		
-				if caster:FindAbilityByName("atalanta_jump"):IsCooldownReady() and not caster:HasModifier("modifier_atalanta_skia_cd")  
-					and caster:FindAbilityByName("atalanta_skia"):IsCooldownReady()  
-			    	and caster:GetAbilityByIndex(2):GetName() == "atalanta_jump" then
-					caster:SwapAbilities("atalanta_jump", "atalanta_skia", false, true)
-					Timers:CreateTimer(4, function()
-						caster:SwapAbilities("atalanta_jump", "atalanta_skia", true, false)
-					end)
-				end
+	    if math.ceil(caster:GetStrength()) >= 25 and math.ceil(caster:GetAgility()) >= 25 and math.ceil(caster:GetIntellect()) >= 25 then		
+			if caster:FindAbilityByName(caster.ESkill):IsCooldownReady() and not caster:HasModifier("modifier_atalanta_skia_cd") and caster:FindAbilityByName("atalanta_skia"):IsCooldownReady()  
+			   	and caster:GetAbilityByIndex(2):GetName() == "atalanta_jump" then
+				caster:SwapAbilities("atalanta_jump", "atalanta_skia", false, true)
+				Timers:CreateTimer(4, function()
+					caster:SwapAbilities("atalanta_jump", "atalanta_skia", true, false)
+				end)
 			end
+		end
 	end
 
 	function ability:Curse(target)
 		local caster = self:GetCaster()
-		local stacks = 0
-		local max_stack = self:GetSpecialValueFor("max_stack")
 
 		if not target or not target:IsAlive() or target:IsNull() then return end
 
-		if target:HasModifier("modifier_atalanta_curse") then
-			stacks = target:FindModifierByName("modifier_atalanta_curse"):GetStackCount()
-		end
+		local stacks = (target:HasModifier("modifier_atalanta_curse") and target:FindModifierByName("modifier_atalanta_curse"):GetStackCount()) or 0
+		local max_stack = self:GetSpecialValueFor("max_stack")
 
+		--[[if target:HasModifier("modifier_atalanta_curse") then
+			stacks = target:FindModifierByName("modifier_atalanta_curse"):GetStackCount()
+		end]]
 		if stacks >= max_stack  then return end
 
 		target:AddNewModifier(caster, self, "modifier_atalanta_curse", {duration = self:GetSpecialValueFor("duration")})
-		target:FindModifierByName("modifier_atalanta_curse"):SetStackCount(stacks + 1)
+		target:FindModifierByName("modifier_atalanta_curse"):SetStackCount(math.min(stacks + 1, max_stack))
 	end
 end
 
@@ -108,12 +107,13 @@ function modifier_atalanta_curse:OnDestroy()
 	local caster = self:GetCaster()
 	local target = self:GetParent()
 
-	local curse_skill = caster:FindAbilityByName("atalanta_curse_upgrade")
+	--[[local curse_skill = caster:FindAbilityByName("atalanta_curse")
 	if(curse_skill == nil) then
-		curse_skill = caster:FindAbilityByName("atalanta_curse")
-	end
-	local dmgval = curse_skill:GetSpecialValueFor("detonate_damage")*self:GetStackCount()
-	DoDamage(caster, target, dmgval, DAMAGE_TYPE_MAGICAL, DOTA_DAMAGE_FLAG_NON_LETHAL, curse_skill, false)
+		curse_skill = caster:FindAbilityByName("atalanta_curse_upgrade")
+	end]]
+	local dmgval = self:GetAbility():GetSpecialValueFor("detonate_damage")*self:GetStackCount()
+	print('damage curse active = ' .. dmgval)
+	DoDamage(caster, target, dmgval, DAMAGE_TYPE_MAGICAL, 128, self:GetAbility(), false)
 
 
     local particle_kill = "particles/units/heroes/hero_shadow_demon/shadow_demon_shadow_poison_kill.vpcf"
@@ -130,9 +130,17 @@ function modifier_atalanta_curse:OnTakeDamage(args)
 
 	if not caster.EvolutionAcquired then return end
 	if args.attacker ~= caster then return end
-	if(  args.unit:GetTeam() == caster:GetTeam()) then return end
-	if args.damage_type == 2 then
-		caster:Heal(args.damage * 0.15, self:GetParent())
+	if(args.unit:GetTeam() == caster:GetTeam()) then return end
+
+	if args.damage_type == 2 then -- magic damage
+		local heal = caster.MasterUnit2:FindAbilityByName("atalanta_evolution_attribute"):GetSpecialValueFor("heal")/100
+		caster:Heal(args.damage * heal, self:GetParent())
+		local lifesteal_fx = ParticleManager:CreateParticle("particles/econ/items/drow/drow_arcana/drow_arcana_lifesteal.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)   
+		ParticleManager:SetParticleControlEnt(lifesteal_fx, 0, caster, PATTACH_POINT_FOLLOW, "attach_hitloc", caster:GetAbsOrigin(), true)
+		Timers:CreateTimer(0.3, function()
+			ParticleManager:DestroyParticle(lifesteal_fx, false)
+			ParticleManager:ReleaseParticleIndex(lifesteal_fx)
+		end)
 	end
 end
 

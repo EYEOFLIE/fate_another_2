@@ -37,6 +37,8 @@
 		"npc_dota_hero_troll_warlord_1"		"1" // Captain Drake
 		"npc_dota_hero_troll_warlord_2"		"1" // Pirate Drake
 		"npc_dota_hero_void_spirit_1"		"1" // Swimming Suit Kiyo
+		"npc_dota_hero_nyx_assassin_1"		"1" // White Meltryllis
+		"npc_dota_hero_sniper_1"			"1" // capeless Robin
 	}
 
 	"HeroicSkin"
@@ -63,6 +65,11 @@
 		"npc_dota_hero_enchantress_3"		"1" // Police Tamamo
 		"npc_dota_hero_enchantress_4"		"1" // Magical Girl Tamamo
 		"npc_dota_hero_disruptor_1"			"1" // Waver Velvet
+		"npc_dota_hero_queenofpain_3"		"1" // Sailor Astolfo
+		"npc_dota_hero_ursa_1"				"1" // Armor Atalanta Alter
+		"npc_dota_hero_bloodseeker_3"		"1" // [Heroic] Old Li
+		"npc_dota_hero_zuus_1"				"1" // Gladiator Fran
+		"npc_dota_hero_sniper_2"			"1" // [Heroic] casual Robin
 	}
 
 	"UltimateSkin"
@@ -72,7 +79,6 @@
 		"npc_dota_hero_lina_3"				"1" // Summer Dressed Nero
 		"npc_dota_hero_mirana_2"			"1" // Jeanne Santa
 		"npc_dota_hero_legion_commander_5"	"1" // Crane Wedding Artoria
-		"npc_dota_hero_legion_commander_6"	"1" // Arthur Pendragon
 		"npc_dota_hero_omniknight_2"		"1" // Summer Gawain
 		"npc_dota_hero_axe_2"				"1" // Mecha Lu Bu
 		"npc_dota_hero_troll_warlord_4"		"1" // Summer Drake
@@ -95,14 +101,23 @@
 		"npc_dota_hero_tusk_3" 				"1" // Summer Mordred
 		"npc_dota_hero_night_stalker_1"		"1" // [Legend] Count Edmond
 		"npc_dota_hero_doom_bringer_2"		"1" // [MEME] Bonk Doge Heracles
+		"npc_dota_hero_disruptor_2"			"1" // [Myth] Koihime Koumei
+		"npc_dota_hero_queenofpain_4"		"1" // Summer Astolfo
+		"npc_dota_hero_death_prophet_3"		"1" // Summer Elizabeth
+		"npc_dota_hero_bloodseeker_4"		"1" // [Legend] Coated Old Li
+		"npc_dota_hero_oracle_1"			"1" // [Legend] Zettai Ryouiki Rin
+		"npc_dota_hero_sniper_3"			"1" // [Legend] Ninja Robin
+		"npc_dota_hero_beastmaster_3"		"1" // [Legend] Super Karna
 	}
 	"LimitedSkin"
 	{
+		"npc_dota_hero_legion_commander_6"	"1" // Arthur Pendragon
 		"npc_dota_hero_ember_spirit_4"	 	"1" // Cyber Emiya
 		"npc_dota_hero_lina_4"				"1" // Racing Nero
 		"npc_dota_hero_ember_spirit_5"	 	"1" // Senji Muramasa
 		"npc_dota_hero_templar_assassin_4"	"1" // [Limited] Ana
 		"npc_dota_hero_juggernaut_1"		"1" // [PEPE] Pepesaki
 		"npc_dota_hero_phantom_lancer_3" 	"1" // Lancer Card Rin
+		"npc_dota_hero_doom_bringer_3"		"1" // [Limited] Guts
 	}
 }

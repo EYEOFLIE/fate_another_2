@@ -18,29 +18,13 @@
 	    	
 	    }
 
-	    "AbilitySpecial"
-	    {
-		    "01"
-		    {
-		        "var_type"				  	"FIELD_INTEGER"
-		        "evasion"					"10"
-		    }
-		    "02"
-	      	{
-	        	"var_type"        			"FIELD_FLOAT"
-	        	"invis_chance"    			"5"
-	      	}
-		    "03"
-		    {
-		        "var_type"				  	"FIELD_INTEGER"
-		        "invis_duration"			"4"
-		    }			    
-		    "04"
-		    {
-		        "var_type"				  	"FIELD_INTEGER"
-		        "passive_cooldown"			"40"
-		    }		  	  
-	    }
+	    "AbilityValues"
+        {
+            "evasion" "10"
+            "invis_chance" "5"
+            "invis_duration" "4"
+            "passive_cooldown" "40"
+        }
 
 		"Modifiers"
 		{	
@@ -135,34 +119,14 @@
 	    	
 	    }
 
-	    "AbilitySpecial"
-	    {
-		    "01"
-		    {
-		        "var_type"				  	"FIELD_INTEGER"
-		        "evasion"					"30"
-		    }
-		    "02"
-	      	{
-	        	"var_type"        			"FIELD_FLOAT"
-	        	"invis_chance"    			"12"
-	      	}
-		    "03"
-		    {
-		        "var_type"				  	"FIELD_FLOAT"
-		        "invis_duration"			"6"
-		    }					    
-		    "04"
-		    {
-		        "var_type"				  	"FIELD_INTEGER"
-		        "passive_cooldown"			"30"
-		    }			    
-		    "05"
-		    {
-		        "var_type"				  	"FIELD_FLOAT"
-		        "bonus_mr"					"20"
-		    }		
-	    }
+	    "AbilityValues"
+        {
+            "evasion" "30"
+            "invis_chance" "12"
+            "invis_duration" "6"
+            "passive_cooldown" "30"
+            "bonus_mr" "20"
+        }
 
 		"Modifiers"
 		{	
@@ -255,40 +219,21 @@
 	    "AbilityTextureName"			 	"custom/robin/clairvoyance"
 	    "AbilityCastAnimation"      		"ACT_DOTA_CAST_ABILITY_4"
 	    "LevelsBetweenUpgrades"		 		"1"
+	    "AbilityCooldown"				"1"
 
 	    "precache"
 	    {
 	      	
 	    }
 
-	    "AbilitySpecial"
-	    {
-		    "01"
-		    {
-		        "var_type"				  	"FIELD_INTEGER"
-		        "bonus_vision"				"200"
-		    }
-		    "02"
-		    {
-		        "var_type"				  	"FIELD_INTEGER"
-		        "goldpersecond"				"0"
-		    }		    
-		    "03"
-		    {
-		        "var_type"				  	"FIELD_INTEGER"
-		        "attack_speed"				"0"
-		    }
-		    "04"
-		    {
-		        "var_type"				  	"FIELD_INTEGER"
-		        "agi_scale_crit"			"0"
-		    }			   
-		    "05"
-		    {
-		        "var_type"				  	"FIELD_INTEGER"
-		        "crit_chance"				"0"
-		    }
-	    }
+	    "AbilityValues"
+        {
+            "bonus_vision" "200"
+            "goldpersecond" "0"
+            "attack_speed" "0"
+            "agi_scale_crit" "0"
+            "crit_chance" "0"
+        }
 
 		"Modifiers"
 		{	
@@ -338,37 +283,17 @@
 		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT"
 	    "AbilityTextureName"			 	"custom/robin/righteous"
 	    "LevelsBetweenUpgrades"		 		"1"
-	    "AbilityCooldown"				   	"0"
+	    "AbilityCooldown"				   	"1"
 	    "AbilityManaCost"				   	"0"
 
-	    "AbilitySpecial"
-	    {
-		    "01"
-		    {
-		        "var_type"				  	"FIELD_INTEGER"
-		        "bonus_vision"				"350"
-		    }
-		    "02"
-		    {
-		        "var_type"				  	"FIELD_INTEGER"
-		        "goldpersecond"				"4"
-		    }		    
-		    "03"
-		    {
-		        "var_type"				  	"FIELD_INTEGER"
-		        "attack_speed"				"40"
-		    }
-		    "05"
-		    {
-		        "var_type"				  	"FIELD_INTEGER"
-		        "crit_chance"				"40"
-		    }
-		    "04"
-		    {
-		        "var_type"				  	"FIELD_INTEGER"
-		        "agi_scale_crit"			"2"
-		    }			   
-	    }
+	    "AbilityValues"
+        {
+            "bonus_vision" "350"
+            "goldpersecond" "4"
+            "attack_speed" "40"
+            "crit_chance" "40"
+            "agi_scale_crit" "2"
+        }
 
 	   	"OnSpellStart"
 	    {
@@ -528,29 +453,13 @@
 		"AbilityManaCost"				"100"
 		"AOERadius"						"%radius"
 
-	    "AbilitySpecial"
-	    {
-		    "01"
-		    {
-		        "var_type"				  	"FIELD_INTEGER"
-		        "radius"					"200"
-		    }
-		    "02"
-		    {
-		        "var_type"				  	"FIELD_INTEGER"
-		        "trap_duration"				"27 30 33 36 39"
-		    }
-		    "03"
-		    {
-		        "var_type"				  	"FIELD_FLOAT"
-		        "stun_duration"				"0.3 0.4 0.5 0.6 0.7"
-		    }		    
-		    "04"
-		    {
-		        "var_type"				  	"FIELD_FLOAT"
-		        "damage"					"50 75 100 125 150"
-		    }
-	    }
+	    "AbilityValues"
+        {
+            "radius" "200"
+            "trap_duration" "27 30 33 36 39"
+            "stun_duration" "0.3 0.4 0.5 0.6 0.7"
+            "damage" "50 75 100 125 150"
+        }
 
 	    "OnSpellStart"
 	    {
@@ -559,6 +468,32 @@
 		    	"ScriptFile"	"abilities/robin/robin_abilities"
 		    	"Function"		"OnPitfallCast"
 		    }
+		}
+		"Modifiers"
+		{
+			"modifier_robin_pitfall_checker"
+			{
+				"IsDebuff"			"0"
+				"IsHidden"			"0"
+				"Duration"			"%trap_duration"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"ThinkInterval"  	"0.04"
+				"States"
+				{
+					"MODIFIER_STATE_INVISIBLE"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_HEALTH_BAR"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_UNTARGETABLE"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/robin/robin_abilities"
+						"Function"		"PitfallCheck"
+					}
+				}
+
+			}
 		}
 	}
 
@@ -582,24 +517,12 @@
 		"AbilityManaCost"				"100"
 		"AOERadius"						"%radius"
 
-	    "AbilitySpecial"
-	    {
-		    "01"
-		    {
-		        "var_type"				  	"FIELD_INTEGER"
-		        "radius"					"250"
-		    }
-		    "02"
-		    {
-		        "var_type"				  	"FIELD_INTEGER"
-		        "trap_duration"				"27 30 33 36 39"
-		    }
-		    "03"
-		    {
-		        "var_type"				  	"FIELD_FLOAT"
-		        "damage"					"250 300 350 400 450"
-		    }
-	    }
+	    "AbilityValues"
+        {
+            "radius" "250"
+            "trap_duration" "27 30 33 36 39"
+            "damage" "250 300 350 400 450"
+        }
 
 	    "OnSpellStart"
 	    {
@@ -608,6 +531,31 @@
 		    	"ScriptFile"	"abilities/robin/robin_abilities"
 		    	"Function"		"OnBarrelCast"
 		    }
+		}
+		"Modifiers"
+		{
+			"modifier_robin_barrel_checker"
+			{
+				"IsDebuff"			"0"
+				"IsHidden"			"0"
+				"Duration"			"%trap_duration"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"ThinkInterval"  	"0.04"
+				"States"
+				{
+					"MODIFIER_STATE_INVISIBLE"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_HEALTH_BAR"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/robin/robin_abilities"
+						"Function"		"BarrelCheck"
+					}
+				}
+
+			}
 		}
 	}
 
@@ -625,24 +573,12 @@
 	    "AbilityManaCost"				   	"100"
 	    "LevelsBetweenUpgrades"		 		"1"
 
-	    "AbilitySpecial"
-	    {
-		    "01"
-		    {
-		        "var_type"				  	"FIELD_INTEGER"
-		        "movespeed"					"400 430 460 490 520"
-		    }
-		    "02"
-		    {
-		        "var_type"				  	"FIELD_INTEGER"
-		        "vision_radius"				"600 725 850 975 1100"
-		    }
-		    "03"
-		    {
-		        "var_type"				  	"FIELD_FLOAT"
-		        "lifetime"					"12 13 14 15 16"
-		    }
-	    }
+	    "AbilityValues"
+        {
+            "movespeed" "400 430 460 490 520"
+            "vision_radius" "600 725 850 975 1100"
+            "lifetime" "12 13 14 15 16"
+        }
 
 	    "OnSpellStart"
 	    {
@@ -700,7 +636,7 @@
 		"LevelsBetweenUpgrades"			"2"
 		"AbilityCastPoint"				"0.3"
 		"AbilityCastRange"				"900"
-		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 		"AnimationPlaybackRate"			"1"
 		"AbilityCooldown"				"20"
 		"AbilityManaCost"				"100"
@@ -711,39 +647,15 @@
 			
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"cast_delay"			"0.3"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"cast_range"			"900"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"heal_damage"			"30"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"400"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"dps"					"80 100 120 140 160"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"duration"				"6 7 8 9 10"
-			}
-		}
+		"AbilityValues"
+        {
+            "cast_delay" "0.3"
+            "cast_range" "900"
+            "heal_damage" "30"
+            "radius" "400"
+            "dps" "80 100 120 140 160"
+            "duration" "6 7 8 9 10"
+        }
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -821,44 +733,16 @@
 		"AbilityCooldown"				"17"
 		"AbilityManaCost"				"200"
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"cast_delay"			"0.1"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"200 250 300 350 400"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"speed"					"1600"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"width"					"90"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"length"				"900"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"stun_duration"			"1 1.25 1.5 1.75 2"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"dash_back"				"600"
-			}
-		}
+		"AbilityValues"
+        {
+            "cast_delay" "0.1"
+            "damage" "200 250 300 350 400"
+            "speed" "1600"
+            "width" "90"
+            "length" "900"
+            "stun_duration" "1 1.25 1.5 1.75 2"
+            "dash_back" "600"
+        }
 
 		"OnUpgrade"
 		{
@@ -911,49 +795,17 @@
 		"AbilityCooldown"				"17"
 		"AbilityManaCost"				"200"
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"cast_delay"			"0.1"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"200 250 300 350 400"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"speed"					"1100"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"width"					"90"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"length"				"900"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"stun_duration"			"1 1.25 1.5 1.75 2"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"dash_back"				"600"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_per_int"		"2"
-			}
-		}
+		"AbilityValues"
+        {
+            "cast_delay" "0.1"
+            "damage" "200 250 300 350 400"
+            "speed" "1100"
+            "width" "90"
+            "length" "900"
+            "stun_duration" "1 1.25 1.5 1.75 2"
+            "dash_back" "600"
+            "damage_per_int" "2"
+        }
 
 		"OnUpgrade"
 		{
@@ -999,67 +851,27 @@
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
 		"AbilityTextureName"			"custom/robin/hunterrain"
-		"AbilityCastAnimation" 			"ACT_DOTA_ATTACK_EVENT"
-		"AnimationPlaybackRate" 		"1.0"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_1"
+		"AnimationPlaybackRate" 		"2.0"
 		
 		"AbilityCastPoint"				"0.2"
 		"AbilityCastRange"				"800"
 		"AbilityCooldown"				"17"
 		"AbilityManaCost"				"200"
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"cast_delay"			"0.1"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"50 60 70 80 90"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"speed"					"1500"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"width"					"60"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"length"				"1400"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"stun_duration"			"1"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"dash_back"				"200 275 350 425 400"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"arrow_amount"			"5 6 7 8 9"
-			}			
-			"09"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"slow"					"70"
-			}
-			"10"
-			{				
-				"var_type"				"FIELD_INTEGER"
-				"damage_per_agi"		"1"
-			}
-		}
+		"AbilityValues"
+        {
+            "cast_delay" "0.1"
+            "damage" "50 60 70 80 90"
+            "speed" "1500"
+            "width" "60"
+            "length" "1400"
+            "stun_duration" "1"
+            "dash_back" "200 275 350 425 400"
+            "arrow_amount" "5 6 7 8 9"
+            "slow" "-80"
+            "damage_per_agi" "1"
+        }
 
 		"OnSpellStart"
 		{
@@ -1111,50 +923,22 @@
 		"LevelsBetweenUpgrades"			"2"
 		"AbilityCastPoint"				"0.3"
 		"AbilityCastRange"				"750"
-		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2_END"
-		"AnimationPlaybackRate"			"1"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+		"AnimationPlaybackRate"			"3"
 		"AbilityCooldown"				"24"
 		"AbilityManaCost"				"400"
 		"AOERadius"						"%radius"
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"cast_delay"			"0.45"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"cast_range"			"750"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"400 425 450 475 500"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"380 450 520 590 660"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"duration"				"8"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"dps"					"40 50 60 70 80"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"slow"					"-35 -40 -45 -50 -55"
-			}
-		}
+		"AbilityValues"
+        {
+            "cast_delay" "0.45"
+            "cast_range" "750"
+            "radius" "400 425 450 475 500"
+            "damage" "380 450 520 590 660"
+            "duration" "8"
+            "dps" "40 50 60 70 80"
+            "slow" "-35 -40 -45 -50 -55"
+        }
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -1225,60 +1009,24 @@
 		"LevelsBetweenUpgrades"			"2"
 		"AbilityCastPoint"				"0.3"
 		"AbilityCastRange"				"750"
-		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2_END"
-		"AnimationPlaybackRate"			"1"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+		"AnimationPlaybackRate"			"3"
 		"AbilityCooldown"				"29"
 		"AbilityManaCost"				"400"
 		"AOERadius"						"%radius"
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"cast_delay"			"0.45"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"cast_range"			"750"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"400 425 450 475 500"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"380 450 520 590 660"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"damage_per_int"		"2.5"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"duration"				"8"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"dps"					"40 50 60 70 80"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"int_scale_dps"			"0.5"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"slow"					"-35 -40 -45 -50 -55"
-			}
-		}
+		"AbilityValues"
+        {
+            "cast_delay" "0.45"
+            "cast_range" "750"
+            "radius" "400 425 450 475 500"
+            "damage" "380 450 520 590 660"
+            "damage_per_int" "2.5"
+            "duration" "8"
+            "dps" "40 50 60 70 80"
+            "int_scale_dps" "0.5"
+            "slow" "-35 -40 -45 -50 -55"
+        }
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -1350,7 +1098,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"AbilityTextureName"			"custom/robin/yewbow"
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_2"
-		"AnimationPlaybackRate" 		"1.0"
+		"AnimationPlaybackRate" 		"2.0"
 		
 		"AbilityCastPoint"				"0.3"
 		"AbilityCastRange"				"1050"
@@ -1363,55 +1111,18 @@
 	    	
 	    }
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"cast_delay"			"0.75"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"cast_range"			"1050"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"speed"					"2500"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"dash_back"				"300"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_physical"		"250 300 350 400 450"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_magical"		"500 600 700 800 900"
-			}
-			
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"350"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"poison_duration"		"2 2.5 3 3.5 4"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"dps"					"40 50 60 70 80"
-			}			
-		}
+		"AbilityValues"
+        {
+            "cast_delay" "0.75"
+            "cast_range" "1050"
+            "speed" "2500"
+            "dash_back" "300"
+            "damage_physical" "300 400 500 600 700"
+            "damage_magical" "500 600 700 800 900"
+            "radius" "350"
+            "poison_duration" "2 2.5 3 3.5 4"
+            "dps" "40 50 60 70 80"
+        }
 
 		"OnSpellStart"
 		{
@@ -1470,7 +1181,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"AbilityTextureName"			"custom/robin/yewbow"
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_2"
-		"AnimationPlaybackRate" 		"1.0"
+		"AnimationPlaybackRate" 		"2.0"
 		
 		"AbilityCastPoint"				"0.3"
 		"AbilityCastRange"				"1050"
@@ -1483,64 +1194,20 @@
 	    	
 	    }
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"cast_delay"			"0.75"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"cast_range"			"1050"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"speed"					"2500"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"dash_back"				"300"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_physical"		"250 300 350 400 450"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_magical"		"500 600 700 800 900"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"damage_per_int"		"3"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"350"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"poison_duration"		"2 2.5 3 3.5 4"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"dps"					"40 50 60 70 80"
-			}
-			"09"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"dps_per_int"			"1.5"
-			}						
-		}
+		"AbilityValues"
+        {
+            "cast_delay" "0.75"
+            "cast_range" "1050"
+            "speed" "2500"
+            "dash_back" "300"
+            "damage_physical" "300 400 500 600 700"
+            "damage_magical" "500 600 700 800 900"
+            "damage_per_int" "3"
+            "radius" "350"
+            "poison_duration" "2 2.5 3 3.5 4"
+            "dps" "40 50 60 70 80"
+            "dps_per_int" "1.5"
+        }
 
 		"OnSpellStart"
 		{
@@ -1599,7 +1266,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"AbilityTextureName"			"custom/robin/yewbow"
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_2"
-		"AnimationPlaybackRate" 		"1.0"
+		"AnimationPlaybackRate" 		"2.0"
 		
 		"AbilityCastPoint"				"0.3"
 		"AbilityCastRange"				"1350"
@@ -1612,74 +1279,22 @@
 	    	
 	    }
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"cast_delay"			"0.75"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"cast_range"			"1350"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"speed"					"2500"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"dash_back"				"300"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_physical"		"250 300 350 400 450"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_per_agi"		"6"
-			}
-			"09"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"ignore_armor_amount"	"30"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_magical"		"500 600 700 800 900"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"damage_per_int"		"3"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"350"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"poison_duration"		"2 2.5 3 3.5 4"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"dps"					"40 50 60 70 80"
-			}						
-			"09"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"dps_per_int"			"1"
-			}	
-		}
+		"AbilityValues"
+        {
+            "cast_delay" "0.75"
+            "cast_range" "1350"
+            "speed" "2500"
+            "dash_back" "300"
+            "damage_physical" "300 400 500 600 700"
+            "damage_per_agi" "6"
+            "ignore_armor_amount" "30"
+            "damage_magical" "500 600 700 800 900"
+            "damage_per_int" "3"
+            "radius" "350"
+            "poison_duration" "2 2.5 3 3.5 4"
+            "dps" "40 50 60 70 80"
+            "dps_per_int" "1"
+        }
 
 		"OnSpellStart"
 		{
@@ -1738,7 +1353,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"AbilityTextureName"			"custom/robin/yewbow"
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_2"
-		"AnimationPlaybackRate" 		"1.0"
+		"AnimationPlaybackRate" 		"2.0"
 		
 		"AbilityCastPoint"				"0.3"
 		"AbilityCastRange"				"1350"
@@ -1751,74 +1366,22 @@
 	    	
 	    }
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"cast_delay"			"0.75"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"cast_range"			"1350"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"speed"					"2500"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"dash_back"				"300"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_physical"		"250 300 350 400 450"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_per_agi"		"6"
-			}
-			"09"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"ignore_armor_amount"	"30"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_magical"		"500 600 700 800 900"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"damage_per_int"		"3"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"350"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"poison_duration"		"2 2.5 3 3.5 4"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"dps"					"40 50 60 70 80"
-			}			
-			"09"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"dps_per_int"			"1.5"
-			}					
-		}
+		"AbilityValues"
+        {
+            "cast_delay" "0.75"
+            "cast_range" "1350"
+            "speed" "2500"
+            "dash_back" "300"
+            "damage_physical" "300 400 500 600 700"
+            "damage_per_agi" "6"
+            "ignore_armor_amount" "30"
+            "damage_magical" "500 600 700 800 900"
+            "damage_per_int" "3"
+            "radius" "350"
+            "poison_duration" "2 2.5 3 3.5 4"
+            "dps" "40 50 60 70 80"
+            "dps_per_int" "1.5"
+        }
 
 		"OnSpellStart"
 		{
@@ -1880,64 +1443,20 @@
 		"AbilityManaCost"				"600"
 		"AOERadius"						"%radius"
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"cast_delay"			"2.4"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"cast_range"			"2600"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"2500"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"850"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"dps"					"300"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_roots_bonus"	"400"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_yew_bonus"		"700"
-			}			
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_smoke_bonus"	"300"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"chain_poison_radius"	"500"
-			}
-			"09"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"duration"				"3.5"
-			}			
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"speed"					"5000"
-			}
-		}
+		"AbilityValues"
+        {
+            "cast_delay" "2.4"
+            "cast_range" "2600"
+            "damage" "2500"
+            "radius" "850"
+            "dps" "300"
+            "damage_roots_bonus" "400"
+            "damage_yew_bonus" "700"
+            "damage_smoke_bonus" "300"
+            "chain_poison_radius" "500"
+            "duration" "3.5"
+            "speed" "5000"
+        }
 
 		"OnSpellStart"
 		{
@@ -1989,69 +1508,21 @@
 		"AbilityManaCost"				"600"
 		"AOERadius"						"%radius"
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"cast_delay"			"2.4"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"cast_range"			"2600"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"3000"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"800"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"dps"					"300"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_roots_bonus"	"400"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_yew_bonus"		"700"
-			}			
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_smoke_bonus"	"300"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"chain_poison_radius"	"500"
-			}
-			"09"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"duration"				"3.5"
-			}			
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"speed"					"5000"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"dps_per_int"						"3"
-			}
-		}
+		"AbilityValues"
+        {
+            "cast_delay" "2.4"
+            "cast_range" "2600"
+            "damage" "3000"
+            "radius" "800"
+            "dps" "300"
+            "damage_roots_bonus" "400"
+            "damage_yew_bonus" "700"
+            "damage_smoke_bonus" "300"
+            "chain_poison_radius" "500"
+            "duration" "3.5"
+            "speed" "5000"
+            "dps_per_int" "3"
+        }
 
 		"OnSpellStart"
 		{
@@ -2095,45 +1566,16 @@
 		"AbilityCooldown"				"9999"
 		"AbilityManaCost"				"10"
 
-		"AbilitySpecial"
-		{		    
-			"01"
-		    {
-		        "var_type"				  	"FIELD_INTEGER"
-		        "movespeed"					"260 300 340 380 420"
-		    }
-		    "02"
-		    {
-		        "var_type"				  	"FIELD_INTEGER"
-		        "vision_radius"				"400 500 600 700 800"
-		    }
-		    "03"
-		    {
-		        "var_type"				  	"FIELD_FLOAT"
-		        "lifetime"					"12 13 14 15 16"
-		    }
-
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"heal_damage"			"30"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"400"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"dps"					"30 35 40 45 50"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"duration"				"6 7 8 9 10"
-			}
-		}
+		"AbilityValues"
+        {
+            "movespeed" "260 300 340 380 420"
+            "vision_radius" "400 500 600 700 800"
+            "lifetime" "12 13 14 15 16"
+            "heal_damage" "30"
+            "radius" "400"
+            "dps" "30 35 40 45 50"
+            "duration" "6 7 8 9 10"
+        }
 		
 		"OnSpellStart"
 		{
@@ -2159,84 +1601,24 @@
 		"AbilityCooldown"				"9999"
 		"AbilityManaCost"				"13"
 
-		"AbilitySpecial"
-		{
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_vision"				"150"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"aspd"					"40"
-			}			
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"gold_per_second"				"4"
-			}		    
-			"04"
-		    {
-		        "var_type"				  	"FIELD_INTEGER"
-		        "agi_scale_crit"			"2"
-		    }			   
-		    "05"
-		    {
-		        "var_type"				  	"FIELD_INTEGER"
-		        "crit_chance"				"40"
-		    }
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"cast_delay"			"0.1"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"50 60 70 80 90"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"speed"					"1500"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"width"					"60"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"length"				"1400"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"stun_duration"			"1"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"dash_back"				"200 275 350 425 400"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"arrow_amount"			"5 6 7 8 9"
-			}			
-			"09"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"slow"					"70"
-			}
-			"10"
-			{				
-				"var_type"				"FIELD_INTEGER"
-				"damage_per_agi"		"1"
-			}
-		}
+		"AbilityValues"
+        {
+            "bonus_vision" "150"
+            "aspd" "40"
+            "gold_per_second" "4"
+            "agi_scale_crit" "2"
+            "crit_chance" "40"
+            "cast_delay" "0.1"
+            "damage" "50 60 70 80 90"
+            "speed" "1500"
+            "width" "60"
+            "length" "1400"
+            "stun_duration" "1"
+            "dash_back" "200 275 350 425 400"
+            "arrow_amount" "5 6 7 8 9"
+            "slow" "70"
+            "damage_per_agi" "1"
+        }
 		
 		"OnSpellStart"
 		{
@@ -2262,34 +1644,14 @@
 		"AbilityCooldown"				"9999"
 		"AbilityManaCost"				"9"
 
-		"AbilitySpecial"
-		{
-		    "01"
-		    {
-		        "var_type"				  	"FIELD_INTEGER"
-		        "evasion"					"20"
-		    }
-		    "02"
-	      	{
-	        	"var_type"        			"FIELD_FLOAT"
-	        	"invis_chance"    			"7"
-	      	}
-		    "03"
-		    {
-		        "var_type"				  	"FIELD_FLOAT"
-		        "invis_duration"			"2"
-		    }					    
-		    "04"
-		    {
-		        "var_type"				  	"FIELD_INTEGER"
-		        "passive_cooldown"			"10"
-		    }	
-		    "05"
-		    {
-		        "var_type"				  	"FIELD_FLOAT"
-		        "bonus_mr"					"20"
-		    }	
-		}
+		"AbilityValues"
+        {
+            "evasion" "20"
+            "invis_chance" "7"
+            "invis_duration" "2"
+            "passive_cooldown" "10"
+            "bonus_mr" "20"
+        }
 		
 		"OnSpellStart"
 		{
@@ -2315,24 +1677,12 @@
 		"AbilityCooldown"				"9999"
 		"AbilityManaCost"				"11"
 
-		"AbilitySpecial"
-		{
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_range"			"300"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_per_agi"		"6"
-			}
-			"09"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"ignore_armor_amount"	"30"
-			}	
-		}
+		"AbilityValues"
+        {
+            "bonus_range" "300"
+            "damage_per_agi" "6"
+            "ignore_armor_amount" "30"
+        }
 		
 		"OnSpellStart"
 		{
@@ -2358,44 +1708,16 @@
 		"AbilityCooldown"				"9999"
 		"AbilityManaCost"				"18"
 
-		"AbilitySpecial"
-		{
-			"08"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"paralyzing_damage_per_int"		"2"
-			}			
-			"08"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"roots_damage_per_int"		"2.5"
-			}			
-			"08"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"roots_dps_per_int"		"0.5"
-			}			
-			"08"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"yew_damage_per_int"	"3"
-			}			
-			"08"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"yew_dps_per_int"		"1.5"
-			}			
-			"08"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"combo_dps_per_int"		"3"
-			}			
-			"09"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"combo_bonus_damage"	"500"
-			}
-		}
+		"AbilityValues"
+        {
+            "paralyzing_damage_per_int" "2"
+            "roots_damage_per_int" "2.5"
+            "roots_dps_per_int" "0.5"
+            "yew_damage_per_int" "3"
+            "yew_dps_per_int" "1.5"
+            "combo_dps_per_int" "3"
+            "combo_bonus_damage" "500"
+        }
 		
 		"OnSpellStart"
 		{
@@ -2419,6 +1741,12 @@
 
 		"precache"
 		{
+			"model"					"models/bad_ancient_destruction_pitrim.vmdl"
+			"model"					"models/items/beastmaster/hawk/fotw_eagle/fotw_eagle.vmdl"
+			"model"					"models/props_debris/barrel002.vmdl"
+			"model"					"models/robin/hiking/hiking_robin_by_zefiroft.vmdl"
+			"model"					"models/robin/ninja/ninja_robin_by_zefiroft.vmdl"
+			"model"					"models/robin/capeless/robin_capeless_by_zefiroft.vmdl"
 			"particle"  			"particles/units/heroes/hero_pugna/pugna_decrepify.vpcf"
 			"particle"  			"particles/econ/items/windrunner/windranger_arcana/windranger_arcana_ambient_smoke.vpcf"
 			"particle"  			"particles/units/heroes/hero_hoodwink/hoodwink_scurry_aura_leaves_activation.vpcf"

@@ -119,6 +119,7 @@ function gae_dearg_wrapper(ability)
 
 		target:EmitSound("Hero_Lion.Impale")
 		StartAnimation(caster, {duration=0.5, activity=ACT_DOTA_CAST_ABILITY_3_END, rate=2})
+		target:AddNewModifier(caster, nil, "modifier_silence", {duration=0.1})
 
 		-- Add dagon particle
 		local dagon_particle = ParticleManager:CreateParticle("particles/items_fx/dagon.vpcf",  PATTACH_ABSORIGIN_FOLLOW, caster)

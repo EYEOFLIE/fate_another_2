@@ -20,54 +20,18 @@
 		"AbilityCooldown"				"16"
 		"AbilityManaCost"				"100"
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"cast_delay"			"0.1"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"range"					"900"
-			}	
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"dash_duration"			"0.4"
-			}		
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"aoe"					"250"
-			}	
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius_detect"			"100"
-			}			
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"160 240 320 400 480"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"stun_duration"			"0.7"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"slow_duration"			"1.8 2.1 2.4 2.7 3"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"slow_amount"			"-30 -35 -40 -45 -50"
-			}
-		}
+		"AbilityValues"
+        {
+            "cast_delay" "0.1"
+            "range" "900"
+            "dash_duration" "0.4"
+            "aoe" "250"
+            "radius_detect" "100"
+            "damage" "160 240 320 400 480"
+            "stun_duration" "0.7"
+            "slow_duration" "1.8 2.1 2.4 2.7 3"
+            "slow_amount" "-30 -35 -40 -45 -50"
+        }
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -146,59 +110,19 @@
 		"AbilityCooldown"				"16"
 		"AbilityManaCost"				"100"
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"cast_delay"			"0.1"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"range"					"900"
-			}	
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"dash_duration"			"0.4"
-			}		
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"aoe"					"250"
-			}	
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius_detect"			"100"
-			}			
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"160 240 320 400 480"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_per_strength"	"4"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"stun_duration"			"0.7"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"slow_duration"			"1.8 2.1 2.4 2.7 3"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"slow_amount"			"-30 -35 -40 -45 -50"
-			}	
-		}		
+		"AbilityValues"
+        {
+            "cast_delay" "0.1"
+            "range" "900"
+            "dash_duration" "0.4"
+            "aoe" "250"
+            "radius_detect" "100"
+            "damage" "160 240 320 400 480"
+            "damage_per_strength" "4"
+            "stun_duration" "0.7"
+            "slow_duration" "1.8 2.1 2.4 2.7 3"
+            "slow_amount" "-30 -35 -40 -45 -50"
+        }		
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -398,6 +322,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 		"AbilityTextureName"			"custom/mashu/protect"
 		"MaxLevel"						"5"
 		"RequiredLevel"					"1"
@@ -548,6 +473,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 		"AbilityTextureName"			"custom/mashu/protect"
 		"MaxLevel"						"5"
 		"RequiredLevel"					"1"
@@ -1026,64 +952,20 @@
 		"AbilityCooldown"				"14"
 		"AbilityManaCost"				"200"
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"cast_range"			"400"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"cast_time"				"0.2"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_reduce"			"-20 -24 -28 -32 -36"
-			}			
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"max_range"				"800"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"parry_duration"		"1"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"protect_duration"		"2"
-			}		
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"red_cooldown"			"9"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"mana_restore"			"100"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"invul"					"0"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"aoe"					"300"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"damage"				"200 275 350 425 500"
-			}
-		}
+		"AbilityValues"
+        {
+            "cast_range" "400"
+            "cast_time" "0.2"
+            "damage_reduce" "-20 -24 -28 -32 -36"
+            "max_range" "800"
+            "parry_duration" "1"
+            "protect_duration" "2"
+            "red_cooldown" "9"
+            "mana_restore" "100"
+            "invul" "0"
+            "aoe" "300"
+            "damage" "200 275 350 425 500"
+        }
 
 		"OnSpellStart"
 		{
@@ -1171,64 +1053,20 @@
 		"AbilityCooldown"				"14"
 		"AbilityManaCost"				"200"
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"cast_range"			"600"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"cast_time"				"0.2"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_reduce"			"-20 -24 -28 -32 -36"
-			}			
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"max_range"				"1000"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"parry_duration"		"1.8"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"protect_duration"		"3.2"
-			}		
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"red_cooldown"			"9"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"mana_restore"			"100"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"invul"					"0.3"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"aoe"					"300"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"damage"				"200 275 350 425 500"
-			}
-		}
+		"AbilityValues"
+        {
+            "cast_range" "600"
+            "cast_time" "0.2"
+            "damage_reduce" "-20 -24 -28 -32 -36"
+            "max_range" "1000"
+            "parry_duration" "1.8"
+            "protect_duration" "3.2"
+            "red_cooldown" "9"
+            "mana_restore" "100"
+            "invul" "0.3"
+            "aoe" "300"
+            "damage" "200 275 350 425 500"
+        }
 
 		"OnSpellStart"
 		{
@@ -1313,45 +1151,16 @@
 		"AbilityCooldown"				"32"
 		"AbilityManaCost"				"400"
 		
-		"AbilitySpecial"
-		{
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"cast_time"			"0.2"
-			}
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"channel_time"		"0.9"
-			}
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"cast_delay"		"0.35"
-			}				
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"buff_duration"		"3 4 5 6 7"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"damage_reduction"	"-11 -14 -17 -20 -23"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"radius"			"350"
-			}
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"taunt_duration"	"1.2 1.4 1.6 1.8 2"
-			}			
-					
-		}
+		"AbilityValues"
+        {
+            "cast_time" "0.2"
+            "channel_time" "0.9"
+            "cast_delay" "0.35"
+            "buff_duration" "3 4 5 6 7"
+            "damage_reduction" "-12 -14 -16 -18 -20"
+            "radius" "350"
+            "taunt_duration" "1.2 1.4 1.6 1.8 2"
+        }
 
 		"OnSpellStart"
 		{
@@ -1430,50 +1239,17 @@
 		"AbilityCooldown"				"32"
 		"AbilityManaCost"				"400"
 		
-		"AbilitySpecial"
-		{
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"cast_time"			"0.2"
-			}
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"channel_time"		"0.9"
-			}
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"cast_delay"		"0.35"
-			}				
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"buff_duration"		"5 6 7 8 9"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"damage_reduction"	"-11 -14 -17 -20 -23"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"radius"			"350"
-			}
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"taunt_duration"	"1.7 1.9 2.1 2.3 2.5"
-			}			
-							
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"damage_from_max_health"		"0.2"
-			}				
-		}
+		"AbilityValues"
+        {
+            "cast_time" "0.2"
+            "channel_time" "0.9"
+            "cast_delay" "0.35"
+            "buff_duration" "5 6 7 8 9"
+            "damage_reduction" "-12 -14 -16 -18 -20"
+            "radius" "350"
+            "taunt_duration" "1.7 1.9 2.1 2.3 2.5"
+            "damage_from_max_health" "0.2"
+        }
 
 		"OnSpellStart"
 		{
@@ -1554,79 +1330,23 @@
 		"AbilityCooldown"				"43 42 41 40 39"
 		"AbilityManaCost"				"600"
 		
-		"AbilitySpecial"
-		{	
-			"03"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"damage_reduction_passive"	"0"
-			}			
-			"03"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"health_regen_passive"	"10 15 20 25 30"
-			}	
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"cast_time"			"0.2"
-			}		
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"channel_time"		"1.5"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"radius"			"650"
-			}	
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"active_instant_heal"		"200 300 400 500 600"
-			}	
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"buff_duration"		"5 6.5 8 9.5 11"
-			}	
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"cast_delay"		"0.6"
-			}				
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"health_regen_active"		"30 50 70 90 110"
-			}					
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"active_bonus_strength"		"6 9 12 15 18"
-			}						
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"active_magic_res"	"10 13 16 19 22"
-			}				
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"active_arm"		"5 8 11 14 17"
-			}										
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"invul"				"0"
-			}	
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"ally_invul"		"0"
-			}				
-		}
+		"AbilityValues"
+        {
+            "damage_reduction_passive" "0"
+            "health_regen_passive" "10 15 20 25 30"
+            "cast_time" "0.2"
+            "channel_time" "1.5"
+            "radius" "650"
+            "active_instant_heal" "200 300 400 500 600"
+            "buff_duration" "5 6.5 8 9.5 11"
+            "cast_delay" "0.6"
+            "health_regen_active" "30 45 60 75 90"
+            "active_bonus_strength" "6 9 12 15 18"
+            "active_magic_res" "10 13 16 19 22"
+            "active_arm" "5 8 11 14 17"
+            "invul" "0"
+            "ally_invul" "0"
+        }
 		
 		//"OnUpgrade"
 		//{
@@ -1733,74 +1453,22 @@
 	    	
 	    }
 		
-		"AbilitySpecial"
-		{	
-			"03"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"damage_reduction_passive"	"-5"
-			}	
-			"03"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"health_regen_passive"	"1 1.5 2 2.5 3"
-			}			
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"channel_time"		"1.5"
-			}
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"cast_delay"		"0.6"
-			}	
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"invul"				"0.3"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"radius"			"650"
-			}	
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"active_instant_heal"		"200 300 400 500 600"
-			}	
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"buff_duration"		"5 6.5 8 9.5 11"
-			}				
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"health_regen_active"		"30 50 70 90 110"
-			}					
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"active_bonus_strength"		"6 9 12 15 18"
-			}						
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"active_magic_res"	"10 13 16 19 22"
-			}				
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"active_arm"		"5 8 11 14 17"
-			}					
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"ally_invul"		"0.3"
-			}				
-		}
+		"AbilityValues"
+        {
+            "damage_reduction_passive" "-5"
+            "health_regen_passive" "1 1.5 2 2.5 3"
+            "channel_time" "1.5"
+            "cast_delay" "0.6"
+            "invul" "0.3"
+            "radius" "650"
+            "active_instant_heal" "200 300 400 500 600"
+            "buff_duration" "5 6.5 8 9.5 11"
+            "health_regen_active" "30 45 60 75 90"
+            "active_bonus_strength" "6 9 12 15 18"
+            "active_magic_res" "10 13 16 19 22"
+            "active_arm" "5 8 11 14 17"
+            "ally_invul" "0.3"
+        }
 
 		"OnSpellStart"
 		{
@@ -1912,6 +1580,7 @@
 	    "MaxLevel"						"1"
 	    "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	    "AbilityTextureName"			"custom/mashu/shielder"
+	    "AbilityCooldown"				"1"
 	    
 	    "precache"
 	    {
@@ -1920,7 +1589,7 @@
 
 	    "AbilityValues"
 	    {
-	    	"base_shield"			"1000"
+	    	"base_shield"			"800"
 	    	"bonus_lvl_shield"		"50"
 	    	"shield_amount_regen"	"500"
 	    	"shield_regen_time"		"5"
@@ -1995,6 +1664,7 @@
 	    "MaxLevel"						"1"
 	    "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	    "AbilityTextureName"			"custom/mashu/shielder"
+	    "AbilityCooldown"				"1"
 	    
 	    "precache"
 	    {
@@ -2003,7 +1673,7 @@
 
 	    "AbilityValues"
 	    {
-	    	"base_shield"			"1000"
+	    	"base_shield"			"800"
 	    	"bonus_lvl_shield"		"50"
 	    	"shield_amount_regen"	"800"
 	    	"shield_regen_time"		"5"
@@ -2087,40 +1757,15 @@
 		"AbilityCooldown"				"15"
 		"AbilityManaCost"				"200"
 		
-		"AbilitySpecial"
-		{		
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"cast_delay"		"0.15"
-			}		
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"throw_length"		"600"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"width"				"120"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"projectile_speed"	"1400"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"damage"			"300"
-			}			
-			"03"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"stun_revoke"		"0.3"
-			}	
-							
-		}
+		"AbilityValues"
+        {
+            "cast_delay" "0.15"
+            "throw_length" "600"
+            "width" "120"
+            "projectile_speed" "1400"
+            "damage" "300"
+            "stun_revoke" "0.3"
+        }
 
 		"OnSpellStart"
 		{
@@ -2187,44 +1832,16 @@
 		"AbilityCooldown"				"15"
 		"AbilityManaCost"				"200"
 		
-		"AbilitySpecial"
-		{				
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"cast_delay"		"0.15"
-			}		
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"throw_length"		"600"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"width"				"120"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"projectile_speed"	"1400"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"damage"			"400"
-			}		
-			"03"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"damage_per_strength"		"4"
-			}			
-			"03"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"stun_revoke"		"0.3"
-			}				
-		}
+		"AbilityValues"
+        {
+            "cast_delay" "0.15"
+            "throw_length" "600"
+            "width" "120"
+            "projectile_speed" "1400"
+            "damage" "400"
+            "damage_per_strength" "4"
+            "stun_revoke" "0.3"
+        }
 
 		"OnSpellStart"
 		{
@@ -2340,57 +1957,18 @@
 		"AbilityCooldown"				"200"
 		"AbilityManaCost"				"600"
 		
-		"AbilitySpecial"
-		{				
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"channel_time"		"7"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"damage_reduction_chanting"	"-20"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"radius"			"99999"
-			}
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"active_instant_heal"		"500"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"buff_duration"		"18"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"damage_reduction"	"-15"
-			}			
-			"03"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"health_regen"		"70"
-			}
-						
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"bonus_max_health"	"300"
-			}				
-						
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"barrier_amount"	"500"
-			}		
-				
-		}
+		"AbilityValues"
+        {
+            "channel_time" "7"
+            "damage_reduction_chanting" "-20"
+            "radius" "99999"
+            "active_instant_heal" "500"
+            "buff_duration" "18"
+            "damage_reduction" "-15"
+            "health_regen" "70"
+            "bonus_max_health" "300"
+            "barrier_amount" "500"
+        }
 
 		"OnSpellStart"
 		{
@@ -2473,26 +2051,12 @@
 		"AbilityCooldown"				"9999"
 		"AbilityManaCost"				"10"
 
-		"AbilitySpecial"
-		{				
-			//Q BuNkerBOLT
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_per_strengtho"	"4"
-			}
-			//PUNISHMEN			
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"100"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"damage_per_strength"		"4"
-			}		
-		}
+		"AbilityValues"
+        {
+            "damage_per_strengtho" "4"
+            "bonus_damage" "100"
+            "damage_per_strength" "4"
+        }
 
 	    "OnSpellStart"
 	    {
@@ -2578,24 +2142,12 @@
 		"AbilityCooldown"				"9999"
 		"AbilityManaCost"				"12"
 
-		"AbilitySpecial"
-		{	
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"damage_from_max_health"		"0.2"
-			}				
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"bonus_buff_duration"		"2"
-			}				
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"bonus_taunt_duration"		"0.5"
-			}						
-		}	
+		"AbilityValues"
+        {
+            "damage_from_max_health" "0.2"
+            "bonus_buff_duration" "2"
+            "bonus_taunt_duration" "0.5"
+        }	
 
 	    "OnSpellStart"
 	    {

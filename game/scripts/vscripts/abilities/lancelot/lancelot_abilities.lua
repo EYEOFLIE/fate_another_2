@@ -43,11 +43,14 @@ function OnEternalAttack(keys)
 	local ability = keys.ability 
 	local target = keys.target 
 	local critical_chance = ability:GetSpecialValueFor("critical_chance_passive")
+
 	if caster:HasModifier("modifier_eternal_arms_mastership_active") then 
 		critical_chance = ability:GetSpecialValueFor("critical_chance_active")
 	end
 
-	if RandomInt(1, 100) <= critical_chance then 
+	local chance = RandomInt(1, 100)
+
+	if chance <= critical_chance then 
 		ability:ApplyDataDrivenModifier(caster, caster, "modifier_eternal_arms_mastership_crit", {})
 	end
 end
@@ -1600,7 +1603,7 @@ function LancelotCheckCombo(caster,ability)
 	if math.ceil(caster:GetStrength()) >= 25 and math.ceil(caster:GetAgility()) >= 25 and math.ceil(caster:GetIntellect()) >= 25 then
 		
 		if string.match(GetMapName(), "fate_elim") then 
-			if GameRules:GetGameTime() < 15 + _G.RoundStartTime then 
+			if GameRules:GetGameTime() < 25 + _G.RoundStartTime then 
 				return 
 			end
 		end
@@ -2049,6 +2052,8 @@ function OnImproveEternalArmsMastershipAcquired(keys)
 		end
 
 		hero.FSkill = "lancelot_eternal_arms_mastership_upgrade"
+		hero:RemoveModifierByName("modifier_eternal_arms_mastership_think")
+		hero:FindAbilityByName(hero.FSkill):ApplyDataDrivenModifier(hero, hero, "modifier_eternal_arms_mastership_think", {})
 
 		NonResetAbility(hero)
 

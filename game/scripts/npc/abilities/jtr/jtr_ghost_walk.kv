@@ -27,29 +27,13 @@
 			"soundfile"   	"soundevents/hero_jtr.vsndevts"
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"distance"				"400 500 600 700 800"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"min_distance"			"200"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"base_dmg"				"60 90 120 150 180"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"atk_ratio"				"1.0"
-			}
-		}	
+		"AbilityValues"
+        {
+            "distance" "400 500 600 700 800"
+            "min_distance" "200"
+            "base_dmg" "60 90 120 150 180"
+            "atk_ratio" "1.0"
+        }	
 		"OnAbilityPhaseStart"
 		{
 			"RunScript"

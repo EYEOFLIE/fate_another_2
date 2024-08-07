@@ -138,8 +138,12 @@ end
 function OnTrioBaseEnter(hero, team)
 	if hero:GetUnitName() == "npc_dota_hero_wisp" then return end
 	hero.IsInBase = true
+	local dur = 9999
+	if IsInToolsMode() then 
+		dur = 0.5
+	end
 	if hero:GetTeam() == team then
-		giveUnitDataDrivenModifier(hero, hero, "spawn_invulnerable", 999)
+		giveUnitDataDrivenModifier(hero, hero, "spawn_invulnerable", dur)
 	end
 	SendErrorMessage(hero:GetPlayerOwnerID(), "#Entered_Base")
 end
@@ -308,6 +312,7 @@ function PotInstantHeal(keys)
 		RefundItem(caster, ability)
 		return
 	end
+	SetShareCooldown(ability, caster)
 	local health_heal = ability:GetSpecialValueFor("health_heal")
 	local mana_heal = ability:GetSpecialValueFor("mana_heal")
 	caster:FateHeal(health_heal, caster, false)
@@ -665,6 +670,7 @@ function BerserkScroll(keys)
 		RefundItem(caster, ability)
 		return
 	end
+	SetShareCooldown(ability, caster)
 	ability:ApplyDataDrivenModifier(caster, caster, "modifier_berserk_scroll", {})
 	caster:EmitSound("DOTA_Item.MaskOfMadness.Activate")
 end
@@ -694,6 +700,7 @@ function CScroll(keys)
 		return
 	end
 
+	SetShareCooldown(ability, caster)
 	local c_scroll = {
 		Target = target,
 		Ability = dability,
@@ -772,6 +779,8 @@ function BScroll(keys)
 
 	if not caster:IsRealHero() then return end
 
+	SetShareCooldown(ability, caster)
+
 	caster.ServStat:useB()
 	ability:ApplyDataDrivenModifier(caster, caster, "modifier_b_scroll", {})
 	caster.BShieldAmount = keys.ShieldAmount
@@ -790,6 +799,8 @@ function DScroll(keys)
 	end
 
 	if not caster:IsRealHero() then return end
+
+	SetShareCooldown(ability, caster)
 
 	--caster.ServStat:useB()
 	ability:ApplyDataDrivenModifier(caster, caster, "modifier_d_scroll", {})
@@ -810,6 +821,8 @@ function EScroll(keys)
 
 	if not caster:IsRealHero() then return end
 
+	SetShareCooldown(ability, caster)
+
 	--caster.ServStat:useB()
 	ability:ApplyDataDrivenModifier(caster, caster, "modifier_e_scroll", {})
 	caster:EmitSound("DOTA_Item.ArcaneBoots.Activate")
@@ -827,6 +840,8 @@ function FScroll(keys)
 	end
 
 	if not caster:IsRealHero() then return end
+
+	SetShareCooldown(ability, caster)
 
 	--caster.ServStat:useB()
 	ability:ApplyDataDrivenModifier(caster, caster, "modifier_f_scroll", {})
@@ -853,6 +868,8 @@ function AScroll(keys)
 	end
 
 	if not caster:IsRealHero() then return end
+
+	SetShareCooldown(ability, caster)
 
 	caster.ServStat:useA()
 	--ability:ApplyDataDrivenModifier(caster, caster, "modifier_a_scroll", {})
@@ -884,6 +901,8 @@ function APlusScroll(keys)
 	end
 
 	if not caster:IsRealHero() then return end
+
+	SetShareCooldown(ability, caster)
 
 	caster.ServStat:useA()
 
@@ -919,6 +938,8 @@ function SScroll(keys)
 	local target = keys.target
 
 	if not caster:IsRealHero() then return end
+
+	SetShareCooldown(ability, caster)
 
 	caster.ServStat:useS()
 
@@ -977,11 +998,14 @@ function EXScroll(keys)
 
 	if not caster:IsRealHero() then return end
 
+	SetShareCooldown(ability, caster)
+
 	caster.ServStat:useEX()
 	
 	if IsSpellBlocked(target) then return end
 
 	target:EmitSound("Hero_Zuus.GodsWrath.Target")
+	giveUnitDataDrivenModifier(caster, target, "silenced", 0.1)
 
 	local hero_targets = FindUnitsInRadius(caster:GetTeam(), target:GetAbsOrigin(), nil, search_aoe, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE, FIND_CLOSEST, false)
 	local creep_targets = FindUnitsInRadius(caster:GetTeam(), target:GetAbsOrigin(), nil, search_aoe, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_CREEP + DOTA_UNIT_TARGET_BUILDING, DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE, FIND_CLOSEST, false)
@@ -1106,6 +1130,8 @@ function HealingScroll(keys)
 		return
 	end
 
+	SetShareCooldown(ability, caster)
+
 	local healFx = ParticleManager:CreateParticle("particles/units/heroes/hero_omniknight/omniknight_purification_g.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
 
 	local targets = FindUnitsInRadius(caster:GetTeam(), caster:GetAbsOrigin(), nil, radius, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_INVULNERABLE, FIND_ANY_ORDER, false)
@@ -1146,6 +1172,8 @@ function Replenish(keys)
 		RefundItem(caster, ability)
 		return
 	end
+
+	SetShareCooldown(ability, caster)
 
 	caster:SetHealth(caster:GetMaxHealth())
 	caster:SetMana(caster:GetMaxMana())

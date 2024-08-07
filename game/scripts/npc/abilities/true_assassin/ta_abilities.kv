@@ -20,14 +20,10 @@
 			"particle"						"particles\units\heroes\hero_pugna\pugna_decrepify.vpcf"
 			
 		}
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"cast_delay"				"2.0"
-			}
-		}
+		"AbilityValues"
+        {
+            "cast_delay" "2.0"
+        }
 
 		"OnSpellStart"
 		{
@@ -145,29 +141,13 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"100"
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"search_radius"			"625"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"8.0"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"base_damage"			"375"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"45"
-			}
-		}
+		"AbilityValues"
+        {
+            "search_radius" "625"
+            "duration" "8.0"
+            "base_damage" "375"
+            "bonus_damage" "45"
+        }
 		
 		"OnSpellStart"
 		{
@@ -225,9 +205,9 @@
 		{
 		}
 
-		"AbilitySpecial"
-		{
-		}
+		"AbilityValues"
+        {
+        }
 
 		"OnSpellStart"
 		{
@@ -303,24 +283,12 @@
 		{
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"delay"					"0.95"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"800 1025 1250 1475 1700"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"curse_dur"				"2.0"
-			}
-		}
+		"AbilityValues"
+        {
+            "delay" "0.95"
+            "damage" "800 1025 1250 1475 1700"
+            "curse_dur" "2.0"
+        }
 
 		"OnAbilityPhaseStart"
 		{
@@ -378,14 +346,10 @@
 		"AbilityTextureName"			"custom/ta_weakening_venom"
 		"MaxLevel"						"1"
 		
-		"AbilitySpecial"
-		{			
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"12.0"
-			}
-		}
+		"AbilityValues"
+        {
+            "duration" "12.0"
+        }
 		
 		"Modifiers"
 		{
@@ -422,9 +386,9 @@
 		"AbilityTextureName"			"custom/ta_protection_from_wind"
 		"MaxLevel"						"1"
 		
-		"AbilitySpecial"
-		{
-		}
+		"AbilityValues"
+        {
+        }
 		
 		"Modifiers"
 		{
@@ -457,19 +421,11 @@
 		{
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"search_radius"			"2000"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"reveal_duration"		"5.0"
-			}
-		}
+		"AbilityValues"
+        {
+            "search_radius" "2000"
+            "reveal_duration" "5.0"
+        }
 		
 		"OnSpellStart"
 		{
@@ -501,29 +457,13 @@
 		{
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bonus_mr"				"40"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"penalty_mr"			"-20"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mr_change"				"5"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mr_timer"				"0.5"
-			}
-		}
+		"AbilityValues"
+        {
+            "bonus_mr" "40"
+            "penalty_mr" "-20"
+            "mr_change" "5"
+            "mr_timer" "0.5"
+        }
 		
 		"OnSpellStart"
 		{
@@ -555,39 +495,15 @@
 		{
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"poison_stack"			"5"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"attack_stack"			"1"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"attack_cooldown"		"1"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"attack_penalty"		"-100"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"agility_ratio"			"0.5"
-			}
-			"06"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"baseattack_str_reduction"		"0.75"
-			}
-		}
+		"AbilityValues"
+        {
+            "poison_stack" "5"
+            "attack_stack" "1"
+            "attack_cooldown" "1"
+            "attack_penalty" "-100"
+            "agility_ratio" "0.5"
+            "baseattack_str_reduction" "0.75"
+        }
 		
 		"OnSpellStart"
 		{
@@ -620,34 +536,14 @@
 		{
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"zab_curse_dur"			"3.5"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"zab_dmg_penalty"		"100 175 250 325 400"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"combo_bonus_damage"	"50"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"snatch_vision_debuff"	"250"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"vision_duration"		"5"
-			}
-		}
+		"AbilityValues"
+        {
+            "zab_curse_dur" "3.5"
+            "zab_dmg_penalty" "100 175 250 325 400"
+            "combo_bonus_damage" "50"
+            "snatch_vision_debuff" "250"
+            "vision_duration" "5"
+        }
 		
 		"OnSpellStart"
 		{
@@ -679,39 +575,15 @@
 		{
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mod_str_cooldown"		"0.5"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mod_agi_dmg"			"3"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mod_int_heal"			"15"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"snatch_str_dmg"		"3"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"snatch_agi_dmg"		"2"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"snatch_int_dmg"		"5"
-			}
-		}
+		"AbilityValues"
+        {
+            "mod_str_cooldown" "0.5"
+            "mod_agi_dmg" "3"
+            "mod_int_heal" "15"
+            "snatch_str_dmg" "3"
+            "snatch_agi_dmg" "2"
+            "snatch_int_dmg" "5"
+        }
 		
 		"OnSpellStart"
 		{

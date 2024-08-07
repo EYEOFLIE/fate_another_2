@@ -6,6 +6,8 @@ LinkLuaModifier("modifier_a_scroll_sated", "items/modifiers/modifier_a_scroll_sa
 LinkLuaModifier("modifier_vision_provider", "abilities/general/modifiers/modifier_vision_provider", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_resonator_cooldown", "abilities/general/modifiers/modifier_resonator_cooldown", LUA_MODIFIER_MOTION_NONE)
 
+require('abilities/fran/fran_abilities')
+
 ServantAttribute = LoadKeyValues("scripts/npc/servant_attribute.txt")
 
 SaberAttribute = {
@@ -494,8 +496,9 @@ ChargeBuffReset = {
 	atalanta_celestial_arrow = 5,
 	atalanta_celestial_arrow_upgrade = 5,
 	diarmuid_warriors_charge_upgrade = 2,
+	muramasa_dash = 2,
+	muramasa_dash_upgrade = 2,
 }
-
 
 function OnSeal1Start(keys)
 	local caster = keys.caster
@@ -564,6 +567,9 @@ end
 function ResetAbilities(hero)
 	-- Reset all resetable abilities
 	RemoveChargeModifiers(hero)
+	--[[if hero:GetName() == "npc_dota_hero_zuus" then 
+		AddElectricCharge({caster = hero}, 13)
+	end]]
 	for i=0, 26 do 
 		local ability = hero:GetAbilityByIndex(i)
 		if ability ~= nil then
@@ -1389,17 +1395,17 @@ function OnArmorGain(keys)
 	if hero.ARMORgained == nil then
 		hero.ARMORgained = 1
 	else 
-		if hero.ARMORgained < 50 then
+		if hero.ARMORgained < 30 then
 			hero.ARMORgained = hero.ARMORgained + 1
 		else
-			SendErrorMessage(caster:GetPlayerOwnerID(), "#Cannot_Get_Over_50_Stats")
+			SendErrorMessage(caster:GetPlayerOwnerID(), "#Cannot_Get_Over_30_Stats")
 			caster:GiveMana(1)
 			return
 		end
 	end 
 	hero.ServStat:addArmor()
 	--NotifyManaAndShard(hero)
-	local armor = hero.BaseArmor + (hero:GetAgility() * 0.04) + (hero.ARMORgained * 1.0)
+	local armor = hero.BaseArmor + (hero:GetAgility() * 0.04) + (hero.ARMORgained * 1.5)
 	hero:SetPhysicalArmorBaseValue(armor) 
 	hero:CalculateStatBonus(true)
 

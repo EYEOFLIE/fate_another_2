@@ -12,7 +12,7 @@ FATE_DEFAULT_MAX_PLAYERS_7v7 = 14
 FATE_DEFAULT_MAX_PLAYERS_6v6 = 12
 
 function HeroSelectioN:constructor()
-
+	self.HIDtable = {}
 	_G.GameMap = GetMapName()
 
 	if _G.GameMap == "fate_tutorial" then
@@ -30,6 +30,7 @@ function HeroSelectioN:constructor()
 		self.PickedPlayer = {}
 		self.SpecBanPlayer = {}
 		self.NewbieBanPlayer = {}
+		self.BanPlayer = {}
 		self.BanHero = {}
 		self.BanVotedPlayer = {}
 		self.SameHeroVote = {}
@@ -44,6 +45,9 @@ function HeroSelectioN:constructor()
         self.SpecBan = LoadKeyValues("scripts/npc/spec_ban.txt")
         self.NewbieBan = LoadKeyValues("scripts/npc/newbie_ban.txt")
         self.Unique = LoadKeyValues("scripts/npc/unique.txt")
+        self.HiddenHero = LoadKeyValues("scripts/npc/hero_hidden.txt")
+        self.kiuok = LoadKeyValues("scripts/npc/abilities/heroes/hero.txt")
+        self.kiuok2 = LoadKeyValues("scripts/npc/abilities/heroes/sketch.txt")
         local ContributeUnlock = LoadKeyValues("scripts/npc/contributeunlock.txt")
 		heroList["npc_dota_hero_wisp"] = nil
 		heroList2["npc_dota_hero_wisp"] = nil
@@ -61,6 +65,9 @@ function HeroSelectioN:constructor()
 		self.DC_count = {}
 		self.SelectedBar = {}
 		self.ddta = {}
+		self.HiD = {}
+		self.SiD = {}
+		self.HeroUniqueSkin = {}
 		self.HeroSelectStart = "selection"
 		self.AutoBalance = 0
 		self.total_ban = GameRules.AddonTemplate.voteBanHeroTable or 0
@@ -124,6 +131,26 @@ function HeroSelectioN:constructor()
 			self.HeroInfo[key] = hero_info
 		end
 
+		for key, value in pairs (self.HiddenHero) do
+			if value ~= 1 then return end
+			local hero_info = GetHeroInfo(key, heroes[key], self.roleList[key])
+			self.HeroInfo[key] = hero_info
+		end
+
+		for k,v in pairs (self.kiuok) do 
+			self.HiD[v] = k 
+			print(v,k)
+		end
+
+		for k,v in pairs (self.kiuok2) do 
+			self.SiD[v] = k 
+			print(v,k)
+		end
+
+		for k,v in pairs (self.Unique) do 
+	    	self.HeroUniqueSkin[v.hero] = true
+	    end
+
 		--[[for h, a in pairs (self.UnAvailableHeroes) do
 			if a ~= 1 then return end
 			local hero_info = GetHeroInfo(h)
@@ -177,6 +204,22 @@ function HeroSelectioN:constructor()
 					if PlayerTables:GetTableValue("database", "db", i) == true then 
 						local new_lvl = iupoasldm.jyiowe[i].IFY.ATLVL
 						skoyhidpo:initialize(i)
+
+						if iupoasldm.jyiowe[i].IFY.PM == -10 then -- BAN Player
+							local ddt = PlayerTables:GetAllTableValues("hHero", i)
+							local IOHero = PlayerResource:GetSelectedHeroEntity(i) or (ddt ~= nil and EntIndexToHScript(ddt.io) )
+							if string.match(IOHero:GetUnitName(),"wisp") then
+								UTIL_Remove(IOHero)
+							end
+							self.BanPlayer[i] = 1
+
+							if IsServer() then
+					            DisconnectClient(i, true)
+					        end
+					        CustomNetTables:SetTableValue("nselection", "banplayer", self.BanPlayer)
+							CustomGameEventManager:Send_ServerToAllClients( "fate_chat_display", {playerId=i, chattype=-1, text=" is BANNED."} )
+						end
+
 						if iupoasldm.jyiowe[i].LD.ACD == nil or iupoasldm.jyiowe[i].LD.ACD < 3 then 
 							SendChatToPanorama('Player ' .. i .. ' was new to game')
 							for k,v in pairs (self.NewbieBan) do
@@ -189,7 +232,20 @@ function HeroSelectioN:constructor()
 								CustomNetTables:SetTableValue("nselection", "newban", self.NewbieBanPlayer)
 							end
 						end
-
+						local b_hid = iupoasldm.jyiowe[i].IFY.BHID
+						for k,v in pairs (b_hid) do
+							if v > 0 then 
+								SendChatToPanorama('Player ' .. i .. ': ' .. self.kiuok[k] .. ' was banned')
+								if self.SpecBanPlayer[i] == nil then 
+									self.SpecBanPlayer[i] = {}
+								end
+					    		self.SpecBanPlayer[i][self.kiuok[k]] = 1
+					    		CustomNetTables:SetTableValue("nselection", "specban", self.SpecBanPlayer)
+					    	end
+					    end
+						if --[[ServerTables:GetTableValue("Dev", "pepe") == true and]] self.PAuthority[i] == 5 then 
+							CustomNetTables:SetTableValue("nselection", "hidden", self.HiddenHero)
+						end
 						--print('lvl authority ' .. new_lvl)
 						--print('old lvl ' .. alvl)
 						if alvl < new_lvl and not self.devPresence then
@@ -203,6 +259,8 @@ function HeroSelectioN:constructor()
 						--return 1
 					end
 				end})
+
+				
 
 			    if ServerTables:GetTableValue("Dev", "zef") == true then 
 			    	Timers:CreateTimer(3.0, function()
@@ -309,6 +367,7 @@ function HeroSelectioN:constructor()
         CustomNetTables:SetTableValue("nselection", "authority", self.PAuthority)
 
         CustomNetTables:SetTableValue("nselection", "specban", self.SpecBanPlayer)
+        CustomNetTables:SetTableValue("nselection", "banplayer", self.BanPlayer)
         
         CustomNetTables:SetTableValue("nselection", "game", LoadAKeyValues())
         CustomNetTables:SetTableValue("nselection", "picked", self.Picked)
@@ -397,18 +456,71 @@ function HeroSelectioN:OnDCRandom()
 	end
 end
 
+function HeroSelectioN:IsSkinRevert(next_skin, max)
+	if next_skin == -1 or next_skin == max + 1 then 
+		return true 
+	end
+	return false 
+end
+
 function HeroSelectioN:OnSkin(args)
 	local playerId = args.playerId
     local hero = args.hero
     local skin = args.skin
+    local next_skin = args.next
+    local unique = false
 
-    if self.Unique["01"]["hero"] == hero then
+    if self.HeroUniqueSkin[hero] and self:IsSkinRevert(skin + next_skin, self.AvailableSkins[hero]) then 
+    	--if (skin + next_skin == -1) or (skin + next_skin == self.AvailableSkins[hero] + 1) then
+	    	print('gonna trigger unique skin')
+		    for k,v in pairs (self.Unique) do 
+		    	local unique_skin = v.hero
+		    	if v.hero == hero then 
+		    		if v.owner[tostring(PlayerResource:GetSteamAccountID(playerId))] then
+		    			if (skin == 0 or skin == self.AvailableSkins[hero]) and self.SkinSelect[hero] ~= v.skin then 
+			    			skin = v.skin
+			    			unique = true
+			    			break
+			    		end
+			    	else
+			    		if skin + next_skin > self.AvailableSkins[hero] then 
+							skin = 0
+						else
+							skin = self.AvailableSkins[hero]
+						end
+			    	end
+			    end
+			end
+		--end
+	else
+		if skin + next_skin > self.AvailableSkins[hero] then 
+			skin = 0
+		elseif skin + next_skin < 0 then
+			skin = self.AvailableSkins[hero]
+		else
+			skin = skin + next_skin
+		end
+	end
+
+    --[[if self.Unique["01"]["hero"] == hero then
     	if self.Unique["01"]["owner"][tostring(PlayerResource:GetSteamAccountID(playerId))] then
     		if (skin == 0 or skin == self.AvailableSkins[hero]) and self.SkinSelect[hero] ~= self.Unique["01"]["skin"] then 
     			skin = self.Unique["01"]["skin"]
     		end
     	end
-    end
+    elseif self.Unique["02"]["hero"] == hero then
+    	if self.Unique["02"]["owner"][tostring(PlayerResource:GetSteamAccountID(playerId))] then
+    		if (skin == 0 or skin == self.AvailableSkins[hero]) and self.SkinSelect[hero] ~= self.Unique["02"]["skin"] then 
+    			skin = self.Unique["02"]["skin"]
+    		end
+    	end
+    elseif self.Unique["03"]["hero"] == hero then
+    	if self.Unique["03"]["owner"][tostring(PlayerResource:GetSteamAccountID(playerId))] then
+    		if (skin == 0 or skin == self.AvailableSkins[hero]) and self.SkinSelect[hero] ~= self.Unique["03"]["skin"] then 
+    			skin = self.Unique["03"]["skin"]
+    		end
+    	end
+    end]]
 
     print('skin = ' .. skin)
 
@@ -418,7 +530,9 @@ function HeroSelectioN:OnSkin(args)
 
     local player = PlayerResource:GetPlayer(playerId)
 
-    local sID = GetSID(hero .. "_" .. skin)
+    if skin == 0 then return end
+
+    local sID = self:GetSID(hero .. "_" .. skin)
     --print(sID)
 
     if self.skinTier["LimitedSkin"][hero .. "_" .. skin] == 1 then 
@@ -436,7 +550,8 @@ function HeroSelectioN:OnSkin(args)
     if IsEventSkin(sID) then 
 		print('event skin')
 		self.skinAccess[playerId] = true
-		
+	elseif unique == true then 
+		self.skinAccess[playerId] = true
     elseif PlayerTables:GetTableValue("database", "db", playerId) == true and iupoasldm.jyiowe[playerId].IFY ~= nil then 
 		print('skin pick from database')
 		if iupoasldm.jyiowe[playerId].IFY.SKID[sID] == true then 
@@ -497,7 +612,7 @@ function HeroSelectioN:GetSkin(pId, hero)
 	local sID = 0 
 
 	if PlayerTables:GetTableValue("database", "db", pId) == true and iupoasldm.jyiowe[pId].IFY ~= nil then 
-		hID = GetHID(hero)
+		hID = self:GetHID(hero)
 			--print(hID)
 			--print('data base get')
 			--print('default skin ' .. self.ddta[pId].IFY.HID[hID].DSK)
@@ -507,7 +622,7 @@ function HeroSelectioN:GetSkin(pId, hero)
 		else
 			if iupoasldm.jyiowe[pId].IFY.HID[hID].DSK > 0 then
 					--print('default skin check')
-				sID = GetSID(hero .. "_" .. iupoasldm.jyiowe[pId].IFY.HID[hID].DSK)
+				sID = self:GetSID(hero .. "_" .. iupoasldm.jyiowe[pId].IFY.HID[hID].DSK)
 					--print(self.ddta[pId].IFY.HID[hID].DSK)
 					--print(sID)
 				if sID == nil then
@@ -523,6 +638,7 @@ function HeroSelectioN:GetSkin(pId, hero)
 					end
 				end
 			end
+			
 		end
 	end
 
@@ -550,6 +666,8 @@ function HeroSelectioN:OnBan(args)
 	local playerId = args.playerId
     local hero = args.hero
 
+    if self.BanPlayer[playerId] then return end
+
     print('player : ' .. playerId .. ', hero : ' .. hero)
 
 	self.BanVotedPlayer[playerId] = playerId
@@ -566,6 +684,8 @@ end
 function HeroSelectioN:OnSameHeroVote(args)
 	local playerId = args.playerId
     local hero = args.hero
+
+    if self.BanPlayer[playerId] then return end
 
     print('player : ' .. playerId .. 'vote hero : ' .. hero)
 
@@ -643,6 +763,8 @@ function HeroSelectioN:OnSelect(args)
     local player = PlayerResource:GetPlayer(playerId)
     local PID = PlayerResource:GetSteamAccountID(playerId)
 
+    if self.BanPlayer[playerId] then return end
+
     if self.SpecBan[tostring(PID)] then 
     	SendChatToPanorama('Player ' .. playerId .. ' was in hero ban list')
     	if self.SpecBan[tostring(PID)][hero] == 1 then 
@@ -663,38 +785,52 @@ function HeroSelectioN:OnSelect(args)
     	return 
     end
 
-    if self.AvailableHeroes[hero] == 1 then  
-    	print('available hero') 	
-	    self.Picked[playerId] = hero
-	    self.AvailableHeroes[hero] = nil
-	    self.SkinSelect[hero] = self:GetSkin(playerId, hero)
-	    if self.SkinSelect[hero] == nil then 
-	    	self.SkinSelect[hero] = 0
-	    end
-	    self.PickedPlayer[playerId] = playerId
-
-	    CustomNetTables:SetTableValue("nselection", "picked", self.Picked)
-	    CustomNetTables:SetTableValue("nselection", "available", self.AvailableHeroes)
-	    CustomNetTables:SetTableValue("nselection", "skinselect", self.SkinSelect)
-	    CustomNetTables:SetTableValue("nselection", "pickedplayer", self.PickedPlayer)
-	    CustomGameEventManager:Send_ServerToAllClients( "preheroselect",  {hero=hero,playerId=playerId}) 	
-	elseif self.UnAvailableHeroes[hero] == 1 and (self.PAuthority[playerId] > 0 or PlayerTables:GetTableValue("authority", 'alvl', playerId) > 0) then 
-		print('test hero')
+    if self.HiddenHero[hero] == 1 then 
 		self.Picked[playerId] = hero
-	    self.UnAvailableHeroes[hero] = nil
-	    self.SkinSelect[hero] = self:GetSkin(playerId, hero)
-	    if self.SkinSelect[hero] == nil then 
-	    	self.SkinSelect[hero] = 0
-	    end
-	    self.PickedPlayer[playerId] = playerId
+		self.PickedPlayer[playerId] = playerId
+   		self.SkinSelect[hero] = 0
+   		self.HiddenHero[hero] = 0
 
-	    CustomNetTables:SetTableValue("nselection", "picked", self.Picked)
-	    CustomNetTables:SetTableValue("nselection", "unavailable", self.UnAvailableHeroes)
-	    CustomNetTables:SetTableValue("nselection", "skinselect", self.SkinSelect)
-	    CustomNetTables:SetTableValue("nselection", "pickedplayer", self.PickedPlayer)
-	    CustomGameEventManager:Send_ServerToAllClients( "preheroselect",  {hero=hero,playerId=playerId})  
+   		CustomNetTables:SetTableValue("nselection", "skinselect", self.SkinSelect)
+    	CustomNetTables:SetTableValue("nselection", "picked", self.Picked)
+    	CustomNetTables:SetTableValue("nselection", "pickedplayer", self.PickedPlayer)
+    	CustomNetTables:SetTableValue("nselection", "hidden", self.HiddenHero)
+    	CustomGameEventManager:Send_ServerToAllClients( "preheroselect",  {hero=hero,playerId=playerId}) 
+    else
+
+	    if self.AvailableHeroes[hero] == 1 then  
+	    	print('available hero') 	
+		    self.Picked[playerId] = hero
+		    self.AvailableHeroes[hero] = nil
+		    self.SkinSelect[hero] = self:GetSkin(playerId, hero)
+		    if self.SkinSelect[hero] == nil then 
+		    	self.SkinSelect[hero] = 0
+		    end
+		    self.PickedPlayer[playerId] = playerId
+
+		    CustomNetTables:SetTableValue("nselection", "picked", self.Picked)
+		    CustomNetTables:SetTableValue("nselection", "available", self.AvailableHeroes)
+		    CustomNetTables:SetTableValue("nselection", "skinselect", self.SkinSelect)
+		    CustomNetTables:SetTableValue("nselection", "pickedplayer", self.PickedPlayer)
+		    CustomGameEventManager:Send_ServerToAllClients( "preheroselect",  {hero=hero,playerId=playerId}) 	
+		elseif self.UnAvailableHeroes[hero] == 1 and (self.PAuthority[playerId] > 0 or PlayerTables:GetTableValue("authority", 'alvl', playerId) > 0) then 
+			print('test hero')
+			self.Picked[playerId] = hero
+		    self.UnAvailableHeroes[hero] = nil
+		    self.SkinSelect[hero] = self:GetSkin(playerId, hero)
+		    if self.SkinSelect[hero] == nil then 
+		    	self.SkinSelect[hero] = 0
+		    end
+		    self.PickedPlayer[playerId] = playerId
+
+		    CustomNetTables:SetTableValue("nselection", "picked", self.Picked)
+		    CustomNetTables:SetTableValue("nselection", "unavailable", self.UnAvailableHeroes)
+		    CustomNetTables:SetTableValue("nselection", "skinselect", self.SkinSelect)
+		    CustomNetTables:SetTableValue("nselection", "pickedplayer", self.PickedPlayer)
+		    CustomGameEventManager:Send_ServerToAllClients( "preheroselect",  {hero=hero,playerId=playerId})  
+		end
 	end
-
+	self.HIDtable[playerId] = self:GetHID(hero)
 	self:OnSummon({playerId = playerId})
 end
 
@@ -704,6 +840,8 @@ function HeroSelectioN:OnRandom(args)
 
     local player = PlayerResource:GetPlayer(playerId)
     local PID = PlayerResource:GetSteamAccountID(playerId)
+
+    if self.BanPlayer[playerId] then return end
 
     if self.SelectedBar[playerId] ~= nil and self.SelectedBar[playerId] ~= "random" and (self.AvailableHeroes[self.SelectedBar[playerId]] ~= nil or self.UnAvailableHeroes[self.SelectedBar[playerId]] == 1) and self.BanHero[self.SelectedBar[playerId]] == nil then 
     	if self.UnAvailableHeroes[self.SelectedBar[playerId]] == 1 then 
@@ -750,6 +888,7 @@ function HeroSelectioN:OnRandom(args)
 	CustomNetTables:SetTableValue("nselection", "pickedplayer", self.PickedPlayer)
 	CustomGameEventManager:Send_ServerToAllClients( "preheroselect",  {hero=hero,playerId=playerId}) 
 
+	self.HIDtable[playerId] = self:GetHID(hero)
 	self:OnSummon({playerId = playerId})
 end
 
@@ -826,6 +965,8 @@ function HeroSelectioN:OnSummonTimer()
 		end)
 	end
 
+	ServerTables:CreateTable("HeroID", self.HIDtable)
+
     --[[Timers:CreateTimer(self.standby_time + self.strategy_time, function()
     	--GameRules:ForceGameStart()
     	--GameRules:SendCustomMessage("Fate/Another II by ZeFiRoFT", 0, 0)
@@ -837,8 +978,11 @@ function HeroSelectioN:OnSummonTimer()
 end
 
 function HeroSelectioN:LastCheckSkin(playerId, hero, skin)
+	if skin == 0 then 
+		return skin 
+	end
 	local real_skin = 0
-	local sID = GetSID(hero .. "_" .. skin)
+	local sID = self:GetSID(hero .. "_" .. skin)
 
 	if IsEventSkin(sID) then 
 		real_skin = skin
@@ -898,7 +1042,7 @@ function HeroSelectioN:LastCheckSkin(playerId, hero, skin)
 		print('skin database')
 		if self.skinAccess[playerId] == false then
 			real_skin = 0
-			sID = GetSID(hero .. "_" .. skin)
+			sID = self:GetSID(hero .. "_" .. skin)
 			if self.ddta[playerId].IFY.SKID[sID] == true then 
 				real_skin = skin
 				print('skin :' .. real_skin)
@@ -954,6 +1098,8 @@ function HeroSelectioN:OnSummon(args)
     local hero = self.Picked[playerId]
     local skin = self.SkinSelect[hero] or 0
 
+    if self.BanPlayer[playerId] then return end
+
     if hero == nil then 
     	SendChatToPanorama('Player ' .. playerId .. ' : No hero select at summon phase, random new one')
     	hero = self:Random()
@@ -961,7 +1107,9 @@ function HeroSelectioN:OnSummon(args)
     	self.AvailableHeroes[hero] = nil
     	self.SkinSelect[hero] = 0
 		self.PickedPlayer[playerId] = playerId
+		self.HIDtable[playerId] = self:GetHID(hero)
 		ServerTables:SetTableValue("HeroSelection", playerId, hero, true)
+		ServerTables:SetTableValue("HeroID", playerId, self:GetHID(hero), true)
     end
 
     --[[if self.skinTier["NormalSkin"][hero .. "_" .. skin] == 1 then 
@@ -977,6 +1125,7 @@ function HeroSelectioN:OnSummon(args)
     		skin = 0
     	end
     end]]
+    print('skin ' .. skin)
     if skin > 0 then
     	skin = self:LastCheckSkin(playerId, hero, skin)
     end
@@ -984,11 +1133,16 @@ function HeroSelectioN:OnSummon(args)
     self.SkinSelect[hero] = skin
     CustomNetTables:SetTableValue("nselection", "skinselect", self.SkinSelect)
     print('summon hero ' .. hero)
-
+    local hId = self:GetHID(hero)
+    SendChatToPanorama('Player ' .. playerId .. ' : Hero ID: ' .. hId)
+    
     PlayerTables:SetTableValue("hHero", "hero", hero, playerId, true)
     PlayerTables:SetTableValue("hHero", "skin", skin, playerId, true)
+    PlayerTables:SetTableValue("hHero", "hid", hId, playerId, true)
+    self.HIDtable[playerId] = hId
 
-    local htable = PlayerTables:GetAllTableValues("hHero", playerId)
+    --local htable = PlayerTables:GetAllTableValues("hHero", playerId)
+    --htable.HID = hId
 	--[[for k,v in pairs(htable) do
 		print(k,v)
 	end]]
@@ -1209,23 +1363,29 @@ function GetHeroInfo(D2hero, hero, roleList)
 	return hero_info
 end
 
-function GetHID(hero)
-	local kiuok = LoadKeyValues("scripts/npc/abilities/heroes/hero.txt")
+function HeroSelectioN:GetHID(hero)
+	local hid = self.HiD[hero]
+	print('Hero Id: ' .. hid)
+	return hid
+	--[[local kiuok = LoadKeyValues("scripts/npc/abilities/heroes/hero.txt")
 	for k,v in pairs (kiuok) do 
 		if v == hero then 
 			return k
 		end
-	end  
+	end  ]]
 end
 
-function GetSID(skin)
-	local kiuok = LoadKeyValues("scripts/npc/abilities/heroes/sketch.txt")
+function HeroSelectioN:GetSID(skin)
+	local sid = self.SiD[skin] or 0
+	print('Skin Id: ' .. sid)
+	return sid
+	--[[local kiuok = LoadKeyValues("scripts/npc/abilities/heroes/sketch.txt")
 	for k,v in pairs (kiuok) do 
 		if v == skin then 
 			print(v)
 			return k
 		end
-	end  
+	end  ]]
 end
 
 function IsSkinEnable(skin, SteamId, authority)

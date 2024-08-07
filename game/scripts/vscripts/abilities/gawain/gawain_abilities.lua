@@ -3,7 +3,7 @@ function OnFairyDamageTaken(keys)
 	local caster = keys.caster
 	local ability = keys.ability
 	local damage_threshold = ability:GetSpecialValueFor("damage_threshold")
-	local health_regain = ability:GetSpecialValueFor("health_regain") / 100
+	local health_regain = ability:GetSpecialValueFor("health_regain") / 100  * caster:GetMaxHealth()
 	local duration = ability:GetSpecialValueFor("duration")
 	local currentHealth = caster:GetHealth()
 
@@ -17,7 +17,7 @@ function OnFairyDamageTaken(keys)
 
 		HardCleanse(caster)
 		RemoveDebuffsForRevival(caster)
-		caster:SetHealth(health_regain * caster:GetMaxHealth())
+		caster:SetHealth(health_regain)
 
 		ability:ApplyDataDrivenModifier(caster, caster, "modifier_gawain_revive_regen", {})
 		local particle = ParticleManager:CreateParticle("particles/items_fx/aegis_respawn.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)

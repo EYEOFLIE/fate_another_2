@@ -455,11 +455,12 @@ function OnKiyoCombo(keys)
 			ParticleManager:SetParticleControl(bell, 2, Vector(damage_delay,0,kiyo_arrive))
 			ParticleManager:SetParticleControl(bell, 3, Vector(0,0,caster:GetAnglesAsVector().y+90))
 			ParticleManager:SetParticleControl(bell, 4, Vector(bell_aoe,0,0))
+			local damage = RandomInt(damage_lower, damage_upper)
 
 			Timers:CreateTimer(bell_falling / 2, function()
 				EmitGlobalSound("Kiyo.ComboBellDown1")
 				EmitGlobalSound("Kiyo.ComboBellDown2")
-
+				OnBellGacha(damage_delay - (bell_falling/2), damage, caster, targetPos)
 				giveUnitDataDrivenModifier(caster, caster, "jump_pause", damage_delay)
 				caster:AddEffects(EF_NODRAW)
 				GetGroundPosition(caster:GetAbsOrigin(), caster)
@@ -491,11 +492,12 @@ function OnKiyoCombo(keys)
 
 		        ParticleManager:DestroyParticle(bell, true)
 		        ParticleManager:ReleaseParticleIndex(bell)
+		        DestroyGacha(caster)
 
 		        -- Deal damage to units in unitsDamaged
 		        for _, unit in pairs(unitsHit) do
 		            if IsValidEntity(unit) and unit:IsAlive() then
-			        	local damage = RandomInt(damage_upper, damage_lower)
+			        	
 			        	if unit:HasModifier("modifier_kiyo_combo_debuff") then
 			            	DoDamage(caster, unit, damage, DAMAGE_TYPE_MAGICAL, DOTA_DAMAGE_FLAG_BYPASSES_INVULNERABILITY, ability, false)
 				    	end
@@ -511,6 +513,42 @@ function OnKiyoCombo(keys)
 			end)
 		end
 	end)
+end
+
+function OnBellGacha(fDuration, iDamage, hTarget, vLocation)
+	local counter = 0.1
+	OnNumberFX(9999, hTarget, vLocation)
+	Timers:CreateTimer(counter, function()
+		if counter >= math.abs(fDuration - 0.3) then 
+			OnNumberFX(iDamage, hTarget, vLocation)
+			return nil 
+		end
+
+		OnNumberFX(RandomInt(2500, 9999), hTarget, vLocation)
+		
+		counter = counter + 0.1
+		return 0.1
+	end)
+end
+
+function OnNumberFX(iDamage, hTarget, vLocation)
+	if hTarget.gacha then 
+		ParticleManager:DestroyParticle(hTarget.gacha, true)
+		ParticleManager:ReleaseParticleIndex(hTarget.gacha)
+	end
+
+	hTarget.gacha = ParticleManager:CreateParticle("particles/custom/vlad/vlad_cl_popup.vpcf", PATTACH_WORLDORIGIN, hTarget)
+	ParticleManager:SetParticleControl( hTarget.gacha, 0, vLocation + Vector(0,0,500) )
+	ParticleManager:SetParticleControl( hTarget.gacha, 1, Vector( 0, iDamage, 0 ) )
+	ParticleManager:SetParticleControl( hTarget.gacha, 2, Vector( 10, 4, 0 ) ) --duration, count of digits to draw, 0
+	ParticleManager:SetParticleControl( hTarget.gacha, 3, Vector( 252, 75, 75 ) )--color
+	ParticleManager:SetParticleControl( hTarget.gacha, 4, Vector( 30,0,0) ) --size/radius, 0 ,0
+
+end
+
+function DestroyGacha(hTarget)
+	ParticleManager:DestroyParticle(hTarget.gacha, true)
+	ParticleManager:ReleaseParticleIndex(hTarget.gacha)
 end
 
 function OnKiyoBellStart(keys)

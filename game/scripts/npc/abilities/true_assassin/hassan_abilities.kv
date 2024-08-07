@@ -8,19 +8,16 @@
 		"BaseClass"          			    "ability_datadriven"
 		"AbilityTextureName"           		"custom/true_assassin_presence_concealment"
 		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"MaxLevel"			"1"
+		"MaxLevel"						"1"
+		"AbilityCooldown"				"1"
 		"precache"
 		{
 
 		}
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"cast_delay"		"2.0"
-			}
-		}
+		"AbilityValues"
+        {
+            "cast_delay" "2.0"
+        }
 
 		"OnSpellStart"
 		{
@@ -120,19 +117,16 @@
 		"BaseClass"          			    "ability_datadriven"
 		"AbilityTextureName"           		"custom/true_assassin_presence_concealment"
 		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"MaxLevel"			"1"
+		"MaxLevel"						"1"
+		"AbilityCooldown"				"1"
 		"precache"
 		{
 			
 		}
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"cast_delay"		"2.0"
-			}
-		}
+		"AbilityValues"
+        {
+            "cast_delay" "2.0"
+        }
 
 		"OnSpellStart"
 		{
@@ -244,56 +238,18 @@
 			
 		}
 
-		"AbilitySpecial"
-		{
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"max_daggers"			"4"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"dagger_recharge"		"4.0"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"range"					"700"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"100"
-			}
-
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"poison_dot"			"40"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"poison_slow"			"-15"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"poison_interval"		"1.0"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"poison_duration"		"2"
-			}
-			
-			"09"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"speed"					"1800"
-			}
-		}
+		"AbilityValues"
+        {
+            "max_daggers" "4"
+            "dagger_recharge" "4.0"
+            "range" "700"
+            "damage" "100"
+            "poison_dot" "40"
+            "poison_slow" "-15"
+            "poison_interval" "1.0"
+            "poison_duration" "2"
+            "speed" "1800"
+        }
 
 		"OnSpellStart"
 		{
@@ -440,76 +396,22 @@
 		
 		}
 
-		"AbilitySpecial"
-		{
-			"09"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"max_daggers"			"7"
-			}
-			"10"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"dagger_recharge"		"2.0"
-			}
-			"11"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"range"					"1000"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"100"
-			}
-
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"poison_dot"			"40"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"poison_slow"			"-15"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"poison_ms_slow_stack"		"-10"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"poison_aspd_slow_stack"	"-10"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"poison_arm_debuff"		"-3"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"poison_interval"		"1.0"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"poison_duration"		"2"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"weak_duration"			"3"
-			}
-			
-			"12"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"speed"					"1800"
-			}
-		}
+		"AbilityValues"
+        {
+            "max_daggers" "7"
+            "dagger_recharge" "2.0"
+            "range" "1000"
+            "damage" "100"
+            "poison_dot" "40"
+            "poison_slow" "-15"
+            "poison_ms_slow_stack" "-10"
+            "poison_aspd_slow_stack" "-10"
+            "poison_arm_debuff" "-3"
+            "poison_interval" "1.0"
+            "poison_duration" "2"
+            "weak_duration" "3"
+            "speed" "1800"
+        }
 
 		"OnSpellStart"
 		{
@@ -656,34 +558,14 @@
 		"AbilityTextureName"			"custom/true_assassin_attribute_protection_from_wind"
 		"MaxLevel"						"1"
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bonus_mr"				"40"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"penalty_mr"			"0"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mr_change"				"5"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mr_timer"				"0.5"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mr_change_penalty"		"-5"
-			}
-		}
+		"AbilityValues"
+        {
+            "bonus_mr" "40"
+            "penalty_mr" "0"
+            "mr_change" "5"
+            "mr_timer" "0.5"
+            "mr_change_penalty" "-5"
+        }
 		
 		"Modifiers"
 		{
@@ -751,39 +633,15 @@
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"fade_delay"			"0.8"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"6.0"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"100 200 300 400 500"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_movement_speed"	"550"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"recover_dagger"		"1 1 2 2 3"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"window"				"8"
-			}
-		}
+		"AbilityValues"
+        {
+            "fade_delay" "0.8"
+            "duration" "6.0"
+            "damage" "100 200 300 400 500"
+            "bonus_movement_speed" "550"
+            "recover_dagger" "1 1 2 2 3"
+            "window" "8"
+        }
 
 		"precache"
 		{
@@ -975,49 +833,17 @@
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"fade_delay"			"0.8"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"6.0"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"100 200 300 400 500"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_movement_speed"	"550"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"recover_dagger"		"1 2 3 4 5"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"detect_range"			"1600"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"detect_duration"		"5"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"window"				"8"
-			}
-		}
+		"AbilityValues"
+        {
+            "fade_delay" "0.8"
+            "duration" "6.0"
+            "damage" "100 200 300 400 500"
+            "bonus_movement_speed" "550"
+            "recover_dagger" "1 2 3 4 5"
+            "detect_range" "1600"
+            "detect_duration" "5"
+            "window" "8"
+        }
 
 		"precache"
 		{
@@ -1204,49 +1030,17 @@
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"fade_delay"			"0.8"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"6.0"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"100 200 300 400 500"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_movement_speed"	"550"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"recover_dagger"		"1 2 3 4 5"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"detect_range"			"1600"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"detect_duration"		"5"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"window"				"8"
-			}
-		}
+		"AbilityValues"
+        {
+            "fade_delay" "0.8"
+            "duration" "6.0"
+            "damage" "100 200 300 400 500"
+            "bonus_movement_speed" "550"
+            "recover_dagger" "1 2 3 4 5"
+            "detect_range" "1600"
+            "detect_duration" "5"
+            "window" "8"
+        }
 
 		"precache"
 		{
@@ -1434,49 +1228,17 @@
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"fade_delay"			"0.8"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"6.0"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"100 200 300 400 500"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_movement_speed"	"550"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"recover_dagger"		"1 2 3 4 5"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"detect_range"			"1600"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"detect_duration"		"5"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"window"				"8"
-			}
-		}
+		"AbilityValues"
+        {
+            "fade_delay" "0.8"
+            "duration" "6.0"
+            "damage" "100 200 300 400 500"
+            "bonus_movement_speed" "550"
+            "recover_dagger" "1 2 3 4 5"
+            "detect_range" "1600"
+            "detect_duration" "5"
+            "window" "8"
+        }
 
 		"precache"
 		{
@@ -1656,10 +1418,9 @@
 			
 		}
 		
-		"AbilitySpecial"
-		{
-			
-		}
+		"AbilityValues"
+        {
+        }
 		
 		"OnSpellStart"
 		{
@@ -1713,39 +1474,15 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"200"
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"heal_amount"			"200 250 300 350 400"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"duration"				"5"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"heal_over_time"		"60 70 80 90 100"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"buff_duration"			"10"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_stat"			"10 15 20 25 30"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bonus_stat_half"		"5 7.5 10 12.5 15"
-			}
-		}
+		"AbilityValues"
+        {
+            "heal_amount" "200 250 300 350 400"
+            "duration" "5"
+            "heal_over_time" "60 70 80 90 100"
+            "buff_duration" "10"
+            "bonus_stat" "10 15 20 25 30"
+            "bonus_stat_half" "5 7.5 10 12.5 15"
+        }
 		
 		"OnSpellStart"
 		{
@@ -1870,39 +1607,15 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"200"
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"heal_amount"			"200 250 300 350 400"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"duration"				"5"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"heal_over_time"		"60 70 80 90 100"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"buff_duration"			"10"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_stat"			"10 15 20 25 30"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bonus_stat_half"		"5 7.5 10 12.5 15"
-			}
-		}
+		"AbilityValues"
+        {
+            "heal_amount" "200 250 300 350 400"
+            "duration" "5"
+            "heal_over_time" "60 70 80 90 100"
+            "buff_duration" "10"
+            "bonus_stat" "10 15 20 25 30"
+            "bonus_stat_half" "5 7.5 10 12.5 15"
+        }
 		
 		"OnSpellStart"
 		{
@@ -2027,39 +1740,15 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"200"
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"heal_amount"			"200 250 300 350 400"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"duration"				"5"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"heal_over_time"		"60 70 80 90 100"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"buff_duration"			"10"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_stat"			"10 15 20 25 30"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bonus_stat_half"		"5 7.5 10 12.5 15"
-			}
-		}
+		"AbilityValues"
+        {
+            "heal_amount" "200 250 300 350 400"
+            "duration" "5"
+            "heal_over_time" "60 70 80 90 100"
+            "buff_duration" "10"
+            "bonus_stat" "10 15 20 25 30"
+            "bonus_stat_half" "5 7.5 10 12.5 15"
+        }
 		
 		"OnSpellStart"
 		{
@@ -2184,39 +1873,15 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"200"
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"heal_amount"			"200 250 300 350 400"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"duration"				"5"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"heal_over_time"		"60 70 80 90 100"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"buff_duration"			"10"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_stat"			"10 15 20 25 30"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bonus_stat_half"		"5 7.5 10 12.5 15"
-			}
-		}
+		"AbilityValues"
+        {
+            "heal_amount" "200 250 300 350 400"
+            "duration" "5"
+            "heal_over_time" "60 70 80 90 100"
+            "buff_duration" "10"
+            "bonus_stat" "10 15 20 25 30"
+            "bonus_stat_half" "5 7.5 10 12.5 15"
+        }
 		
 		"OnSpellStart"
 		{
@@ -2341,74 +2006,22 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"200"
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"heal_amount"			"200 250 300 350 400"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"duration"				"5"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"heal_over_time"		"60 70 80 90 100"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"buff_duration"			"10"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_stat"			"10 15 20 25 30"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bonus_stat_half"		"5 7.5 10 12.5 15"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mod_str_cooldown"		"0.5"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mod_str_cooldown_half"		"0.25"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mod_agi_dmg"			"3"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mod_agi_dmg_half"		"1.5"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mod_int_heal"			"15"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mod_int_heal_half"			"7.5"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mod_int_heal_aoe"		"500"
-			}
-		}
+		"AbilityValues"
+        {
+            "heal_amount" "200 250 300 350 400"
+            "duration" "5"
+            "heal_over_time" "60 70 80 90 100"
+            "buff_duration" "10"
+            "bonus_stat" "10 15 20 25 30"
+            "bonus_stat_half" "5 7.5 10 12.5 15"
+            "mod_str_cooldown" "0.5"
+            "mod_str_cooldown_half" "0.25"
+            "mod_agi_dmg" "3"
+            "mod_agi_dmg_half" "1.5"
+            "mod_int_heal" "15"
+            "mod_int_heal_half" "7.5"
+            "mod_int_heal_aoe" "500"
+        }
 		
 		"OnSpellStart"
 		{
@@ -2545,59 +2158,19 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"200"
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"heal_amount"			"200 250 300 350 400"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"duration"				"5"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"heal_over_time"		"60 70 80 90 100"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"buff_duration"			"10"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_stat"			"10 15 20 25 30"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bonus_stat_half"		"5 7.5 10 12.5 15"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mod_str_cooldown"		"0.5"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mod_agi_dmg"			"3"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mod_int_heal"			"15"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mod_int_heal_aoe"		"500"
-			}
-		}
+		"AbilityValues"
+        {
+            "heal_amount" "200 250 300 350 400"
+            "duration" "5"
+            "heal_over_time" "60 70 80 90 100"
+            "buff_duration" "10"
+            "bonus_stat" "10 15 20 25 30"
+            "bonus_stat_half" "5 7.5 10 12.5 15"
+            "mod_str_cooldown" "0.5"
+            "mod_agi_dmg" "3"
+            "mod_int_heal" "15"
+            "mod_int_heal_aoe" "500"
+        }
 		
 		"OnSpellStart"
 		{
@@ -2734,59 +2307,19 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"200"
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"heal_amount"			"200 250 300 350 400"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"duration"				"5"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"heal_over_time"		"60 70 80 90 100"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"buff_duration"			"10"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_stat"			"10 15 20 25 30"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bonus_stat_half"		"5 7.5 10 12.5 15"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mod_str_cooldown"		"0.5"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mod_agi_dmg"			"3"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mod_int_heal"			"15"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mod_int_heal_aoe"		"500"
-			}
-		}
+		"AbilityValues"
+        {
+            "heal_amount" "200 250 300 350 400"
+            "duration" "5"
+            "heal_over_time" "60 70 80 90 100"
+            "buff_duration" "10"
+            "bonus_stat" "10 15 20 25 30"
+            "bonus_stat_half" "5 7.5 10 12.5 15"
+            "mod_str_cooldown" "0.5"
+            "mod_agi_dmg" "3"
+            "mod_int_heal" "15"
+            "mod_int_heal_aoe" "500"
+        }
 		
 		"OnSpellStart"
 		{
@@ -2923,59 +2456,19 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"200"
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"heal_amount"			"200 250 300 350 400"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"duration"				"5"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"heal_over_time"		"60 70 80 90 100"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"buff_duration"			"10"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_stat"			"10 15 20 25 30"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bonus_stat_half"		"5 7.5 10 12.5 15"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mod_str_cooldown"		"0.5"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mod_agi_dmg"			"3"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mod_int_heal"			"15"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mod_int_heal_aoe"		"500"
-			}
-		}
+		"AbilityValues"
+        {
+            "heal_amount" "200 250 300 350 400"
+            "duration" "5"
+            "heal_over_time" "60 70 80 90 100"
+            "buff_duration" "10"
+            "bonus_stat" "10 15 20 25 30"
+            "bonus_stat_half" "5 7.5 10 12.5 15"
+            "mod_str_cooldown" "0.5"
+            "mod_agi_dmg" "3"
+            "mod_int_heal" "15"
+            "mod_int_heal_aoe" "500"
+        }
 		
 		"OnSpellStart"
 		{
@@ -3113,39 +2606,15 @@
 			
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"400 500 600 700 800"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"range"					"300"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"curse_damage"			"500"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"snatch_str_dmg"		"3"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"snatch_agi_dmg"		"2"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"snatch_int_dmg"		"5"
-			}
-		}
+		"AbilityValues"
+        {
+            "damage" "400 500 600 700 800"
+            "range" "300"
+            "curse_damage" "500"
+            "snatch_str_dmg" "3"
+            "snatch_agi_dmg" "2"
+            "snatch_int_dmg" "5"
+        }
 		"OnAbilityPhaseStart"
 		{
 			"RunScript"
@@ -3197,39 +2666,15 @@
 			
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"400 500 600 700 800"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"range"					"300"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"curse_damage"			"500"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"snatch_str_dmg"		"3"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"snatch_agi_dmg"		"2"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"snatch_int_dmg"		"5"
-			}
-		}
+		"AbilityValues"
+        {
+            "damage" "400 500 600 700 800"
+            "range" "300"
+            "curse_damage" "500"
+            "snatch_str_dmg" "3"
+            "snatch_agi_dmg" "2"
+            "snatch_int_dmg" "5"
+        }
 		"OnAbilityPhaseStart"
 		{
 			"RunScript"
@@ -3281,39 +2726,15 @@
 			
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"400 500 600 700 800"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"range"					"300"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"curse_damage"			"500"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"snatch_str_dmg"		"3"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"snatch_agi_dmg"		"2"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"snatch_int_dmg"		"5"
-			}
-		}
+		"AbilityValues"
+        {
+            "damage" "400 500 600 700 800"
+            "range" "300"
+            "curse_damage" "500"
+            "snatch_str_dmg" "3"
+            "snatch_agi_dmg" "2"
+            "snatch_int_dmg" "5"
+        }
 		"OnAbilityPhaseStart"
 		{
 			"RunScript"
@@ -3365,39 +2786,15 @@
 			
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"400 500 600 700 800"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"range"					"300"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"curse_damage"			"500"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"snatch_str_dmg"		"3"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"snatch_agi_dmg"		"2"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"snatch_int_dmg"		"5"
-			}
-		}
+		"AbilityValues"
+        {
+            "damage" "400 500 600 700 800"
+            "range" "300"
+            "curse_damage" "500"
+            "snatch_str_dmg" "3"
+            "snatch_agi_dmg" "2"
+            "snatch_int_dmg" "5"
+        }
 		"OnAbilityPhaseStart"
 		{
 			"RunScript"
@@ -3452,39 +2849,15 @@
 		"AbilityManaCost"				"800"
 
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"cast_delay"			"0.95"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"700 900 1100 1300 1500"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"cast_range"			"800"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"speed"					"1200"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"mana_burn"				"200 250 300 350 400"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"curse_duration"		"2.0"
-			}
-		}
+		"AbilityValues"
+        {
+            "cast_delay" "0.95"
+            "damage" "700 900 1100 1300 1500"
+            "cast_range" "800"
+            "speed" "1200"
+            "mana_burn" "200 250 300 350 400"
+            "curse_duration" "2.0"
+        }
 
 		"OnAbilityPhaseStart"
 		{
@@ -3599,39 +2972,15 @@
 		"AbilityManaCost"				"800"
 
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"cast_delay"			"0.95"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"1000 1200 1400 1600 1800"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"cast_range"			"800"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"speed"					"1200"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"mana_burn"				"300 350 400 450 500"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"curse_duration"		"4.0"
-			}
-		}
+		"AbilityValues"
+        {
+            "cast_delay" "0.95"
+            "damage" "1000 1200 1400 1600 1800"
+            "cast_range" "800"
+            "speed" "1200"
+            "mana_burn" "300 350 400 450 500"
+            "curse_duration" "4.0"
+        }
 
 		"OnAbilityPhaseStart"
 		{
@@ -3741,24 +3090,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"100"
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"search_radius"			"800"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"8.0"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"350"
-			}
-		}
+		"AbilityValues"
+        {
+            "search_radius" "800"
+            "duration" "8.0"
+            "damage" "350"
+        }
 		
 		"OnSpellStart"
 		{
@@ -3821,24 +3158,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"100"
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"search_radius"			"800"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"8.0"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"450"
-			}
-		}
+		"AbilityValues"
+        {
+            "search_radius" "800"
+            "duration" "8.0"
+            "damage" "450"
+        }
 		
 		"OnSpellStart"
 		{
@@ -3911,9 +3236,9 @@
 		{
 		}
 
-		"AbilitySpecial"
-		{
-		}
+		"AbilityValues"
+        {
+        }
 
 		"OnSpellStart"
 		{
@@ -3953,19 +3278,11 @@
 		{
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"search_radius"			"1600"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"reveal_duration"		"5.0"
-			}
-		}
+		"AbilityValues"
+        {
+            "search_radius" "1600"
+            "reveal_duration" "5.0"
+        }
 		
 		"OnSpellStart"
 		{
@@ -3997,29 +3314,13 @@
 		{
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bonus_mr"				"40"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"penalty_mr"			"0"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mr_change"				"5"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mr_timer"				"0.5"
-			}
-		}
+		"AbilityValues"
+        {
+            "bonus_mr" "40"
+            "penalty_mr" "0"
+            "mr_change" "5"
+            "mr_timer" "0.5"
+        }
 		
 		"OnSpellStart"
 		{
@@ -4051,49 +3352,17 @@
 		{
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bonus_dagger"			"3"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mana_cost"				"50"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"recharge_time"			"2.0"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"armor_reduction"		"3"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"weak_duration"			"3"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"ms_slow"					"10"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"aspd_slow"					"10"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"recover_dagger"		"1 2 3 4 5"
-			}
-		}
+		"AbilityValues"
+        {
+            "bonus_dagger" "3"
+            "mana_cost" "50"
+            "recharge_time" "2.0"
+            "armor_reduction" "3"
+            "weak_duration" "3"
+            "ms_slow" "10"
+            "aspd_slow" "10"
+            "recover_dagger" "1 2 3 4 5"
+        }
 		
 		"OnSpellStart"
 		{
@@ -4125,29 +3394,13 @@
 		{
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"zab_curse_dur"			"2.0"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"zab_bonus_damage"		"300"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"combo_bonus_damage"	"100"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"curse_damage"			"500"
-			}
-		}
+		"AbilityValues"
+        {
+            "zab_curse_dur" "2.0"
+            "zab_bonus_damage" "300"
+            "combo_bonus_damage" "100"
+            "curse_damage" "500"
+        }
 		
 		"OnSpellStart"
 		{
@@ -4179,39 +3432,15 @@
 		{
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mod_str_cooldown"		"0.5"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mod_agi_dmg"			"3"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mod_int_heal"			"15"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"snatch_str_dmg"		"3"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"snatch_agi_dmg"		"2"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"snatch_int_dmg"		"5"
-			}
-		}
+		"AbilityValues"
+        {
+            "mod_str_cooldown" "0.5"
+            "mod_agi_dmg" "3"
+            "mod_int_heal" "15"
+            "snatch_str_dmg" "3"
+            "snatch_agi_dmg" "2"
+            "snatch_int_dmg" "5"
+        }
 		
 		"OnSpellStart"
 		{

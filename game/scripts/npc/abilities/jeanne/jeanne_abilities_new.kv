@@ -1,0 +1,751 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Jeanne d'Arc: Saint
+	//=================================================================================================================
+	"jeanne_saint"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/jeanne/jeanne_saint"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityTextureName"			"custom/jeanne/jeanne_saint"
+		"MaxLevel"						"1"
+		"AbilityCooldown"				"1"
+
+		"AbilityValues"
+		{
+			"lvl"				"1"
+			"heal"				"200"
+		}
+	}
+	//=================================================================================================================
+	// Jeanne d'Arc: Saint (Improve Saint SA)
+	//=================================================================================================================
+	"jeanne_saint_upgrade"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/jeanne/jeanne_saint"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityTextureName"			"custom/jeanne/jeanne_saint"
+		"MaxLevel"						"1"
+		"AbilityCooldown"				"1"
+
+		"AbilityValues"
+		{
+			"lvl"				"1"
+			"heal"				"200"
+		}
+	}
+	//=================================================================================================================
+	// Jeanne d'Arc: Identity Discernment
+	//=================================================================================================================
+	"jeanne_identity_discernment"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/jeanne/jeanne_d"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityTextureName"			"custom/jeanne/jeanne_identity_discernment"
+		"MaxLevel"						"1"
+		"AbilityCooldown"				"200"
+		"AbilityValues"
+		{
+			"saint_vision_duration"			"3"
+			"saint_vision_duration_lose"	"5"
+		}
+	}
+	//=================================================================================================================
+	// Jeanne : Charisma
+	//=================================================================================================================
+	"jeanne_charisma"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/jeanne/jeanne_charisma"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"AbilityTextureName"			"custom/jeanne/jeanne_charisma"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_1"
+		"AnimationPlaybackRate" 		"1.5"
+		"MaxLevel"						"6"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+
+		// Ability stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"800"
+		"AbilityCastRangeBuffer"		"200"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"14"
+		"AbilityManaCost"				"100"
+		"AbilityValues"
+		{
+			"stat_modifier"		"10 15 20 25 30 35"
+			"bonus_aspd"		"10 20 30 40 50 60"
+			"radius_modifier"	"300 350 400 450 500 550"
+			"duration"			"7 8 9 10 11 12"
+		}
+	}
+	//=================================================================================================================
+	// Jeanne : Charisma (Revelation)
+	//=================================================================================================================
+	"jeanne_charisma_upgrade"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/jeanne/jeanne_charisma"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"AbilityTextureName"			"custom/jeanne/jeanne_charisma"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_1"
+		"AnimationPlaybackRate" 		"1.5"
+		"MaxLevel"						"6"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+
+		// Ability stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"800"
+		"AbilityCastRangeBuffer"		"200"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"14"
+		"AbilityManaCost"				"100"
+		"AbilityValues"
+		{
+			"stat_modifier"		"10 15 20 25 30 35"
+			"bonus_aspd"		"10 20 30 40 50 60"
+			"radius_modifier"	"300 350 400 450 500 550"
+			"duration"			"7 8 9 10 11 12"
+		}
+	}
+	//===================================================
+	// Jeanne d'Arc: Purge the Unjust
+	//===================================================
+	"jeanne_purge_the_unjust"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/jeanne/jeanne_purge"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityTextureName"			"custom/jeanne/jeanne_purge_the_unjust"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_2"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AnimationPlaybackRate" 		"1.0"
+		"AOERadius"						"%radius"	
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"600"
+		"AbilityCastPoint"				"0.3"
+		"AbilityManaCost"				"200"
+		"AbilityCooldown"				"11 10 9 8 7 6"
+		"AbilityValues"
+		{
+			"delay"				"0.5"
+			"radius"			"300"
+			"damage"			"300 375 450 525 600 675"
+			"slow"				"-40"
+			"slow_duration"		"2.7"
+			"silence_duration"	"1.5"
+		}
+	}
+	//===================================================
+	// Jeanne d'Arc: Purge the Unjust (Punishment)
+	//===================================================
+	"jeanne_purge_the_unjust_upgrade_1"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/jeanne/jeanne_purge"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityTextureName"			"custom/jeanne/jeanne_purge_the_unjust"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_2"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AnimationPlaybackRate" 		"1.0"
+		"AOERadius"						"%radius"	
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"600"
+		"AbilityCastPoint"				"0.3"
+		"AbilityManaCost"				"200"
+		"AbilityCooldown"				"11 10 9 8 7 6"
+		"AbilityValues"
+		{
+			"delay"				"0.5"
+			"radius"			"300"
+			"damage"			"300 375 450 525 600 675"
+			"slow"				"-40"
+			"slow_duration"		"2.7"
+			"silence_duration"	"1.5"
+		}
+	}
+	//===================================================
+	// Jeanne d'Arc: Purge the Unjust (Revelation)
+	//===================================================
+	"jeanne_purge_the_unjust_upgrade_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/jeanne/jeanne_purge"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityTextureName"			"custom/jeanne/jeanne_purge_the_unjust"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_2"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AnimationPlaybackRate" 		"1.0"
+		"AOERadius"						"%radius"	
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"600"
+		"AbilityCastPoint"				"0.3"
+		"AbilityManaCost"				"200"
+		"AbilityCooldown"				"11 10 9 8 7 6"
+		"AbilityValues"
+		{
+			"delay"				"0.5"
+			"radius"			"300"
+			"damage"			"300 375 450 525 600 675"
+			"slow"				"-40"
+			"slow_duration"		"2.7"
+			"silence_duration"	"1.5"
+			"heal"				"300"
+		}
+	}
+	//===================================================
+	// Jeanne d'Arc: Purge the Unjust (Punishment + Revelation)
+	//===================================================
+	"jeanne_purge_the_unjust_upgrade_3"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/jeanne/jeanne_purge"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityTextureName"			"custom/jeanne/jeanne_purge_the_unjust"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_2"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AnimationPlaybackRate" 		"1.0"
+		"AOERadius"						"%radius"	
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"600"
+		"AbilityCastPoint"				"0.3"
+		"AbilityManaCost"				"200"
+		"AbilityCooldown"				"11 10 9 8 7 6"
+		"AbilityValues"
+		{
+			"delay"				"0.5"
+			"radius"			"300"
+			"damage"			"300 375 450 525 600 675"
+			"slow"				"-40"
+			"slow_duration"		"2.7"
+			"silence_duration"	"1.5"
+			"heal"				"300"
+		}
+	}
+	//========================================
+	// Jeanne : God's Resolution
+	//========================================
+	"jeanne_gods_resolution"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/jeanne/jeanne_god_resolution"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"			"custom/jeanne/jeanne_gods_resolution"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_3"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"23"
+		"AbilityCastPoint"				"0.2"
+		"AbilityCastRange"				"600"
+		"AbilityManaCost"				"400"
+		"AbilityValues"
+		{
+			"radius"			"600"
+			"duration"			"3.0"
+			"total_damage"		"500 630 760 890 1020"
+			"slow_amount"		"-50"
+			"channel_def"		"-20"
+			"buff_duration"		"10 11 12 13 14"
+			"bonus_hp_dmg"		"3"
+		}
+	}
+	//========================================
+	// Jeanne : God's Resolution (Punishment)
+	//========================================
+	"jeanne_gods_resolution_upgrade_1"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/jeanne/jeanne_god_resolution"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"			"custom/jeanne/jeanne_gods_resolution"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_3"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"23"
+		"AbilityCastPoint"				"0.2"
+		"AbilityCastRange"				"600"
+		"AbilityManaCost"				"400"
+		"AbilityValues"
+		{
+			"radius"			"600"
+			"duration"			"3.0"
+			"total_damage"		"500 630 760 890 1020"
+			"slow_amount"		"-50"
+			"channel_def"		"-20"
+			"total_pillar"		"10"
+			"pillar_dmg"		"200"
+			"pillar_radius"		"200"
+			"pillar_revoke"		"0.5"
+			"buff_duration"		"10 11 12 13 14"
+			"bonus_hp_dmg"		"3"
+		}
+	}
+	//========================================
+	// Jeanne : God's Resolution (Divine Symbol)
+	//========================================
+	"jeanne_gods_resolution_upgrade_2"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/jeanne/jeanne_god_resolution"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"			"custom/jeanne/jeanne_gods_resolution"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_3"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"23"
+		"AbilityCastPoint"				"0.2"
+		"AbilityCastRange"				"600"
+		"AbilityManaCost"				"400"
+		"AbilityValues"
+		{
+			"radius"			"600"
+			"duration"			"3.0"
+			"total_damage"		"500 630 760 890 1020"
+			"slow_amount"		"-50"
+			"channel_def"		"-20"
+			"buff_duration"		"10 11 12 13 14"
+			"bonus_hp_dmg"		"3"
+			"bonus_ms"			"30"
+			"bonus_hp_reg"		"10 15 20 25 30"
+			"bonus_def"			"10"
+		}
+	}
+	//========================================
+	// Jeanne : God's Resolution (Punishment + Divine Symbol)
+	//========================================
+	"jeanne_gods_resolution_upgrade_3"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/jeanne/jeanne_god_resolution"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"			"custom/jeanne/jeanne_gods_resolution"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_3"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"23"
+		"AbilityCastPoint"				"0.2"
+		"AbilityCastRange"				"600"
+		"AbilityManaCost"				"400"
+		"AbilityValues"
+		{
+			"radius"			"600"
+			"duration"			"3.0"
+			"total_damage"		"500 630 760 890 1020"
+			"slow_amount"		"-50"
+			"channel_def"		"-20"
+			"total_pillar"		"10"
+			"pillar_dmg"		"200"
+			"pillar_radius"		"200"
+			"pillar_revoke"		"0.5"
+			"buff_duration"		"10 11 12 13 14"
+			"bonus_hp_dmg"		"3"
+			"bonus_ms"			"30"
+			"bonus_hp_reg"		"10 15 20 25 30"
+			"bonus_def"			"10"
+		}
+	}
+	//====================================
+	// Jeanne d'Arc : Luminosite Eternelle
+	//====================================
+	"jeanne_luminosite_eternelle"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/jeanne/jeanne_flag"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityTextureName"			"custom/jeanne_luminosite_eternelle"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_6"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AnimationPlaybackRate" 		"1.0"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityCastPoint"				"0.05"
+		"AbilityChannelTime"			"5.0"
+		"AbilityManaCost"				"800"
+		"AbilityCooldown"				"47.0"
+		"AbilityValues"
+		{
+			"channel_time"				"5.0"
+			"base_radius"				"800"
+			"bonus_radius_per_sec"		"70"
+			"base_duration"				"3"
+			"bonus_duration_per_sec"	"0.3 0.4 0.5 0.6 0.7"
+			"base_dr"					"10"
+			"bonus_dr_per_sec"			"3 4 5 6 7"
+			"heal_per_sec"				"300"
+			"success_heal"				"400 500 600 700 800"
+			"saint_heal_per_sec"		"200"
+		}
+	}
+	//====================================
+	// Jeanne d'Arc : Luminosite Eternelle (Divine Symbol)
+	//====================================
+	"jeanne_luminosite_eternelle_upgrade_1"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/jeanne/jeanne_flag"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityTextureName"			"custom/jeanne_luminosite_eternelle"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_6"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AnimationPlaybackRate" 		"1.0"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityCastPoint"				"0.05"
+		"AbilityChannelTime"			"5.0"
+		"AbilityManaCost"				"800"
+		"AbilityCooldown"				"47.0"
+		"AbilityValues"
+		{
+			"channel_time"				"5.0"
+			"base_radius"				"800"
+			"bonus_radius_per_sec"		"70"
+			"base_duration"				"3"
+			"bonus_duration_per_sec"	"0.3 0.4 0.5 0.6 0.7"
+			"base_dr"					"10"
+			"bonus_dr_per_sec"			"3 4 5 6 7"
+			"heal_per_sec"				"300"
+			"success_heal"				"400 500 600 700 800"
+			"saint_heal_per_sec"		"200"
+			"bonus_heal_per_sec"		"5"
+			"bonus_heal"				"10"
+			"cooldown_reduction"		"10"
+		}
+	}
+	//====================================
+	// Jeanne d'Arc : Luminosite Eternelle (Revelation)
+	//====================================
+	"jeanne_luminosite_eternelle_upgrade_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/jeanne/jeanne_flag"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityTextureName"			"custom/jeanne_luminosite_eternelle"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_6"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AnimationPlaybackRate" 		"1.0"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityCastPoint"				"0.05"
+		"AbilityChannelTime"			"5.0"
+		"AbilityManaCost"				"800"
+		"AbilityCooldown"				"47.0"
+		"AbilityValues"
+		{
+			"channel_time"				"5.0"
+			"base_radius"				"800"
+			"bonus_radius_per_sec"		"70"
+			"base_duration"				"3"
+			"bonus_duration_per_sec"	"0.3 0.4 0.5 0.6 0.7"
+			"base_dr"					"10"
+			"bonus_dr_per_sec"			"3 4 5 6 7"
+			"heal_per_sec"				"300"
+			"success_heal"				"400 500 600 700 800"
+			"saint_heal_per_sec"		"200"
+			"transfer_heal"				"30"
+			"transfer_threshold"		"10"
+		}
+	}
+	//====================================
+	// Jeanne d'Arc : Luminosite Eternelle (Divine Symbol + Revelation)
+	//====================================
+	"jeanne_luminosite_eternelle_upgrade_3"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/jeanne/jeanne_flag"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityTextureName"			"custom/jeanne_luminosite_eternelle"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_6"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AnimationPlaybackRate" 		"1.0"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityCastPoint"				"0.05"
+		"AbilityChannelTime"			"5.0"
+		"AbilityManaCost"				"800"
+		"AbilityCooldown"				"47.0"
+		"AbilityValues"
+		{
+			"channel_time"				"5.0"
+			"base_radius"				"800"
+			"bonus_radius_per_sec"		"70"
+			"base_duration"				"3"
+			"bonus_duration_per_sec"	"0.3 0.4 0.5 0.6 0.7"
+			"base_dr"					"10"
+			"bonus_dr_per_sec"			"3 4 5 6 7"
+			"heal_per_sec"				"300"
+			"success_heal"				"400 500 600 700 800"
+			"saint_heal_per_sec"		"200"
+			"bonus_heal_per_sec"		"5"
+			"bonus_heal"				"10"
+			"cooldown_reduction"		"10"
+			"transfer_heal"				"30"
+			"transfer_threshold"		"10"
+		}
+	}
+	//========================================
+	// Jeanne : God's Resolution
+	//========================================
+	"jeanne_la_pucelle"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/jeanne/jeanne_la_pucelle"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityTextureName"			"custom/jeanne/jeanne_la_pucelle"
+		"MaxLevel"						"1"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_3"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"240"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCastRange"				"1200"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"400"
+		"AbilityValues"
+		{
+			"delay"						"3"
+			"kill_radius"				"1200"
+			"radius"					"1200"
+			"slow"						"-100"
+			"life_damage"				"1"
+			"life_damage_saint"			"100"
+		}
+	}
+	//=======================================
+	// Jeanne Attribute : Identity Discernment
+	//=======================================
+	"jeanne_attribute_identity_discernment"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/jeanne/jeanne_attributes"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/jeanne/jeanne_identity_discernment"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"8"
+		"AbilityValues"
+		{
+			"vision_duration"		"3"
+			"vision_duration_lose"	"5"
+		}
+	}
+	//=======================================
+	// Jeanne Attribute : Improve Saint
+	//=======================================
+	"jeanne_attribute_improve_saint"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/jeanne/jeanne_attributes"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/jeanne/jeanne_saint"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"10"
+		"AbilityValues"
+		{
+			
+		}
+	}
+	//=======================================
+	// Jeanne Attribute : Punishment
+	//=======================================
+	"jeanne_attribute_punishment"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/jeanne/jeanne_attributes"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/jeanne/jeanne_attribute_punishment"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"14"
+		"AbilityValues"
+		{
+			"w_slow"				"-40"
+			"w_slow_duration"		"2.7"
+			"e_total_pillar"		"10"
+			"e_pillar_dmg"			"200"
+			"e_pillar_radius"		"200"
+			"e_pillar_revoke"		"0.5"
+		}
+	}
+	//=======================================
+	// Jeanne Attribute : Divine Symbol
+	//=======================================
+	"jeanne_attribute_divine_symbol"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/jeanne/jeanne_attributes"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/jeanne/jeanne_attribute_divine_symbol"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"15"
+		"AbilityValues"
+		{
+			"e_bonus_ms"				"30"
+			"e_bonus_hp_reg"			"10 15 20 25 30"
+			"e_bonus_def"				"10"
+			"r_bonus_heal"				"10"
+			"r_cooldown_reduction"		"10"
+			"r_bonus_heal_per_sec"		"5"
+		}
+	}
+	//=======================================
+	// Jeanne Attribute : Revelation
+	//=======================================
+	"jeanne_attribute_revelation"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/jeanne/jeanne_attributes"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/jeanne/jeanne_revelation"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"15"
+		"AbilityValues"
+		{
+			"w_heal"					"300"
+			"r_transfer_heal"			"30"
+			"r_transfer_threshold"		"10"
+		}
+	}
+	//=======================================
+	// Precache
+	//=======================================
+	"jeanne_precache"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"custom/medusa/medusa_attribute_monstrous_strength"
+
+		"precache"
+		{
+			"model"					"models/jeanne/white/white_jeanne_by_zefiroft.vmdl"
+			"model"					"models/jeanne/santa/jeanna_lily_by_zefiroft.vmdl"
+			"model"					"models/jeanne/jeanne_flag.vmdl"
+			"particle"				"particles/units/heroes/hero_medusa/medusa_mana_shield.vpcf"
+			"particle"				"particles/custom/ruler/charisma/buff.vpcf"
+			"particle"				"particles/custom/ruler/purge_the_unjust/ruler_purge_the_unjust.vpcf"
+			"particle"				"particles/custom/ruler/purge_the_unjust/ruler_purge_the_unjust_marker.vpcf"
+			"particle" 	 			"particles/custom/ruler/purge_the_unjust/ruler_purge_the_unjust_a.vpcf"
+			"particle"				"particles/units/heroes/hero_chen/chen_penitence_debuff.vpcf"
+			"particle"  			"particles/units/heroes/hero_chen/chen_penitence_c.vpcf"
+			"particle"				"particles/custom/ruler/gods_resolution/gods_resolution_active_circle.vpcf"
+			"particle"				"particles/units/heroes/hero_chen/chen_teleport_flash_sparks.vpcf"
+			"particle"				"particles/custom/ruler/luminosite_eternelle/luminosite_eternelle.vpcf"
+			"particle"				"particles/custom/ruler/luminosite_eternelle/sacred_zone.vpcf"
+			"particle"				"particles/custom/ruler/la_pucelle/ruler_la_pucelle.vpcf"
+			"particle"				"particles/custom/ruler/la_pucelle/la_pucelle_flame.vpcf"
+			"particle"  			"particles/custom/ruler/la_pucelle/la_pucelle_ring.vpcf"
+			"particle"				"particles/status_fx/status_effect_keeper_spirit_form.vpcf"
+			"particle"  			"particles/units/heroes/hero_omniknight/omniknight_purification.vpcf"
+			"particle"  			"particles/ishtar/ishtar_heal.vpcf"
+			"particle" 	 			"particles/custom/ruler/jeanne_heal.vpcf"
+			"particle"  			"particles/custom/ruler/jeanne_god.vpcf"
+			"particle"  			"particles/units/heroes/hero_pugna/pugna_life_give.vpcf"
+			"particle"  			"particles/econ/events/ti5/radiant_fountain_regen_lvl2_ti5.vpcf"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_phoenix.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_omniknight.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_arc_warden.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_dazzle.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_chen.vsndevts"
+		}
+	}
+}
+
+
+
+
+
+
+

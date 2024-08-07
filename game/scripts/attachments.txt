@@ -194,6 +194,103 @@
 			}
 		}
 	}
+	"models/astolfo/summer/astolfo_summer_by_zefiroft.vmdl"
+	{
+		"attach_sword"
+		{
+			"models/astolfo/astolfo_sword.vmdl"
+			{
+				"scale"		"0.8"
+				"pitch"		"90"
+				"yaw"		"0"
+				"roll"		"0"
+				"ZPos"		"0"
+				"YPos"		"0"
+				"XPos"		"0"
+			}
+		}
+		"attach_scabbard"
+		{
+			"models/astolfo/astolfo_scabbard.vmdl"
+			{
+				"scale"		"0.8"
+				"pitch"		"15"
+				"yaw"		"90"
+				"roll"		"60"
+				"ZPos"		"-5"
+				"YPos"		"-4"
+				"XPos"		"0"
+			}
+		}
+		"attach_lance"
+		{
+			"models/astolfo/astolfo_lance.vmdl"
+			{
+				"scale"		"1.0"
+				"pitch"		"90"
+				"yaw"		"0"
+				"roll"		"0"
+				"ZPos"		"0"
+				"YPos"		"0"
+				"XPos"		"0"
+			}
+		}
+		"attach_horn"
+		{
+			"models/astolfo/astolfo_new_horn.vmdl"
+			{
+				"scale"		"1.0"
+				"pitch"		"0"
+				"yaw"		"-135"
+				"roll"		"45"
+				"ZPos"		"-10"
+				"YPos"		"0"
+				"XPos"		"-10"
+			}
+		}
+	}
+	"models/astolfo/sailor/sailor_astolfo_by_zefiroft.vmdl" 
+	{
+		"attach_sword"
+		{
+			"models/astolfo/astolfo_sword.vmdl"
+			{
+				"scale"		"0.8"
+				"pitch"		"90"
+				"yaw"		"0"
+				"roll"		"0"
+				"ZPos"		"0"
+				"YPos"		"0"
+				"XPos"		"0"
+			}
+		}
+		"attach_lance"
+		{
+			"models/astolfo/astolfo_lance.vmdl"
+			{
+				"scale"		"1.0"
+				"pitch"		"90"
+				"yaw"		"0"
+				"roll"		"0"
+				"ZPos"		"0"
+				"YPos"		"0"
+				"XPos"		"0"
+			}
+		}
+		"attach_horn"
+		{
+			"models/astolfo/astolfo_new_horn.vmdl"
+			{
+				"scale"		"1.0"
+				"pitch"		"0"
+				"yaw"		"80"
+				"roll"		"-40"
+				"ZPos"		"-20"
+				"YPos"		"5"
+				"XPos"		"-20"
+			}
+		}
+	}
 
 	"models/kuro/kuro.vmdl"
 	{
@@ -626,6 +723,22 @@
 		}
 	}
 	"models/bathory/hunter/bathory_hunter_by_zefiroft.vmdl"
+	{
+		"attach_lance"
+		{
+			"models/bathory/bathory_weapon.vmdl"
+			{
+				"scale"		"0.7"
+				"pitch"		"-45"
+				"roll"		"100"
+				"yaw"		"90"
+				"ZPos"		"0"
+				"YPos"		"0"
+				"XPos"		"0"
+			}
+		}
+	}
+	"models/bathory/summer/summer_bathory_by_zefiroft.vmdl"
 	{
 		"attach_lance"
 		{

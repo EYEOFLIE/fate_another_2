@@ -15,34 +15,14 @@
 			
 		}
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"duration"			"8"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"hp_bonus_per_agi"	"3"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"atk_bonus_per_str"	"1"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"immune_duration"	"2.0"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"bonus_attack"		"50"
-			}
-		}
+		"AbilityValues"
+        {
+            "duration" "8"
+            "hp_bonus_per_agi" "3"
+            "atk_bonus_per_str" "1"
+            "immune_duration" "2.0"
+            "bonus_attack" "50"
+        }
 		
 		"OnSpellStart"
 		{
@@ -164,34 +144,15 @@
 		"AbilityCastRangeBuffer"		"250"
 		"AbilityCastPoint"				"0.1"
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"search_radius"		"700"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"duration"			"2"
-			}
-			"04"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"critical_rate_percentage"		"20"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"critical_damage"	"150"
-			}
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"silence_duration"	"1.5"
-			}
-		}
+		"AbilityValues"
+        {
+            "search_radius" "700"
+            "duration" "2"
+            "critical_rate_percentage" "20"
+            "critical_damage" "150"
+            "silence_duration" "1.5"
+            "max_stack" "10"
+        }
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -360,59 +321,20 @@
 		"AbilityCastRangeBuffer"		"250"
 		"AbilityCastPoint"				"0.1"
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"search_radius"		"1300"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"duration"			"4"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"active_stack"		"2"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_dmg"			"2"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"cooldown"			"1.0"
-			}
-			"04"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"critical_rate_percentage"		"20"
-			}
-			"04"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"bonus_crit_rate_per_stack"		"10"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"critical_damage"	"150"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"mana_drain"		"50"
-			}
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"silence_duration"	"1.5"
-			}
-		}
+		"AbilityValues"
+        {
+            "search_radius" "1300"
+            "duration" "4"
+            "active_stack" "2"
+            "bonus_dmg" "2"
+            "cooldown" "1.0"
+            "critical_rate_percentage" "20"
+            "bonus_crit_rate_per_stack" "10"
+            "critical_damage" "150"
+            "mana_drain" "50"
+            "silence_duration" "1.5"
+            "max_stack" "10"
+        }
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -588,29 +510,13 @@
 		
 		// Ability Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"cast_delay"			"0.3"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bonus_regen"			"3.0 3.5 4.0 4.5 5.0"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"break_delay"			"2.0"	
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bonus_ms"				"20"	
-			}
-		}
+		"AbilityValues"
+        {
+            "cast_delay" "0.3"
+            "bonus_regen" "3.0 3.5 4.0 4.5 5.0"
+            "break_delay" "2.0"
+            "bonus_ms" "20"
+        }
 		// Data driven
 		//-------------------------------------------------------------------------------------------------------------
 		"OnSpellStart"
@@ -747,34 +653,14 @@
 		
 		// Ability Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"cast_delay"			"0.3"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bonus_regen"			"3.0 3.5 4.0 4.5 5.0"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"break_delay"			"2.0"	
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bonus_ms"				"20"	
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bonus_attack"			"10 20 30 40 50"	
-			}
-		}
+		"AbilityValues"
+        {
+            "cast_delay" "0.3"
+            "bonus_regen" "3.0 3.5 4.0 4.5 5.0"
+            "break_delay" "2.0"
+            "bonus_ms" "20"
+            "bonus_attack" "10 20 30 40 50"
+        }
 		// Data driven
 		//-------------------------------------------------------------------------------------------------------------
 		"OnSpellStart"
@@ -913,39 +799,15 @@
 		
 		// Ability Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"number_of_attacks"			"5"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"attack_speed"				"100 125 150 175 200"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"damage"					"40 55 70 85 100"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"duration"					"8"
-			}
-			"05"
-			{				
-				"var_type"					"FIELD_FLOAT"
-				"movespeed_duration"		"1.0 1.5 2.0 2.5 3.0"
-			}
-			"06"
-			{				
-				"var_type"					"FIELD_FLOAT"
-				"bonus_ms"					"10 15 20 25 30"
-			}
-		}	
+		"AbilityValues"
+        {
+            "number_of_attacks" "5"
+            "attack_speed" "100 125 150 175 200"
+            "damage" "40 55 70 85 100"
+            "duration" "8"
+            "movespeed_duration" "1.0 1.5 2.0 2.5 3.0"
+            "bonus_ms" "10 15 20 25 30"
+        }	
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -1024,39 +886,15 @@
 		
 		// Ability Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"number_of_attacks"			"8"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"attack_speed"				"100 125 150 175 200"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"damage"					"40 55 70 85 100"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"duration"					"8"
-			}
-			"05"
-			{				
-				"var_type"					"FIELD_FLOAT"
-				"movespeed_duration"		"1.0 1.5 2.0 2.5 3.0"
-			}
-			"06"
-			{				
-				"var_type"					"FIELD_FLOAT"
-				"bonus_ms"					"10 15 20 25 30"
-			}
-		}	
+		"AbilityValues"
+        {
+            "number_of_attacks" "8"
+            "attack_speed" "100 125 150 175 200"
+            "damage" "40 55 70 85 100"
+            "duration" "8"
+            "movespeed_duration" "1.0 1.5 2.0 2.5 3.0"
+            "bonus_ms" "10 15 20 25 30"
+        }	
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -1116,7 +954,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_lua"
 		"ScriptFile"					"abilities/lishuwen/li_shuwen_abilities"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
@@ -1138,59 +976,19 @@
 
 		// Ability special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{			
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"damage_1"					"280 320 360 400 440"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"slow_amount"				"-55"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"slow_duration"				"2.0 2.0 2.5 2.5 3.0"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"damage_2"					"360 400 440 480 520"
-			}
-			"05"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"stun_duration"				"0.70"
-			}
-			"06"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"damage_3"					"450 525 600 675 750"
-			}
-			"08"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"window_duration"			"3.5"
-			}
-			"11"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"strike_1_range"			"700"
-			}
-			"12"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"strike_2_range"			"200"
-			}
-			"13"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"reduced_cooldown"			"15"
-			}
-		}
+		"AbilityValues"
+        {
+            "damage_1" "280 320 360 400 440"
+            "slow_amount" "-55"
+            "slow_duration" "2.0 2.0 2.5 2.5 3.0"
+            "damage_2" "360 400 440 480 520"
+            "stun_duration" "0.70"
+            "damage_3" "450 525 600 675 750"
+            "window_duration" "3.5"
+            "strike_1_range" "700"
+            "strike_2_range" "200"
+            "reduced_cooldown" "15"
+        }
 	}
 	//=================================================================================================================
 	// Li Shuwen : Fierce Tiger Strike (Second Strike)
@@ -1225,69 +1023,21 @@
 		
 		// Ability special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{			
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"damage_1"					"280 320 360 400 440"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"slow_amount"				"-55"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"slow_duration"				"2.0 2.0 2.5 2.5 3.0"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"damage_2"					"360 400 440 480 520"
-			}
-			"05"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"stun_duration"				"0.70"
-			}
-			"06"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"damage_3"					"450 525 600 675 750"
-			}
-			"08"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"window_duration"			"3.5"
-			}
-			"09"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"regen_amount"				"50"
-			}
-			"10"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"regen_duration"			"2.0"
-			}
-			"11"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"strike_1_range"			"700"
-			}
-			"12"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"strike_2_range"			"200"
-			}
-			"13"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"reduced_cooldown"			"10"
-			}
-		}
+		"AbilityValues"
+        {
+            "damage_1" "280 320 360 400 440"
+            "slow_amount" "-55"
+            "slow_duration" "2.0 2.0 2.5 2.5 3.0"
+            "damage_2" "360 400 440 480 520"
+            "stun_duration" "0.70"
+            "damage_3" "450 525 600 675 750"
+            "window_duration" "3.5"
+            "regen_amount" "50"
+            "regen_duration" "2.0"
+            "strike_1_range" "700"
+            "strike_2_range" "200"
+            "reduced_cooldown" "10"
+        }
 		"OnAbilityPhaseStart"
 		{
 			"RunScript"
@@ -1338,64 +1088,20 @@
 		
 		// Ability special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{			
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"damage_1"					"280 320 360 400 440"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"slow_amount"				"-55"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"slow_duration"				"2.0 2.0 2.5 2.5 3.0"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"damage_2"					"360 400 440 480 520"
-			}
-			"05"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"stun_duration"				"0.70"
-			}
-			"06"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"damage_3"					"450 525 600 675 750"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"knockback"					"300"
-			}
-			"08"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"window_duration"			"3.5"
-			}
-			"11"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"strike_1_range"			"700"
-			}
-			"12"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"strike_2_range"			"200"
-			}
-			"13"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"reduced_cooldown"			"10"
-			}
-		}
+		"AbilityValues"
+        {
+            "damage_1" "280 320 360 400 440"
+            "slow_amount" "-55"
+            "slow_duration" "2.0 2.0 2.5 2.5 3.0"
+            "damage_2" "360 400 440 480 520"
+            "stun_duration" "0.70"
+            "damage_3" "450 525 600 675 750"
+            "knockback" "300"
+            "window_duration" "3.5"
+            "strike_1_range" "700"
+            "strike_2_range" "200"
+            "reduced_cooldown" "10"
+        }
 		"OnAbilityPhaseStart"
 		{
 			"RunScript"
@@ -1448,74 +1154,22 @@
 		
 		// Ability special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{			
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"damage_1"					"280 320 360 400 440"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"slow_amount"				"-55"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"slow_duration"				"2.0 2.0 2.5 2.5 3.0"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"damage_2"					"360 400 440 480 520"
-			}
-			"05"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"stun_duration"				"0.70"
-			}
-			"06"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"damage_3"					"450 525 600 675 750"
-			}
-			"08"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"window_duration"			"3.5"
-			}
-			"11"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"strike_1_range"			"700"
-			}
-			"12"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"strike_2_range"			"200"
-			}
-			"13"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"reduced_cooldown"			"15"
-			}
-			"14"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"critical_chance"			"33"
-			}
-			"15"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"critical_damage"			"200"
-			}
-			"16"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bypass_armor"				"80"
-			}
-		}
+		"AbilityValues"
+        {
+            "damage_1" "280 320 360 400 440"
+            "slow_amount" "-55"
+            "slow_duration" "2.0 2.0 2.5 2.5 3.0"
+            "damage_2" "360 400 440 480 520"
+            "stun_duration" "0.70"
+            "damage_3" "450 525 600 675 750"
+            "window_duration" "3.5"
+            "strike_1_range" "700"
+            "strike_2_range" "200"
+            "reduced_cooldown" "15"
+            "critical_chance" "33"
+            "critical_damage" "200"
+            "bypass_armor" "75"
+        }
 		"OnUpgrade"
 		{
 			"RunScript"
@@ -1656,84 +1310,24 @@
 		
 		// Ability special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{			
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"damage_1"					"280 320 360 400 440"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"slow_amount"				"-55"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"slow_duration"				"2.0 2.0 2.5 2.5 3.0"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"damage_2"					"360 400 440 480 520"
-			}
-			"05"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"stun_duration"				"0.70"
-			}
-			"06"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"damage_3"					"450 525 600 675 750"
-			}
-			"08"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"window_duration"			"3.5"
-			}
-			"09"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"regen_amount"				"50"
-			}
-			"10"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"regen_duration"			"2.0"
-			}
-			"11"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"strike_1_range"			"700"
-			}
-			"12"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"strike_2_range"			"200"
-			}
-			"13"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"reduced_cooldown"			"10"
-			}
-			"14"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"critical_chance"			"33"
-			}
-			"15"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"critical_damage"			"200"
-			}
-			"16"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bypass_armor"				"50"
-			}
-		}
+		"AbilityValues"
+        {
+            "damage_1" "280 320 360 400 440"
+            "slow_amount" "-55"
+            "slow_duration" "2.0 2.0 2.5 2.5 3.0"
+            "damage_2" "360 400 440 480 520"
+            "stun_duration" "0.70"
+            "damage_3" "450 525 600 675 750"
+            "window_duration" "3.5"
+            "regen_amount" "50"
+            "regen_duration" "2.0"
+            "strike_1_range" "700"
+            "strike_2_range" "200"
+            "reduced_cooldown" "10"
+            "critical_chance" "33"
+            "critical_damage" "200"
+            "bypass_armor" "50"
+        }
 		"OnAbilityPhaseStart"
 		{
 			"RunScript"
@@ -1799,89 +1393,25 @@
 		
 		// Ability special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{			
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"damage_1"					"280 320 360 400 440"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"slow_amount"				"-55"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"slow_duration"				"2.0 2.0 2.5 2.5 3.0"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"damage_2"					"360 400 440 480 520"
-			}
-			"05"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"stun_duration"				"0.70"
-			}
-			"06"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"damage_3"					"450 525 600 675 750"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"knockback"					"300"
-			}
-			"08"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"window_duration"			"3.5"
-			}
-			"09"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"regen_amount"				"50"
-			}
-			"10"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"regen_duration"			"2.0"
-			}
-			"11"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"strike_1_range"			"700"
-			}
-			"12"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"strike_2_range"			"200"
-			}
-			"13"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"reduced_cooldown"			"10"
-			}
-			"14"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"critical_chance"			"33"
-			}
-			"15"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"critical_damage"			"200"
-			}
-			"16"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bypass_armor"				"50"
-			}
-		}
+		"AbilityValues"
+        {
+            "damage_1" "280 320 360 400 440"
+            "slow_amount" "-55"
+            "slow_duration" "2.0 2.0 2.5 2.5 3.0"
+            "damage_2" "360 400 440 480 520"
+            "stun_duration" "0.70"
+            "damage_3" "450 525 600 675 750"
+            "knockback" "300"
+            "window_duration" "3.5"
+            "regen_amount" "50"
+            "regen_duration" "2.0"
+            "strike_1_range" "700"
+            "strike_2_range" "200"
+            "reduced_cooldown" "10"
+            "critical_chance" "33"
+            "critical_damage" "200"
+            "bypass_armor" "50"
+        }
 		"OnAbilityPhaseStart"
 		{
 			"RunScript"
@@ -1927,7 +1457,7 @@
 		"MaxLevel"						"5"
 		"RequiredLevel"					"1"
 		"LevelsBetweenUpgrades"			"2"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
@@ -1949,79 +1479,23 @@
 		
 		// Ability special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{			
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"damage_1"					"280 320 360 400 440"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"slow_amount"				"-55"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"slow_duration"				"2.0 2.0 2.5 2.5 3.0"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"damage_2"					"360 400 440 480 520"
-			}
-			"05"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"stun_duration"				"0.70"
-			}
-			"06"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"damage_3"					"450 525 600 675 750"
-			}
-			"08"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"window_duration"			"3.5"
-			}
-			"09"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"regen_amount"				"50"
-			}
-			"10"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"regen_duration"			"2.0"
-			}
-			"11"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"strike_1_range"			"700"
-			}
-			"12"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"strike_2_range"			"200"
-			}
-			"13"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"reduced_cooldown"			"10.0"
-			}
-			"13"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_damage"				"25"
-			}
-			"13"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"damage_penalty"			"50"
-			}
-		}
+		"AbilityValues"
+        {
+            "damage_1" "280 320 360 400 440"
+            "slow_amount" "-55"
+            "slow_duration" "2.0 2.0 2.5 2.5 3.0"
+            "damage_2" "360 400 440 480 520"
+            "stun_duration" "0.70"
+            "damage_3" "450 525 600 675 750"
+            "window_duration" "3.5"
+            "regen_amount" "50"
+            "regen_duration" "2.0"
+            "strike_1_range" "700"
+            "strike_2_range" "200"
+            "reduced_cooldown" "10.0"
+            "bonus_damage" "25"
+            "damage_penalty" "50"
+        }
 		"OnUpgrade"
 		{
 			"RunScript"
@@ -2165,79 +1639,23 @@
 		
 		// Ability special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{			
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"damage_1"					"280 320 360 400 440"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"slow_amount"				"-55"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"slow_duration"				"2.0 2.0 2.5 2.5 3.0"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"damage_2"					"360 400 440 480 520"
-			}
-			"05"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"stun_duration"				"0.70"
-			}
-			"06"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"damage_3"					"450 525 600 675 750"
-			}
-			"08"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"window_duration"			"3.5"
-			}
-			"09"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"regen_amount"				"50"
-			}
-			"10"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"regen_duration"			"2.0"
-			}
-			"11"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"strike_1_range"			"700"
-			}
-			"12"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"strike_2_range"			"200"
-			}
-			"13"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"reduced_cooldown"			"5.0"
-			}
-			"14"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_damage"				"25"
-			}
-			"15"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"damage_penalty"			"50"
-			}
-		}
+		"AbilityValues"
+        {
+            "damage_1" "280 320 360 400 440"
+            "slow_amount" "-55"
+            "slow_duration" "2.0 2.0 2.5 2.5 3.0"
+            "damage_2" "360 400 440 480 520"
+            "stun_duration" "0.70"
+            "damage_3" "450 525 600 675 750"
+            "window_duration" "3.5"
+            "regen_amount" "50"
+            "regen_duration" "2.0"
+            "strike_1_range" "700"
+            "strike_2_range" "200"
+            "reduced_cooldown" "5.0"
+            "bonus_damage" "25"
+            "damage_penalty" "50"
+        }
 		"OnAbilityPhaseStart"
 		{
 			"RunScript"
@@ -2298,84 +1716,24 @@
 		
 		// Ability special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{			
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"damage_1"					"280 320 360 400 440"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"slow_amount"				"-55"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"slow_duration"				"2.0 2.0 2.5 2.5 3.0"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"damage_2"					"360 400 440 480 520"
-			}
-			"05"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"stun_duration"				"0.70"
-			}
-			"06"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"damage_3"					"450 525 600 675 750"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"knockback"					"300"
-			}
-			"08"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"window_duration"			"3.5"
-			}
-			"09"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"regen_amount"				"50"
-			}
-			"10"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"regen_duration"			"2.0"
-			}
-			"11"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"strike_1_range"			"700"
-			}
-			"12"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"strike_2_range"			"200"
-			}
-			"13"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"reduced_cooldown"			"5.0"
-			}
-			"14"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_damage"				"25"
-			}
-			"15"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"damage_penalty"			"50"
-			}
-		}
+		"AbilityValues"
+        {
+            "damage_1" "280 320 360 400 440"
+            "slow_amount" "-55"
+            "slow_duration" "2.0 2.0 2.5 2.5 3.0"
+            "damage_2" "360 400 440 480 520"
+            "stun_duration" "0.70"
+            "damage_3" "450 525 600 675 750"
+            "knockback" "300"
+            "window_duration" "3.5"
+            "regen_amount" "50"
+            "regen_duration" "2.0"
+            "strike_1_range" "700"
+            "strike_2_range" "200"
+            "reduced_cooldown" "5.0"
+            "bonus_damage" "25"
+            "damage_penalty" "50"
+        }
 		"OnAbilityPhaseStart"
 		{
 			"RunScript"
@@ -2429,94 +1787,26 @@
 		
 		// Ability special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{			
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"damage_1"					"280 320 360 400 440"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"slow_amount"				"-55"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"slow_duration"				"2.0 2.0 2.5 2.5 3.0"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"damage_2"					"360 400 440 480 520"
-			}
-			"05"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"stun_duration"				"0.70"
-			}
-			"06"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"damage_3"					"450 525 600 675 750"
-			}
-			"08"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"window_duration"			"3.5"
-			}
-			"09"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"regen_amount"				"50"
-			}
-			"10"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"regen_duration"			"2.0"
-			}
-			"11"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"strike_1_range"			"700"
-			}
-			"12"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"strike_2_range"			"200"
-			}
-			"13"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"reduced_cooldown"			"10.0"
-			}
-			"13"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_damage"				"25"
-			}
-			"13"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"damage_penalty"			"50"
-			}
-			"14"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"critical_chance"			"33"
-			}
-			"15"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"critical_damage"			"200"
-			}
-			"16"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bypass_armor"				"80"
-			}
-		}
+		"AbilityValues"
+        {
+            "damage_1" "280 320 360 400 440"
+            "slow_amount" "-55"
+            "slow_duration" "2.0 2.0 2.5 2.5 3.0"
+            "damage_2" "360 400 440 480 520"
+            "stun_duration" "0.70"
+            "damage_3" "450 525 600 675 750"
+            "window_duration" "3.5"
+            "regen_amount" "50"
+            "regen_duration" "2.0"
+            "strike_1_range" "700"
+            "strike_2_range" "200"
+            "reduced_cooldown" "10.0"
+            "bonus_damage" "25"
+            "damage_penalty" "50"
+            "critical_chance" "33"
+            "critical_damage" "200"
+            "bypass_armor" "75"
+        }
 		"OnUpgrade"
 		{
 			"RunScript"
@@ -2672,94 +1962,26 @@
 		
 		// Ability special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{			
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"damage_1"					"280 320 360 400 440"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"slow_amount"				"-55"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"slow_duration"				"2.0 2.0 2.5 2.5 3.0"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"damage_2"					"360 400 440 480 520"
-			}
-			"05"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"stun_duration"				"0.70"
-			}
-			"06"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"damage_3"					"450 525 600 675 750"
-			}
-			"08"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"window_duration"			"3.5"
-			}
-			"09"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"regen_amount"				"50"
-			}
-			"10"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"regen_duration"			"2.0"
-			}
-			"11"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"strike_1_range"			"700"
-			}
-			"12"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"strike_2_range"			"200"
-			}
-			"13"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"reduced_cooldown"			"5.0"
-			}
-			"14"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_damage"				"25"
-			}
-			"15"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"damage_penalty"			"50"
-			}
-			"14"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"critical_chance"			"33"
-			}
-			"15"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"critical_damage"			"200"
-			}
-			"16"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bypass_armor"				"50"
-			}
-		}
+		"AbilityValues"
+        {
+            "damage_1" "280 320 360 400 440"
+            "slow_amount" "-55"
+            "slow_duration" "2.0 2.0 2.5 2.5 3.0"
+            "damage_2" "360 400 440 480 520"
+            "stun_duration" "0.70"
+            "damage_3" "450 525 600 675 750"
+            "window_duration" "3.5"
+            "regen_amount" "50"
+            "regen_duration" "2.0"
+            "strike_1_range" "700"
+            "strike_2_range" "200"
+            "reduced_cooldown" "5.0"
+            "bonus_damage" "25"
+            "damage_penalty" "50"
+            "critical_chance" "33"
+            "critical_damage" "200"
+            "bypass_armor" "50"
+        }
 		"OnAbilityPhaseStart"
 		{
 			"RunScript"
@@ -2835,99 +2057,27 @@
 		
 		// Ability special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{			
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"damage_1"					"280 320 360 400 440"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"slow_amount"				"-55"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"slow_duration"				"2.0 2.0 2.5 2.5 3.0"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"damage_2"					"360 400 440 480 520"
-			}
-			"05"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"stun_duration"				"0.70"
-			}
-			"06"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"damage_3"					"450 525 600 675 750"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"knockback"					"300"
-			}
-			"08"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"window_duration"			"3.5"
-			}
-			"09"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"regen_amount"				"50"
-			}
-			"10"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"regen_duration"			"2.0"
-			}
-			"11"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"strike_1_range"			"700"
-			}
-			"12"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"strike_2_range"			"200"
-			}
-			"13"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"reduced_cooldown"			"5.0"
-			}
-			"14"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_damage"				"25"
-			}
-			"15"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"damage_penalty"			"50"
-			}
-			"14"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"critical_chance"			"33"
-			}
-			"15"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"critical_damage"			"200"
-			}
-			"16"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bypass_armor"				"50"
-			}
-		}
+		"AbilityValues"
+        {
+            "damage_1" "280 320 360 400 440"
+            "slow_amount" "-55"
+            "slow_duration" "2.0 2.0 2.5 2.5 3.0"
+            "damage_2" "360 400 440 480 520"
+            "stun_duration" "0.70"
+            "damage_3" "450 525 600 675 750"
+            "knockback" "300"
+            "window_duration" "3.5"
+            "regen_amount" "50"
+            "regen_duration" "2.0"
+            "strike_1_range" "700"
+            "strike_2_range" "200"
+            "reduced_cooldown" "5.0"
+            "bonus_damage" "25"
+            "damage_penalty" "50"
+            "critical_chance" "33"
+            "critical_damage" "200"
+            "bypass_armor" "50"
+        }
 		"OnAbilityPhaseStart"
 		{
 			"RunScript"
@@ -2995,39 +2145,15 @@
 		
 		// Ability special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"cast_delay"		"0.70"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"initial_damage"	"600 750 900 1050 1200"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"stun_duration"				"0.5"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"revoke_duration"			"2.00"	
-			}
-			"05"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"shock_damage"				"200 250 300 350 400"
-			}
-			"06"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"shock_stun"				"0.5"
-			}
-		}
+		"AbilityValues"
+        {
+            "cast_delay" "0.70"
+            "initial_damage" "600 750 900 1050 1200"
+            "stun_duration" "0.5"
+            "revoke_duration" "2.00"
+            "shock_damage" "200 250 300 350 400"
+            "shock_stun" "0.5"
+        }
 
 		"OnAbilityPhaseStart"
 		{
@@ -3102,44 +2228,16 @@
 		
 		// Ability special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"cast_delay"		"0.7"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"initial_damage"	"800 1000 1200 1400 1600"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"stun_duration"				"0.5"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"revoke_duration"			"2.00"	
-			}
-			"05"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"shock_damage"				"200 250 300 350 400"
-			}
-			"06"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"mana_ratio"				"100"	
-			}
-			"06"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"shock_stun"				"0.5"
-			}
-		}
+		"AbilityValues"
+        {
+            "cast_delay" "0.7"
+            "initial_damage" "800 1000 1200 1400 1600"
+            "stun_duration" "0.5"
+            "revoke_duration" "2.00"
+            "shock_damage" "200 250 300 350 400"
+            "mana_ratio" "100"
+            "shock_stun" "0.5"
+        }
 
 		"OnAbilityPhaseStart"
 		{
@@ -3214,44 +2312,16 @@
 		
 		// Ability special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"cast_delay"		"0.70"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"initial_damage"	"600 750 900 1050 1200"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"stun_duration"				"0.5"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"revoke_duration"			"2.00"	
-			}
-			"05"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"shock_damage"				"200 250 300 350 400"
-			}
-			"06"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"shock_stun"				"0.5"
-			}
-			"07"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"bonus_qi_per_stack"		"30"
-			}
-		}
+		"AbilityValues"
+        {
+            "cast_delay" "0.70"
+            "initial_damage" "600 750 900 1050 1200"
+            "stun_duration" "0.5"
+            "revoke_duration" "2.00"
+            "shock_damage" "200 250 300 350 400"
+            "shock_stun" "0.5"
+            "bonus_qi_per_stack" "30"
+        }
 
 		"OnAbilityPhaseStart"
 		{
@@ -3326,49 +2396,17 @@
 		
 		// Ability special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"cast_delay"		"0.70"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"initial_damage"	"800 1000 1200 1400 1600"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"stun_duration"				"0.5"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"revoke_duration"			"2.00"	
-			}
-			"05"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"shock_damage"				"200 250 300 350 400"
-			}
-			"06"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"mana_ratio"				"100"	
-			}
-			"07"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"bonus_qi_per_stack"		"30"
-			}
-			"06"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"shock_stun"				"0.5"
-			}
-		}
+		"AbilityValues"
+        {
+            "cast_delay" "0.70"
+            "initial_damage" "800 1000 1200 1400 1600"
+            "stun_duration" "0.5"
+            "revoke_duration" "2.00"
+            "shock_damage" "200 250 300 350 400"
+            "mana_ratio" "100"
+            "bonus_qi_per_stack" "30"
+            "shock_stun" "0.5"
+        }
 
 		"OnAbilityPhaseStart"
 		{
@@ -3438,80 +2476,23 @@
 		
 		// Ability special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"first_strike_cast_delay"		"0.2"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"first_strike_damage"			"600"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"first_strike_slow"		"-30"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"first_strike_slow_duration"		"3"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"second_strike_cast_delay"				"0.25"
-			}
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"second_strike_damage"				"600"
-			}
-			"07"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"second_strike_radius"				"500"
-			}
-			"08"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"second_strike_stun_duration"				"1.0"
-			}
-			"09"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"third_strike_cast_delay"				"0.3"
-			}
-			"10"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"third_strike_aerial_damage"				"150"
-			}
-			"11"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"third_strike_aerial_hit_count"				"15"
-			}
-			"12"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"third_strike_knockup_duration"				"1.7"
-			}
-			"13"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"third_strike_bonus_damage"				"70"
-			}
-			
-			"14"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"third_strike_failure_cdr"			"25"
-			}
-		}
+		"AbilityValues"
+        {
+            "first_strike_cast_delay" "0.2"
+            "first_strike_damage" "600"
+            "first_strike_slow" "-30"
+            "first_strike_slow_duration" "3"
+            "second_strike_cast_delay" "0.25"
+            "second_strike_damage" "600"
+            "second_strike_radius" "500"
+            "second_strike_stun_duration" "1.0"
+            "third_strike_cast_delay" "0.3"
+            "third_strike_aerial_damage" "150"
+            "third_strike_aerial_hit_count" "15"
+            "third_strike_knockup_duration" "1.7"
+            "third_strike_bonus_damage" "70"
+            "third_strike_failure_cdr" "25"
+        }
 		
 		
 		"OnSpellStart"
@@ -3600,74 +2581,22 @@
 		
 		// Ability special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"first_strike_cast_delay"		"0.2"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"first_strike_damage"			"600"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"first_strike_slow"		"30"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"first_strike_slow_duration"		"3"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"second_strike_cast_delay"				"0.25"
-			}
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"second_strike_damage"				"600"
-			}
-			"07"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"second_strike_radius"				"500"
-			}
-			"08"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"second_strike_stun_duration"				"1.0"
-			}
-			"09"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"third_strike_cast_delay"				"0.3"
-			}
-			"10"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"third_strike_aerial_damage"				"150"
-			}
-			"11"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"third_strike_aerial_hit_count"				"15"
-			}
-			"12"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"third_strike_bonus_damage"				"70"
-			}
-			"13"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"third_strike_knockup_duration"				"1.7"
-			}
-		}
+		"AbilityValues"
+        {
+            "first_strike_cast_delay" "0.2"
+            "first_strike_damage" "600"
+            "first_strike_slow" "30"
+            "first_strike_slow_duration" "3"
+            "second_strike_cast_delay" "0.25"
+            "second_strike_damage" "600"
+            "second_strike_radius" "500"
+            "second_strike_stun_duration" "1.0"
+            "third_strike_cast_delay" "0.3"
+            "third_strike_aerial_damage" "150"
+            "third_strike_aerial_hit_count" "15"
+            "third_strike_bonus_damage" "70"
+            "third_strike_knockup_duration" "1.7"
+        }
 		
 		
 		"OnSpellStart"
@@ -3711,74 +2640,22 @@
 		
 		// Ability special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"first_strike_cast_delay"		"0.2"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"first_strike_damage"			"600"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"first_strike_slow"		"30"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"first_strike_slow_duration"		"3"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"second_strike_cast_delay"				"0.25"
-			}
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"second_strike_damage"				"600"
-			}
-			"07"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"second_strike_radius"				"500"
-			}
-			"08"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"second_strike_stun_duration"				"1.0"
-			}
-			"09"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"third_strike_cast_delay"				"0.3"
-			}
-			"10"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"third_strike_aerial_damage"				"150"
-			}
-			"11"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"third_strike_aerial_hit_count"				"15"
-			}
-			"12"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"third_strike_bonus_damage"				"70"
-			}
-			"13"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"third_strike_knockup_duration"				"1.7"
-			}
-		}
+		"AbilityValues"
+        {
+            "first_strike_cast_delay" "0.2"
+            "first_strike_damage" "600"
+            "first_strike_slow" "30"
+            "first_strike_slow_duration" "3"
+            "second_strike_cast_delay" "0.25"
+            "second_strike_damage" "600"
+            "second_strike_radius" "500"
+            "second_strike_stun_duration" "1.0"
+            "third_strike_cast_delay" "0.3"
+            "third_strike_aerial_damage" "150"
+            "third_strike_aerial_hit_count" "15"
+            "third_strike_bonus_damage" "70"
+            "third_strike_knockup_duration" "1.7"
+        }
 		
 		
 		"OnSpellStart"
@@ -3829,24 +2706,12 @@
 		{
 		}
 
-		"AbilitySpecial"
-		{
-			"05"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"punch_damage"				"200 250 300 350 400"
-			}
-			"05"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"burn_mana"					"200 250 300 350 400"
-			}
-			"06"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"mana_ratio"				"100"	
-			}
-		}
+		"AbilityValues"
+        {
+            "punch_damage" "200 250 300 350 400"
+            "burn_mana" "200 250 300 350 400"
+            "mana_ratio" "100"
+        }
 		
 		"OnSpellStart"
 		{
@@ -3880,64 +2745,20 @@
 			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_antimage.vsndevts"
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"cosmic_orbit_bonus_attack"			"3"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"sphere_bonus_attack"	"10 20 30 40 50"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"martial_art_search"		"1300"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"martial_art_duration"		"4"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"martial_art_active"		"2"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"martial_art_bonus_crit_chance"		"10"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"martial_art_bonus_dmg"		"2"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"martial_art_cooldown"		"1"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"martial_art_bonus_silence"		"5"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"mana_burn"				"50"
-			}
-			"07"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"bonus_qi_per_stack"		"30"
-			}
-		}
+		"AbilityValues"
+        {
+            "cosmic_orbit_bonus_attack" "3"
+            "sphere_bonus_attack" "10 20 30 40 50"
+            "martial_art_search" "1300"
+            "martial_art_duration" "4"
+            "martial_art_active" "2"
+            "martial_art_bonus_crit_chance" "10"
+            "martial_art_bonus_dmg" "2"
+            "martial_art_cooldown" "1"
+            "martial_art_bonus_silence" "5"
+            "mana_burn" "50"
+            "bonus_qi_per_stack" "30"
+        }
 		
 		"OnSpellStart"
 		{
@@ -3969,39 +2790,15 @@
 		{
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"8.0"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"cc_immune_duration"	"2.0"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"critical_chance"		"33"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"critical_damage"		"200"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"hp_bonus_per_agi"			"3"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"atk_bonus_per_str"			"1"
-			}
-		}
+		"AbilityValues"
+        {
+            "duration" "8.0"
+            "cc_immune_duration" "2.0"
+            "critical_chance" "33"
+            "critical_damage" "200"
+            "hp_bonus_per_agi" "3"
+            "atk_bonus_per_str" "1"
+        }
 		
 		"OnSpellStart"
 		{
@@ -4033,34 +2830,14 @@
 		{
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"25"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"penalty_damage"		"50"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"health_regen"			"50"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"regen_duration"		"2.0"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"reduced_cooldown"		"5"
-			}
-		}
+		"AbilityValues"
+        {
+            "bonus_damage" "25"
+            "penalty_damage" "50"
+            "health_regen" "50"
+            "regen_duration" "2.0"
+            "reduced_cooldown" "5"
+        }
 		
 		"OnSpellStart"
 		{
@@ -4086,6 +2863,8 @@
 		{
 			"model"					"models/lishuwen/gang/lishuwen_gangster_by_zefiroft.vmdl"
 			"model"					"models/lishuwen/coat/lushuwen_boss_by_zefiroft.vmdl"
+			"model"					"models/lishuwen/old/old_li_by_zefiroft.vmdl"
+			"model"					"models/lishuwen/old/old_boss_li_by_zefiroft.vmdl"
 			"particle"				"particles/units/heroes/hero_spectre/spectre_ambient.vpcf"
 			"particle"				"particles/units/heroes/hero_juggernaut/jugg_crit_blur_impact.vpcf"
 			"particle"				"particles/econ/items/axe/axe_cinder/axe_cinder_battle_hunger_start.vpcf"

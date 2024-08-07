@@ -15,14 +15,10 @@
 		"RequiredLevel"					"25"
 		"LevelsBetweenUpgrades"			"1"
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_stat"			"9"
-			}
-		}
+		"AbilityValues"
+        {
+            "bonus_stat" "9"
+        }
 		
 		"OnSpelLStart"
 		{
@@ -58,24 +54,12 @@
 		"RequiredLevel"					"25"
 		"LevelsBetweenUpgrades"			"1"
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"health_regain"			"333"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"health_regeneration"	"333"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"duration"				"3"
-			}
-		}	
+		"AbilityValues"
+        {
+            "health_regain" "333"
+            "health_regeneration" "333"
+            "duration" "3"
+        }	
 	}
 
 	//=================================================================================================================
@@ -96,24 +80,12 @@
 			"particle"					"particles/items_fx/aegis_timer.vpcf"
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"health_regain"			"333"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"health_regeneration"	"333"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"duration"				"3"
-			}
-		}
+		"AbilityValues"
+        {
+            "health_regain" "333"
+            "health_regeneration" "333"
+            "duration" "3"
+        }
 
 		
 		"OnSpellStart"
@@ -185,19 +157,11 @@
 			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_warlock.vsndevts"
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{	
-				"var_type"			"FIELD_INTEGER"
-				"damage"			"400 550 700 850 1000"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"area_of_effect"	"475"
-			}
-		}
+		"AbilityValues"
+        {
+            "damage" "400 550 700 850 1000"
+            "area_of_effect" "475"
+        }
     }	
 
 	//=================================================================================================================
@@ -236,39 +200,15 @@
 		"AbilityManaCost"				"800"
 		"AbilityCastRange"				"1500"
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"cast_delay"			"2.00"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"damage"				"800 1100 1400 1700 2000"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"550"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"dot_damage"			"70 100 130 160 190"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"duration"				"3"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"max_range"				"1500"
-			}
-		}
+		"AbilityValues"
+        {
+            "cast_delay" "2.00"
+            "damage" "800 1100 1400 1700 2000"
+            "radius" "550"
+            "dot_damage" "70 100 130 160 190"
+            "duration" "3"
+            "max_range" "1500"
+        }
 		
 		"OnSpellStart"
 		{
@@ -355,9 +295,9 @@
 		{
 		}
 
-		"AbilitySpecial"
-		{
-		}
+		"AbilityValues"
+        {
+        }
 		
 		"OnSpellStart"
 		{
@@ -408,39 +348,15 @@
 		"AbilityManaCost"				"800"
 		"AbilityCastRange"				"1500"
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"cast_delay"			"4.0"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"damage"				"2750"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"700"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"dot_damage"			"500"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"duration"				"5"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"max_range"				"2000"
-			}
-		}
+		"AbilityValues"
+        {
+            "cast_delay" "4.0"
+            "damage" "2750"
+            "radius" "700"
+            "dot_damage" "500"
+            "duration" "5"
+            "max_range" "2000"
+        }
 		
 		"OnSpellStart"
 		{
@@ -532,9 +448,9 @@
 		{
 		}
 
-		"AbilitySpecial"
-		{
-		}
+		"AbilityValues"
+        {
+        }
 		
 		"OnSpellStart"
 		{
@@ -567,24 +483,12 @@
 		{
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"health_restored"		"333"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"regen_amount"			"333"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"duration"				"3"
-			}
-		}
+		"AbilityValues"
+        {
+            "health_restored" "333"
+            "regen_amount" "333"
+            "duration" "3"
+        }
 		
 		"OnSpellStart"
 		{
@@ -621,24 +525,12 @@
 		{
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"250"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"combo_damage"			"1500"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"fire_trail_duration"	"3"
-			}
-		}
+		"AbilityValues"
+        {
+            "damage" "250"
+            "combo_damage" "1500"
+            "fire_trail_duration" "3"
+        }
 		
 		"OnSpellStart"
 		{
@@ -668,19 +560,11 @@
 		{
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"stun_duration"			"1.0"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"channel_required"		"1.5"
-			}
-		}
+		"AbilityValues"
+        {
+            "stun_duration" "1.0"
+            "channel_required" "1.5"
+        }
 		
 		"OnSpellStart"
 		{
@@ -711,24 +595,12 @@
 		{
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"cooldown_reduce"		"1"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"blade_aoe"				"375"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"min_cooldown"			"5"
-			}
-		}
+		"AbilityValues"
+        {
+            "cooldown_reduce" "1"
+            "blade_aoe" "375"
+            "min_cooldown" "5"
+        }
 		
 		"OnSpellStart"
 		{
@@ -761,28 +633,12 @@
 		{
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"attack_trigger"		"5"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_aspd"			"400"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"num_attacks"			"5"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"stun_dur"				"1"
-			}
-		}
+		"AbilityValues"
+        {
+            "attack_trigger" "5"
+            "bonus_aspd" "400"
+            "num_attacks" "5"
+            "stun_dur" "1"
+        }
 	}
 }

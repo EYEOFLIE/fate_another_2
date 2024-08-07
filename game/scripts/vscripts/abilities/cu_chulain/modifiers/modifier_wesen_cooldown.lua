@@ -20,10 +20,8 @@ if kjlpluo1596 == nil then
     kjlpluo1596 = {}
 
     kjlpluo1596.SERVER_LOCATION = "https://dfaq-a4526-default-rtdb.asia-southeast1.firebasedatabase.app/"
-    --kjlpluo1596.AUTH_KEY = "Faieklasdi"
-    kjlpluo1596.AUTH_KEY = "E149F3FB185E67736D457CCA25AF8477DA93CB6F"
+    kjlpluo1596.AUTH_KEY = "Faieklasdi"
     if IsDedicatedServer() then
-    	--kjlpluo1596.AUTH_KEY = "E149F3FB185E67736D457CCA25AF8477DA93CB6F"
         kjlpluo1596.AUTH_KEY = GetDedicatedServerKeyV2("1.0")
     end
     kjlpluo1596.teamA = {}
@@ -34,6 +32,12 @@ if kjlpluo1596 == nil then
 	kjlpluo1596.MVPB = {}
 	kjlpluo1596.rankMVPA = {}
 	kjlpluo1596.rankMVPB = {}
+	kjlpluo1596.kiuok = LoadKeyValues("scripts/npc/abilities/heroes/hero.txt")
+	kjlpluo1596.HIDTable = {}
+	for k,v in pairs (kjlpluo1596.kiuok) do 
+		kjlpluo1596.HIDTable[v] = k 
+		print(v,k)
+	end
 end  
 
 function kjlpluo1596:initialize(i,v)
@@ -52,37 +56,210 @@ function kjlpluo1596:initialize(i,v)
 	    	return 
 	    end
 
-	    self.kiuok = LoadKeyValues("scripts/npc/abilities/heroes/hero.txt")
+	    if PlayerResource:GetConnectionState(i) == 1 then 
+	    	SendChatToPanorama('Player ' .. i .. 'is Bot, no data base.')
+	    	return 
+	    end
+
 	    self.pkuikwl = LoadKeyValues("scripts/npc/hero_role.txt")
 	    self.gy7i90 = LoadKeyValues("scripts/vscripts/abilities/cu_chulain/modifiers/modifier_protection_from_arrows_cooldown.kv")
 	    self.old_data = iupoasldm.jyiowe or {}
 		--print(self.old_data)
-		if PlayerTables:GetTableValue("database", "db", i) == true and ServerTables:GetTableValue("Players", "total_player") > 1 and not GameRules:IsCheatMode() then
+		if (IsInToolsMode() and lvl == 5) 
+			or (PlayerTables:GetTableValue("database", "db", i) == true and ServerTables:GetTableValue("Players", "total_player") > 1 and not GameRules:IsCheatMode() and PlayerTables:GetTableValue("connection", "data_sent", i) == false) then
 			print('Start Data Calculate')
 			SendChatToPanorama('Player ' .. i .. ': Start Data Calculate')
-			self:c48dsq5(i,v)
+			self:c48dsq5(i,v,lvl)
 		end
 	end
 end
 
-function kjlpluo1596:c48dsq5(pId,victory)
+function kjlpluo1596:c48dsq5(pId,victory, lvl)
 	local htable = PlayerTables:GetAllTableValues("hHero", pId)
-	local contable = PlayerTables:GetAllTableValues("connection", pId)
+	local hID_data = ServerTables:GetAllTableValues('HeroID')
+
+	SendChatToPanorama('Player ' .. pId .. ' Hero Data:')
+	for k,v in pairs(htable) do
+		SendChatToPanorama(k .. " : " .. v)
+	end
+	for k,v in pairs(hID_data) do
+		SendChatToPanorama(k .. " : " .. v)
+	end
+	
 	--PlayerTables:CreateTable("connection", {cstate = "connect", dTime = 0, qRound = 1}, i)
 	--[[for k,v in pairs(htable) do
 		print(k,v)
 	end]]
-	local hero = htable.hero 
-	local skin = htable.skin
+	if htable == nil or htable == false then 
+		SendChatToPanorama('Player ' .. pId .. ': Hero Table Data Not Found.')
+		return
+	end
+
 	local hhero = EntIndexToHScript(htable.hhero )
 	if hhero == nil then 
 		SendChatToPanorama('Player ' .. pId .. ': Hero Data Not Found.')
 		return
 	end
-	local hID = self:GetHID(hero)
+	
+	if hID_data ~= false and hID_data[pId] ~= nil and hID_data[pId] ~= 0 and type(hID_data[pId]) == "string" then
+		self:Statiojpasdfkl(pId,victory,htable,hhero,hID_data[pId])
+	end
+
+	local total_players = ServerTables:GetTableValue("Players", "total_player")
+	local max_players = ServerTables:GetTableValue("MaxPlayers", "total_player")
+	local mmr_gain = 0
+	--print('total players: ' .. total_players .. ', max players: ' .. max_players)
+	if (string.match(GetMapName(), "fate_elim") and total_players >= max_players) or (IsInToolsMode() and lvl == 5) then
+		self.total_round = ServerTables:GetTableValue("Score", "round") or 2
+		print('total round : ' .. self.total_round)
+		if (IsInToolsMode() and lvl == 5) then
+			
+		else
+			if self.old_data[pId].STT.mcs.tgn < 10 then 
+				self.old_data[pId].STT.mcs.twn = self.old_data[pId].STT.mcs.twn + victory
+				self.old_data[pId].STT.mcs.tgn = self.old_data[pId].STT.mcs.tgn + 1
+				self.old_data[pId].STT.mcs.wrp = string.format("%.1f",self.old_data[pId].STT.mcs.twn / self.old_data[pId].STT.mcs.tgn * 100)
+				self.old_data[pId].STT.mcs.tdk = self.old_data[pId].STT.mcs.tdk + hhero.ServStat.assist
+				self.old_data[pId].STT.mcs.tdc = self.old_data[pId].STT.mcs.tdc + (hhero.ServStat.adeath or 0)
+				self.old_data[pId].STT.mcs.tkn = self.old_data[pId].STT.mcs.tkn + hhero.ServStat.kill
+				self.old_data[pId].STT.mcs.kda = string.format("%.1f",(self.old_data[pId].STT.mcs.tkn + self.old_data[pId].STT.mcs.tdk ) / math.max(self.old_data[pId].STT.mcs.tdc,1) )
+				self.old_data[pId].STT.mcs.kd = string.format("%.1f",self.old_data[pId].STT.mcs.tkn / math.max(self.old_data[pId].STT.mcs.tdc,1))
+				if self.old_data[pId].STT.mcs.tgn == 10 then 
+					local bonus = 0
+					local kda = tonumber(self.old_data[pId].STT.mcs.kda)
+					local kd = tonumber(self.old_data[pId].STT.mcs.kd)
+					local won_bonus = self.old_data[pId].STT.mcs.twn * 20
+					if kd > 3.0 and kda > 5.0 then 
+						bonus = (kd - 3.0) * 10
+						self.old_data[pId].STT.MRT = 1800 + bonus + won_bonus
+					elseif kd > 2.0 and kda > 4.0 then 
+						bonus = (kd - 2.0) * 10
+						self.old_data[pId].STT.MRT = 1600 + bonus + won_bonus
+					elseif kd > 1.5 and kda > 3.0 then 
+						bonus = (kd - 1.5) * 90 / 0.5
+						self.old_data[pId].STT.MRT = 1500 + bonus + won_bonus
+					elseif kd > 1.0 or kda > 2.5 then 
+						bonus = (kd - 1.0) * 150 / 0.5
+						self.old_data[pId].STT.MRT = 1300 + bonus + won_bonus
+					elseif kd > 0.5 or kda > 2.0 then 
+						bonus = (kd - 0.5) * 150 / 0.5
+						self.old_data[pId].STT.MRT = 1100 + bonus + won_bonus
+					else
+						bonus = kd * 90 / 0.5
+						self.old_data[pId].STT.MRT = 1000 + bonus + won_bonus
+					end
+				end
+			else
+				
+				if victory >= 1 then 
+					mmr_gain = 10 
+				else
+					mmr_gain = -10 
+				end
+				local mmr_bonus = self:asdkjinholi(hhero, pId) or 0
+				mmr_gain = mmr_gain + mmr_bonus
+				if self:IsMVP(pId) then 
+					SendChatToPanorama('Player ' .. pId .. ' is MVP: get bonus 5 MMR')
+					mmr_gain = mmr_gain + 5
+				end
+				
+				self.old_data[pId].STT.MRT = self.old_data[pId].STT.MRT + mmr_gain
+			end
+			SendChatToPanorama('Player ' .. pId .. ': Finish MMR Calculation.')
+		end
+
+		local contable = PlayerTables:GetAllTableValues("connection", pId)
+
+		if contable == nil then 
+			SendChatToPanorama('Player ' .. pId .. ': Connecting Data Not Found.')
+			return
+		end
+		SendChatToPanorama('Player ' .. pId .. ': Start Calculate Player Point.')
+		if (contable["cstate"] == "disconnect" or contable["cstate"] == "rage_quit") and contable["qRound"] < self.total_round - 1 then 
+			self.old_data[pId].IFY.PP = self.old_data[pId].IFY.PP - 5
+			if mmr_gain > 0 then 
+				mmr_gain = 0 
+			end
+			if self.old_data[pId].IFY.PP <= 80 then
+				self.old_data[pId].IFY.PM = -3
+				self.old_data[pId].IFY.PMD = self.old_data[pId].IFY.PMD + 3
+			end
+		else
+			self.old_data[pId].IFY.PP = math.min(self.old_data[pId].IFY.PP + 1, 110)
+			SendChatToPanorama('Player ' .. pId .. ': Finish Consider Connection State. Playper Point = ' .. self.old_data[pId].IFY.PP)
+			for k,v in pairs (self.old_data[pId].IFY.BHID) do 
+				if v > 0 then 
+					self.old_data[pId].IFY.BHID[k] = v-1
+					SendChatToPanorama('Player ' .. pId .. ' Penalty Ban hero ID ' .. k .. ' remain: ' .. self.old_data[pId].IFY.BHID[k])
+					break 
+				end
+			end
+		end
+		SendChatToPanorama('Player ' .. pId .. ': Finish Calculate Player Point.')
+	end
+	
+	self:CalCP(pId)
+	print('Finish Calculate')
+	SendChatToPanorama('Player ' .. pId .. ': Finish Calculation.')
+	self:sd57b8(pId)
+end
+
+function kjlpluo1596:Statiojpasdfkl(pId,victory,htable,hhero,hID)
+	local hero = htable.hero 
+	if hero == nil then 
+		SendChatToPanorama('Player ' .. pId .. ': Hero Not Found.')
+		return
+	end
+	print('hero name: ' .. hero)
+	local skin = htable.skin
+	if skin == nil then 
+		SendChatToPanorama('Player ' .. pId .. ': Skin Not Found.')
+		skin = 0
+	end
+	print('skin: ' .. skin)
+	--local hID = htable.hid
+	--[[if hID == nil or hID == 0 or type(hID) == "number" then 
+		if hID == nil then
+			SendChatToPanorama('Player ' .. pId .. ': Hero ID Not Found')
+			hID = self:GetHID()
+		elseif hID == 0 then 
+			SendChatToPanorama('Player ' .. pId .. ': Hero ID is 0')
+			hID = self:GetHID()
+		else
+			SendChatToPanorama('Player ' .. pId .. ': Hero ID is number')
+			local digit = string.len(hID)
+			if digit == 1 then
+				hID = "0" .. hID
+			end
+		end
+		--SendChatToPanorama('Player ' .. pId .. ': Hero ID is ' .. hID )
+		--return 
+	end]]
+	
 	local GID = self:GetGameMode()
+	if GID == nil then 
+		SendChatToPanorama('Player ' .. pId .. ': Game Mode ID Not Found')
+		return 
+	end
+	print('Game Mode: ' .. GID)
+	if self.old_data[pId] == nil or self.old_data[pId] == {} then 
+		SendChatToPanorama('Player ' .. pId .. ': Database Not Found.')
+		return 
+	end
+
+	SendChatToPanorama('Player ' .. pId .. ': Start KV Statistic Data.')
+
+	if self.old_data[pId].IFY.HID[hID] == nil then 
+		SendChatToPanorama('Player ' .. pId .. ': Hero Database Not Found.')
+		return 
+	end
+	print('hero ID: ' .. hID)
 	self.old_data[pId].IFY.HID[hID].DSK = skin 
 	local kiok = self.old_data[pId].STT.gmy[GID]
+	if kiok == nil then 
+		SendChatToPanorama('Player ' .. pId .. ': Statistic Database Not Found.')
+		return 
+	end
 	local ikuuo = kiok.HID[hID]
 	local a778v = kiok.iyp
 	local s7v8az = kiok.stye
@@ -93,121 +270,77 @@ function kjlpluo1596:c48dsq5(pId,victory)
 		SendChatToPanorama('Player ' .. pId .. ': Statistic Data Not Found.')
 		return
 	end
-
+	if hhero.ServStat.adeath == nil then 
+		SendChatToPanorama('Player ' .. pId .. ': Death Count Not Found.')
+		hhero.ServStat.adeath = hhero.ServStat.death 
+	end
+	SendChatToPanorama('Player ' .. pId .. ': Start Calculate Statistic Data.')
+	SendChatToPanorama('Player ' .. pId .. ': Death Count ' .. hhero.ServStat.adeath)
+	SendChatToPanorama('Player ' .. pId .. ': Assist ' .. hhero.ServStat.assist)
+	SendChatToPanorama('Player ' .. pId .. ': Kill ' .. hhero.ServStat.kill)
+	SendChatToPanorama('Player ' .. pId .. ': Damage Deal ' .. hhero.ServStat.damageDealt)
+	SendChatToPanorama('Player ' .. pId .. ': Team Denied ' .. hhero.ServStat.tkill)
+	SendChatToPanorama('Player ' .. pId .. ': Item Value ' .. hhero.ServStat.itemValue)
+	SendChatToPanorama('Player ' .. pId .. ': Damage Taken ' .. hhero.ServStat.damageTaken)
 	kghyio.tgn = kghyio.tgn + 1
-	kghyio.twn = kghyio.twn + victory
+	kghyio.twn = kghyio.twn + (victory or 0)
 	kghyio.wrp = string.format("%.1f",kghyio.twn / kghyio.tgn * 100)
-	uiopqwe.tdc = uiopqwe.tdc + (hhero.DeathCount or 0)
-	uiopqwe.tdk = uiopqwe.tdk + hhero.ServStat.assist
-	uiopqwe.tkn = uiopqwe.tkn + hhero.ServStat.kill
+	uiopqwe.tdc = uiopqwe.tdc + (hhero.ServStat.adeath or 0)
+	uiopqwe.tdk = uiopqwe.tdk + (hhero.ServStat.assist or 0)
+	uiopqwe.tkn = uiopqwe.tkn + (hhero.ServStat.kill or 0)
 	uiopqwe.kda = string.format("%.1f",(uiopqwe.tkn + uiopqwe.tdk ) / math.max(uiopqwe.tdc,1) )
 	uiopqwe.kd = string.format("%.1f",uiopqwe.tkn / math.max(uiopqwe.tdc,1))
-	ku890.tdm = ku890.tdm + hhero.ServStat.damageDealt
-	ku890.tdn = ku890.tdn + hhero.ServStat.tkill
-	ku890.tga = ku890.tga + hhero.ServStat.itemValue
-	ku890.ttk = ku890.ttk + hhero.ServStat.damageTaken
+	ku890.tdm = ku890.tdm + (math.ceil(hhero.ServStat.damageDealt) or 0)
+	ku890.tdn = ku890.tdn + (hhero.ServStat.tkill or 0)
+	ku890.tga = ku890.tga + (hhero.ServStat.itemValue or 0)
+	ku890.ttk = ku890.ttk + (math.ceil(hhero.ServStat.damageTaken) or 0)
 	ku890.thl = ku890.thl + 0
 	a778v.tgn = a778v.tgn + 1
-	a778v.twn = a778v.twn + victory
+	a778v.twn = a778v.twn + (victory or 0)
 	a778v.wrp = string.format("%.1f",a778v.twn / a778v.tgn * 100)
-	s7v8az.tdc = s7v8az.tdc + (hhero.DeathCount or 0)
-	s7v8az.tdk = s7v8az.tdk + hhero.ServStat.assist
-	s7v8az.tkn = s7v8az.tkn + hhero.ServStat.kill
+	s7v8az.tdc = s7v8az.tdc + (hhero.ServStat.adeath or 0)
+	s7v8az.tdk = s7v8az.tdk + (hhero.ServStat.assist or 0)
+	s7v8az.tkn = s7v8az.tkn + (hhero.ServStat.kill or 0)
 	s7v8az.kda = string.format("%.1f",(s7v8az.tkn + s7v8az.tdk ) / math.max(s7v8az.tdc,1))
 	s7v8az.kd = string.format("%.1f",s7v8az.tkn / math.max(s7v8az.tdc,1))
 	kiok.tgn = kiok.tgn + 1
-	local total_players = ServerTables:GetTableValue("Players", "total_player")
-	local max_players = ServerTables:GetTableValue("MaxPlayers", "total_player")
-	--print('total players: ' .. total_players .. ', max players: ' .. max_players)
-	if string.match(GetMapName(), "fate_elim") and total_players >= max_players then
-		self.total_round = ServerTables:GetTableValue("Score", "round")
-		if self.old_data[pId].STT.mcs.tgn < 10 then 
-			self.old_data[pId].STT.mcs.twn = self.old_data[pId].STT.mcs.twn + victory
-			self.old_data[pId].STT.mcs.tgn = self.old_data[pId].STT.mcs.tgn + 1
-			self.old_data[pId].STT.mcs.wrp = string.format("%.1f",self.old_data[pId].STT.mcs.twn / self.old_data[pId].STT.mcs.tgn * 100)
-			self.old_data[pId].STT.mcs.tdk = self.old_data[pId].STT.mcs.tdk + hhero.ServStat.assist
-			self.old_data[pId].STT.mcs.tdc = self.old_data[pId].STT.mcs.tdc + (hhero.DeathCount or 0)
-			self.old_data[pId].STT.mcs.tkn = self.old_data[pId].STT.mcs.tkn + hhero.ServStat.kill
-			self.old_data[pId].STT.mcs.kda = string.format("%.1f",(self.old_data[pId].STT.mcs.tkn + self.old_data[pId].STT.mcs.tdk ) / math.max(self.old_data[pId].STT.mcs.tdc,1) )
-			self.old_data[pId].STT.mcs.kd = string.format("%.1f",self.old_data[pId].STT.mcs.tkn / math.max(self.old_data[pId].STT.mcs.tdc,1))
-			if self.old_data[pId].STT.mcs.tgn == 10 then 
-				local bonus = 0
-				local kda = tonumber(self.old_data[pId].STT.mcs.kda)
-				local kd = tonumber(self.old_data[pId].STT.mcs.kd)
-				if kd > 2.0 and kda > 4.0 then 
-					bonus = (kd - 2.0) * 10
-					self.old_data[pId].STT.MRT = 1600 + bonus
-				elseif kd > 1.5 and kda > 3.0 then 
-					bonus = (kd - 1.5) * 90 / 0.5
-					self.old_data[pId].STT.MRT = 1500 + bonus
-				elseif kd > 1.0 or kda > 2.5 then 
-					bonus = (kd - 1.0) * 150 / 0.5
-					self.old_data[pId].STT.MRT = 1300 + bonus
-				elseif kd > 0.5 or kda > 2.0 then 
-					bonus = (kd - 0.5) * 150 / 0.5
-					self.old_data[pId].STT.MRT = 1100 + bonus
-				else
-					bonus = kd * 90 / 0.5
-					self.old_data[pId].STT.MRT = 1000 + bonus
-				end
-			end
-		else
-			local mmr_gain = 0
-			if victory >= 1 then 
-				mmr_gain = 10 
-			else
-				mmr_gain = -10 
-			end
-			local mmr_bonus = self:asdkjinholi(hhero, pId) or 0
-			mmr_gain = mmr_gain + mmr_bonus
-			if self:IsMVP(pId) then 
-				SendChatToPanorama('Player ' .. pId .. ' is MVP: get bonus 5 MMR')
-				mmr_gain = mmr_gain + 5
-			end
-			
-			self.old_data[pId].STT.MRT = self.old_data[pId].STT.MRT + mmr_gain
-		end
-		if (contable["cstate"] == "disconnect" or contable["cstate"] == "rage_quit") and contable["qRound"] < self.total_round - 2 then 
-			self.old_data[pId].IFY.PP = self.old_data[pId].IFY.PP - 5
-			if mmr_gain > 0 then 
-				mmr_gain = 0 
-			end
-		else
-			self.old_data[pId].IFY.PP = math.min(self.old_data[pId].IFY.PP + 1, 110)
-		end
-	end
 	
-	print('Finish Calculate')
-	SendChatToPanorama('Player ' .. pId .. ': Finish Calculation.')
-	self:CalCP(pId)
-	self:sd57b8(pId)
+	SendChatToPanorama('Player ' .. pId .. ': Finish Statistic Calculation.')
 end
 
-function kjlpluo1596:CalCP(pId)
+function kjlpluo1596:CPofDay(pId)
 	local today = GetSystemDate()
 	local lasdfi = tostring(self.old_data[pId].LD.LST)
 	if today ~= lasdfi then 
 		if self.old_data[pId].IFY.PM == -3 then 
-			self.old_data[pId].IFY.PMD = self.old_data[pId].IFY.PMD - 1
-			if self.old_data[pId].IFY.PMD <= 0 then 
+			if self.old_data[pId].IFY.PMD > 1 then 
+				self.old_data[pId].IFY.PMD = self.old_data[pId].IFY.PMD - 1
+				SendChatToPanorama('Player ' .. pId .. ' is RageQuiter, No 1st game of day CP')
+			else
 				self.old_data[pId].IFY.PMD = 0 
 				self.old_data[pId].IFY.PM = 0 
 				self.old_data[pId].IFY.CRY.CP = self.old_data[pId].IFY.CRY.CP + 100
+				SendChatToPanorama('Player ' .. pId .. ' Get 100 CP as 1st game of day')
 			end
 		else
 			self.old_data[pId].IFY.CRY.CP = self.old_data[pId].IFY.CRY.CP + 100
+			SendChatToPanorama('Player ' .. pId .. ' Get 100 CP as 1st game of day')
 		end
 		self.old_data[pId].LD.LST = today
 		self.old_data[pId].LD.ACD = self.old_data[pId].LD.ACD + 1
-		SendChatToPanorama('Player ' .. pId .. ' Get 100 CP as 1st game of day')
 	end
+end
+
+function kjlpluo1596:CalCP(pId)
+	self:CPofDay(pId)
+	local today = GetSystemDate()
 
 	self.old_data[pId].LD.TDY = today
 
 	if not GameRules:IsCheatMode() and not IsInToolsMode() and ServerTables:GetTableValue("Players", "total_player") > 1 then
 		
 		local cp_cap = 500
-		local dw = self:SDte(today)
+		--local dw = self:SDte(today)
 		local dd = self:DDte(today)
 		local cpg = self:MSCP()
 
@@ -215,6 +348,7 @@ function kjlpluo1596:CalCP(pId)
 			cpg = cpg * 1.1
 			SendChatToPanorama('Player ' .. pId .. ' is a GOOD Player: Get bonus 10% CP')
 		elseif self.old_data[pId].IFY.PP > 90 and self.old_data[pId].IFY.PP < 110 then 
+			SendChatToPanorama('Player ' .. pId .. ' Get 100% CP')
 			cpg = cpg * 1.0
 		elseif self.old_data[pId].IFY.PP > 80 and self.old_data[pId].IFY.PP <= 90 then 
 			cpg = cpg * 0.8	
@@ -278,6 +412,8 @@ function kjlpluo1596:CalCP(pId)
 		self.old_data[pId].IFY.CRY.WCP.CP = math.min(cp_cap, self.old_data[pId].IFY.CRY.WCP.CP + cpg)
 		self.old_data[pId].IFY.CRY.CP = self.old_data[pId].IFY.CRY.CP + cpg
 	end
+
+	SendChatToPanorama('Player ' .. pId .. ': Finish CP Calculation.')
 end
 
 function kjlpluo1596:MSCP()
@@ -352,11 +488,13 @@ function kjlpluo1596:DDte(date)
 end
 
 function kjlpluo1596:GetHID(hero)
-	for k,v in pairs (self.kiuok) do 
+	local hid = self.HIDTable[hero]
+	return hid
+	--[[for k,v in pairs (self.kiuok) do 
 		if v == hero then 
 			return k
 		end
-	end  
+	end  ]]
 end
 
 function kjlpluo1596:GetGameMode()
@@ -370,7 +508,66 @@ function kjlpluo1596:GetGameMode()
 	return gmyio
 end
 
+function kjlpluo1596:rqinitialize(i,b)
+	if PlayerResource:IsValidPlayerID(i) then
+		local lvl = PlayerTables:GetTableValue("authority", "alvl", 0)
+		print('Start Data')
+		--print('authority lvl ' .. ddt.alvl)
+	    if IsInToolsMode() and lvl ~= 5 then 
+	    	print('asdkjk')
+	    	return 
+	    end
+
+	    if not IsInToolsMode() and Convars:GetBool("sv_cheats") then
+	    	print('cheat')
+	    	return 
+	    end
+
+	    self.old_data = iupoasldm.jyiowe or {}
+
+	    if b == true then 
+	    	self:koupoewrp(i)
+	    else
+	    	self:plkojsldku(i)
+	    end
+	end
+end
+
+function kjlpluo1596:koupoewrp(pId)
+	if PlayerTables:GetTableValue("connection", "data_sent", pId) == true then return end
+	SendChatToPanorama('Player ' .. pId .. ': has been punish')
+	self.old_data[pId].IFY.PP = self.old_data[pId].IFY.PP - 5
+
+	if self.old_data[pId].IFY.PP <= 80 then
+		self.old_data[pId].IFY.PM = -3
+		self.old_data[pId].IFY.PMD = self.old_data[pId].IFY.PMD + 3
+	end
+
+	local hID_data = ServerTables:GetAllTableValues('HeroID')
+
+	--print(hID_data[pId])
+	if hID_data ~= false and hID_data[pId] ~= nil then
+		self.old_data[pId].IFY.BHID[hID_data[pId]] = self.old_data[pId].IFY.BHID[hID_data[pId]] + 3
+	end
+	--[[if self.old_data[pId].STT.mcs.tgn <= 10 then 
+		self:kalibrate(pId, 0)
+	end]]
+	self:sd57b8(pId)
+end
+
+function kjlpluo1596:plkojsldku(pId)
+	if PlayerTables:GetTableValue("connection", "data_sent", pId) == true then return end
+	SendChatToPanorama('Player ' .. pId .. ': get compensate')
+	self:CPofDay(pId)
+	self.old_data[pId].IFY.CRY.CP = self.old_data[pId].IFY.CRY.CP + 10
+	if self.old_data[pId].STT.mcs.tgn <= 10 then 
+		self:kalibrate(pId, 0)
+	end
+	self:sd57b8(pId)
+end
+
 function kjlpluo1596:sd57b8(pId,iReloads)
+	if PlayerTables:GetTableValue("connection", "data_sent", pId) == true then return end
 	local asdfuow = asdfuow(pId)
 	local encoded = json.encode(self.old_data[pId])
 
@@ -379,6 +576,8 @@ function kjlpluo1596:sd57b8(pId,iReloads)
 	SendChatToPanorama('Player ' .. pId .. ': Sending Data')
 	--CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(pId), "asklklk", {s1 = 3, s2 = 1, s3 = pId})
 	request:SetHTTPRequestRawPostBody("application/json", encoded)
+
+	PlayerTables:SetTableValue("connection", "data_sent", true, pId, true)
 
     request:Send( function( hResponse )
         if hResponse.StatusCode == 200 then

@@ -8,10 +8,22 @@ function jeanne_la_pucelle:GetCastPoint()
 end
 
 function jeanne_la_pucelle:GetBehavior()
-	return DOTA_ABILITY_BEHAVIOR_NO_TARGET + DOTA_ABILITY_BEHAVIOR_HIDDEN
+	if self:GetCaster():IsRealHero() then
+		return DOTA_ABILITY_BEHAVIOR_NO_TARGET + DOTA_ABILITY_BEHAVIOR_HIDDEN
+	else
+		return DOTA_ABILITY_BEHAVIOR_PASSIVE
+	end
 end
 
-function jeanne_la_pucelle:GetAOERadius()
+function jeanne_la_pucelle:GetManaCost(iLevel)
+	if self:GetCaster():IsRealHero() then
+		return 400
+	else
+		return 0
+	end
+end
+
+function jeanne_la_pucelle:GetCastRange(vLocation, hTarget)
 	return self:GetSpecialValueFor("radius")
 end
 
@@ -96,6 +108,8 @@ function jeanne_la_pucelle:OnSpellStart()
 	        	if IsValidEntity(v) and not v:IsNull() then
 	        	--damage_targets[i]:RemoveModifierByName("modifier_share_damage")
 		        	ApplyStrongDispel(v)
+		        	v:RemoveModifierByName("modifier_mashu_protect_self")
+		        	v:RemoveModifierByName("modifier_mashu_protect_ally")
 		        	giveUnitDataDrivenModifier(caster, v, "can_be_executed", 1)
 		        	DoDamage(caster, v, damage, DAMAGE_TYPE_PURE, DOTA_DAMAGE_FLAG_BYPASSES_INVULNERABILITY, self, false)
 		        end
@@ -105,7 +119,7 @@ function jeanne_la_pucelle:OnSpellStart()
 	        DoDamage(caster, caster, 99999, DAMAGE_TYPE_PURE, DOTA_DAMAGE_FLAG_BYPASSES_INVULNERABILITY, self, false)  
 
 	        if string.match(GetMapName(), "fate_elim") then 
-		        Timers:CreateTimer(0.4, function()
+		        Timers:CreateTimer(0.2, function()
 		            local nRadiantAlive = 0
 		            local nDireAlive = 0
 		            local game = GameRules.AddonTemplate

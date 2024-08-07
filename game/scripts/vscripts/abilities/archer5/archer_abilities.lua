@@ -143,14 +143,12 @@ function OnHruntingFilter (keys)
 	end
 end
 
-function OnHruntCast(keys, kek)
+function OnHruntCast(keys)
 	local caster = keys.caster
 	local ability = keys.ability
 	local target = keys.target
+	ability.target = target
 	local ply = caster:GetPlayerOwner()
-
-	caster:SetCursorCastTarget(target)
-	ability.___hFIX_CURSOR_TARGET = target
 
 	ability:EndCooldown()
 	-- Show hrunting cast
@@ -170,19 +168,25 @@ function OnHruntCast(keys, kek)
 	ParticleManager:SetParticleControlEnt(caster.hrunting_particle, 1, caster, PATTACH_ABSORIGIN_FOLLOW, "attach_origin", caster:GetAbsOrigin(), true)
 	ParticleManager:SetParticleControlEnt(caster.hrunting_particle, 3, caster, PATTACH_ABSORIGIN_FOLLOW, "attach_origin", caster:GetAbsOrigin(), true)
 	caster.hruntingCrosshead = ParticleManager:CreateParticleForTeam("particles/custom/archer/archer_broken_phantasm/archer_broken_phantasm_crosshead.vpcf", PATTACH_OVERHEAD_FOLLOW, target, caster:GetTeamNumber())
-	if keys.target:IsHero() and ply ~= nil then
-		Say(ply, "Hrunting targets " .. FindName(keys.target:GetName()) .. ".", true)
+	if target:IsHero() and ply ~= nil then
+		Say(ply, "Hrunting targets " .. FindName(target:GetName()) .. ".", true)
 	end
-
-	if caster:HasModifier("modifier_alternate_01") or caster:HasModifier("modifier_alternate_02") or caster:HasModifier("modifier_alternate_03") or caster:HasModifier("modifier_alternate_04") then 
+	ability:ApplyDataDrivenModifier(caster, caster, "modifier_hrunting_tracker", {Duration=ability:GetSpecialValueFor("cast_delay") - 0.04})
+	--if caster:HasModifier("modifier_alternate_01") or caster:HasModifier("modifier_alternate_02") or caster:HasModifier("modifier_alternate_03") or caster:HasModifier("modifier_alternate_04") then 
 		ability:ApplyDataDrivenModifier(caster, caster, "modifier_bow", {})
-	end
+	--end
 end
 
-function OnHruntStart(keys, kek)
+function OnHruntStart(keys, bInterrupted)
 	local caster = keys.caster
 	local ability = keys.ability
-	local target = keys.target or ability:GetCursorTarget() or caster:GetCursorCastTarget() or ability.___hFIX_CURSOR_TARGET
+	local target = ability.target
+
+	if caster:HasModifier("modifier_hrunting_tracker") then 
+		OnHruntInterrupted(keys)
+		return nil 
+	end
+
 	local ply = caster:GetPlayerOwner()
 
 	ParticleManager:DestroyParticle(caster.hruntingCrosshead, true)
@@ -236,10 +240,9 @@ function OnHruntStart(keys, kek)
 	end
 end
 
-function OnHruntInterrupted(keys, kek)
+function OnHruntInterrupted(keys)
 	local caster = keys.caster
-	local ability = keys.ability
-	local target = keys.target or ability:GetCursorTarget() or caster:GetCursorCastTarget() or ability.___hFIX_CURSOR_TARGET
+	local target = keys.target
 	local ply = caster:GetPlayerOwner()
 	ParticleManager:DestroyParticle( caster.hrunting_particle, false )
 	ParticleManager:ReleaseParticleIndex( caster.hrunting_particle )
@@ -588,11 +591,9 @@ function OnBPCast(keys)
 	local caster = keys.caster
 	local ability = keys.ability
 	local target = keys.target
+	ability.target = target
+	print(keys.target:GetUnitName())
 	local ply = caster:GetPlayerOwner()
-
-	caster:SetCursorCastTarget(target)
-	ability.___hFIX_CURSOR_TARGET = target
-
 	ability:EndCooldown()
 	caster:GiveMana(ability:GetManaCost(1))
 
@@ -600,21 +601,26 @@ function OnBPCast(keys)
 
 	ParticleManager:SetParticleControl( caster.BPparticle, 0, target:GetAbsOrigin() + Vector(0,0,100)) 
 	ParticleManager:SetParticleControl( caster.BPparticle, 1, target:GetAbsOrigin() + Vector(0,0,100)) 
-	if target:IsHero() then
-		Say(ply, "Broken Phantasm targets " .. FindName(target:GetName()) .. ".", true)
+	if keys.target:IsHero() then
+		Say(ply, "Broken Phantasm targets " .. FindName(keys.target:GetName()) .. ".", true)
 	end
+	ability:ApplyDataDrivenModifier(caster, caster, "modifier_bp_tracker", {Duration=ability:GetSpecialValueFor("cast_delay") - 0.04})
 	if caster:HasModifier("modifier_alternate_01") or caster:HasModifier("modifier_alternate_02") or caster:HasModifier("modifier_alternate_03") or caster:HasModifier("modifier_alternate_04") then 
 		ability:ApplyDataDrivenModifier(caster, caster, "modifier_bow", {})
 	end
 end
 
-function OnBPStart(keys)
+function OnBPStart(keys, bInterrupted)
 	local caster = keys.caster
 	local ability = keys.ability
-	local target = keys.target or ability:GetCursorTarget() or caster:GetCursorCastTarget() or ability.___hFIX_CURSOR_TARGET
-	local ply = caster:GetPlayerOwner()
+	local target = ability.target
 
-	print("BP START", target:GetDebugName())
+	if caster:HasModifier("modifier_bp_tracker") then 
+		OnBPInterrupted(keys)
+		return nil 
+	end
+
+	local ply = caster:GetPlayerOwner()
 	ParticleManager:DestroyParticle(caster.BPparticle, true)
 
 	if not IsValidEntity(target) or target:IsNull() or not target:IsAlive() then return end
@@ -628,8 +634,8 @@ function OnBPStart(keys)
 	caster:SetMana(caster:GetMana() - ability:GetManaCost(1))
 	local info = {
 		Target = target,
-		Source = keys.caster, 
-		Ability = keys.ability,
+		Source = caster, 
+		Ability = ability,
 		EffectName = "particles/units/heroes/hero_clinkz/clinkz_searing_arrow.vpcf",
 		vSpawnOrigin = caster:GetAbsOrigin(),
 		iMoveSpeed = 3000,
@@ -654,8 +660,7 @@ end
 
 function OnBPInterrupted(keys)
 	local caster = keys.caster
-	local ability = keys.ability
-	local target = keys.target or ability:GetCursorTarget() or caster:GetCursorCastTarget() or ability.___hFIX_CURSOR_TARGET
+	local target = keys.target
 	local ply = caster:GetPlayerOwner()
 	ParticleManager:DestroyParticle(caster.BPparticle, true)
 	Say(ply, "Broken Phantasm failed.", true)
@@ -1128,6 +1133,7 @@ function EnterUBW(ability, caster)
             ProjectileManager:ProjectileDodge(ubwTargets[i]) -- Disjoint particles
             if ubwTargets[i]:HasModifier("jump_pause") 
                 or string.match(ubwTargets[i]:GetUnitName(),"dummy") 
+                or string.match(ubwTargets[i]:GetUnitName(),"flag") 
                 or ubwTargets[i]:HasModifier("spawn_invulnerable") 
                 and ubwTargets[i] ~= caster then 
                 table.remove(ubwTargets, i)
@@ -1229,7 +1235,7 @@ function EndUBW(caster, ability)
     i = 1
     while i <= #units do
         if IsValidEntity(units[i]) and not units[i]:IsNull() then
-            if string.match(units[i]:GetUnitName(),"dummy") then 
+            if string.match(units[i]:GetUnitName(),"dummy") or string.match(units[i]:GetUnitName(),"iskandar_") or string.match(units[i]:GetUnitName(),"flag")  then 
                 table.remove(units, i)
                 i = i - 1
             end
@@ -1252,24 +1258,36 @@ function EndUBW(caster, ability)
             end]]
 
             ProjectileManager:ProjectileDodge(units[i])
-            if units[i]:GetName() == "npc_dota_hero_chen" and units[i]:HasModifier("modifier_army_of_the_king_death_checker") then
+            --if units[i]:GetUnitName() == "npc_dota_hero_chen" and units[i]:HasModifier("modifier_army_of_the_king_death_checker") then
                 units[i]:RemoveModifierByName("modifier_army_of_the_king_death_checker")
-            end
-            if units[i]:HasModifier("modifier_annihilate_mute") then
+            --end
+            --if units[i]:HasModifier("modifier_annihilate_mute") then
 				units[i]:RemoveModifierByName("modifier_annihilate_mute")
-			end
+			--end
             local IsUnitGeneratedInUBW = true
             if ubwTargets ~= nil then
                 for j=1, #ubwTargets do
                     if not ubwTargets[j]:IsNull() and IsValidEntity(ubwTargets[j]) then 
                         if units[i] == ubwTargets[j] then
+                        	ubwTargets[j]:RemoveModifierByName("modifier_army_of_the_king_death_checker")
                             if ubwTargetLoc[j] ~= nil then
                                 units[i]:SetAbsOrigin(ubwTargetLoc[j]) 
+                                units[i].world_loc = ubwTargetLoc[j]
                                 units[i]:Stop()
                             end
                             FindClearSpaceForUnit(units[i], units[i]:GetAbsOrigin(), true)
-                            Timers:CreateTimer(0.1, function() 
-                                units[i]:AddNewModifier(units[i], nil, "modifier_camera_follow", {duration = 1.0})
+                            Timers:CreateTimer(0.033, function() 
+                            	if IsValidEntity(units[i]) and not units[i]:IsNull() and units[i]:IsHero() then 
+                                	units[i]:AddNewModifier(units[i], nil, "modifier_camera_follow", {duration = 1.0})
+                                	if units[i]:GetAbsOrigin().y < -2000 then 
+                                		--Timers:CreateTimer(0.2, function() 
+                                			print('why u still stay in isekai????')
+                                			print(units[i].world_loc)
+                                			--units[i]:SetAbsOrigin(units[i].world_loc) 
+                                			FindClearSpaceForUnit(units[i], units[i].world_loc, true)
+                                		--end)
+                                	end
+                                end
                             end)
                             IsUnitGeneratedInUBW = false
                             break 

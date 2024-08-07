@@ -81,6 +81,9 @@ function gilles_abyssal_contract_wrapper(ability)
 				-- Summon Gigantic Horror
 				if IsValidEntity(hCaster.Squidlord) and hCaster.Squidlord:IsAlive() then
 					FindClearSpaceForUnit(hCaster.Squidlord, vTargetPoint, true)
+					if hCaster.IsAbyssalConnectionAcquired then		
+						hCaster.Squidlord:FindAbilityByName("gilles_squidlordz_contaminate"):EndCooldown()
+					end
 				else
 					hCaster.Squidlord = CreateUnitByName("gille_gigantic_horror", vTargetPoint, true, nil, nil, hCaster:GetTeamNumber())
 
@@ -392,13 +395,13 @@ function OnIntegrateStart(keys)
 				end
 			elseif (caster:GetAbsOrigin() - hero:GetAbsOrigin()):Length2D() < 400 and not hero:HasModifier("stunned") and not hero:HasModifier("modifier_stunned") then 
 				hero.IsIntegrated = true
+				SendMountStatus(hero)
 				keys.ability:ApplyDataDrivenModifier(caster, hero, "modifier_integrate_gille", {})
 				keys.ability:ApplyDataDrivenModifier(caster, caster, "modifier_integrate", {})  
 				caster:SetMaxHealth(IntMaxhealth)
 				caster:SetHealth(IntCurrenthealth)
 				caster:EmitSound("ZC.Tentacle1")
 				--caster:EmitSound("ZC.Laugh")
-				SendMountStatus(hero)
 				return 
 			end
 		end
@@ -409,9 +412,9 @@ function OnIntegrateDeath(keys)
 	local caster = keys.caster
 	local hero = caster:GetOwnerEntity()
 	hero.IsIntegrated = false
+	SendMountStatus(hero)
 	hero:RemoveModifierByName("modifier_integrate_gille")
 	hero:RemoveModifierByName("modifier_squidlord_death_checker")
-	SendMountStatus(hero)
 end
 
 --[[function OnIntegrateCanceled(keys)

@@ -218,7 +218,8 @@ function PrecacheResourceParticle ( context )
     PrecacheResource("particle", "particles/custom/tamamo/gust_heaven_arc_lightning.vpcf", context)
     PrecacheResource("particle", "particles/custom/tamamo/gust_heaven_static.vpcf", context)
     PrecacheResource("particle", "particles/custom/tamamo/frigid_heaven.vpcf", context)
-
+    PrecacheResource("particle", "particles/ui_mouseactions/custom_range_finder_cone.vpcf", context)
+    PrecacheResource("particle", "particles/units/heroes/hero_abaddon/abaddon_death_coil_explosion.vpcf", context) 
 
     --PrecacheResource("particle_folder", "particles/custom/tamamo", context)
     --PrecacheResource("particle_folder", "particles/custom/vlad", context)

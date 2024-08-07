@@ -129,8 +129,8 @@ function OnMonteCristoAttackMalee(keys)
 	if caster:HasModifier("jump_pause") or (target:GetAbsOrigin() - caster:GetAbsOrigin()):Length2D() <= attack_range then 
 		bonus_malee = BonusVengeance(caster, target, bonus_malee)
 		DoDamage(caster, target, bonus_malee, DAMAGE_TYPE_MAGICAL, 0, ability, false)
-		local slash = ParticleManager:CreateParticle("particles/custom/edmond/edmond_monte_slash.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
-		ParticleManager:SetParticleControl(slash, 0, caster:GetAbsOrigin() )
+		local slash = ParticleManager:CreateParticle("particles/custom/edmond/edmond_swipe_right.vpcf", PATTACH_CUSTOMORIGIN_FOLLOW, caster)
+		ParticleManager:SetParticleControl(slash, 0, target:GetAbsOrigin() )
 		
 	else
 		--target:Heal(attack_damage, target)

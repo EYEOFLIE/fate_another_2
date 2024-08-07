@@ -1,29 +1,46 @@
 
 ishtar_q = class({})
 ishtar_q_upgrade = class({})
-modifier_ishtar_q_slow = class({})
-LinkLuaModifier("modifier_ishtar_q_slow", "abilities/ishtar/ishtar_q", LUA_MODIFIER_MOTION_NONE)
+modifier_ishtar_q_use = class({})
+LinkLuaModifier("modifier_ishtar_q_use", "abilities/ishtar/ishtar_q", LUA_MODIFIER_MOTION_NONE)
 
 function ishtar_q_wrapper(abil)
 	function abil:GetBehavior()
-		return DOTA_ABILITY_BEHAVIOR_POINT + DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING
+		return DOTA_ABILITY_BEHAVIOR_POINT
 	end
 
 	function abil:GetManaCost(iLevel)
 		return 100
 	end
 
-	function abil:GetAbilityTextureName()
-		return "abilities/ishtar/ishtar_q"
+	function abil:GetCastAnimation()
+		return ACT_DOTA_CAST_ABILITY_1
 	end
 
-	function abil:GetGemConsume()
-		local caster = self:GetCaster()
-		local max_gem_use = self:GetSpecialValueFor("gem_consume")
-		local gem = caster:FindModifierByName("modifier_ishtar_gem")
-		local gem_consume = math.min(max_gem_use, gem:GetStackCount())
-		gem:AddGem(gem_consume)
+	function abil:GetPlaybackRateOverride()
+		return 1.5
+	end
 
+	function abil:GetCastPoint()
+		return self:GetSpecialValueFor("cast_delay")
+	end
+
+	function abil:GetCastRange(vLocation, hTarget)
+		return self:GetSpecialValueFor("distance")
+	end
+
+	function abil:GetAbilityTextureName()
+		return "custom/ishtar/ishtar_q"
+	end
+
+	function abil:GetGemConsume(iMaxGemUse)
+		local caster = self:GetCaster()
+		local gem_consume = 0
+		if caster:HasModifier("modifier_ishtar_gem_consume") then 
+			local gem = caster:GetModifierStackCount("modifier_ishtar_gem", caster) or 0
+			gem_consume = math.min(iMaxGemUse, gem)
+			caster:FindAbilityByName(caster.DSkill):AddGem(-gem_consume)
+		end
 		return gem_consume
 	end
 
@@ -34,39 +51,36 @@ function ishtar_q_wrapper(abil)
 		self.distance = self:GetSpecialValueFor("distance")
 		self.speed = self:GetSpecialValueFor("speed")
 		self.width = self:GetSpecialValueFor("width")
-		self.gem_consume = 0
 		local angle = 120
+		local q_gem = caster:FindAbilityByName(caster.FSkill)
+		self.gem_consume = 0
+		if caster:HasModifier("modifier_ishtar_gem_consume") then
+			self.gem_consume = self:GetGemConsume(q_gem:GetSpecialValueFor("QGem"))
+		end
 
-		if caster:HasModifier("modifier_ishtar_gem_consume") then 
-			self.gem_consume = self:GetGemConsume()
-			self.arrow = self.arrow + self.gem_consume
-			local forwardvec = (target_loc-caster:GetAbsOrigin()):Normalized()
-			local caster_angle = VectorToAngles(forwardvec).y 
-			local new_angle = caster_angle + angle
-			local dist = (target_loc-caster:GetAbsOrigin()):Length2D()
-			if new_angle > 360 then 
-				new_angle = new_angle - 360 
-			end
-			for i = 1, self.arrow do 
-				local originLoc = GetRotationPoint(target_loc,dist,new_angle)
-				originLoc.z = caster:GetAbsOrigin().z
-				local new_forwardvec = (originLoc - target_loc):Normalized()
-				self:CreateArrowProjectile(originLoc, new_forwardvec)
-				new_angle = new_angle + (120 / (self.arrow - i))
-			end
-		else
-			local forwardvec = (caster:GetAbsOrigin()-target_loc):Normalized()
-			local caster_angle = VectorToAngles(forwardvec).y 
-			local new_angle = caster_angle + angle
-			if new_angle > 360 then 
-				new_angle = new_angle - 360 
-			end
-			for i = 1, self.arrow do 
-				local endLoc = GetRotationPoint(caster:GetAbsOrigin(),self.distance,new_angle)
-				endLoc.z = caster:GetAbsOrigin().z
-				local new_forwardvec = (caster:GetAbsOrigin()-endLoc):Normalized()
-				self:CreateArrowProjectile(caster:GetAbsOrigin(), new_forwardvec)
-				new_angle = new_angle + (120 / (self.arrow - i))
+		EmitSoundOnLocationWithCaster(caster:GetAbsOrigin(), "Ishtar.Projectile" .. math.random(1,4) , caster)
+		EmitSoundOnLocationWithCaster(caster:GetAbsOrigin(), "Ishtar.ProjectileBase" , caster)
+
+		self.arrow = self.arrow + (self.gem_consume * q_gem:GetSpecialValueFor("QArrow"))
+		print('total arrow = ' .. self.arrow)
+		local forwardvec = (Vector(target_loc.x, target_loc.y, 0) - Vector(caster:GetAbsOrigin().x, caster:GetAbsOrigin().y, 0)):Normalized()
+		local caster_angle = VectorToAngles(forwardvec).y 
+		local new_angle = caster_angle - angle/2
+		for i = 0, self.arrow - 1 do 
+			local endLoc = GetRotationPoint(caster:GetAbsOrigin(), self.distance, new_angle + (angle * i / (self.arrow - 1)))
+			local new_forwardvec = (Vector(endLoc.x,endLoc.y,0) - Vector(caster:GetAbsOrigin().x,caster:GetAbsOrigin().y,0)):Normalized()
+			self:CreateArrowProjectile(caster:GetAttachmentOrigin(caster:ScriptLookupAttachment("attach_bow")), new_forwardvec)
+		end
+
+		caster:EmitSound("Ishtar.F" .. math.random(1,3))
+
+		EmitSoundOn( "Hero_Muerta.DeadShot.Cast", caster )
+		EmitSoundOn( "Hero_Muerta.DeadShot.Layer", caster )
+
+		--check combo
+	    if math.ceil(caster:GetStrength()) >= 25 and math.ceil(caster:GetAgility()) >= 25 and math.ceil(caster:GetIntellect()) >= 25 then		
+			if caster:FindAbilityByName(caster.DSkill):IsCooldownReady() and not caster:HasModifier("modifier_ishtar_combo_cooldown") then
+				caster:AddNewModifier(caster, self, "modifier_ishtar_q_use", {Duration = 4})
 			end
 		end
 	end
@@ -75,7 +89,7 @@ function ishtar_q_wrapper(abil)
 
 		local arrow = {
 			Ability = self,
-			EffectName = "",
+			EffectName = "particles/econ/items/drow/drow_arcana/drow_arcana_multishot_linear_proj_frost_v2.vpcf",
 			vSpawnOrigin = vOrigin,
 			fDistance = self.distance ,
 			Source = self:GetCaster(),
@@ -95,13 +109,26 @@ function ishtar_q_wrapper(abil)
 	end
 
 	function abil:OnProjectileHit(hTarget, vLocation)
+		if hTarget == nil then return end
+
 		local caster = self:GetCaster()
 		local damage = self:GetSpecialValueFor("damage")
-		DoDamage(caster, hTarget, damage, DAMAGE_TYPE_MAGICAL, DOTA_DAMAGE_FLAG_NONE, self, false)
-		if caster.is then 
-			if not IsImmuneToSlow(hTarget) then
-				hTarget:AddNewModifier(caster, self, "modifier_ishtar_q_slow", {Duration = self:GetSpecialValueFor("slow_dur")})
-			end
+		local bonus_damage = 0
+
+		hTarget:EmitSound("Ishtar.ProjectileLayer")
+		hTarget:EmitSound("Ishtar.ProjectileHit" .. math.random(1,2))
+
+		EmitSoundOn( "Hero_Muerta.DeadShot.Slow", hTarget )
+
+		local particleeff1 = ParticleManager:CreateParticle("particles/econ/events/newbloom_2015/shivas_guard_impact_nian2015.vpcf", PATTACH_ABSORIGIN, hTarget)
+		ParticleManager:SetParticleControl(particleeff1, 0, hTarget:GetAbsOrigin())
+
+		if caster.IsVenusAcquired then 
+			bonus_damage = self:GetSpecialValueFor("bonus_agi") * caster:GetAgility()
+		end
+		DoDamage(caster, hTarget, damage + bonus_damage, DAMAGE_TYPE_MAGICAL, DOTA_DAMAGE_FLAG_NONE, self, false)
+		if caster.IsManaBurstGemAcquired then 
+			caster:FindAbilityByName(caster.FSkill):AddManaBurstDebuff(hTarget)
 		end
 	end
 end
@@ -111,23 +138,8 @@ ishtar_q_wrapper(ishtar_q_upgrade)
 
 --------------------------
 
-function modifier_ishtar_q_slow:IsHidden()
-	return false 
-end
-
-function modifier_ishtar_q_slow:IsDebuff()
-	return true 
-end
-
-function modifier_ishtar_q_slow:IsPassive() 
-	return false 
-end
-
-function modifier_ishtar_q_slow:DeclareFunctions()
-	local func = {MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE}
-	return func 
-end
-
-function modifier_ishtar_q_slow:GetModifierMoveSpeedBonus_Percentage()
-	return -self:GetAbility():GetSpecialValueFor("slow")
+function modifier_ishtar_q_use:IsHidden() return true end
+function modifier_ishtar_q_use:IsDebuff() return false end
+function modifier_ishtar_q_use:GetAttributes()
+	return MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE
 end

@@ -21,23 +21,11 @@
 		"AbilityCooldown"				"9999"
 		"AbilityManaCost"				"9"
 
-		"precache"
+		"AbilityValues"
 		{
-		}
-
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"2000"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"3.0"
-			}
-		}
+			"radius"				"2000"
+			"duration"				"3"
+		}	
 	}
 
 	//=================================================================================================================
@@ -50,20 +38,13 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
 		"AbilityTextureName"			"custom/gille_attribute_eye_for_art"
 		"MaxLevel"						"1"
-		
-		"AbilitySpecial"
+		"AbilityCooldown"				"1"
+
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"2000"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"3.0"
-			}
-		}
+			"radius"				"2000"
+			"duration"				"3"
+		}	
 	}
 
 	//=======================================
@@ -81,52 +62,16 @@
 		"AbilityCooldown"				"9999"
 		"AbilityManaCost"				"12"
 
-		"precache"
+		"AbilityValues"
 		{
-		}
-
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"regen_pct"				"10"
-			}	
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"block_duration"		"5.0"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_mana"			"20"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bonus_grief"			"1"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bonus_torment"			"2"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bonus_smother"			"1"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bonus_misery"			"0.01"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bonus_hysteria"		"1"
-			}
+			"regen_pct"				"12"
+			"block_duration"		"5.0"
+			"bonus_mana"			"20"
+			"bonus_grief"			"1"
+			"bonus_torment"			"3"
+			"bonus_smother"			"1"
+			"bonus_misery"			"0.01"
+			"bonus_hysteria"		"1"
 		}
 	}
 
@@ -145,22 +90,10 @@
 		"AbilityCooldown"				"9999"
 		"AbilityManaCost"				"15"
 
-		"precache"
+		"AbilityValues"
 		{
-		}
-
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"summon_count"			"3"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"4.0"
-			}
+			"summon_count"			"3"
+			"duration"				"4"
 		}
 	}
 
@@ -179,37 +112,13 @@
 		"AbilityCooldown"				"9999"
 		"AbilityManaCost"				"13"
 
-		"precache"
+		"AbilityValues"
 		{
-		}
-
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"root_dur"				"2.5"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"stun_dur"				"1.5"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mr_red"				"-10"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"ms_red"				"-10"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"end_damage"			"300"
-			}
+			"root_dur"				"2.5"
+			"stun_dur"				"1.5"
+			"mr_red"				"-10"
+			"ms_red"				"-10"
+			"end_damage"			"300"
 		}
 	}
 
@@ -228,42 +137,14 @@
 		"AbilityCooldown"				"9999"
 		"AbilityManaCost"				"14"
 
-		"precache"
+		"AbilityValues"
 		{
-		}
-
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"radius"			"800"
-			}				
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage"			"700 900 1100 1300 1500"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"duration"			"10.0"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"movespeed"			"150"
-			}	
-			"05"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"attackspeed"		"50"
-			}	
-			"06"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"health"			"500"
-			}	
+			"radius"			"800"
+			"damage"			"700 900 1100 1300 1500"
+			"duration"			"10.0"
+			"movespeed"			"150"
+			"attackspeed"		"50"
+			"health"			"500"
 		}
 	}
 
@@ -284,56 +165,21 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_4"
 		"AnimationPlaybackRate" 		"1.0"
 		"AOERadius"						"%radius"		
-		
-		"precache"
-		{	
-			"particle"		"particles/units/heroes/hero_lina/lina_spell_dragon_slave.vpcf"
-			"particle"		"particles/units/heroes/hero_bloodseeker/bloodseeker_rupture.vpcf"
-			"particle"		"particles/units/heroes/hero_pugna/pugna_decrepify.vpcf"
-		}
-		
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
+
 		"AbilityCastRange"				"1000"
 		"AbilityCastPoint"				"0.3"
-
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"180.0"
 
-		
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"radius"			"1000"
-			}			
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"knockup_duration"			"0.5"
-			}		
-			"03"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"cast_delay"			"1.0"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"initial_damage"			"50"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"blood_duration"			"12.0"
-			}		
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"damage_per_sec"			"10"
-			}
+			"cast_delay"			"1.0"
+			"radius"				"1000"
+			"initial_damage"		"50"
+			"knockup_duration"		"0.5"
+			"stun_duration"			"1.0"
+			"blood_duration"		"12.0"
+			"damage_per_sec"		"10"
+			"slow"					"-50"
 		}
 		
 		"OnSpellStart"
@@ -361,6 +207,11 @@
 				"Duration"		"%blood_duration"
 				"IsDebuff"			"1"
 				"ThinkInterval"		"1.0"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%slow"
+				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow" 
+				}
 				"OnIntervalThink"
 				{
 					"RunScript"
@@ -431,6 +282,9 @@
 			"particle"				"particles/custom/gilles/cthulhu_favour_circle.vpcf"
 			"particle"				"particles/custom/gilles/cthulhu_favour_splash.vpcf"
 			"particle"  			"particles/custom/gilles/cthulhu_hellborn.vpcf"
+			"particle"  			"particles/custom/screen_scarlet_splash.vpcf"
+			"particle"  			"particles/units/heroes/hero_phoenix/phoenix_supernova_reborn_shockwave.vpcf"
+			"particle"  			"particles/units/heroes/hero_warlock/warlock_upheaval.vpcf"
 			"particle"				"particles/econ/items/sand_king/sandking_ti7_arms/sandking_ti7_caustic_finale_debuff.vpcf"
 			"particle"				"particles/units/heroes/hero_sandking/sandking_caustic_finale_explode.vpcf"
 			"particle"				"particles/units/heroes/hero_life_stealer/life_stealer_infested_unit.vpcf"
@@ -448,6 +302,9 @@
 			"particle"				"particles/custom/gilles/torment_debuffhellborn_debuff.vpcf"
 			"particle"				"particles/custom/gilles/torment_cast.vpcf"
 			"particle"  			"particles/custom/gilles/gilles_eye.vpcf"
+			"particle"				"particles/units/heroes/hero_lina/lina_spell_dragon_slave.vpcf"
+			"particle"				"particles/units/heroes/hero_bloodseeker/bloodseeker_rupture.vpcf"
+			"particle"				"particles/units/heroes/hero_pugna/pugna_decrepify.vpcf"
 			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_nevermore.vsndevts"
 			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_necrolyte.vsndevts"
 			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_warlock.vsndevts"

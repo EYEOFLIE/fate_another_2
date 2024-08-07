@@ -8554,7 +8554,9 @@
 		//================================================================================================================
 		"npc_dota_hero_dark_willow"			"โอคิตะ โซจิ"
 		"npc_dota_hero_dark_willow_1"		"[ทั่วไป] ซากุระ โอคิตะ"
+		"npc_dota_hero_dark_willow_2"		"[ตำนาน] โอคิตะ (อัลเตอร์)"
 		"npc_dota_hero_dark_willow_summon"	"เซอร์แวนท์ <font color='#58ACFA'>โอคิตะ โซจิ</font> ถูกเรียกเข้าสงครามจอกศักดิ์สิทธิ์"
+		"npc_dota_hero_dark_willow_enable_combo"	"xปลดล็อกคอมโบ: ดาบสะบั้น สามขั้นไร้สิ้นสุด"
 
 		"okita_flag"						"ธงชินเซ็นกุมิ"
 		"okita_shinsengumi"					"ชินเซ็นกุมิ"
@@ -8562,8 +8564,12 @@
 
 		///////////////////////// Innate //////////////////////////////////////
 		
-		"DOTA_Tooltip_Ability_okita_weak_constitution"				"<font color='#FFFFFF'>ความเจ็บป่วย</font>"
-		"DOTA_Tooltip_ability_okita_weak_constitution_Description"	"ร่างกายอันอ่อนแอของโอคิตะ โซจิเกิดจากวัณโรค ทำให้เธอมีโอกาสสตั้นทุกวินาที \n ทุกครั้งที่โอคิตะโจมตีหรือใช้สกิล จะได้รับสแต็คของ <font color='#FF3399'>การดำเนินความเจ็บป่วย</font> \n หลังจากที่สแต็คของ <font color='#FF3399'>การดำเนินความเจ็บป่วย</font> ถึง %base_cough% เมื่อดีเลย์ผ่านไป %base_cough_delay% วินาที โอคิตะจะไอออกมาเป็นเลือด และติด <font color='#FF3399'>สตั้น</font> \n หลังจากไอ เธอจะได้รับสถานะ <font color='#FF3399'>อ่อนแอ</font> ลดความสามารถลงชั่วคราว \n เวลาดีเลย์อาจลดลง และเวลาสตั้นอาจนานขึ้น โดยขึ้นกับสแต็คของ <font color='#FF3399'>การดำเนินความเจ็บป่วย</font> \n\n<font color='#9FFFCC'>สามารถอัพเกรดด้วย คุณสมบัติ: ฝืนทน</font>. \n โอคิตะสามารถทนต่อความเจ็บป่วยขณะใช้สกิลอื่น"
+		"DOTA_Tooltip_Ability_okita_weak_constitution"				"<font color='#FFFFFF'>ร่างกายอ่อนแอ</font>"
+		"DOTA_Tooltip_ability_okita_weak_constitution_Description"	"<font color='#58ACFA'>ติดตัว</font>: โอคิตะได้รับ สแต็กของ<font color='#FF3399'>การดำเนินความเจ็บป่วย</font> ทุกครั้งที่โอคิตะโจมตีหรือใช้สกิล 
+		<font color='#FF3399'>การดำเนินความเจ็บป่วย</font>: เมื่อมีสแต็กถึงเกณฑ์ โอคิตะจะมีเวลาครู่หนึ่งก่อนจะไอเป็นเลือด เสียเลือด ติด<font color='#FF3399'>สตั้น</font> และได้รับสถานะ<font color='#FF3399'>อ่อนแอ</font>ระยะเวลาหนึ่ง
+		<font color='#FF3399'>อ่อนแอ</font>: โอคิตะถูกลดความเร็วโจมตี ความเร็วเคลื่อนที่ ต้านเวท เกราะ และพลังโจมตี
+		ระยะเวลาก่อนไอเป็นเลือดจะลดลง และระยะเวลา<font color='#FF3399'>สตั้น</font> จะนานขึ้น ตามสแต็กของ<font color='#FF3399'>การดำเนินความเจ็บป่วย</font>สุดท้าย
+		โอคิตะสามารถทนต่อความเจ็บป่วยขณะใช้สกิลอื่น"
 		"DOTA_Tooltip_ability_okita_weak_constitution_Lore"				""
 		"DOTA_Tooltip_ability_okita_weak_constitution_exhaust"		"ได้รับสแต็คการดำเนินความเจ็บป่วยเมื่อโจมตี:"
 		"DOTA_Tooltip_ability_okita_weak_constitution_max_cough"	"สแต็คการดำเนินความเจ็บป่วยสูงสุด:"
@@ -8595,7 +8601,11 @@
 		"DOTA_Tooltip_ability_okita_weak_constitution_upgrade_stun_duration"	"ระยะเวลาสตั้น:"
 
 		"DOTA_Tooltip_Ability_okita_flag_of_sincerity"				"<font color='#FFFFFF'>ธงแห่งความสื่อสัตย์</font>"
-		"DOTA_Tooltip_ability_okita_flag_of_sincerity_Description"	"โอคิตะสุ่มอัญเชิญ กองกำลัง <font color='#99FF33'>ชินเซ็นกุมิ</font> มาในรัศมีของธง. สมาชิกแต่ละคนเป็นเซอร์แวนท์ที่ไม่มีโฮกุ และพลังต่อสู้ต่ำ \n หากธงถูกทำลาย ชินเซ็นกุมิทั้งหมดจะสลายไป \n\n<font color='#9FFFCC'>สามารถอัพเกรดด้วย คุณสมบัติ: เสื้อคลุมแห่งคำสาบาน</font>. \n หากโอคิตะไอเป็นเลือดในรัศมีธง ชินเซ็นกุมิทั้งหมดจะได้รับบัฟเวลาหนึ่ง"
+		"DOTA_Tooltip_ability_okita_flag_of_sincerity_Description"	"โอคิตะอัญเชิญ <font color='#99FF33'>ธงแห่งความสื่อสัตย์</font> และกองกำลัง<font color='#99FF33'>ชินเซ็นกุมิ</font> มาในรัศมีของธง สมาชิกแต่ละคนเป็นเซอร์แวนท์ที่ไม่มีโฮกุ และพลังต่อสู้ต่ำ 
+		หากธงถูกทำลาย <font color='#99FF33'>ชินเซ็นกุมิ</font>ทั้งหมดจะสลายไป
+		โอคิตะได้รับ <font color='#FFFF28'>ภารดรภาพแห่งชินเซ็นกุมิ</font> ขณะที่อยู่ภายใต้ธงแห่งความซื่อสัตย์
+		<font color='#FFFF28'>ภารดรภาพแห่งชินเซ็นกุมิ</font>: โอคิตะได้รับความเร็วเคลื่อนที่ ความเร็วโจมตี และพลังโจมตีเพิ่มเติม
+		<font color='#9FFFCC'>สามารถอัพเกรดด้วย คุณสมบัติ: ผ้าคาดหัวแห่งปณิธานหน่วยที่ 8</font>"
 		"DOTA_Tooltip_ability_okita_flag_of_sincerity_Lore"				"The Shinsengumi troops' flag with the Japanese kanji sincerity inscribed on it."
 		"DOTA_Tooltip_ability_okita_flag_of_sincerity_cast_delay"		"เวลาร่าย:"
 		"DOTA_Tooltip_ability_okita_flag_of_sincerity_radius"			"รัศมีธง:"
@@ -8603,9 +8613,16 @@
 		"DOTA_Tooltip_ability_okita_flag_of_sincerity_max_summon"		"จำนวนอัญเชิญสูงสุด:"
 		"DOTA_Tooltip_ability_okita_flag_of_sincerity_flag_health"		"เลือดธง:"
 		"DOTA_Tooltip_Ability_okita_flag_of_sincerity_duration"			"ระยะเวลา:"
+		"DOTA_Tooltip_ability_okita_flag_of_sincerity_buff_aspd"		"%บัฟ ความเร็วโจมตี:"
+		"DOTA_Tooltip_ability_okita_flag_of_sincerity_buff_ms"			"บัฟ ความเร็วเคลื่อนที่:"
+		"DOTA_Tooltip_Ability_okita_flag_of_sincerity_buff_atk"			"%บัฟ พลังโจมตี:"
 
 		"DOTA_Tooltip_Ability_okita_flag_of_sincerity_upgrade"				"<font color='#9FFFCC'>ธงแห่งความสื่อสัตย์</font>"
-		"DOTA_Tooltip_ability_okita_flag_of_sincerity_upgrade_Description"	"โอคิตะสุ่มอัญเชิญ กองกำลัง <font color='#99FF33'>ชินเซ็นกุมิ</font> มาในรัศมีของธง. สมาชิกแต่ละคนเป็นเซอร์แวนท์ที่ไม่มีโฮกุ และพลังต่อสู้ต่ำ \n โอคิตะมีโอกาส %summon_chance%%% ที่จะอัญเชิญ <font color='#99FF33'>ฮิจิคาตะ โทชิโซ ในจินตนาการ</font> \n หากธงถูกทำลาย ชินเซ็นกุมิทั้งหมดจะสลายไป \n หากโอคิตะไอเป็นเลือดในรัศมีธง ชินเซ็นกุมิทั้งหมดจะได้รับบัฟเวลาหนึ่ง"
+		"DOTA_Tooltip_ability_okita_flag_of_sincerity_upgrade_Description"	"โอคิตะอัญเชิญ <font color='#99FF33'>ธงแห่งความสื่อสัตย์</font> และกองกำลัง<font color='#99FF33'>ชินเซ็นกุมิ</font> มาในรัศมีของธง สมาชิกแต่ละคนเป็นเซอร์แวนท์ที่ไม่มีโฮกุ และพลังต่อสู้ต่ำ 
+		หากธงถูกทำลาย <font color='#99FF33'>ชินเซ็นกุมิ</font>ทั้งหมดจะสลายไป
+		โอคิตะได้รับ <font color='#FFFF28'>ภารดรภาพแห่งชินเซ็นกุมิ</font> ขณะที่อยู่ภายใต้ธงแห่งความซื่อสัตย์
+		หากโอคิตะมีบัฟ<font color='#FFFF28'>เสื้อคลุมแห่งคำสาบาน</font>, <font color='#99FF33'>ชินเซ็นกุมิ</font>ทั้งหมดจะได้รับ <font color='#FFFF28'>ภารดรภาพแห่งชินเซ็นกุมิ</font>
+		<font color='#FFFF28'>ภารดรภาพแห่งชินเซ็นกุมิ</font>: โอคิตะได้รับความเร็วเคลื่อนที่ ความเร็วโจมตี พลังโจมตี ฟื้นเลือด ฟื้นมานาเพิ่มเติม และ<font color='#FFFF28'>ปลอดภัย</font>จากสถานะควบคุมส่วนใหญ๋"
 		"DOTA_Tooltip_ability_okita_flag_of_sincerity_upgrade_Lore"				"The Shinsengumi troops' flag with the Japanese kanji sincerity inscribed on it."
 		"DOTA_Tooltip_ability_okita_flag_of_sincerity_upgrade_cast_delay"		"เวลาร่าย:"
 		"DOTA_Tooltip_ability_okita_flag_of_sincerity_upgrade_radius"			"รัศมีธง:"
@@ -8613,45 +8630,95 @@
 		"DOTA_Tooltip_ability_okita_flag_of_sincerity_upgrade_max_summon"		"จำนวนอัญเชิญสูงสุด:"
 		"DOTA_Tooltip_ability_okita_flag_of_sincerity_upgrade_flag_health"		"เลือดธง:"
 		"DOTA_Tooltip_Ability_okita_flag_of_sincerity_upgrade_duration"			"ระยะเวลา:"
+		"DOTA_Tooltip_ability_okita_flag_of_sincerity_upgrade_buff_aspd"		"%บัฟ ความเร็วโจมตี:"
+		"DOTA_Tooltip_ability_okita_flag_of_sincerity_upgrade_buff_ms"			"บัฟ ความเร็วเคลื่อนที่:"
+		"DOTA_Tooltip_Ability_okita_flag_of_sincerity_upgrade_buff_atk"			"%บัฟ พลังโจมตี:"
+		"DOTA_Tooltip_ability_okita_flag_of_sincerity_upgrade_buff_hp_reg"		"บัฟ ฟื้นเลือด:"
+		"DOTA_Tooltip_Ability_okita_flag_of_sincerity_upgrade_buff_mana_reg"	"บัฟ ฟื้นมานา:"
 
 		///////////////////////// Basic //////////////////////////////////////////
 		
 		"DOTA_Tooltip_Ability_okita_shukuchi"					"<font color='#58ACFA'>ลดระยะ</font>"
-		"DOTA_Tooltip_ability_okita_shukuchi_Description"		"โอคิตะใช้การย่างก้าว การเคลื่อนไหวร่างกาย การควบคุมลมหายใจ ทักษะจุดบอด ลดระยะห่างลง, เพิ่มความเร็วในการเคลื่อนที่ <font color='#FFFF28'>หายตัว</font> เป็นเวลาสั้นๆ และได้รับบัฟ <font color='#FFFF28'>ลดระยะ</font> เพิ่มความเร็วโจมตีระยะเวลาหนึ่ง \n\n<font color='#9FFFCC'>สามารถอัพเกรดด้วย คุณสมบัติ: ตัดระยะ</font>."
+		"DOTA_Tooltip_ability_okita_shukuchi_Description"		"โอคิตะบลิ้งค์ไปยังพื้นที่เป้าหมาย พร้อมทั้งได้รับ <font color='#FFFF28'>ลดระยะ ล่องหน</font> และ <font color='#FFFF28'>ลดระยะ ปราณ</font> ครู่หนึ่ง
+		<font color='#FFFF28'>ลดระยะ หายตัว</font>: โอคิตะได้รับความเร็วเคลื่อนที่เพิ่มขึ้น ขณะที่<font color='#FFFF28'>ล่องหน</font>.
+		<font color='#FFFF28'>ลดระยะ ปราณ</font>: โอคิตะได้รับความเร็วโจมตีเพิ่มขึ้น
+		<font color='#9FFFCC'>สามารถอัพเกรดด้วย คุณสมบัติ: ตัดระยะ</font>."
 		"DOTA_Tooltip_ability_okita_shukuchi_Lore"			""
 		"DOTA_Tooltip_Ability_okita_shukuchi_exhaust"		"ได้รับสแต็คการดำเนินความเจ็บป่วย:"
 		"DOTA_Tooltip_Ability_okita_shukuchi_leap_range"	"ระยะบลิ๊งค์:"
-		"DOTA_Tooltip_Ability_okita_shukuchi_invis_duration""ระยะเวลาหายตัว:"
-		"DOTA_Tooltip_Ability_okita_shukuchi_buff_duration"	"ระยะเวลาบัฟ:"
-		"DOTA_Tooltip_Ability_okita_shukuchi_bonus_aspd"	"%เพิ่มความเร็วโจมตี:"
+		"DOTA_Tooltip_Ability_okita_shukuchi_invis_duration""ระยะเวลาล่องหน:"
+		"DOTA_Tooltip_Ability_okita_shukuchi_buff_duration"	"ระยะเวลาปราณ:"
+		"DOTA_Tooltip_Ability_okita_shukuchi_bonus_aspd"	"%ปราณ เพิ่มความเร็วโจมตี:"
 
 		"DOTA_Tooltip_Ability_okita_shukuchi_upgrade"					"<font color='#9FFFCC'>ตัดระยะ</font>"
-		"DOTA_Tooltip_ability_okita_shukuchi_upgrade_Description"		"โอคิตะใช้การย่างก้าว การเคลื่อนไหวร่างกาย การควบคุมลมหายใจ ทักษะจุดบอด ลดระยะห่างลง, เพิ่มความเร็วในการเคลื่อนที่ <font color='#FFFF28'>หายตัว</font> เป็นเวลาสั้นๆ และได้รับบัฟ <font color='#FFFF28'>ลดระยะ</font> เพิ่มความเร็วโจมตีและการโจมตีติดคริติคอล ระยะเวลาหนึ่ง"
+		"DOTA_Tooltip_ability_okita_shukuchi_upgrade_Description"		"โอคิตะบลิ้งค์ไปยังพื้นที่เป้าหมาย พร้อมทั้งได้รับ <font color='#FFFF28'>ลดระยะ ล่องหน</font> และ <font color='#FFFF28'>ลดระยะ ปราณ</font> ครู่หนึ่ง
+		<font color='#FFFF28'>ลดระยะ หายตัว</font>: โอคิตะได้รับความเร็วเคลื่อนที่เพิ่มขึ้น ขณะที่<font color='#FFFF28'>ล่องหน</font>.
+		<font color='#FFFF28'>ลดระยะ ปราณ</font>: โอคิตะได้รับความเร็วโจมตีเพิ่มขึ้น และการโจมตีทั่วไปจะติดคริติคอล"
 		"DOTA_Tooltip_ability_okita_shukuchi_upgrade_Lore"			""
 		"DOTA_Tooltip_Ability_okita_shukuchi_upgrade_exhaust"		"ได้รับสแต็คการดำเนินความเจ็บป่วย:"
 		"DOTA_Tooltip_Ability_okita_shukuchi_upgrade_leap_range"	"ระยะบลิ๊งค์:"
-		"DOTA_Tooltip_Ability_okita_shukuchi_upgrade_invis_duration""ระยะเวลาหายตัว:"
-		"DOTA_Tooltip_Ability_okita_shukuchi_upgrade_buff_duration"	"ระยะเวลาบัฟ:"
-		"DOTA_Tooltip_Ability_okita_shukuchi_upgrade_bonus_aspd"	"%เพิ่มความเร็วโจมตี:"
-		"DOTA_Tooltip_Ability_okita_shukuchi_upgrade_crit_dmg"		"%ความเสียหายคริติคอล:"
+		"DOTA_Tooltip_Ability_okita_shukuchi_upgrade_invis_duration""ระยะเวลาล่องหน:"
+		"DOTA_Tooltip_Ability_okita_shukuchi_upgrade_buff_duration"	"ระยะเวลาปราณ:"
+		"DOTA_Tooltip_Ability_okita_shukuchi_upgrade_bonus_aspd"	"%ปราณ เพิ่มความเร็วโจมตี:"
+		"DOTA_Tooltip_Ability_okita_shukuchi_upgrade_crit_dmg"		"%ปราณ ความเสียหายคริติคอล:"
 
-		"DOTA_Tooltip_Ability_okita_tennen"				"<font color='#58ACFA'>วิชาดาบเท็นเน็น ริชิน ริว</font>"
-		"DOTA_Tooltip_ability_okita_tennen_Description"	"<font color='#58ACFA'>ติดตัว</font>: การโจมตีของโอคิตะ ทำให้เธอได้รับ <font color='#80FF00'>AGI</font> นาน %agi_duration% วินาที \n<font color='#58ACFA'>กดใช้</font>: เพิ่มพลังโจมตีให้โอคิตะระยะเวลาหนึ่ง"
-		"DOTA_Tooltip_ability_okita_tennen_Lore"				"The first kenjutsu that Okita mastered since her childhood."
-		"DOTA_Tooltip_Ability_okita_tennen_exhaust"			"ได้รับสแต็คการดำเนินความเจ็บป่วย:"
-		"DOTA_Tooltip_Ability_okita_tennen_duration"		"ระยะเวลา:"
-		"DOTA_Tooltip_ability_okita_tennen_base_atk"		"พลังโจมตีเพิ่มเติม:"
-		"DOTA_Tooltip_ability_okita_tennen_bonus_agi"		"AGI เพิ่มเติมต่อสแต็ค:"
-		"DOTA_Tooltip_ability_okita_tennen_max_stacks"		"สแต็คสูงสุด:"	
+		"DOTA_Tooltip_Ability_okita_coat_of_oaths"					"<font color='#58ACFA'>เสื้อคลุมแห่งคำสาบาน</font>"
+		"DOTA_Tooltip_ability_okita_coat_of_oaths_Description"		"โอคิตะ<font color='#FFFF28'>สลาย</font>ผล<font color='#FF3399'>เชื่องช้า</font> ขณะที่ได้รับ<font color='#FFFF28'>เสื้อคลุมแห่งคำสาบาน</font>ระยะเวลาหนึ่ง 
+		<font color='#FFFF28'>เสื้อคลุมแห่งคำสาบาน</font>: โอคิตะได้รับต้านเวทและเกราะเพิ่มเติม และยับยั้งไม่ให้ สแต็กของ<font color='#FF3399'>การดำเนินความเจ็บป่วย</font>เพิ่มเขึ้น 
+		<font color='#9FFFCC'>สามารถอัพเกรดด้วย คุณสมบัติ: ผ้าคาดหัวแห่งปณิธานหน่วยที่ 8</font>."
+		"DOTA_Tooltip_ability_okita_coat_of_oaths_Lore"			""
+		"DOTA_Tooltip_Ability_okita_coat_of_oaths_duration"		"ระยะเวลา:"
+		"DOTA_Tooltip_Ability_okita_coat_of_oaths_bonus_mr"		"ต้านเวทเพิ่มเติม:"
+		"DOTA_Tooltip_Ability_okita_coat_of_oaths_bonus_armor"	"เกราะเพิ่มเติม:"
 
-		"DOTA_Tooltip_Ability_okita_hira_seigan"				"<font color='#58ACFA'>ท่าดาบฮิระเซย์กัน</font>"
-		"DOTA_Tooltip_ability_okita_hira_seigan_Description"	"<font color='#58ACFA'>ร่ายต่อเนื่อง</font>: โอคิตะตั้งท่าดับเพื่อจู่โจมและป้องกันตัวเองพร้อมกัน ได้รับ <font color='#FFFF28'>บาเรีย</font> ลดความเสียหายที่ได้รับลง %dmg_reduction%%%. \n หากได้รับความเสียหายเกินเกณฑ์ หรือถูกขัดสกิล จะทำการฟันศัตรูทั้งหมดในรัศมี %radius% ความเสียหายขึ้นกับระยะเวลาที่ร่าย \n หากร่ายจนจบ โอคิตะจะแทงดาบออกไปอย่างรวดเร็วและรุนแรง เกิดเป็นลำแสง สร้างความเสียหายเป็นทางยาว %beam_range% หน่วย"
-		"DOTA_Tooltip_ability_okita_hira_seigan_Lore"			"Yep, I do not fire a beam."
-		"DOTA_Tooltip_Ability_okita_hira_seigan_exhaust"		"ได้รับสแต็คการดำเนินความเจ็บป่วย:"
-		"DOTA_Tooltip_Ability_okita_hira_seigan_duration"		"ระยะเวลาร่ายสูงสุด:"
-		"DOTA_Tooltip_ability_okita_hira_seigan_dmg_threshold"	"เกณฑ์ความเสียหาย:"
-		"DOTA_Tooltip_ability_okita_hira_seigan_base_damage"	"ความเสียหายพื้นฐาน:"
-		"DOTA_Tooltip_ability_okita_hira_seigan_charge_damage"	"ความเสียหายเพิ่มเติมต่อวินาที:"	
+		"DOTA_Tooltip_Ability_okita_coat_of_oaths_upgrade"					"<font color='#9FFFCC'>เสื้อคลุมแห่งคำสาบาน</font>"
+		"DOTA_Tooltip_ability_okita_coat_of_oaths_upgrade_Description"		"โอคิตะ<font color='#FFFF28'>สลาย</font>ผล<font color='#FF3399'>ดีบัฟ</font>ทั้งหมด ขณะที่ได้รับ<font color='#FFFF28'>เสื้อคลุมแห่งคำสาบาน</font>ระยะเวลาหนึ่ง 
+		<font color='#FFFF28'>เสื้อคลุมแห่งคำสาบาน</font>: โอคิตะได้รับต้านเวทและเกราะเพิ่มเติม และยับยั้งไม่ให้ สแต็กของ<font color='#FF3399'>การดำเนินความเจ็บป่วย</font>เพิ่มเขึ้น "
+		"DOTA_Tooltip_ability_okita_coat_of_oaths_upgrade_Lore"			""
+		"DOTA_Tooltip_Ability_okita_coat_of_oaths_upgrade_duration"		"ระยะเวลา:"
+		"DOTA_Tooltip_Ability_okita_coat_of_oaths_upgrade_bonus_mr"		"ต้านเวทเพิ่มเติม:"
+		"DOTA_Tooltip_Ability_okita_coat_of_oaths_upgrade_bonus_armor"	"เกราะเพิ่มเติม:"
+
+		"DOTA_Tooltip_Ability_okita_new_e"						"<font color='#58ACFA'>แฟลช สแลช</font>"
+		"DOTA_Tooltip_ability_okita_new_e_Description"			"<font color='#58ACFA'>ใช้ต่อเนื่อง</font>: โอคิตะสามารถ<font color='#FFFF28'>บลิ้งค์</font>ฟันได้ทั้งหมด 6 ครั้ง, แต่ละครั้งที่ฟันโดนศัตรูจะรีเซ็ตคูลดาวน์ของสกิล
+		<font color='#58ACFA'>ฟันครั้งที่ 1-4</font>: <font color='#9FFFCC'>สกิลเวกเตอร์</font>: โอคิตะ<font color='#FFFF28'>บลิ้งค์</font>ไปยังพื้นที่เป้าหมาย และฟันไปยังทิศทางของเวกเตอร์, ทำความเสียหายเวท 
+		<font color='#58ACFA'>ฟันครั้งที่ 5</font> <font color='#9FFFCC'>สกิลเวกเตอร์</font>: โอคิตะ<font color='#FFFF28'>บลิ้งค์</font>ไปยังพื้นที่เป้าหมาย แล้ว<font color='#FFFF28'>พุ่ง</font>ตัวมาทางเวกเตอร์เป้าหมาย, สร้างความเสียหายเวทแก่ศัตรูทั้งหมดในเส้นทาง 
+		โอคิตะ<font color='#FFFF28'>เป็นอมตะ</font>และ<font color='#FFFF28'>ไม่สามารถล็อกเป้าได้</font>ขณะพุ่ง 
+		<font color='#58ACFA'>ฟันครั้งที่ 6</font>: โอคิตะแทงดาบไปยังพื้นที่เป้าหมาย สร้างความเสียหายเวท และ<font color='#FF3399'>สตั้น</font>ศัตรูทั้งหมด
+		<font color='#9FFFCC'>สามารถอัพเกรดด้วย คุณสมบัติ: วิชาดาบเท็นเน็น ริชินริว</font>."
+		"DOTA_Tooltip_ability_okita_new_e_Lore"				""
+		"DOTA_Tooltip_Ability_okita_new_e_exhaust"			"ได้รับสแต็คการดำเนินความเจ็บป่วย:"
+		"DOTA_Tooltip_Ability_okita_new_e_leap_range"		"ระยะบลิ้ง:"
+		"DOTA_Tooltip_Ability_okita_new_e_base_damage"		"ความเสียหาย ฟัน/พุ่ง:"
+		"DOTA_Tooltip_Ability_okita_new_e_slash_range"		"รัศมีฟัน:"
+		"DOTA_Tooltip_Ability_okita_new_e_dash_range"		"ระยะพุ่ง:"
+		"DOTA_Tooltip_Ability_okita_new_e_thrust_damage"	"ความเสียหาย แทง:"
+		"DOTA_Tooltip_Ability_okita_new_e_thrust_range"		"ระยะแทง:"
+		"DOTA_Tooltip_Ability_okita_new_e_thrust_stun"		"ระยเวลาสตั้นแทง:"
+
+		"DOTA_Tooltip_Ability_okita_new_e_upgrade"				"<font color='#9FFFCC'>แฟลช สแลช</font>"
+		"DOTA_Tooltip_ability_okita_new_e_upgrade_Description"		"<font color='#58ACFA'>ใช้ต่อเนื่อง</font>: โอคิตะสามารถ<font color='#FFFF28'>บลิ้งค์</font>ฟันได้ทั้งหมด 6 ครั้ง, แต่ละครั้งที่ฟันโดนศัตรูจะรีเซ็ตคูลดาวน์ของสกิล
+		<font color='#58ACFA'>ฟันครั้งที่ 1-4</font>: <font color='#9FFFCC'>สกิลเวกเตอร์</font>: โอคิตะ<font color='#FFFF28'>บลิ้งค์</font>ไปยังพื้นที่เป้าหมาย และฟันไปยังทิศทางของเวกเตอร์, ทำความเสียหายเวท 
+		<font color='#58ACFA'>ฟันครั้งที่ 5</font> <font color='#9FFFCC'>สกิลเวกเตอร์</font>: โอคิตะ<font color='#FFFF28'>บลิ้งค์</font>ไปยังพื้นที่เป้าหมาย แล้ว<font color='#FFFF28'>พุ่ง</font>ตัวมาทางเวกเตอร์เป้าหมาย, สร้างความเสียหายเวทแก่ศัตรูทั้งหมดในเส้นทาง
+		<font color='#FFB266'>บีม</font>: โอคิตะยิงบีมไปยังพื้นที่เป้าหมาย สร้างความเสียหายแท้จริงตามค่า<font color='#80FF00'>AGI</font>และพลังโจมตีของโอคิตะ แก่ศัตรูทั้งหมดในเส้นทาง
+		<font color='#58ACFA'>ฟันครั้งที่ 6</font>: โอคิตะแทงดาบไปยังพื้นที่เป้าหมาย สร้างความเสียหายเวท และ<font color='#FF3399'>สตั้น</font>ศัตรูทั้งหมด
+		<font color='#FFFF28'>เท็นเน็น ริชินริว</font>: โอคิตะได้รับ <font color='#80FF00'>AGI</font> ทุกครั้งที่การฟันโดนศัตรู และ การฟันแต่ละครั้งจะมีความเสียหายทบต้น
+		โอคิตะจะใช้<font color='#58ACFA'>ฟันครั้งที่ 6</font> หาก<font color='#FFB266'>บีม</font>กำลังคูลดาวน์
+		เวลาฟันของ<font color='#58ACFA'>แฟลช สแลช</font>จะลดลงตามค่า<font color='#80FF00'>AGI</font> 
+		ความเสียหายบีม: %beam_base_damage% + (ATK x %beam_atk_dmg%%%) + (<font color='#80FF00'>AGI</font> x %beam_bonus_agi%) "
+		"DOTA_Tooltip_Ability_okita_new_e_upgrade_exhaust"			"ได้รับสแต็คการดำเนินความเจ็บป่วย:"
+		"DOTA_Tooltip_Ability_okita_new_e_upgrade_leap_range"		"ระยะบลิ้ง:"
+		"DOTA_Tooltip_Ability_okita_new_e_upgrade_base_damage"		"ความเสียหาย ฟัน/พุ่ง:"
+		"DOTA_Tooltip_Ability_okita_new_e_upgrade_slash_range"		"รัศมีฟัน:"
+		"DOTA_Tooltip_Ability_okita_new_e_upgrade_dash_range"		"ระยะพุ่ง:"
+		"DOTA_Tooltip_Ability_okita_new_e_upgrade_thrust_damage"	"ความเสียหาย แทง:"
+		"DOTA_Tooltip_Ability_okita_new_e_upgrade_thrust_range"		"ระยะแทง:"
+		"DOTA_Tooltip_Ability_okita_new_e_upgrade_thrust_stun"		"ระยเวลาสตั้นแทง:"
+		"DOTA_Tooltip_Ability_okita_new_e_upgrade_beam_range"		"ระยะทางบีม:" 
+		"DOTA_Tooltip_Ability_okita_new_e_upgrade_beam_cooldown"	"บีม คูลดาวน์:"
+		"DOTA_Tooltip_Ability_okita_new_e_upgrade_bonus_damage"		"%เท็นเน็น ความเสียหายทบต้นต่อการฟัน:"
+		"DOTA_Tooltip_Ability_okita_new_e_upgrade_bonus_agi"		"เท็นเน็น AGI เพิ่มต่อสแต็ก:" 
+		"DOTA_Tooltip_Ability_okita_new_e_upgrade_tennen_duration"	"ระยะเวลาเท็นเน็น:"
 
 		"DOTA_Tooltip_Ability_okita_sandanzuki"				"<font color='#58ACFA'>ดาบไร้แสง แทงสามท่า</font>"
 		"DOTA_Tooltip_ability_okita_sandanzuki_Description"	"โอคิตะใช้ท่าไม้ตาย แทงสามท่า ประกอบด้วย สามก้าวและสามแทง \n<font color='#58ACFA'>ก้าวที่ 1</font>: โอคิตะ <font color='#FFFF28'>ไม่สามารถล็อกเป้า</font> ขณะพุ่งไปเป็นระยะ %distance%  \n<font color='#58ACFA'>ก้าวที่ 2</font>: โอคิตะ <font color='#FFFF28'>ไม่สามารถล็อกเป้า</font> ขณะพุ่งไปเป็นระยะ %distance% ด้วยความเร็วที่มากขึ้น \n<font color='#58ACFA'>ก้าวที่ 3</font>: โอคิตะเป็น <font color='#FFFF28'>อมตะ</font> และ <font color='#FFFF28'>ไม่สามารถล็อกเป้า</font> ขณะพุ่งไปเป็นระยะ %distance% ด้วยความเร็วสูงสุด และทำการแทงสามครั้ง สร้างความเสียหายแท้จริง \n\n<font color='#9FFFCC'>สามารถอัพเกรดด้วย คุณสมบัติ: คิคุ อิชิมอนจิ</font>. \n เธอมีเวลา %window_duration% วินาทีในการใช้ 3 ก้าว ในระหว่างนี้โอคิตะจะติด <font color='#FF3399'>ราก</font>"
@@ -8734,7 +8801,7 @@
 		"DOTA_Tooltip_ability_okita_zekken_beam_distance"		"ระยะทางลำแสง:"
 
 		"DOTA_Tooltip_Ability_okita_zekken_upgrade"				"<font color='#FF04EF'>คอมโบ: ดาบสะบั้น สามขั้นไร้สิ้นสุด</font>"
-		"DOTA_Tooltip_ability_okita_zekken_upgrade_Description"	"<font color='#FF04EF'>ข้อกำหนดขั้นต่ำ : 25 all stats</font>\n<font color='#FF04EF'>ลำดับสกิล : Q -> R ใน 4 วินาที</font> \n โอคิตะปลดปล่อยความบ้าคลั่ง ใช้ท่าไม้ตายชั่วร้าย ดาบสะบั้น สามขั้นไร้สิ้นสุด พุ่งไปยังพื้นที่เป้าหมาย แล้วโจมตีพร้อมกับ <font color='#FF3399'>ผลัก</font> ศัตรูทั้งหมดในระยะ %radius% ขึ้นฟ้า \n แล้วแทงศัตรูทั้งหมด สร้างความเสียหายแท้จริงและ <font color='#FF3399'>สตั้น</font> แล้วกลับไปยังจุดเริ่มต้น ก่อนจะหันกลับมายิงลำแสงสีดำใส่เป้าหมาย สร้างความเสียหายเวท \n โอคิตะเป็น <font color='#FFFF28'>อมตะ</font>, <font color='#FFFF28'>ไม่สามารถล็อกเป้า</font> และ <font color='#FF3399'>รีโวค</font> จากมาสเตอร์ระหว่างที่ใช้สกิลนี้"
+		"DOTA_Tooltip_ability_okita_zekken_upgrade_Description"	"<font color='#FF04EF'>ข้อกำหนดขั้นต่ำ : 25 all stats</font>\n<font color='#FF04EF'>ลำดับสกิล : W -> R ใน 4 วินาที</font> \n โอคิตะปลดปล่อยความบ้าคลั่ง ใช้ท่าไม้ตายชั่วร้าย ดาบสะบั้น สามขั้นไร้สิ้นสุด พุ่งไปยังพื้นที่เป้าหมาย แล้วโจมตีพร้อมกับ <font color='#FF3399'>ผลัก</font> ศัตรูทั้งหมดในระยะ %radius% ขึ้นฟ้า \n แล้วแทงศัตรูทั้งหมด สร้างความเสียหายแท้จริงและ <font color='#FF3399'>สตั้น</font> แล้วกลับไปยังจุดเริ่มต้น ก่อนจะหันกลับมายิงลำแสงสีดำใส่เป้าหมาย สร้างความเสียหายเวท \n โอคิตะเป็น <font color='#FFFF28'>อมตะ</font>, <font color='#FFFF28'>ไม่สามารถล็อกเป้า</font> และ <font color='#FF3399'>รีโวค</font> จากมาสเตอร์ระหว่างที่ใช้สกิลนี้"
 		"DOTA_Tooltip_ability_okita_zekken_upgrade_Lore"				"I am Majin Sa..., no, Alter Ego, Okita Souji Alter-chan."
 		"DOTA_Tooltip_Ability_okita_zekken_upgrade_exhaust"				"ได้รับสแต็คการดำเนินความเจ็บป่วยทั้งหมด:"
 		"DOTA_Tooltip_Ability_okita_zekken_upgrade_distance"			"ระยะพุ่ง:"
@@ -8794,6 +8861,34 @@
 		"DOTA_Tooltip_modifier_zekken_cooldown_Description"			""
 
 		///////////////////////////////// Special Attribute ////////////////////////////
+
+		"DOTA_Tooltip_Ability_okita_attribute_headband"				"<font color='#9FFFCC'>คุณสมบัติ: ผ้าคาดหัวแห่งปณิธานหน่วยที่ 8</font>"
+		"DOTA_Tooltip_ability_okita_attribute_headband_Description"	"<font color='#FFFFFF'>ธงแห่งความซื่อสัตย์</font>: เพิ่มเลือด รัศมี ระยะเวลา และจำนวนซัมมอน 
+		หากโอคิตะมีบัฟ<font color='#FFFF28'>เสื้อคลุมแห่งคำสาบาน</font>, <font color='#99FF33'>ชินเซ็นกุมิ</font>ทั้งหมดจะได้รับ <font color='#FFFF28'>ภารดรภาพแห่งชินเซ็นกุมิ</font>
+		<font color='#FFFF28'>ภารดรภาพแห่งชินเซ็นกุมิ</font>: เพิ่มการฟื้นเลือด ฟื้นมานา และทำให้โอคิตะ<font color='#FFFF28'>ปลอดภัย</font>จากการควบคุมส่วนใหญ่
+		<font color='#58ACFA'>เสื้อคลุมแห่งคำสาบาน</font>: โอคิตะจะ<font color='#FFFF28'>สลาย</font>ผล<font color='#FF3399'>ดีบัฟ</font>ทั้งหมด และเพิ่มระยะเวลา"
+		"DOTA_Tooltip_ability_okita_attribute_headband_flag_radius"			"ธง รัศมีเพิ่มเติม:"
+		"DOTA_Tooltip_ability_okita_attribute_headband_flag_duration"		"ธง ระยะเวลาเพิ่มเติม:"
+		"DOTA_Tooltip_ability_okita_attribute_headband_flag_summon"			"ธง จำนวนอัญเชิญเพิ่มเติม:"
+		"DOTA_Tooltip_ability_okita_attribute_headband_flag_hp"				"ธง เลือดเพิ่มเติม:"
+		"DOTA_Tooltip_ability_okita_attribute_headband_buff_hp_reg"			"บัฟ ฟื้นเลือดเพิ่มเติม:"
+		"DOTA_Tooltip_ability_okita_attribute_headband_buff_mana_reg"		"บัฟ ฟื้นมานาเพิ่มเติม:"
+		"DOTA_Tooltip_ability_okita_attribute_headband_coat_bonus_dur"		"เสื้อคลุม ระยเวลาเพิ่มเติม:"
+
+		"DOTA_Tooltip_Ability_okita_attribute_tennen"				"<font color='#9FFFCC'>คุณสมบัติ: เท็นเน็น ริชินริว</font>"
+		"DOTA_Tooltip_ability_okita_attribute_tennen_Description"	"<font color='#58ACFA'>แฟลชสแลช</font>: เมื่อการฟันแต่ละครั้งโดนศัตรู โอคิตะจะได้รับสแต็กของ<font color='#FFFF28'>เท็นเน็น ริชินริว</font> 
+		<font color='#FFFF28'>เท็นเน็น ริชินริว</font>: โอคิตะได้รับ <font color='#80FF00'>AGI</font> เพิ่มเติม และการฟันแต่ละครั้งจะสร้างดาเมจทบต้น
+		ปลดล็อก<font color='#FFB266'>แฟลชบีม</font>หลังจาก<font color='#58ACFA'>ฟันครั้งที่ 5</font>
+		<font color='#FFB266'>แฟลชบีม</font>: โอคิตะยิงบีมไปยังพื้นที่เป้าหมาย สร้างความเสียหายแท้จริงตามค่า <font color='#80FF00'>AGI</font> และ พลังโจมตี แก่ศัตรูทั้งหมดในเส้นทาง
+		โอคิตะจะใช้ <font color='#58ACFA'>ฟันครั้งที่ 6</font> เมื่อ<font color='#FFB266'>แฟลชบีม</font>ติดคูลดาวน์ 
+		เวลาฟันของ<font color='#58ACFA'>แฟลชสแลช</font>จะลดลงตามค่า<font color='#80FF00'>AGI</font> 
+		ความเสียหายบีม: %beam_base_damage% + (ATK x %beam_atk_dmg%%%) + (<font color='#80FF00'>AGI</font> x %beam_bonus_agi%) "
+		"DOTA_Tooltip_ability_okita_attribute_tennen_tennen_agi"		"เท็นเน็น AGI ต่อสแต็ก:"
+		"DOTA_Tooltip_ability_okita_attribute_tennen_tennen_dur"		"เท็นเน็น ระยะเวลา:"
+		"DOTA_Tooltip_ability_okita_attribute_tennen_bonus_flash"		"%เท็นเน็น ความเสียหายทบต้นต่อการฟัน:"
+		"DOTA_Tooltip_ability_okita_attribute_tennen_beam_distance"		"บีม ระยะทาง:"
+		"DOTA_Tooltip_ability_okita_attribute_tennen_beam_cd"			"บีม คูลดาวน์:"
+		"DOTA_Tooltip_ability_okita_attribute_tennen_cast_rdr_agi"		"แฟลชสแลช เวลาฟันลดลงต่อ AGI:"
 
 		"DOTA_Tooltip_Ability_okita_attribute_coat_of_oaths"				"<font color='#9FFFCC'>คุณสมบัติ: เสื้อคลุมแห่งคำสาบาน</font>"
 		"DOTA_Tooltip_ability_okita_attribute_coat_of_oaths_Description"	"เปิดการใช้งาน <font color='#FFB266'>เสื้อคลุมแห่งคำสาบาน</font> \n<font color='#FFB266'>เสื้อคลุมแห่งคำสาบาน</font>: โอคิตะได้รับความต้านทานเวท %bonus_mr%%% และเกราะ %bonus_armor% physical \n<font color='#FFFFFF'>ธงแห่งความซื่อสัตย์</font> อัญเชิญ <font color='#99FF33'>ชินเซ็นกุมิ</font> เพิ่ม %flag_bonus_summon% และมีโอกาส %flag_summon_chance%%% อัญเชิญ <font color='#99FF33'>ฮิจิคาตะ โทชิโซ ในจินตนาการ</font>. เพิ่มรัศมีของธง %flag_range% และเลือด %flag_health%"
@@ -12321,6 +12416,318 @@
         "DOTA_Tooltip_modifier_robin_combo_cooldown"                  		"คอมโบคูลดาวน์"
 		"DOTA_Tooltip_modifier_robin_combo_Description"                   "คอมโบกำลังคูลดาวน์"
 
+		//====================================
+		//      Nobunaga (Archer)
+        //====================================
+
+		"npc_dota_hero_gyrocopter"				"โอดะ โนบุนากะ"
+        "npc_dota_hero_gyrocopter_summon"		"เซอร์แวน <font color='#58ACFA'>โนบุนากะ</font> ถูกอัญเชิญ"
+        "npc_dota_hero_gyrocopter_enable_combo"	"เปิดใช้งาน: ราชาปีศาจแห่งสวรรค์ชั้นหก"
+
+        "npc_dota_hero_gyrocopter_hype"					""
+		"npc_dota_hero_gyrocopter_bio"						""
+
+        /////////////////////////// Innate Skills ////////////////////////////////
+
+		"DOTA_Tooltip_ability_nobu_demon_king_open"				"<font color='#FFFFFF'>ราชาปีศาจ</font>"
+        "DOTA_Tooltip_ability_nobu_demon_king_open_Description"	"<font color='#E5CCFF'>สเปลบุ๊ค</font>: เมื่อเริ่มรอบโนบุนากะสามารถเลือกจิตวิญญาณเพื่อรับความสามารถเพิ่มเติมในรอบนี้ \n<font color='#FFFFFF'>จิตวิญญาณที่เปลี่ยนแปลง: ผู้ทำลายโลก</font>: ได้รับ <font color='#FFB266'>ผู้ทำลายโลก</font>: ทุกครั้งที่โนบุยิงเป้าหมายด้วยปืนจะเสกปืนเพิ่มเพื่อยิงศัตรูใกล้เคียง \n<font color='#FFFFFF'>จิตวิญญาณที่เปลี่ยนแปลง: ผู้ทำลายพระเจ้า และ พระพุทธเจ้า</font>: ได้รับ <font color='#FFB266'>มาร์คเทพ</font>: ได้รับ <font color='#FF3399'>มาร์คเทพ</font> ไปยังเป้าหมาย เมื่อ <font color='#FF3399'>มาร์คเทพ</font> ถึงสแตคที่กำหนดเป้าหมายจะได้รับ <font color='#FF3399'>เทพเทียม</font> ในระยะเวลาหนึ่ง \n<font color='#FF3399'>เทพเทียม</font>: เป้าหมายจะถูกกำหนดให้เป็นเทพและถูกลดเกราะ \n<font color='#FFFFFF'>จิตวิญญาณที่เปลี่ยนแปลง: เจ้าโง่แห่งโอวาริ</font>: ได้รับ <font color='#FFB266'>เสน่ห์ปีศาจ</font>: <font color='#58ACFA'>ออร่าติดตัว</font>: พันธมิตร ทั้งหมดที่อยู่ใกล้เคียงจะได้รับ <font color='#FFFF28'>เสน่ห์ปีศาจ</font> \n<font color='#FFFF28'>เสน่ห์ปีศาจ</font> เพิ่มเกราะและความไวในการเคลื่อนที่ \n<font color='#FFFFFF'>จิตวิญญาณที่เปลี่ยนแปลง: ราชาแห่งนวัตกรรม</font>: ได้รับ <font color='#FFB266'>ราชาแห่งนวัตกรรม</font>: <font color='#58ACFA'>ออร่าใช้งาน</font>: โนบุจะได้รับ <font color='#FFFF28'>นวัตกรรม</font> \n<font color='#FFFF28'>นวัตกรรม</font>: ทุกครั้งที่โนบุสร้างความเสียหาย พันธมิตรทั้งหมดที่อยู่ใกล้จะได้รับ <font color='#FFFF28'>ฮีล</font> และได้รับโบนัสการเคลื่อนที่ในช่วงระยะเวลาหนึ่ง \n\n<font color='#9FFFCC'>เพิ่มความสามารถจาก คุณสมบัติ: เพิ่มความสามารถราชาปิศาจ</font>"
+        "DOTA_Tooltip_ability_nobu_demon_king_open_Lore"						""
+
+        "DOTA_Tooltip_ability_nobu_demon_king_open_upgrade"				"<font color='#9FFFCC'>ราชาปีศาจ</font>"
+        "DOTA_Tooltip_ability_nobu_demon_king_open_upgrade_Description"	"<font color='#E5CCFF'>สเปลบุ๊ค</font>: เมื่อเริ่มรอบโนบุนากะสามารถเลือกจิตวิญญาณเพื่อรับความสามารถเพิ่มเติมในรอบนี้ \n<font color='#FFFFFF'>จิตวิญญาณที่เปลี่ยนแปลง: ผู้ทำลายโลก</font>: ได้รับ <font color='#FFB266'>ผู้ทำลายโลก</font> หรือ <font color='#FFB266'>มาร์คเทพ</font> \n<font color='#FFFFFF'>จิตวิญญาณที่เปลี่ยนแปลง: ผู้ทำลายพระเจ้า และ พระพุทธเจ้า</font>: ได้รับ <font color='#FFB266'>มาร์คเทพ</font> และ <font color='#FFB266'>เสน่ห์ปีศาจ</font>  \n<font color='#FFFFFF'>จิตวิญญาณที่เปลี่ยนแปลง: เจ้าโง่แห่งโอวาริ</font>: ได้รับ <font color='#FFB266'>เสน่ห์ปีศาจ</font> และ <font color='#FFB266'>ราชาแห่งนวัตกรรม</font>  \n<font color='#FFFFFF'>จิตวิญญาณที่เปลี่ยนแปลง: ราชาแห่งนวัตกรรม</font>: ได้รับ <font color='#FFB266'>ราชาแห่งนวัตกรรม</font> and <font color='#FFB266'>ผู้ทำลายโลก</font> "
+        "DOTA_Tooltip_ability_nobu_demon_king_open_Lore"						""
+	
+        "DOTA_Tooltip_ability_nobu_dow"				"<font color='#FFFFFF'>จิตวิญญาณที่เปลี่ยนแปลง: ผู้ทำลายโลก</font>"
+        "DOTA_Tooltip_ability_nobu_dow_Description"	"ได้รับ <font color='#FFB266'>ผู้ทำลายโลก</font> \n<font color='#FFFFFF'>ผู้ทำลายโลก</font>: <font color='#58ACFA'>ติดตัว</font>: ทุกครั้งที่โนบุนากะยิงเป้าหมายด้วยปืน โนบุนากะจะเสกปืนเพิ่มเพื่อยิงศัตรูที่ใกล้เคียง \n <font color='#58ACFA'>ด้วยคุณสมบัติเพิ่มความสามารถราชาปิศาจ สามารถได้รับความสามารถคู่ ผู้ทำลายโลก และ ผู้ทำลายพระเจ้า และ พระพุทธเจ้า เพิ่มเติม</font>"
+        "DOTA_Tooltip_ability_nobu_dow_Lore" ""
+        "DOTA_Tooltip_ability_nobu_dow_distance" 		"ระยะยิง:"
+        "DOTA_Tooltip_ability_nobu_dow_damage" 			"%ความเสียหายปืน:"
+        "DOTA_Tooltip_ability_nobu_dow_cooldown" 		"คูลดาวน์:"
+
+        "DOTA_Tooltip_ability_nobu_dogab"				"<font color='#FFFFFF'>จิตวิญญาณที่เปลี่ยนแปลง: ผู้ทำลายพระเจ้า และ พระพุทธเจ้า</font>"
+        "DOTA_Tooltip_ability_nobu_dogab_Description"	"ได้รับ <font color='#FFB266'>มาร์คเทพ</font> \n<font color='#FFFFFF'>มาร์คเทพ:</font> ใช้ <font color='#FF3399'>มาร์คเทพ</font> ไปยังเป้าหมายศัตรู ทุกครั้งที่โนบุนากะสร้างความเสียหาย เป้าหมายจะได้รับ <font color='#FF3399'>มาร์คเทพ</font> สแตคเพิ่มขึ้น \n เมื่อ <font color='#FF3399'>มาร์คเทพ</font> ถึงสแตคที่กำหนดเป้าหมายจะติดสถานะ <font color='#FF3399'>เทพเทียม</font> ในช่วงระยะเวลาหนึ่ง \n<font color='#FF3399'>เทพเทียม</font>: เป้าหมายจะถูกกำหนดให้เป็นเทพและถูกลดเกราะ \n <font color='#58ACFA'>ด้วยคุณสมบัติเพิ่มความสามารถราชาปิศาจ สามารถได้รับความสามารถคู่ ผู้ทำลายพระเจ้า และ พระพุทธเจ้า และ เจ้าโง่แห่งโอวาริ เพิ่มเติม</font>"
+        "DOTA_Tooltip_ability_nobu_dogab_Note0" 		"ไม่สามารถรีสกิลได้ คูลดาวน์ 40 วินาที"
+        "DOTA_Tooltip_ability_nobu_dogab_Lore" 			""
+        "DOTA_Tooltip_ability_nobu_dogab_cast_range" 			"ระยะร่าย:"
+        "DOTA_Tooltip_ability_nobu_dogab_duration" 				"ระยะเวลามาร์คเทพ:"
+        "DOTA_Tooltip_ability_nobu_dogab_stack" 				"ต้องการจำนวนสแตคมาร์คเทพ:"
+        "DOTA_Tooltip_ability_nobu_dogab_activated_duration" 	"ระยะเวลาเทพเทียม:"
+        "DOTA_Tooltip_ability_nobu_dogab_arm_debuff" 			"ลดเกราะเทพเทียม:"
+        "DOTA_Tooltip_ability_nobu_dogab_cooldown" 				"คูลดาวน์:"
+
+        "DOTA_Tooltip_ability_nobu_fool_of_owari"				"<font color='#FFFFFF'>จิตวิญญาณที่เปลี่ยนแปลง: เจ้าโง่แห่งโอวาริ</font>"
+        "DOTA_Tooltip_ability_nobu_fool_of_owari_Description"	"ได้รับ <font color='#FFB266'>เสน่ห์ปีศาจ</font> \n<font color='#FFFFFF'>เสน่ห์ปีศาจ</font>: <font color='#58ACFA'>ออร่าติดตัว</font>:พันธมิตร ทั้งหมดที่อยู่ใกล้เคียงจะได้รับ <font color='#FFFF28'>เสน่ห์ปีศาจ</font> \n<font color='#FFFF28'>เสน่ห์ปีศาจ</font> เพิ่มเกราะและความไวในการเคลื่อนที่ \n <font color='#58ACFA'>ด้วยคุณสมบัติเพิ่มความสามารถราชาปิศาจ สามารถได้รับความสามารถคู่ เจ้าโง่แห่งโอวาริ  และ ราชาแห่งนวัตกรรม เพิ่มเติม</font>"
+        "DOTA_Tooltip_ability_nobu_fool_of_owari_Lore" 			""
+        "DOTA_Tooltip_ability_nobu_fool_of_owari_aura_radius" 	"ระยะออร่า:"
+        "DOTA_Tooltip_ability_nobu_fool_of_owari_ms_bonus" 		"%เพิ่มการเคลื่อนที่:"
+        "DOTA_Tooltip_ability_nobu_fool_of_owari_armor_bonus" 	"เพิ่มเกราะ:"
+
+        "DOTA_Tooltip_ability_nobu_king_of_innovation"				"<font color='#FFFFFF'>จิตวิญญาณที่เปลี่ยนแปลง: ราชาแห่งนวัตกรรม</font>"
+        "DOTA_Tooltip_ability_nobu_king_of_innovation_Description"	"ได้รับ <font color='#FFB266'>ราชาแห่งนวัตกรรม</font> \n<font color='#FFFFFF'>ราชาแห่งนวัตกรรม:</font> <font color='#58ACFA'>ใช้งานออร่า</font>: โนบุจะได้รับ <font color='#FFFF28'>นวัตกรรม</font> \n<font color='#FFFF28'>นวัตกรรม</font>: ทุกครั้งที่โนบุสร้างความเสียหาย พันธมิตรทั้งหมดที่อยู่ใกล้จะได้รับ <font color='#FFFF28'>ฮีล</font> จาก <font color='#FF0000'>STR</font> ของโนบุ และได้รับโบนัสการเคลื่อนที่ในช่วงระยะเวลาหนึ่ง \n<font color='#58ACFA'>ด้วยคุณสมบัติเพิ่มความสามารถราชาปิศาจ สามารถได้รับความสามารถคู่ ราชาแห่งนวัตกรรม และ ผู้ทำลายโลก เพิ่มเติม</font> \n:HEAL AMOUNT: %health_base% + (%bonus_str_heal% x <font color='#FF0000'>STR</font>)"
+        "DOTA_Tooltip_ability_nobu_king_of_innovation_Note0" "ความสามารถทั้งคู่มีคูลดาวน์ 1 วินาที"
+        "DOTA_Tooltip_ability_nobu_king_of_innovation_Lore" 		""
+        "DOTA_Tooltip_ability_nobu_king_of_innovation_aura_radius" 		"ระยะออร่า:"
+        "DOTA_Tooltip_ability_nobu_king_of_innovation_duration" 		"ระยะเวลาออร่า:"
+        "DOTA_Tooltip_ability_nobu_king_of_innovation_heal_cd" 			"ฮีลคูลดาวน์:"
+        "DOTA_Tooltip_ability_nobu_king_of_innovation_ms_bonus" 		"%โบนัสวิ่งไว:"
+        "DOTA_Tooltip_ability_nobu_king_of_innovation_ms_duration" 		"ระยะเวลาโบนัสวิ่งไว:"
+        "DOTA_Tooltip_ability_nobu_king_of_innovation_cooldown" 		"คูลดาวน์:"
+
+        "DOTA_Tooltip_ability_nobu_demon_king_close"				"<font color='#9FFFCC'>ปิดราชาปิศาจ</font>"
+        "DOTA_Tooltip_ability_nobu_demon_king_close_Description"	"ปิดสเกลบุ๊ค"
+        "DOTA_Tooltip_ability_nobu_demon_king_close_Lore"			""
+
+        "DOTA_Tooltip_ability_nobu_charisma"						"<font color='#FFB266'>เสน่ห์ปีศาจ</font>"
+        "DOTA_Tooltip_ability_nobu_charisma_Description"			"<font color='#58ACFA'>ออร่าติดตัว</font>: พันธมิตรทั้งหมดที่อยู่ใกล้เคียงจะได้รับ <font color='#FFFF28'>เสน่ห์ปีศาจ</font>."
+        "DOTA_Tooltip_ability_nobu_charisma_aura_radius"			"ระยะออร่า:"
+        "DOTA_Tooltip_ability_nobu_charisma_ms_bonus"				"%โบนัสวิ่งไว:"
+        "DOTA_Tooltip_ability_nobu_charisma_armor_bonus"			"โบนัสเกราะ:"
+        "DOTA_Tooltip_ability_nobu_charisma_Lore"								""
+
+        "DOTA_Tooltip_ability_nobu_dow_passive"						"<font color='#FFB266'>ผู้ทำลายโลก</font>"
+        "DOTA_Tooltip_ability_nobu_dow_passive_Description"			"<font color='#58ACFA'>ติดตัว</font>: ทุกครั้งที่โนบุนากะยิงเป้าหมายด้วยปืน โนบุนากะจะเสกปืนเพิ่มเพื่อยิงศัตรูที่ใกล้เคียง"
+        "DOTA_Tooltip_ability_nobu_dow_passive_Lore"								""
+        "DOTA_Tooltip_ability_nobu_dow_passive_distance"			"ระยะยิง:"
+        "DOTA_Tooltip_ability_nobu_dow_passive_damage"				"%ความเสียหายปืน:"
+        "DOTA_Tooltip_ability_nobu_dow_passive_cooldown"			"คูลดาวน์:"
+
+        "DOTA_Tooltip_ability_nobu_leader_of_innovation"						"<font color='#FFB266'>ราชาแห่งนวัตกรรม</font>"
+        "DOTA_Tooltip_ability_nobu_leader_of_innovation_Description"			"<font color='#58ACFA'>ใช้งานออร่า</font>: พันธมิตรที่อยู่ใกล้เคียงจะได้รับ <font color='#FFFF28'>นวัตกรรม</font>. \n<font color='#FFFF28'>นวัตกรรม</font>: ทุกครั้งที่โนบุสร้างความเสียหาย พันธมิตรทั้งหมดที่อยู่ใกล้จะได้รับ <font color='#FFFF28'>ฮีล</font> และได้รับโบนัสการเคลื่อนที่ในช่วงระยะเวลาหนึ่ง  \n หากพันธมิตรที่อยู่ใกล้เคียงสร้างความเสียหายโนบุจะได้รับ <font color='#FFFF28'>ฮีล</font> จาก <font color='#FF0000'>STR</font> ของโนบุ \n:HEAL AMOUNT: %health_base% + (%bonus_str_heal% x <font color='#FF0000'>STR</font>)"
+        "DOTA_Tooltip_ability_nobu_leader_of_innovation_aura_radius"		"ระยะออร่า:"
+        "DOTA_Tooltip_ability_nobu_leader_of_innovation_duration"			"ระยะเวลาออร่า:"
+        "DOTA_Tooltip_ability_nobu_leader_of_innovation_cooldown"			"ฮีลคูลดาวน์:"
+        "DOTA_Tooltip_ability_nobu_leader_of_innovation_ms_bonus"			"%โบนัสวิ่งไว:"       
+        "DOTA_Tooltip_ability_nobu_leader_of_innovation_ms_duration"		"ระยะเวลาโบนัสวิ่งไว:"
+        "DOTA_Tooltip_ability_nobu_leader_of_innovation_Lore"				""
+
+        "DOTA_Tooltip_ability_nobu_divinity_mark"						"<font color='#FFB266'>มาร์คเทพ</font>"
+        "DOTA_Tooltip_ability_nobu_divinity_mark_Description"			"ได้รับ <font color='#FF3399'>มาร์คเทพ</font> ไปยังเป้าหมายศัตรู ทุกครั้งที่โนบุนากะสร้างความเสียหาย เป้าหมายจะได้รับ <font color='#FF3399'>มาร์คเทพ</font> สแตคเพิ่มขึ้น \n เมื่อ <font color='#FF3399'>มาร์คเทพ</font> ถึงสแตคที่กำหนดเป้าหมายจะติดสถานะ <font color='#FF3399'>เทพเทียม</font> ในช่วงระยะเวลาหนึ่ง \n<font color='#FF3399'>เทพเทียม</font>: เป้าหมายจะถูกกำหนดให้เป็นเทพและถูกลดเกราะ"
+        "DOTA_Tooltip_ability_nobu_divinity_mark_cast_range"			"ระยะร่าย:"
+        "DOTA_Tooltip_ability_nobu_divinity_mark_duration"				"ระยะเวลามาร์คเทพ:"
+        "DOTA_Tooltip_ability_nobu_divinity_mark_stack"					"ต้องการจำนวนสแตคมาร์คเทพ:"
+        "DOTA_Tooltip_ability_nobu_divinity_mark_activated_duration"	"ระยะเวลาเทพเทียม:"
+        "DOTA_Tooltip_ability_nobu_divinity_mark_arm_debuff"			"ลดเกราะเทพเทียม:"
+        "DOTA_Tooltip_ability_nobu_divinity_mark_Lore"								""
+
+        "DOTA_Tooltip_ability_nobu_guns"						"<font color='#FFFFFF'>ปืนปีศาจ</font>"
+        "DOTA_Tooltip_ability_nobu_guns_Description"			"<font color='#58ACFA'>ติดตัว:</font> <font color='#FFFFFF'>ผู้ทำลายโลก</font>, <font color='#58ACFA'>ยิง, ยิงเป้าหมาย, กระบวนทัพแถวหน้ากระดาน</font> และ <font color='#FF04EF'>ราชาปีศาจแห่งสวรรค์ชั้นหก</font> ความเสียหายปืนคำนวณจาก <font color='#DD5959'>เลเวล</font> \n\n<font color='#9FFFCC'>เพิ่มความสามารถจาก คุณสมบัติ: รวมชาติด้วยกำลัง และ การกระทำอิสระ</font> \nความเสียหายปืน: %base_dmg% + (%dmg_per_lvl% x Nobunaga's <font color='#DD5959'>เลเวล</font>)"
+        //"DOTA_Tooltip_ability_nobu_guns_base_dmg"					"ความเสียหายพื้นฐาน:"
+        //"DOTA_Tooltip_ability_nobu_guns_dmg_per_lvl"					"ความเสียหายต่อเลเวล:"
+        //"DOTA_Tooltip_ability_nobu_guns_amount"					""
+        "DOTA_Tooltip_ability_nobu_guns_Lore"						"ปืนจะไม่มีค่าในสนามรบ นั่นคือสิ่งที่ทุกคนคิดในเวลานั้น ถ้าอย่างนั้นฉันก็ต้องรวบรวมพวกมันให้ครบแล้วยิงออกไปใช่ไหม?"
+         
+        "DOTA_Tooltip_ability_nobu_guns_action"							"<font color='#9FFFCC'>ปืนปีศาจ</font>"
+        "DOTA_Tooltip_ability_nobu_guns_action_Description"			"<font color='#58ACFA'>ติดตัว:</font> <font color='#FFFFFF'>ผู้ทำลายโลก</font>, <font color='#58ACFA'>ยิง, ยิงเป้าหมาย, กระบวนทัพแถวหน้ากระดาน</font> และ <font color='#FF04EF'>ราชาปีศาจแห่งสวรรค์ชั้นหก</font> ความเสียหายปืนคำนวณจาก <font color='#DD5959'>เลเวล</font> \n\n<font color='#9FFFCC'>เพิ่มความสามารถจาก คุณสมบัติ: รวมชาติด้วยกำลัง</font> \nความเสียหายปืน: %base_dmg% + (%dmg_per_lvl% x Nobunaga's <font color='#DD5959'>เลเวล</font>)"
+        //"DOTA_Tooltip_ability_nobu_guns_action_base_dmg"					"ความเสียหายพื้นฐาน:"
+        //"DOTA_Tooltip_ability_nobu_guns_action_dmg_per_lvl"					"เพิ่มความเสียหายต่อเลเวล:"
+        //"DOTA_Tooltip_ability_nobu_guns_action_armor_pierce" 				"%ยิงและยิงเป้าหมายเพิกเฉยเกราะ:"
+        //"DOTA_Tooltip_ability_nobu_guns_action_amount"					""
+        "DOTA_Tooltip_ability_nobu_guns_action_Lore"						"ปืนจะไม่มีค่าในสนามรบ นั่นคือสิ่งที่ทุกคนคิดในเวลานั้น ถ้าอย่างนั้นฉันก็ต้องรวบรวมพวกมันให้ครบแล้วยิงออกไปใช่ไหม?"
+         
+        "DOTA_Tooltip_ability_nobu_guns_unifying"							"<font color='#9FFFCC'>ปืนปีศาจ</font>"
+        "DOTA_Tooltip_ability_nobu_guns_unifying_Description"			"<font color='#58ACFA'>ติดตัว:</font> <font color='#FFFFFF'>ผู้ทำลายโลก</font>, <font color='#58ACFA'>ยิง, ยิงเป้าหมาย, กระบวนทัพแถวหน้ากระดาน</font> และ <font color='#FF04EF'>ราชาปีศาจแห่งสวรรค์ชั้นหก</font> ความเสียหายปืนคำนวณจาก <font color='#DD5959'>เลเวล</font> และ <font color='#00F7FF'>INT</font> \nปืนสร้าความเสียหายเพิ่มเติมต่อเทพ \n\n<font color='#9FFFCC'>เพิ่มความสามารถจาก คุณสมบัติ: การกระทำอิสระ</font> \nความเสียหายปืน: %base_dmg% + (%dmg_per_lvl% x <font color='#DD5959'>เลเวล</font>) + (%dmg_per_int% x <font color='#00F7FF'>INT</font>)"
+        //"DOTA_Tooltip_ability_nobu_guns_unifying_base_dmg"					"ความเสียหายพื้นฐาน:"
+        //"DOTA_Tooltip_ability_nobu_guns_unifying_dmg_per_lvl"					"เพิ่มความเสียหายต่อเลเวล:"
+        //"DOTA_Tooltip_ability_nobu_guns_unifying_dmg_per_int"					"เพิ่มความเสียหายต่อINT:"
+        "DOTA_Tooltip_ability_nobu_guns_unifying_divine_damage_mod"				"%เพิ่มโบนัสความเสียหายเทพ:"
+        //"DOTA_Tooltip_ability_nobu_guns_unifying_amount"					""
+        "DOTA_Tooltip_ability_nobu_guns_unifying_Lore"						"ปืนจะไม่มีค่าในสนามรบ นั่นคือสิ่งที่ทุกคนคิดในเวลานั้น ถ้าอย่างนั้นฉันก็ต้องรวบรวมพวกมันให้ครบแล้วยิงออกไปใช่ไหม?"
+    
+        "DOTA_Tooltip_ability_nobu_guns_upgrade"							"<font color='#9FFFCC'>ปืนปีศาจ</font>"
+        "DOTA_Tooltip_ability_nobu_guns_upgrade_Description"			"<font color='#58ACFA'>ติดตัว:</font> <font color='#FFFFFF'>ผู้ทำลายโลก</font>, <font color='#58ACFA'>ยิง, ยิงเป้าหมาย, กระบวนทัพแถวหน้ากระดาน</font> และ <font color='#FF04EF'>ราชาปีศาจแห่งสวรรค์ชั้นหก</font> ความเสียหายปืนคำนวณจาก <font color='#DD5959'>เลเวล</font> และ <font color='#00F7FF'>INT</font> \nปืนสร้าความเสียหายเพิ่มเติมต่อเทพ \nMUSKET DAMAGE: %base_dmg% + (%dmg_per_lvl% x <font color='#DD5959'>เลเวล</font>) + (%dmg_per_int% x <font color='#00F7FF'>INT</font>)"
+        //"DOTA_Tooltip_ability_nobu_guns_upgrade_base_dmg"					"ความเสียหายพื้นฐาน:"
+        //"DOTA_Tooltip_ability_nobu_guns_upgrade_dmg_per_lvl"					"เพิ่มความเสียหายต่อเลเวล:"
+        //"DOTA_Tooltip_ability_nobu_guns_upgrade_dmg_per_int"					"เพิ่มความเสียหายต่อINT:"
+        "DOTA_Tooltip_ability_nobu_guns_upgrade_divine_damage_mod"				"%เพิ่มความเสียหายต่อเทพ:"
+        "DOTA_Tooltip_ability_nobu_guns_upgrade_Lore"						"ปืนจะไม่มีค่าในสนามรบ นั่นคือสิ่งที่ทุกคนคิดในเวลานั้น ถ้าอย่างนั้นฉันก็ต้องรวบรวมพวกมันให้ครบแล้วยิงออกไปใช่ไหม?"
+
+        /////////////// Basic ////////////////////////
+         
+        "DOTA_Tooltip_ability_nobu_shot"					"<font color='#58ACFA'>ยิง</font>"
+        "DOTA_Tooltip_ability_nobu_shot_Description"	 	"โนบุนากะใช้ปืนยิงในทิศทางที่ต้องการ สร้างความเสียหายและทำให้ติดสถานะ <font color='#FF3399'>เชื่องช้า</font> ในระยะเวลาหนึ่งแก่ศัตรูที่อยู่ในทิศทาง \n\n<font color='#9FFFCC'>เพิ่มความสามารถจาก คุณสมบัติ: การกระทำอิสระ</font> \n ใช้ในขณะ <font color='#58ACFA'>ยิงเป้าหมาย</font> จะมีสร้างปืนใกล้โนบุนากะเพื่อยิงศัตรูที่อยู่ใกล้ที่สุด"
+        "DOTA_Tooltip_ability_nobu_shot_Note0" 					"ถ้าหากใช้ในขณะยิงเป้าหมาย จะมีสร้างปืนใกล้โนบุนากะเพื่อยิงศัตรูที่อยู่ใกล้ที่สุด"
+        "DOTA_Tooltip_ability_nobu_shot_distance"				"ระยะร่าย:"
+        "DOTA_Tooltip_ability_nobu_shot_damage_mod"				"ความเสียหายปืน:"
+        "DOTA_Tooltip_ability_nobu_shot_slow_power"				"%เชื่องช้า:"
+        "DOTA_Tooltip_ability_nobu_shot_duration"				"ระยะเวลาเชื่องช้า:"
+        "DOTA_Tooltip_ability_nobu_shot_Lore"					""
+
+        "DOTA_Tooltip_ability_nobu_shot_upgrade"					"<font color='#9FFFCC'>ยิง</font>"
+        "DOTA_Tooltip_ability_nobu_shot_upgrade_Description"	 	"โนบุนากะใช้ปืนยิงในทิศทางที่ต้องการ สร้างความเสียหายกับเพิกเฉยเกราะบางส่วน, <font color='#FF3399'>มินิสตั้น</font>, <font color='#FF3399'>กระเด็น</font> และติดสถานะ <font color='#FF3399'>เชื่องช้า</font> ในระยะเวลาหนึ่งแก่ศัตรูที่อยู่ในทิศทาง \n ยิงเป้าหมาย <font color='#58ACFA'>ยิงเป้าหมาย</font> จะมีสร้างปืนใกล้โนบุนากะเพื่อยิงศัตรูที่อยู่ใกล้ที่สุดแต่จะไม่ทำให้ติดสถานะ <font color='#FF3399'>มินิสตั้น</font> และ <font color='#FF3399'>กระเด็น</font>"
+        "DOTA_Tooltip_ability_nobu_shot_upgrade_Note0" 					"ถ้าหากใช้ในขณะยิงเป้าหมาย จะมีสร้างปืนใกล้โนบุนากะเพื่อยิงศัตรูที่อยู่ใกล้ที่สุด"
+        "DOTA_Tooltip_ability_nobu_shot_upgrade_distance"				"ระยะร่าย:"
+        "DOTA_Tooltip_ability_nobu_shot_upgrade_damage_mod"				"ความเสียหายปืน:"
+        "DOTA_Tooltip_ability_nobu_shot_upgrade_armor_pierce"			"%เพิกเฉยเกราะ:"
+        "DOTA_Tooltip_ability_nobu_shot_upgrade_slow_power"				"%เชื่องช้า:"
+        "DOTA_Tooltip_ability_nobu_shot_upgrade_duration"				"ระยะเวลาเชื่องช้า:"
+        "DOTA_Tooltip_ability_nobu_shot_upgrade_microstun_duration"		"ระยะเวลาสตั้น:"
+        "DOTA_Tooltip_ability_nobu_shot_upgrade_knock"					"ระยะกระเด็น:"
+        "DOTA_Tooltip_ability_nobu_shot_upgrade_Lore"					""
+
+        "DOTA_Tooltip_ability_nobu_dash"					"<font color='#58ACFA'>พุ่ง</font>"
+        "DOTA_Tooltip_ability_nobu_dash_Description"	 	"<font color='#58ACFA'>ติดตัว:</font> ฟื้นฟูจำนวนครั้งได้ในระยะเวลาหนึ่ง \n<font color='#58ACFA'>ใช้งาน:</font> โนบุนากะจะพุ่งไปในทิศทางที่กำหนดพร้อมใช้งานจำนวนครั้งแทนการติดคูลดาวน์ \n\n<font color='#9FFFCC'>เพิ่มความสามารถจาก คุณสมบัติ: 3000โลก กับ การกระทำอิสระ </font> \n ใช้งาน <font color='#58ACFA'>พุ่ง</font> จะฟื้นฟู <font color='#FFB266'>กลยุทธ์</font> คูลดาวน์"
+        "DOTA_Tooltip_ability_nobu_dash_cooldown"						"ฟื้นฟูคูลดาวน์:"
+        "DOTA_Tooltip_ability_nobu_dash_dash"							"ระยะพุ่ง:"
+
+        "DOTA_Tooltip_ability_nobu_dash_3000"					"<font color='#9FFFCC'>พุ่ง</font>"
+        "DOTA_Tooltip_ability_nobu_dash_3000_Description"	 	"<font color='#58ACFA'>ติดตัว:</font> ฟื้นฟูจำนวนครั้งได้ในระยะเวลาหนึ่ง \n<font color='#58ACFA'>ใช้งาน:</font> โนบุนากะจะพุ่งไปในทิศทางที่กำหนดพร้อมใช้งานจำนวนครั้งแทนการติดคูลดาวน์ \n ในตอนจบของการพุ่งจะสร้างปืนเพื่อยิงศัตรูที่อยู่ใกล้เคียง สร้างความเสียหายกายภาพและ <font color='#FF3399'>กระเด็น</font> \n\n<font color='#9FFFCC'>เพิ่มความสามารถจาก คุณสมบัติ: การกระทำอิสระ</font> \n ใช้งาน <font color='#58ACFA'>พุ่ง</font> จะฟื้นฟู <font color='#FFB266'>กลยุทธ์</font> คูลดาวน์"
+        "DOTA_Tooltip_ability_nobu_dash_3000_cooldown"			"ฟื้นฟูคูลดาวน์:"
+        "DOTA_Tooltip_ability_nobu_dash_3000_dash"				"ระยะพุ่ง:"
+        "DOTA_Tooltip_ability_nobu_dash_3000_search"			"ระยะยิง:"
+        "DOTA_Tooltip_ability_nobu_dash_3000_damage_mod"		"ความเสียหายปืน:"
+        "DOTA_Tooltip_ability_nobu_dash_3000_bonus_gun"			"จำนวนปืน:"
+        "DOTA_Tooltip_ability_nobu_dash_3000_knock"				"ระยะกระเด็น:"
+
+        "DOTA_Tooltip_ability_nobu_dash_action"					"<font color='#9FFFCC'>พุ่ง</font>"
+        "DOTA_Tooltip_ability_nobu_dash_action_Description"	 	"<font color='#58ACFA'>ติดตัว:</font> ฟื้นฟูจำนวนครั้งได้ในระยะเวลาหนึ่ง \n<font color='#58ACFA'>ใช้งาน:</font> โนบุนากะจะพุ่งไปในทิศทางที่กำหนด ได้รับ <font color='#FFFF28'>พุ่งพิเศษ</font> พร้อมใช้งานจำนวนครั้งแทนการติดคูลดาวน์ \n<font color='#FFFF28'>พุ่งพิเศษ</font>: เพิ่มความเสียหายเวทมนตร์ให้กับสกิลปืนทั้งหมด \n\n<font color='#9FFFCC'>เพิ่มความสามารถจาก คุณสมบัติ: 3000โลก</font> \n ใช้งาน <font color='#58ACFA'>พุ่ง</font> จะฟื้นฟู <font color='#FFB266'>กลยุทธ์</font> คูลดาวน์"
+        "DOTA_Tooltip_ability_nobu_dash_action_cooldown"			"ฟื้นฟูคูลดาวน์:"
+        "DOTA_Tooltip_ability_nobu_dash_action_dash"				"ระยะพุ่ง:"
+        "DOTA_Tooltip_ability_nobu_dash_action_action_dur"			"ระยะเวลาพุ่งพิเศษ:"
+        "DOTA_Tooltip_ability_nobu_dash_action_action_bonus_dmg"	"เพิ่มความเสียหาย:"
+
+        "DOTA_Tooltip_ability_nobu_dash_upgrade"					"<font color='#9FFFCC'>พุ่ง</font>"
+        "DOTA_Tooltip_ability_nobu_dash_upgrade_Description"	 	"<font color='#58ACFA'>ติดตัว:</font> ฟื้นฟูจำนวนครั้งได้ในระยะเวลาหนึ่ง \n<font color='#58ACFA'>ใช้งาน:</font> โนบุนากะจะพุ่งไปในทิศทางที่กำหนด ได้รับ <font color='#FFFF28'>พุ่งพิเศษ</font> พร้อมใช้งานจำนวนครั้งแทนการติดคูลดาวน์ \n ในตอนจบของการพุ่งจะสร้างปืนเพื่อยิงศัตรูที่อยู่ใกล้เคียง สร้างความเสียหายกายภาพและ <font color='#FF3399'>กระเด็น</font> \n<font color='#FFFF28'>พุ่งพิเศษ</font>: เพิ่มความเสียหายเวทมนตร์ให้กับสกิลปืนทั้งหมด \n ใช้งาน <font color='#58ACFA'>พุ่ง</font> จะฟื้นฟู <font color='#FFB266'>กลยุทธ์</font> คูลดาวน์"
+        "DOTA_Tooltip_ability_nobu_dash_upgrade_cooldown"			"ฟื้นฟูคูลดาวน์:"
+        "DOTA_Tooltip_ability_nobu_dash_upgrade_dash"				"ระยะพุ่ง:"
+        "DOTA_Tooltip_ability_nobu_dash_upgrade_search"				"ระยะยิง:"
+        "DOTA_Tooltip_ability_nobu_dash_upgrade_damage_mod"			"ความเสียหายปืน:"
+        "DOTA_Tooltip_ability_nobu_dash_upgrade_bonus_gun"			"จำนวนปืน:"
+        "DOTA_Tooltip_ability_nobu_dash_upgrade_knock"				"ระยะกระเด็น:"
+        "DOTA_Tooltip_ability_nobu_dash_upgrade_action_dur"			"ระยะเวลาพุ่งพิเศษ:"
+        "DOTA_Tooltip_ability_nobu_dash_upgrade_action_bonus_dmg"	"เพิ่มความเสียหาย:"
+
+        "DOTA_Tooltip_ability_nobu_double_shots"				"<font color='#58ACFA'>ยิงเป้าหมาย</font>"
+        "DOTA_Tooltip_ability_nobu_double_shots_Description"	"โนบุนากะจะเริ่มยิงไปยังเป้าหมาย ได้รับ <font color='#FFFF28'>ยิงปืน</font> ขณะใช้งาน <font color='#58ACFA'>หยุดยิง</font> ในระยะเวลา  \n<font color='#FFFF28'>ยิงปืน</font>: ล็อคเป้าไปยังเป้าหมายที่เลือก สามารถเคลื่อนที่ได้ขณะยิง แต่การเคลื่อนที่ไปด้านหลังจะลดลงอย่างมาก \n<font color='#58ACFA'>หยุดยิง</font>: ปิดสถานะยิงปืน \n\n<font color='#9FFFCC'>เพิ่มความสามารถจาก คุณสมบัติ: การกระทำอิสระ</font> \n สั่งโจมตีหรือสั่งเคลื่อนที่ได้และสามารถเลือกเป้าหมายอื่นได้โดยใช้สั่งโจมตี \n ถ้าไม่เห็นเป้าหมายโนบุนากะจะทำการยิงไปยังพื้นที่ล่าสุดของเป้าหมาย \n โนบุนากะไม่สามารถใช้งาน <font color='#58ACFA'>กระบวนทัพแถวหน้ากระดาน</font> ขณะ <font color='#58ACFA'>ยิงเป้าหมาย</font> กำลังถูกใช้งาน"
+        "DOTA_Tooltip_ability_nobu_double_shots_delay_stop"		"ระยะเวลาขั้นต่ำ:"
+        "DOTA_Tooltip_ability_nobu_double_shots_cast_range"		"ระยะร่าย:"
+        "DOTA_Tooltip_ability_nobu_double_shots_damage_mod"		"ความเสียหายปืน:"
+        "DOTA_Tooltip_ability_nobu_double_shots_duration"		"ระยะเวลาสูงสุด:"
+        "DOTA_Tooltip_ability_nobu_double_shots_sps"			"ยิงต่อวินาที:"
+        "DOTA_Tooltip_ability_nobu_double_shots_Lore"			""
+
+        "DOTA_Tooltip_ability_nobu_double_shots_upgrade"				"<font color='#9FFFCC'>ยิงเป้าหมาย</font>"
+        "DOTA_Tooltip_ability_nobu_double_shots_upgrade_Description"	"โนบุนากะจะเริ่มยิงไปยังเป้าหมาย ได้รับ <font color='#FFFF28'>ยิงปืน</font> ขณะใช้งาน <font color='#58ACFA'>หยุดยิง</font> ในระยะเวลา \n<font color='#FFFF28'>ยิงปืน</font>: ล็อคเป้าไปยังเป้าหมายที่เลือก สามารถเคลื่อนที่ได้ขณะยิง แต่การเคลื่อนที่ไปด้านหลังจะลดลงอย่างมาก \n<font color='#58ACFA'>หยุดยิง</font>: ปิดสถานะยิงปืน \n สั่งโจมตีหรือสั่งเคลื่อนที่ได้และสามารถเลือกเป้าหมายอื่นได้โดยใช้สั่งโจมตี \n ถ้าไม่เห็นเป้าหมายโนบุนากะจะทำการยิงไปยังพื้นที่ล่าสุดของเป้าหมาย \n โนบุนากะไม่สามารถใช้งาน <font color='#58ACFA'>กระบวนทัพแถวหน้ากระดาน</font> ขณะ <font color='#58ACFA'>ยิงเป้าหมาย</font> กำลังถูกใช้งาน"
+        "DOTA_Tooltip_ability_nobu_double_shots_upgrade_delay_stop"		"ระยะเวลาขั้นต่ำ:"
+        "DOTA_Tooltip_ability_nobu_double_shots_upgrade_cast_range"		"ระยะร่าย:"
+        "DOTA_Tooltip_ability_nobu_double_shots_upgrade_damage_mod"		"ความเสียหายปืน:"
+        "DOTA_Tooltip_ability_nobu_double_shots_upgrade_armor_pierce"	"%เพิกเฉยเกราะ:"
+        "DOTA_Tooltip_ability_nobu_double_shots_upgrade_duration"		"ระยะเวลาสูงสุด:"
+        "DOTA_Tooltip_ability_nobu_double_shots_upgrade_sps"			"ยิงต่อวินาที:"
+        "DOTA_Tooltip_ability_nobu_double_shots_upgrade_Lore"			""
+
+        "DOTA_Tooltip_ability_nobu_double_shots_stop"				"<font color='#9FFFCC'>หยุดยิง</font>"
+        "DOTA_Tooltip_ability_nobu_double_shots_stop_Description"		"หยุดการยิง"
+        "DOTA_Tooltip_ability_nobu_double_shots_stop_Lore"				""
+
+        "DOTA_Tooltip_ability_nobu_3000"						"<font color='#58ACFA'>กระบวนทัพแถวหน้ากระดาน</font>"
+        "DOTA_Tooltip_ability_nobu_3000_Description"			"<font color='#58ACFA'>ร่ายชาร์จ</font>: โนบุนากะเริ่มรวบรวมปืน เมื่อร่ายชาร์จถูกขัดหรือสำเร็จปืนทั้งหมดจะเริ่มยิงไปยังทิศทางที่กำหนด สร้างความเสียหายกายภาพแก่ศัตรูที่อยู่ในทิศทางทั้งหมด \n\n<font color='#9FFFCC'>เพิ่มความสามารถจาก คุณสมบัติ: 3000โลก</font>. \n สกิลนี้ไม่สามารถใช้งานได้ขณะ <font color='#58ACFA'>ยิงเป้าหมาย</font> ถูกใช้งาน"
+        "DOTA_Tooltip_ability_nobu_3000_damage_mod"						"ความเสียหายปืน:"
+        "DOTA_Tooltip_ability_nobu_3000_channel_time"					"เวลาร่ายสูงสุด:"
+        "DOTA_Tooltip_ability_nobu_3000_range"							"ระยะยิง:"
+        "DOTA_Tooltip_ability_nobu_3000_aoe"							"ความกว้างการยิง:"
+        "DOTA_Tooltip_ability_nobu_3000_Lore"								""
+
+        "DOTA_Tooltip_ability_nobu_3000_upgrade"						"<font color='#9FFFCC'>กระบวนทัพแถวหน้ากระดาน</font>"
+        "DOTA_Tooltip_ability_nobu_3000_upgrade_Description"			"<font color='#58ACFA'>ร่ายชาร์จ</font>: โนบุนากะเริ่มรวบรวมปืน เมื่อร่ายชาร์จถูกขัดหรือสำเร็จปืนทั้งหมดจะเริ่มยิงไปยังทิศทางที่กำหนด สร้างความเสียหายกายภาพและความเสียหายเวทมนตร์จากเกราะแก่ศัตรูที่อยู่ในทิศทางทั้งหมด \n สกิลนี้ไม่สามารถใช้งานได้ขณะ <font color='#58ACFA'>ยิงเป้าหมาย</font> ถูกใช้งาน"
+        "DOTA_Tooltip_ability_nobu_3000_upgrade_damage_mod"				"ความเสียหายปืน:"
+        "DOTA_Tooltip_ability_nobu_3000_upgrade_channel_time"			"เวลาร่ายสูงสุด:"
+        "DOTA_Tooltip_ability_nobu_3000_upgrade_range"					"ระยะยิง:"
+        "DOTA_Tooltip_ability_nobu_3000_upgrade_aoe"					"ความกว้างการยิง:"
+        //"DOTA_Tooltip_ability_nobu_3000_upgrade_pure_perc"				"%ความเสียหายจริง:"
+        "DOTA_Tooltip_ability_nobu_3000_upgrade_armor_dmg"				"เพิ่มความเสียหายเวทมนตร์จากเกราะศัตรู:"
+        "DOTA_Tooltip_ability_nobu_3000_Lore"								""
+
+        ////////////////////// Combo ///////////////////////////
+
+		"DOTA_Tooltip_ability_nobu_combo"						"<font color='#FF04EF'>คอมโบ: ราชาปีศาจแห่งสวรรค์ชั้นหก</font>"
+        "DOTA_Tooltip_ability_nobu_combo_Description"			"<font color='#FF04EF'>คอมโบต้องการ : 25 all stats</font>\n<font color='#FF04EF'>Combo Sequence: W -> D ใน 5 วินาที</font> \n โนบุนากะจะเริ่มวิ่งเข้าหาศตรูด้วยความเร็วสูง \n เมื่อโนบุถึงเป้าหมาย จะสร้างความเสียหายเวทมนตร์และ <font color='#FF3399'>สตั้น</font> หลังจากนั้นจะทำการยิงสร้างความเสียหายกายภาพ \n\n<font color='#9FFFCC'>เพิ่มความสามารถจาก คุณสมบัติ: 3000โลก</font> \n โนบุนากะจะติด <font color='#FF3399'>สตั้น</font> ขณะวิ่งเข้าหาศัตรูจากนั้น <font color='#FFFF28'>อมตะ</font> และ <font color='#FFFF28'>ไม่สามารถเป็นเป้าหมาย</font> หลังจากชนศัตรูเพื่อจบความสามารถ \n ความสามารถนี้ไม่สามารถใช้ในขณะ <font color='#58ACFA'>ยิงเป้าหมาย</font> ถูกใช้งาน"
+        "DOTA_Tooltip_ability_nobu_combo_charge_time"		"เวลาชาร์จ:"
+        "DOTA_Tooltip_ability_nobu_combo_radius"			"ระยะร่าย:"
+		"DOTA_Tooltip_ability_nobu_combo_run_speed"			"ความเร็ววิ่ง:"
+		"DOTA_Tooltip_ability_nobu_combo_run_duration"	 	"ระยะเวลาวิ่งสูงสุด:"
+		"DOTA_Tooltip_ability_nobu_combo_dmg_initial"		"ความเสียหายชน:"
+		"DOTA_Tooltip_ability_nobu_combo_total_atk"			"จำนวนปืน:"
+		"DOTA_Tooltip_ability_nobu_combo_dmg_mod"			"ความเสียหายปืน:"
+
+		"DOTA_Tooltip_ability_nobu_combo_upgrade"						"<font color='#FF04EF'>คอมโบ: ราชาปีศาจแห่งสวรรค์ชั้นหก</font>"
+        "DOTA_Tooltip_ability_nobu_combo_upgrade_Description"			"<font color='#FF04EF'>คอมโบต้องการ : 25 all stats</font>\n<font color='#FF04EF'>Combo Sequence: W -> D ใน 5 วินาที</font> \n โนบุนากะจะเริ่มวิ่งเข้าหาศตรูด้วยความเร็วสูง \n เมื่อโนบุถึงเป้าหมาย จะสร้างความเสียหายเวทมนตร์และ <font color='#FF3399'>สตั้น</font> หลังจากนั้นจะทำการยิงสร้างความเสียหายกายภาพและความเสียหายจริง \n\n โนบุนากะจะติด <font color='#FF3399'>สตั้น</font> ขณะวิ่งเข้าหาศัตรูจากนั้น <font color='#FFFF28'>อมตะ</font> และ <font color='#FFFF28'>ไม่สามารถเป็นเป้าหมาย</font> หลังจากชนศัตรูเพื่อจบความสามารถ \n ความสามารถนี้ไม่สามารถใช้ในขณะ <font color='#58ACFA'>ยิงเป้าหมาย</font> ถูกใช้งาน"
+        "DOTA_Tooltip_ability_nobu_combo_upgrade_charge_time"		"เวลาชาร์จ:"
+        "DOTA_Tooltip_ability_nobu_combo_upgrade_radius"			"ระยะร่าย:"
+		"DOTA_Tooltip_ability_nobu_combo_upgrade_run_speed"			"ความเร็ววิ่ง:"
+		"DOTA_Tooltip_ability_nobu_combo_upgrade_run_duration"	 	"ระยะเวลาวิ่งสูงสุด:"
+		"DOTA_Tooltip_ability_nobu_combo_upgrade_dmg_initial"		"ความเสียหายชน:"
+		"DOTA_Tooltip_ability_nobu_combo_upgrade_total_atk"			"จำนวนปืน:"
+		"DOTA_Tooltip_ability_nobu_combo_upgrade_dmg_mod"			"ความเสียหายปืน:"
+		"DOTA_Tooltip_ability_nobu_combo_upgrade_pure"				"%ความเสียหายจริง:"
+
+		////////////// Attribute ///////////////////////
+
+        "DOTA_Tooltip_ability_nobu_strategy_attribute"				"<font color='#9FFFCC'>คุณสมบัติ: กลยุทธ์</font>"
+        "DOTA_Tooltip_ability_nobu_strategy_attribute_Description"	"เปิดใช้งาน <font color='#FFB266'>กลยุทธ์</font> \n<font color='#FFB266'>กลยุทธ์</font>: <font color='#58ACFA'>ติดตัว</font>: เมื่อปืนโนบุนากะสร้างความเสียหายจะได้รับ <font color='#FFFF28'>กลยุทธ์</font> ในระยะเวลาหนึ่ง \n<font color='#FFFF28'>กลยุทธ์</font>: โนบุนากะจะได้รับความเร็วในการเคลื่อนที่และความเสียหายปืนเพิ่มเติม \n <font color='#58ACFA'>พุ่ง</font>: ลบ <font color='#FFB266'>กลยุทธ์</font> คูลดาวน์"
+        "DOTA_Tooltip_ability_nobu_strategy_attribute_cooldown_time"	"กลยุทธ์คูลดาวน์:"
+        "DOTA_Tooltip_ability_nobu_strategy_attribute_bonus_ms"			"%โบนัสวิ่งไว:"
+        "DOTA_Tooltip_ability_nobu_strategy_attribute_bonus_attack"		"โบนัสความเสียหายปืน:"
+     	"DOTA_Tooltip_ability_nobu_strategy_attribute_duration"			"ระยะเวลากลยุทธ์:"
+
+        "DOTA_Tooltip_ability_nobu_expanding_attribute"				"<font color='#9FFFCC'>คุณสมบัติ: เพิ่มความสามารถราชาปิศาจ</font>"
+        "DOTA_Tooltip_ability_nobu_expanding_attribute_Description"	"<font color='#58ACFA'>ราชาปิศาจ</font>: \n<font color='#FFFFFF'>จิตวิญญาณที่เปลี่ยนแปลง: ผู้ทำลายโลก</font>: ได้รับ <font color='#FFB266'>ผู้ทำลายโลก</font> และ <font color='#FFB266'>มาร์คเทพ</font> \n<font color='#FFFFFF'>จิตวิญญาณที่เปลี่ยนแปลง: ผู้ทำลายพระเจ้า และ พระพุทธเจ้า</font>: ได้รับ <font color='#FFB266'>มาร์คเทพ</font> และ <font color='#FFB266'>เสนห์ปีศาจ</font>  \n<font color='#FFFFFF'>จิตวิญญาณที่เปลี่ยนแปลง: เจ้าโง่แห่งโอวาริ</font>: ได้รับ <font color='#FFB266'>เสน่ห์ปีศาจ</font> และ <font color='#FFB266'>ราชาแห่งนวัตกรรม</font>  \n<font color='#FFFFFF'>จิตวิญญาณที่เปลี่ยนแปลง: ราชาแห่งนวัตกรรม</font>: ได้รับ <font color='#FFB266'>ราชาแห่งนวัตกรรม</font> และ <font color='#FFB266'>ผู้ทำลายโลก</font>"
+
+        "DOTA_Tooltip_ability_nobu_3000_attribute"				"<font color='#9FFFCC'>คุณสมบัติ: 3000โลก</font>"
+        "DOTA_Tooltip_ability_nobu_3000_attribute_Description"	"<font color='#58ACFA'>กระบวนทัพแถวหน้ากระดาน</font>: กระสุนปืนจะเปลี่ยนเป็นเลเซอร์และสร้างความเสียหายเวทมนตร์จากเกราะของศัตรู \n<font color='#FF04EF'>ราชาปีศาจแห่งสวรรค์ชั้นหก</font>: กระสุนปืนจะเปลี่ยนเป็นเลเซอร์และเปลี่ยนเป็นความเสียหายจริงบางส่วน \n<font color='#58ACFA'>พุ่ง</font>: ตอนจบของการพุ่งจะเสกปืนเพื่อยิงศัตรูที่อยู่ใกล้ที่สุด สร้างความเสียหายกายภาพและ <font color='#FF3399'>กระเด็น</font>."
+        "DOTA_Tooltip_ability_nobu_3000_attribute_three_armor_dmg"	"กระบวนทัพแถวหน้ากระดานความเสียหายเวทมนตร์จากเกราะศัตรู:"
+        "DOTA_Tooltip_ability_nobu_3000_attribute_combo_pure"		"%ราชาปีศาจแห่งสวรรค์ชั้นหกความเสียหายจริง:"
+        "DOTA_Tooltip_ability_nobu_3000_attribute_damage_mod"		"ความเสียหายปืนพุ่ง:"
+        "DOTA_Tooltip_ability_nobu_3000_attribute_search"			"พุ่งระยะยิงปืน:"
+        "DOTA_Tooltip_ability_nobu_3000_attribute_bonus_gun"		"ความเสียหายปืนพุ่ง:"
+        "DOTA_Tooltip_ability_nobu_3000_attribute_knock"			"ระยะกระเด็นปืนพุ่ง:"
+      
+        "DOTA_Tooltip_ability_nobu_unifying_attribute"				"<font color='#9FFFCC'>คุณสมบัติ: รวมชาติด้วยกำลัง</font>"
+        "DOTA_Tooltip_ability_nobu_unifying_attribute_Description"	"<font color='#58ACFA'>ปืนปีศาจ</font>: เพิ่มความเสียหายปืนของโนบุจาก <font color='#00F7FF'>INT</font> \n ปืนสร้างความเสียหายเพิ่มเติมต่อเทพ"
+        "DOTA_Tooltip_ability_nobu_unifying_attribute_int_scaling" 			"เพิ่มความเสียหายต่อINT:"
+        "DOTA_Tooltip_ability_nobu_unifying_attribute_divine_damage_mod" 	"%เพิ่มความเสียหายต่อเทพ:"
+ 
+        "DOTA_Tooltip_ability_nobu_independent_action"				"<font color='#9FFFCC'>คุณสมบัติ: การกระทำอิสระ</font>"
+        "DOTA_Tooltip_ability_nobu_independent_action_Description"	"<font color='#58ACFA'>ปืนปีศาจ</font>: เพิ่มความเสียหายพื้นฐาน \n <font color='#58ACFA'>ยิง</font>: เป้าหมายได้รับ <font color='#FF3399'>มินิสตั้น</font> และ <font color='#FF3399'>กระเด็น</font> ความเสียหายเพิกเฉยต่อเกราะบางส่วน \n ใช้งาน <font color='#58ACFA'>ยิง</font> ขณะ <font color='#58ACFA'>ยิงเป้าหมาย</font> จะไม่ทำให้ติด <font color='#FF3399'>มินิสตั้น</font> และ <font color='#FF3399'>กระเด็น</font> \n <font color='#58ACFA'>พุ่ง</font>: โนบุจะได้รับ <font color='#FFFF28'>พุ่งพิเศษ</font> \n<font color='#FFFF28'>พุ่งพิเศษ</font>: เพิ่มความเสียหายเวทมนตร์ให้กับสกิลปืนทั้งหมด \n<font color='#58ACFA'>ยิงเป้าหมาย</font>: ความเสียหายเพิกเฉยต่อเกราะบางส่วน"
+        "DOTA_Tooltip_ability_nobu_independent_action_guns_damage" 			"เพิ่มความเสียหายปืนปีศาจ:"
+        "DOTA_Tooltip_ability_nobu_independent_action_shoot_armor_pierce" 	"%ยิงเพิกเฉยเกราะ:"
+        "DOTA_Tooltip_ability_nobu_independent_action_shoot_stun" 			"ระยะเวลาสตั้น ยิง:"
+        "DOTA_Tooltip_ability_nobu_independent_action_shoot_knock" 			"ระยะกระเด็น ยิง:"
+        "DOTA_Tooltip_ability_nobu_independent_action_dash_dur" 			"ระยะเวลาบัฟพุ่งพิเศษ:"
+        "DOTA_Tooltip_ability_nobu_independent_action_dash_bonus_dmg" 		"เพิ่มความเสียหายเวทมนตร์พุ่งพิเศษ:"
+        "DOTA_Tooltip_ability_nobu_independent_action_double_armor_pierce" 	"%ยิงเป้าหมายเพิกเฉยเกราะ:"
+        
+        /////////////////////////// Debuffs Buffs ////////////////////////////////
+
+		"DOTA_Tooltip_modifier_nobu_charisma"									"เสน่ห์ปีศาจ"
+		"DOTA_Tooltip_modifier_nobu_charisma_Description"				"เพิ่มเกราะและวิ่งเร็วขึ้น"
+		
+		"DOTA_Tooltip_modifier_nobu_combo_cd"									"ราชาปีศาจแห่งสวรรค์ชั้นหกคูลดาวน์"
+		"DOTA_Tooltip_modifier_nobu_combo_cd_Description"				"ราชาปีศาจแห่งสวรรค์ชั้นหกคูลดาวน์"
+
+		"DOTA_Tooltip_modifier_nobu_innovation"									"นวัตกรรม"
+		"DOTA_Tooltip_modifier_nobu_innovation_Description"				"พันธมิตรสร้างความเสียหายจะฮีลโนบุ,โนบุสร้างความเสียหายจะเพิ่มวิ่งไวต่อตัวเองและพันธมิตร"
+
+		"DOTA_Tooltip_modifier_nobu_turnlock"									"ยิงปืน"
+		"DOTA_Tooltip_modifier_nobu_turnlock_Description"				"โนบุจะเคลื่อนที่ช้าหากเดินถอยหลัง"
+
+		"DOTA_Tooltip_modifier_nobu_divinity_mark"									"มาร์คเทพ"
+		"DOTA_Tooltip_modifier_nobu_divinity_mark_Description"				"หากโนบุยิง 10 ครั้ง คุณจะถูกดีบัฟ"
+
+		"DOTA_Tooltip_modifier_nobu_divinity_mark_activated"									"เทพเทียม"
+		"DOTA_Tooltip_modifier_nobu_divinity_mark_activated_Description"				"คุณคือเทพและถูกลดเกราะ"
+
+		"DOTA_Tooltip_modifier_nobu_slow"									"เชื่องช้า"
+		"DOTA_Tooltip_modifier_nobu_slow_Description"				""
+
+		"DOTA_Tooltip_modifier_nobu_dash_dmg"									"พุ่งพิเศษ"
+		"DOTA_Tooltip_modifier_nobu_dash_dmg_Description"				"การยิงจะมีความเสียหายเพิ่มเติม" 
+
+		"DOTA_Tooltip_modifier_nobu_strategy_attribute_cooldown"									"กลยุทธ์คูลดาวน์" 
+		"DOTA_Tooltip_modifier_nobu_strategy_attribute_cooldown_Description"				""
+
+		"DOTA_Tooltip_modifier_nobu_strategy_attribute"							"กลยุทธ์" 
+		"DOTA_Tooltip_modifier_nobu_strategy_attribute_Description"				""
+
 		/////////////////////////////////////////////////////////////
 
 		//Type (Assassin, Beamer, Jumper, Control, Tank, Support, Burst, Carry, Snipe)
@@ -13201,7 +13608,7 @@
 		"DOTA_Tooltip_ability_master_damage_Description"			"<font color='#58ACFA'>มานาของมาสเตอร์ที่ต้องการ : 1</font>\nเพิ่ม พลังโจมตี ให้แก่เซอร์แวนท์ของคุณ 3 หน่วย"
 
 		"DOTA_Tooltip_Ability_master_armor"							"ได้รับ เกราะ"
-		"DOTA_Tooltip_ability_master_armor_Description"				"<font color='#58ACFA'>มานาของมาสเตอร์ที่ต้องการ : 1</font>\nเพิ่ม เกราะ ให้แก่เซอร์แวนท์ของคุณ 1 หน่วย"
+		"DOTA_Tooltip_ability_master_armor_Description"				"<font color='#58ACFA'>มานาของมาสเตอร์ที่ต้องการ : 1</font>\nเพิ่ม เกราะ ให้แก่เซอร์แวนท์ของคุณ 1.5 หน่วย"
 		
 		"DOTA_Tooltip_Ability_master_health_regen"					"ได้รับ ฟื้นฟูเลือด"
 		"DOTA_Tooltip_ability_master_health_regen_Description"		"<font color='#58ACFA'>มานาของมาสเตอร์ที่ต้องการ : 1</font>\nเพิ่ม ฟื้นฟูเลือด ให้แก่เซอร์แวนท์ของคุณ 3.0 หน่วย"

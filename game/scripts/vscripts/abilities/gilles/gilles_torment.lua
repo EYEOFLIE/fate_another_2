@@ -21,11 +21,10 @@ function torment_wrapper(abil)
 		local hCaster = self:GetCaster()
 		local vTargetLocation = self:GetCursorPosition()
 		local iAOE = self:GetAOERadius() + 100
-		local damage = self:GetSpecialValueFor("distance_damage")
+		local bonus_damage = 0
 
 		if hCaster.IsOuterGodAcquired then
-			local bonus_int = self:GetSpecialValueFor("bonus_int")
-			damage = damage + (bonus_int * hCaster:GetIntellect())
+			bonus_damage = self:GetSpecialValueFor("bonus_int") * hCaster:GetIntellect()
 		end
 
 		EmitSoundOnLocationWithCaster(vTargetLocation, "Gilles_Torment_Cast", hCaster)
@@ -35,8 +34,8 @@ function torment_wrapper(abil)
 		for _,v in pairs(tEnemies) do
 
 			if IsValidEntity(v) and not v:IsNull() and not v:IsMagicImmune() then
-				v:AddNewModifier(hCaster, self, "modifier_gilles_torment", { DistanceDamage = damage,
-																			 Damage = self:GetSpecialValueFor("damage"),
+				v:AddNewModifier(hCaster, self, "modifier_gilles_torment", { DistanceDamage = self:GetSpecialValueFor("distance_damage"),
+																			 Damage = self:GetSpecialValueFor("damage") + bonus_damage,
 																			 Duration =  self:GetSpecialValueFor("duration") + 0.1})
 			end
 		end
@@ -91,16 +90,35 @@ if IsServer() then
 		local fDistance = (self:GetParent():GetAbsOrigin() - self.vLocation):Length2D()
 		ParticleManager:SetParticleControl(self.hTarget.ParticleIndex, 0, self.hTarget:GetAbsOrigin())
 
-		if not IsInSameRealm(self:GetParent():GetAbsOrigin(), self.vLocation) then return end
+		--if not IsInSameRealm(self:GetParent():GetAbsOrigin(), self.vLocation) then return end
 
-		if (fDistance > 0) then
+		--[[if (fDistance > 0) then
 			fDamage = fDamage + (fDistance * self.DistanceDamage / 100)
-		end
+		end]]
 
 		self.vLocation = self.hTarget:GetAbsOrigin()
 		DoDamage(hCaster, self.hTarget, fDamage, DAMAGE_TYPE_MAGICAL, 0, hAbility, false)
 		
 	end
+end
+
+function modifier_gilles_torment:DeclareFunctions()
+	return {MODIFIER_EVENT_ON_UNIT_MOVED}
+end
+
+function modifier_gilles_torment:OnUnitMoved(args)
+	if args.unit ~= self.hTarget then return end
+
+	if not IsInSameRealm(self.hTarget:GetAbsOrigin(), self.vLocation) then return end
+
+	local hCaster = self:GetCaster()
+	local hAbility = self:GetAbility()
+	local fDistance = (self.hTarget:GetAbsOrigin() - self.vLocation):Length2D()
+	--print('walk distance: ' .. fDistance)
+	local fDamage = (fDistance * self.DistanceDamage / 100)
+	--print('walk damage: ' .. fDamage)
+
+	DoDamage(hCaster, self.hTarget, fDamage, DAMAGE_TYPE_MAGICAL, 0, hAbility, false)
 end
 
 function modifier_gilles_torment:IsDebuff()

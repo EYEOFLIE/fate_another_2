@@ -14,14 +14,10 @@
 		"AbilityTextureName"			"custom/gawain_attribute_blessing_of_fairy"
 		"MaxLevel"						"1"
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_amp"			"10"
-			}
-		}
+		"AbilityValues"
+        {
+            "damage_amp" "10"
+        }
 	}
 
 	//================================================
@@ -92,24 +88,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"health_cost"		"75"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"range"				"500"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"penalty_cooldown"		"30"
-			}
-		}
+		"AbilityValues"
+        {
+            "health_cost" "75"
+            "range" "500"
+            "penalty_cooldown" "30"
+        }
 		
 		//"OnSpellStart"
 		//{
@@ -184,34 +168,14 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"100"
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"crit_multiplier"	"50 75 100 125 150"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"critical_rate"		"25 30 35 40 45"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"duration"				"9 11 13 15 17"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mana_regen_percentage"	"12.0"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"mana_regen_percentage_herokill"	"12 14 16 18 20"
-			}
-		}
+		"AbilityValues"
+        {
+            "crit_multiplier" "50 75 100 125 150"
+            "critical_rate" "25 30 35 40 45"
+            "duration" "9 11 13 15 17"
+            "mana_regen_percentage" "12.0"
+            "mana_regen_percentage_herokill" "12 14 16 18 20"
+        }
 		
 		"OnSpellStart"
 		{
@@ -341,24 +305,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"100"
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"spawn_number"		"2 3 4 5 6"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage"			"180"
-			}
-			"03"
-			{
-				"var_type"		"FIELD_INTEGER"
-				"multiply_period"		"30 28 26 24 22"
-			}
-		}
+		"AbilityValues"
+        {
+            "spawn_number" "2 3 4 5 6"
+            "damage" "180"
+            "multiply_period" "30 28 26 24 22"
+        }
 		
 		"OnSpellStart"
 		{
@@ -404,19 +356,11 @@
 		"MaxLevel"                      "5"
 
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage"		"180"
-			}
-			"02"
-			{
-				"var_type"		"FIELD_INTEGER"
-				"multiply_period"		"30 28 26 24 22"
-			}
-		}	
+		"AbilityValues"
+        {
+            "damage" "180"
+            "multiply_period" "30 28 26 24 22"
+        }	
 		"Modifiers"
 		{
 			"avenger_remain_self_destruct"
@@ -492,34 +436,14 @@
 			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_bounty_hunter.vsndevts"
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"crit_dmg"				"130 145 160 175 190"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"1.3 1.5 1.7 1.9 2.1"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"slow_duration"			"0.7 1.4 2.1 2.8 3.5"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"slow_amount"			"100"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"num_attacks"			"6"
-			}
-		}
+		"AbilityValues"
+        {
+            "crit_dmg" "130 145 160 175 190"
+            "duration" "1.3 1.5 1.7 1.9 2.1"
+            "slow_duration" "0.7 1.4 2.1 2.8 3.5"
+            "slow_amount" "100"
+            "num_attacks" "6"
+        }
 
 		"OnSpellStart"
 		{
@@ -582,24 +506,12 @@
 			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_doombringer.vsndevts"
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"450 525 600 675 750"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"delay"					"1.5"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"return_percentage"		"60 70 80 90 100"
-			}
-		}
+		"AbilityValues"
+        {
+            "damage" "450 525 600 675 750"
+            "delay" "1.5"
+            "return_percentage" "60 70 80 90 100"
+        }
 
 		"OnSpellStart"
 		{
@@ -670,19 +582,11 @@
 			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_doombringer.vsndevts"
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"1.0"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"500"
-			}
-		}
+		"AbilityValues"
+        {
+            "duration" "1.0"
+            "damage" "500"
+        }
 
 		"OnSpellStart"
 		{
@@ -747,29 +651,13 @@
 			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_terrorblade.vsndevts"
 		}
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_health"			"500 600 700 800 900"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_mana"			"0"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_damage_percentage"	"15 25 35 45 55"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"duration"			"9 11 13 15 17"
-			}
-		}
+		"AbilityValues"
+        {
+            "bonus_health" "500 600 700 800 900"
+            "bonus_mana" "0"
+            "bonus_damage_percentage" "15 25 35 45 55"
+            "duration" "9 11 13 15 17"
+        }
 		
 		"OnSpellStart"
 		{
@@ -837,19 +725,11 @@
 			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_huskar.vsndevts"
 		}
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"health_regen_percentage"		"8 11 14 17 20"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"mana_cost_per_second"			"50"
-			}
-		}
+		"AbilityValues"
+        {
+            "health_regen_percentage" "8 11 14 17 20"
+            "mana_cost_per_second" "50"
+        }
 		"OnToggleOn"
 		{
 			"FireSound"
@@ -919,19 +799,11 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"800"
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"multiplier"		"135 145 155 165 175"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"duration"			"8.0 9.0 10.0 11.0 12.0"
-			}
-		}
+		"AbilityValues"
+        {
+            "multiplier" "135 145 155 165 175"
+            "duration" "8.0 9.0 10.0 11.0 12.0"
+        }
 		
 		"OnSpellStart"
 		{
@@ -1011,14 +883,10 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"duration"			"12.0"
-			}
-		}
+		"AbilityValues"
+        {
+            "duration" "12.0"
+        }
 		
 		"OnSpellStart"
 		{
@@ -1081,19 +949,11 @@
 		{
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"cooldown"			"1.0"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"range"			"1000"
-			}
-		}
+		"AbilityValues"
+        {
+            "cooldown" "1.0"
+            "range" "1000"
+        }
 		
 		"OnSpellStart"
 		{
@@ -1125,9 +985,9 @@
 		{
 		}
 
-		"AbilitySpecial"
-		{
-		}
+		"AbilityValues"
+        {
+        }
 		
 		"OnSpellStart"
 		{
@@ -1159,24 +1019,12 @@
 		{
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"consec_time"			"2"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"initial_aspd"			"20"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"max_aspd"			"640"
-			}
-		}
+		"AbilityValues"
+        {
+            "consec_time" "2"
+            "initial_aspd" "20"
+            "max_aspd" "640"
+        }
 		
 		"OnSpellStart"
 		{
@@ -1198,19 +1046,11 @@
 		"AbilityTextureName"			"custom/avenger_overdrive"
 		"MaxLevel"						"1"
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"aspd_bonus"			"80"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"2"
-			}
-		}
+		"AbilityValues"
+        {
+            "aspd_bonus" "80"
+            "duration" "2"
+        }
 		
 		"Modifiers"
 		{
@@ -1389,19 +1229,11 @@
 		{
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"return_bonus"		"50"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"trueform_cdr"		"4.0"
-			}
-		}
+		"AbilityValues"
+        {
+            "return_bonus" "50"
+            "trueform_cdr" "4.0"
+        }
 		
 		"OnSpellStart"
 		{

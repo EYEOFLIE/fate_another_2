@@ -54,7 +54,7 @@ function modifier_tauropolos_alter:OnCreated()
         self.caster = self:GetCaster()
         self.frametime = 1
         self.frametime_mana = 0
-        self.interval = 0.15
+        self.interval = 0.3
         self.damage = self:GetAbility():GetSpecialValueFor("damage")
         self.min_dist = self:GetAbility():GetSpecialValueFor("min_dist")
         self.max_dist = self:GetAbility():GetSpecialValueFor("max_dist")
@@ -62,7 +62,7 @@ function modifier_tauropolos_alter:OnCreated()
         self.target_loc = self:GetParent():GetAbsOrigin()
         self.quadrant = 1  -- Quadrants 1: NW, 2: NE, 3: SE, 4: SW
 
-        self:StartIntervalThink(0.3)
+        self:StartIntervalThink(self.interval)
     end
 end
 function modifier_tauropolos_alter:OnIntervalThink()

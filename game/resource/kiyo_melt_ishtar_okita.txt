@@ -1,0 +1,1026 @@
+
+
+	// Okita
+
+		"DOTA_Tooltip_Ability_okita_flag_of_sincerity"				"<font color='#FFFFFF'>Flag of Sincerity</font>"
+		"DOTA_Tooltip_ability_okita_flag_of_sincerity_Description"	"Okita summons <font color='#99FF33'>Flag of Sincerity</font> and <font color='#99FF33'>Shinsengumi</font> troops around the flag. 
+		If flag has been destroyed then all <font color='#99FF33'>Shinsengumi</font> troops will vanish. 
+		Okita gains <font color='#FFFF28'>Shinsengumi Brotherhood</font> while staying inside flag's area. 
+		<font color='#FFFF28'>Shinsengumi Brotherhood</font>: Increase Okita's movespeed, attackspeed and attack damage. 
+		<font color='#9FFFCC'>Upgradable with Attribute: 8th-rank Headband of Resolution</font>."
+		"DOTA_Tooltip_ability_okita_flag_of_sincerity_Lore"				"The Shinsengumi troops' flag with the Japanese kanji sincerity inscribed on it."
+		"DOTA_Tooltip_ability_okita_flag_of_sincerity_cast_delay"		"CAST DELAY:"
+		"DOTA_Tooltip_ability_okita_flag_of_sincerity_radius"			"FLAG RADIUS:"
+		"DOTA_Tooltip_ability_okita_flag_of_sincerity_min_summon"		"MINIMUN NUMBER OF TROOPS:"
+		"DOTA_Tooltip_ability_okita_flag_of_sincerity_max_summon"		"MAXIMUM NUMBER OF TROOPS:"
+		"DOTA_Tooltip_ability_okita_flag_of_sincerity_flag_health"		"FLAG'S HEALTH:"
+		"DOTA_Tooltip_Ability_okita_flag_of_sincerity_duration"			"DURATION:"
+		"DOTA_Tooltip_ability_okita_flag_of_sincerity_buff_aspd"		"%BUFF ATTACKSPEED:"
+		"DOTA_Tooltip_ability_okita_flag_of_sincerity_buff_ms"			"BUFF MOVESPEED:"
+		"DOTA_Tooltip_Ability_okita_flag_of_sincerity_buff_atk"			"%BUFF ATTACK DAMAGE:"
+
+		"DOTA_Tooltip_Ability_okita_flag_of_sincerity_upgrade"				"<font color='#9FFFCC'>Flag of Sincerity</font>"
+		"DOTA_Tooltip_ability_okita_flag_of_sincerity_upgrade_Description"	"Okita summons <font color='#99FF33'>Flag of Sincerity</font> and <font color='#99FF33'>Shinsengumi</font> troops around the flag. 
+		If flag has been destroyed then all <font color='#99FF33'>Shinsengumi</font> troops will vanish. 
+		Okita gains <font color='#FFFF28'>Shinsengumi Brotherhood</font> while staying inside flag's area. 
+		When Okita has <font color='#FFFF28'>Coat of Oaths</font>, all <font color='#99FF33'>Shinsengumi</font> troops also gain <font color='#FFFF28'>Shinsengumi Brotherhood</font>. 
+		<font color='#FFFF28'>Shinsengumi Brotherhood</font>: Increase Okita's movespeed, attackspeed, attack damage, health regen, mana regen and become <font color='#FFFF28'>immune</font> to most of crowd control."
+		"DOTA_Tooltip_ability_okita_flag_of_sincerity_upgrade_Lore"				"The Shinsengumi troops' flag with the Japanese kanji sincerity inscribed on it."
+		"DOTA_Tooltip_ability_okita_flag_of_sincerity_upgrade_cast_delay"		"CAST DELAY:"
+		"DOTA_Tooltip_ability_okita_flag_of_sincerity_upgrade_radius"			"FLAG RADIUS:"
+		"DOTA_Tooltip_ability_okita_flag_of_sincerity_upgrade_min_summon"		"MINIMUN NUMBER OF TROOPS:"
+		"DOTA_Tooltip_ability_okita_flag_of_sincerity_upgrade_max_summon"		"MAXIMUM NUMBER OF TROOPS:"
+		"DOTA_Tooltip_ability_okita_flag_of_sincerity_upgrade_flag_health"		"FLAG'S HEALTH:"
+		"DOTA_Tooltip_Ability_okita_flag_of_sincerity_upgrade_duration"			"DURATION:"
+		"DOTA_Tooltip_ability_okita_flag_of_sincerity_upgrade_buff_aspd"		"%BUFF BONUS ATTACKSPEED:"
+		"DOTA_Tooltip_ability_okita_flag_of_sincerity_upgrade_buff_ms"			"BUFF BONUS MOVESPEED:"
+		"DOTA_Tooltip_Ability_okita_flag_of_sincerity_upgrade_buff_atk"			"%BUFF BONUS ATTACK DAMAGE:"
+		"DOTA_Tooltip_ability_okita_flag_of_sincerity_upgrade_buff_hp_reg"		"BUFF BONUS HEALTH REGEN:"
+		"DOTA_Tooltip_Ability_okita_flag_of_sincerity_upgrade_buff_mana_reg"	"BUFF BONUS MANA REGEN:"
+
+		"DOTA_Tooltip_Ability_okita_coat_of_oaths"					"<font color='#58ACFA'>Coat of Oaths</font>"
+		"DOTA_Tooltip_ability_okita_coat_of_oaths_Description"		"Okita <font color='#FFFF28'>dispels</font> <font color='#FF3399'>slow</font> effects while gaining <font color='#FFFF28'>Coat of Oaths</font> for durations. 
+		<font color='#FFFF28'>Coat of Oaths</font>: Increase Okita's magic resist and armor while preventing the <font color='#FF3399'>Weak Constitution Progress</font>. 
+		<font color='#9FFFCC'>Upgradable with Attribute: 8th-rank Headband of Resolution</font>."
+		"DOTA_Tooltip_ability_okita_coat_of_oaths_Lore"			""
+		"DOTA_Tooltip_Ability_okita_coat_of_oaths_duration"		"DURATION:"
+		"DOTA_Tooltip_Ability_okita_coat_of_oaths_bonus_mr"		"BONUS MAGIC RESIST:"
+		"DOTA_Tooltip_Ability_okita_coat_of_oaths_bonus_armor"	"BONUS ARMOR:"
+
+		"DOTA_Tooltip_Ability_okita_coat_of_oaths_upgrade"					"<font color='#9FFFCC'>Coat of Oaths</font>"
+		"DOTA_Tooltip_ability_okita_coat_of_oaths_upgrade_Description"		"Okita <font color='#FFFF28'>dispels</font> all <font color='#FF3399'>negative</font> effects while gaining <font color='#FFFF28'>Coat of Oaths</font> for durations.
+		<font color='#FFFF28'>Coat of Oaths</font>: Increase Okita's magic resist and armor while preventing the <font color='#FF3399'>Weak Constitution Progress</font>. "
+		"DOTA_Tooltip_ability_okita_coat_of_oaths_upgrade_Lore"			""
+		"DOTA_Tooltip_Ability_okita_coat_of_oaths_upgrade_duration"		"DURATION:"
+		"DOTA_Tooltip_Ability_okita_coat_of_oaths_upgrade_bonus_mr"		"BONUS MAGIC RESIST:"
+		"DOTA_Tooltip_Ability_okita_coat_of_oaths_upgrade_bonus_armor"	"BONUS ARMOR:"
+
+		"DOTA_Tooltip_Ability_okita_new_e"						"<font color='#58ACFA'>Flash Slash</font>"
+		"DOTA_Tooltip_ability_okita_new_e_Description"			"<font color='#58ACFA'>CHAIN</font>: Okita cans flashy <font color='#FFFF28'>blinks</font> slashes for 6 times, each slash hit will refresh its cooldown. 
+		<font color='#58ACFA'>1st - 4th Slash</font>: <font color='#9FFFCC'>Vector Ability</font>: Okita <font color='#FFFF28'>blinks</font> to target location and slash to vector target location, dealing magic damage. 
+		<font color='#58ACFA'>5th Slash</font> <font color='#9FFFCC'>Vector Ability</font>: Okita <font color='#FFFF28'>blinks</font> to target location and <font color='#FFFF28'>dash</font> to vector target location, dealing magic damage to all enemies along the path. 
+		Okita is <font color='#FFFF28'>untargettable</font> and <font color='#FFFF28'>invulnerable</font> while dashing. 
+		<font color='#58ACFA'>6th Slash</font>: Okita thrusts her sword to target location, dealing magic damage and <font color='#FF3399'>stunning</font> all enemies. 
+		<font color='#9FFFCC'>Upgradable with Attribute: Tennen Rishin-Ryu Kenjutsu</font>."
+		"DOTA_Tooltip_ability_okita_new_e_Lore"				""
+		"DOTA_Tooltip_Ability_okita_new_e_exhaust"			"WEAK PROGRESS GAIN:"
+		"DOTA_Tooltip_Ability_okita_new_e_leap_range"		"BLINK DISTANCE:"
+		"DOTA_Tooltip_Ability_okita_new_e_base_damage"		"SLASH/DASK DAMAGE:"
+		"DOTA_Tooltip_Ability_okita_new_e_slash_range"		"SLASH RADIUS:"
+		"DOTA_Tooltip_Ability_okita_new_e_dash_range"		"DASH DISTANCE:"
+		"DOTA_Tooltip_Ability_okita_new_e_thrust_damage"	"THRUST DAMAGE:"
+		"DOTA_Tooltip_Ability_okita_new_e_thrust_range"		"THRUST RANGE:"
+		"DOTA_Tooltip_Ability_okita_new_e_thrust_stun"		"THRUST STUN DURATION:"
+
+		"DOTA_Tooltip_Ability_okita_new_e_upgrade"				"<font color='#9FFFCC'>Flash Slash</font>"
+		"DOTA_Tooltip_ability_okita_new_e_upgrade_Description"		"<font color='#58ACFA'>CHAIN</font>: Okita cans flashy <font color='#FFFF28'>blinks</font> slashes for 6 times, each slash hit will refresh its cooldown while gaining <font color='#FFFF28'>Tennen Rishin-Ryu</font>'s stacks for durations. 
+		<font color='#58ACFA'>1st - 4th Slash</font>: <font color='#9FFFCC'>Vector Ability</font>: Okita <font color='#FFFF28'>blinks</font> to target location and slash to vector target location, dealing magic damage. 
+		<font color='#58ACFA'>5th Slash</font> <font color='#9FFFCC'>Vector Ability</font>: Okita <font color='#FFFF28'>blinks</font> to target location and <font color='#FFFF28'>dash</font> to vector target location, dealing magic damage to all enemies along the path. 
+		<font color='#FFB266'>Flash Beam</font>: Okita fires a beam to target location, dealing pure damage based on her <font color='#80FF00'>AGI</font> and attack to all enemies along the path. 
+		<font color='#58ACFA'>6th Slash</font>: Okita thrusts her sword to target location, dealing magic damage and <font color='#FF3399'>stunning</font> all enemies. 
+		<font color='#FFFF28'>Tennen Rishin-Ryu</font>: Okita gains bonus <font color='#80FF00'>AGI</font> while each slash deal top up damage. 
+		Okita will use <font color='#58ACFA'>6th Slash</font> if <font color='#FFB266'>Flash Beam</font> is cooldowned. 
+		<font color='#58ACFA'>Flash Slash</font>'s animation time will be reduced based on her <font color='#80FF00'>AGI</font>. 
+		BEAM DAMAGE: %beam_base_damage% + (ATK x %beam_atk_dmg%%%) + (<font color='#80FF00'>AGI</font> x %beam_bonus_agi%) "
+		"DOTA_Tooltip_Ability_okita_new_e_upgrade_exhaust"			"WEAK PROGRESS GAIN:"
+		"DOTA_Tooltip_Ability_okita_new_e_upgrade_leap_range"		"BLINK DISTANCE:"
+		"DOTA_Tooltip_Ability_okita_new_e_upgrade_base_damage"		"SLASH/DASK DAMAGE:"
+		"DOTA_Tooltip_Ability_okita_new_e_upgrade_slash_range"		"SLASH RADIUS:"
+		"DOTA_Tooltip_Ability_okita_new_e_upgrade_dash_range"		"DASH DISTANCE:"
+		"DOTA_Tooltip_Ability_okita_new_e_upgrade_thrust_damage"	"THRUST DAMAGE:"
+		"DOTA_Tooltip_Ability_okita_new_e_upgrade_thrust_range"		"THRUST RANGE:"
+		"DOTA_Tooltip_Ability_okita_new_e_upgrade_thrust_stun"		"THRUST STUN DURATION:"
+		"DOTA_Tooltip_Ability_okita_new_e_upgrade_thrust_range"		"THRUST RANGE:"
+		"DOTA_Tooltip_Ability_okita_new_e_upgrade_beam_range"		"BEAM DISTANCE:" 
+		"DOTA_Tooltip_Ability_okita_new_e_upgrade_beam_cooldown"	"BEAM COOLDOWN:"
+		"DOTA_Tooltip_Ability_okita_new_e_upgrade_bonus_damage"		"%TENNEN TOP UP DAMAGE PER SLASH:"
+		"DOTA_Tooltip_Ability_okita_new_e_upgrade_bonus_agi"		"TENNEN BONUS AGI PER STACK:" 
+		"DOTA_Tooltip_Ability_okita_new_e_upgrade_tennen_duration"	"TENNEN DURATION:"
+
+		"DOTA_Tooltip_Ability_okita_attribute_headband"				"<font color='#9FFFCC'>Attribute: 8th-rank Headband of Resolution</font>"
+		"DOTA_Tooltip_ability_okita_attribute_headband_Description"	"<font color='#FFFFFF'>Flag of Sincerity</font>: Increase flag's health, radius, duration and summon. 
+		When Okita has <font color='#FFFF28'>Coat of Oaths</font>, all <font color='#99FF33'>Shinsengumi</font> troops also gain <font color='#FFFF28'>Shinsengumi Brotherhood</font>.
+		<font color='#FFFF28'>Shinsengumi Brotherhood</font>: target gains bonus health regen, mana regen and become <font color='#FFFF28'>immune</font> to most of crowd control. 
+		<font color='#58ACFA'>Coat of Oaths</font>: Okita <font color='#FFFF28'>dispels</font> all <font color='#FF3399'>negative</font> effect while increasing its duration."
+		"DOTA_Tooltip_ability_okita_attribute_headband_flag_radius"			"FLAG BONUS RADIUS:"
+		"DOTA_Tooltip_ability_okita_attribute_headband_flag_duration"		"FLAG BONUS DURATION:"
+		"DOTA_Tooltip_ability_okita_attribute_headband_flag_summon"			"FLAG BONUS SUMMON:"
+		"DOTA_Tooltip_ability_okita_attribute_headband_flag_hp"				"FLAG BONUS HP:"
+		"DOTA_Tooltip_ability_okita_attribute_headband_buff_hp_reg"			"BUFF BONUS HP REGEN:"
+		"DOTA_Tooltip_ability_okita_attribute_headband_buff_mana_reg"		"BUFF BONUS MANA REGEN:"
+		"DOTA_Tooltip_ability_okita_attribute_headband_coat_bonus_dur"		"COAT BONUS DURATION:"
+
+		"DOTA_Tooltip_Ability_okita_attribute_tennen"				"<font color='#9FFFCC'>Attribute: Tennen Rishin-Ryu</font>"
+		"DOTA_Tooltip_ability_okita_attribute_tennen_Description"	"<font color='#58ACFA'>Flash Slash</font>: When each Flash Slash hit, Okita gains <font color='#FFFF28'>Tennen Rishin-Ryu</font>'s stack. 
+		<font color='#FFFF28'>Tennen Rishin-Ryu</font>: Okita gains bonus <font color='#80FF00'>AGI</font> while each slash deal top up damage. 
+		Enable <font color='#FFB266'>Flash Beam</font> after <font color='#58ACFA'>5th Slash</font> 
+		<font color='#FFB266'>Flash Beam</font>: Okita fires a beam to target location, dealing pure damage based on her <font color='#80FF00'>AGI</font> and attack to all enemies along the path. 
+		Okita will use <font color='#58ACFA'>6th Slash</font> if <font color='#FFB266'>Flash Beam</font> is cooldowned. 
+		<font color='#58ACFA'>Flash Slash</font>'s animation time will be reduced based on her <font color='#80FF00'>AGI</font>. 
+		BEAM DAMAGE: %beam_base_damage% + (ATK x %beam_atk_dmg%%%) + (<font color='#80FF00'>AGI</font> x %beam_bonus_agi%) "
+		"DOTA_Tooltip_ability_okita_attribute_tennen_tennen_agi"		"TENNEN BONUS AGI PER STACK:"
+		"DOTA_Tooltip_ability_okita_attribute_tennen_tennen_dur"		"TENNEN DURATION:"
+		"DOTA_Tooltip_ability_okita_attribute_tennen_bonus_flash"		"%TENNEN TOP UP DAMAGE PER SLASH:"
+		"DOTA_Tooltip_ability_okita_attribute_tennen_beam_distance"		"BEAM DISTANCE:"
+		"DOTA_Tooltip_ability_okita_attribute_tennen_beam_cd"			"BEAM COOLDOWN:"
+		"DOTA_Tooltip_ability_okita_attribute_tennen_cast_rdr_agi"		"FLASH ANIM TIME REDUCTION PER AGI:"
+
+		//====================================
+        //      Kiyohime
+        //====================================
+        "npc_dota_hero_void_spirit"         	"Kiyohime"
+        "npc_dota_hero_void_spirit_1"         	"[Normal] Swimming Suit Kiyohime"
+        "npc_dota_hero_void_spirit_summon"		"Servant <font color='#58ACFA'>Kiyohime</font> has been summoned."
+        "npc_dota_hero_void_spirit_enable_combo"	"Enable Combo: Dojoji Bell, Method 108 - Fire Dragon Mower"
+
+        ////////////////// Skill ///////////////////
+
+        "DOTA_Tooltip_Ability_kiyo_f"			"<font color='#FFB266'>Stalking</font>"
+        "DOTA_Tooltip_ability_kiyo_f_Description"		"<font color='#58ACFA'>PASSIVE</font>: Gains <font color='#FFFF28'>Stalking</font> Whenever there's a male hero in front while target applied <font color='#FF3399'>Stalked</font>. \n <font color='#FFFF28'>Stalking</font>: Gain extra movement speed. \n<font color='#FF3399'>Stalked</font>: Decrease target's movement speed and armor"
+        "DOTA_Tooltip_ability_kiyo_f_bonus_ms"			"%STALKING BONUS MOVEMENT SPEED:"
+        "DOTA_Tooltip_ability_kiyo_f_range"				"MALE DETECT RANGE:"
+        "DOTA_Tooltip_ability_kiyo_f_width"				"DETECTION WIDTH:"
+        "DOTA_Tooltip_ability_kiyo_f_debuff_slow"		"%STALKED SLOW:"
+        "DOTA_Tooltip_ability_kiyo_f_debuff_armor"		"STALKED ARMOR REDUCTION:"
+
+        "DOTA_Tooltip_Ability_kiyo_d"			"<font color='#FFFFFF'>Summer Passion</font>"
+        "DOTA_Tooltip_ability_kiyo_d_Description"		"<font color='#58ACFA'>PASSIVE</font>: When attacking an enemy, gain a chance to deal bonus damage based on Kiyohime's <font color='#80FF00'>AGI</font>. \n<font color='#58ACFA'>Summer Love</font> and <font color='#58ACFA'>Pursuit of Love</font>'s slashes also has a chance to deal critical damage that empowered by a small percentage on top of gaining bonus damage based on <font color='#80FF00'>AGI</font>. \n\n<font color='#9FFFCC'>Upgradable with Attribute: Blazing Summer Passion</font>"
+        "DOTA_Tooltip_ability_kiyo_d_crit_chance"			"%CRITICAL CHANCE:"
+        "DOTA_Tooltip_ability_kiyo_d_agi_scaling"			"DAMAGE PER AGI:"
+        "DOTA_Tooltip_ability_kiyo_d_crit_bonus_ability"	"%BONUS ABILITY DAMAGE:"
+
+        "DOTA_Tooltip_Ability_kiyo_d_upgrade"			"<font color='#9FFFCC'>Summer Passion</font>"
+        "DOTA_Tooltip_ability_kiyo_d_upgrade_Description"		"<font color='#58ACFA'>PASSIVE</font>: When attacking an enemy, gain a chance to deal bonus damage based on Kiyohime's <font color='#80FF00'>AGI</font>. \n<font color='#58ACFA'>Summer Love</font> and <font color='#58ACFA'>Pursuit of Love</font>'s slashes also has a chance to deal critical damage that empowered by a small percentage on top of gaining bonus damage based on <font color='#80FF00'>AGI</font>."
+        "DOTA_Tooltip_ability_kiyo_d_upgrade_crit_chance"			"%CRITICAL CHANCE:"
+        "DOTA_Tooltip_ability_kiyo_d_upgrade_agi_scaling"			"DAMAGE PER AGI:"
+        "DOTA_Tooltip_ability_kiyo_d_upgrade_crit_bonus_ability"	"%BONUS ABILITY DAMAGE:"
+
+        "DOTA_Tooltip_Ability_kiyo_w"			"<font color='#58ACFA'>Summer Love</font>"
+        "DOTA_Tooltip_ability_kiyo_w_Description"		"Kiyohime cleaves the area in front of her, dealing physical damage based on distance between her and enemy. Enemy is farther than inner range will take full damage while closing enemy take half damage. \n\n<font color='#9FFFCC'>Upgradable with Attribute: Pursuer of Love</font>."
+        "DOTA_Tooltip_ability_kiyo_w_cast_duration"			"CAST DURATION:"
+        "DOTA_Tooltip_ability_kiyo_w_range"			"OUTER RANGE:"
+        "DOTA_Tooltip_ability_kiyo_w_damage"			"FULL DAMAGE:"
+        "DOTA_Tooltip_ability_kiyo_w_minimum_range"			"INNER RANGE:"
+        "DOTA_Tooltip_ability_kiyo_w_angle"			"FRONT ANGLE:"
+
+        "DOTA_Tooltip_Ability_kiyo_w_upgrade"			"<font color='#9FFFCC'>Summer Love</font>"
+        "DOTA_Tooltip_ability_kiyo_w_upgrade_Description"		"Kiyohime cleaves the area in front of her, dealing physical damage based on distance between her and enemy. Enemy is farther than inner range will take full damage and applied <font color='#FF3399'>Deep Gash</font> while closing enemy take half damage. \n<font color='#FF3399'>Deep Gash</font>: Slows target, while also reducing armor."
+        "DOTA_Tooltip_ability_kiyo_w_upgrade_cast_duration"			"CAST DURATION:"
+        "DOTA_Tooltip_ability_kiyo_w_upgrade_range"			"RANGE:"
+        "DOTA_Tooltip_ability_kiyo_w_upgrade_damage"			"DAMAGE:"
+        "DOTA_Tooltip_ability_kiyo_w_upgrade_minimum_range"			"MINIMUM RANGE:"
+        "DOTA_Tooltip_ability_kiyo_w_upgrade_angle"			"FRONT ANGLE:"
+        "DOTA_Tooltip_ability_kiyo_w_upgrade_w_slow_duration"			"DEEP GASH DURATION:"
+        "DOTA_Tooltip_ability_kiyo_w_upgrade_w_slow"			"%DEEP GASH SLOW:"
+        "DOTA_Tooltip_ability_kiyo_w_upgrade_w_armor_reduce"			"DEEP GASH ARMOR REDUCTION:"
+
+        "DOTA_Tooltip_Ability_kiyo_q"			"<font color='#58ACFA'>Summer Energy</font>"
+        "DOTA_Tooltip_ability_kiyo_q_Description"		"Kiyohime <font color='#FFFF28'>dispels</font> all <font color='#FF3399'>slow</font> debuff on her while also gaining <font color='#FFFF28'>Summer Power</font>. \n<font color='#FFFF28'>Summer Power</font>: Gain bonus movement speed, attack speed, and damage. \n\n<font color='#9FFFCC'>Upgradable with Attribute: Mad Enhancement</font>."
+        "DOTA_Tooltip_ability_kiyo_q_buff_duration"			"SUMMER POWER DURATION:"
+        "DOTA_Tooltip_ability_kiyo_q_bonus_aspd"			"BONUS ATTACKSPEED:"
+        "DOTA_Tooltip_ability_kiyo_q_bonus_damage"			"BONUS DAMAGE:"
+        "DOTA_Tooltip_ability_kiyo_q_bonus_ms"			"%BONUS MOVEMENT SPEED:"
+
+        "DOTA_Tooltip_Ability_kiyo_q_upgrade"			"<font color='#9FFFCC'>Summer Energy</font>"
+        "DOTA_Tooltip_ability_kiyo_q_upgrade_Description"		"Kiyohime <font color='#FFFF28'>dispels</font> all <font color='#FF3399'>slow</font> debuff on her while also gaining <font color='#FFFF28'>Summer Power</font> and <font color='#FFFF28'>Mad</font>. \n<font color='#FFFF28'>Summer Power</font>: Gain bonus movement speed, attack speed, and damage. \n<font color='#FFFF28'>Mad</font>: Kiyohime become <font color='#FFFF28'>immune</font> to most of crowd control."
+        "DOTA_Tooltip_ability_kiyo_q_upgrade_buff_duration"			"SUMMER POWER DURATION:"
+        "DOTA_Tooltip_ability_kiyo_q_upgrade_bonus_aspd"			"BONUS ATTACKSPEED:"
+        "DOTA_Tooltip_ability_kiyo_q_upgrade_bonus_damage"			"BONUS DAMAGE:"
+        "DOTA_Tooltip_ability_kiyo_q_upgrade_bonus_ms"			"%BONUS MOVEMENT SPEED:"
+        "DOTA_Tooltip_ability_kiyo_q_upgrade_sa_5_duration"			"MAD DURATION:"
+
+        "DOTA_Tooltip_Ability_kiyo_e"			"<font color='#58ACFA'>Summer Heat</font>"
+        "DOTA_Tooltip_ability_kiyo_e_Description"		"Kiyohime powers up for a bit before breathing fire in front of her, damaging all enemies hit. After a short delay the fire will then burst dealing more damage and <font color='#FF3399'>stunning</font> enemies in the area. \n\n<font color='#9FFFCC'>Upgradable with Attribute: Samadhi Fire</font>."
+        "DOTA_Tooltip_ability_kiyo_e_cast_delay"			"CAST DELAY:"
+        "DOTA_Tooltip_ability_kiyo_e_wave_damage"			"FIRE WAVE DAMAGE:"
+        "DOTA_Tooltip_ability_kiyo_e_wave_speed"			"FIRE WAVE SPEED:"
+        "DOTA_Tooltip_ability_kiyo_e_wave_distance"			"FIRE WAVE DISTANCE:"
+        "DOTA_Tooltip_ability_kiyo_e_wave_width"			"FIRE WAVE WIDTH:"
+        "DOTA_Tooltip_ability_kiyo_e_explosion_delay"		"FIRE BURST DELAY:"
+        "DOTA_Tooltip_ability_kiyo_e_explosion_aoe"		"FIRE BURST AOE:"
+        "DOTA_Tooltip_ability_kiyo_e_explosion_damage"		"FIRE BURST DAMAGE:" 
+        "DOTA_Tooltip_ability_kiyo_e_explosion_stun"		"FIRE BURST STUN:"
+
+        "DOTA_Tooltip_Ability_kiyo_e_upgrade"			"<font color='#9FFFCC'>Summer Heat</font>"
+        "DOTA_Tooltip_ability_kiyo_e_upgrade_Description"		"Kiyohime powers up for a bit before breathing fire in front of her, damaging all enemies hit based on her <font color='#00F7FF'>INT</font>. After a short delay the fire will then burst dealing more damage based on her <font color='#00F7FF'>INT</font> and <font color='#FF3399'>stunning</font> enemies in the area."
+        "DOTA_Tooltip_ability_kiyo_e_upgrade_cast_delay"			"CAST DELAY:"
+        "DOTA_Tooltip_ability_kiyo_e_upgrade_wave_damage"			"FIRE WAVE DAMAGE:"
+        "DOTA_Tooltip_ability_kiyo_e_upgrade_wave_speed"			"FIRE WAVE SPEED:"
+        "DOTA_Tooltip_ability_kiyo_e_upgrade_wave_distance"			"FIRE WAVE DISTANCE:"
+        "DOTA_Tooltip_ability_kiyo_e_upgrade_wave_width"			"FIRE WAVE WIDTH:"
+        "DOTA_Tooltip_ability_kiyo_e_upgrade_explosion_delay"		"FIRE BURST DELAY:"
+        "DOTA_Tooltip_ability_kiyo_e_upgrade_explosion_aoe"		"FIRE BURST AOE:"
+        "DOTA_Tooltip_ability_kiyo_e_upgrade_explosion_damage"		"FIRE BURST DAMAGE:"
+        "DOTA_Tooltip_ability_kiyo_e_upgrade_explosion_stun"		"FIRE BURST STUN:"
+        "DOTA_Tooltip_ability_kiyo_e_upgrade_int_scale"		"BONUS DAMAGE PER INT:"
+
+        "DOTA_Tooltip_Ability_kiyo_r"			"<font color='#58ACFA'>Pursuit of Love</font>"
+        "DOTA_Tooltip_ability_kiyo_r_Description"		"Kiyohime jumps and appear in the area near the target point then do a sequence combo of 2 slashes which deals physical damage and apply <font color='#FF3399'>Love Mark</font> in an X mark with the target point as the center, and a spell channel. \n After delay enemies with <font color='#FF3399'>Love Mark</font> will burst and take magical damage amplified by the amount of <font color='#FF3399'>Love Mark</font> the target take. \n\n<font color='#9FFFCC'>Upgradable with Attribute: Pursuer of Love and Samadhi Fire</font>. \n Kiyohime is <font color='#FFFF28'>invulnerable</font> and <font color='#FFFF28'>untargettable</font> until finish channeling."
+        "DOTA_Tooltip_ability_kiyo_r_cast_duration"			"CAST DURATION TOTAL:"
+        "DOTA_Tooltip_ability_kiyo_r_first_slash_delay"			"DELAY BEFORE FIRST SLASH:"
+        "DOTA_Tooltip_ability_kiyo_r_second_slash_delay"			"DELAY BEFORE SECOND SLASH:"
+        "DOTA_Tooltip_ability_kiyo_r_burst_delay"			"DELAY BEFORE BURST:"
+        "DOTA_Tooltip_ability_kiyo_r_slash_damage"			"DAMAGE PER SLASH:"
+        "DOTA_Tooltip_ability_kiyo_r_slash_range"			"SLASH RANGE:"
+        "DOTA_Tooltip_ability_kiyo_r_slash_aoe"			"SLASH WIDTH:"
+        "DOTA_Tooltip_ability_kiyo_r_burst_damage"			"BURST DAMAGE:"
+        "DOTA_Tooltip_ability_kiyo_r_burst_bonus_per_slash"			"%BONUS BURST DAMAGE PER LOVE MARK:"
+
+        "DOTA_Tooltip_Ability_kiyo_r_upgrade1"			"<font color='#9FFFCC'>Pursuit of Love</font>"
+        "DOTA_Tooltip_ability_kiyo_r_upgrade1_Description"		"Kiyohime jumps and appear in the area near the target point then do a sequence combo of 2 slashes which deals physical damage and apply <font color='#FF3399'>Love Mark</font> in an X mark with the target point as the center, and a spell channel. \n After delay enemies with <font color='#FF3399'>Love Mark</font> will burst and take magical damage amplified by the amount of <font color='#FF3399'>Love Mark</font> the target take. \n\n<font color='#9FFFCC'>Upgradable with Attribute: Samadhi Fire</font>. \n Kiyohime is <font color='#FFFF28'>invulnerable</font> and <font color='#FFFF28'>untargettable</font> until finish channeling."
+        "DOTA_Tooltip_ability_kiyo_r_upgrade1_cast_duration"			"CAST DURATION TOTAL:"
+        "DOTA_Tooltip_ability_kiyo_r_upgrade1_first_slash_delay"			"DELAY BEFORE FIRST SLASH:"
+        "DOTA_Tooltip_ability_kiyo_r_upgrade1_second_slash_delay"			"DELAY BEFORE SECOND SLASH:"
+        "DOTA_Tooltip_ability_kiyo_r_upgrade1_burst_delay"			"DELAY BEFORE BURST:"
+        "DOTA_Tooltip_ability_kiyo_r_upgrade1_slash_damage"			"DAMAGE PER SLASH:"
+        "DOTA_Tooltip_ability_kiyo_r_upgrade1_slash_range"			"SLASH RANGE:"
+        "DOTA_Tooltip_ability_kiyo_r_upgrade1_slash_aoe"			"SLASH WIDTH:"
+        "DOTA_Tooltip_ability_kiyo_r_upgrade1_burst_damage"			"BURST DAMAGE:"
+        "DOTA_Tooltip_ability_kiyo_r_upgrade1_r_burst_bonus_per_slash"			"%BONUS BURST DAMAGE PER LOVE MARK:"
+
+        "DOTA_Tooltip_Ability_kiyo_r_upgrade2"			"<font color='#9FFFCC'>Pursuit of Love</font>"
+        "DOTA_Tooltip_ability_kiyo_r_upgrade2_Description"		"Kiyohime jumps and appear in the area near the target point then do a sequence combo of 2 slashes which deals physical damage and apply <font color='#FF3399'>Love Mark</font> in an X mark with the target point as the center, and a spell channel. \n After delay enemies with <font color='#FF3399'>Love Mark</font> will burst and take magical damage based on her <font color='#00F7FF'>INT</font> amplified by the amount of <font color='#FF3399'>Love Mark</font> the target take. \n\n<font color='#9FFFCC'>Upgradable with Attribute: Pursuer of Love</font>. \n Kiyohime is <font color='#FFFF28'>invulnerable</font> and <font color='#FFFF28'>untargettable</font> until finish channeling."
+        "DOTA_Tooltip_ability_kiyo_r_upgrade2_cast_duration"			"CAST DURATION TOTAL:"
+        "DOTA_Tooltip_ability_kiyo_r_upgrade2_first_slash_delay"			"DELAY BEFORE FIRST SLASH:"
+        "DOTA_Tooltip_ability_kiyo_r_upgrade2_second_slash_delay"			"DELAY BEFORE SECOND SLASH:"
+        "DOTA_Tooltip_ability_kiyo_r_upgrade2_burst_delay"			"DELAY BEFORE BURST:"
+        "DOTA_Tooltip_ability_kiyo_r_upgrade2_slash_damage"			"DAMAGE PER SLASH:"
+        "DOTA_Tooltip_ability_kiyo_r_upgrade2_slash_range"			"SLASH RANGE:"
+        "DOTA_Tooltip_ability_kiyo_r_upgrade2_slash_aoe"			"SLASH WIDTH:"
+        "DOTA_Tooltip_ability_kiyo_r_upgrade2_burst_damage"			"BURST DAMAGE:"
+        "DOTA_Tooltip_ability_kiyo_r_upgrade2_burst_int_scale"			"BURST BONUS DAMAGE PER INT:"
+        "DOTA_Tooltip_ability_kiyo_r_upgrade2_r_burst_bonus_per_slash"			"%BONUS BURST DAMAGE PER LOVE MARK:"
+
+        "DOTA_Tooltip_Ability_kiyo_r_upgrade3"			"<font color='#9FFFCC'>Pursuit of Love</font>"
+        "DOTA_Tooltip_ability_kiyo_r_upgrade3_Description"		"Kiyohime jumps and appear in the area near the target point then do a sequence combo of 2 slashes which deals physical damage and apply <font color='#FF3399'>Love Mark</font> in an X mark with the target point as the center, and a spell channel. \n After delay enemies with <font color='#FF3399'>Love Mark</font> will burst and take magical damage based on her <font color='#00F7FF'>INT</font> amplified by the amount of <font color='#FF3399'>Love Mark</font> the target take.  \n Kiyohime is <font color='#FFFF28'>invulnerable</font> and <font color='#FFFF28'>untargettable</font> until finish channeling."
+        "DOTA_Tooltip_ability_kiyo_r_upgrade3_cast_duration"			"CAST DURATION TOTAL:"
+        "DOTA_Tooltip_ability_kiyo_r_upgrade3_first_slash_delay"			"DELAY BEFORE FIRST SLASH:"
+        "DOTA_Tooltip_ability_kiyo_r_upgrade3_second_slash_delay"			"DELAY BEFORE SECOND SLASH:"
+        "DOTA_Tooltip_ability_kiyo_r_upgrade3_burst_delay"			"DELAY BEFORE BURST:"
+        "DOTA_Tooltip_ability_kiyo_r_upgrade3_slash_damage"			"DAMAGE PER SLASH:"
+        "DOTA_Tooltip_ability_kiyo_r_upgrade3_slash_range"			"SLASH RANGE:"
+        "DOTA_Tooltip_ability_kiyo_r_upgrade3_slash_aoe"			"SLASH WIDTH:"
+        "DOTA_Tooltip_ability_kiyo_r_upgrade3_burst_damage"			"BURST DAMAGE:"
+        "DOTA_Tooltip_ability_kiyo_r_upgrade3_burst_int_scale"			"BURST BONUS DAMAGE PER INT:"
+        "DOTA_Tooltip_ability_kiyo_r_upgrade3_r_burst_bonus_per_slash"			"%BONUS BURST DAMAGE PER LOVE MARK:"
+
+        "DOTA_Tooltip_Ability_kiyo_combo"				"<font color='#FF04EF'>Dojoji Bell, Method 108 - Fire Dragon Mower</font>"
+        "DOTA_Tooltip_ability_kiyo_combo_Description"		"<font color='#FF04EF'>Combo Requirement : 25 all stats</font>\n<font color='#FF04EF'>Combo Sequence : Q -> R in 3 seconds.</font> \nKiyohime channels for a few second, then jumps and dissapear. Soon a giant bell will fall from the sky in the target's position <font color='#FF3399'>trapping</font> all units in the area. Kiyohime will then land on top of the bell, summon a lot of naginatas and stabs all units inside the bell with it. All units will no longer be <font color='#FF3399'>trapped</font> and will take random damage from a certain amount. \n Kiyohime is <font color='#FFFF28'>invulnerable</font> and <font color='#FFFF28'>untargettable</font> until finish channeling."
+        "DOTA_Tooltip_ability_kiyo_combo_cast_point"			"CAST POINT:"
+        "DOTA_Tooltip_ability_kiyo_combo_cast_delay"			"CAST DELAY:"
+        "DOTA_Tooltip_ability_kiyo_combo_bell_falling"			"DELAY BEFORE BELL FALL:"
+        "DOTA_Tooltip_ability_kiyo_combo_bell_aoe"				"BELL AOE:"
+        "DOTA_Tooltip_ability_kiyo_combo_damage_delay"			"DELAY BEFORE FINAL DAMAGE:"
+        "DOTA_Tooltip_ability_kiyo_combo_damage_upper"			"MAXIMUM DAMAGE:"
+        "DOTA_Tooltip_ability_kiyo_combo_damage_lower"			"MINIMUM DAMAGE:"
+
+        "DOTA_Tooltip_Ability_kiyo_sa_1"			"<font color='#9FFFCC'>Attribute: Blazing Summer Passion</font>"
+        "DOTA_Tooltip_ability_kiyo_sa_1_Description"		"<font color='#FFFFFF'>Summer Passion</font>: Increase critical chance, ability damage, and damage based from Kiyohime's <font color='#80FF00'>AGI</font>."
+        "DOTA_Tooltip_ability_kiyo_sa_1_crit_chance"			"%CRITICAL CHANCE:"
+        "DOTA_Tooltip_ability_kiyo_sa_1_crit_bonus"			"%BONUS ABILITY DAMAGE:"
+        "DOTA_Tooltip_ability_kiyo_sa_1_agi_scaling"			"DAMAGE PER AGI:"
+
+        "DOTA_Tooltip_Ability_kiyo_sa_2"			"<font color='#9FFFCC'>Attribute: Pursuer of Love </font>"
+        "DOTA_Tooltip_ability_kiyo_sa_2_Description"		"<font color='#58ACFA'>Summer Love</font>: Gain bonus base damage, now enemies hits with outer range applied <font color='#FF3399'>Deep Gash</font> for short duration. \n<font color='#FF3399'>Deep Gash</font>: Slows target, while also reducing armor. \n<font color='#58ACFA'>Pursuit of Love</font>: Gain bonus slash damage."
+        "DOTA_Tooltip_ability_kiyo_sa_2_r_bonus_slash_damage"			"PURSUIT OF LOVE BONUS SLASH DAMAGE:"
+        "DOTA_Tooltip_ability_kiyo_sa_2_w_bonus_damage"			"SUMMER LOVE BONUS DAMAGE:"
+        "DOTA_Tooltip_ability_kiyo_sa_2_w_armor_reduce"			"DEEP GASH ARMOR REDUCTION:"
+        "DOTA_Tooltip_ability_kiyo_sa_2_w_slow"			"%DEEP GASH SLOW:"
+
+        "DOTA_Tooltip_Ability_kiyo_sa_3"			"<font color='#9FFFCC'>Attribute: Stalking</font>"
+        "DOTA_Tooltip_ability_kiyo_sa_3_Description"		"Enable <font color='#FFB266'>Stalking</font>. \n<font color='#FFB266'>Stalking</font>: <font color='#58ACFA'>PASSIVE</font>: Gains <font color='#FFFF28'>Stalking</font> Whenever there's a male hero in front while target applied <font color='#FF3399'>Stalked</font>. \n <font color='#FFFF28'>Stalking</font>: Gain extra movement speed. \n<font color='#FF3399'>Stalked</font>: Decrease target's movement speed and armor"
+        "DOTA_Tooltip_ability_kiyo_sa_3_bonus_ms"			"%STALKING BONUS MOVEMENT SPEED:"
+        "DOTA_Tooltip_ability_kiyo_sa_3_range"				"MALE DETECT RANGE:"
+        "DOTA_Tooltip_ability_kiyo_sa_3_debuff_slow"		"%STALKED SLOW:"
+        "DOTA_Tooltip_ability_kiyo_sa_3_debuff_armor"		"STALKED ARMOR REDUCTION:"
+
+        "DOTA_Tooltip_Ability_kiyo_sa_4"			"<font color='#9FFFCC'>Attribute: Samadhi Fire</font>"
+        "DOTA_Tooltip_ability_kiyo_sa_4_Description"		"<font color='#58ACFA'>Summer Heat</font>: Now deals bonus damage based on Kiyohime's <font color='#00F7FF'>INT</font>, gain bonus <font color='#FF3399'>stun</font> duration. \n<font color='#58ACFA'>Pursuit of Love</font>: Burst damage is improved and now deals bonus damage based on Kiyohime's <font color='#00F7FF'>INT</font>. <font color='#FF3399'>Love Mark</font> burst damage bonus percentage improved, gain bonus cast range and reduced manacost."
+        "DOTA_Tooltip_ability_kiyo_sa_4_e_stun"					"SUMMER HEAT STUN:"
+        "DOTA_Tooltip_ability_kiyo_sa_4_e_int_scale"			"SUMMER HEAT BONUS DAMAGE PER INT:"
+        "DOTA_Tooltip_ability_kiyo_sa_4_r_int_scale"			"PURSUIT OF LOVE BONUS BURST DAMAGE PER INT:"
+        "DOTA_Tooltip_ability_kiyo_sa_4_r_burst_bonus_per_slash"			"%PURSUIT OF LOVE BONUS BURST DAMAGE PER SLASH:"
+        "DOTA_Tooltip_ability_kiyo_sa_4_r_bonus_cast_range"			"PURSUIT OF LOVE BONUS CAST RANGE:"
+        "DOTA_Tooltip_ability_kiyo_sa_4_r_mana_cost"			"PURSUIT OF LOVE MANA COST:"
+
+        "DOTA_Tooltip_Ability_kiyo_sa_5"			"<font color='#9FFFCC'>Attribute: Mad Enhancement</font>"
+        "DOTA_Tooltip_ability_kiyo_sa_5_Description"		"<font color='#58ACFA'>Summer Energy</font>: Kiyohime also gains <font color='#FFFF28'>Mad</font> for durations. \n<font color='#FFFF28'>Mad</font>: Kiyohime become <font color='#FFFF28'>immune</font> to most of crowd control."
+        "DOTA_Tooltip_ability_kiyo_sa_5_duration"			"MAD DURATION:"
+
+        ////////////////// MODIFIERS ///////////////////
+
+		"DOTA_Tooltip_modifier_kiyo_stalking_buff"									"Stalking"
+		"DOTA_Tooltip_modifier_kiyo_stalking_buff_Description"						"I just want to see him." 
+
+		"DOTA_Tooltip_modifier_kiyo_stalking_debuff"								"Stalked"
+		"DOTA_Tooltip_modifier_kiyo_stalking_debuff_Description"					""
+
+		"DOTA_Tooltip_modifier_kiyo_slash_enemy"									"Deep Gash"
+		"DOTA_Tooltip_modifier_kiyo_slash_enemy_Description"						"Slowed and reduced armor."
+
+		"DOTA_Tooltip_modifier_kiyohime_q_buff"										"Summer Power"
+		"DOTA_Tooltip_modifier_kiyohime_q_buff_Description"							"Gaining movespeed, damage, aspd."
+
+		"DOTA_Tooltip_modifier_kiyohime_q_buff_cc_immune"							"Mad"
+		"DOTA_Tooltip_modifier_kiyohime_q_buff_cc_immune_Description"				"Immune to most of crowd control."
+
+		"DOTA_Tooltip_modifier_kiyohime_combo_cooldown"												"Kiyohime combo cooldown."
+
+
+		//====================================
+        //      MELT, NERD WAS HERE
+        //====================================
+        "npc_dota_hero_nyx_assassin"             "Meltryllis"
+        "npc_dota_hero_nyx_assassin_1"           "[Normal] White Meltryllis"
+        "npc_dota_hero_nyx_assassin_summon"		"Servant <font color='#58ACFA'>Meltryllis</font> has been summoned."
+        "npc_dota_hero_nyx_assassin_enable_combo"	"Enable Combo: Benzaiten Gogen Biwa - Sarasvati Meltout"
+
+        ////////////////// INNATE ///////////////////
+
+        "DOTA_Tooltip_Ability_melt_q"			"<font color='#58ACFA'>Elegant Waltz</font>"
+        "DOTA_Tooltip_ability_melt_q_Description"		"Waltz targeted direction for a set amount of range, dealing damage to enemies along the path. \n\n<font color='#9FFFCC'>Upgradable with Attribute: Crime Ballet</font>."
+        "DOTA_Tooltip_ability_melt_q_damage"                    "DAMAGE:"
+        "DOTA_Tooltip_ability_melt_q_range"                    "WALTZ RANGE MAX:"
+        "DOTA_Tooltip_ability_melt_q_duration"                    "WALTZ DURATION:"
+
+        "DOTA_Tooltip_Ability_melt_q_upgrade"                   "<font color='#9FFFCC'>Elegant Waltz</font>"
+        "DOTA_Tooltip_ability_melt_q_upgrade_Description"               "Waltz targeted direction for a set amount of range, dealing damage to enemies along the path. Dealing bonus damage based on <font color='#80FF00'>AGI</font>."
+        "DOTA_Tooltip_ability_melt_q_upgrade_damage"                    "DAMAGE:"
+        "DOTA_Tooltip_ability_melt_q_upgrade_damage_per_agi"            "DAMAGE BONUS PER AGI:"
+        "DOTA_Tooltip_ability_melt_q_upgrade_range"                    "WALTZ RANGE MAX:"
+        "DOTA_Tooltip_ability_melt_q_upgrade_duration"                    "WALTZ DURATION:"
+
+        "DOTA_Tooltip_Ability_melt_w"                   "<font color='#58ACFA'>Grand Jete</font>"
+        "DOTA_Tooltip_ability_melt_w_Description"               "Performs a Grand jete spinning, dealing damage around in a small cirle, then slams the area in front with the foot dealing extra damage to targets hit in a small area. Meltryllis is <font color='#FF3399'>disarmed</font> and <font color='#FF3399'>silenced</font> while performing. Enemies hit will be <font color='#FF3399'>slowed</font> for a short duration. \n\n<font color='#9FFFCC'>Upgradable with Attribute: Sadistic Nature</font>."
+        "DOTA_Tooltip_ability_melt_w_circle_damage"                    "SPIN DAMAGE:"
+        "DOTA_Tooltip_ability_melt_w_damage"            "SLAM DAMAGE:"
+        "DOTA_Tooltip_ability_melt_w_delay_spin"            "DELAY TO SPIN:"
+        "DOTA_Tooltip_ability_melt_w_delay_impact"                    "DELAY TO IMPACT:"
+        "DOTA_Tooltip_ability_melt_w_duration"                    "PERFORMANCE DURATION:"
+        "DOTA_Tooltip_ability_melt_w_slow_duration"                    "SLOW DURATION:"
+        "DOTA_Tooltip_ability_melt_w_w_slow"                    "%SLOW AMOUNT:"
+
+        "DOTA_Tooltip_Ability_melt_w_upgrade"                   "<font color='#9FFFCC'>Grand Jete</font>"
+        "DOTA_Tooltip_ability_melt_w_upgrade_Description"               "Performs a Grand jete spinning, dealing damage around in a small cirle, then slams the area in front with the foot dealing extra damage to targets hit in a small area. Meltryllis is <font color='#FF3399'>disarmed</font> and <font color='#FF3399'>silenced</font> while performing. Enemies hit will be <font color='#FF3399'>slowed</font> for a short duration. Gains <font color='#FF9900'>Performance</font> after casting. \n <font color='#FF9900'>Performance</font> : Gains bonus attackspeed, movement speed, and attacks will deal a small amount of bonus damage based on <font color='#FF0000'>STR</font> in a small area based on <font color='#00F7FF'>INT</font>. Targets hit with splash effect will also take <font color='#FF9900'>Melt Virus</font> effect if Melt has learned it."
+        "DOTA_Tooltip_ability_melt_w_upgrade_circle_damage"                    "SPIN DAMAGE:"
+        "DOTA_Tooltip_ability_melt_w_upgrade_damage"            "SLAM DAMAGE:"
+        "DOTA_Tooltip_ability_melt_w_upgrade_spin"            "DELAY TO SPIN:"
+        "DOTA_Tooltip_ability_melt_w_upgrade_delay_impact"                    "DELAY TO IMPACT:"
+        "DOTA_Tooltip_ability_melt_w_upgrade_duration"                    "PERFORMANCE DURATION:"
+        "DOTA_Tooltip_ability_melt_w_upgrade_slow_duration"                    "SLOW DURATION:"
+        "DOTA_Tooltip_ability_melt_w_upgrade_w_slow"                    "%SLOW AMOUNT:"
+        "DOTA_Tooltip_ability_melt_w_upgrade_buff_duration"                    "PERFORMANCE DURATION:"
+        "DOTA_Tooltip_ability_melt_w_upgrade_aspd_buff"                    "BONUS ATTACK SPEED:"
+        "DOTA_Tooltip_ability_melt_w_upgrade_movespeed_bonus"                    "%BONUS MOVEMENT SPEED:"
+        "DOTA_Tooltip_ability_melt_w_upgrade_splash_dmg_per_str"                    "SPLASH DAMAGE PER STR:"
+        "DOTA_Tooltip_ability_melt_w_upgrade_splash_aoe_per_int"                    "SPLASH RANGE PER INT:"
+
+        "DOTA_Tooltip_Ability_melt_e"                   "<font color='#58ACFA'>El Pointe</font>"
+        "DOTA_Tooltip_ability_melt_e_Description"               "Performs El Pointe, a ballet move relying on the toe searching target in an aoe near the target point. Jumping towards the nearest enemy, dealing damage and <font color='#FF3399'>stunning</font> the target. Successfully hitting an enemy with this ability will refund some of its cooldown while missing will <font color='#FF3399'>stun</font> yourself. \n Meltryllis will be <font color='#FFFF28'>invulnerable</font> and <font color='#FFFF28'>untargettable</font> while jumping and take less damage while kicking. \n\n<font color='#9FFFCC'>Upgradable with Attribute: Crime Ballet</font>."
+        "DOTA_Tooltip_ability_melt_e_cast_delay"                    "CAST DELAY:"
+        "DOTA_Tooltip_ability_melt_e_damage"                    "TOTAL DAMAGE:"
+        "DOTA_Tooltip_ability_melt_e_aoe_find_range"                    "SEARCH AOE:"
+        "DOTA_Tooltip_ability_melt_e_cooldown_refund"                    "COOLDOWN REFUND:"
+        "DOTA_Tooltip_ability_melt_e_miss_stun_self"                    "SELF STUN ON MISS:"
+        "DOTA_Tooltip_ability_melt_e_stun_duration"                    "BASE STUN DURATION:"
+
+        "DOTA_Tooltip_Ability_melt_e_upgrade"                   "<font color='#9FFFCC'>El Pointe</font>"
+        "DOTA_Tooltip_ability_melt_e_upgrade_Description"               "Performs El Pointe, a ballet move relying on the toe searching target in an aoe near the target point. Jumping towards the nearest enemy, dealing damage based on her <font color='#80FF00'>AGI</font> and <font color='#FF3399'>stunning</font> the target. Successfully hitting an enemy with this ability will refund some of its cooldown while missing will <font color='#FF3399'>stun</font> yourself. \n Meltryllis will be <font color='#FFFF28'>invulnerable</font> and <font color='#FFFF28'>untargettable</font> while jumping and take less damage while kicking."
+        "DOTA_Tooltip_ability_melt_e_upgrade_cast_delay"                    "CAST DELAY:"
+        "DOTA_Tooltip_ability_melt_e_upgrade_damage"                    "TOTAL DAMAGE:"
+        "DOTA_Tooltip_ability_melt_e_upgrade_bonus_agi"             "BONUS DAMAGE PER AGI:"
+        "DOTA_Tooltip_ability_melt_e_upgrade_aoe_find_range"                    "SEARCH AOE:" 
+        "DOTA_Tooltip_ability_melt_e_upgrade_cooldown_refund"                    "COOLDOWN REFUND:"
+        "DOTA_Tooltip_ability_melt_e_upgrade_miss_stun_self"                    "SELF STUN ON MISS:"
+        "DOTA_Tooltip_ability_melt_e_upgrade_stun_duration"                    "BASE STUN DURATION:"
+
+        "DOTA_Tooltip_Ability_melt_r"                   "<font color='#58ACFA'>Sarasvati Meltout</font>"
+        "DOTA_Tooltip_ability_melt_r_Description"               "Jump to the sky becoming <font color='#FF3399'>invulnerable</font> and drops down with sharp heels, causing a water burst dealing damage in an area. \n\n<font color='#9FFFCC'>Upgradable with Attribute: Saint Graph Expansion</font>."
+        "DOTA_Tooltip_ability_melt_r_cast_delay"                    "CAST DELAY:"
+        "DOTA_Tooltip_ability_melt_r_damage"                    "DAMAGE:"
+        "DOTA_Tooltip_ability_melt_r_damage_aoe"                    "RANGE:"
+        "DOTA_Tooltip_ability_melt_r_minimum_cast_delay"                    "MINIMUM CAST DELAY:"
+
+        "DOTA_Tooltip_Ability_melt_r_upgrade"                   "<font color='#9FFFCC'>Sarasvati Meltout</font>"
+        "DOTA_Tooltip_ability_melt_r_upgrade_Description"               "Jump to the sky becoming <font color='#FF3399'>invulnerable</font> and drops down with sharp heels, causing a water burst dealing damage in an area based on <font color='#00F7FF'>INT</font>."
+        "DOTA_Tooltip_ability_melt_r_upgrade_cast_delay"          "CAST DELAY:"
+        "DOTA_Tooltip_ability_melt_r_upgrade_damage"               "DAMAGE:"
+        "DOTA_Tooltip_ability_melt_r_upgrade_damage_aoe"          "RANGE:"
+        "DOTA_Tooltip_ability_melt_r_upgrade_minimum_cast_delay"  "MINIMUM CAST DELAY:"
+        "DOTA_Tooltip_ability_melt_r_upgrade_damage_per_int"      "DAMAGE BONUS PER INT:"
+
+        "DOTA_Tooltip_Ability_melt_combo"                   "<font color='#FF04EF'>Benzaiten Gogen Biwa - Sarasvati Meltout</font>"
+        "DOTA_Tooltip_ability_melt_combo_Description"               "<font color='#FF04EF'>Combo Requirement : 25 all stats</font>\n<font color='#FF04EF'>Combo Sequence : W-D->R in 5 seconds.</font> \nAfter charging up, becomes uncontrollable and rapidly dash towards the target. Reaching the target, will continue this ability causing Melt to dance around the target, slashing the target multiple times with sharp heel based on her <font color='#80FF00'>AGI</font> while creating cyclone under target's feet. \n Each slash will deal physical damage based on her attack damage. \n Cyclone deals magical damage based on her <font color='#00F7FF'>INT</font> while <font color='#FF3399'>slow</font> and <font color='#FF3399'>lock</font> target. Target will be <font color='#FF3399'>silenced, rooted, stunned</font> and <font color='#FF3399'>revoked</font> based on how long the target stays in cyclone. \n Once finished, target will be <font color='#FF3399'>stunned</font> as Melt cast an empowered version of her ultimate noble phantasm. \n This skill could miss due to the speed Melt will be dashing, in which case she will be <font color='#FF3399'>stunned</font> and this skill will go on a short cooldown. \n\n<font color='#9FFFCC'>Upgradable with Attribute: Saint Graph Expansion</font>."
+        "DOTA_Tooltip_ability_melt_combo_cast_delay"                    "CAST DELAY:"
+        "DOTA_Tooltip_ability_melt_combo_cast_delay"                    "CAST POINT:"
+        "DOTA_Tooltip_ability_melt_combo_dash_speed"                    "DASH SPEED:"
+        "DOTA_Tooltip_ability_melt_combo_damage"                    "DAMAGE:"
+        "DOTA_Tooltip_ability_melt_combo_final_aoe_damage"              "AOE RANGE:"
+        "DOTA_Tooltip_ability_melt_combo_agi_per_slash"                    "AGI PER SLASH:"
+        "DOTA_Tooltip_ability_melt_combo_minimum_slash"                    "MINIMUM SLASH COUNT:"
+        "DOTA_Tooltip_ability_melt_combo_cyclone_dps"                    "CYCLONE DAMAGE PER SEC:"
+        "DOTA_Tooltip_ability_melt_combo_cyclone_bonus_int"                   "CYCLONE BONUS DAMAGE PER INT:"
+        "DOTA_Tooltip_ability_melt_combo_damage_per_slash_multiplier_attack"   "SLASH DAMAGE FROM ATTACK DAMAGE:"
+        "DOTA_Tooltip_ability_melt_combo_dash_duration_max"                    "MAXIMUM DASH DURATION:"
+        "DOTA_Tooltip_ability_melt_combo_fail_cast_cooldown"                    "COOLDOWN ON MISS:"
+
+        "DOTA_Tooltip_Ability_melt_combo_upgrade"                   "<font color='#FF04EF'>Benzaiten Gogen Biwa - Sarasvati Meltout</font>"
+        "DOTA_Tooltip_ability_melt_combo_upgrade_Description"               "<font color='#FF04EF'>Combo Requirement : 25 all stats</font>\n<font color='#FF04EF'>Combo Sequence : W-D->R in 5 seconds.</font> \nAfter charging up, becomes uncontrollable and rapidly dash towards the target. Reaching the target, will continue this ability causing Melt to dance around the target, slashing the target multiple times with sharp heel based on her <font color='#80FF00'>AGI</font> while creating cyclone under target's feet. \n Each slash will deal physical damage based on her attack damage. \n Cyclone deals magical damage based on her <font color='#00F7FF'>INT</font> while <font color='#FF3399'>slow</font> and <font color='#FF3399'>lock</font> target. Target will be <font color='#FF3399'>silenced, rooted, stunned</font> and <font color='#FF3399'>revoked</font> based on how long the target stays in cyclone. \n Once finished, target will be <font color='#FF3399'>stunned</font> as Melt cast an empowered version of her ultimate noble phantasm. \n This skill could miss due to the speed Melt will be dashing, in which case she will be <font color='#FF3399'>stunned</font> and this skill will go on a short cooldown."
+        "DOTA_Tooltip_ability_melt_combo_upgrade_cast_delay"                    "CAST DELAY:"
+        "DOTA_Tooltip_ability_melt_combo_upgrade_cast_delay"                    "CAST POINT:"
+        "DOTA_Tooltip_ability_melt_combo_upgrade_dash_speed"                    "DASH SPEED:"
+        "DOTA_Tooltip_ability_melt_combo_upgrade_damage"                    "DAMAGE:"
+        "DOTA_Tooltip_ability_melt_combo_upgrade_final_aoe_damage"              "AOE RANGE:"
+        "DOTA_Tooltip_ability_melt_combo_upgrade_agi_per_slash"                    "AGI PER SLASH:"
+        "DOTA_Tooltip_ability_melt_combo_upgrade_minimum_slash"                    "MINIMUM SLASH COUNT:"
+        "DOTA_Tooltip_ability_melt_combo_upgrade_cyclone_dps"                    "CYCLONE DAMAGE PER SEC:"
+        "DOTA_Tooltip_ability_melt_combo_upgrade_cyclone_bonus_int"                   "CYCLONE BONUS DAMAGE PER INT:"
+        "DOTA_Tooltip_ability_melt_combo_upgrade_damage_per_slash_multiplier_attack"   "SLASH DAMAGE FROM ATTACK DAMAGE:"
+        "DOTA_Tooltip_ability_melt_combo_upgrade_dash_duration_max"                    "MAXIMUM DASH DURATION:"
+        "DOTA_Tooltip_ability_melt_combo_upgrade_fail_cast_cooldown"                    "COOLDOWN ON MISS:"
+
+        "DOTA_Tooltip_Ability_melt_d"                  "<font color='#FFFFFF'>Composite Divinity</font>"
+        "DOTA_Tooltip_ability_melt_d_Description"      "Due to her nature, Melt contains the essence of Artemis, Leviathan, and Sarasvati at the same time. Transforming her to be the only servant without primary attribute. She also gains bonus attribute points.  \n\n<font color='#9FFFCC'>Upgradable with Attribute: Improved Composite Divinity</font>."
+        "DOTA_Tooltip_ability_melt_d_bonus_stats"                    "BONUS STATS:"
+
+        "DOTA_Tooltip_Ability_melt_d_upgrade"                   "<font color='#9FFFCC'>Composite Divinity</font>"
+        "DOTA_Tooltip_ability_melt_d_upgrade_Description"       "Due to her nature, Melt contains the essence of Artemis, Leviathan, and Sarasvati at the same time. Transforming her to be the only servant without primary attribute. She also gains bonus attribute points. This ability helps Melt masters the essence giving her bonus effects on her abilities. \n<font color='#FF9900'>El Pointe</font>: Increase stun duration. \n<font color='#FF9900'>Sarasvati Meltout</font>: Reduced cast delay. \n<font color='#FF9900'>Melt Virus</font>: Bonus damage."
+        "DOTA_Tooltip_ability_melt_d_upgrade_bonus_stats"                    "BONUS STATS:"
+        "DOTA_Tooltip_ability_melt_d_upgrade_bonus_stun_e_per25_str"         "BONUS STUN DURATION PER 25 STR:"
+        "DOTA_Tooltip_ability_melt_d_upgrade_bonus_r_reduce_cast_per25_agi"  "CAST DELAY REDUCTION PER 25 AGI:"
+        "DOTA_Tooltip_ability_melt_d_upgrade_bonus_melt_virus_damage_per_int"    "MELT VIRUS DMG PER INT:"
+
+        "DOTA_Tooltip_Ability_melt_f"                   "<font color='#FFB266'>Melt Virus</font>"
+        "DOTA_Tooltip_ability_melt_f_Description"               "All of Melt abilities will apply <font color='#FF9900'>Melt Virus</font> from now on. \n<font color='#FF9900'>Melt Virus</font>: Takes periodical damage. Melt now gains stats whenever an enemy servant dies under this debuff."
+        "DOTA_Tooltip_ability_melt_f_damage_per_second"                    "BASE DAMAGE PER SECOND:"
+        "DOTA_Tooltip_ability_melt_f_duration"                    "VIRUS DURATION:"
+        "DOTA_Tooltip_ability_melt_f_bonus_stats"                    "BONUS STATS PER STACK:"
+
+        "DOTA_Tooltip_Ability_melt_attribute_melt_virus"			"<font color='#9FFFCC'>Attribute: Melt Virus</font>"
+        "DOTA_Tooltip_ability_melt_attribute_melt_virus_Description"		"Enable <font color='#FFB266'>Melt Virus</font>: <font color='#58ACFA'>PASSIVE</font>: All of Melt's abilities now applies a periodical damage per second to enemies hit, Melt gains stats whenever an enemy servant dies with this debuff."
+        "DOTA_Tooltip_ability_melt_attribute_melt_virus_damage_per_second"                    "BASE DAMAGE PER SECOND:"
+        "DOTA_Tooltip_ability_melt_attribute_melt_virus_duration"                     "VIRUS DURATION:"
+        "DOTA_Tooltip_ability_melt_attribute_melt_bonus_stats"                     "BONUS STATS PER STACK:"
+
+        "DOTA_Tooltip_Ability_melt_attribute_composite"    "<font color='#9FFFCC'>Attribute: Improve Composite Divinity</font>"
+        "DOTA_Tooltip_ability_melt_attribute_composite_Description"      "Upgrades <font color='#58ACFA'>Composite Divinity</font>, giving her bonus effects on her abilities. \n<font color='#FF9900'>El Pointe</font>: Increase stun duration. \n<font color='#FF9900'>Sarasvati Meltout</font>: Reduced cast delay. \n<font color='#FF9900'>Melt Virus</font>: Bonus damage."
+        "DOTA_Tooltip_ability_melt_attribute_composite_bonus_stats"                    "BONUS STATS:"
+        "DOTA_Tooltip_ability_melt_attribute_composite_bonus_stun_e_per25_str"         "BONUS STUN DURATION PER 25 STR:"
+        "DOTA_Tooltip_ability_melt_attribute_composite_bonus_r_reduce_cast_per25_agi"  "CAST DELAY REDUCTION PER 25 AGI:"
+        "DOTA_Tooltip_ability_melt_attribute_composite_bonus_melt_virus_damage_per_int" "MELT VIRUS DMG PER INT:"
+
+        "DOTA_Tooltip_Ability_melt_attribute_crime"                        "<font color='#9FFFCC'>Attribute: Crime Ballet</font>"
+        "DOTA_Tooltip_ability_melt_attribute_crime_Description"            "<font color='#58ACFA'>Elegant Waltz</font> : Deal bonus damage per <font color='#80FF00'>AGI</font>. \n <font color='#58ACFA'>EL POINTE</font>: Gain bonus damage and bonus damage per <font color='#80FF00'>AGI</font>"
+        "DOTA_Tooltip_ability_melt_attribute_crime_damage_per_agi_q"                    "WALTZ DAMAGE PER AGI:"
+        "DOTA_Tooltip_ability_melt_attribute_crime_bonus_e_damage"                    "EL POINTE BONUS DAMAGE:"
+        "DOTA_Tooltip_ability_melt_attribute_crime_damage_per_agi"                    "EL POINTE DAMAGE PER AGI:"
+
+        "DOTA_Tooltip_Ability_melt_attribute_saint_graph"                        "<font color='#9FFFCC'>Attribute: Saint Graph Expansion</font>"
+        "DOTA_Tooltip_ability_melt_attribute_saint_graph_Description"            "<font color='#58ACFA'>Sarasvati Meltout</font>: Gain bonus damage and bonus damage per <font color='#00F7FF'>INT</font> \n<font color='#FF04EF'>Benzaiten Gogen Biwa - Sarasvati Meltout</font>: Increase last damage."
+        "DOTA_Tooltip_ability_melt_attribute_saint_graph_bonus_r_damage"                    "SARASVATI BONUS DAMAGE:"
+        "DOTA_Tooltip_ability_melt_attribute_saint_graph_damage_per_int"                    "SARASVATI DAMAGE PER INT:"
+        "DOTA_Tooltip_ability_melt_attribute_saint_graph_bonus_combo_damage"                "COMBO BONUS LAST DAMAGE:"
+
+        "DOTA_Tooltip_Ability_melt_attribute_sadistic"                        "<font color='#9FFFCC'>Attribute: Sadistic Nature</font>"
+        "DOTA_Tooltip_ability_melt_attribute_sadistic_Description"            "<font color='#58ACFA'>Grand Jete</font> : Applies a strong buff after cast, grants bonus attackspeed, movement speed, and attacks will deal a small amount of bonus damage based on <font color='#FF0000'>STR</font> in a small area based on <font color='#00F7FF'>INT</font>. Targets hit with splash effect will also take <font color='#FF9900'>Melt Virus</font> effect if Melt has learned it."
+        "DOTA_Tooltip_ability_melt_attribute_sadistic_movespeed_bonus"              "%MS BONUS:"
+        "DOTA_Tooltip_ability_melt_attribute_sadistic_buff_duration"                "BUFF DURATION:"
+        "DOTA_Tooltip_ability_melt_attribute_sadistic_aspd_buff"                    "ASPD BONUS:"
+        "DOTA_Tooltip_ability_melt_attribute_sadistic_splash_dmg_per_str"           "SPLASH DMG PER STR:"
+        "DOTA_Tooltip_ability_melt_attribute_sadistic_splash_aoe_per_int"           "SPLASH RANGE PER INT:"
+
+        ////////////////// MODIFIERS ///////////////////
+
+        "DOTA_Tooltip_modifier_melt_dashing"                           "Melt Performing"
+
+        "DOTA_Tooltip_modifier_melt_dance"                             "Grand Jete"
+        "DOTA_Tooltip_modifier_melt_dance_slow"                        "Grand Jete Slow"
+
+		"DOTA_Tooltip_modifier_melt_dance_buff"							"Performance"
+		"DOTA_Tooltip_modifier_melt_dance_buff_Description"				"Gaining bonus movement speed and attack speed, and splash attack"
+
+		"DOTA_Tooltip_modifier_melt_combo_cooldown"						"Combo Cooldown"
+
+        "DOTA_Tooltip_modifier_composite_divinity"            			"Composite Divinity"
+        "DOTA_Tooltip_modifier_composite_divinity_Description" 			"Gaining bonus attribute"
+
+		"DOTA_Tooltip_modifier_melt_virus"								"Melt Virus"
+        "DOTA_Tooltip_modifier_melt_virus_Description"         			"Taking periodical damage."
+
+        "DOTA_Tooltip_modifier_virus_stack"                             "Melt Virus - Stacks"
+        "DOTA_Tooltip_modifier_virus_stack_Description"                 "Gaining stats per kill."
+
+        //====================================
+        //      Ishtar
+        //====================================
+        "npc_dota_hero_oracle"             "Ishtar"
+        "npc_dota_hero_oracle_summon"		"Servant <font color='#58ACFA'>Ishtar</font> has been summoned."
+        "npc_dota_hero_oracle_enable_combo"	"Enable Combo: Jabal Hamlin Breaker - Mountain Range-Shaking Firewood of Venus"
+
+        ////////////////// INNATE ///////////////////
+
+        "DOTA_Tooltip_Ability_ishtar_d"			"<font color='#FFFFFF'>Gems Creation</font>"
+        "DOTA_Tooltip_ability_ishtar_d_Description"		"<font color='#58ACFA'>PASSIVE</font>: Ishtar can collect %max_gem% <font color='#FFFF28'>Gems</font> at the same time.
+        <font color='#58ACFA'>ACTIVE</font>: Ishtar pays %gem_cost% gold to gains %gem_gain% <font color='#FFFF28'>Gems</font>
+        <font color='#FFFF28'>Gems</font> Will be used with <font color='#FFFFFF'>Gems Use</font> to improve all of Ishtar's abilities.
+        Ishtar will loss %gem_loss%%% <font color='#FFFF28'>Gems</font> upto death.
+        <font color='#9FFFCC'>Upgradable with Attribute: Gems of Uruk</font>."
+        "DOTA_Tooltip_ability_ishtar_d_Lore"    			"Gems value goes stonk."
+
+        "DOTA_Tooltip_Ability_ishtar_d_upgrade"			"<font color='#9FFFCC'>Gems Creation</font>"
+        "DOTA_Tooltip_ability_ishtar_d_upgrade_Description"		"<font color='#58ACFA'>PASSIVE</font>: Ishtar can collect unlimited <font color='#FFFF28'>Gems</font> at the same time.
+        <font color='#58ACFA'>ACTIVE</font>: Ishtar pays %gem_cost% gold to gains %gem_gain% <font color='#FFFF28'>Gems</font>
+        <font color='#FFFF28'>Gems</font> Will be used with <font color='#FFFFFF'>Gems Use</font> to improve all of Ishtar's abilities.
+        Ishtar will loss %gem_loss%%% <font color='#FFFF28'>Gems</font> upto death."
+        "DOTA_Tooltip_ability_ishtar_d_upgrade_Lore"    			"Gems value goes stonk."
+
+        "DOTA_Tooltip_Ability_ishtar_f"			"<font color='#FFFFFF'>Gems Use</font>"
+        "DOTA_Tooltip_ability_ishtar_f_Description"		"<font color='#58ACFA'>TOGGLE</font>: Ishtar gains <font color='#FFFF28'>Gems Use</font> as long as Ishtar has <font color='#FFFF28'>Gems</font> in stocks.
+        <font color='#FFFF28'>Gems Use</font>: Comsume <font color='#FFFF28'>Gems</font> to improve other abilities.
+        <font color='#58ACFA'>Light of Venus</font>: Fire %QArrow% additional magic arrows per <font color='#FFFF28'>Gems</font> consume. Maximum %QGem% <font color='#FFFF28'>Gems</font>.
+        <font color='#58ACFA'>Maanna, the Boat of Heaven</font>: Increase %WDamage% damage and %WKnock% <font color='#FF3399'>knockback</font> distance per <font color='#FFFF28'>Gems</font> consume. Maximum %WGem% <font color='#FFFF28'>Gems</font>.
+        <font color='#58ACFA'>Venus Radiance</font>: Fire %EArrows% additional magic rays per <font color='#FFFF28'>Gems</font> consume. Maximum %EGem% <font color='#FFFF28'>Gems</font>.
+        <font color='#58ACFA'>An Gal Ta Ki Gal Šè</font>: Ishtar no longer <font color='#58ACFA'>channeling</font> and jump up then fire the giant arrow to target area while firing %RArrow% additional magic arrows per <font color='#FFFF28'>Gems</font> consume to random location inside target area, dealing %RArrowDamage% damage to %RArrowAoe% AOE. Maximum %RGem% <font color='#FFFF28'>Gems</font>.
+        <font color='#FF04EF'>Jabal Hamrin Breaker</font>: Increase %CDamage% damage per <font color='#FFFF28'>Gems</font> consume. Ishtar will consume all <font color='#FFFF28'>Gems</font>.
+        <font color='#9FFFCC'>Upgradable with Attribute: Mana Burst (Gem)</font>."
+
+        "DOTA_Tooltip_Ability_ishtar_f_upgrade"			"<font color='#9FFFCC'>Gems Use</font>"
+        "DOTA_Tooltip_ability_ishtar_f_upgrade_Description"		"<font color='#58ACFA'>TOGGLE</font>: Ishtar gains <font color='#FFFF28'>Gems Use</font> as long as Ishtar has <font color='#FFFF28'>Gems</font> in stocks.
+        <font color='#FFFF28'>Gems Use</font>: Comsume <font color='#FFFF28'>Gems</font> to improve other abilities.
+        <font color='#58ACFA'>Light of Venus</font>: Fire %QArrow% additional magic arrows per <font color='#FFFF28'>Gems</font> consume. Maximum %QGem% <font color='#FFFF28'>Gems</font>.
+        <font color='#58ACFA'>Maanna, the Boat of Heaven</font>: Increase %WDamage% damage, %WBonusBlock%%% damage reduction and %WKnock% <font color='#FF3399'>knockback</font> distance per <font color='#FFFF28'>Gems</font> consume. Maximum %WGem% <font color='#FFFF28'>Gems</font>.
+        <font color='#58ACFA'>Venus Radiance</font>: Fire %EArrows% additional magic rays per <font color='#FFFF28'>Gems</font> consume and increase maximum rays per target upto %EMax%. Maximum %EGem% <font color='#FFFF28'>Gems</font>.
+        <font color='#58ACFA'>An Gal Ta Ki Gal Šè</font>: Ishtar no longer <font color='#58ACFA'>channeling</font> and jump up then fire the giant arrow to target area while firing %RArrow% additional magic arrows per <font color='#FFFF28'>Gems</font> consume to random location inside target area, dealing %RArrowDamage% damage to %RArrowAoe% AOE. Maximum %RGem% <font color='#FFFF28'>Gems</font>.
+        <font color='#FF04EF'>Jabal Hamrin Breaker</font>: Increase %CDamage% damage per <font color='#FFFF28'>Gems</font> consume. Ishtar will consume all <font color='#FFFF28'>Gems</font>.
+        <font color='#58ACFA'>Light of Venus, Venus Radiance</font> and <font color='#58ACFA'>An Gal Ta Ki Gal Šè</font>'s arrows will apply <font color='#FF3399'>Mana Burst</font> for %FDuration% seconds.
+        When <font color='#FF3399'>Mana Burst</font> reach %FStack% stacks, target will take %FDamage% damage and <font color='#FF3399'>stunning</font> for %FStun% second."
+
+
+        ////////////////// BASIC //////////////////
+
+        "DOTA_Tooltip_Ability_ishtar_q"					"<font color='#58ACFA'>Light of Venus</font>"
+        "DOTA_Tooltip_ability_ishtar_q_Description"		"Ishtar fires %arrow% magic arrows in front of herself, dealing magic damage along the path.
+        <font color='#FF9900'>Gem Consume: Fire <font color='#FFFFFF'>%GemArrow%</font> additional magic arrows per <font color='#FFFF28'>Gems</font> consume</font>.
+        <font color='#9FFFCC'>Upgradable with Attribute: Goddess of Venus</font>."
+        "DOTA_Tooltip_ability_ishtar_q_cast_delay"					"CAST DELAY:"
+        "DOTA_Tooltip_ability_ishtar_q_distance"					"DISTANCE:"
+        "DOTA_Tooltip_ability_ishtar_q_damage"						"DAMAGE PER ARROW:"
+        "DOTA_Tooltip_ability_ishtar_q_gem_consume"					"MAXIMUM GEM USE:"
+        "DOTA_Tooltip_ability_ishtar_q_GemArrow"					"ARROW PER GEM:"
+
+        "DOTA_Tooltip_Ability_ishtar_q_upgrade"					"<font color='#9FFFCC'>Light of Venus</font>"
+        "DOTA_Tooltip_ability_ishtar_q_upgrade_Description"		"Ishtar fires %arrow% magic arrows in front of herself, dealing magic damage based on Ishtar's <font color='#80FF00'>AGI</font> along the path.
+        <font color='#FF9900'>Gem Consume: Fire <font color='#FFFFFF'>%GemArrow%</font> additional magic arrows per <font color='#FFFF28'>Gems</font> consume</font>."
+        "DOTA_Tooltip_ability_ishtar_q_upgrade_cast_delay"					"CAST DELAY:"
+        "DOTA_Tooltip_ability_ishtar_q_upgrade_distance"					"DISTANCE:"
+        "DOTA_Tooltip_ability_ishtar_q_upgrade_damage"						"DAMAGE PER ARROW:"
+        "DOTA_Tooltip_ability_ishtar_q_upgrade_bonus_agi"					"BONUS DAMAGE PER AGI:"
+        "DOTA_Tooltip_ability_ishtar_q_upgrade_gem_consume"					"MAXIMUM GEM USE:"
+        "DOTA_Tooltip_ability_ishtar_q_upgrade_GemArrow"					"ARROW PER GEM:"
+        
+        "DOTA_Tooltip_Ability_ishtar_w"			"<font color='#58ACFA'>Maanna, the Boat of Heaven</font>"
+        "DOTA_Tooltip_ability_ishtar_w_Description"		"<font color='#58ACFA'>CHANNELING</font>: Ishtar gains <font color='#FFFF28'>Maana Riding</font> and enable <font color='#58ACFA'>Maanna, the Boat of Heaven - Stop</font> for %dash_duration% seconds.
+        <font color='#FFFF28'>Maana Riding</font>: Ishtar ride on her giant bow in a circle around the target location while gaining %damage_reduction%%% damage reduction. Ishtar also dealing damage to enemies upon collide.
+        <font color='#58ACFA'>Maanna, the Boat of Heaven - Stop</font>: Instant stop the ride at the location.
+        <font color='#FF9900'>Gem Consume: Deals <font color='#FFFFFF'>%gem_damage%</font> additional damage, <font color='#FF3399'>knockback</font> <font color='#FFFFFF'>%gem_knock%</font> distance and <font color='#FFFFFF'>%GemReduction%%%</font> damage reduction per <font color='#FFFF28'>Gems</font> consume</font>."
+        "DOTA_Tooltip_ability_ishtar_w_Lore"    			"Helicopter helicopter."
+        "DOTA_Tooltip_ability_ishtar_w_damage"				"DAMAGE:"
+        "DOTA_Tooltip_ability_ishtar_w_dash_range"			"DASH RADIUS:"
+        "DOTA_Tooltip_ability_ishtar_w_gem_consume"			"MAXIMUM GEM USE:"
+
+        "DOTA_Tooltip_Ability_ishtar_e"			"<font color='#58ACFA'>Venus Radiance</font>"
+        "DOTA_Tooltip_ability_ishtar_e_Description"		"After delay %delay% seconds, Ishtar shoots %arrows% rays of light to enemies in target area, dealing magic damage.
+        There is maximum %MaxArrow% rays to single target.
+        If enemy run away from target area further than %max_range% distance, the rays will randomly hit the ground.
+        <font color='#FF9900'>Gem Consume: Fire <font color='#FFFFFF'>%GemArrows%</font> additional rays of light per <font color='#FFFF28'>Gems</font> consume</font>.
+        <font color='#9FFFCC'>Upgradable with Attribute: Goddess of Venus</font>."
+        "DOTA_Tooltip_ability_ishtar_e_range"			"CAST RANGE:"
+        "DOTA_Tooltip_ability_ishtar_e_aoe"				"AOE:"
+        "DOTA_Tooltip_ability_ishtar_e_damage"			"DAMAGE PER RAY:"
+        "DOTA_Tooltip_ability_ishtar_e_gem_consume"			"MAXIMUM GEM USE:"
+
+        "DOTA_Tooltip_Ability_ishtar_e_upgrade"			"<font color='#9FFFCC'>Venus Radiance</font>"
+        "DOTA_Tooltip_ability_ishtar_e_upgrade_Description"		"After delay %delay% seconds, Ishtar shoots %arrows% rays of light to enemies in target area, dealing magic damage based on Ishtar's <font color='#80FF00'>AGI</font>.
+        There is maximum %MaxArrow% rays to single target.
+        If enemy run away from target area further than %max_range% distance, the rays will randomly hit the ground.
+        <font color='#FF9900'>Gem Consume: Fire <font color='#FFFFFF'>%GemArrows%</font> additional rays of light per <font color='#FFFF28'>Gems</font> consume</font>."
+        "DOTA_Tooltip_ability_ishtar_e_upgrade_range"			"CAST RANGE:"
+        "DOTA_Tooltip_ability_ishtar_e_upgrade_aoe"				"AOE:"
+        "DOTA_Tooltip_ability_ishtar_e_upgrade_damage"			"DAMAGE PER RAY:"
+        "DOTA_Tooltip_ability_ishtar_e_upgrade_bonus_agi"		"BONUS DAMAGE PER AGI:"
+        "DOTA_Tooltip_ability_ishtar_e_upgrade_gem_consume"			"MAXIMUM GEM USE:"
+
+
+        "DOTA_Tooltip_Ability_ishtar_r"					"<font color='#58ACFA'>An Gal Ta Ki Gal Šè</font>"
+        "DOTA_Tooltip_ability_ishtar_r_Description"		"<font color='#58ACFA'>CHANNELING</font>: Ishtar charges up her giant bow, Maanna and proceed to shoots a giant arrow to %range% distance, dealing magic damage on impact which then explode to %impact_radius% aoe and deals extra area magical damage on impact.
+        Ishtar need minimum charge time %min_channel% second to launch the giant arrow. Ishtar can charge up to %max_channel% seconds.
+        The giant arrow wil go further %range_bonus_channel% distance, %speed_bonus_channel% speed faster and deal bonus %damage_bonus_channel% explode damage per channeling time. 
+        <font color='#FF9900'>Gem Consume: Ishtar no longer <font color='#58ACFA'>channeling</font> and jump up then fire the giant arrow to target area dealing magic damage while firing <font color='#FFFFFF'>%gem_bonus_arrow%</font> additional magic arrows per <font color='#FFFF28'>Gems</font> consume to random location inside target area, dealing <font color='#FFFFFF'>%GemArrowDamage%</font> damage to <font color='#FFFFFF'>%gem_arrow_aoe%</font> AOE</font>.
+        Ishtar is <font color='#FFFF28'>invulnerable</font> and <font color='#FFFF28'>untargetable</font> until landing. 
+        <font color='#9FFFCC'>Upgradable with Attribute: Goddess of Venus</font>."
+        "DOTA_Tooltip_ability_ishtar_r_damage"				"IMPACT DAMAGE:"
+        "DOTA_Tooltip_ability_ishtar_r_damage_impact"		"EXPLODE DAMAGE:"
+        "DOTA_Tooltip_ability_ishtar_r_gem_burst_damage"	"GEM MODE DAMAGE:"
+        "DOTA_Tooltip_ability_ishtar_r_gem_delay"			"GEM MODE CAST TIME:"
+        "DOTA_Tooltip_ability_ishtar_r_gem_range"			"GEM MODE CAST RANGE:"
+        "DOTA_Tooltip_ability_ishtar_r_gem_aoe"				"GEM MODE AOE:"
+        "DOTA_Tooltip_ability_ishtar_r_gem_consume"			"MAXIMUM GEM USE:"
+
+        "DOTA_Tooltip_Ability_ishtar_r_upgrade"					"<font color='#9FFFCC'>An Gal Ta Ki Gal Šè</font>"
+        "DOTA_Tooltip_ability_ishtar_r_upgrade_Description"		"<font color='#58ACFA'>CHANNELING</font>: Ishtar charges up her giant bow, Maanna and proceed to shoots a giant arrow to %range% distance, dealing magic damage on impact which then explode to %impact_radius% aoe and deals extra area magical damage on impact based on Ishtar's <font color='#80FF00'>AGI</font>.
+        Ishtar need minimum charge time %min_channel% second to launch the giant arrow. Ishtar can charge up to %max_channel% seconds.
+        The giant arrow wil go further %range_bonus_channel% distance, %speed_bonus_channel% speed faster and deal bonus %damage_bonus_channel% explode damage per channeling time. 
+        <font color='#FF9900'>Gem Consume: Ishtar no longer <font color='#58ACFA'>channeling</font> and jump up then fire the giant arrow to target area dealing magic damage based on Ishtar's <font color='#80FF00'>AGI</font> while firing <font color='#FFFFFF'>%gem_bonus_arrow%</font> additional magic arrows per <font color='#FFFF28'>Gems</font> consume to random location inside target area, dealing <font color='#FFFFFF'>%GemArrowDamage%</font> damage to <font color='#FFFFFF'>%gem_arrow_aoe%</font> AOE</font>.
+        Ishtar is <font color='#FFFF28'>invulnerable</font> and <font color='#FFFF28'>untargetable</font> until landing."
+        "DOTA_Tooltip_ability_ishtar_r_upgrade_damage"				"IMPACT DAMAGE:"
+        "DOTA_Tooltip_ability_ishtar_r_upgrade_damage_impact"		"EXPLODE DAMAGE:"
+        "DOTA_Tooltip_ability_ishtar_r_upgrade_gem_burst_damage"	"GEM MODE DAMAGE:"
+        "DOTA_Tooltip_ability_ishtar_r_upgrade_gem_delay"			"GEM MODE CAST TIME:"
+        "DOTA_Tooltip_ability_ishtar_r_upgrade_gem_range"			"GEM MODE CAST RANGE:"
+        "DOTA_Tooltip_ability_ishtar_r_upgrade_gem_aoe"				"GEM MODE AOE:"
+        "DOTA_Tooltip_ability_ishtar_r_upgrade_gem_consume"			"MAXIMUM GEM USE:"
+        "DOTA_Tooltip_ability_ishtar_r_upgrade_bonus_agi"			"BONUS DAMAGE PER AGI:"
+
+        ////////////////////////// COMBO /////////////////////////////
+
+        "DOTA_Tooltip_Ability_ishtar_combo"			"<font color='#FF04EF'>Jabal Hamrin Breaker - Mountain Range-Shaking Firewood of Venus</font>"
+        "DOTA_Tooltip_ability_ishtar_combo_Description"		"<font color='#FF04EF'>Combo Requirements: 25 or more in all stats.</font>
+        <font color='#FF04EF'>Combo Sequence: Q-D->R in 4 seconds.</font> 
+        <font color='#FF9900'>Death Match: Ishtar can use combo after 1.30 min.</font> 
+        Ishtar channels a portal to center of map for %delay_before_tele% second, After teleporting up Ishtar gain vision over visible enemy heroes while enable <font color='#58ACFA'>Jabal Hamrin Breaker - Target Location</font> for %reveal% seconds.
+        <font color='#58ACFA'>Jabal Hamrin Breaker - Target Location</font>: Select the target area. If this abily is not used in time, Ishtar will randomly aim to enemy hero location.
+        After charging up for %cast% seconds, Ishtar shoot the power of venus to target area, causing a huge explosion and dealing damage based on <font color='#FFFF28'>Gems</font>.
+        Affected area will burn and deal a small amount of damage per second.   
+        Ishtar is <font color='#FF3399'>stunned</font> until she enter the portal and becoming <font color='#FFFF28'>invulnerable</font> and <font color='#FFFF28'>untargetable</font> while floating on the sky
+		Ishtar will teleport back to original location after finishing this ability.
+		<font color='#FF04EF'>Jabal Hamrin Breaker</font> can not used inside Reality Marble while <font color='#58ACFA'>Jabal Hamrin Breaker - Target Location</font> can not target Reality Marble."
+        "DOTA_Tooltip_ability_ishtar_combo_aoe"					"AOE:"
+        "DOTA_Tooltip_ability_ishtar_combo_damage"				"BASE DAMAGE:"
+        "DOTA_Tooltip_ability_ishtar_combo_GemDamage"			"BONUS DAMAGE PER GEM:"
+        "DOTA_Tooltip_ability_ishtar_combo_dps"					"BURN DAMAGE PER SEC:"
+        "DOTA_Tooltip_ability_ishtar_combo_dps_duration"		"BURN DURATION:"
+
+        ///////////////////////// ATTRIBUTE ////////////////////////////
+
+        "DOTA_Tooltip_Ability_ishtar_attribute_gems"			"<font color='#9FFFCC'>Attribute: Gems of Uruk</font>"
+        "DOTA_Tooltip_ability_ishtar_attribute_gems_Description"		"<font color='#FFFFFF'>Gems Creation</font>: Ishtar pay %gem_cost% gold to gain %gem_gain% <font color='#FFFF28'>Gems</font>. Ishtar can stock unlimited <font color='#FFFF28'>Gems</font>.
+        Ishtar loss %gem_loss%%% <font color='#FFFF28'>Gems</font> upon death."
+
+        "DOTA_Tooltip_Ability_ishtar_attribute_goddess"			"<font color='#FFFFFF'>Attribute: Manifestation of Beauty</font>"
+        "DOTA_Tooltip_ability_ishtar_attribute_goddess_Description"		"Enable <font color='#FFB266'>Manifestation of Beauty</font>.
+        <font color='#FFB266'>Manifestation of Beauty</font>: <font color='#58ACFA'>PASSIVE AURA</font>: All male allies within %buff_radius% radius gain <font color='#FFFF28'>Mesmerizing Charm</font> while Ishtar recovers her health %recover_damage_taken%%% of damage taken from male enemy heroes.
+        <font color='#FFFF28'>Mesmerizing Charm</font>: Gaining %buff_male_mr%%% magical resistance.
+        Health recovery is not exceeding %recovery_per_second% per second."
+
+        "DOTA_Tooltip_Ability_ishtar_attribute_crown"			"<font color='#9FFFCC'>Attribute: Gleaming Brilliant Crown</font>"
+        "DOTA_Tooltip_ability_ishtar_attribute_crown_Description"		"Enable <font color='#FFB266'>Gleaming Brilliant Crown</font>.
+        <font color='#FFB266'>Gleaming Brilliant Crown</font>: <font color='#58ACFA'>PASSIVE</font>: Ishtar gain %gold_gain% gold per second, %bonus_ms% bonus movespeed, %vision% vision radius. Ishtar's normal attack gains <font color='#FFFF28'>Gleaming Brilliant Crown Mark</font>'s stack for %duration% seconds.
+        <font color='#FFFF28'>Gleaming Brilliant Crown Mark</font>'s stack reach %atk_count% stacks, Ishtar will use %gem_consume% <font color='#FFFF28'>Gems</font> to fires %total_arrow% rays of light to enemy target, dealing %arrow_dmg% magical damage."
+
+        "DOTA_Tooltip_Ability_ishtar_attribute_mana_burst"			"<font color='#9FFFCC'>Attribute: Mana Burst (Gem)</font>"
+        "DOTA_Tooltip_ability_ishtar_attribute_mana_burst_Description"		"<font color='#58ACFA'>Light of Venus</font>: Fire %q_arrow% additional magic arrows per <font color='#FFFF28'>Gems</font> consume.
+        <font color='#58ACFA'>Maanna, the Boat of Heaven</font>: Increase %w_bonus_block%%% damage reduction per <font color='#FFFF28'>Gems</font> consume.
+        <font color='#58ACFA'>Venus Radiance</font>: Fire %e_arrows% additional magic rays per <font color='#FFFF28'>Gems</font> consume and increase maximum rays per target upto %e_max%. 
+        <font color='#58ACFA'>An Gal Ta Ki Gal Šè</font>: Increase magical arrows damage to %r_arrow_damage% damage
+        <font color='#FF04EF'>Jabal Hamrin Breaker</font>: Increase bonus damage to %c_damage% per <font color='#FFFF28'>Gems</font> consume.
+        <font color='#58ACFA'>Light of Venus, Venus Radiance</font> and <font color='#58ACFA'>An Gal Ta Ki Gal Šè</font>'s arrows will apply <font color='#FF3399'>Mana Burst</font> for %f_duration% seconds.
+        When <font color='#FF3399'>Mana Burst</font> reach %f_stack% stacks, target will take %f_damage% damage and <font color='#FF3399'>stunning</font> for %f_stun% second."
+
+        "DOTA_Tooltip_Ability_ishtar_attribute_venus"			"<font color='#9FFFCC'>Attribute: Goddess of Venus</font>"
+        "DOTA_Tooltip_ability_ishtar_attribute_venus_Description"		"<font color='#58ACFA'>Light of Venus</font>: Increase magic arrows damage by %q_agi% x <font color='#80FF00'>AGI</font>
+        <font color='#58ACFA'>Venus Radiance</font>: Increase rays of light damage by %e_agi% x <font color='#80FF00'>AGI</font>
+        <font color='#58ACFA'>An Gal Ta Ki Gal Šè</font>: Increase explode damage by %r_agi% x <font color='#80FF00'>AGI</font>"
+
+        //====================================   MODIFIERS   ====================================
+
+		"DOTA_Tooltip_modifier_ishtar_gem"								"Gems"
+		"DOTA_Tooltip_modifier_ishtar_gem_Description"					""
+
+		"DOTA_Tooltip_modifier_ishtar_gem_consume"						"Gems Use"
+		"DOTA_Tooltip_modifier_ishtar_gem_consume_Description"			"Consume Gems to improve abilities"
+
+		"DOTA_Tooltip_modifier_ishtar_mana_burst_gem"					"Mana Burst (Gem)"
+		"DOTA_Tooltip_modifier_ishtar_mana_burst_gem_Description"		""
+
+		"DOTA_Tooltip_modifier_ishtar_mana_burst_debuff"				"Mana Burst"
+		"DOTA_Tooltip_modifier_ishtar_mana_burst_debuff_Description"	""
+
+		"DOTA_Tooltip_modifier_ishtar_w_dash"							"Dashing"
+
+		"DOTA_Tooltip_modifier_ishtar_beauty"							"Manifestation of Beauty"
+		"DOTA_Tooltip_modifier_ishtar_beauty_Description"				"Ishtar recovers damage from male"
+
+		"DOTA_Tooltip_modifier_ishtar_beauty_male"						"Mesmerizing Charm"
+		"DOTA_Tooltip_modifier_ishtar_beauty_male_Description"			"Gain bonus Magic Resistance"
+
+		"DOTA_Tooltip_modifier_ishtar_crown"							"Gleaming Brilliant Crown"
+		"DOTA_Tooltip_modifier_ishtar_crown_Description"				"Increase Gold gain, Movespeed and Vision"
+
+		"DOTA_Tooltip_modifier_ishtar_crown_tracker"						"Gleaming Brilliant Crown Mark"
+		"DOTA_Tooltip_modifier_ishtar_crown_tracker_Description"			""
+		
+
+		"DOTA_Tooltip_modifier_ishtar_casting"															"Charging up Maanna"
+
+		"DOTA_Tooltip_modifier_ishtar_passive_buff"															"Mesmerizing Charm"
+		"DOTA_Tooltip_modifier_ishtar_passive_buff_Description"												"Gaining extra Magic Resistance."
+
+		"DOTA_Tooltip_modifier_ishtar_damage_stack"															"Recovering damage"
+		"DOTA_Tooltip_modifier_ishtar_damage_stack_Description"												"Healing damage taken from male heroes."
+
+		"DOTA_Tooltip_modifier_ishtar_combo_cooldown"					"Jabal Hamrin Breaker cooldown"
+		"DOTA_Tooltip_modifier_ishtar_combo_cooldown_Description"		"Ishtar Combo on cooldown."
+
+		//------------------------------ unuse -----------------------------
+
+		"DOTA_Tooltip_Ability_ishtar_attribute_offering"			"<font color='#FFFFFF'>Attribute: Goddess Worthy Offerings</font>"
+        "DOTA_Tooltip_ability_ishtar_attribute_offering_Description"		"<font color='#9FFFCC'>Gems of Uruk</font> : Ishtar gains gem naturally overtime."
+        "DOTA_Tooltip_ability_ishtar_attribute_offering_Lore"		"Sorry, further subscription to your goddess would cost you one gem."
+        "DOTA_Tooltip_ability_ishtar_attribute_offering_gain_gem_each_second"			"GAIN A GEM EACH X SECOND:"
+
+		//====================================
+		//	Apocrypha - Raging Cat
+		//====================================
+		"npc_dota_hero_ursa"		"Atalanta (Alter)"
+		"npc_dota_hero_ursa_1"		"[Heroic] Armored Atalanta Alter"
+		"npc_dota_hero_ursa_summon"		"Servant <font color='#58ACFA'>Atalanta (Alter)</font> has been summoned."
+        "npc_dota_hero_ursa_enable_combo"	"Enable Combo: Tauropolos Skia Thermokrasia"
+
+		"npc_dota_hero_ursa_hype"	""
+		"npc_dota_hero_ursa_bio"	""
+
+		////////////////// Innate /////////////
+
+		"DOTA_Tooltip_Ability_atalanta_alter_curse"	"<font color='#FFFFFF'>Curse of the Calydonian Boar</font>"
+		"DOTA_Tooltip_Ability_atalanta_alter_curse_Description"	"<font color='#58ACFA'>PASSIVE</font>: By attacking or by using abilities(<font color='#58ACFA'>Roar, Crossing Arcadia, Tauropolos - Arrow Rain</font> or <font color='#FF04EF'>Tauropolos Skia Thermokrasia</font>) Atalanta applies <font color='#FF3399'>Curse of the Calydonian Boar</font>'s stacks for %curse_duration% seconds. 
+		<font color='#58ACFA'>ACTIVE</font>: All curse stacks on the enemies within %active_search% units will explode. Atalanta absorbs all <font color='#FFFF28'>Curse Energy</font>'s stacks. 
+		<font color='#FF3399'>Curse of the Calydonian Boar</font>: When it reaches %curse_max_stack% stacks or run out of time, it will explode, dealing magical damage to its target. 
+		If Atalanta is staying within %passive_search% units and the target has be seen, Atalanta will absorb the curse and gain <font color='#FFFF28'>Curse Energy</font>'s stacks. 
+		<font color='#FFFF28'>Curse Energy</font>: When it reaches %energy_stack% stacks, Atalanta gains <font color='#FFFF28'>Evil Beast</font> for %evil_duration% seconds. 
+		<font color='#FFFF28'>Evil Beast</font>: Atalanta's attacks deal %evil_dmg% additional magic damage. Atalanta's attacks also deal <font color='#FFFFFF'>100%%</font> splash damage to %evil_splash% areas. Atalanta's attacks and abilities will apply <font color='#FFFFFF'>2</font> times of <font color='#FF3399'>Curse of the Calydonian Boar</font>'s stacks.
+		Atalanta can not gain <font color='#FFFF28'>Curse Energy</font>'s stacks while entering <font color='#FFFF28'>Evil Beast</font>.
+		All <font color='#FFFF28'>Curse Energy</font>'s stacks will be reset after Atalanta left <font color='#FFFF28'>Evil Beast</font>
+		<font color='#9FFFCC'>Upgradable with Attribute: Cursed Moon and Self Evolution</font>.
+		CURSE DAMAGE: %curse_dmg% x STACKS"
+
+		"DOTA_Tooltip_Ability_atalanta_alter_curse_upgrade_1"	"<font color='#9FFFCC'>Curse of the Calydonian Boar</font>"
+		"DOTA_Tooltip_Ability_atalanta_alter_curse_upgrade_1_Description"	"<font color='#58ACFA'>PASSIVE</font>: By attacking or by using abilities(<font color='#58ACFA'>Roar, Crossing Arcadia, Tauropolos - Arrow Rain</font> or <font color='#FF04EF'>Tauropolos Skia Thermokrasia</font>) Atalanta applies <font color='#FF3399'>Curse of the Calydonian Boar</font>'s stacks for %curse_duration% seconds. 
+		<font color='#58ACFA'>ACTIVE</font>: All curse stacks on the enemies within %active_search% units will explode. Atalanta absorbs all <font color='#FFFF28'>Curse Energy</font>'s stacks. 
+		<font color='#FF3399'>Curse of the Calydonian Boar</font>: When it reaches %curse_max_stack% stacks or run out of time, it will explode, dealing magical damage based on Atalanta's <font color='#80FF00'>AGI</font> to its target. Atalanta also gain vision over target that has more than %vision% stacks.
+		If Atalanta is staying within %passive_search% units and the target has be seen, Atalanta will absorb the curse and gain <font color='#FFFF28'>Curse Energy</font>'s stacks. 
+		<font color='#FFFF28'>Curse Energy</font>: When it reaches %energy_stack% stacks, Atalanta gains <font color='#FFFF28'>Evil Beast</font> for %evil_duration% seconds.
+		<font color='#FFFF28'>Evil Beast</font>: Atalanta's attacks deal %evil_dmg% additional magic damage. Atalanta's attacks also deal <font color='#FFFFFF'>100%%</font> splash damage to %evil_splash% areas. Atalanta's attacks and abilities will apply <font color='#FFFFFF'>2</font> times of <font color='#FF3399'>Curse of the Calydonian Boar</font>'s stacks.
+		Atalanta can not gain <font color='#FFFF28'>Curse Energy</font>'s stacks while entering <font color='#FFFF28'>Evil Beast</font>.
+		All <font color='#FFFF28'>Curse Energy</font>'s stacks will be reset after Atalanta left <font color='#FFFF28'>Evil Beast</font>
+		<font color='#9FFFCC'>Upgradable with Attribute: Self Evolution</font>.
+		CURSE DAMAGE: (%curse_dmg% x <font color='#FF3399'>STACKS</font>) + (%curse_dmg_agi% x <font color='#80FF00'>AGI</font>)"
+		
+		"DOTA_Tooltip_Ability_atalanta_alter_curse_upgrade_2"	"<font color='#9FFFCC'>Curse of the Calydonian Boar</font>"
+		"DOTA_Tooltip_Ability_atalanta_alter_curse_upgrade_2_Description"	"<font color='#58ACFA'>PASSIVE</font>: By attacking or by using abilities(<font color='#58ACFA'>Roar, Crossing Arcadia, Tauropolos - Arrow Rain</font> or <font color='#FF04EF'>Tauropolos Skia Thermokrasia</font>) Atalanta applies <font color='#FF3399'>Curse of the Calydonian Boar</font>'s stacks for %curse_duration% seconds. 
+		<font color='#58ACFA'>ACTIVE</font>: All curse stacks on the enemies within %active_search% units will explode. Atalanta absorbs all <font color='#FFFF28'>Curse Energy</font>'s stacks. 
+		<font color='#FF3399'>Curse of the Calydonian Boar</font>: When it reaches %curse_max_stack% stacks or run out of time, it will explode, dealing magical damage to its target. 
+		If Atalanta is staying within %passive_search% units and the target has be seen, Atalanta will absorb the curse and gain <font color='#FFFF28'>Curse Energy</font>'s stacks. 
+		<font color='#FFFF28'>Curse Energy</font>: When it reaches %energy_stack% stacks, Atalanta gains <font color='#FFFF28'>Evil Beast</font> for %evil_duration% seconds.
+		<font color='#FFFF28'>Evil Beast</font>: Atalanta gain <font color='#FFFFFF'>1%%</font> attack for each stack of <font color='#FFFF28'>Curse Energy</font>. Atalanta's attacks deal %evil_dmg% additional magic damage. Atalanta's attacks also deal <font color='#FFFFFF'>100%%</font> splash damage to %evil_splash% areas. Atalanta's attacks and abilities will apply <font color='#FFFFFF'>2</font> times of <font color='#FF3399'>Curse of the Calydonian Boar</font>'s stacks.
+		All <font color='#FFFF28'>Curse Energy</font>'s stacks will be reset after Atalanta left <font color='#FFFF28'>Evil Beast</font>
+		<font color='#9FFFCC'>Upgradable with Attribute: Cursed Moon</font>.
+		CURSE DAMAGE: %curse_dmg% x STACKS"
+
+		"DOTA_Tooltip_Ability_atalanta_alter_curse_upgrade_3"	"<font color='#9FFFCC'>Curse of the Calydonian Boar</font>"
+		"DOTA_Tooltip_Ability_atalanta_alter_curse_upgrade_3_Description"	"<font color='#58ACFA'>PASSIVE</font>: By attacking or by using abilities(<font color='#58ACFA'>Roar, Crossing Arcadia, Tauropolos - Arrow Rain</font> or <font color='#FF04EF'>Tauropolos Skia Thermokrasia</font>) Atalanta applies <font color='#FF3399'>Curse of the Calydonian Boar</font>'s stacks for %curse_duration% seconds. 
+		<font color='#58ACFA'>ACTIVE</font>: All curse stacks on the enemies within %active_search% units will explode. Atalanta absorbs all <font color='#FFFF28'>Curse Energy</font>'s stacks. 
+		<font color='#FF3399'>Curse of the Calydonian Boar</font>: When it reaches %curse_max_stack% stacks or run out of time, it will explode, dealing magical damage based on Atalanta's <font color='#80FF00'>AGI</font> to its target. Atalanta also gain vision over target that has more than %vision% stacks.
+		If Atalanta is staying within %passive_search% units and the target has be seen, Atalanta will absorb the curse and gain <font color='#FFFF28'>Curse Energy</font>'s stacks. 
+		<font color='#FFFF28'>Curse Energy</font>: When it reaches %energy_stack% stacks, Atalanta gains <font color='#FFFF28'>Evil Beast</font> for %evil_duration% seconds. 
+		<font color='#FFFF28'>Evil Beast</font>: Atalanta gain <font color='#FFFFFF'>1%%</font> attack for each stack of <font color='#FFFF28'>Curse Energy</font>. Atalanta's attacks deal %evil_dmg% additional magic damage. Atalanta's attacks also deal <font color='#FFFFFF'>100%%</font> splash damage to %evil_splash% areas. Atalanta's attacks and abilities will apply <font color='#FFFFFF'>2</font> times of <font color='#FF3399'>Curse of the Calydonian Boar</font>'s stacks.
+		All <font color='#FFFF28'>Curse Energy</font>'s stacks will be reset after Atalanta left <font color='#FFFF28'>Evil Beast</font>
+		CURSE DAMAGE: (%curse_dmg% x <font color='#FF3399'>STACKS</font>) + (%curse_dmg_agi% x <font color='#80FF00'>AGI</font>)"
+
+		////////////////// BASIC ////////////////////////
+
+		"DOTA_Tooltip_Ability_atalanta_alter_roar"		"<font color='#58ACFA'>Roar</font>"
+		"DOTA_Tooltip_Ability_atalanta_alter_roar_Description"	"Roars loudly, damaging, <font color='#FF3399'>slowing</font> for %duration% seconds and applying stacks of <font color='#FFFF28'>Curse of the Calydonian Boar</font>.
+		<font color='#FFFF28'>Evil Beast</font>: Apply <font color='#FF3399'>ministun</font>. 
+		<font color='#9FFFCC'>Upgradable with Attribute: Wild Beast Logic</font>."
+		"DOTA_Tooltip_Ability_atalanta_alter_roar_cast_delay"	"CAST TIME:"
+		"DOTA_Tooltip_Ability_atalanta_alter_roar_distance"		"DISTANCE:"
+		"DOTA_Tooltip_Ability_atalanta_alter_roar_base_damage"	"DAMAGE:"
+		"DOTA_Tooltip_Ability_atalanta_alter_roar_base_stacks"	"CURSE STACKS:"
+		"DOTA_Tooltip_Ability_atalanta_alter_roar_ms_slow"		"%SLOW:"
+		
+		"DOTA_Tooltip_Ability_atalanta_alter_roar_upgrade"		"<font color='#9FFFCC'>Roar</font>"
+		"DOTA_Tooltip_Ability_atalanta_alter_roar_upgrade_Description"	"Roars loudly, damaging, <font color='#FF3399'>slowing</font> for %duration% seconds, <font color='#FF3399'>silence</font> for %silence% seconds and applying stacks of <font color='#FFFF28'>Curse of the Calydonian Boar</font>.
+		<font color='#FFFF28'>Evil Beast</font>: Apply <font color='#FF3399'>ministun</font>."
+		"DOTA_Tooltip_Ability_atalanta_alter_roar_upgrade_cast_delay"	"CAST TIME:"
+		"DOTA_Tooltip_Ability_atalanta_alter_roar_upgrade_distance"		"DISTANCE:"
+		"DOTA_Tooltip_Ability_atalanta_alter_roar_upgrade_base_damage"	"DAMAGE:"
+		"DOTA_Tooltip_Ability_atalanta_alter_roar_upgrade_base_stacks"	"CURSE STACKS:"
+		"DOTA_Tooltip_Ability_atalanta_alter_roar_upgrade_ms_slow"		"%SLOW:"
+
+		"DOTA_Tooltip_Ability_atalanta_alter_ora"				"<font color='#58ACFA'>Beast Transformation</font>"
+		"DOTA_Tooltip_Ability_atalanta_alter_ora_Description"	"Atalanta enters enraged state, gaining <font color='#FFFF28'>Beast Transformation</font> for %beast_duration% seconds and <font color='#FFFF28'>Evil Beast</font> for %evil_duration% seconds.
+		<font color='#FFFF28'>Beast Transformation</font>: Atalanta will be <font color='#FF3399'>revoked</font> while gaining additional %bonus_aspd%%% attackspeed, %bonus_ms%%% movespeed for next certain attacks with %attack%%% attack damage.
+		<font color='#9FFFCC'>Upgradable with Attribute: Beast Enhancement and Wild Beast Logic</font>."
+		"DOTA_Tooltip_Ability_atalanta_alter_ora_attack_count"	"ATTACK COUNT:"
+
+		"DOTA_Tooltip_Ability_atalanta_alter_ora_upgrade_1"		"<font color='#9FFFCC'>Beast Transformation</font>"
+		"DOTA_Tooltip_Ability_atalanta_alter_ora_upgrade_1_Description"	"Atalanta enters enraged state, gaining <font color='#FFFF28'>Beast Transformation</font> for %beast_duration% seconds, %bonus_energy% stacks of <font color='#FFFF28'>Curse Energy</font> and <font color='#FFFF28'>Evil Beast</font> for %evil_duration% seconds.
+		<font color='#FFFF28'>Beast Transformation</font>: Atalanta will be <font color='#FF3399'>revoked</font> and <font color='#FFFF28'>immune</font> to most of crowd control while gaining additional %bonus_aspd%%% attackspeed, %bonus_ms%%% movespeed and %bonus_range% attack range for next certain attacks with %attack%%% attack damage. 
+		Atalanta's attacks jump strikes to target.
+		<font color='#9FFFCC'>Upgradable with Attribute: Wild Beast Logic</font>."
+		"DOTA_Tooltip_Ability_atalanta_alter_ora_upgrade_1_attack_count"		"ATTACK COUNT:"
+
+		"DOTA_Tooltip_Ability_atalanta_alter_ora_upgrade_2"				"<font color='#9FFFCC'>Beast Transformation</font>"
+		"DOTA_Tooltip_Ability_atalanta_alter_ora_upgrade_2_Description"	"Atalanta enters enraged state, gaining <font color='#FFFF28'>Beast Transformation</font> for %beast_duration% seconds and <font color='#FFFF28'>Evil Beast</font> for %evil_duration% seconds while jumping to lowest health enemy with in %search% radius.
+		<font color='#FFFF28'>Beast Transformation</font>: Atalanta will be <font color='#FF3399'>revoked</font> while gaining additional %bonus_aspd%%% attackspeed, %bonus_ms%%% movespeed for next certain attacks with %attack%%% attack damage.
+		<font color='#9FFFCC'>Upgradable with Attribute: Beast Enhancement</font>."
+		"DOTA_Tooltip_Ability_atalanta_alter_ora_upgrade_2_attack_count"	"ATTACK COUNT:"
+
+		"DOTA_Tooltip_Ability_atalanta_alter_ora_upgrade_3"		"<font color='#9FFFCC'>Beast Transformation</font>"
+		"DOTA_Tooltip_Ability_atalanta_alter_ora_upgrade_3_Description"	"Atalanta enters enraged state, gaining <font color='#FFFF28'>Beast Transformation</font> for %beast_duration% seconds, %bonus_energy% stacks of <font color='#FFFF28'>Curse Energy</font> and <font color='#FFFF28'>Evil Beast</font> for %evil_duration% seconds. while jumping to lowest health enemy with in %search% radius.
+		<font color='#FFFF28'>Beast Transformation</font>: Atalanta will be <font color='#FF3399'>revoked</font> and <font color='#FFFF28'>immune</font> to most of crowd control while gaining additional %bonus_aspd%%% attackspeed, %bonus_ms%%% movespeed and %bonus_range% attack range for next certain attacks with %attack%%% attack damage. 
+		Atalanta's attacks jump strikes to target."
+		"DOTA_Tooltip_Ability_atalanta_alter_ora_upgrade_3_attack_count"		"ATTACK COUNT:"
+
+		"DOTA_Tooltip_Ability_atalanta_alter_jump"			"<font color='#58ACFA'>Crossing Arcadia</font>"
+		"DOTA_Tooltip_Ability_atalanta_alter_jump_Description"	"Atalanta leaps to the target location. Deals damage, apply %ms_slow%%% <font color='#FF3399'>slow</font> for durations and stacks of <font color='#FF3399'>Curse of the Calydonian Boar</font>.
+		Atalanta will be <font color='#FF3399'>stunned</font> and take less damage while jumping.
+		Atalanta can cast <font color='#58ACFA'>Tauropolos - Arrow Rain</font> while jumping.
+		<font color='#FFFF28'>Evil Beast</font>: Also applying <font color='#FF3399'>stun</font> for %stun_duration% seconds
+		<font color='#9FFFCC'>Upgradable with Attribute: Wild Beast Logic and Bow of Darknest Heaven</font>."
+		"DOTA_Tooltip_Ability_atalanta_alter_jump_cast_delay"	"CAST TIME:"
+		"DOTA_Tooltip_Ability_atalanta_alter_jump_cast_range"	"JUMP MAX DISTANCE:"
+		"DOTA_Tooltip_Ability_atalanta_alter_jump_damage"		"DAMAGE:"
+		"DOTA_Tooltip_Ability_atalanta_alter_jump_radius"		"AOE:"
+		"DOTA_Tooltip_Ability_atalanta_alter_jump_curse_stacks"	"CURSE STACKS:"
+		"DOTA_Tooltip_Ability_atalanta_alter_jump_slow_dur"		"SLOW DURATION:"
+
+		"DOTA_Tooltip_Ability_atalanta_alter_jump_upgrade_1"			"<font color='#9FFFCC'>Crossing Arcadia</font>"
+		"DOTA_Tooltip_Ability_atalanta_alter_jump_upgrade_1_Description"	"Atalanta leaps to the target location and <font color='#FF3399'>pull</font> all enemies with in %knock_radius% aoe. Deals damage, apply %ms_slow%%% <font color='#FF3399'>slow</font> for durations and stacks of <font color='#FF3399'>Curse of the Calydonian Boar</font>.
+		Atalanta will be <font color='#FF3399'>stunned</font> and take less damage while jumping.
+		Atalanta can cast <font color='#58ACFA'>Tauropolos - Arrow Rain</font> while jumping.
+		<font color='#FFFF28'>Evil Beast</font>: Also applying <font color='#FF3399'>stun</font> for %stun_duration% seconds
+		<font color='#9FFFCC'>Upgradable with Attribute: Bow of Darknest Heaven</font>."
+		"DOTA_Tooltip_Ability_atalanta_alter_jump_upgrade_1_cast_delay"	"CAST TIME:"
+		"DOTA_Tooltip_Ability_atalanta_alter_jump_upgrade_1_cast_range"	"JUMP MAX DISTANCE:"
+		"DOTA_Tooltip_Ability_atalanta_alter_jump_upgrade_1_damage"		"DAMAGE:"
+		"DOTA_Tooltip_Ability_atalanta_alter_jump_upgrade_1_radius"		"AOE:"
+		"DOTA_Tooltip_Ability_atalanta_alter_jump_upgrade_1_curse_stacks"	"CURSE STACKS:"
+		"DOTA_Tooltip_Ability_atalanta_alter_jump_upgrade_1_slow_dur"		"SLOW DURATION:"
+
+		"DOTA_Tooltip_Ability_atalanta_alter_jump_upgrade_2"			"<font color='#9FFFCC'>Crossing Arcadia</font>"
+		"DOTA_Tooltip_Ability_atalanta_alter_jump_upgrade_2_Description"	"Atalanta leaps to the target location and decrease cooldown of <font color='#58ACFA'>Tauropolos - Arrow Rain</font> for %tauropolos_red% seconds. Deals damage, apply %ms_slow%%% <font color='#FF3399'>slow</font> for durations and stacks of <font color='#FF3399'>Curse of the Calydonian Boar</font>.
+		Atalanta will be <font color='#FF3399'>stunned</font> and take less damage while jumping.
+		Atalanta can cast <font color='#58ACFA'>Tauropolos - Arrow Rain</font> while jumping.
+		<font color='#FFFF28'>Evil Beast</font>: Also applying <font color='#FF3399'>stun</font> for %stun_duration% seconds
+		<font color='#9FFFCC'>Upgradable with Attribute: Wild Beast Logic</font>."
+		"DOTA_Tooltip_Ability_atalanta_alter_jump_upgrade_2_cast_delay"	"CAST TIME:"
+		"DOTA_Tooltip_Ability_atalanta_alter_jump_upgrade_2_cast_range"	"JUMP MAX DISTANCE:"
+		"DOTA_Tooltip_Ability_atalanta_alter_jump_upgrade_2_damage"		"DAMAGE:"
+		"DOTA_Tooltip_Ability_atalanta_alter_jump_upgrade_2_radius"		"AOE:"
+		"DOTA_Tooltip_Ability_atalanta_alter_jump_upgrade_2_curse_stacks"	"CURSE STACKS:"
+		"DOTA_Tooltip_Ability_atalanta_alter_jump_upgrade_2_slow_dur"		"SLOW DURATION:"
+
+		"DOTA_Tooltip_Ability_atalanta_alter_jump_upgrade_3"			"<font color='#9FFFCC'>Crossing Arcadia</font>"
+		"DOTA_Tooltip_Ability_atalanta_alter_jump_upgrade_3_Description"	"Atalanta leaps to the target location, <font color='#FF3399'>pull</font> all enemies with in %knock_radius% aoe and decrease cooldown of <font color='#58ACFA'>Tauropolos - Arrow Rain</font> for %tauropolos_red% seconds. Deals damage, apply %ms_slow%%% <font color='#FF3399'>slow</font> for durations and stacks of <font color='#FF3399'>Curse of the Calydonian Boar</font>.
+		Atalanta will be <font color='#FF3399'>stunned</font> and take less damage while jumping.
+		Atalanta can cast <font color='#58ACFA'>Tauropolos - Arrow Rain</font> while jumping.
+		<font color='#FFFF28'>Evil Beast</font>: Also applying <font color='#FF3399'>stun</font> for %stun_duration% seconds."
+		"DOTA_Tooltip_Ability_atalanta_alter_jump_upgrade_3_cast_delay"	"CAST TIME:"
+		"DOTA_Tooltip_Ability_atalanta_alter_jump_upgrade_3_cast_range"	"JUMP MAX DISTANCE:"
+		"DOTA_Tooltip_Ability_atalanta_alter_jump_upgrade_3_damage"		"DAMAGE:"
+		"DOTA_Tooltip_Ability_atalanta_alter_jump_upgrade_3_radius"		"AOE:"
+		"DOTA_Tooltip_Ability_atalanta_alter_jump_upgrade_3_curse_stacks"	"CURSE STACKS:"
+		"DOTA_Tooltip_Ability_atalanta_alter_jump_upgrade_3_slow_dur"		"SLOW DURATION:"
+
+		"DOTA_Tooltip_Ability_atalanta_alter_tauropolos_alter" 			"<font color='#58ACFA'>Tauropolos - Arrow Rain</font>"
+		"DOTA_Tooltip_Ability_atalanta_alter_tauropolos_alter_Description"	"Atalanta causes rain of arrows to attack her current location with %max_dist% radius for %duration% seconds. 
+		Arrow rain deal damage and apply stacks of <font color='#FF3399'>Curse of the Calydonian Boar</font> over time.
+		Atalanta gains %energy_gain% <font color='#FFFF28'>Curse Energy</font>'s stacks upon staying in <font color='#58ACFA'>Tauropolos - Arrow Rain</font>'s area
+		<font color='#FFFF28'>Evil Beast</font>:  Atalanta <font color='#FFFF28'>heals</font> %heal%%% of arrow rain damage to herself.
+		Only one instance of <font color='#58ACFA'>Tauropolos - Arrow Rain</font> can exist at time
+		Arrow rain stops when Atalanta dies.
+		<font color='#9FFFCC'>Upgradable with Attribute: Bow of Darkness Heaven</font>."
+		"DOTA_Tooltip_Ability_atalanta_alter_tauropolos_alter_cast_delay"	"CAST TIME:"
+		"DOTA_Tooltip_Ability_atalanta_alter_tauropolos_alter_dps"			"DAMAGE PER SEC:"
+		"DOTA_Tooltip_Ability_atalanta_alter_tauropolos_alter_bonus_agi"	"BONUS DAMAGE PER AGI PER SEC:"
+		"DOTA_Tooltip_Ability_atalanta_alter_tauropolos_alter_curse_stacks"	"CURSE STACK PER SEC:"
+
+		"DOTA_Tooltip_Ability_atalanta_alter_tauropolos_alter_upgrade" 			"<font color='#9FFFCC'>Tauropolos - Arrow Rain</font>"
+		"DOTA_Tooltip_Ability_atalanta_alter_tauropolos_alter_upgrade_Description"	"Atalanta causes rain of arrows to attack her current location with %max_dist% radius for %duration% seconds. 
+		Arrow rain deal damage based on Atalanta's <font color='#80FF00'>AGI</font> plus enemy's <font color='#FF3399'>Curse of the Calydonian Boar</font>'s stacks and apply stacks of <font color='#FF3399'>Curse of the Calydonian Boar</font> over time.
+		Atalanta gains %energy_gain% <font color='#FFFF28'>Curse Energy</font>'s stacks upon staying in <font color='#58ACFA'>Tauropolos - Arrow Rain</font>'s area
+		<font color='#FFFF28'>Evil Beast</font>: Atalanta <font color='#FFFF28'>heals</font> %heal%%% of arrow rain damage to herself.
+		While <font color='#58ACFA'>Crossing Arcadia</font> jumping, <font color='#58ACFA'>Tauropolos - Arrow Rain</font>'s cast time is reduce to %jump_cast% seconds, mana cost is reduce to %jump_cost% with %jump_duration% seconds arrow rain duration. The arrow rain also follow Atalanta. 
+		Only one instance of <font color='#58ACFA'>Tauropolos - Arrow Rain</font> can exist at time
+		Arrow rain stops when Atalanta dies."
+		"DOTA_Tooltip_Ability_atalanta_alter_tauropolos_alter_upgrade_cast_delay"	"CAST TIME:"
+		"DOTA_Tooltip_Ability_atalanta_alter_tauropolos_alter_upgrade_dps"			"DAMAGE PER SEC:"
+		"DOTA_Tooltip_Ability_atalanta_alter_tauropolos_alter_upgrade_bonus_agi"	"BONUS DAMAGE PER AGI PER SEC:"
+		"DOTA_Tooltip_Ability_atalanta_alter_tauropolos_alter_upgrade_bonus_stack"	"%BONUS DAMAGE PER STACK:"
+		"DOTA_Tooltip_Ability_atalanta_alter_tauropolos_alter_upgrade_curse_stacks"	"CURSE STACK PER SEC:"
+
+		////////////////// Special Ability //////////////////////////////
+
+		"DOTA_Tooltip_Ability_atalanta_passive_evolution"	"<font color='#FFB266'>Self Evolution</font>"
+		"DOTA_Tooltip_Ability_atalanta_passive_evolution_Description"	"<font color='#58ACFA'>PASSIVE</font>: When Atalanta's base attack and abilities hit enemy, Atalanta gains %energy_gain% <font color='#FFFF28'>Curse Energy</font>'s stack.
+		Each time Atalanta gains <font color='#FFFF28'>Curse Energy</font>'s stack, Atalanta <font color='#FFFF28'>heals</font> herself for %energy_heal%%% of max health."
+
+		////////////////// Combo //////////////////////
+
+		"DOTA_Tooltip_Ability_atalanta_alter_skia"	"<font color='#FF04EF'>Combo - Tauropolos Skia Thermokrasia</font>"
+		"DOTA_Tooltip_Ability_atalanta_alter_skia_Description"	"<font color='#FF04EF'>Combo Requirement : 25 all stats</font>
+		<font color='#FF04EF'>Combo Sequence : D - W -> E in 4 seconds.</font>
+		Atalanta absorbs Tauropolos into her own body, launching herself to the target location as a ballistic missile. Deals magical damage, apply %curse_stacks%'s stacks of <font color='#FF3399'>Curse of the Calydonian Boar</font> and <font color='#FF3399'>stun</font> for %stun% second to enemies within %radius% AOE
+		Atalanta can not use <font color='#58ACFA'>Tauropolos - Arrow Rain</font> for %r_penalty% seconds
+		<font color='#9FFFCC'>Upgradable with Attribute: Cursed Moon</font>.
+		DAMAGE: %damage% " 
+		"DOTA_Tooltip_Ability_atalanta_alter_skia_max_dist"	"MAX DISTANCE:"
+
+		"DOTA_Tooltip_Ability_atalanta_alter_skia_upgrade"	"<font color='#FF04EF'>Combo - Tauropolos Skia Thermokrasia</font>"
+		"DOTA_Tooltip_Ability_atalanta_alter_skia_upgrade_Description"	"<font color='#FF04EF'>Combo Requirement : 25 all stats</font>
+		<font color='#FF04EF'>Combo Sequence : D - W -> E in 4 seconds.</font>
+		Atalanta absorbs Tauropolos into her own body, launching herself to the target location as a ballistic missile. Deals magical damage based on Atalanta's <font color='#FFFF28'>Curse Energy</font>'s stack, apply %curse_stacks%'s stacks of <font color='#FF3399'>Curse of the Calydonian Boar</font> and <font color='#FF3399'>stun</font> for %stun% second to enemies within %radius% AOE
+		Atalanta can not use <font color='#58ACFA'>Tauropolos - Arrow Rain</font> for %r_penalty% seconds
+		DAMAGE: %damage% + (%bonus_dmg_energy%%% x <font color='#FFFF28'>STACK</font>)"
+		"DOTA_Tooltip_Ability_atalanta_alter_skia_upgrade_max_dist"	"MAX DISTANCE:"
+
+		/////////////// Attribute /////////////////////////
+
+		"DOTA_Tooltip_Ability_atalanta_evolution_attribute"				"<font color='#9FFFCC'>Attribute: Self-Evolution</font>"
+		"DOTA_Tooltip_Ability_atalanta_evolution_attribute_Description"	"Enable <font color='#FFB266'>Self Evolution</font>
+		<font color='#58ACFA'>PASSIVE</font>: When Atalanta's base attack and abilities hit enemy, Atalanta gains %energy_gain% <font color='#FFFF28'>Curse Energy</font>'s stack.
+		Each time Atalanta gains <font color='#FFFF28'>Curse Energy</font>'s stack, Atalanta <font color='#FFFF28'>heals</font> herself for %energy_heal%%% of max health.
+		<font color='#58ACFA'>Curse of the Calydonian Boar</font>: Increase <font color='#FFFF28'>Evil Beast</font>'s duration by %bonus_evil_dur% seconds.
+		<font color='#FFFF28'>Evil Beast</font>: Atalanta gain <font color='#FFFFFF'>1%%</font> attack for each stack of <font color='#FFFF28'>Curse Energy</font>."
+
+		"DOTA_Tooltip_Ability_atalanta_beast_attribute"				"<font color='#9FFFCC'>Attribute: Beast Enhancement</font>"
+		"DOTA_Tooltip_Ability_atalanta_beast_attribute_Description"	"<font color='#58ACFA'>Beast Transformation</font>: Increase duration of <font color='#FFFF28'>Beast Transformation</font> by %bonus_beast_dur% seconds, attack count by %bonus_atk%, %bonus_energy% stacks of <font color='#FFFF28'>Curse Energy</font>, %attack_range% attack range and Atalanta's attacks jump strikes to target. 
+		Atalanta also becomes <font color='#FFFF28'>immune</font> to most of crowd control"
+
+		"DOTA_Tooltip_Ability_atalanta_moon_attribute"				"<font color='#9FFFCC'>Attribute: Cursed Moon</font>"
+		"DOTA_Tooltip_Ability_atalanta_moon_attribute_Description"	"<font color='#58ACFA'>Curse of the Calydonian Boar</font>: Increase active radius by %active_radius%. When curse explode, increase curse damage by %curse_agi% x <font color='#80FF00'>AGI</font>. Atalanta also gain vision over target that has more than %curse_vision% stacks.
+		<font color='#FF04EF'>Tauropolos Skia Thermokrasia</font>: Increase damage based on Atalanta's <font color='#FFFF28'>Curse Energy</font> stacks and <font color='#FF3399'>pull</font> all enemies to center. 
+		COMBO BOUS DAMAGE: %combo_energy%%% x <font color='#FFFF28'>STACK</font>"
+
+		"DOTA_Tooltip_Ability_atalanta_logic_attribute"				"<font color='#9FFFCC'>Attribute: Wild Beast Logic</font>"
+		"DOTA_Tooltip_Ability_atalanta_logic_attribute_Description"	"<font color='#58ACFA'>Roar</font>: apply <font color='#FF3399'>silence</font> for %roar_silence% seconds.
+		<font color='#58ACFA'>Beast Transformation</font>: Once actived, Atalanta searching lowest health enemy within %beast_search% radius and jump to the target. 
+		<font color='#58ACFA'>Crossing Arcadia</font>: Once landing, Atalanta <font color='#FF3399'>pulls</font> enemies within %pull_radius% radius for %pull% units."
+
+		"DOTA_Tooltip_Ability_atalanta_bow_attribute"				"<font color='#9FFFCC'>Attribute: Bow of Darkness Heaven</font>"
+		"DOTA_Tooltip_Ability_atalanta_bow_attribute_Description"	"<font color='#58ACFA'>Crossing Arcadia</font>: Once actived, Decrease cooldown of <font color='#58ACFA'>Tauropolos - Arrow Rain</font> for %jump_r_red% seconds.
+		<font color='#58ACFA'>Tauropolos - Arrow Rain</font>: Increase %r_energy% <font color='#FFFF28'>Curse Energy</font> stack gain and increase damage over time based on Atalanta's <font color='#80FF00'>AGI</font> plus enemy's stack of <font color='#FF3399'>Curse of the Calydonian Boar</font>
+		While <font color='#58ACFA'>Crossing Arcadia</font> jumping, <font color='#58ACFA'>Tauropolos - Arrow Rain</font>'s cast time is reduce to %jump_cast% seconds, mana cost is reduce to %jump_cost% with %jump_duration% seconds arrow rain duration. The arrow rain also follow Atalanta.
+		TAUROPOLOS BONUS DAMAGE: (%r_agi% x <font color='#80FF00'>AGI</font>) + (%r_stack%%% x <font color='#FF3399'>STACK</font>)"
+
+        //====================================   MODIFIERS   ====================================
+
+		"DOTA_Tooltip_modifier_atalanta_skia_cd"						"Tauropolos Skia Thermocrasia Cooldown"
+
+		"DOTA_Tooltip_modifier_atalanta_curse_cooldown"					"Curse of the Calydonian Boar Active Cooldown"
+
+		"DOTA_Tooltip_modifier_tauropolos_alter_penalty"				"Tauropolos Arrow Rain Cooldown"
+		"DOTA_Tooltip_modifier_tauropolos_alter_penalty_Description"	"" 
+
+		"DOTA_Tooltip_modifier_atalanta_curse"							"Curse of the Calydonian Boar"
+		"DOTA_Tooltip_modifier_atalanta_curse_Description"				"" 
+
+		"DOTA_Tooltip_modifier_atalanta_curse_vision"					"Curse of the Calydonian Boar Vision"
+		"DOTA_Tooltip_modifier_atalanta_curse_vision_Description"		""
+
+		"DOTA_Tooltip_modifier_atalanta_evolution"						"Self Evolution"
+		"DOTA_Tooltip_modifier_atalanta_evolution_Description"			""
+
+		"DOTA_Tooltip_modifier_atalanta_energy_curse_passive"							"Curse Energy"
+		"DOTA_Tooltip_modifier_atalanta_energy_curse_passive_Description"				""
+
+		"DOTA_Tooltip_modifier_atalanta_evil_beast"						"Evil Beast"
+		"DOTA_Tooltip_modifier_atalanta_evil_beast_Description"			""
+
+		"DOTA_Tooltip_modifier_atalanta_beast"							"Beast Transformation"
+		"DOTA_Tooltip_modifier_atalanta_beast_Description"				""
+
+		"DOTA_Tooltip_modifier_roar_slow"								"Slowed from roar" 
+		"DOTA_Tooltip_modifier_roar_slow_Description"					"Slowed."
+
+		"DOTA_Tooltip_modifier_atalanta_jump_slow"						"Crossing Arcadia Slow" 
+		"DOTA_Tooltip_modifier_atalanta_jump_slow_Description"			"Slowed."
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

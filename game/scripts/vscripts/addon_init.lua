@@ -1,4 +1,3 @@
-require("libraries/fate_functions_server_client") --fix cast range bonus
 -- fix Attempted to create unknown modifier type
 LinkLuaModifier("modifier_a_scroll", "items/modifiers/modifier_a_scroll", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_a_scroll_sated", "items/modifiers/modifier_a_scroll_sated", LUA_MODIFIER_MOTION_NONE)
@@ -8,3 +7,7 @@ LinkLuaModifier("modifier_attributes_hp_regen", "modifiers/modifier_attributes_h
 LinkLuaModifier("modifier_attributes_mp_regen", "modifiers/modifier_attributes_mp_regen", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_attributes_mr", "modifiers/modifier_attributes_mr", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_attributes_ms", "modifiers/modifier_attributes_ms", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_animation_freeze", "libraries/modifiers/modifier_animation_freeze", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_animation", "libraries/modifiers/modifier_animation", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_animation_translate_permanent", "libraries/modifiers/modifier_animation_translate_permanent", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_animation_translate", "libraries/modifiers/modifier_animation_translate", LUA_MODIFIER_MOTION_NONE)

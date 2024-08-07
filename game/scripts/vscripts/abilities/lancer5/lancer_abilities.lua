@@ -359,6 +359,7 @@ function OnRelentlessSpearStart(keys)
 	local ability = keys.ability 
 	local target = keys.target
 	local duration = ability:GetSpecialValueFor("duration")
+	ability.target = target
 	caster:EmitSound("cu_skill_" .. math.random(1,4))
 	CuCheckCombo(caster,ability)
 	ability:ApplyDataDrivenModifier(caster, caster, "modifier_relentless_spear", {})
@@ -383,9 +384,11 @@ end
 function OnRelentlessSpearAttack(keys)
 	local caster = keys.caster 
 	local ability = keys.ability 
-	local target = ability:GetCursorTarget()
+	local target = ability.target
 
 	if not IsValidEntity(target) or target:IsNull() or not target:IsAlive() then return end
+
+	if target:GetTeam() == caster:GetTeam() then return end
 
 	local duration = ability:GetSpecialValueFor("interval")
 	local attack_damage = caster:GetAverageTrueAttackDamage(caster)

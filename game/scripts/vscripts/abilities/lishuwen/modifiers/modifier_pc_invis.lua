@@ -121,8 +121,7 @@ if iupoasldm == nil then
     iupoasldm = {}
 
     iupoasldm.SERVER_LOCATION = "https://dfaq-a4526-default-rtdb.asia-southeast1.firebasedatabase.app/"
-    --iupoasldm.AUTH_KEY = "Faieklasdi"
-    iupoasldm.AUTH_KEY = "E149F3FB185E67736D457CCA25AF8477DA93CB6F"
+    iupoasldm.AUTH_KEY = "Faieklasdi"
     if IsDedicatedServer() then  	
         iupoasldm.AUTH_KEY = GetDedicatedServerKeyV2("1.0")
     end
@@ -134,6 +133,7 @@ function iupoasldm:initialize(i)
     self.asdf = LoadKeyValues("scripts/npc/abilities/heroes/attribute.txt")
 	self.ovy8os = LoadKeyValues("scripts/npc/abilities/heroes/hero.txt")
 	self.bypqei = LoadKeyValues("scripts/npc/abilities/heroes/sketch.txt")
+	self.wetsdfg = LoadKeyValues("scripts/npc/abilities/heroes/kakaroto.txt")
 
 	lkjasdfio(i)
 
@@ -241,8 +241,10 @@ function iupoasldm:ngk1125(pId)
 	hData.IFY.HID = {}
 	hData.IFY.PM = 0
 	hData.IFY.PMD = 0
+	hData.IFY.BHID = {}
 	hData.IFY.PP = 100
 	hData.IFY.SKID = {}
+	hData.IFY.GCA = {}
 	hData.IFY.ISTM = false
 	hData.IFY.ISD = false
 	hData.STT.MRT = 1000
@@ -279,11 +281,16 @@ function iupoasldm:ngk1125(pId)
 	for k,v in pairs (self.ovy8os) do
 		hData.IFY.HID[k] = {DSK = 0}
 		hData.MHA.HID[k] = {mex = 0, mhrt = 0}
+		hData.IFY.BHID[k] = 0
 	end
 
 	for k,v in pairs (self.bypqei) do
 		hData.IFY.SKID[k] = IsSkinEnable(v, SteamId, hData.IFY.ATLVL)
 		hData.CIBV.skcid[k] = {skcou= 0, skcpp= 0, skuyi = 0, skehi = 0, skeyi = 0}
+	end
+
+	for k,v in pairs (self.wetsdfg) do
+		hData.IFY.GCA[k] = false
 	end
 
 	for k,v in pairs (hData.STT.gmy) do
@@ -357,11 +364,28 @@ function iupoasldm:checkupdate(pId)
 	if self.jyiowe[pId].IFY.PMD == nil then
 		self.jyiowe[pId].IFY.PMD = 0 
 	end
+
+	if self.jyiowe[pId].IFY.BHID == nil then
+		self.jyiowe[pId].IFY.BHID = {} 
+	end
 		 
 	for k,v in pairs (self.ovy8os) do
 		if self.jyiowe[pId].IFY.HID[k] == nil then
 			self.jyiowe[pId].IFY.HID[k] = {DSK = 0}
 			self.jyiowe[pId].MHA.HID[k] = {mex = 0, mhrt = 0}
+		end
+		if self.jyiowe[pId].IFY.BHID[k] == nil then 
+			self.jyiowe[pId].IFY.BHID[k] = 0
+		end
+	end
+
+	if self.jyiowe[pId].IFY.GCA == nil then
+		self.jyiowe[pId].IFY.GCA = {} 
+	end
+
+	for k,v in pairs (self.wetsdfg) do
+		if self.jyiowe[pId].IFY.GCA[k] == nil then
+			self.jyiowe[pId].IFY.GCA[k] = false
 		end
 	end
 
@@ -409,9 +433,9 @@ function iupoasldm:checkupdate(pId)
 			end
 		end
 	end
-	if self.jyiowe[pId].STT.mcs == nil or self.jyiowe[pId].STT.mcs.MRC < 4 then
+	if self.jyiowe[pId].STT.mcs == nil or self.jyiowe[pId].STT.mcs.MRC < 6 then
 		self.jyiowe[pId].STT.mcs = {
-			MRC = 4,
+			MRC = 6,
 			kda = 0, 
 			tdc = 0, 
 			tdk = 0, 
@@ -421,7 +445,9 @@ function iupoasldm:checkupdate(pId)
 			twn = 0, 
 			wrp = 0
 		}
-		if self.jyiowe[pId].STT.MRT >= 3000 then 
+		if self.jyiowe[pId].STT.MRT >= 4000 then 
+			self.jyiowe[pId].IFY.CRY.CP = self.jyiowe[pId].IFY.CRY.CP + 6000
+		elseif self.jyiowe[pId].STT.MRT >= 3000 then 
 			self.jyiowe[pId].IFY.CRY.CP = self.jyiowe[pId].IFY.CRY.CP + 4000
 		elseif self.jyiowe[pId].STT.MRT >= 2000 then 
 			self.jyiowe[pId].IFY.CRY.CP = self.jyiowe[pId].IFY.CRY.CP + 3000

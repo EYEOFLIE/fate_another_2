@@ -15,25 +15,13 @@
 		"LevelsBetweenUpgrades"			"1"
 		"AbilityManaCost"				"100"
 		"AbilityCooldown"				"4"
-		"AbilityCastPoint"				"0.1"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"duration"			"1"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"chant_duration"	"6 6.75 7.5 8.25 9"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"marble_duration"	"8 10 12 14 16"
-			}
-		}
+		"AbilityCastPoint"				"0.2"
+		"AbilityValues"
+        {
+            "duration" "1"
+            "chant_duration" "6 6.75 7.5 8.25 9"
+            "marble_duration" "8 10 12 14 16"
+        }
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -108,7 +96,7 @@
 	"muramasa_chant_upgrade"
 	{
 		"BaseClass"						"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
 		"AbilityTextureName"			"custom/muramasa/muramasa_q"
@@ -119,45 +107,17 @@
 		"LevelsBetweenUpgrades"			"1"
 		"AbilityManaCost"				"100"
 		"AbilityCooldown"				"4"
-		"AbilityCastPoint"				"0.1"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"duration"			"1"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"chant_duration"	"6 6.75 7.5 8.25 9"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"marble_duration"	"8 10 12 14 16"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_speed"		"8 10 12 14 16"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_speed_x4"		"32 40 48 58 64"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_mr"			"15"
-			}	
-			"01"
-			{
-				"var_type"		"FIELD_INTEGER"
-				"cd_reduce"		"2"
-			}	
-		}
+		"AbilityCastPoint"				"0.2"
+		"AbilityValues"
+        {
+            "duration" "1"
+            "chant_duration" "6 6.75 7.5 8.25 9"
+            "marble_duration" "8 10 12 14 16"
+            "bonus_speed" "6 7 8 9 10"
+            "bonus_speed_x4" "24 28 32 36 40"
+            "bonus_mr" "12"
+            "cd_reduce" "2"
+        }
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -250,34 +210,14 @@
 		"AbilityManaCost"				"100"
 		"AbilityCooldown"				"7"
 		"AbilityCastPoint"				"0.15"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"cast_delay"		"0"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"damage"			"80 100 120 140 160"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"swords"			"4 4 5 5 6"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"radius"			"135"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"range"				"1200"
-			}
-		}
+		"AbilityValues"
+        {
+            "cast_delay" "0"
+            "damage" "90 105 120 135 150"
+            "swords" "4 4 5 5 6"
+            "radius" "135"
+            "range" "1200"
+        }
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -320,34 +260,14 @@
 		"AbilityCastPoint"				"0.1"
 		"AbilityCharges"				"2"
 		"AbilityChargeRestoreTime"		"17 16 15 14 13"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"dash_speed"		"1550"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage"			"200 275 350 425 500"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage_radius"		"275"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"range"				"450"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"range_marble"		"675"
-			}
-		}
+		"AbilityValues"
+        {
+            "dash_speed" "1550"
+            "damage" "250 300 350 400 450"
+            "damage_radius" "275"
+            "range" "400"
+            "range_marble" "550"
+        }
 	}
 
 	//=================================================================================================================
@@ -367,47 +287,19 @@
 		"RequiredLevel"					"1"
 		"LevelsBetweenUpgrades"			"2"
 		"AbilityManaCost"				"400"
-		"AbilityCastRange"				"750"
+		"AbilityCastRange"				"650"
 		"AbilityCooldown"				"25 23 21 19 17"
-		"AbilityCastPoint"				"0.1"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"cast_delay"		"0.3"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"stun"				"0.5"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"damage"			"400 500 600 700 800"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"aoe"				"450"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"aftershock_delay"		"0.5"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"aftershock_damage"		"200 240 280 320 360"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"range"				"600"
-			}
-		}
+		"AbilityCastPoint"				"0.2"
+		"AbilityValues"
+        {
+            "cast_delay" "0.35"
+            "stun" "0"
+            "damage" "300 400 500 600 700"
+            "aoe" "420"
+            "aftershock_delay" "0.5"
+            "aftershock_damage" "200 240 280 320 360"
+            "range" "600"
+        }
 
 		"OnSpellStart"
 		{
@@ -433,34 +325,14 @@
 		"LevelsBetweenUpgrades"			"1"
 		"AbilityCooldown"				"40"
 		"AbilityCastPoint"				"0.2"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"gain_armor"		"5 15"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"gain_movespeed"	"10 30"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"buff_duration"		"10 25"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"bonus_e_damage_passive"	"0 200"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"bonus_tengu_damage_passive"	"0 30"
-			}
-		}
+		"AbilityValues"
+        {
+            "gain_armor" "2 10"
+            "gain_movespeed" "10 30"
+            "buff_duration" "10 25"
+            "bonus_e_damage_passive" "0 150"
+            "bonus_tengu_damage_passive" "0 20"
+        }
 
 		"OnSpellStart"
 		{
@@ -536,57 +408,21 @@
 		"RequiredLevel"					"1"
 		"LevelsBetweenUpgrades"			"2"
 		"AbilityManaCost"				"600"
-		"AbilityCastRange"				"900"
+		"AbilityCastRange"				"800"
 		"AbilityCooldown"				"43 41 39 37 35"
 		"AbilityCastPoint"				"0.2"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"cast_delay"		"0.4"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"damage_pure"		"400 450 500 550 600"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"damage_magical"	"600 700 800 900 1000"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"delay_explosion"	"1.05"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"slow"				"-30 -40 -50 -60 -70"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"silence"			"0.6"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"debuff_duration"	"1"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"range"	"1000"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"width"	"250"
-			}
-		}
+		"AbilityValues"
+        {
+            "cast_delay" "0.42"
+            "damage_pure" "370 420 470 520 570"
+            "damage_magical" "560 660 760 860 960"
+            "delay_explosion" "1.05"
+            "slow" "-30 -40 -50 -60 -70"
+            "silence" "0.45"
+            "debuff_duration" "1"
+            "range" "900"
+            "width" "250"
+        }
 
 		"OnAbilityPhaseStart"
 		{
@@ -639,77 +475,25 @@
 		"RequiredLevel"					"1"
 		"LevelsBetweenUpgrades"			"2"
 		"AbilityManaCost"				"600"
-		"AbilityCastRange"				"1100"
+		"AbilityCastRange"				"1000"
 		"AbilityCooldown"				"43 41 39 37 35"
 		"AbilityCastPoint"				"0.2"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"cast_delay"		"0.4"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"damage_pure"		"400 450 500 550 600"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"damage_magical"	"600 700 800 900 1000"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"delay_explosion"	"1.05"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"slow"				"-30 -40 -50 -60 -70"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"silence"			"0.6"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"debuff_duration"	"1"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"range"	"1200"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"width"	"250"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"bonus_isekai"	"20"
-			}
-			"02"
-			{
-				"var_type"		"FIELD_INTEGER"
-				"max_health_cost"		"30"
-			}
-			"02"
-			{
-				"var_type"		"FIELD_INTEGER"
-				"damage_penalty"		"16"
-			}
-			"02"
-			{
-				"var_type"		"FIELD_INTEGER"
-				"damage_bonus_marble"		"16"
-			}
-		}
+		"AbilityValues"
+        {
+            "cast_delay" "0.42"
+            "damage_pure" "350 400 450 500 550"
+            "damage_magical" "560 660 760 860 960"
+            "delay_explosion" "1.05"
+            "slow" "-30 -40 -50 -60 -70"
+            "silence" "0.45"
+            "debuff_duration" "1"
+            "range" "1050"
+            "width" "250"
+            "bonus_isekai" "15"
+            "max_health_cost" "30"
+            "damage_penalty" "17"
+            "damage_bonus_marble" "23"
+        }
 
 		"OnSpellStart"
 		{
@@ -751,63 +535,22 @@
 		"MaxLevel"						"1"
 		"RequiredLevel"					"1"
 		"LevelsBetweenUpgrades"			"1"
-		"AbilityManaCost"				"600"
+		"AbilityManaCost"				"700"
 		"AbilityCastRange"				"0"
 		"AbilityCooldown"				"170"
 		"AbilityCastPoint"				"0.1"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"chant_duration"	"8"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"combo_duration"	"17"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"ult_cd"			"8"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"range_bonus"		"0"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_speed_x4"	"70"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_mr"			"20"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"sword_duration"			"6"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"sword_mana_recovery"			"250"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"sword_duration"			"6"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"sword_get_range"	"200"
-			}
-		}
+		"AbilityValues"
+        {
+            "chant_duration" "8"
+            "combo_duration" "17"
+            "ult_cd" "9"
+            "range_bonus" "0"
+            "bonus_speed_x4" "55"
+            "bonus_mr" "18"
+            "sword_duration" "6"
+            "sword_mana_recovery" "230"
+            "sword_get_range" "180"
+        }
 
 		"OnSpellStart"
 		{
@@ -922,19 +665,11 @@
 		"RequiredLevel"					"1"
 		"LevelsBetweenUpgrades"			"1"
 		"AbilityCooldown"				"27"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"bonus_pure_damage"	"200"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"cd_reduce_on_kill"	"0"
-			}
-		}
+		"AbilityValues"
+        {
+            "bonus_pure_damage" "180"
+            "cd_reduce_on_kill" "0"
+        }
 
 
 		"Modifiers"
@@ -980,34 +715,14 @@
 		"AbilityCooldown"				"9999"
 		"AbilityManaCost"				"19"
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"		"FIELD_INTEGER"
-				"r_bonus_range"			"200"
-			}		
-			"02"
-			{
-				"var_type"		"FIELD_INTEGER"
-				"bonus_to_isekai"		"20"
-			}	
-			"02"
-			{
-				"var_type"		"FIELD_INTEGER"
-				"max_health_cost"		"21"
-			}
-			"02"
-			{
-				"var_type"		"FIELD_INTEGER"
-				"damage_penalty"		"16"
-			}
-			"02"
-			{
-				"var_type"		"FIELD_INTEGER"
-				"damage_bonus_marble"		"16"
-			}
-		}
+		"AbilityValues"
+        {
+            "r_bonus_range" "150"
+            "bonus_to_isekai" "15"
+            "max_health_cost" "30"
+            "damage_penalty" "17"
+            "damage_bonus_marble" "23"
+        }
 
 		"OnSpellStart"
 		{
@@ -1033,19 +748,11 @@
 		"AbilityCooldown"				"9999"
 		"AbilityManaCost"				"11"
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"		"FIELD_INTEGER"
-				"r_bonus_pure"			"200"
-			}		
-			"02"
-			{
-				"var_type"		"FIELD_INTEGER"
-				"cooldown"		"30"
-			}
-		}
+		"AbilityValues"
+        {
+            "r_bonus_pure" "180"
+            "cooldown" "30"
+        }
 
 		"OnSpellStart"
 		{
@@ -1069,26 +776,14 @@
 		"AbilityTextureName"			"custom/muramasa/muramasa_blaze"
 	    "AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"9999"
-		"AbilityManaCost"				"16"
+		"AbilityManaCost"				"17"
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"		"FIELD_INTEGER"
-				"marble_bonus_mr"		"15"
-			}	
-			"01"
-			{
-				"var_type"		"FIELD_INTEGER"
-				"bonus_speed"		"8 10 12 14 16"
-			}	
-			"01"
-			{
-				"var_type"		"FIELD_INTEGER"
-				"cd_reduce"		"2"
-			}	
-		}
+		"AbilityValues"
+        {
+            "marble_bonus_mr" "12"
+            "bonus_speed" "6 7 8 9 10"
+            "cd_reduce" "2"
+        }
 
 		"OnSpellStart"
 		{
@@ -1114,19 +809,11 @@
 		"AbilityCooldown"				"9999"
 		"AbilityManaCost"				"10"
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"		"FIELD_INTEGER"
-				"bonus_damage_q"		"30"
-			}	
-			"01"
-			{
-				"var_type"		"FIELD_INTEGER"
-				"bonus_damage_e"		"200"
-			}	
-		}
+		"AbilityValues"
+        {
+            "bonus_damage_q" "20"
+            "bonus_damage_e" "150"
+        }
 
 		"OnSpellStart"
 		{
@@ -1135,6 +822,43 @@
 			 	"ScriptFile"	"abilities/muramasa/muramasa_abilities"
 			 	"Function"		"OnPrideSA"
 			}
+		}
+	}
+
+	//=======================================
+	// Precache
+	//=======================================
+	"muramasa_precache"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"custom/medusa/medusa_attribute_monstrous_strength"
+
+		"precache"
+		{
+			"particle"				"particles/units/heroes/hero_lina/lina_flame_cloak_takeoff.vpcf"
+			"particle"				"particles/units/heroes/hero_snapfire/hero_snapfire_ultimate_shockwave.vpcf"
+			"particle"				"particles/units/heroes/hero_ogre_magi/ogre_magi_fireblast_ground.vpcf"
+			"particle"				"particles/units/heroes/hero_skywrath_mage/skywrath_mage_mystic_flare_ambient_hit.vpcf"
+			"particle"				"particles/units/heroes/hero_ursa/ursa_earthshock.vpcf"
+			"particle"				"particles/econ/items/ursa/ursa_ti10/ursa_ti10_earthshock_energy_center.vpcf"
+			"particle"				"particles/melt/melt_combo_trail_debris.vpcf"
+			"particle"  			"particles/units/heroes/hero_dragon_knight/dragon_knight_transform_blue_shockwave.vpcf"
+			"particle"  			"particles/units/heroes/hero_grimstroke/grimstroke_sfm_ink_swell_reveal_shockwave.vpcf"
+			"particle"  			"particles/muramasa/muramasa_ult/muramasar.vpcf"
+			"particle"  			"particles/muramasa/muramasa_ult/muramasar-blast.vpcf"
+			"particle"  			"particles/muramasa/muramasa_combo_sword.vpcf"
+			"particle"  			"particles/muramasa/muramasa_combo_sword2.vpcf"
+			"particle"  			"particles/muramasa/muramasa_combo_sword2_pop.vpcf"
+			"particle"  			"particles/muramasa/muramasa_combo_sword_pickup.vpcf"
+			"particle"  			"particles/muramasa/muramasa_combo_ambient.vpcf"
+			"particle"  			"particles/units/heroes/hero_snapfire/hero_snapfire_cookie_landing.vpcf"
+			"particle"  			"particles/muramasa/muramasa_sword_model.vpcf"
+			"particle"  			"particles/muramasa/muramasa_spin.vpcf"
+			"particle"  			"particles/muramasa/handbuff/muramasa_hand_buff.vpcf"
+			"particle"              "particles/muramasa/muramasa_combo_anvil_smash.vpcf"
 		}
 	}
 }

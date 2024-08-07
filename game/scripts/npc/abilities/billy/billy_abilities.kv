@@ -1,0 +1,1020 @@
+"DOTAAbilities"
+{	
+	//=================================================================================================================
+	// Billy - Quickdraw (Q) 
+	//=================================================================================================================
+	"billy_q"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityTextureName"			"custom/billy/billy_q"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityManaCost"				"140"
+		"AbilityCooldown"				"6 5 4 3 2"
+		"AbilityCastAnimation" 			"ACT_DOTA_ATTACK"
+		"AnimationPlaybackRate" 		"1.0"
+		"AbilityCastPoint"				"0.045"
+		"AbilityValues"
+        {
+            "damage" "180 230 280 330 380"
+            "damage_per_level" "2 4 6 8 10"
+            "damage_reduction_outrange" "20"
+            "cooldown_on_hit" "1.5 1 0.75 0.5 0.25"
+            "bullet_speed" "5000"
+            "bullet_width" "100"
+            "ministun_duration" "0.15"
+            "shot_divider" "1"
+        }
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/billy/billy_abilities"
+				"Function"		"OnQ"
+			}
+		}
+
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/billy/billy_abilities"
+				"Function"		"AmmoCheck"
+			}
+		}
+
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"	"1"
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/billy/billy_abilities"
+				"Function"		"OnQHit"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Billy - Quickdraw (SA)(Q) 
+	//=================================================================================================================
+	"billy_q_upgrade"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityTextureName"			"custom/billy/billy_q"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityManaCost"				"140"
+		"AbilityCooldown"				"6 5 4 3 2"
+		"AbilityCastAnimation" 			"ACT_DOTA_ATTACK"
+		"AnimationPlaybackRate" 		"1.0"
+		"AbilityCastPoint"				"0.045"
+		"AbilityValues"
+        {
+            "damage" "250 300 350 400 450"
+            "damage_per_level" "6 8 10 12 14"
+            "damage_reduction_outrange" "20"
+            "cooldown_on_hit" "1.5 1 0.75 0.5 0.25"
+            "bullet_speed" "5000"
+            "bullet_width" "100"
+            "ministun_duration" "0.15"
+            "shot_divider" "1"
+            "recover_mana_amount" "25"
+            "recover_mana_chance" "40"
+            "recover_ammo" "1"
+            "recover_ammo_chance" "15"
+        }
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/billy/billy_abilities"
+				"Function"		"OnQ"
+			}
+		}
+
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/billy/billy_abilities"
+				"Function"		"AmmoCheck"
+			}
+		}
+
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"	"1"
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/billy/billy_abilities"
+				"Function"		"OnQHit"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Billy - Outlaw's Scurry (W) 
+	//=================================================================================================================
+	"billy_w"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/billy/billy_w"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityManaCost"				"0"
+		"AbilityCooldown"				"20 18 16 14 12"
+
+		"AbilityValues"
+        {
+            "dash_duration" "0.6 0.75 0.9 1.05 1.2"
+            "move_speed" "600 675 750 825 900"
+            "move_speed_max" "1000"
+            "reload_bonus_duration" "0.2 0.35 0.5 0.65 0.8"
+        }
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/billy/billy_abilities"
+				"Function"		"OnW"
+			}
+		}	
+
+		"Modifiers"
+		{			
+			"modifier_billy_w"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsBuff"			"1"
+		
+				"Properties"
+				{
+        			"MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE" "%move_speed"
+				}
+			}
+
+			"modifier_combo_window"
+			{	
+				"IsHidden"				"1"
+				"Attributes"			"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/billy/billy_abilities"
+						"Function"		"OnComboWindow"
+					}
+				}			
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"abilities/billy/billy_abilities"
+						"Function"		 	"OnComboWindowBroken"
+					}
+				}				
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"abilities/billy/billy_abilities"
+						"Function"		 	"OnComboWindowDeath"
+					}
+				}
+			}
+		}	
+	}
+	//=================================================================================================================
+	// Billy - Trigger Happy (E) 
+	//=================================================================================================================
+	"billy_e"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/billy/billy_e"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityManaCost"				"400"
+		"AbilityCooldown"				"34 30 26 22 18"
+		"AbilityCastPoint"				"0.23"
+		"AbilityCastAnimation" 			"ACT_DOTA_ATTACK"
+
+		"AbilityValues"
+        {
+            "delay_per_shot" "0.13 0.12 0.11 0.1 0.09"
+            "bonus_per_consecutive_shots" "10 16 22 28 34"
+            "damage_percentage_from_q" "50 57.5 65 72.5 80"
+            "aim_offset" "220 190 160 130 100"
+            "range_penalty" "250"
+            "cast_delay" "0.22"
+            "cast_point" "0.23"
+        }
+
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/billy/billy_abilities"
+				"Function"		"AmmoCheck"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/billy/billy_abilities"
+				"Function"		"OnE"
+			}
+		}	
+
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"	"1"
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/billy/billy_abilities"
+				"Function"		"OnEHit"
+			}
+		}
+
+		"Modifiers"
+		{		
+			"modifier_billy_e"
+			{
+				"IsHidden"			"0"
+				"IsBuff"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_DISABLE_TURNING" "1"
+				}
+			
+				"States"
+				{
+					"MODIFIER_STATE_DISARMED"			"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_SILENCED"			"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_ROOTED"				"MODIFIER_STATE_VALUE_ENABLED"
+				}
+
+			}	
+		}	
+	}
+
+	//=================================================================================================================
+	// Billy - .41 Colt M1861 Navy - .41 Colt M1873 Peacemaker (D) - .41 Colt M1877 Thunderer 
+	//=================================================================================================================
+	"billy_d"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_NO_TARGET"		
+		"AbilityTextureName"			"custom/billy/billy_d"
+		"MaxLevel"						"1"
+		"AbilityValues"
+        {
+            "ammo" "5"
+            "reload_duration" "5.4"
+            "quickdraw_range" "1000"
+            "quickdraw_effective_range" "600"
+            "auto_attack_bonus_from_q" "60"
+            "pure_damage" "10"
+        }
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/billy/billy_abilities"
+				"Function"		"OnD"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_ammo_stack"
+			{
+				"Passive"			"1"
+				"IsHidden"			"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE | MODIFIER_ATTRIBUTE_PERMANENT"
+
+				"ThinkInterval"  		"1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/billy/billy_abilities"
+						"Function"		"OnReloadThink"
+					}
+				}
+				"OnAttackLanded"
+				{					
+					"RunScript"
+					{
+						"ScriptFile"		"abilities/billy/billy_abilities"
+						"Function"			"OnAutoAttack"
+					}
+				}
+			}
+
+			"modifier_ammo_reload"
+			{
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Duration"			"%reload_duration"	
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			
+				"States"
+				{
+					"MODIFIER_STATE_DISARMED"			"MODIFIER_STATE_VALUE_ENABLED"
+				}
+
+
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/billy/billy_abilities"
+						"Function"		"AmmoAudio"
+					}
+				}
+
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/billy/billy_abilities"
+						"Function"		"ApplyAmmoStackModifier"
+						"Target"		"CASTER"
+						"Ammo"			"%ammo" // Pass the ammo stack count as a parameter
+					}
+				}
+			}
+		}	
+	}
+
+	//=================================================================================================================
+	// Billy - .41 Colt M1861 Navy - .41 Colt M1873 Peacemaker (D) - .41 Colt M1877 Thunderer 
+	//=================================================================================================================
+	"billy_d_1"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_NO_TARGET"		
+		"AbilityTextureName"			"custom/billy/billy_d2"
+		"MaxLevel"						"1"
+		"AbilityValues"
+        {
+            "ammo" "6"
+            "reload_duration" "2.6"
+            "quickdraw_range" "1150"
+            "quickdraw_effective_range" "700"
+            "auto_attack_bonus_from_q" "75"
+            "pure_damage" "25"
+        }
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/billy/billy_abilities"
+				"Function"		"OnD"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_ammo_stack"
+			{
+				"Passive"			"1"
+				"IsHidden"			"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE | MODIFIER_ATTRIBUTE_PERMANENT"
+
+				"ThinkInterval"  		"1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/billy/billy_abilities"
+						"Function"		"OnReloadThink"
+					}
+				}
+				"OnAttackLanded"
+				{					
+					"RunScript"
+					{
+						"ScriptFile"		"abilities/billy/billy_abilities"
+						"Function"			"OnAutoAttack"
+					}
+				}
+			}
+
+			"modifier_ammo_reload"
+			{
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Duration"			"%reload_duration"	
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			
+				"States"
+				{
+					"MODIFIER_STATE_DISARMED"			"MODIFIER_STATE_VALUE_ENABLED"
+				}
+
+
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/billy/billy_abilities"
+						"Function"		"AmmoAudio"
+					}
+				}
+
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/billy/billy_abilities"
+						"Function"		"ApplyAmmoStackModifier"
+						"Target"		"CASTER"
+						"Ammo"			"%ammo" // Pass the ammo stack count as a parameter
+					}
+				}
+			}
+		}	
+	}
+
+	//=================================================================================================================
+	// Billy - .41 Colt M1861 Navy - .41 Colt M1873 Peacemaker (D) - .41 Colt M1877 Thunderer 
+	//=================================================================================================================
+	"billy_d_2"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_NO_TARGET"		
+		"AbilityTextureName"			"custom/billy/billy_d3"
+		"MaxLevel"						"1"
+		"AbilityValues"
+        {
+            "ammo" "7"
+            "reload_duration" "1.3"
+            "quickdraw_range" "1300"
+            "quickdraw_effective_range" "800"
+            "auto_attack_bonus_from_q" "90"
+            "pure_damage" "40"
+        }
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/billy/billy_abilities"
+				"Function"		"OnD"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_ammo_stack"
+			{
+				"Passive"			"1"
+				"IsHidden"			"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE | MODIFIER_ATTRIBUTE_PERMANENT"
+
+				"ThinkInterval"  		"1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/billy/billy_abilities"
+						"Function"		"OnReloadThink"
+					}
+				}
+				"OnAttackLanded"
+				{					
+					"RunScript"
+					{
+						"ScriptFile"		"abilities/billy/billy_abilities"
+						"Function"			"OnAutoAttack"
+					}
+				}
+			}
+
+			"modifier_ammo_reload"
+			{
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Duration"			"%reload_duration"	
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			
+				"States"
+				{
+					"MODIFIER_STATE_DISARMED"			"MODIFIER_STATE_VALUE_ENABLED"
+				}
+
+
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/billy/billy_abilities"
+						"Function"		"AmmoAudio"
+					}
+				}
+
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/billy/billy_abilities"
+						"Function"		"ApplyAmmoStackModifier"
+						"Target"		"CASTER"
+						"Ammo"			"%ammo" // Pass the ammo stack count as a parameter
+					}
+				}
+			}
+		}	
+	}
+
+	//=================================================================================================================
+	// Billy - Quick Reload (F) 
+	//=================================================================================================================
+	"billy_f"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_NO_TARGET"		
+		"AbilityTextureName"			"custom/billy/billy_d"
+		"MaxLevel"						"1"
+		"AbilityCooldown"				"20"
+		"AbilityManaCost"				"0"
+
+		"AbilityValues"
+        {
+            "mana_recover_per_w_level" "30"
+        }
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/billy/billy_abilities"
+				"Function"		"OnF"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Billy : Thunderer
+	//=================================================================================================================
+	"billy_r"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/billy/billy_r"
+		"AbilityCastAnimation" 			"ACT_DOTA_ATTACK"
+		"AnimationPlaybackRate" 		"1.0"
+		
+		"AbilityCastPoint"				"0.35 0.34 0.33 0.32 0.31"
+		"AbilityCastRange"				"850"
+		"AbilityCastRangeBuffer"		"200"
+		"AbilityCooldown"				"40 38 36 34 32"
+		"AbilityManaCost"				"700"
+		
+		"AbilityValues"
+        {
+            "cast_point" "0.35 0.34 0.33 0.32 0.31"
+            "cast_delay" "0.35"
+            "delay_per_shot" "0.07"
+            "speed" "5000"
+            "damage_per_shot" "240 300 360 420 480"
+            "max_range" "2500"
+            "shot_count" "3"
+            "bullet_speed" "5000"
+            "bullet_width" "120"
+            "knockback_distance" "15"
+        }
+
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/billy/billy_abilities"
+				"Function"		"AmmoCheck"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/billy/billy_abilities"
+				"Function"		"OnR"
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"	"1"
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/billy/billy_abilities"
+				"Function"		"OnRHit"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Billy : Thunderer (SA)
+	//=================================================================================================================
+	"billy_r_upgrade"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/billy/billy_r"
+		"AbilityCastAnimation" 			"ACT_DOTA_ATTACK"
+		"AnimationPlaybackRate" 		"1.0"
+		
+		"AbilityCastPoint"				"0.35 0.34 0.33 0.32 0.31"
+		"AbilityCastRange"				"1000"
+		"AbilityCastRangeBuffer"		"200"
+		"AbilityCooldown"				"40 38 36 34 32"
+		"AbilityManaCost"				"700"
+		
+		"AbilityValues"
+        {
+            "cast_point" "0.35 0.34 0.33 0.32 0.31"
+            "cast_delay" "0.35"
+            "delay_per_shot" "0.07"
+            "speed" "6000"
+            "damage_per_shot" "240 300 360 420 480"
+            "max_range" "2500"
+            "shot_count" "3"
+            "bullet_speed" "5000"
+            "bullet_width" "120"
+            "knockback_distance" "15"
+            "last_ammo_bonus" "325"
+            "last_ammo_cd_reduction" "14"
+        }
+
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/billy/billy_abilities"
+				"Function"		"AmmoCheck"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/billy/billy_abilities"
+				"Function"		"OnR"
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"	"1"
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/billy/billy_abilities"
+				"Function"		"OnRHit"
+			}
+		}
+	}
+
+
+	//=================================================================================================================
+	// Billy : Thunderer
+	//=================================================================================================================
+	"billy_combo"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityTextureName"			"custom/billy/billy_combo"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+		"MaxLevel"						"1"
+		"RequiredLevel"					"1"
+		"AbilityCastPoint"				"0.23"
+		"AbilityCastRange"				"1800"
+		"AbilityCastAnimation"			"ACT_DOTA_ATTACK"
+		"AnimationPlaybackRate"			"1"
+		"AbilityCooldown"				"155"
+		"AbilityManaCost"				"600"
+		"AOERadius"						"%radius"
+
+		"AbilityValues"
+        {
+            "cast_delay" "2.3"
+            "delay_per_shot" "0.068"
+            "radius" "600"
+            "speed" "6000"
+            "damage" "1100"
+            "shot_count" "3"
+            "minimum_for_singles" "3"
+        }
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/billy/billy_abilities"
+				"Function"		"OnCombo"
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"	"1"
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/billy/billy_abilities"
+				"Function"		"OnComboHit"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_billy_combo_cooldown"
+			{
+				"IsDebuff"			"1"				
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			}
+		}
+	}
+
+	//=======================================
+	// Precache
+	//=======================================
+	"billy_precache"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"custom/medusa/medusa_attribute_monstrous_strength"
+
+		"precache"
+		{
+			"particle"				"particles/billy/billy_q_projectile_model.vpcf"
+			"particle"				"particles/billy/billy_w.vpcf"
+			"particle"				"particles/econ/courier/courier_mechjaw/mechjaw_death_sparks.vpcf"
+			"particle"				"particles/units/heroes/hero_sniper/sniper_dust_hit_shock.vpcf"
+			"particle"				"particles/econ/items/bristleback/ti7_head_nasal_goo/bristleback_ti7_crimson_nasal_goo_impact_splash.vpcf"
+			"particle"				"particles/econ/items/riki/riki_immortal_ti6/riki_immortal_ti6_blinkstrike_r_backstab_hit_blood.vpcf"
+			"particle"				"particles/econ/items/monkey_king/ti7_weapon/mk_ti7_crimson_strike_tip_impact.vpcf"
+			"particle"				"particles/econ/items/sniper/sniper_charlie/sniper_assassinate_impact_c_charlie.vpcf"
+			"particle"				"particles/econ/items/sniper/sniper_charlie/sniper_assassinate_impact_blood_charlie.vpcf"
+			"particle"				"particles/econ/items/sniper/sniper_charlie/sniper_assassinate_impact_b_charlie.vpcf"
+			"particle"				"particles/econ/items/sniper/sniper_fall20_immortal/sniper_fall20_immortal_assassinate_impact_distortion.vpcf"
+			"particle"				"particles/billy/billy_r_dust_burst.vpcf"
+			"particle"				"particles/billy/billy_r_dust_burst_1.vpcf"
+			"particle"				"particles/billy/billy_r_dust.vpcf"
+			"particle"				"particles/econ/items/dragon_knight/dk_2022_immortal/dk_2022_immortal_dragon_tail_dragon_impact_flare.vpcf"
+			"particle"				"particles/econ/items/dazzle/dazzle_ti6_gold/dazzle_ti6_shallow_grave_gold_glyph_flare.vpcf"
+			"particle"				"particles/billy/billy_r_dust.vpcf"
+			"particle"				"particles/econ/items/dragon_knight/dk_2022_immortal/dk_2022_immortal_dragon_tail_dragon_impact_flare.vpcf"
+			"particle"				"particles/econ/events/ti10/hot_potato/disco_ball_death_flare.vpcf"
+			"particle"				"particles/billy/billy_combo_flare_self.vpcf"
+			"particle"				"particles/econ/items/dragon_knight/dk_2022_immortal/dk_2022_immortal_dragon_tail_dragon_impact_flare.vpcf"
+			"particle"				"particles/econ/events/ti10/hot_potato/disco_ball_death_flare.vpcf"
+			"particle"				"particles/billy/billy_r_projectile_model.vpcf"
+			"particle"				"particles/billy/billy_combo_projectile.vpcf"
+		}
+	}
+
+
+
+
+
+	//=======================================
+	// ATTRIBUTES
+	//=======================================
+	"billy_sa_hand"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/billy/billy_f"
+		
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"9"
+
+		"AbilityValues"
+        {
+            "mana_recover_per_w_level" "30"
+            "cooldown" "20"
+        }
+
+	    "OnSpellStart"
+	    {
+	    	"RunScript"
+			{
+				"ScriptFile"	"abilities/billy/billy_abilities"
+				"Function"		"OnHandAcquired"
+			}
+	    }
+	}
+
+	//=======================================
+	// ATTRIBUTES
+	//=======================================
+	"billy_sa_pistol"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"2"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/billy/billy_d3"
+		
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"13"
+
+		"AbilityValues"
+        {
+            "ammo" "5 6 7"
+            "reload_duration" "5.4 2.6 1.3"
+            "quickdraw_range" "1000 1150 1300"
+            "quickdraw_effective_range" "600 700 800"
+            "auto_attack_bonus_from_q" "60 75 90"
+            "pure_damage" "10 25 40"
+        }
+
+	    "OnSpellStart"
+	    {
+	    	"RunScript"
+			{
+				"ScriptFile"	"abilities/billy/billy_abilities"
+				"Function"		"OnPistolAcquired"
+			}
+	    }
+	}
+	//=======================================
+	// ATTRIBUTES
+	//=======================================
+	"billy_sa_thunderer"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/billy/billy_sa4"
+		
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"14"
+
+		"AbilityValues"
+        {
+            "bonus_cast_range" "150"
+            "bonus_final_shot_damage" "325"
+            "reduced_cd" "14"
+        }
+
+	    "OnSpellStart"
+	    {
+	    	"RunScript"
+			{
+				"ScriptFile"	"abilities/billy/billy_abilities"
+				"Function"		"OnOutlawAcquired"
+			}
+	    }
+	}
+	//=======================================
+	// ATTRIBUTES
+	//=======================================
+	"billy_sa_eagle_eyes"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/billy/billy_sa2"
+		
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"10"
+
+		"AbilityValues"
+        {
+            "vision_day" "500"
+            "vision_night" "300"
+            "evasion" "15"
+            "pure_evasion" "0.5"
+            "quadruple_range" "1000"
+            "pure_evasion_1000_range" "2"
+        }
+
+	    "OnSpellStart"
+	    {
+	    	"RunScript"
+			{
+				"ScriptFile"	"abilities/billy/billy_abilities"
+				"Function"		"OnVisionAcquired"
+			}
+	    }
+
+		"Modifiers"
+		{			
+			"modifier_billy_sa_vision"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsBuff"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE | MODIFIER_ATTRIBUTE_PERMANENT"
+		
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_BONUS_DAY_VISION" "%vision_day"
+					"MODIFIER_PROPERTY_BONUS_NIGHT_VISION" "%vision_night"
+					"MODIFIER_PROPERTY_EVASION_CONSTANT" "%evasion"
+				}
+
+				"OnTakeDamage"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/billy/billy_abilities"
+						"Function"		"OnDamaged"
+						"DamageTaken"	"%attack_damage"		
+					}
+				}
+			}
+		}	
+	}
+	//=======================================
+	// ATTRIBUTES - Duelist's Gambit
+	//=======================================
+	"billy_sa_gambit"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/billy/billy_sa3"
+		
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"9999"
+		"AbilityManaCost"				"14"
+
+		"AbilityValues"
+        {
+            "recover_mana_amount" "20"
+            "recover_mana_chance" "40"
+            "recover_ammo" "1"
+            "recover_ammo_chance" "15"
+            "bonus_damage" "70"
+            "bonus_damage_per_level" "4"
+        }
+
+	    "OnSpellStart"
+	    {
+	    	"RunScript"
+			{
+				"ScriptFile"	"abilities/billy/billy_abilities"
+				"Function"		"OnGambitAcquired"
+			}
+	    }
+	}
+}

@@ -135,14 +135,8 @@ function OnQuickStrikesStart(keys)
 			caster:RemoveModifierByName("modifier_quick_strikes")
 			local target_loc = target:GetAbsOrigin()
 			local caster_loc = caster:GetAbsOrigin()
-			target_loc.z = caster_loc.z
-			local forward = (target_loc - caster_loc):Normalized() 
-			if target_loc == nil then 
-				forward = caster.original_forward_vector 
-			end
-			forward.z = 0
-			caster:SetForwardVector(forward)
-			caster:SetAngles(0, 0, 0)
+			
+			caster:FaceTowards(target_loc)
 			return nil 
 		end
 		if caster:IsAlive() and IsValidEntity(target) and not target:IsNull() and target:IsAlive() and (target:GetAbsOrigin() - caster:GetAbsOrigin()):Length2D() <= 2500 and caster:HasModifier("modifier_quick_strikes") and not caster:HasModifier("round_pause") and not target:IsInvulnerable() then 
@@ -158,13 +152,10 @@ function OnQuickStrikesStart(keys)
 			angle = new_angle
 			local target_loc = target:GetAbsOrigin()
 			local caster_loc = caster:GetAbsOrigin()
-			local forward = (target_loc - caster_loc):Normalized() 
-			if target_loc == nil then 
-				forward = caster.original_forward_vector 
-			end
-			forward.z = 0
-			ProjectileManager:ProjectileDodge(caster)
+
+			local forward = (Vector(target_loc.x, target_loc.y, 0) - Vector(caster_loc.x, caster_loc.y, 0)):Normalized()
 			caster:SetForwardVector(forward)
+			ProjectileManager:ProjectileDodge(caster)
 			caster:PreventDI()
 			caster:SetPhysicsFriction(0)
 			caster:SetPhysicsVelocity(forward * (distance + (target:GetAbsOrigin() - caster:GetAbsOrigin()):Length2D()) / interval)

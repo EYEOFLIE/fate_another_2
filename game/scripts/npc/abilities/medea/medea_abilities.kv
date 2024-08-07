@@ -23,44 +23,16 @@
 		{
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"b_chance"			"45"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"b_chance_near_workshop"		"33"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"a_chance"			"30"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"a_chance_near_workshop"		"33"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"s_chance"			"25"
-			}
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"s_chance_near_workshop"		"34"
-			}
-			"07"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"workshop_distance"	"500"
-			}
-		}
+		"AbilityValues"
+        {
+            "b_chance" "45"
+            "b_chance_near_workshop" "33"
+            "a_chance" "30"
+            "a_chance_near_workshop" "33"
+            "s_chance" "25"
+            "s_chance_near_workshop" "34"
+            "workshop_distance" "500"
+        }
 		
 		"OnSpellStart"
 		{
@@ -87,17 +59,7 @@
 		"AnimationPlaybackRate" 		"2.0"
 		"precache"
 		{
-			"model"			"models/props_structures/tower_good.vmdl"
-			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_rubick.vsndevts"
-			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_lion.vsndevts"
-			"particle"			"particles/units/heroes/hero_lion/lion_spell_mana_drain.vpcf"
-			"particle"					"particles/units/heroes/hero_jakiro/jakiro_dual_breath_ice.vpcf"
-			"particle"				"particles/units/heroes/hero_crystalmaiden/maiden_crystal_nova.vpcf"
-			"particle"				"particles/units/heroes/hero_crystalmaiden/maiden_frostbite_buff.vpcf"
-			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_obsidian_destroyer.vsndevts"
-			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_jakiro.vsndevts"
-			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_crystalmaiden.vsndevts"
-			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_ancient_apparition.vsndevts"
+			
 		}
 		
 		// Casting
@@ -113,34 +75,14 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"400"
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"workshop_health"			"1000"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"workshop_mana"			"1000"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"mana_regen_radius"	"500"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"mana_regen"		"20"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"max_item_lvl"		"8"
-			}
-		}
+		"AbilityValues"
+        {
+            "workshop_health" "1000"
+            "workshop_mana" "1000"
+            "mana_regen_radius" "500"
+            "mana_regen" "20"
+            "max_item_lvl" "8"
+        }
 		
 		"OnSpellStart"
 		{
@@ -238,17 +180,7 @@
 		"AnimationPlaybackRate" 		"2.0"
 		"precache"
 		{
-			"model"			"models/props_structures/tower_good.vmdl"
-			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_rubick.vsndevts"
-			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_lion.vsndevts"
-			"particle"			"particles/units/heroes/hero_lion/lion_spell_mana_drain.vpcf"
-			"particle"					"particles/units/heroes/hero_jakiro/jakiro_dual_breath_ice.vpcf"
-			"particle"				"particles/units/heroes/hero_crystalmaiden/maiden_crystal_nova.vpcf"
-			"particle"				"particles/units/heroes/hero_crystalmaiden/maiden_frostbite_buff.vpcf"
-			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_obsidian_destroyer.vsndevts"
-			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_jakiro.vsndevts"
-			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_crystalmaiden.vsndevts"
-			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_ancient_apparition.vsndevts"
+			
 		}
 		
 		// Casting
@@ -264,39 +196,16 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"400"
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"workshop_health"	"2000"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"workshop_mana"		"1500"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"mana_regen_radius"	"500"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"mana_regen"		"20"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"true_sight"		"600"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"max_item_lvl"		"8"
-			}
-		}
+		"AbilityValues"
+        {
+            "workshop_health" "2000"
+            "workshop_mana" "1500"
+            "mana_regen_radius" "500"
+            "mana_regen" "50"
+            "exp" "6"
+            "true_sight" "600"
+            "max_item_lvl" "8"
+        }
 		
 		"OnSpellStart"
 		{
@@ -399,38 +308,17 @@
 
 		"precache"
 		{
-			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_lion.vsndevts"
-			"particle"			"particles/units/heroes/hero_lion/lion_spell_mana_drain.vpcf"
+			
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"duration"					"5.0"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"mana_per_second"			"40"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"break_distance"			"2500"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"tick_interval"				"0.25"
-			}
-			"05"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"int_ratio"					"0.8"
-			}
-		}
+		"AbilityValues"
+        {
+            "duration" "5.0"
+            "mana_per_second" "60"
+            "break_distance" "2500"
+            "tick_interval" "0.25"
+            "int_ratio" "0.8"
+        }
 
 		"OnAbilityPhaseStart"
 		{
@@ -464,14 +352,7 @@
 				"Function"			"OnManaDrainEnd"
 			}		
 		}
-		"OnChannelInterrupted"
-		{
-			"RunScript"
-			{
-				"ScriptFile"		"abilities/medea/medea_abilities"
-				"Function"			"OnManaDrainEnd"
-			}
-		}
+
 	}
 
 	//=======================================
@@ -491,49 +372,19 @@
 
 		"precache"
 		{
-			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_obsidian_destroyer.vsndevts"
-			"particle"				"particles/units/heroes/hero_skywrath_mage/skywrath_mage_ancient_seal_debuff.vpcf"
-			"particle"				"particles/custom/caster/workshop_explosion.vpcf"
+			
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"cast_delay"		"0.7"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"delay"				"1.0"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"base_dmg"			"300"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"int_ratio"			"8.0"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"inner_radius"		"300"
-			}
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"outer_radius"		"1000"
-			}
-			"07"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"min_damage"		"67"
-			}
-		}
+		"AbilityValues"
+        {
+            "cast_delay" "0.7"
+            "delay" "1.0"
+            "base_dmg" "300"
+            "int_ratio" "8.0"
+            "inner_radius" "300"
+            "outer_radius" "1000"
+            "min_damage" "67"
+        }
 		"OnAbilityPhaseStart"
 		{
 			"RunScript"
@@ -573,49 +424,19 @@
 
 		"precache"
 		{
-			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_obsidian_destroyer.vsndevts"
-			"particle"				"particles/units/heroes/hero_skywrath_mage/skywrath_mage_ancient_seal_debuff.vpcf"
-			"particle"				"particles/custom/caster/workshop_explosion.vpcf"
+			
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"cast_delay"		"0.7"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"delay"				"1.0"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"base_dmg"			"600"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"int_ratio"			"8.0"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"inner_radius"		"300"
-			}
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"outer_radius"		"1000"
-			}
-			"07"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"min_damage"		"67"
-			}
-		}
+		"AbilityValues"
+        {
+            "cast_delay" "0.7"
+            "delay" "1.0"
+            "base_dmg" "600"
+            "int_ratio" "8.0"
+            "inner_radius" "300"
+            "outer_radius" "1000"
+            "min_damage" "67"
+        }
 		"OnAbilityPhaseStart"
 		{
 			"RunScript"
@@ -657,9 +478,9 @@
 		{
 		}
 
-		"AbilitySpecial"
-		{
-		}
+		"AbilityValues"
+        {
+        }
 		
 		"OnSpellStart"
 		{
@@ -700,9 +521,9 @@
 		{
 		}
 
-		"AbilitySpecial"
-		{
-		}
+		"AbilityValues"
+        {
+        }
 		
 		"OnSpellStart"
 		{
@@ -760,14 +581,10 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"150"
 		
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"distance"				"1000"
-			}
-		}
+	    "AbilityValues"
+        {
+            "distance" "1000"
+        }
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -796,19 +613,13 @@
 		
 		"precache"
 		{
-            "particle"          "particles/custom/caster/caster_recall_out.vpcf"
-            "particle"          "particles/units/heroes/hero_wisp/wisp_relocate_teleport.vpcf"
-            "particle"          "particles/units/heroes/hero_wisp/wisp_relocate_channel.vpcf"
+            
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"duration"				"3"
-			}
-		}
+		"AbilityValues"
+        {
+            "duration" "3"
+        }
 
 		"OnSpellStart"
 		{
@@ -911,24 +722,12 @@
 		"AbilityTextureName"            "rubick_empty1"
 		"MaxLevel"                      "1"
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"bash_chance"				"100"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"bash_duration"				"0.8"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"bash_damage"				"100"
-			}
-		}
+		"AbilityValues"
+        {
+            "bash_chance" "100"
+            "bash_duration" "0.8"
+            "bash_damage" "100"
+        }
 
 		"Modifiers"
 		{
@@ -966,19 +765,11 @@
 		"AbilityTextureName"            "winter_wyvern_arctic_burn"
 		"MaxLevel"                      "1"
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"slow"				"-50"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"duration"				"1"
-			}
-		}
+		"AbilityValues"
+        {
+            "slow" "-50"
+            "duration" "1"
+        }
 
 		"Modifiers"
 		{
@@ -1045,35 +836,14 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"100"
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"delay"				"0.5"
-			}
-			
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"radius"			"300"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"total_duration"				"1.0"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage"			"500 550 600 650 700 750 800 850"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"distance"			"900"
-			}
-		}
+		"AbilityValues"
+        {
+            "delay" "0.5"
+            "radius" "300"
+            "total_duration" "1.0"
+            "damage" "500 550 600 650 700 750 800 850"
+            "distance" "900"
+        }
 
 		"OnSpellStart"
 		{
@@ -1131,11 +901,7 @@
 		"AOERadius"						"%radius"
 		"precache"
 		{
-			"particle"		"particles/units/heroes/hero_huskar/huskar_burning_spear.vpcf"
-			"particle"		"particles/custom/lancer/lancer_gae_bolg_projectile.vpcf"
-			"particle"		"particles/units/heroes/hero_warlock/warlock_rainofchaos_start_breakout_fallback_mid.vpcf"
-			"particle"		"particles/units/heroes/hero_elder_titan/elder_titan_echo_stomp_cracks.vpcf"
-			"particle"		"particles/custom/lancer/lancer_gae_bolg_hit.vpcf"
+			
 		}
 		
 		// Casting
@@ -1151,30 +917,13 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"300"
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"delay"				"2.3"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage"			"900 1000 1100 1200 1300 1400 1500 1600"
-			}
-			
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"radius"			"450"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"stun_duration"				"2.25"
-			}
-		}
+		"AbilityValues"
+        {
+            "delay" "2.3"
+            "damage" "900 1000 1100 1200 1300 1400 1500 1600"
+            "radius" "450"
+            "stun_duration" "2.25"
+        }
 		
 		"OnAbilityPhaseStart"
 		{
@@ -1232,34 +981,16 @@
 
 		"precache"
 		{
-			"particle"	"particles/units/heroes/hero_medusa/medusa_mana_shield.vpcf"
-			"particle"	"particles/custom/caster/caster_argos_durability.vpcf"
-			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_medusa.vsndevts"
+			
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"shield_amount"			"100 150 200 250 300"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"max_shield"			"200 300 400 500 600"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"armor_duration"		"3.0"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"armor"					"25"
-			}
-		}
+		"AbilityValues"
+        {
+            "shield_amount" "100 150 200 250 300"
+            "max_shield" "200 300 400 500 600"
+            "armor_duration" "3.0"
+            "armor" "25"
+        }
 		
 		"OnSpellStart"
 		{
@@ -1294,7 +1025,7 @@
 						"DamageTaken"	"%attack_damage"		
 					}
 				}
-				"EffectName"	"particles/units/heroes/hero_medusa/medusa_mana_shield.vpcf"
+				"EffectName"	"particles/custom/caster/medea_argos_shield.vpcf"
 				"EffectAttachType"	"follow_origin"
 			}
 			"modifier_argos_armor"
@@ -1329,34 +1060,16 @@
 
 		"precache"
 		{
-			"particle"	"particles/units/heroes/hero_medusa/medusa_mana_shield.vpcf"
-			"particle"	"particles/custom/caster/caster_argos_durability.vpcf"
-			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_medusa.vsndevts"
+			
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"shield_amount"			"200 250 300 350 400"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"max_shield"			"400 500 600 700 800"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"armor_duration"		"3.0"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"armor"					"25"
-			}
-		}
+		"AbilityValues"
+        {
+            "shield_amount" "200 250 300 350 400"
+            "max_shield" "400 500 600 700 800"
+            "armor_duration" "3.0"
+            "armor" "25"
+        }
 		
 		"OnSpellStart"
 		{
@@ -1391,7 +1104,7 @@
 						"DamageTaken"	"%attack_damage"		
 					}
 				}
-				"EffectName"	"particles/units/heroes/hero_medusa/medusa_mana_shield.vpcf"
+				"EffectName"	"particles/custom/caster/medea_argos_shield.vpcf"
 				"EffectAttachType"	"follow_origin"
 			}
 			"modifier_argos_armor"
@@ -1429,9 +1142,9 @@
 		{
 		}
 
-		"AbilitySpecial"
-		{
-		}
+		"AbilityValues"
+        {
+        }
 
 		"OnToggleOn"
 		{
@@ -1502,9 +1215,9 @@
 		{
 		}
 
-		"AbilitySpecial"
-		{
-		}
+		"AbilityValues"
+        {
+        }
 
 		"OnToggleOn"
 		{
@@ -1574,29 +1287,15 @@
 
 		"precache"
 		{
-			"particle"	"particles/units/heroes/hero_ember_spirit/ember_spirit_hit_fire.vpcf"
-			"particle"	"particles/units/heroes/hero_dragon_knight/dragon_knight_breathe_fire.vpcf"
-			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_ember_spirit.vsndevts"
+			
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"pushback"				"900 1000 1100 1200 1300"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"100 130 160 190 220"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"300"
-			}
-		}
+		"AbilityValues"
+        {
+            "pushback" "900 1000 1100 1200 1300"
+            "damage" "100 130 160 190 220"
+            "radius" "300"
+        }
 		
 		"OnSpellStart"
 		{
@@ -1636,34 +1335,16 @@
 
 		"precache"
 		{
-			"particle"	"particles/units/heroes/hero_ember_spirit/ember_spirit_hit_fire.vpcf"
-			"particle"	"particles/units/heroes/hero_dragon_knight/dragon_knight_breathe_fire.vpcf"
-			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_ember_spirit.vsndevts"
+			
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"pushback"				"900 1000 1100 1200 1300"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"100 130 160 190 220"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"300"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"int_ratio"				"1"
-			}
-		}
+		"AbilityValues"
+        {
+            "pushback" "900 1000 1100 1200 1300"
+            "damage" "100 130 160 190 220"
+            "radius" "300"
+            "int_ratio" "1"
+        }
 		
 		"OnSpellStart"
 		{
@@ -1721,20 +1402,11 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"200"
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"duration"			"1.4 1.8 2.2 2.6 3.0"
-			}
-			
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"radius"			"250"
-			}
-		}
+		"AbilityValues"
+        {
+            "duration" "1.4 1.8 2.2 2.6 3.0"
+            "radius" "250"
+        }
 		
 		"OnSpellStart"
 		{
@@ -1776,8 +1448,7 @@
         "IsCastableWhileHidden"         "1"
 		"precache"
 		{
-			"particle"		"particles/units/heroes/hero_luna/luna_lucent_beam.vpcf"
-			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_luna.vsndevts"
+			
 		}
 		
 		// Casting
@@ -1793,29 +1464,13 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"200"
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"radius"			"325"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage"			"150 175 200 225 250"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"max_count"			"3"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"stun_duration"			"1.0"
-			}
-		}
+		"AbilityValues"
+        {
+            "radius" "325"
+            "damage" "150 175 200 225 250"
+            "max_count" "3"
+            "stun_duration" "1.0"
+        }
 		
 		"OnSpellStart"
 		{
@@ -1851,8 +1506,7 @@
         "IsCastableWhileHidden"         "1"
 		"precache"
 		{
-			"particle"		"particles/units/heroes/hero_luna/luna_lucent_beam.vpcf"
-			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_luna.vsndevts"
+			
 		}
 		
 		// Casting
@@ -1868,34 +1522,14 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"200"
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"radius"			"325"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage"			"150 175 200 225 250"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"max_count"			"3"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"stun_duration"			"1.0"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"int_ratio"			"1"
-			}
-		}
+		"AbilityValues"
+        {
+            "radius" "325"
+            "damage" "150 175 200 225 250"
+            "max_count" "3"
+            "stun_duration" "1.0"
+            "int_ratio" "1"
+        }
 		
 		"OnSpellStart"
 		{
@@ -1921,7 +1555,7 @@
 		"MaxLevel"						"5"
 		"RequiredLevel"					"25"
 		"LevelsBetweenUpgrades"			"1"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityCastPoint"				"0.3"
@@ -1935,27 +1569,14 @@
 
 		"precache"
 		{
-			"particle"	"particles/units/heroes/hero_warlock/warlock_shadow_word_buff.vpcf"
-			"particle"  "particles/status_fx/status_effect_guardian_angel.vpcf"
-			"particle"	"particles/units/heroes/hero_omniknight/omniknight_guardian_angel_buff_j.vpcf"
-			"particle"	"particles/custom/caster/sacrifice/caster_sacrifice_indicator.vpcf"
-			"soundfile" "soundevents/game_sounds_heroes/game_sounds_shadowshaman.vsndevts"
-			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_witchdoctor.vsndevts"
+			
 		}
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"		"FIELD_INTEGER"
-				"duration"		"10.0"
-			}
-			"01"
-			{
-				"var_type"		"FIELD_INTEGER"
-				"radius"		"600 675 750 825 900"
-			}
-		}
+		"AbilityValues"
+        {
+            "duration" "10.0"
+            "radius" "600 675 750 825 900"
+        }
 
 		"OnSpellStart"
 		{
@@ -2111,19 +1732,11 @@
 			"particle"		"particles/econ/items/puck/puck_alliance_set/puck_dreamcoil_tether_aproset.vpcf"
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"mana_amount"			"40 60 80 100 120"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"5.0"
-			}
-		}
+		"AbilityValues"
+        {
+            "mana_amount" "40 60 80 100 120"
+            "duration" "5.0"
+        }
 
 		"OnSpellStart"
 		{
@@ -2143,12 +1756,91 @@
 				"Function"			"OnMTEnd"
 			}
 		}
-		"OnChannelInterrupted"
+
+	}
+
+	//=====================================
+	// Caster : Mana Transfer
+	//=====================================
+	"medea_magic_trap"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"5"
+		"LevelsBetweenUpgrades"			"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL" 
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_TEAM_NONE"
+		"AbilityTextureName"			"enigma_black_hole"
+		"AbilityCastAnimation" 			"ACT_DOTA_ATTACK"
+		"AnimationPlaybackRate" 		"1.0"
+		"AbilityCastPoint"				"0.1"
+		"AbilityCastRange"				"250"
+		"AbilityCooldown"				"10"
+		"AbilityManaCost"				"200"
+
+		"precache"
+		{
+			
+		}
+
+		"AbilityValues"
+        {
+            "duration" "10"
+            "delay" "0.5"
+            "aoe" "160"
+            "stun_dur" "0.6 0.7 0.8 0.9 1.0"
+        }
+
+		"OnSpellStart"
 		{
 			"RunScript"
 			{
 				"ScriptFile"		"abilities/medea/medea_abilities"
-				"Function"			"OnMTEnd"
+				"Function"			"OnTrapstart"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_medea_trap_checker"
+			{
+				"IsDebuff"			"0"
+				"IsHidden"			"0"
+				"Duration"			"%duration"
+				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"ThinkInterval"  	"0.04"
+				"States"
+				{
+					"MODIFIER_STATE_INVISIBLE"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/medea/medea_abilities"
+						"Function"		"OnTrapThink"
+					}
+				}
+
+			}
+			"modifier_medea_trap_lock"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Duration"			"%stun_dur"
+				"EffectName"		"particles/custom/caster/medea_trap_effect.vpcf"
+				"EffectAttachType"	"follow_overhead"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PROVIDES_FOW_POSITION" "100"
+				}
+				"States"
+				{
+					"MODIFIER_STATE_STUNNED"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_ROOTED"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
 			}
 		}
 	}
@@ -2197,40 +1889,17 @@
 		
 		"precache"
 		{
-			"particle"		"particles/units/heroes/hero_pugna/pugna_decrepify.vpcf"
-			"particle"		"particles/units/heroes/hero_dazzle/dazzle_weave.vpcf"
-			"particle"		"particles/units/heroes/hero_doom_bringer/doom_bringer_doom.vpcf"
-			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_silencer.vsndevts"
+			
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"delay"					"0.55"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"stun_duration"			"1.0 1.0 1.25 1.25 1.5"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"3.0 4.0 5.0 6.0 7.0"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"revoke"				"3.0"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"window_duration"		"5.0"
-			}
-		}
+		"AbilityValues"
+        {
+            "delay" "0.55"
+            "stun_duration" "1.0 1.0 1.25 1.25 1.5"
+            "duration" "3.0 4.0 5.0 6.0 7.0"
+            "revoke" "3.0"
+            "window_duration" "5.0"
+        }
 
 		"OnAbilityPhaseStart"
 		{
@@ -2293,7 +1962,7 @@
 			{
 				"IsDebuff"					"1"
 				"Duration"					"%duration"
-				"EffectName"				"particles\units\heroes\hero_pugna\pugna_decrepify.vpcf"	
+				"EffectName"				"particles/units/heroes/hero_pugna/pugna_decrepify.vpcf"	
 				"EffectAttachType"			"follow_overhead"
 				"States"
 				{
@@ -2383,55 +2052,20 @@
 		
 		"precache"
 		{
-			"particle"		"particles/units/heroes/hero_pugna/pugna_decrepify.vpcf"
-			"particle"		"particles/units/heroes/hero_dazzle/dazzle_weave.vpcf"
-			"particle"		"particles/units/heroes/hero_doom_bringer/doom_bringer_doom.vpcf"
-			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_silencer.vsndevts"
+			
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"delay"					"0.55"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"stun_duration"			"1.0 1.0 1.25 1.25 1.5"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"3.0 4.0 5.0 6.0 7.0"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"revoke"				"5.0"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"dagger_duration"		"3.0"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mana_steal"			"1.0"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"hp_steal"				"1.0"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"window_duration"		"5.0"
-			}
-		}
+		"AbilityValues"
+        {
+            "delay" "0.55"
+            "stun_duration" "1.0 1.0 1.25 1.25 1.5"
+            "duration" "3.0 4.0 5.0 6.0 7.0"
+            "revoke" "5.0"
+            "dagger_duration" "3.0"
+            "mana_steal" "1.0"
+            "hp_steal" "1.0"
+            "window_duration" "5.0"
+        }
 
 		"OnAbilityPhaseStart"
 		{
@@ -2494,7 +2128,7 @@
 			{
 				"IsDebuff"					"1"
 				"Duration"					"%duration"
-				"EffectName"				"particles\units\heroes\hero_pugna\pugna_decrepify.vpcf"	
+				"EffectName"				"particles/units/heroes/hero_pugna/pugna_decrepify.vpcf"	
 				"EffectAttachType"			"follow_overhead"
 				"States"
 				{
@@ -2581,9 +2215,7 @@
 		"AOERadius"						"%radius"
 		"precache"
 		{
-			"particle"			"particles/units/heroes/hero_zuus/zuus_lightning_bolt.vpcf"
-			"particle"			"particles/units/heroes/hero_templar_assassin/templar_assassin_trap_start_ring.vpcf"
-			"particle"			"particles/custom/caster/caster_hecatic_graea.vpcf"
+			
 		}
 		
 		// Casting
@@ -2600,30 +2232,13 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"800"
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage"			"250 280 310 340 390"
-			}
-			
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"radius_bolt"		"300"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"radius"			"800"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"bolt_amount"		"10"
-			}
-		}
+		"AbilityValues"
+        {
+            "damage" "250 280 310 340 390"
+            "radius_bolt" "300"
+            "radius" "800"
+            "bolt_amount" "10"
+        }
 
 		"OnSpellStart"
 		{
@@ -2676,9 +2291,7 @@
 		"AOERadius"						"%radius"
 		"precache"
 		{
-			"particle"			"particles/units/heroes/hero_zuus/zuus_lightning_bolt.vpcf"
-			"particle"			"particles/units/heroes/hero_templar_assassin/templar_assassin_trap_start_ring.vpcf"
-			"particle"			"particles/custom/caster/caster_hecatic_graea.vpcf"
+			
 		}
 		
 		// Casting
@@ -2694,35 +2307,14 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"800"
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage"			"250 280 310 340 390"
-			}
-			
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"radius_bolt"		"300"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"radius"			"800"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"bolt_amount"		"13"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"int_ratio"			"1"
-			}
-		}
+		"AbilityValues"
+        {
+            "damage" "250 280 310 340 390"
+            "radius_bolt" "300"
+            "radius" "800"
+            "bolt_amount" "13"
+            "int_ratio" "1"
+        }
 
 		"OnSpellStart"
 		{
@@ -2774,11 +2366,7 @@
 		"AOERadius"						"%radius"
 		"precache"
 		{
-			"particle"			"particles/units/heroes/hero_zuus/zuus_lightning_bolt.vpcf"
-			"particle"			"particles/units/heroes/hero_templar_assassin/templar_assassin_trap_start_ring.vpcf"
-			"particle"			"particles/custom/screen_purple_splash.vpcf"
-			"particle"			"particles/custom/caster/hecatic_graea_powered/area.vpcf"
-			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_obsidian_destroyer.vsndevts"
+			
 		}
 		
 		// Casting
@@ -2795,50 +2383,17 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"800"
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage"			"500"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"radius_bolt"		"300"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"bolt_amount"		"13"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"radius"			"1000"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"lasthit_damage"	"1500"
-			}		
-			"06"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"lasthit_radius"	"1000"
-			}
-			
-			"07"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"int_ratio"			"1"
-			}
-			"08"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"stun"				"1.5"
-			}
-		}
+		"AbilityValues"
+        {
+            "damage" "500"
+            "radius_bolt" "300"
+            "bolt_amount" "13"
+            "radius" "1000"
+            "lasthit_damage" "1500"
+            "lasthit_radius" "1000"
+            "int_ratio" "1"
+            "stun" "1.5"
+        }
 
 		"OnSpellStart"
 		{
@@ -2893,11 +2448,7 @@
 		"AOERadius"						"%radius"
 		"precache"
 		{
-			"particle"			"particles/units/heroes/hero_zuus/zuus_lightning_bolt.vpcf"
-			"particle"			"particles/units/heroes/hero_templar_assassin/templar_assassin_trap_start_ring.vpcf"
-			"particle"			"particles/custom/screen_purple_splash.vpcf"
-			"particle"			"particles/custom/caster/hecatic_graea_powered/area.vpcf"
-			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_obsidian_destroyer.vsndevts"
+
 		}
 		
 		// Casting
@@ -2914,49 +2465,17 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"800"
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage"			"500"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"radius_bolt"		"300"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"bolt_amount"		"13"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"radius"			"1000"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"lasthit_damage"	"1800"
-			}		
-			"06"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"lasthit_radius"	"1300"
-			}
-			"07"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"int_ratio"			"1"
-			}
-			"08"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"stun"				"1.5"
-			}
-		}
+		"AbilityValues"
+        {
+            "damage" "500"
+            "radius_bolt" "300"
+            "bolt_amount" "13"
+            "radius" "1000"
+            "lasthit_damage" "1800"
+            "lasthit_radius" "1300"
+            "int_ratio" "1"
+            "stun" "1.5"
+        }
 
 		"OnSpellStart"
 		{
@@ -3012,54 +2531,19 @@
 		{
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"workshop_health"		"2000"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"workshop_mana"			"1500"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"explosion_bonus_damage"		"300"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"cast_range"		"500"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"radius"			"900"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"duration"			"8.0"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"mana_regen_radius"		"500"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"workshop_mregen"		"20"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"true_sight"		"600"
-			}
-		}
+		"AbilityValues"
+        {
+            "workshop_health" "2000"
+            "workshop_mana" "1500"
+            "explosion_bonus_damage" "300"
+            "cast_range" "500"
+            "radius" "900"
+            "duration" "8.0"
+            "mana_regen_radius" "500"
+            "workshop_mregen" "50"
+            "exp" "6"
+            "true_sight" "600"
+        }
 		
 		"OnSpellStart"
 		{
@@ -3091,29 +2575,13 @@
 		{
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"bonus_durability"		"200"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"bonus_charge"		"100"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"armor_duration"		"3"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"armor"					"25"
-			}
-		}
+		"AbilityValues"
+        {
+            "bonus_durability" "200"
+            "bonus_charge" "100"
+            "armor_duration" "3"
+            "armor" "25"
+        }
 		
 		"OnSpellStart"
 		{
@@ -3145,29 +2613,13 @@
 		{
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"bonus_ray"			"3"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"bonus_damage"		"300"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"bonus_radius"		"300"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"int_ratio"			"1.0"
-			}
-		}
+		"AbilityValues"
+        {
+            "bonus_ray" "3"
+            "bonus_damage" "300"
+            "bonus_radius" "300"
+            "int_ratio" "1.0"
+        }
 		
 		"OnSpellStart"
 		{
@@ -3199,29 +2651,13 @@
 		{
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"cd_reduction"		"10.0"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"revoke_duration"		"5.0"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"mana_steal_amount"		"1"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"hp_steal"		"1"
-			}
-		}
+		"AbilityValues"
+        {
+            "cd_reduction" "10.0"
+            "revoke_duration" "5.0"
+            "mana_steal_amount" "1"
+            "hp_steal" "1"
+        }
 		
 		"OnSpellStart"
 		{
@@ -3232,4 +2668,76 @@
 			}
 		}
 	}	
+	//=======================================
+	// Precache
+	//=======================================
+	"medea_precache"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"custom/medusa/medusa_attribute_monstrous_strength"
+
+		"precache"
+		{
+			"model"					"models/medea/illya_caster/illya_caster_by_zefiroft.vmdl"
+			"model"					"models/medea/medea_uncape/medea_uncape_by_zefiroft.vmdl"
+			"model"					"models/medea/medea_lily/medea_lily_by_zefiroft.vmdl"
+			"model"					"models/new_medeatower/newtower.vmdl"
+			"model"					"models/creeps/neutral_creeps/n_creep_troll_skeleton/n_creep_skeleton_melee.vmdl"
+			"model"					"models/heroes/clinkz/clinkz.vmdl"
+			"model"					"models/creeps/neutral_creeps/n_creep_black_dragon/n_creep_black_dragon.vmdl"
+			"particle"				"particles/units/heroes/hero_wisp/wisp_relocate_channel.vpcf"
+			"particle"         		"particles/custom/caster/caster_recall_out.vpcf"
+            "particle"          	"particles/units/heroes/hero_wisp/wisp_relocate_teleport.vpcf"
+			"particle"  			"particles/status_fx/status_effect_frost.vpcf"
+			"particle"  			"particles/units/heroes/hero_crystalmaiden/maiden_frostbite_buff.vpcf"
+			"particle"  			"particles/units/heroes/hero_crystalmaiden/maiden_crystal_nova.vpcf"
+			"particle"  			"particles/custom/archer/archer_clairvoyance_circle.vpcf"
+			"particle"  			"particles/custom/archer/archer_clairvoyance_dust.vpcf"
+			"particle"  			"particles/units/heroes/hero_obsidian_destroyer/obsidian_destroyer_sanity_eclipse_area.vpcf"
+			"particle"  			"particles/econ/items/crystal_maiden/crystal_maiden_maiden_of_icewrack/maiden_freezing_field_casterribbons_arcana1.vpcf"
+			"particle"  			"particles/units/heroes/hero_jakiro/jakiro_dual_breath_ice.vpcf"
+			"particle"  			"particles/custom/caster/medea_argos_shield.vpcf"
+			"particle"				"particles/custom/caster/caster_argos_durability.vpcf"
+			"particle"				"particles/units/heroes/hero_lion/lion_spell_mana_drain.vpcf"
+			"particle"				"particles/units/heroes/hero_skywrath_mage/skywrath_mage_ancient_seal_debuff.vpcf"
+			"particle"				"particles/custom/caster/workshop_explosion.vpcf"
+			"particle"				"particles/units/heroes/hero_ember_spirit/ember_spirit_hit_fire.vpcf"
+			"particle"				"particles/units/heroes/hero_dragon_knight/dragon_knight_breathe_fire.vpcf"
+			"particle"				"particles/units/heroes/hero_luna/luna_lucent_beam.vpcf"
+			"particle"				"particles/units/heroes/hero_warlock/warlock_shadow_word_buff.vpcf"
+			"particle"  			"particles/status_fx/status_effect_guardian_angel.vpcf"
+			"particle"				"particles/units/heroes/hero_omniknight/omniknight_guardian_angel_buff_j.vpcf"
+			"particle"				"particles/custom/caster/sacrifice/caster_sacrifice_indicator.vpcf"
+			"particle"  			"particles/units/heroes/hero_death_prophet/death_prophet_silence.vpcf"
+			"particle"  			"particles/custom/caster/medea_rune_trap.vpcf"
+			"particle"  			"particles/custom/caster/medea_trap_effect.vpcf"
+			"particle"				"particles/units/heroes/hero_pugna/pugna_decrepify.vpcf"
+			"particle"				"particles/units/heroes/hero_dazzle/dazzle_weave.vpcf"
+			"particle"				"particles/units/heroes/hero_doom_bringer/doom_bringer_doom.vpcf"
+			"particle"  			"particles/custom/caster/hecatic_graea/ray.vpcf"
+			"particle"  			"particles/custom/caster/hecatic_graea_powered/ray.vpcf"
+			"particle"				"particles/custom/caster/caster_hecatic_graea.vpcf"
+			"particle"				"particles/custom/screen_purple_splash.vpcf"
+			"particle"				"particles/custom/caster/hecatic_graea_powered/area.vpcf"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_obsidian_destroyer.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_jakiro.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_crystalmaiden.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_ancient_apparition.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_invoker.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_omniknight.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_windrunner.vsndevts"
+			"soundfile" 			"soundevents/game_sounds_heroes/game_sounds_earthshaker.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_rubick.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_lion.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_medusa.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_ember_spirit.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_luna.vsndevts"
+			"soundfile" 			"soundevents/game_sounds_heroes/game_sounds_shadowshaman.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_witchdoctor.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_silencer.vsndevts"
+		}
+	}
 }

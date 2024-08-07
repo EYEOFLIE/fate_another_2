@@ -414,6 +414,10 @@ function OnLanceOff(keys)
 				caster:SetModel("models/bathory/hunter/bathory_hunter_wing_by_zefiroft.vmdl")
 				caster:SetOriginalModel("models/bathory/hunter/bathory_hunter_wing_by_zefiroft.vmdl")
 				caster:SetModelScale(1.2)
+			elseif caster:HasModifier("modifier_alternate_03") then 
+				caster:SetModel("models/bathory/summer/summer_bathory_wing_by_zefiroft.vmdl")
+				caster:SetOriginalModel("models/bathory/summer/summer_bathory_wing_by_zefiroft.vmdl")
+				caster:SetModelScale(1.2)
 			else
 				caster:SetModel("models/bathory/default/bathory_wing_by_zefiroft.vmdl")
 				caster:SetOriginalModel("models/bathory/default/bathory_wing_by_zefiroft.vmdl")
@@ -437,6 +441,10 @@ function OnLanceOn(keys)
 			elseif caster:HasModifier("modifier_alternate_02") then 
 				caster:SetModel("models/bathory/hunter/bathory_hunter_by_zefiroft.vmdl")
 				caster:SetOriginalModel("models/bathory/hunter/bathory_hunter_by_zefiroft.vmdl")
+				caster:SetModelScale(1.2)
+			elseif caster:HasModifier("modifier_alternate_03") then 
+				caster:SetModel("models/bathory/summer/summer_bathory_by_zefiroft.vmdl")
+				caster:SetOriginalModel("models/bathory/summer/summer_bathory_by_zefiroft.vmdl")
 				caster:SetModelScale(1.2)
 			else
 				caster:SetModel("models/bathory/default/bathory_by_zefiroft.vmdl")

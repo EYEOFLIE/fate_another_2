@@ -20,6 +20,7 @@
 		"DOTA_Custom8"    								"Purple Faction"
 
 		"custom_end_screen_legend_mmr"					"MMR"
+		"custom_end_screen_legend_pp"					"PP"
 		"custom_end_screen_legend_avarice"				"Avarice"
 		
 		"addonname"										"Fate/Another II"
@@ -399,6 +400,10 @@ Registration
 
 		"skin_ava"		"Skin Available"
 		"new_rec"		"Recommend for Newbie"
+		"code_fail"		"Invalid code"
+		"code_expired"	"Expired code"
+		"code_success"	"Reward Claimed"
+		"code_claimed"	"This Gift Code is already claimed"
 		"no_authority"	"Join Discord to get some Skins https://discord.gg/pZES9DTZE4"
 		"not_enuf_authority"	"Need More CP, You can gain CP by playing the game. First game of the day grant you 100 CP and finishing the game without quit grant you 10-30 based on Game Map"
 

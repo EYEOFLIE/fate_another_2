@@ -1,6 +1,6 @@
-ServantStatistics = {cScroll = 0, bScroll = 0, aScroll = 0, sScroll = 0, exScroll = 0, attr1 = 0, attr2 = 0, attr3 = 0, attr4 = 0, attr5 = 0, shard1 = 0, shard2 = 0, shard3 =0, 
+ServantStatistics = {cScroll = 0, bScroll = 0, aScroll = 0, sScroll = 0, exScroll = 0, attr1 = 0, attr2 = 0, attr3 = 0, attr4 = 0, attr5 = 0, shard1 = 0, shard2 = 0, shard3 =0, conshard = 0,
 shard4 = 0, damageDealt = 0, damageTaken = 0, damageTakenBR = 0, damageDealtBR = 0, heal = 0, control = 0, ward = 0, familiar = 0, link = 0, goldWasted = 0, itemValue = 0, qseal = 0, wseal = 0, eseal = 0, rseal = 0, 
-kill = 0, tkill=0, death = 0, assist = 0, str = 0, agi = 0, int = 0, atk = 0, armor = 0, hpregen = 0, mpregen = 0, ms = 0, lvl = 1, round = 0, winGame = "Ongoing", radiantWin = 0, direWin = 0}
+kill = 0, tkill=0, death = 0, adeath = 0, assist = 0, str = 0, agi = 0, int = 0, atk = 0, armor = 0, hpregen = 0, mpregen = 0, ms = 0, lvl = 1, round = 0, winGame = "Ongoing", radiantWin = 0, direWin = 0}
 
 function ServantStatistics:initialise(hero)
   NameAndID = {heroName = PlayerResource:GetSelectedHeroName(hero:GetPlayerOwnerID()), playerName = PlayerResource:GetPlayerName(hero:GetPlayerOwnerID()), steamId = PlayerResource:GetSteamID(hero:GetPlayerOwnerID())}
@@ -169,6 +169,22 @@ end
 
 function ServantStatistics:onDeath()
   self.death = self.death + 1
+end
+
+function ServantStatistics:onActualDeath()
+  self.adeath = self.adeath + 1
+end
+
+function ServantStatistics:getActualDeath()
+  return self.adeath
+end
+
+function ServantStatistics:onConGrail()
+  self.conshard = self.conshard + 1
+end
+
+function ServantStatistics:getConGrail()
+  return self.conshard
 end
 
 function ServantStatistics:onAssist()

@@ -70,8 +70,10 @@ function OnTerritoryCreated(keys)
 	-- Do special handling for attribute
 	Timers:CreateTimer(5, function() --because it takes 5 seconds for territory to be built
 		if caster.IsTerritoryImproved and caster.IsTerritoryPresent and not caster.Territory:IsNull() then 
+			local sData = ServerTables:GetAllTableValues("Score")
 			local radius = keys.ability:GetSpecialValueFor("mana_regen_radius")
 			local true_sight = keys.ability:GetSpecialValueFor("true_sight")
+			local exp = keys.ability:GetSpecialValueFor("exp")
 			truesightdummy = CreateUnitByName("sight_dummy_unit", caster.Territory:GetAbsOrigin(), false, caster, caster, caster:GetTeamNumber())
 			truesightdummy:AddNewModifier(caster, caster, "modifier_item_ward_true_sight", {true_sight_range = true_sight}) 
 			local unseen = truesightdummy:FindAbilityByName("dummy_unit_passive")
@@ -93,6 +95,15 @@ function OnTerritoryCreated(keys)
 				for k,v in pairs(targets) do
 			        if IsValidEntity(v) and not v:IsNull() and not IsManaLess(v) then
 			         	ability:ApplyDataDrivenModifier(caster, v, "modifier_territory_mana_regen", {Duration = 1.0}) 
+			        end
+			        if string.match(GetMapName(), "fate_elim") and v:IsRealHero() then 
+			        	--print('team 1 score: ' .. sData.nRadiantScore)
+			        	--print('team 2 score: ' .. sData.nDireScore)
+			        	if v:GetTeamNumber() == 2 and  sData.nRadiantScore < sData.nDireScore then 
+			        		v:AddExperience(exp, false, false)
+			        	elseif v:GetTeamNumber() == 3 and  sData.nRadiantScore > sData.nDireScore then 
+			        		v:AddExperience(exp, false, false)
+			        	end
 			        end
 			    end
 				return 1.0
@@ -274,8 +285,9 @@ end
 
 function OnManaDrainCast(keys)
 	local caster = keys.caster
-	local target = keys.target
 	local ability = keys.ability
+	local target = keys.target
+	ability.target = target
 
 	if target:GetUnitName() == caster:GetUnitName() then 
 		caster:Stop()
@@ -336,7 +348,7 @@ function OnManaDrainStart(keys)
 		Timers:CreateTimer(function()  
 			if not IsValidEntity(target) or target:IsNull() or not target:IsAlive() then return end
 			dist = (target:GetAbsOrigin() - caster:GetAbsOrigin()):Length2D()
-			if caster.IsManaDrainChanneling == false or target:GetMana() == 0 or caster:GetMana() == caster:GetMaxMana() or dist > break_distance or not target:CanEntityBeSeenByMyTeam(caster) then 
+			if caster.IsManaDrainChanneling == false or target:GetMana() == 0 --[[or caster:GetMana() == caster:GetMaxMana()]] or dist > break_distance or not target:CanEntityBeSeenByMyTeam(caster) then 
 				keys.ability:EndChannel(false)
 				return 
 			end
@@ -1053,9 +1065,9 @@ function OnAncientOpen(keys)
 	end
 	
 	if caster.IsTerritoryImproved then
-		caster:SwapAbilities("medea_mana_transfer", "medea_territory_creation_upgrade", true, false) 
+		caster:SwapAbilities("medea_magic_trap", "medea_territory_creation_upgrade", true, false) 
 	else
-		caster:SwapAbilities("medea_mana_transfer", "medea_territory_creation", true, false) 
+		caster:SwapAbilities("medea_magic_trap", "medea_territory_creation", true, false) 
 	end
 	caster:SwapAbilities("medea_close_spellbook", "medea_item_construction", true, false)
 end
@@ -1092,9 +1104,9 @@ function OnAncientClose(keys)
 		end
 	end
 	if caster.IsTerritoryImproved then
-		caster:SwapAbilities("medea_mana_transfer", "medea_territory_creation_upgrade", false, true) 
+		caster:SwapAbilities("medea_magic_trap", "medea_territory_creation_upgrade", false, true) 
 	else
-		caster:SwapAbilities("medea_mana_transfer", "medea_territory_creation", false, true) 
+		caster:SwapAbilities("medea_magic_trap", "medea_territory_creation", false, true) 
 	end
 	caster:SwapAbilities("medea_close_spellbook", "medea_item_construction", false, true)
 end
@@ -1111,7 +1123,7 @@ function AncientLevelUp(keys)
 		caster:FindAbilityByName("medea_divine_words"):SetLevel(ability:GetLevel())
 		caster:FindAbilityByName("medea_wall_of_flame"):SetLevel(ability:GetLevel())
 	end
-	caster:FindAbilityByName("medea_mana_transfer"):SetLevel(ability:GetLevel())
+	caster:FindAbilityByName("medea_magic_trap"):SetLevel(ability:GetLevel())
 	caster:FindAbilityByName("medea_sacrifice"):SetLevel(ability:GetLevel())
 end
 
@@ -1301,6 +1313,41 @@ end
 
 function CreateSacrificeAllyParticle(keys)
 	ParticleManager:CreateParticle("particles/units/heroes/hero_omniknight/omniknight_guardian_angel_buff_j.vpcf", PATTACH_ABSORIGIN_FOLLOW, keys.target)
+end
+
+function OnTrapstart(keys)
+	local caster = keys.caster
+	local ability = keys.ability 
+	local duration = ability:GetSpecialValueFor("duration")
+	local aoe = ability:GetSpecialValueFor("aoe") 
+	caster.TrapActivated = false
+
+	local trap_dummy = CreateUnitByName("medea_trap", caster:GetAbsOrigin(), false, caster, caster, caster:GetTeamNumber())
+	trap_dummy:FindAbilityByName("dummy_unit_passive_no_fly"):SetLevel(1)
+	trap_dummy:AddNewModifier(caster, ability, "modifier_kill", {Duration = duration})
+	trap_dummy:SetAbsOrigin(trap_dummy:GetAbsOrigin() + Vector(0,0,20))
+	ability:ApplyDataDrivenModifier(caster, trap_dummy, "modifier_medea_trap_checker", {})
+
+	Timers:CreateTimer(ability:GetSpecialValueFor("delay"), function() 
+		caster.TrapActivated = true
+	end)
+end
+
+function OnTrapThink(keys)
+	local caster = keys.caster
+	local trap = keys.target 
+	local ability = keys.ability
+	local aoe = ability:GetSpecialValueFor("aoe") 
+
+	if caster.TrapActivated == false then return end
+	
+	local target = FindUnitsInRadius(caster:GetTeam(), trap:GetAbsOrigin(), nil, aoe, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, 0, FIND_CLOSEST, false) 
+			
+	if target[1] ~= nil then
+		ability:ApplyDataDrivenModifier(caster, target[1], "modifier_medea_trap_lock", {})
+		target[1]:SetAbsOrigin(trap:GetAbsOrigin())
+		trap:ForceKill(false)
+	end
 end
 
 function OnMTStart(keys)

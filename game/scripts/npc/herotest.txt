@@ -1,5 +1,4 @@
 "CustomHeroList"
 {
-	//"npc_dota_hero_antimage"		"1"	
-	"npc_dota_hero_nyx_assassin"	"1"
+	"npc_dota_hero_muerta"			"1"
 }

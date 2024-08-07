@@ -33,14 +33,9 @@
 			"particle"									"particles/items_fx/blink_dagger_end.vpcf"
 			"soundfile"									"soundevents/game_sounds_heroes/game_sounds_antimage.vsndevts"
 		}
-		
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"								"FIELD_INTEGER"
-				"distance"								"1000"
-			}
+			"distance"								"1000"
 		}
 	}
 }

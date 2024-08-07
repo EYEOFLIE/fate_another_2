@@ -327,14 +327,25 @@ function OnR(keys)
     -- Lift the caster after flight_after duration
     Timers:CreateTimer(flight_after, function()
         -- Lift the caster
-    	caster.original_position = caster:GetAbsOrigin()
+    	--caster.original_position = caster:GetAbsOrigin()
 		--giveUnitDataDrivenModifier(caster, caster, "jump_pause", cast_delay - flight_after)
         caster:SetAbsOrigin(caster:GetAbsOrigin() + Vector(0, 0, 400))
     end)
     -- Apply the first circle of damage after half of the duration
     Timers:CreateTimer(cast_delay - (cast_delay / 7) , function()
+    	local ground = GetGroundPosition(caster:GetAbsOrigin(), caster)
     	local particleeff1 = ParticleManager:CreateParticle("particles/melt/melt_r.vpcf", PATTACH_CUSTOMORIGIN, caster)
-   		ParticleManager:SetParticleControl(particleeff1, 0, caster.original_position)
+   		ParticleManager:SetParticleControl(particleeff1, 0, ground)
+   		local foottrailfx = ParticleManager:CreateParticle("particles/melt/melt_dash_trail.vpcf", PATTACH_CUSTOMORIGIN_FOLLOW, caster)
+    	ParticleManager:SetParticleControlEnt(foottrailfx, 1, caster, PATTACH_POINT_FOLLOW, "attach_foot", caster:GetAbsOrigin(),false)
+    	local footglowfx = ParticleManager:CreateParticle("particles/melt/melt_foot_glow.vpcf", PATTACH_CUSTOMORIGIN_FOLLOW, caster)
+    	ParticleManager:SetParticleControlEnt(footglowfx, 0, caster, PATTACH_POINT_FOLLOW, "attach_foot", caster:GetAbsOrigin(),false)
+    	Timers:CreateTimer(0.45, function()
+    		ParticleManager:DestroyParticle(foottrailfx, true)
+	       	ParticleManager:ReleaseParticleIndex(foottrailfx)
+	       	ParticleManager:DestroyParticle(footglowfx, true)
+	       	ParticleManager:ReleaseParticleIndex(footglowfx)
+        end)
     end)
 
     -- Apply the first circle of damage after half of the duration
@@ -353,7 +364,8 @@ function OnR(keys)
 
             DoDamage(caster, enemy, damage, DAMAGE_TYPE_MAGICAL, 0, ability, false)
         end
-        caster:SetAbsOrigin(caster.original_position)
+        local ground = GetGroundPosition(caster:GetAbsOrigin(), caster)
+        caster:SetAbsOrigin(ground)
     end)
 end
 
@@ -568,14 +580,18 @@ function OnCombo(keys)
 
             distanceToTarget = (caster:GetAbsOrigin() - targetPoint):Length2D()
 
-            if (elapsedTime*30)%6 == 0 then 
-            	local feet_fx = ParticleManager:CreateParticle("particles/melt/melt_feet_twinkle.vpcf", PATTACH_WORLDORIGIN, caster)
-            	ParticleManager:SetParticleControlEnt(feet_fx, 0, caster, PATTACH_POINT, "attach_foot", caster:GetAbsOrigin(),false)
-    			Timers:CreateTimer(0.3, function()
+            --if math.floor(elapsedTime*100)%6 == 0 then 
+            	local feet_fx = ParticleManager:CreateParticle("particles/melt/melt_feet_twinkle.vpcf", PATTACH_CUSTOMORIGIN, caster)
+            	ParticleManager:SetParticleControl(feet_fx, 0, caster:GetAbsOrigin()+ Vector(0,0,20))
+            	local water_fx = ParticleManager:CreateParticle("particles/melt/melt_feet_water_ring.vpcf", PATTACH_CUSTOMORIGIN, caster)
+            	ParticleManager:SetParticleControl(water_fx, 0, caster:GetAbsOrigin()+ Vector(0,0,20))
+    			Timers:CreateTimer(1.5, function()
     				ParticleManager:DestroyParticle(feet_fx, false)
     				ParticleManager:ReleaseParticleIndex(feet_fx)
+    				ParticleManager:DestroyParticle(water_fx, false)
+    				ParticleManager:ReleaseParticleIndex(water_fx)
     			end)
-    		end
+    		--end
             	
             -- Move the caster a step closer to the target point
             local newPos = caster:GetAbsOrigin() + (dashStep * 3)
@@ -663,6 +679,13 @@ function OnComboSuccess(caster, ability, target, extradelay)
     ParticleManager:SetParticleControlEnt(spinfx, 0, caster, PATTACH_POINT_FOLLOW, "attach_hitloc", caster:GetAbsOrigin(),false)
     ParticleManager:SetParticleControl(spinfx, 5, Vector(200,0,0))
 
+    if caster:HasModifier("modifier_alternate_01") then 
+    	caster.dummyfx = ParticleManager:CreateParticle("particles/melt/white_melt_combo_dummy.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
+    	ParticleManager:SetParticleControlEnt(caster.dummyfx, 0, caster, PATTACH_POINT_FOLLOW, "attach_origin", caster:GetAbsOrigin(),false)
+
+		caster:AddEffects(EF_NODRAW)
+	end
+
     local cyclonefx = ParticleManager:CreateParticle("particles/econ/events/fall_2021/cyclone_fall2021.vpcf", PATTACH_ABSORIGIN_FOLLOW, target)
     ParticleManager:SetParticleControl(cyclonefx, 0, target:GetAbsOrigin())
 
@@ -713,6 +736,12 @@ function OnComboSuccess(caster, ability, target, extradelay)
         	ParticleManager:ReleaseParticleIndex(spinfx)
         	ParticleManager:DestroyParticle(cyclonefx, true)
         	ParticleManager:ReleaseParticleIndex(cyclonefx)
+        	if caster:HasModifier("modifier_alternate_01") then 
+        		ParticleManager:DestroyParticle(caster.dummyfx, true)
+        		ParticleManager:ReleaseParticleIndex(caster.dummyfx)
+
+				caster:RemoveEffects(EF_NODRAW)
+        	end
     		EmitGlobalSound("Melt.ComboFinish")
     		if target:IsAlive() then
     			dummy:SetAbsOrigin(target:GetAbsOrigin())

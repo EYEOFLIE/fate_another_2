@@ -171,6 +171,7 @@ function OnGilleComboStart(keys)
 	local targets = FindUnitsInRadius(caster:GetTeam(), tentacle:GetAbsOrigin(), nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_ALL, 0, FIND_ANY_ORDER, false)
 	for k,v in pairs(targets) do
 		ApplyAirborne(caster, v, keys.KnockupDuration)
+		v:AddNewModifier(caster, ability, "modifier_stunned", {duration = ability:GetSpecialValueFor("stun_duration")})
 	end
 
 	-- remove integrate status

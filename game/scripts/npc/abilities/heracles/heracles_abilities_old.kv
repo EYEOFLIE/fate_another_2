@@ -16,24 +16,12 @@
 		"RequiredLevel"					"25"
 		"LevelsBetweenUpgrades"			"1"
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_reduction"			"15 60"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bonus_mr"				"0 6.25" //why 16.7? because 0.1+(1-0.1)*0.167 = 0.2504.... yeah.
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"				"0 5"
-			}
-		}
+		"AbilityValues"
+        {
+            "damage_reduction" "15 60"
+            "bonus_mr" "0 6.25"
+            "bonus_armor" "0 5"
+        }
 		
 		"Modifiers"
 		{
@@ -89,49 +77,17 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"100"
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"radius"			"250"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage"			"200 250 300 350 400"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"range"				"750"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"slow_amount"				"-20 -30 -40 -50 -60"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"duration"				"3.0 4.0 5.0 6.0 7.0"
-			}
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"collide_duration"		"1.5"
-			}
-			"07"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"knockback"				"200 250 300 350 400"
-			}
-			"08"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"proj_speed"		"1500"
-			}
-		}
+		"AbilityValues"
+        {
+            "radius" "250"
+            "damage" "200 250 300 350 400"
+            "range" "750"
+            "slow_amount" "-20 -30 -40 -50 -60"
+            "duration" "3.0 4.0 5.0 6.0 7.0"
+            "collide_duration" "1.5"
+            "knockback" "200 250 300 350 400"
+            "proj_speed" "1500"
+        }
 		
 		"OnSpellStart"
 		{
@@ -201,39 +157,15 @@
 			"particle"		"particles/custom/screen_face_splash.vpcf"
 		}
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"1000"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage2"				"800"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage3"				"500"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"slow"					"-50"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"moderate_slow"			"-30"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"stun_duration"			"3.0"
-			}
-		}
+		"AbilityValues"
+        {
+            "damage" "1000"
+            "damage2" "800"
+            "damage3" "500"
+            "slow" "-50"
+            "moderate_slow" "-30"
+            "stun_duration" "3.0"
+        }
 		
 		"OnSpellStart"
 		{
@@ -373,39 +305,15 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"800"
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"radius"			"350"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage"			"70 80 90 100 110"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"radius_lasthit"	"500"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage_lasthit"	"450 625 800 1025 1250"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"stun_duration"		"1.5"
-			}
-			"06"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"range"				"700"
-			}
-		}
+		"AbilityValues"
+        {
+            "radius" "350"
+            "damage" "70 80 90 100 110"
+            "radius_lasthit" "500"
+            "damage_lasthit" "450 625 800 1025 1250"
+            "stun_duration" "1.5"
+            "range" "700"
+        }
 
 		"OnAbilityPhaseStart"
 		{
@@ -584,24 +492,12 @@
 		{
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"bonus_mr"				"15"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"damage_block"				"30"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"				"5"
-			}
-		}
+		"AbilityValues"
+        {
+            "bonus_mr" "15"
+            "damage_block" "30"
+            "bonus_armor" "5"
+        }
 		
 		"OnSpellStart"
 		{
@@ -632,34 +528,14 @@
 		{
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"bash_chance"		"35"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"bash_duration"		"0.6"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"bash_damage"		"50"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"nine_cdr"			"5"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mana_convert_ratio"	"0.2"
-			}
-		}
+		"AbilityValues"
+        {
+            "bash_chance" "35"
+            "bash_duration" "0.6"
+            "bash_damage" "50"
+            "nine_cdr" "5"
+            "mana_convert_ratio" "0.2"
+        }
 		
 		"OnSpellStart"
 		{
@@ -690,25 +566,12 @@
 		{
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"health_percent"			"25"	
-			}
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"duration"			"7"	
-			}
-			"03"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"str_penalty"				"30"
-			}
-
-		}
+		"AbilityValues"
+        {
+            "health_percent" "25"
+            "duration" "7"
+            "str_penalty" "30"
+        }
 		
 		"OnSpellStart"
 		{
@@ -740,34 +603,14 @@
 		{
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"threshold"				"100"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"health_regen"				"12"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"max_stack"				"5"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"damage_sustain"				"20000"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"bonus_count_percentage"		"300"
-			}
-		}
+		"AbilityValues"
+        {
+            "threshold" "100"
+            "health_regen" "12"
+            "max_stack" "5"
+            "damage_sustain" "20000"
+            "bonus_count_percentage" "300"
+        }
 		
 		"OnSpellStart"
 		{
@@ -799,14 +642,10 @@
 		{
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"berserk_duration"		"8.0"
-			}
-		}		
+		"AbilityValues"
+        {
+            "berserk_duration" "8.0"
+        }		
 	}
 
 	"heracles_mad_enhancement_passive"
@@ -817,9 +656,9 @@
 		"AbilityTextureName"			"custom/heracles/heracles_mad_enhancement"
 		"MaxLevel"						"1"
 		
-		"AbilitySpecial"
-		{			
-		}
+		"AbilityValues"
+        {
+        }
 		
 		"OnSpelLStart"
 		{

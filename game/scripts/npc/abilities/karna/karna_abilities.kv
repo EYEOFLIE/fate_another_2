@@ -27,23 +27,12 @@
 		"AbilityCooldown"				"9999"
 		"AbilityManaCost"				"13"
 
-		"precache"
+		"AbilityValues"
 		{
+			"duration"			"3"
+			"cast_range"		"550"
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"duration"			"3"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"cast_range"		"550"
-			}
-		}
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -71,59 +60,19 @@
 		"AbilityCooldown"				"9999"
 		"AbilityManaCost"				"16"
 
-		"precache"
+		"AbilityValues"
 		{
-			"particle"		"particles/units/heroes/hero_chaos_knight/chaos_knight_chaos_bolt.vpcf"
+			"base_attack_speed"		"40"
+			"base_movement_speed"	"10"
+			"base_evasion"			"10"
+			"attack_speed_gain"		"20"
+			"movement_speed_gain"	"5"
+			"evasion_gain"			"5"
+			"max_attack_speed"		"250"
+			"max_movement_speed"	"50"
+			"max_evasion"			"50"
 		}
 
-		"AbilitySpecial"
-		{					
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"base_attack_speed"		"40"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"base_movement_speed"	"10"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"base_evasion"			"10"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"attack_speed_gain"		"20"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"movement_speed_gain"	"5"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"evasion_gain"			"5"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"max_attack_speed"		"250"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"max_movement_speed"	"50"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"max_evasion"			"50"
-			}
-		}
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -149,33 +98,14 @@
 		"AbilityCooldown"				"9999"
 		"AbilityManaCost"				"14"
 
-		"precache"
+		"AbilityValues"
 		{
+			"explode_hits"			"5"
+			"explode_damage"		"35"
+			"explode_aoe"			"350"
+			"stun_duration"			"0.2"
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"explode_hits"		"5"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"explode_damage"	"35"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"explode_aoe"			"350"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"stun_duration"		"0.2"
-			}
-		}
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -203,22 +133,10 @@
 		"AbilityCooldown"				"9999"
 		"AbilityManaCost"				"10"
 
-		"precache"
+		"AbilityValues"
 		{
-		}
-
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_block"			"60"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"magic_resist_gain"		"5"
-			}
+			"damage_block"			"60"
+			"magic_resist_gain"		"5"
 		}
 	}	
 	"karna_divinity_proxy"
@@ -234,19 +152,11 @@
 		{
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_block"			"60"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"magic_resist_gain"		"5"
-			}
-		}
+		"AbilityValues"
+        {
+            "damage_block" "60"
+            "magic_resist_gain" "5"
+        }
 	}
 
 	//=======================================
@@ -265,33 +175,14 @@
 		"AbilityCooldown"				"9999"
 		"AbilityManaCost"				"15"
 
-		"precache"
+		"AbilityValues"
 		{
+			"vasavi_bonus_damage"			"100"
+			"vasavi_bonus_agi"				"7.5"
+			"combo_bonus_damage"			"4000"
+			"divine_bonus_damage"			"15"
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"vasavi_bonus_damage"			"100"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"vasavi_bonus_agi"			"9"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"combo_bonus_damage"			"4000"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"divine_bonus_damage"	"20"
-			}
-		}
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -317,6 +208,7 @@
 			"model"					"models/karna/bartender/karna_bartender_by_zefiroft.vmdl"
 			"model"					"models/karna/god/karna_god_by_zefiroft.vmdl"
 			"model"					"models/karna/default/karna_armorless_by_zefiroft.vmdl"
+			"model"					"models/karna/super_karna/super_karna_by_zefiroft.vmdl"
 			"particle"				"particles/custom/karna/agni/agni_fire_ambient.vpcf"
 			"particle"				"particles/custom/karna/armor_remove_sparks.vpcf"
 			"particle"				"particles/custom/karna/agni/agni_fire_flame.vpcf"

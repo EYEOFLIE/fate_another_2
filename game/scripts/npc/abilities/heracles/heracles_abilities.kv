@@ -18,11 +18,6 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_1"
 		"AnimationPlaybackRate" 		"3.3"
 		
-		"precache"
-		{
-			
-		}
-		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"750"
@@ -35,54 +30,18 @@
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"100"
-		
-		"AbilitySpecial"
+
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"radius"			"250"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage"			"200 250 300 350 400"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"range"				"750"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"slow_amount"				"-20 -30 -40 -50 -60"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"duration"				"3.0 4.0 5.0 6.0 7.0"
-			}
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"collide_duration"		"1.5"
-			}
-			"07"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"knockback"				"200 250 300 350 400"
-			}
-			"08"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"proj_speed"		"1500"
-			}
-			"09"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"wall_damage"		"200"
-			}
+			"range"				"750"
+			"radius"			"250"
+			"proj_speed"		"1500"
+			"damage"			"200 250 300 350 400"
+			"slow_amount"		"-20 -30 -40 -50 -60"
+			"duration"			"3.0 4.0 5.0 6.0 7.0"
+			"knockback"			"200 250 300 350 400"
+			"wall_damage"		"200"
+			"collide_duration"	"1.5"
 		}
 		
 		"OnSpellStart"
@@ -147,67 +106,18 @@
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"200"
-		"precache"
-		{
-			
-		}
 		
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"08"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"12"
-			}
-			"09"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"400"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"10 15 20 25 30"
-			}
-
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"aspd_debuff"			"-20 -15 -10 -5 0"
-			}
-			
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				//"self_armor_reduc"		"-2"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"armor_reduction"		"-1 -2 -3 -4 -5"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_reduction"		"-20 -40 -60 -80 -100"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"slow"					"-15 -20 -25 -30 -35"
-			}
-			
-			"07"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"max_stack"				"5"
-			}
-			
-			"10"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"nine_cdr"				"5"
-			}
+			"radius"				"400"
+			"duration"				"12"
+			"max_stack"				"6"
+			"bonus_damage"			"10 15 20 25 30"
+			"aspd_debuff"			"-20 -15 -10 -5 0"
+			"armor_reduction"		"-1 -2 -3 -4 -5"
+			"damage_reduction"		"-20 -40 -60 -80 -100"
+			"slow"					"-15 -20 -25 -30 -35"
+			"nine_cdr"				"5"
 		}
 
 		"OnSpellStart"
@@ -341,87 +251,21 @@
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"200"
-		"precache"
+		"AbilityValues"
 		{
-			
-		}
-		
-		"AbilitySpecial"
-		{
-			"08"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"12"
-			}
-			"09"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"400"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"10 15 20 25 30"
-			}
-
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"aspd_debuff"			"0 5 10 15 20"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				//"self_armor_reduc"		"-3"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"armor_reduction"		"-1 -2 -3 -4 -5"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_reduction"		"-20 -40 -60 -80 -100"
-			}
-			
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"slow"					"-15 -20 -25 -30 -35"
-			}
-			
-			"07"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"max_stack"				"5"
-			}
-			
-			"10"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"nine_cdr"				"5"
-			}
-			"11"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bash_chance"			"70"
-			}
-			"12"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bash_damage"			"100"
-			}
-			"13"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bash_duration"			"0.2"
-			}
-			"14"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bash_cd"				"1.0"
-			}
+			"radius"				"400"
+			"duration"				"12"
+			"max_stack"				"6"
+			"bonus_damage"			"10 15 20 25 30"
+			"aspd_debuff"			"0 5 10 15 20"
+			"armor_reduction"		"-1 -2 -3 -4 -5"
+			"damage_reduction"		"-20 -40 -60 -80 -100"
+			"slow"					"-15 -20 -25 -30 -35"
+			"nine_cdr"				"5"
+			"bash_chance"			"70"
+			"bash_damage"			"100"
+			"bash_duration"			"0.2"
+			"bash_cd"				"1.0"
 		}
 
 		"OnSpellStart"
@@ -557,7 +401,7 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"28.0"
+		"AbilityCooldown"				"30.0"
 		"AbilityCastPoint"				"0.3"
 		"AbilityCastRange"				"300"
 
@@ -565,35 +409,15 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"400"
 
-		
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"health_constant"		"800 975 1150 1325 1500"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_aspd"			"60 70 80 90 100"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"4.0"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"300"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"max_damage"			"480 585 690 795 900"
-			}
+			"radius"				"300"
+			"duration"				"4.0"
+			"max_damage"			"480 585 690 795 900"
+			"health_constant"		"800 975 1150 1325 1500"
+			"bonus_aspd"			"60 70 80 90 100"
 		}
+
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -702,7 +526,7 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"28.0"
+		"AbilityCooldown"				"30.0"
 		"AbilityCastPoint"				"0.3"
 		"AbilityCastRange"				"300"
 
@@ -710,50 +534,18 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"400"
 
-		
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"health_constant"		"800 975 1150 1325 1500"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_aspd"			"60 70 80 90 100"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"4.0"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"300"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"max_damage"			"480 585 690 795 900"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"mana_convert"			"30"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"eternal_interval"		"1"
-			}
-			"09"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"dmg_convert"			"10"
-			}
+			"radius"				"300"
+			"duration"				"4.0"
+			"max_damage"			"480 585 690 795 900"
+			"health_constant"		"800 975 1150 1325 1500"
+			"bonus_aspd"			"60 70 80 90 100"
+			"eternal_interval"		"1"
+			"mana_convert"			"30"
+			"dmg_convert"			"10"
 		}
+
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -893,43 +685,23 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"28.0"
-		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"30.0"
+		"AbilityCastPoint"				"0.0"
 		"AbilityCastRange"				"300"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"400"
 
-		
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"health_constant"		"950 1125 1300 1475 1650"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_aspd"			"100 110 120 130 140"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"8.0"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"300"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"max_damage"			"780 885 990 1095 1200"
-			}
+			"radius"				"300"
+			"duration"				"8.0"
+			"max_damage"			"780 885 990 1095 1200"
+			"health_constant"		"950 1125 1300 1475 1650"
+			"bonus_aspd"			"100 110 120 130 140"
 		}
+
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -1038,58 +810,25 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"28.0"
-		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"30.0"
+		"AbilityCastPoint"				"0.0"
 		"AbilityCastRange"				"300"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"400"
-
-		
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"health_constant"		"950 1125 1300 1475 1650"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_aspd"			"100 110 120 130 140"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"8.0"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"300"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"max_damage"			"780 885 990 1095 1200"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"mana_convert"			"30"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"eternal_interval"		"1"
-			}
-			"09"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"dmg_convert"			"10"
-			}
+			"radius"				"300"
+			"duration"				"8.0"
+			"max_damage"			"780 885 990 1095 1200"
+			"health_constant"		"950 1125 1300 1475 1650"
+			"bonus_aspd"			"100 110 120 130 140"
+			"eternal_interval"		"1"
+			"mana_convert"			"30"
+			"dmg_convert"			"10"
 		}
+
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -1111,7 +850,6 @@
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%bonus_aspd"
-					//"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"	"%bonus_aspd"
 				}
 				"OnCreated"
 				{
@@ -1245,69 +983,21 @@
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"800"
-		
-		"AbilitySpecial"
+
+		"AbilityValues"
 		{
-			"07"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"range"				"700"
-			}
-			"10"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"total_hit"			"9"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"radius"			"350"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage"			"50 60 70 80 90"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"radius_lasthit"	"500"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage_lasthit"	"440 580 720 860 1000"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"mini_stun"			"0.5"
-			}
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"stun_duration"		"1.5"
-			}
-			"08"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"pause_time"		"4"
-			}
-			"09"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"interval"			"0.3"
-			}
-			"11"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"revoke"			"1.0"
-			}
-			"12"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"post_nine"			"0.4"
-			}
+			"range"				"700"
+			"total_hit"			"9"
+			"radius"			"350"
+			"damage"			"50 60 70 80 90"
+			"mini_stun"			"0.5"
+			"radius_lasthit"	"500"
+			"damage_lasthit"	"440 580 720 860 1000"
+			"stun_duration"		"1.5"
+			"revoke"			"1.0"
+			"interval"			"0.3"
+			"pause_time"		"4"
+			"post_nine"			"0.4"
 		}
 
 		"OnAbilityPhaseStart"
@@ -1366,74 +1056,21 @@
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"800"
-		
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"07"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"range"				"700"
-			}
-			"10"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"total_hit"			"9"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"radius"			"350"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage"			"50 60 70 80 90"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"radius_lasthit"	"500"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage_lasthit"	"440 580 720 860 1000"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_damage_per_atk"	"100"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"mini_stun"			"0.5"
-			}
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"stun_duration"		"1.5"
-			}
-			"08"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"pause_time"		"4"
-			}
-			"09"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"interval"			"0.3"
-			}
-			"11"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"revoke"			"1.0"
-			}
-			"12"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"post_nine"			"0.4"
-			}
+			"range"				"700"
+			"total_hit"			"9"
+			"radius"			"350"
+			"damage"			"50 60 70 80 90"
+			"mini_stun"			"0.5"
+			"radius_lasthit"	"500"
+			"damage_lasthit"	"440 580 720 860 1000"
+			"bonus_damage_per_atk"	"100"
+			"stun_duration"		"1.5"
+			"revoke"			"1.0"
+			"interval"			"0.3"
+			"pause_time"		"4"
+			"post_nine"			"0.4"
 		}
 
 		"OnAbilityPhaseStart"
@@ -1475,90 +1112,21 @@
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"200"
-		"precache"
+		"AbilityValues"
 		{
-			
+			"madman_duration"		"10.0"
+			"damage"				"1500"
+			"radius"				"350"
+			"stun_duration"			"3.0"
+			"damage2"				"1000"
+			"radius2"				"1000"
+			"damage3"				"500"
+			"radius3"				"2000"
+			"moderate_slow"			"-30"
+			"radius4"				"3000"
+			"slow"					"-50"
 		}
-		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"health_constant"		"1500"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"berserk_duration"		"4.0"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_aspd"			"100"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"mana_convert"			"20"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"1500"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"350"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage2"				"1000"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius2"				"1000"
-			}
-			"09"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage3"				"500"
-			}
-			"10"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius3"				"2000"
-			}
-			"11"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius4"				"3000"
-			}
-			"12"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"slow"					"-50"
-			}
-			"13"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"moderate_slow"			"-30"
-			}
-			"14"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"stun_duration"			"3.0"
-			}
-			"15"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"madman_duration"		"10.0"
-			}
-		}
-		
+
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -1613,654 +1181,6 @@
 				}
 			}
 			
-			"modifier_madmans_roar_cooldown"
-			{
-				"IsDebuff"	"1"
-				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
-			}
-
-			"modifier_madmans_roar_silence"
-			{
-				"Duration"			"%madman_duration"
-				"IsDebuff"			"1"
-				"States"
-				{
-					"MODIFIER_STATE_SILENCED"	"MODIFIER_STATE_VALUE_ENABLED"
-				}
-			}
-			"modifier_madmans_roar_slow_strong"
-			{
-				"Duration"			"%madman_duration"
-				"IsDebuff"			"1"
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%slow"
-				}
-			}
-			"modifier_madmans_roar_slow_moderate"
-			{
-				"Duration"			"%madman_duration"
-				"IsDebuff"			"1"
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%moderate_slow"
-				}
-			}
-		}
-	}
-	//========================================
-	// Berserker : Madman's Roar (Eternal Rage SA)
-	//========================================
-	"heracles_madmans_roar_upgrade_1"
-	{
-		"BaseClass"						"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
-		"AbilityTextureName"			"custom/berserker_5th_madmans_roar"
-		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_3"
-		"AnimationPlaybackRate" 		"2.0"
-		"MaxLevel"						"1"
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"150"
-		"AbilityCastRange"				"3000"
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"200"
-		"precache"
-		{
-			
-		}
-		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"health_constant"		"1500"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"berserk_duration"		"4.0"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_aspd"			"100"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"mana_convert"			"20"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"1000"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"350"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage2"				"800"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius2"				"1000"
-			}
-			"09"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage3"				"500"
-			}
-			"10"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius3"				"2000"
-			}
-			"11"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius4"				"3000"
-			}
-			"12"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"slow"					"-50"
-			}
-			"13"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"moderate_slow"			"-30"
-			}
-			"14"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"stun_duration"			"3.0"
-			}
-			"15"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"madman_duration"		"10.0"
-			}
-			"16"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"eternal_interval"		"1"
-			}
-			"17"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"dmg_convert"			"20"
-			}
-		}
-		
-		"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"ScriptFile"		"abilities/heracles/heracles_abilities"
-				"Function"			"OnRoarStart"
-			}
-		}
-
-		"Modifiers"
-		{
-			"modifier_heracles_berserk"
-			{
-				"Passive"			"0"
-				"IsHidden"			"0"
-				"IsDebuff"			"0"
-				"IsPurgable"		"0"
-				"Duration"			"%berserk_duration"
-				"TextureName"		"custom/berserker_5th_berserk"
-				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%bonus_aspd"
-				}
-				"OnCreated"
-				{
-					"AttachEffect"
-					{
-						"EffectName"        "particles/custom/berserker/berserk/buff.vpcf"
-						"EffectAttachType"  "follow_origin"
-						"Target"            "CASTER"
-					}
-				}
-				"ThinkInterval"  "0.03"
-				"OnIntervalThink"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"abilities/heracles/heracles_abilities"
-						"Function"		"OnBerserkThink"
-					}
-				}
-				"OnTakeDamage"
-				// "%attack_damage" is set to the damage value after mitigation
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"abilities/heracles/heracles_abilities"
-						"Function"		"OnBerserkTakeDamage"
-						"DamageTaken" 	"%attack_damage"
-					}
-				}
-			}
-			"modifier_eternal_rage"
-			{
-				"Passive"			"0"
-				"IsHidden"			"0"
-				"IsDebuff"			"0"
-				"IsPurgable"		"0"
-				"Duration"			"%berserk_duration"
-				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
-				"ThinkInterval"  	"%eternal_interval"
-				"TextureName"		"custom/berserker_5th_attribute_berserk"
-				"OnIntervalThink"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"abilities/heracles/heracles_abilities"
-						"Function"		"OnEternalRageThink"
-					}
-				}
-			}
-
-			"modifier_madmans_roar_cooldown"
-			{
-				"IsDebuff"	"1"
-				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
-			}
-
-			"modifier_madmans_roar_silence"
-			{
-				"Duration"			"%madman_duration"
-				"IsDebuff"			"1"
-				"States"
-				{
-					"MODIFIER_STATE_SILENCED"	"MODIFIER_STATE_VALUE_ENABLED"
-				}
-			}
-			"modifier_madmans_roar_slow_strong"
-			{
-				"Duration"			"%madman_duration"
-				"IsDebuff"			"1"
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%slow"
-				}
-			}
-			"modifier_madmans_roar_slow_moderate"
-			{
-				"Duration"			"%madman_duration"
-				"IsDebuff"			"1"
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%moderate_slow"
-				}
-			}
-		}
-	}
-	//========================================
-	// Berserker : Madman's Roar (Mad Enhancement SA)
-	//========================================
-	"heracles_madmans_roar_upgrade_2"
-	{
-		"BaseClass"						"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
-		"AbilityTextureName"			"custom/berserker_5th_madmans_roar"
-		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_3"
-		"AnimationPlaybackRate" 		"2.0"
-		"MaxLevel"						"1"
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"150"
-		"AbilityCastRange"				"3000"
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"200"
-		"precache"
-		{
-			
-		}
-		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"health_constant"		"2000"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"berserk_duration"		"8.0"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_aspd"			"140"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"mana_convert"			"20"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"1000"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"350"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage2"				"800"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius2"				"1000"
-			}
-			"09"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage3"				"500"
-			}
-			"10"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius3"				"2000"
-			}
-			"11"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius4"				"3000"
-			}
-			"12"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"slow"					"-50"
-			}
-			"13"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"moderate_slow"			"-30"
-			}
-			"14"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"stun_duration"			"3.0"
-			}
-			"15"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"madman_duration"		"10.0"
-			}
-			"16"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"eternal_interval"		"1"
-			}
-			"17"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"dmg_convert"			"20"
-			}
-		}
-		
-		"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"ScriptFile"		"abilities/heracles/heracles_abilities"
-				"Function"			"OnRoarStart"
-			}
-		}
-
-		"Modifiers"
-		{
-			"modifier_heracles_berserk"
-			{
-				"Passive"			"0"
-				"IsHidden"			"0"
-				"IsDebuff"			"0"
-				"IsPurgable"		"0"
-				"Duration"			"%berserk_duration"
-				"TextureName"		"custom/berserker_5th_berserk"
-				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%bonus_aspd"
-				}
-				"ThinkInterval"  "0.03"
-				"OnIntervalThink"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"abilities/heracles/heracles_abilities"
-						"Function"		"OnBerserkThink"
-					}
-				}
-				"OnCreated"
-				{
-					"AttachEffect"
-					{
-						"EffectName"        "particles/custom/berserker/berserk/buff.vpcf"
-						"EffectAttachType"  "follow_origin"
-						"Target"            "CASTER"
-					}
-				}
-				"OnTakeDamage"
-				// "%attack_damage" is set to the damage value after mitigation
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"abilities/heracles/heracles_abilities"
-						"Function"		"OnBerserkTakeDamage"
-						"DamageTaken" 	"%attack_damage"
-					}
-				}
-			}
-			
-			"modifier_madmans_roar_cooldown"
-			{
-				"IsDebuff"	"1"
-				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
-			}
-
-			"modifier_madmans_roar_silence"
-			{
-				"Duration"			"%madman_duration"
-				"IsDebuff"			"1"
-				"States"
-				{
-					"MODIFIER_STATE_SILENCED"	"MODIFIER_STATE_VALUE_ENABLED"
-				}
-			}
-			"modifier_madmans_roar_slow_strong"
-			{
-				"Duration"			"%madman_duration"
-				"IsDebuff"			"1"
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%slow"
-				}
-			}
-			"modifier_madmans_roar_slow_moderate"
-			{
-				"Duration"			"%madman_duration"
-				"IsDebuff"			"1"
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%moderate_slow"
-				}
-			}
-		}
-	}
-	//========================================
-	// Berserker : Madman's Roar (Eternal Rage SA + Mad Enhancement SA)
-	//========================================
-	"heracles_madmans_roar_upgrade_3"
-	{
-		"BaseClass"						"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
-		"AbilityTextureName"			"custom/berserker_5th_madmans_roar"
-		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_3"
-		"AnimationPlaybackRate" 		"2.0"
-		"MaxLevel"						"1"
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"150"
-		"AbilityCastRange"				"3000"
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"200"
-		"precache"
-		{
-			
-		}
-		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"health_constant"		"2000"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"berserk_duration"		"8.0"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_aspd"			"140"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"mana_convert"			"20"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"1000"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"350"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage2"				"800"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius2"				"1000"
-			}
-			"09"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage3"				"500"
-			}
-			"10"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius3"				"2000"
-			}
-			"11"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius4"				"3000"
-			}
-			"12"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"slow"					"-50"
-			}
-			"13"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"moderate_slow"			"-30"
-			}
-			"14"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"stun_duration"			"3.0"
-			}
-			"15"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"madman_duration"		"10.0"
-			}
-			"16"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"eternal_interval"		"1"
-			}
-			"17"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"dmg_convert"			"20"
-			}
-		}
-		
-		"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"ScriptFile"		"abilities/heracles/heracles_abilities"
-				"Function"			"OnRoarStart"
-			}
-		}
-
-		"Modifiers"
-		{
-			"modifier_heracles_berserk"
-			{
-				"Passive"			"0"
-				"IsHidden"			"0"
-				"IsDebuff"			"0"
-				"IsPurgable"		"0"
-				"Duration"			"%berserk_duration"
-				"TextureName"		"custom/berserker_5th_berserk"
-				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%bonus_aspd"
-				}
-				"ThinkInterval"  "0.03"
-				"OnIntervalThink"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"abilities/heracles/heracles_abilities"
-						"Function"		"OnBerserkThink"
-					}
-				}
-				"OnCreated"
-				{
-					"AttachEffect"
-					{
-						"EffectName"        "particles/custom/berserker/berserk/buff.vpcf"
-						"EffectAttachType"  "follow_origin"
-						"Target"            "CASTER"
-					}
-				}
-				"OnTakeDamage"
-				// "%attack_damage" is set to the damage value after mitigation
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"abilities/heracles/heracles_abilities"
-						"Function"		"OnBerserkTakeDamage"
-						"DamageTaken" 	"%attack_damage"
-					}
-				}
-			}
-			"modifier_eternal_rage"
-			{
-				"Passive"			"0"
-				"IsHidden"			"0"
-				"IsDebuff"			"0"
-				"IsPurgable"		"0"
-				"Duration"			"%berserk_duration"
-				"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
-				//"ThinkInterval"  	"%eternal_interval"
-				"TextureName"		"custom/berserker_5th_attribute_berserk"
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "1"
-				    "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "1" 
-				}
-				//"OnIntervalThink"
-				//{
-				//	"RunScript"
-				//	{
-				//		"ScriptFile"	"abilities/heracles/heracles_abilities"
-				//		"Function"		"OnEternalRageThink"
-				//	}
-				//}
-			}
 			"modifier_madmans_roar_cooldown"
 			{
 				"IsDebuff"	"1"
@@ -2305,42 +1225,18 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 		"AbilityTextureName"			"custom/berserker_5th_god_hand"
 		"MaxLevel"						"1"
+		"AbilityCooldown"				"1"
 		"AbilityCastRange"				"600"
-		"precache"
-		{
-			
-		}
-
-		"AbilitySpecial"
-		{
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"max_stack"				"11"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"str_penalty"			"-20"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"penalty_duration"		"7"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"600"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_hp"				"25"
-			}
-		}
-
 		
+		"AbilityValues"
+		{
+			"max_stack"				"11"
+			"str_penalty"			"-20"
+			"penalty_duration"		"7"
+			"radius"				"600"
+			"damage_hp"				"25"
+		}
+				
 		"OnSpellStart"
 		{
 			
@@ -2389,48 +1285,14 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 		"AbilityTextureName"			"custom/berserker_5th_attribute_reincarnation"
 		"MaxLevel"						"1"
-		"precache"
-		{
-			
-		}
-
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"threshold"				"100"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"health_regen"				"20"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"max_stack"				"5"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"damage_sustain"				"20000"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"bonus_count_percentage"		"300"
-			}
-			"06"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"duration"				"10"
-			}
-		}
-
+		"AbilityCooldown"				"1"
 		
-		"OnSpellStart"
+		"AbilityValues"
 		{
+			"threshold"					"100"
+			"duration"					"10"
+			"max_stack"					"5"
+			"health_regen"				"20"
 		}
 
 		"Modifiers"
@@ -2467,11 +1329,6 @@
 					}
 				}
 			}
-			"modifier_reincarnation_progress"
-			{
-				"IsHidden"		"1"
-				"Attributes"	"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
-			}
 		}
 	}
 	//=======================================
@@ -2490,59 +1347,19 @@
 		"AbilityCooldown"				"9999"
 		"AbilityManaCost"				"16"
 
-		"precache"
+		"AbilityValues"
 		{
+			"bonus_aspd"		"20"
+			"nine_cdr"			"5"
+			"bash_chance"		"35"
+			"bash_duration"		"0.2"
+			"bash_damage"		"100"
+			"bash_cd"			"1"
+			"mana_convert"		"20"
+			"eternal_interval"	"1"
+			"dmg_convert"		"10"
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"bash_chance"		"35"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"bash_duration"		"0.2"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"bash_damage"		"100"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"bash_cd"			"1"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"nine_cdr"			"5"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_aspd"			"20"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"mana_convert"			"20"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"eternal_interval"		"1"
-			}
-			"09"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"dmg_convert"			"10"
-			}
-		}
-		
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -2568,37 +1385,13 @@
 		"AbilityCooldown"				"9999"
 		"AbilityManaCost"				"20"
 
-		"precache"
+		"AbilityValues"
 		{
-		}
-
-		"AbilitySpecial"
-		{
-			"04"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"stock"				"11"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"str_penalty"		"20"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"duration"			"7"	
-			}
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"damage_hp"			"25"	
-			}
-			"05"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"radius"			"600"
-			}
+			"stock"				"11"
+			"str_penalty"		"20"
+			"duration"			"7"	
+			"damage_hp"			"25"	
+			"radius"			"600"
 		}
 		
 		"OnSpellStart"
@@ -2627,42 +1420,12 @@
 		"AbilityCooldown"				"9999"
 		"AbilityManaCost"				"12"
 
-		"precache"
+		"AbilityValues"
 		{
-		}
-
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"threshold"				"100"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"health_regen"				"20"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"max_stack"				"5"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"damage_sustain"				"20000"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"bonus_count_percentage"		"300"
-			}
-			"06"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"duration"				"10"
-			}
+			"threshold"				"100"
+			"health_regen"			"20"
+			"max_stack"				"5"
+			"duration"				"10"
 		}
 		
 		"OnSpellStart"
@@ -2690,42 +1453,14 @@
 		"AbilityCooldown"				"9999"
 		"AbilityManaCost"				"16"
 
-		"precache"
+		"AbilityValues"
 		{
-		}
-
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"berserk_duration"		"4.0"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_aspd"			"40"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"berserk_health"		"150"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"berkser_damage"		"300"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"nine_damage_atk"		"100"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"nine_revoke"			"1.0"
-			}
+			"berserk_duration"		"4.0"
+			"bonus_aspd"			"40"
+			"berserk_health"		"150"
+			"berkser_damage"		"300"
+			"nine_damage_atk"		"100"
+			"nine_revoke"			"1.0"
 		}
 
 		"OnSpellStart"
@@ -2753,6 +1488,8 @@
 			"model"					"models/tamamo/waifu/illya_berserk_by_zefiroft.vmdl"
 			"model"					"models/bonk/bonk_doge_by_zefiroft.vmdl"
 			"model"					"models/bonk/bonk_bat.vmdl"
+			"model"					"models/heracles/guts/guts_by_zefiroft.vmdl"
+			"model"					"models/heracles/guts/armor_guts_by_zefiroft.vmdl"
 			"particle"				"particles/custom/berserker/fissure_strike/shockwave.vpcf"
 			"particle"				"particles/custom/berserker/courage/buff.vpcf"
 			"particle"				"particles/custom/berserker/courage/debuff.vpcf"
@@ -2764,6 +1501,7 @@
 			"particle"				"particles/custom/berserker/nine_lives/hit.vpcf"
 			"particle"				"particles/custom/berserker/nine_lives/last_hit.vpcf"
 			"particle"				"particles/custom/screen_face_splash.vpcf"
+			"particle"  			"particles/custom/screen_doge_splash.vpcf"
 			"particle"				"particles/custom/berserker/god_hand/stomp.vpcf"
 			"particle"				"particles/items_fx/aegis_respawn.vpcf"
 			"particle"				"particles/custom/berserker/god_hand/debuff.vpcf"

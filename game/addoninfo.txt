@@ -1,13 +1,14 @@
 "AddonInfo"
 {
-	"PenaltiesEnabled"	"false"
-	"ForceDefaultGuide"	"true"
-	"MinimalPrecache"	"true"
-	"HeroGuidesSupported""true"
-	"IsTemplate"		"false"
-	"maps"			"fate_trio fate_elim_7v7 fate_ffa fate_trio_rumble_3v3v3v3 fate_elim_6v6 " //fate_tutorial
-	"DefaultMap"	"fate_trio"
-	"IsPlayable"	"1"	
+	"PenaltiesEnabled"	"0"
+	"ForceDefaultGuide"	"1"
+	"MinimalPrecache"	"1"
+	"HeroGuidesSupported"	"1"
+	"IsTemplate"		"0"
+	"DrawCustomTeamHeroesOnMinimap"	"1"
+	"maps"			"fate_elim_7v7 fate_trio fate_ffa fate_trio_rumble_3v3v3v3 fate_elim_6v6 " //fate_tutorial
+	"DefaultMap"		"fate_elim_7v7"
+	"IsPlayable"		"1"	
 	//"fate_tutorial"
 	//{
 	//	"MaxPlayers" "1"

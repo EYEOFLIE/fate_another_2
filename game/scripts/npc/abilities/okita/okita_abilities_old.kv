@@ -17,64 +17,20 @@
 		"precache"
 		{
 		}
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"min_chance"		"5"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"max_chance"		"30"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"hp_loss_percent"	"15"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"cool_down"			"15"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"stun_duration"		"0.9"
-			}
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"weak_duration"		"1.5"
-			}
-			"07"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"aspd_debuff"		"-20"
-			}
-			"08"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"ms_debuff"			"-20"
-			}
-			"09"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"mr_debuff"			"-3"
-			}
-			"10"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"armor_debuff"		"-5"
-			}
-			"11"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"atk_debuff"		"-10"
-			}
-		}
+		"AbilityValues"
+        {
+            "min_chance" "5"
+            "max_chance" "30"
+            "hp_loss_percent" "15"
+            "cool_down" "15"
+            "stun_duration" "0.9"
+            "weak_duration" "1.5"
+            "aspd_debuff" "-20"
+            "ms_debuff" "-20"
+            "mr_debuff" "-3"
+            "armor_debuff" "-5"
+            "atk_debuff" "-10"
+        }
 		"Modifiers"
 		{
 			"modifier_weak_constitution_think"
@@ -145,34 +101,14 @@
 		}
 
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"1.4 1.5 1.6 1.7 1.8"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_ms"				"15 20 25 30 35"
-			}	
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_agi"				"10 15 20 25 30"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"window_duration"		"4"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"leap_range"			"400 450 500 550 600"
-			}												
-		}
+		"AbilityValues"
+        {
+            "duration" "1.4 1.5 1.6 1.7 1.8"
+            "bonus_ms" "15 20 25 30 35"
+            "bonus_agi" "10 15 20 25 30"
+            "window_duration" "4"
+            "leap_range" "400 450 500 550 600"
+        }
 		"OnSpellStart"
 		{
 		
@@ -343,44 +279,16 @@
 		"AbilityCooldown"				"24.0"
 		"AbilityCastPoint"				"0.1"
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"12.0"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"base_aspd"				"0 10 20 30 40"
-			}	
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"base_atk"				"0 5 10 15 20"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_atk"				"5"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_aspd"			"10"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_dmg"				"100"
-			}	
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"hit_count"				"3"
-			}						
-		}
+		"AbilityValues"
+        {
+            "duration" "12.0"
+            "base_aspd" "0 10 20 30 40"
+            "base_atk" "0 5 10 15 20"
+            "bonus_atk" "5"
+            "bonus_aspd" "10"
+            "bonus_dmg" "100"
+            "hit_count" "3"
+        }
 		"OnAbilityPhaseStart"
 		{
 			"RunScript"
@@ -473,64 +381,20 @@
 			"particle"				"particles/units/heroes/hero_gyrocopter/gyro_guided_missile_explosion.vpcf"
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"1000"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"summon_count"			"2 3 4 5 6"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"duration"				"9 10 11 12 13"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"buff_duration"			"5.0"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"buff_aspd"				"40"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"buff_ms"				"50"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"buff_atk"				"40"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"flag_health"			"4 5 6 7 8"
-			}
-			"09"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_atk"				"20"
-			}
-			"10"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_hp"				"500"
-			}
-			"11"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"block"					"5000"
-			}
-		}
+		"AbilityValues"
+        {
+            "radius" "1000"
+            "summon_count" "2 3 4 5 6"
+            "duration" "9 10 11 12 13"
+            "buff_duration" "5.0"
+            "buff_aspd" "40"
+            "buff_ms" "50"
+            "buff_atk" "40"
+            "flag_health" "4 5 6 7 8"
+            "bonus_atk" "20"
+            "bonus_hp" "500"
+            "block" "5000"
+        }
 		"OnAbilityPhaseStart"
 		{
 			"RunScript"
@@ -615,44 +479,16 @@
 		"precache"
 		{
 		}
-		"AbilitySpecial"
-		{
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"buff_duration"			"5.0"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"buff_aspd"				"100"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"buff_ms"				"50"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"buff_atk"				"50"
-			}
-			"09"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_atk"				"50"
-			}
-			"10"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_hp"				"500"
-			}
-			"11"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"block"					"5000"
-			}
-		}
+		"AbilityValues"
+        {
+            "buff_duration" "5.0"
+            "buff_aspd" "100"
+            "buff_ms" "50"
+            "buff_atk" "50"
+            "bonus_atk" "50"
+            "bonus_hp" "500"
+            "block" "5000"
+        }
 		"OnOwnerDied"
 		{
 			"RunScript"
@@ -802,70 +638,21 @@
 			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_mirana.vsndevts"
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"cast_delay"			"0.9"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"first_hit"				"150 250 350 450 550"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"second_hit"			"150 250 350 450 550"
-			}
-
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"third_hit"				"500 600 700 800 900"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"first_hit_miss"		"50"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"second_hit_miss"		"25"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"hit_count"				"3"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_dmg"				"500"
-			}
-			"09"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"agi_ratio"				"1"
-			}
-			"10"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"weak_duration"			"1.5"
-			}
-			"11"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"stun_duration"			"0.9"
-			}
-			"12"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"distance"				"1100"
-			}
-		}
+		"AbilityValues"
+        {
+            "cast_delay" "0.9"
+            "first_hit" "150 250 350 450 550"
+            "second_hit" "150 250 350 450 550"
+            "third_hit" "500 600 700 800 900"
+            "first_hit_miss" "50"
+            "second_hit_miss" "25"
+            "hit_count" "3"
+            "bonus_dmg" "500"
+            "agi_ratio" "1"
+            "weak_duration" "1.5"
+            "stun_duration" "0.9"
+            "distance" "1100"
+        }
 		"OnAbilityPhaseStart"
 		{
 			"RunScript"
@@ -924,44 +711,16 @@
 			"particle"	"particles/units/heroes/hero_juggernaut/jugg_crit_blur_impact.vpcf"
 		}
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"10.0"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"weak_duration"			"10"
-			}	
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"weak_stack"			"3"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"cooldown"				"40"
-			}	
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"crit_rate"				"35"
-			}	
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"crit_multiplier"		"200"
-			}	
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_aspd"			"100"
-			}	
-		}
+		"AbilityValues"
+        {
+            "duration" "10.0"
+            "weak_duration" "10"
+            "weak_stack" "3"
+            "cooldown" "40"
+            "crit_rate" "35"
+            "crit_multiplier" "200"
+            "bonus_aspd" "100"
+        }
 
 		"OnSpellStart"
 		{	
@@ -1084,29 +843,13 @@
 		"AbilityCooldown"				"20.0"
 		"AbilityCastPoint"				"0.0"
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"1.0"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"range"					"500"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"distance"				"500"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"cooldown"				"20"
-			}	
-		}
+		"AbilityValues"
+        {
+            "duration" "1.0"
+            "range" "500"
+            "distance" "500"
+            "cooldown" "20"
+        }
 		"OnAbilityPhaseStart"
 		{
 			"RunScript"
@@ -1182,19 +925,11 @@
 		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"0"
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bonus_mr"				"10"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bonus_armor"			"10"
-			}
-		}
+		"AbilityValues"
+        {
+            "bonus_mr" "10"
+            "bonus_armor" "10"
+        }
 		"Modifiers"
 		{
 			"modifier_coat_of_oaths"
@@ -1228,29 +963,13 @@
 		"AbilityCooldown"				"0"
 		"AbilityManaCost"				"13"
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"tennen_bonus_dmg"			"100"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"mumyo_agi_ratio"			"1"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_agi"				"5 10 15 20 25"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"zekken_agi_ratio"			"5"
-			}
-		}
+		"AbilityValues"
+        {
+            "tennen_bonus_dmg" "100"
+            "mumyo_agi_ratio" "1"
+            "bonus_agi" "5 10 15 20 25"
+            "zekken_agi_ratio" "5"
+        }
 		"OnAbilityPhaseStart"
 		{
 			"RunScript"
@@ -1285,39 +1004,15 @@
 		"AbilityCooldown"				"0"
 		"AbilityManaCost"				"13"
 
-		"AbilitySpecial"
-		{
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"buff_ms"				"50"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"buff_aspd"				"40"
-			}
-			"09"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_atk"				"40"
-			}
-			"10"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_hp"				"400"
-			}
-			"12"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_summon"			"1"
-			}
-			"11"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_hp_reg"				"20"
-			}
-		}
+		"AbilityValues"
+        {
+            "buff_ms" "50"
+            "buff_aspd" "40"
+            "bonus_atk" "40"
+            "bonus_hp" "400"
+            "bonus_summon" "1"
+            "bonus_hp_reg" "20"
+        }
 
 		"OnSpellStart"
 		{
@@ -1344,19 +1039,11 @@
 		"AbilityCooldown"				"0"
 		"AbilityManaCost"				"10"
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bonus_mr"				"10"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bonus_armor"			"10"
-			}
-		}
+		"AbilityValues"
+        {
+            "bonus_mr" "10"
+            "bonus_armor" "10"
+        }
 
 		"OnSpellStart"
 		{
@@ -1415,29 +1102,13 @@
 		"AbilityCooldown"				"0"
 		"AbilityManaCost"				"8"
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"1.0"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"range"					"500"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"distance"				"500"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"cooldown"				"20"
-			}	
-		}
+		"AbilityValues"
+        {
+            "duration" "1.0"
+            "range" "500"
+            "distance" "500"
+            "cooldown" "20"
+        }
 
 		"OnSpellStart"
 		{
@@ -1464,19 +1135,11 @@
 		"AbilityCooldown"				"0"
 		"AbilityManaCost"				"15"
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_mumyo"			"500"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_zekken"			"1000"
-			}
-		}
+		"AbilityValues"
+        {
+            "bonus_mumyo" "500"
+            "bonus_zekken" "1000"
+        }
 
 		"OnSpellStart"
 		{
@@ -1520,49 +1183,17 @@
 		"AbilityCooldown"				"120"
 		"AbilityManaCost"				"800"
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"						//basedamage
-				"normal_hit"		"50"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"hit_count"			"14"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"last_hit"			"2000"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"agi_ratio"			"5"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"cooldown"			"120"
-			}
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"						
-				"mini_stun"			"0.2"
-			}
-			"07"
-			{
-				"var_type"			"FIELD_INTEGER"						
-				"range"				"1400"
-			}
-			"08"
-			{
-				"var_type"			"FIELD_INTEGER"						
-				"total_hit"			"15"
-			}
-		}
+		"AbilityValues"
+        {
+            "normal_hit" "50"
+            "hit_count" "14"
+            "last_hit" "2000"
+            "agi_ratio" "5"
+            "cooldown" "120"
+            "mini_stun" "0.2"
+            "range" "1400"
+            "total_hit" "15"
+        }
 		"OnAbilityPhaseStart"
 		{
 			"RunScript"

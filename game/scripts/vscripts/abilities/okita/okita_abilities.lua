@@ -102,12 +102,17 @@ function OnFlagStart (keys)
 		end]]
 	end
    
-
+	local color = Vector(130,215,255) -- blue
+	if caster:HasModifier("modifier_alternate_01") then 
+		color = Vector(255,100,180) -- pink
+	elseif caster:HasModifier("modifier_alternate_02") then 
+		color = Vector(255,255,160) -- gold
+	end
    	--particle area 
    	local sacredZoneFx = ParticleManager:CreateParticle("particles/custom/okita/okita_flag_zone.vpcf", PATTACH_WORLDORIGIN, caster.flag)
 	ParticleManager:SetParticleControl(sacredZoneFx, 0, flag_origin)
 	ParticleManager:SetParticleControl(sacredZoneFx, 1, Vector(1,1,radius))
-	ParticleManager:SetParticleControl(sacredZoneFx, 14, Vector(radius,0,0))
+	ParticleManager:SetParticleControl(sacredZoneFx, 12, color)
 	caster.CurrentFlagParticle = sacredZoneFx
 end
 
@@ -1464,7 +1469,7 @@ function OnZekkenStart (keys)
 						    		if dash_back_speed < 200 then 
 						    			dash_back_speed = 200 
 						    		end
-						    		local new_forward = (unit.ZekkenTarget:GetAbsOrigin() - unit:GetAbsOrigin()):Normalized()
+						    		local new_forward = (Vector(unit.ZekkenTarget:GetAbsOrigin().x, unit.ZekkenTarget:GetAbsOrigin().y, 0) - Vector(unit:GetAbsOrigin().x, unit:GetAbsOrigin().y, 0)):Normalized()
 						    		unit:SetForwardVector(new_forward)
 						    		unit:SetAngles(0, 0, 0)
 						    	elseif (unit:GetAbsOrigin() - unit.last_hit_start):Length() >= unit.last_hit_distance or not unit:HasModifier("modifier_zekken_checker") then 
@@ -1696,8 +1701,8 @@ function okita_flash_wrapper(flash)
 		}
 		AddExhaust(keys, exhaust)
 		local target_loc = self:GetCursorPosition()
-		local direction = (target_loc - self.caster:GetAbsOrigin()):Normalized()
-		direction.z = 0
+		local direction = (Vector(target_loc.x, target_loc.y, 0) - Vector(self.caster:GetAbsOrigin().x, self.caster:GetAbsOrigin().y, 0)):Normalized()
+
 		self.caster:SetForwardVector(direction)
 
 		self.cast_anim = self:GetSpecialValueFor("cast_anim_cd")
@@ -2268,20 +2273,22 @@ function modifier_okita_tennen_count:GetAttributes()
 	return MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE
 end
 
-function modifier_okita_tennen_count:OnCreated(args)
-	self.parent = self:GetParent()
-	self.ability = self:GetAbility()
-	self.parent:AddNewModifier(self.parent, self.ability, "modifier_okita_tennen_agi", {Duration = self.ability:GetSpecialValueFor("tennen_duration")})
-end
-
-function modifier_okita_tennen_count:OnDestroy()
-end
-
-function modifier_okita_tennen_count:OnRefresh(args)
-	if self:GetStackCount() < 6 then
+if IsServer() then
+	function modifier_okita_tennen_count:OnCreated(args)
+		self.parent = self:GetParent()
+		self.ability = self:GetAbility()
 		self.parent:AddNewModifier(self.parent, self.ability, "modifier_okita_tennen_agi", {Duration = self.ability:GetSpecialValueFor("tennen_duration")})
 	end
-	--self:SetStackCount(self:GetStackCount() + 1)
+
+	function modifier_okita_tennen_count:OnDestroy()
+	end
+
+	function modifier_okita_tennen_count:OnRefresh(args)
+		if self:GetStackCount() < 6 then
+			self.parent:AddNewModifier(self.parent, self.ability, "modifier_okita_tennen_agi", {Duration = self.ability:GetSpecialValueFor("tennen_duration")})
+		end
+		--self:SetStackCount(self:GetStackCount() + 1)
+	end
 end
 
 function modifier_okita_tennen_count:IsHidden()

@@ -25,8 +25,20 @@ function modifier_prelati_regen:IsHidden()
 end
 
 function modifier_prelati_regen:DeclareFunctions()
-	return {MODIFIER_PROPERTY_MANA_BONUS} 
+	return {MODIFIER_PROPERTY_MANA_BONUS,
+			--[[MODIFIER_PROPERTY_OVERRIDE_ATTACK_MAGICAL,
+			MODIFIER_EVENT_ON_ATTACK_LANDED]]} 
 end
+
+--[[function modifier_prelati_regen:GetOverrideAttackMagical()
+	return 100
+end
+
+function modifier_prelati_regen:OnAttackLanded(args)
+	if args.attacker ~= self:GetParent() then return nil end
+
+	self:GetParent():SpendMana(1, self:GetAbility())
+end]]
 
 function modifier_prelati_regen:GetModifierManaBonus()
 	local mana = 0

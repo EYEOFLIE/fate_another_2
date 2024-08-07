@@ -93,8 +93,9 @@ function OnPhalanxStart(keys)
 			soldier:AddNewModifier(caster, nil, "modifier_kill", {duration = duration})
 			--caster.AOTKSoldierCount = caster.AOTKSoldierCount + 1
 			if caster.IsBeyondTimeAcquired then
-				aotkAbility:ApplyDataDrivenModifier(caster, soldier, "modifier_army_of_the_king_infantry_bonus_stat",{})
-				soldier:SetModifierStackCount("modifier_army_of_the_king_infantry_bonus_stat", caster, aotkAbility:GetLevel())
+				caster:FindAbilityByName(caster.RSkill):StrengthenSoldier(soldier, "modifier_army_of_the_king_infantry_bonus_stat")
+				--aotkAbility:ApplyDataDrivenModifier(caster, soldier, "modifier_army_of_the_king_infantry_bonus_stat",{})
+				--soldier:SetModifierStackCount("modifier_army_of_the_king_infantry_bonus_stat", caster, aotkAbility:GetLevel())
 				if caster:HasModifier("modifier_army_of_the_king_death_checker") then 
 					caster.AOTKSoldierCount = caster.AOTKSoldierCount + 1
 				end
@@ -128,8 +129,9 @@ function OnPhalanxStart(keys)
 			soldier:AddNewModifier(caster, nil, "modifier_kill", {duration = duration})
 			--caster.AOTKSoldierCount = caster.AOTKSoldierCount + 1
 			if caster.IsBeyondTimeAcquired then
-				aotkAbility:ApplyDataDrivenModifier(caster, soldier, "modifier_army_of_the_king_infantry_bonus_stat",{})
-				soldier:SetModifierStackCount("modifier_army_of_the_king_infantry_bonus_stat", caster, aotkAbility:GetLevel())
+				caster:FindAbilityByName(caster.RSkill):StrengthenSoldier(soldier, "modifier_army_of_the_king_infantry_bonus_stat")
+				--aotkAbility:ApplyDataDrivenModifier(caster, soldier, "modifier_army_of_the_king_infantry_bonus_stat",{})
+				--soldier:SetModifierStackCount("modifier_army_of_the_king_infantry_bonus_stat", caster, aotkAbility:GetLevel())
 			else
 				ability:ApplyDataDrivenModifier(caster, soldier, "modifier_phalanx_wall",{})
 			end
@@ -977,27 +979,30 @@ function EndAOTK(caster)
 			units[i]:RemoveModifierByName("modifier_zhuge_liang_array_enemy")
 			units[i]:RemoveModifierByName("modifier_inside_marble")
 			--if units[i]:GetName() == "npc_dota_hero_bounty_hunter" or units[i]:GetName() == "npc_dota_hero_riki" then
-                
+            local name = units[i]:GetUnitName()
+            print(i .. ": " .. name)    
            -- end
 
-			if units[i]:GetName() == "npc_dota_hero_ember_spirit" and units[i]:HasModifier("modifier_unlimited_bladeworks") then
+			--if units[i]:GetUnitName() == "npc_dota_hero_ember_spirit" and units[i]:HasModifier("modifier_unlimited_bladeworks") then
 				units[i]:RemoveModifierByName("modifier_unlimited_bladeworks")
-			end
-			if units[i]:HasModifier("modifier_annihilate_mute") then
+			--end
+			--if units[i]:HasModifier("modifier_annihilate_mute") then
 				units[i]:RemoveModifierByName("modifier_annihilate_mute")
-			end
+			--end
 
 	    	local IsUnitGeneratedInAOTK = true
 	    	if aotkTargets ~= nil then
 		    	for j=1, #aotkTargets do
 		    		if IsValidEntity(aotkTargets[j]) and not aotkTargets[j]:IsNull() then
+		    			aotkTargets[j]:RemoveModifierByName("modifier_unlimited_bladeworks")
 			    		if units[i] == aotkTargets[j] then
 			    			if aotkTargets[j] ~= nil then
 			    				units[i]:SetAbsOrigin(aotkTargetLoc[j]) 
+			    				units[i]:Stop()
 			    			end
 			    			FindClearSpaceForUnit(units[i], units[i]:GetAbsOrigin(), true)
-			    			Timers:CreateTimer(0.1, function() 
-			    				if IsValidEntity(units[i]) and not units[i]:IsNull() then 
+			    			Timers:CreateTimer(0.033, function() 
+			    				if IsValidEntity(units[i]) and not units[i]:IsNull() and units[i]:IsHero() then 
 									units[i]:AddNewModifier(units[i], nil, "modifier_camera_follow", {duration = 1.0})
 								end
 							end)
@@ -1011,6 +1016,7 @@ function EndAOTK(caster)
 	    		diff = aotkCenter - units[i]:GetAbsOrigin()
 	    		if aotkCasterPos ~= nil then 
 	    			units[i]:SetAbsOrigin(aotkCasterPos - diff * 0.7)
+	    			units[i]:Stop()
 	    		end
 
 	    		FindClearSpaceForUnit(units[i], units[i]:GetAbsOrigin(), true) 
@@ -1225,6 +1231,9 @@ function OnBattleHornStart(keys)
     end
 end
 
+LinkLuaModifier("modifier_army_of_the_king_cavalry_bonus_stat", "abilities/iskandar/iskandar_aotk", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_army_of_the_king_hepha_bonus_stat", "abilities/iskandar/iskandar_aotk", LUA_MODIFIER_MOTION_NONE)
+
 function OnCavalrySummon(keys)
 	local caster = keys.caster
 	local ability = keys.ability
@@ -1247,18 +1256,20 @@ function OnCavalrySummon(keys)
 	--caster.AOTKCavalryTable = {}
 	caster:EmitSound("Hero_KeeperOfTheLight.SpiritForm")
 	for i=0,cavalry_count - 1 do
-		local soldier = CreateUnitByName("iskandar_cavalry", targetPoint + Vector(200, -200 + i*100), true, nil, nil, caster:GetTeamNumber())
+		hero:FindAbilityByName(hero.RSkill):GenerateSoldier("iskandar_cavalry", targetPoint + Vector(200, -200 + i*100), "modifier_army_of_the_king_cavalry_bonus_stat")
+		--local soldier = CreateUnitByName("iskandar_cavalry", targetPoint + Vector(200, -200 + i*100), true, nil, nil, caster:GetTeamNumber())
 		--soldier:SetBaseMaxHealth(soldier:GetHealth() + ) 
-		soldier:SetUnitCanRespawn(false)
+		--soldier:SetUnitCanRespawn(false)
 		--soldier:AddNewModifier(caster, nil, "modifier_phased", {})
-		soldier:SetOwner(hero)
-		table.insert(caster.AOTKSoldiers, soldier)
+		--soldier:SetOwner(hero)
+		--table.insert(caster.AOTKSoldiers, soldier)
 		--table.insert(caster.AOTKCavalryTable, soldier)
-		caster.AOTKSoldierCount = caster.AOTKSoldierCount + 1
-		aotkAbilityHandle:ApplyDataDrivenModifier(caster, soldier, "modifier_army_of_the_king_cavalry_bonus_stat",{})
-		soldier:SetModifierStackCount("modifier_army_of_the_king_cavalry_bonus_stat", caster, aotkAbilityHandle:GetLevel())
+		--caster.AOTKSoldierCount = caster.AOTKSoldierCount + 1
+		--aotkAbilityHandle:ApplyDataDrivenModifier(caster, soldier, "modifier_army_of_the_king_cavalry_bonus_stat",{})
+		--soldier:SetModifierStackCount("modifier_army_of_the_king_cavalry_bonus_stat", caster, aotkAbilityHandle:GetLevel())
 	end
-	local hepha = CreateUnitByName("iskandar_hephaestion", targetPoint, true, nil, nil, caster:GetTeamNumber())
+	hero:FindAbilityByName(hero.RSkill):GenerateSoldier("iskandar_hephaestion", targetPoint, "modifier_army_of_the_king_hepha_bonus_stat")
+	--[[local hepha = CreateUnitByName("iskandar_hephaestion", targetPoint, true, nil, nil, caster:GetTeamNumber())
 	hepha:SetControllableByPlayer(caster:GetPlayerID(), true)
 	hepha:SetUnitCanRespawn(false)
 	hepha:SetOwner(hero)
@@ -1268,7 +1279,7 @@ function OnCavalrySummon(keys)
 	--table.insert(caster.AOTKCavalryTable, hepha)
 	caster.AOTKSoldierCount = caster.AOTKSoldierCount + 1
 	aotkAbilityHandle:ApplyDataDrivenModifier(caster, hepha, "modifier_army_of_the_king_hepha_bonus_stat",{})
-	hepha:SetModifierStackCount("modifier_army_of_the_king_hepha_bonus_stat", caster, aotkAbilityHandle:GetLevel())
+	hepha:SetModifierStackCount("modifier_army_of_the_king_hepha_bonus_stat", caster, aotkAbilityHandle:GetLevel())]]
 end
 
 function CleanUpHammer(hero)
@@ -1531,8 +1542,8 @@ end
 
 function IskandarCheckCombo(caster, ability)
 	if math.ceil(caster:GetStrength()) >= 25 and math.ceil(caster:GetAgility()) >= 25 and math.ceil(caster:GetIntellect()) >= 25 then
-		if string.match(ability:GetAbilityName(), "iskandar_army_of_the_king") and not caster:HasModifier("modifier_annihilate_cooldown") then
-			caster.RUsed = true
+		if caster:HasModifier("modifier_iskandar_r_use") --[[string.match(ability:GetAbilityName(), "iskandar_army_of_the_king") and not caster:HasModifier("modifier_annihilate_cooldown")]] then
+			--[[caster.RUsed = true
 			caster.RTime = GameRules:GetGameTime()
 			if caster.RTimer ~= nil then 
 				Timers:RemoveTimer(caster.RTimer)
@@ -1541,9 +1552,13 @@ function IskandarCheckCombo(caster, ability)
 			caster.ETimer = Timers:CreateTimer(5.0, function()
 				caster.RUsed = false
 			end)
-		else
+		else]]
 			if string.match(ability:GetAbilityName(), "iskandar_summon_hephaestion") and not caster:HasModifier("modifier_annihilate_cooldown") and caster.IsAOTKDominant then 
-				if caster.IsCharismaImproved then
+				if caster:FindAbilityByName(caster.QSkill):IsCooldownReady() and caster:FindAbilityByName("iskandar_annihilate"):IsCooldownReady() then 
+					local remain_time = caster:FindModifierByName("modifier_iskandar_r_use"):GetRemainingTime()
+					ability:ApplyDataDrivenModifier(caster, caster, "modifier_annihilate_window", {Duration = remain_time})
+               	end
+				--[[if caster.IsCharismaImproved then
 					if caster:FindAbilityByName("iskandar_forward_upgrade"):IsCooldownReady() and caster:FindAbilityByName("iskandar_annihilate"):IsCooldownReady() then 
 						local newTime = GameRules:GetGameTime()
 						local duration = 5 - (newTime - caster.RTime)
@@ -1555,7 +1570,7 @@ function IskandarCheckCombo(caster, ability)
 						local duration = 5 - (newTime - caster.RTime)
 						ability:ApplyDataDrivenModifier(caster, caster, "modifier_annihilate_window", {Duration = duration})
 					end
-				end
+				end]]
 			end
 		end
 	end
@@ -1605,10 +1620,10 @@ function OnAnnihilateStart(keys)
 	masterCombo:EndCooldown()
 	masterCombo:StartCooldown(ability:GetCooldown(1))
 	ability:ApplyDataDrivenModifier(caster, caster, "modifier_annihilate_cooldown", {duration = ability:GetCooldown(ability:GetLevel())})
-	local aotk = caster:FindAbilityByName("iskandar_army_of_the_king")
-	if aotk == nil then 
+	local aotk = caster:FindAbilityByName(caster.RSkill)
+	--[[if aotk == nil then 
 		aotk = caster:FindAbilityByName("iskandar_army_of_the_king_upgrade")
-	end
+	end]]
 	ability:ApplyDataDrivenModifier(caster, caster, "modifier_annihilate_caster", {Duration = aotk:GetSpecialValueFor("duration")})
 	EmitGlobalSound("Iskander.Annihilate")
 	Timers:CreateTimer(2.0, function()
@@ -1697,12 +1712,14 @@ function OnIskanderCharismaImproved(keys)
 	    hero.IsCharismaImproved = true
 
 		UpgradeAttribute(hero, "iskandar_forward", "iskandar_forward_upgrade", true)
+		hero.QSkill = "iskandar_forward_upgrade"
 
 		if hero:HasModifier("modifier_army_of_the_king_death_checker") then 
 			UpgradeAttribute(hero, "iskandar_charisma", "iskandar_charisma_upgrade", false)
 		else
 			UpgradeAttribute(hero, "iskandar_charisma", "iskandar_charisma_upgrade", true)
 		end
+		hero.DSkill = "iskandar_charisma_upgrade"
 
 		hero:RemoveModifierByName("modifier_iskandar_charisma_aura")
 		hero:FindAbilityByName("iskandar_charisma_upgrade"):ApplyDataDrivenModifier(hero, hero, "modifier_iskandar_charisma_aura", {})
@@ -1729,6 +1746,7 @@ function OnThundergodAcquired(keys)
 		else
 			UpgradeAttribute(hero, "iskandar_gordius_wheel", "iskandar_gordius_wheel_upgrade", true)
 		end
+		hero.ESkill = "iskandar_gordius_wheel_upgrade"
 
 	    NonResetAbility(hero)
 
@@ -1769,12 +1787,14 @@ function OnBeyondTimeAcquired(keys)
 	    hero.IsBeyondTimeAcquired = true
 
 	    UpgradeAttribute(hero, "iskandar_phalanx", "iskandar_phalanx_upgrade", true)
+	    hero.WSkill = "iskandar_phalanx_upgrade"
 
 		if hero:HasModifier("modifier_army_of_the_king_death_checker") then 
 			UpgradeAttribute(hero, "iskandar_army_of_the_king", "iskandar_army_of_the_king_upgrade", false)
 		else
 			UpgradeAttribute(hero, "iskandar_army_of_the_king", "iskandar_army_of_the_king_upgrade", true)
 		end
+		hero.RSkill = "iskandar_army_of_the_king_upgrade"
 
 		aotkAbilityHandle = hero:FindAbilityByName("iskandar_army_of_the_king_upgrade")
 

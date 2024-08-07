@@ -429,6 +429,7 @@ end
 function OnPinningCast (keys)
 	local caster = keys.caster 
 	local ability = keys.ability 
+	ability.target = keys.target
 	if caster:HasModifier("modifier_pinning_god_cooldown") then 
 		--caster:Stop()
 		--SendErrorMessage(caster:GetPlayerOwnerID(), "#Ability_on_cooldown")
@@ -436,6 +437,8 @@ function OnPinningCast (keys)
 	ability:EndCooldown()
 	caster:SetMana(caster:GetMana() + ability:GetManaCost(1))
 	EmitGlobalSound("Scathach.Pinning_God")
+
+	ability:ApplyDataDrivenModifier(caster, caster, "modifier_pinning_god_tracker", {Duration=ability:GetSpecialValueFor("cast_delay") - 0.04})
 end
 
 function OnPinningInterrupt (keys)
@@ -445,7 +448,13 @@ end
 function OnPinningStart (keys)
 	local caster = keys.caster
 	local ability = keys.ability 
-	local target = keys.target 
+	local target = ability.target 
+
+	if caster:HasModifier("modifier_pinning_god_tracker") then 
+		OnPinningInterrupt (keys)
+		return nil 
+	end
+	
 	local origin = caster:GetAbsOrigin()
 	local speed = ability:GetSpecialValueFor("speed")
 	local distance = ability:GetSpecialValueFor("distance")

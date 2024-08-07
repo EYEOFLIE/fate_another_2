@@ -262,7 +262,8 @@ function OnSGApplyCC(keys)
 	giveUnitDataDrivenModifier(caster, target, "rooted", duration)
 	giveUnitDataDrivenModifier(caster, target, "locked", duration)
 	if caster.IsSpiritTheftAcquired and target:HasModifier("modifier_amaterasu_enemy") then
-		giveUnitDataDrivenModifier(caster, target, "revoked", duration)
+		local revoke = ability:GetSpecialValueFor("revoke")
+		giveUnitDataDrivenModifier(caster, target, "revoked", revoke)
 	end
 end
 

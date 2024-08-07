@@ -3,12 +3,13 @@ SkinUnavailable
 {
 	"UnAvai"
 	{
-		"039"		"npc_dota_hero_legion_commander_6"	// [Legend] Arthur Pendragon
+		"039"		"npc_dota_hero_legion_commander_6"	// [Limited] Arthur Pendragon
 		"056"		"npc_dota_hero_ember_spirit_4"		// [Limited] Cyber Emiya
 		"061"		"npc_dota_hero_lina_4"				// [Limited] Racing Nero
 		"066"		"npc_dota_hero_ember_spirit_5"		// [Limited] Senji Muramasa
 		"078"		"npc_dota_hero_templar_assassin_4"	// [Limited] Ana
 		"084"		"npc_dota_hero_phantom_lancer_3"	// [Limited] Lancer Card Rin
+		"095"		"npc_dota_hero_doom_bringer_3"		// [Limited] Guts Herc
 		//"077"		"npc_dota_hero_night_stalker_1"		// [Limited] Count Edmond
 	}
 	"Pepe"
@@ -27,6 +28,11 @@ SkinUnavailable
 			"048"	"npc_dota_hero_troll_warlord_4" // Summer Drake
 			"053"	"npc_dota_hero_monkey_king_4" 	// Summer Scathach
 			"071"	"npc_dota_hero_enchantress_7"	// Summer Tamamo
+			"088"	"npc_dota_hero_queenofpain_4"	// Summer Astolfo
+			"089"	"npc_dota_hero_death_prophet_3" // Summer Elizabeth Bathory
+			"082"	"npc_dota_hero_tusk_3"			// Summer Mordred
+			"081"	"npc_dota_hero_spectre_3"		// Summer Artoria Alter
+			"080"	"npc_dota_hero_void_spirit_1"	// Swimsuit Kiyohime Lancer
 		}
 	}
 	"WK2"

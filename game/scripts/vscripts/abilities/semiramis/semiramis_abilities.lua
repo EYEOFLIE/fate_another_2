@@ -847,7 +847,7 @@ function OnTiatumUmuCast(keys)
 
 	Timers:CreateTimer(cast_delay + 0.1, function()
 		local laser = ParticleManager:CreateParticle( "particles/semiramis/tiatum_umu_laser.vpcf", PATTACH_CUSTOMORIGIN, nil )
-		ParticleManager:SetParticleControl( laser, 0, garden:GetAbsOrigin() + Vector(0,0,200))
+		ParticleManager:SetParticleControl( laser, 0, garden:GetAbsOrigin() + Vector(0,0,300))
 		ParticleManager:SetParticleControl( laser, 1, targetpoint)
 
 		Timers:CreateTimer(duration, function()

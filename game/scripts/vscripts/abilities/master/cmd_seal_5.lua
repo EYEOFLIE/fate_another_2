@@ -45,7 +45,7 @@ function cmd_seal_5:OnSpellStart()
 	hero:RemoveModifierByName("modifier_zabaniya_curse")
 	hero:AddNewModifier(caster, self, "modifier_master_intervention", { Duration = self:GetSpecialValueFor("duration") })
 	local dispel = ParticleManager:CreateParticle( "particles/units/heroes/hero_abaddon/abaddon_death_coil_explosion.vpcf", PATTACH_ABSORIGIN, hero )
-    ParticleManager:SetParticleControl( dispel, 1, hero:GetAbsOrigin())
+    ParticleManager:SetParticleControl( dispel, 1, hero:GetAbsOrigin() + Vector(0,0,30))
 
     Timers:CreateTimer( 2.0, function()
         ParticleManager:DestroyParticle( dispel, false )

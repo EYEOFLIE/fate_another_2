@@ -234,6 +234,7 @@ function OnHruntCast(keys)
 	local caster = keys.caster
 	local ability = keys.ability
 	local target = keys.target
+	ability.target =target
 	local ply = caster:GetPlayerOwner()
 
 	ability:EndCooldown()
@@ -255,15 +256,20 @@ function OnHruntCast(keys)
 	ParticleManager:SetParticleControlEnt(caster.hrunting_particle, 1, caster, PATTACH_ABSORIGIN_FOLLOW, "attach_origin", caster:GetAbsOrigin(), true)
 	ParticleManager:SetParticleControlEnt(caster.hrunting_particle, 3, caster, PATTACH_ABSORIGIN_FOLLOW, "attach_origin", caster:GetAbsOrigin(), true)
 	caster.hruntingCrosshead = ParticleManager:CreateParticleForTeam("particles/custom/archer/archer_broken_phantasm/archer_broken_phantasm_crosshead.vpcf", PATTACH_OVERHEAD_FOLLOW, target, caster:GetTeamNumber())
-	if keys.target:IsHero() then
-		Say(ply, "Hrunting targets " .. FindName(keys.target:GetName()) .. ".", true)
+	ability:ApplyDataDrivenModifier(caster, caster, "modifier_hrunting_tracker", {Duration=ability:GetSpecialValueFor("cast_delay") - 0.04})
+	if target:IsHero() then
+		Say(ply, "Hrunting targets " .. FindName(target:GetName()) .. ".", true)
 	end
 end
 
 function OnHruntStart(keys)
 	local caster = keys.caster
 	local ability = keys.ability
-	local target = keys.target
+	local target = ability.target
+	if caster:HasModifier("modifier_hrunting_tracker") then 
+		OnHruntInterrupted(keys)
+		return nil 
+	end
 	local ply = caster:GetPlayerOwner()
 	ParticleManager:DestroyParticle(caster.hruntingCrosshead, true)
 	if not caster:CanEntityBeSeenByMyTeam(target) or not IsInSameRealm(caster:GetAbsOrigin(), target:GetAbsOrigin()) then 
@@ -285,9 +291,9 @@ function OnHruntStart(keys)
 	caster.hrunting_bounce = 0
 	
 	local info = {
-		Target = keys.target,
-		Source = keys.caster, 
-		Ability = keys.ability,
+		Target = target,
+		Source = caster, 
+		Ability = ability,
 		EffectName = "particles/custom/archer/archer_hrunting_orb.vpcf",
 		vSpawnOrigin = caster:GetAbsOrigin(),
 		iMoveSpeed = 3000,
@@ -302,8 +308,8 @@ function OnHruntStart(keys)
 	end
 	--EmitGlobalSound("Archer.Hrunting_Fireoff")
 	--caster:EmitSound("Emiya_Hrunt2")
-	if keys.target:IsHero() then
-		Say(ply, "Hrunting fired at " .. FindName(keys.target:GetName()) .. ".", true)
+	if target:IsHero() then
+		Say(ply, "Hrunting fired at " .. FindName(target:GetName()) .. ".", true)
 	end
 end
 
@@ -675,6 +681,7 @@ function OnBPCast(keys)
 	local caster = keys.caster
 	local ability = keys.ability
 	local target = keys.target
+	ability.target = target
 	local ply = caster:GetPlayerOwner()
 	ability:EndCooldown()
 	caster:GiveMana(ability:GetManaCost(1))
@@ -684,15 +691,20 @@ function OnBPCast(keys)
     ability:ApplyDataDrivenModifier(caster, caster, "modifier_bow", {})
 	ParticleManager:SetParticleControl( caster.BPparticle, 0, target:GetAbsOrigin() + Vector(0,0,100)) 
 	ParticleManager:SetParticleControl( caster.BPparticle, 1, target:GetAbsOrigin() + Vector(0,0,100)) 
-	if keys.target:IsHero() then
-		Say(ply, "Calabolg III targets " .. FindName(keys.target:GetName()) .. ".", true)
+	ability:ApplyDataDrivenModifier(caster, caster, "modifier_bp_tracker", {Duration=ability:GetSpecialValueFor("cast_delay") - 0.04})
+	if target:IsHero() then
+		Say(ply, "Calabolg III targets " .. FindName(target:GetName()) .. ".", true)
 	end
 end
 
 function OnBPStart(keys)
 	local caster = keys.caster
-	local target = keys.target
 	local ability = keys.ability
+	local target = ability.target
+	if caster:HasModifier("modifier_bp_tracker") then 
+		OnBPInterrupted(keys)
+		return nil 
+	end
 	local ply = caster:GetPlayerOwner()
 	ParticleManager:DestroyParticle(caster.BPparticle, true)
 	caster:RemoveModifierByName("modifier_bow")
@@ -704,9 +716,9 @@ function OnBPStart(keys)
 	ability:StartCooldown(ability:GetCooldown(1))
 	caster:SetMana(caster:GetMana() - ability:GetManaCost(1))
 	local info = {
-		Target = keys.target,
-		Source = keys.caster, 
-		Ability = keys.ability,
+		Target = target,
+		Source = caster, 
+		Ability = ability,
 		EffectName = "particles/units/heroes/hero_clinkz/clinkz_searing_arrow.vpcf",
 		vSpawnOrigin = caster:GetAbsOrigin(),
 		iMoveSpeed = 3000,
@@ -720,8 +732,8 @@ function OnBPStart(keys)
 		SpawnVisionDummy(target, caster:GetAbsOrigin(), 500, 3, false)
 	end
 	
-	if keys.target:IsHero() then
-		Say(ply, "Calabolg III fired at " .. FindName(keys.target:GetName()) .. ".", true)
+	if target:IsHero() then
+		Say(ply, "Calabolg III fired at " .. FindName(target:GetName()) .. ".", true)
 	end
 end
 

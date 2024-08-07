@@ -29,13 +29,28 @@ function OnDPStart(keys)
 	ability:ApplyDataDrivenModifier(caster, caster, "modifier_dark_passage", {}) 
 	caster:SetModifierStackCount("modifier_dark_passage", caster, currentStack + 1)
 
-	if caster:GetHealth() <= currentHealthCost then
+	local hp_drain = {
+		victim = caster,
+		attacker = caster,
+		damage = currentHealthCost,
+		damage_type = DAMAGE_TYPE_PURE,
+		damage_flags = DOTA_DAMAGE_FLAG_HPLOSS + DOTA_DAMAGE_FLAG_NON_LETHAL, --Optional.
+		ability = ability, --Optional.
+	}
+	ApplyDamage(hp_drain)
+
+	if caster:GetHealth() == 1 then 
+		ability:EndCooldown()
+		ability:StartCooldown(penalty_cooldown)
+	end
+
+	--[[if caster:GetHealth() <= currentHealthCost then
 		caster:SetHealth(1)
 		ability:EndCooldown()
 		ability:StartCooldown(penalty_cooldown)
 	else
 		caster:SetHealth(caster:GetHealth() - currentHealthCost)
-	end
+	end]]
 
 	local particle_in = "particles/custom/avenger/avenger_dark_passage_start.vpcf"
 	local particle_out = "particles/custom/avenger/avenger_dark_passage_end.vpcf"
@@ -566,7 +581,7 @@ function OnVengeanceEnd(keys)
 	local ability = keys.ability
 	local damage = ability:GetSpecialValueFor("damage")
 	local return_percentage = ability:GetSpecialValueFor("return_percentage") / 100
-	DoDamage(target, caster, damage * return_percentage, DAMAGE_TYPE_MAGICAL, 0, ability, false)
+	DoDamage(target, caster, damage * return_percentage, DAMAGE_TYPE_MAGICAL, DOTA_DAMAGE_FLAG_NON_LETHAL, ability, false)
 end
 
 function OnTFStart(keys)
@@ -997,6 +1012,8 @@ function On4DaysLoopThink (keys)
 	local caster = keys.caster 
 	local ability = keys.ability 
 
+	if not caster:IsAlive() then return end
+
 	ResetAbilities(caster)
 	ResetItems(caster)
 	caster:SetHealth(caster.CurrentHp)
@@ -1028,6 +1045,8 @@ function On4DaysLoopDead (keys)
 			caster:RespawnHero(false,false)
 			caster:SetHealth(caster.CurrentHp)
 			caster:SetMana(caster.CurrentMana)
+			ResetAbilities(caster)
+			ResetItems(caster)
 			caster:EmitSound("Avenger.Consume")
 			caster.LoopStocks = caster.LoopStocks - 1
 			if caster.IsAtTheEndOfFourNightsAcquired then

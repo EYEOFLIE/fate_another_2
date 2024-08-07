@@ -26,7 +26,7 @@ function modifier_attributes_mr:GetModifierMagicalResistanceBonus()
   --if IsServer() then
     local parent = self:GetParent()
     if IsValidEntity(parent) and not parent:IsNull() then
-      self:SetStackCount(parent:GetIntellect() * 10)
+      self:SetStackCount(parent:GetIntellect(true) * 10)
       --print(self:GetStackCount())
     end
   --end

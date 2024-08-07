@@ -376,7 +376,9 @@ function OnSnowQueen(keys)
 
 		for k,v in pairs(targets) do
 			if IsValidEntity(v) and not v:IsNull() and v:IsAlive() then
-	        	ability:ApplyDataDrivenModifier(caster, v, "modifier_hans_snow_queen", {})
+				if not IsImmuneToSlow(v) then
+	        		ability:ApplyDataDrivenModifier(caster, v, "modifier_hans_snow_queen", {})
+	        	end
 
 				local bonusdamage = caster:GetModifierStackCount("modifier_hans_bonus_damage", caster) or 0
 				local wskill = caster:FindAbilityByName(caster.WSkill)
@@ -397,12 +399,14 @@ function OnHumanObserve(keys)
 	local spell_amp = ability:GetSpecialValueFor("bonus_spell_amp")
 
 	Timers:CreateTimer(delay, function()
-   		local particle = ParticleManager:CreateParticle("particles/econ/items/phantom_lancer/phantom_lancer_fall20_immortal/phantom_lancer_fall20_immortal_doppelganger_pattern_glow.vpcf", PATTACH_CUSTOMORIGIN, caster)
-   		ParticleManager:SetParticleControl(particle, 0, target:GetAbsOrigin())
+		if caster:IsAlive() and target:IsAlive() then
+	   		local particle = ParticleManager:CreateParticle("particles/econ/items/phantom_lancer/phantom_lancer_fall20_immortal/phantom_lancer_fall20_immortal_doppelganger_pattern_glow.vpcf", PATTACH_CUSTOMORIGIN, caster)
+	   		ParticleManager:SetParticleControl(particle, 0, target:GetAbsOrigin())
 
-		target:EmitSound("Hans.ObservationSFX")
-		ability:ApplyDataDrivenModifier(caster, target, "modifier_hans_observation", {})
-		GiveSpellAmp(target,duration,spell_amp,caster,ability)
+			target:EmitSound("Hans.ObservationSFX")
+			ability:ApplyDataDrivenModifier(caster, target, "modifier_hans_observation", {})
+			GiveSpellAmp(target,duration,spell_amp,caster,ability)
+		end
 	end)
 end
 
@@ -523,7 +527,8 @@ function OnTerritoryCreation(keys)
 	local duration = ability:GetSpecialValueFor("duration")
 	local radius = ability:GetSpecialValueFor("radius")
 	local delay = ability:GetSpecialValueFor("cast_delay")
-	local revoke_duration = ability:GetSpecialValueFor("revoke_duration")
+	local root_duration = ability:GetSpecialValueFor("root_duration")
+	local debuff_duration = ability:GetSpecialValueFor("debuff_duration")
 	local targetpos = caster:GetAbsOrigin() + Vector(1,1,0)
 
 
@@ -538,8 +543,11 @@ function OnTerritoryCreation(keys)
 		local enemies = FindUnitsInRadius(caster:GetTeam(), targetpos, nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
 		for k,v in pairs(enemies) do
 			if IsValidEntity(v) and not v:IsNull() and v:IsAlive() then
-				giveUnitDataDrivenModifier(caster, v, "revoked", revoke_duration)
-				giveUnitDataDrivenModifier(caster, v, "rooted", revoke_duration)
+				giveUnitDataDrivenModifier(caster, v, "muted", debuff_duration)
+				giveUnitDataDrivenModifier(caster, v, "silenced", debuff_duration)
+				if not IsImmuneToCC(v) then
+					giveUnitDataDrivenModifier(caster, v, "rooted", root_duration)
+				end
 	       	end
 	    end
 
@@ -634,7 +642,9 @@ function OnThumbelina(keys)
 				local bonusdamage = caster:GetModifierStackCount("modifier_hans_bonus_damage", caster) or 0
 		       	DoDamage(caster, v, damage + bonusdamage, DAMAGE_TYPE_MAGICAL, 0, ability, false)
 
-				v:AddNewModifier(caster, ability, "modifier_stunned", { Duration = stun_duration })
+		       	if not IsImmuneToCC(v) then
+					v:AddNewModifier(caster, ability, "modifier_stunned", { Duration = stun_duration })
+				end
 				giveUnitDataDrivenModifier(caster, v, "pause_sealdisabled", revoke_duration)
 	       	end
 	    end

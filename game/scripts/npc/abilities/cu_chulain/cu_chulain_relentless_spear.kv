@@ -11,7 +11,7 @@
 		"MaxLevel"						"5"
 		"RequiredLevel"					"1"
 		"LevelsBetweenUpgrades"			"1"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELED | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
@@ -28,34 +28,14 @@
 			
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"duration"					"1.05"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"damage_tooltips"			"60 70 80 90 100"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"num_attacks"				"8"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"interval"					"0.15"
-			}
-			"05"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"damage_reduction"			"-40 -30 -20 -10 0"
-			}
-		}
+		"AbilityValues"
+        {
+            "duration" "1.05"
+            "damage_tooltips" "60 70 80 90 100"
+            "num_attacks" "8"
+            "interval" "0.15"
+            "damage_reduction" "-40 -30 -20 -10 0"
+        }
 	}
 	//=================================================================================================================
 	// Lancer : Relentless Spear  (Rune Magic SA)
@@ -68,7 +48,7 @@
 		"MaxLevel"						"5"
 		"RequiredLevel"					"1"
 		"LevelsBetweenUpgrades"			"1"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELED | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
@@ -85,43 +65,15 @@
 			
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"duration"					"1.05"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"damage_tooltips"			"60 70 80 90 100"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"num_attacks"				"8"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"interval"					"0.15"
-			}
-			"05"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"damage_reduction"			"-40 -30 -20 -10 0"
-			}
-			"05"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_aspd"				"50 70 90 110 130"
-			}
-			"05"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_aspd_dur"			"5 5.5 6 6.5 7"
-			}
-		}
+		"AbilityValues"
+        {
+            "duration" "1.05"
+            "damage_tooltips" "60 70 80 90 100"
+            "num_attacks" "8"
+            "interval" "0.15"
+            "damage_reduction" "-40 -30 -20 -10 0"
+            "bonus_aspd" "50 70 90 110 130"
+            "bonus_aspd_dur" "5 5.5 6 6.5 7"
+        }
 	}
 }

@@ -13,49 +13,20 @@
 		"AbilityTextureName"			"custom/avenger/avenger_dark_passage"
 		"MaxLevel"						"1"
 
-		"precache"
-		{
-			
-		}
-
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
         "AbilityCastRange"              "0"
         "AbilityCastPoint"              "0.1"
         "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_6"
-
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"5"
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
-		
-		"AbilitySpecial"
+
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"health_cost"		"75"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"range"				"500"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"penalty_cooldown"		"30"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"duration"			"15"
-			}
+			"health_cost"		"75"
+			"range"				"500"
+			"penalty_cooldown"	"30"
+			"duration"			"15"
 		}
-		
+
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -107,48 +78,18 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
 		"AbilityTextureName"			"custom/avenger/avenger_dark_passage"
 		"MaxLevel"						"1"
-
-		"precache"
-		{
-
-		}
-
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
         "AbilityCastRange"              "0"
         "AbilityCastPoint"              "0.1"
         "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_6"
-
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"1"
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
-		
-		"AbilitySpecial"
+
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"health_cost"		"75"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"range"				"800"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"penalty_cooldown"		"30"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"duration"			"15"
-			}
+			"health_cost"		"75"
+			"range"				"800"
+			"penalty_cooldown"	"30"
+			"duration"			"15"
 		}
 		
 		"OnSpellStart"
@@ -202,32 +143,15 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
 		"AbilityTextureName"			"custom/avenger/avenger_avenger"
 		
-		
 		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"0"
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{	
-				"var_type"				"FIELD_INTEGER"
-				//"damage_income"			"10"
-			}
-			"01"
-			{	
-				"var_type"				"FIELD_INTEGER"
-				"bonus_damage_human"	"40"
-			}
-			"02"
-			{	
-				"var_type"				"FIELD_INTEGER"
-				"damage_threshold"		"50"
-			}
-			"03"
-			{	
-				"var_type"				"FIELD_INTEGER"
-				"mana_regen"			"20"
-			}
+			"bonus_damage_human"	"40"
+			"damage_threshold"		"50"
+			"mana_regen"			"20"
 		}
+
 		"Modifiers"
 		{
 			"modifier_angra_avenger"
@@ -275,67 +199,21 @@
 		"RequiredLevel"					"1"
 		"LevelsBetweenUpgrades"			"1"
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_2"
-		"precache"
-		{
-			
-		}
-
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"17"
 		"AbilityCastPoint"				"0.1"
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"100"
 		
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mana_regen_percentage"	"12.0"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"mana_regen_percentage_herokill"	"12 14 16 18 20"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"critical_rate"		"45 55 65 75 85"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"crit_multiplier"	"150"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"bash_rate"			"45 55 65 75 85"
-			}
-			"06"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"bash_dmg"			"60"
-			}
-			"07"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"bash_stun"			"0.4"
-			}
-			"08"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"bash_cooldown"		"1.0"
-			}
-			"09"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"duration"				"9 11 13 15 17"
-			}
+			"mana_regen_percentage"			"12.0"
+			"mana_regen_percentage_herokill"	"12 14 16 18 20"
+			"duration"						"9 11 13 15 17"
+			"critical_rate"					"45 55 65 75 85"
+			"crit_multiplier"				"150"
+			"bash_rate"						"45 55 65 75 85"
+			"bash_dmg"						"60"
+			"bash_stun"						"0.4"
+			"bash_cooldown"					"1.0"
 		}
 		
 		"OnSpellStart"
@@ -490,37 +368,16 @@
 		"AbilityTextureName"			"custom/avenger/avenger_unlimited_remains"
 		"MaxLevel"						"5"
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_6"
-
-		"precache"
-		{
-			
-		}
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"7"
 		"AbilityCastPoint"				"0.2"
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"100"
-		
-		"AbilitySpecial"
+
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"spawn_number"		"2 3 4 5 6"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage"			"180"
-			}
-			"03"
-			{
-				"var_type"		"FIELD_INTEGER"
-				"multiply_period"		"30 28 26 24 22"
-			}
+			"spawn_number"			"2 3 4 5 6"
+			"multiply_period"		"30 28 26 24 22"
+			"damage"				"180"
+
 		}
 		
 		"OnSpellStart"
@@ -597,52 +454,18 @@
 		"AbilityTextureName"			"custom/avenger/avenger_unlimited_remains"
 		"MaxLevel"						"5"
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_6"
-
-		"precache"
-		{
-			
-		}
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"7"
 		"AbilityCastPoint"				"0.2"
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"100"
-		
-		"AbilitySpecial"
+
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"spawn_number"		"2 3 4 5 6"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage"			"230"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_damage"		"70"
-			}
-			"03"
-			{
-				"var_type"		"FIELD_INTEGER"
-				"multiply_period"		"30 28 26 24 22"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"detect_range"		"1000"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_ms"			"30"
-			}
+			"spawn_number"			"2 3 4 5 6"
+			"multiply_period"		"30 28 26 24 22"
+			"damage"				"230"
+			"bonus_damage"			"70"
+			"detect_range"			"1000"
+			"bonus_ms"				"30"
 		}
 		
 		"OnSpellStart"
@@ -719,20 +542,12 @@
 		"AbilityTextureName"            "custom/avenger/avenger_unlimited_remains"
 		"MaxLevel"                      "5"
 
-
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage"		"180"
-			}
-			"02"
-			{
-				"var_type"		"FIELD_INTEGER"
-				"multiply_period"		"30 28 26 24 22"
-			}
-		}	
+			"multiply_period"		"30 28 26 24 22"
+			"damage"				"180"
+		}
+
 		"Modifiers"
 		{
 			"avenger_remain_self_destruct"
@@ -796,35 +611,15 @@
 		"AbilityTextureName"            "custom/avenger/avenger_unlimited_remains"
 		"MaxLevel"                      "5"
 
-
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage"		"230"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_damage"		"70"
-			}
-			"02"
-			{
-				"var_type"		"FIELD_INTEGER"
-				"multiply_period"		"30 28 26 24 22"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"detect_range"		"1000"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_ms"		"40"
-			}
-		}	
+			"multiply_period"		"30 28 26 24 22"
+			"damage"				"230"
+			"bonus_damage"			"70"
+			"detect_range"			"1000"
+			"bonus_ms"				"30"
+		}
+
 		"Modifiers"
 		{
 			"avenger_remain_self_buff"
@@ -937,78 +732,21 @@
 		"AbilityCooldown"				"11 10 9 8 7"
 		"AbilityManaCost"				"200"
 		
-		"precache"
+		"AbilityValues"
 		{
-			
-		}
-
-		"AbilitySpecial"
-		{
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"passive_disarm_chance"	"10 13 16 19 22"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"passive_disarm_duration"	"0.5 0.6 0.7 0.8 0.9"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"passive_silence_chance"	"10 13 16 19 22"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"passive_silence_duration"	"0.5 0.6 0.7 0.8 0.9"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"passive_cooldown"		"1.3"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"total_damage"				"300 340 380 420 460"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"distance"				"500"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"width"					"135"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"speed"					"1000"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"active_cc_duration"	"0.9 1.2 1.5 1.8 2.1"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"self_disarm"			"0.5 0.6 0.7 0.8 0.9"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"slow_duration"			"0.7 1.4 2.1 2.8 3.5"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"slow_amount"			"-80"
-			}
+			"passive_disarm_chance"		"10 13 16 19 22"
+			"passive_disarm_duration"	"0.5 0.6 0.7 0.8 0.9"
+			"passive_silence_chance"	"10 13 16 19 22"
+			"passive_silence_duration"	"0.5 0.6 0.7 0.8 0.9"
+			"passive_cooldown"			"1.3"
+			"speed"						"1000"
+			"distance"					"500"
+			"width"						"135"
+			"total_damage"				"300 340 380 420 460"
+			"active_cc_duration"		"0.9 1.2 1.5 1.8 2.1"
+			"slow_amount"				"-80"
+			"slow_duration"				"0.7 1.4 2.1 2.8 3.5"
+			"self_disarm"				"0.5 0.6 0.7 0.8 0.9"
 		}
 
 		"OnSpellStart"
@@ -1119,28 +857,11 @@
 		"AbilityCooldown"				"15"
 		"AbilityManaCost"				"200"
 		
-		"precache"
+		"AbilityValues"
 		{
-			
-		}
-
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"450 525 600 675 750"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"delay"					"1.5"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"return_percentage"		"60 70 80 90 100"
-			}
+			"damage"				"450 525 600 675 750"
+			"delay"					"1.5"
+			"return_percentage"		"60 70 80 90 100"
 		}
 
 		"OnSpellStart"
@@ -1204,53 +925,16 @@
 		"AbilityCooldown"				"15"
 		"AbilityManaCost"				"200"
 		
-		"precache"
+		"AbilityValues"
 		{
-			
-		}
-
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"450 525 600 675 750"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"delay"					"1.5"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"return_percentage"		"60 70 80 90 100"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"duration"				"10"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"debuff_MS"				"-50"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"debuff_ATK"			"-50"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"debuff_hp_reg"			"-100"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"debuff_mp_reg"			"-100"
-			}
+			"damage"				"450 525 600 675 750"
+			"delay"					"1.5"
+			"return_percentage"		"60 70 80 90 100"
+			"duration"				"10"
+			"debuff_MS"				"-50"
+			"debuff_ATK"			"-50"
+			"debuff_hp_reg"			"-100"
+			"debuff_mp_reg"			"-100"
 		}
 
 		"OnSpellStart"
@@ -1324,44 +1008,18 @@
 		"MaxLevel"						"5"
 		"RequiredLevel"					"1"
 		"LevelsBetweenUpgrades"			"2"
-
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"26"
 		"AbilityCastPoint"				"0"
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"400"
-		"precache"
-		{
-			
-		}
 		
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_health"			"30 60 90 120 150"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_mana"			"0"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_damage_percentage"	"15 25 35 45 55"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"duration"			"9 11 13 15 17"
-			}
+			"duration"					"9 11 13 15 17"
+			"bonus_health"				"30 60 90 120 150"
+			"bonus_mana"				"0"
+			"bonus_damage_percentage"	"15 25 35 45 55"
 		}
-		
+
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -1434,53 +1092,18 @@
 		"MaxLevel"						"5"
 		"RequiredLevel"					"1"
 		"LevelsBetweenUpgrades"			"2"
-
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"26"
 		"AbilityCastPoint"				"0"
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"400"
-		"precache"
-		{
-			
-		}
 		
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_health"			"30 60 90 120 150"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_mana"			"0"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_damage_percentage"	"15 25 35 45 55"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"duration"			"9 11 13 15 17"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"overdrive_bonus_aspd"	"50"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"overdrive_max_aspd"	"300"
-			}
-			
+			"duration"					"9 11 13 15 17"
+			"bonus_health"				"30 60 90 120 150"
+			"bonus_mana"				"0"
+			"bonus_damage_percentage"	"15 25 35 45 55"
+			"overdrive_bonus_aspd"		"50"
+			"overdrive_max_aspd"		"300"
 		}
 		
 		"OnSpellStart"
@@ -1583,24 +1206,12 @@
 		"AbilityTextureName"			"custom/avenger/avenger_demon_core"
 		"MaxLevel"						"5"
 
-		"precache"
+		"AbilityValues"
 		{
-			
+			"health_regen_percentage"		"5 7 9 11 13"
+			"mana_cost_per_second"			"200"
 		}
-		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"health_regen_percentage"		"5 7 9 11 13"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"mana_cost_per_second"			"200"
-			}
-		}
+
 		"OnToggleOn"
 		{
 			"FireSound"
@@ -1655,29 +1266,13 @@
 		"AbilityTextureName"			"custom/avenger/avenger_demon_core"
 		"MaxLevel"						"5"
 
-		"precache"
+		"AbilityValues"
 		{
-			
+			"health_regen_percentage"		"5 7 9 11 13"
+			"mana_cost_per_second"			"200"
+			"cd_reduction_per_sec"			"2"
 		}
-		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"health_regen_percentage"		"5 7 9 11 13"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"mana_cost_per_second"			"200"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"cd_reduction_per_sec"			"2"
-			}
-		}
+
 		"OnToggleOn"
 		{
 			"FireSound"
@@ -1737,43 +1332,17 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_6"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE | DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
-		"precache"
-		{
-			
-		}
-
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"45"
 		"AbilityCastPoint"				"0.35"
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"800"
 		"AbilityCastRange"				"2500"
-		
-		"AbilitySpecial"
+
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"multiplier"		"80 90 100 110 120"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"reset_delay"			"12.0"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"marker_duration"			"12.0"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"max_range"			"2500"
-			}
+			"reset_delay"		"12.0"
+			"marker_duration"	"12.0"
+			"max_range"			"2500"
+			"multiplier"		"80 90 100 110 120"
 		}
 		
 		"OnSpellStart"
@@ -1864,50 +1433,20 @@
 		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_6"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE | DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
-		"precache"
-		{
-			
-		}
-
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"45"
 		"AbilityCastPoint"				"0.35"
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"800"
 		"AbilityCastRange"				"2500"
 		
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"multiplier"		"100 110 120 130 140"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"dmg_take"			"110"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"reset_delay"			"12.0"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"marker_duration"			"12.0"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"max_range"			"2500"
-			}
+			"reset_delay"		"12"
+			"dmg_take"			"110"
+			"marker_duration"	"12"
+			"max_range"			"2500"
+			"multiplier"		"100 110 120 130 140"
 		}
-		
+
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -1991,37 +1530,15 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 		"AbilityTextureName"			"custom/avenger/avenger_combo_endless_loop"
 		"MaxLevel"						"1"
-
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.3"
 		"AbilityCooldown"				"210"
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"600"
-		"precache"
-		{
-			
-		}
 		
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"think_interval"		"3.0"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"duration"				"12"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"revive_stock"			"1"
-			}
+			"duration"				"12"
+			"think_interval"		"3"
+			"revive_stock"			"1"
 		}
 	
 		"OnSpellStart"
@@ -2084,37 +1601,15 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 		"AbilityTextureName"			"custom/avenger/avenger_combo_endless_loop"
 		"MaxLevel"						"1"
-
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.3"
 		"AbilityCooldown"				"210"
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"600"
-		"precache"
-		{
-			
-		}
 		
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"think_interval"		"3.0"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"duration"				"12"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"revive_stock"			"4"
-			}
+			"duration"				"12"
+			"think_interval"		"3"
+			"revive_stock"			"4"
 		}
 	
 		"OnSpellStart"
@@ -2183,24 +1678,12 @@
 		"AbilityCooldown"				"9999"
 		"AbilityManaCost"				"12"
 
-		"precache"
+		"AbilityValues"
 		{
+			"range"				"800"
+			"cooldown"			"1"
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"cooldown"			"1.0"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"range"			"800"
-			}
-		}
-		
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -2220,36 +1703,18 @@
 		"MaxLevel"						"1"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 		"AbilityTextureName"			"custom/avenger/avenger_attribute_demon_incarnate"
-		
-		
+			
 		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"9999"
 		"AbilityManaCost"				"17"
 
-		"precache"
+		"AbilityValues"
 		{
+			"overdrive_base_aspd"		"50"
+			"overdrive_max"				"300"
+			"trueform_cdr"				"2"
 		}
 
-		"AbilitySpecial"
-		{
-			
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"overdrive_base_aspd"		"50"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"overdrive_max"		"300"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"trueform_cdr"		"2.0"
-			}
-		}
-		
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -2269,24 +1734,15 @@
 		"MaxLevel"						"1"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 		"AbilityTextureName"			"custom/avenger/avenger_attribute_end_of_four_nights"
-		
-		
+				
 		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"9999"
 		"AbilityManaCost"				"10"
 
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"revive_stock"		"4"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"remain_delay"		"10"
-			}
+			"revive_stock"		"4"
+			"remain_delay"		"10"
 		}
 		
 		"OnSpellStart"
@@ -2308,59 +1764,22 @@
 		"MaxLevel"						"1"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 		"AbilityTextureName"			"custom/avenger/avenger_attribute_world_evil"
-		
-		
+				
 		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"9999"
 		"AbilityManaCost"				"12"
 
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage"			"50"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_damage"		"70"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"detect_range"		"1000"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_ms"			"40"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"duration"				"10"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"debuff_MS"				"-50"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"debuff_ATK"			"-50"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"debuff_hp_reg"			"-100"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"debuff_mp_reg"			"-100"
-			}
+			"damage"			"50"
+			"bonus_damage"		"70"
+			"detect_range"		"1000"
+			"bonus_ms"			"30"
+			"duration"			"10"
+			"debuff_MS"			"-50"
+			"debuff_ATK"		"-50"
+			"debuff_hp_reg"		"-100"
+			"debuff_mp_reg"		"-100"
 		}
 
 		"OnSpellStart"
@@ -2382,39 +1801,18 @@
 		"MaxLevel"						"1"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 		"AbilityTextureName"			"custom/avenger/avenger_attribute_avenger"
-		
-		
+				
 		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"9999"
 		"AbilityManaCost"				"15"
 
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{	
-				"var_type"				"FIELD_INTEGER"
-				"damage_income"			"10"
-			}
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"return_bonus"		"20"
-			}
-			"01"
-			{	
-				"var_type"				"FIELD_INTEGER"
-				"bonus_damage_human"	"40"
-			}
-			"02"
-			{	
-				"var_type"				"FIELD_INTEGER"
-				"damage_threshold"		"50"
-			}
-			"03"
-			{	
-				"var_type"				"FIELD_INTEGER"
-				"mana_regen"			"20"
-			}
+			"damage_income"			"10"
+			"return_bonus"			"20"
+			"bonus_damage_human"	"40"
+			"damage_threshold"		"50"
+			"mana_regen"			"20"
 		}
 
 		"OnSpellStart"

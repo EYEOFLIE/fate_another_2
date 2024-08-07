@@ -22,9 +22,9 @@
 			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_legion_commander.vsndevts"
 		}
 		
-		"AbilitySpecial"
-		{			
-		}
+		"AbilityValues"
+        {
+        }
 		
 		"OnSpellStart"
 		{
@@ -96,9 +96,9 @@
 			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_legion_commander.vsndevts"
 		}
 		
-		"AbilitySpecial"
-		{			
-		}
+		"AbilityValues"
+        {
+        }
 		
 		"OnSpellStart"
 		{
@@ -404,19 +404,11 @@
 			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_skeletonking.vsndevts"
 		}
 		
-		"AbilitySpecial"
-		{		
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"delay"					"3.0"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"revive_health"			"100"
-			}	
-		}
+		"AbilityValues"
+        {
+            "delay" "3.0"
+            "revive_health" "100"
+        }
 		
 		"Modifiers"
 		{
@@ -498,34 +490,14 @@
 		{
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"gladiu_hit"			"1"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"gladiu_aspd"			"70"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"gladiu_bonus_stack"	"30"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"gladiu_cdr"			"10"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"tres_agi"				"3"
-			}
-		}
+		"AbilityValues"
+        {
+            "gladiu_hit" "1"
+            "gladiu_aspd" "70"
+            "gladiu_bonus_stack" "30"
+            "gladiu_cdr" "10"
+            "tres_agi" "3"
+        }
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -556,14 +528,10 @@
 		{
 		}
 
-		"AbilitySpecial"
-		{
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"cooldown"				"25"
-			}
-		}
+		"AbilityValues"
+        {
+            "cooldown" "25"
+        }
 		
 		"OnSpellStart"
 		{
@@ -595,24 +563,12 @@
 		{
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"delay"					"3.0"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"revive_health"			"100"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"cooldown"				"130"
-			}
-		}
+		"AbilityValues"
+        {
+            "delay" "3.0"
+            "revive_health" "100"
+            "cooldown" "130"
+        }
 		
 		"OnSpellStart"
 		{
@@ -644,29 +600,13 @@
 		{
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_aoe"				"100"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"cd_reduction"			"1"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"mr_reduction"			"5"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"chance"			"50"
-			}
-		}
+		"AbilityValues"
+        {
+            "bonus_aoe" "100"
+            "cd_reduction" "1"
+            "mr_reduction" "5"
+            "chance" "50"
+        }
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -696,29 +636,13 @@
 		{
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bonus_agi"				"0.8"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"rosa_splash"			"100"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"rosa_slow"				"-30"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"rosa_slow_dur"			"3"
-			}
-		}
+		"AbilityValues"
+        {
+            "bonus_agi" "0.8"
+            "rosa_splash" "100"
+            "rosa_slow" "-30"
+            "rosa_slow_dur" "3"
+        }
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -740,17 +664,62 @@
 		"AbilityTextureName"			"custom/nero/nero_gladiusanus_blauserum"
 		"MaxLevel"						"1"
 		
-		"AbilitySpecial"
-		{
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"agi_ratio"				"0.8"
-			}
-		}
+		"AbilityValues"
+        {
+            "agi_ratio" "0.8"
+        }
 		
 		"OnSpelLStart"
 		{
+		}
+	}
+	//=======================================
+	// Precache
+	//=======================================
+	"nero_precache"
+	{
+		// General		//------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"custom/medusa/medusa_attribute_monstrous_strength"
+
+		"precache"
+		{
+			"model"					"models/nero/nero_emperor/nero_emberor_by_zefiroft.vmdl"
+			"model"					"models/nero/nero_king/nero_king_by_zefiroft.vmdl"
+			"model"					"models/nero/nero_dress/nero_dress_by_zefiroft.vmdl"
+			"model"					"models/nero/racing_nero/racing_nero_by_zefiroft.vmdl"
+			"particle"				"particles/custom/nero/nero_domus_ring_energy.vpcf"
+			"particle"				"particles/custom/nero/nero_domus_ray.vpcf"
+			"particle"				"particles/custom/nero/nero_new_ring.vpcf"
+			"particle"				"models/particle/legion_duel_banner.vmdl"
+			"particle"				"particles/items2_fx/radiance_owner.vpcf"
+			"particle"				"particles/units/heroes/hero_phoenix/phoenix_supernova_radiance.vpcf"
+			"particle"				"particles/custom/nero/nero_domus_ring_border.vpcf"
+			"particle"				"particles/custom/nero/colosseum_ring.vpcf"
+			"particle"				"particles/units/heroes/hero_lion/lion_spell_finger_of_death_fire.vpcf"
+			"particle"				"particles/units/heroes/hero_doom_bringer/doom_scorched_earth.vpcf"
+			"particle"				"particles/custom/archer/archer_overedge_slash.vpcf"
+			"particle"				"particles/units/heroes/hero_phoenix/phoenix_fire_spirit_ground.vpcf"
+			"particle"				"particles/units/heroes/hero_treant/treant_livingarmor.vpcf"
+			"particle"				"particles/custom/nero/nero_w.vpcf"
+			"particle"  			"particles/custom/tamamo/combo/fire_explosion.vpcf"
+			"particle"  			"particles/custom/nero/nero_scorched_earth_child_embers_rosa.vpcf"
+			"particle"				"particles/custom/archer/archer_overedge_slash.vpcf"
+			"particle"				"particles/units/heroes/hero_legion_commander/legion_duel_start_text_burst_flare.vpcf"
+			"particle"				"particles/items_fx/battlefury_cleave.vpcf"
+			"particle"				"particles/units/heroes/hero_ursa/ursa_enrage_buff.vpcf"
+			"particle"				"particles/units/heroes/hero_ember_spirit/ember_spirit_sleight_of_fist_targetted_marker.vpcf"
+			"particle"  			"particles/units/heroes/hero_juggernaut/jugg_crit_blur_impact.vpcf"
+			"particle"  			"particles/econ/items/axe/axe_cinder/axe_cinder_battle_hunger_start.vpcf"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_dragon_knight.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_lion.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_ember_spirit.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_clinkz.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_doombringer.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_legion_commander.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_skeletonking.vsndevts"
 		}
 	}
 }

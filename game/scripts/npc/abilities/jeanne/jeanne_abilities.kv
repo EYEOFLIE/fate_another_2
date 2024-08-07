@@ -11,30 +11,19 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
 		"AbilityTextureName"			"custom/jeanne_magic_resistance_ex"
 		"MaxLevel"						"1"
+		"AbilityCooldown"				"1"
 
 		"precache" // servant precache
 		{
 
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_mr_per_stack"	"3"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"max_stack"				"4"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"regen_duration"			"5"
-			}
-		}
+		"AbilityValues"
+        {
+            "bonus_mr_per_stack" "3"
+            "max_stack" "4"
+            "regen_duration" "5"
+        }
 
 		"Modifiers"
 		{
@@ -101,20 +90,16 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
 		"AbilityTextureName"			"custom/jeanne_saint"
 		"MaxLevel"						"1"
+		"AbilityCooldown"				"1"
 
 		"precache"
 		{
 		}
 
-		"AbilitySpecial"
-		{
-
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"lvl"					"1"
-			}
-		}
+		"AbilityValues"
+        {
+            "lvl" "1"
+        }
 		
 		"Modifiers"
 		{
@@ -174,25 +159,17 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
 		"AbilityTextureName"			"custom/jeanne_saint"
 		"MaxLevel"						"1"
+		"AbilityCooldown"				"1"
 
 		"precache"
 		{
 		}
 
-		"AbilitySpecial"
-		{
-
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"lvl"					"1"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"saint_debuff"			"7"
-			}
-		}
+		"AbilityValues"
+        {
+            "lvl" "1"
+            "saint_debuff" "7"
+        }
 		
 		"Modifiers"
 		{
@@ -269,19 +246,11 @@
 		{
 		}
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"saint_vision_duration"			"3"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"saint_vision_duration_lose"	"5"
-			}
-		}
+		"AbilityValues"
+        {
+            "saint_vision_duration" "3"
+            "saint_vision_duration_lose" "5"
+        }
 		
 		"OnSpellStart"
 		{
@@ -343,29 +312,13 @@
 		
 		// Ability special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"stat_modifier"			"10 15 20 25 30"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_aspd"		"10 20 30 40 50"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"radius_modifier"	"300 350 400 450 500"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"duration"			"7 8 9 10 11"
-			}
-		}
+		"AbilityValues"
+        {
+            "stat_modifier" "10 15 20 25 30"
+            "bonus_aspd" "10 20 30 40 50"
+            "radius_modifier" "300 350 400 450 500"
+            "duration" "7 8 9 10 11"
+        }
 
 		"OnUpgrade"
 		{
@@ -483,29 +436,13 @@
 		
 		// Ability special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"stat_modifier"			"10 15 20 25 30 35"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_aspd"		"10 20 30 40 50 60"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"radius_modifier"	"300 350 400 450 500 550"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"duration"			"7 8 9 10 11 12"
-			}
-		}
+		"AbilityValues"
+        {
+            "stat_modifier" "10 15 20 25 30 35"
+            "bonus_aspd" "10 20 30 40 50 60"
+            "radius_modifier" "300 350 400 450 500 550"
+            "duration" "7 8 9 10 11 12"
+        }
 		
 		"OnUpgrade"
 		{
@@ -622,44 +559,14 @@
 		
 		// Ability special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"stat_modifier"			"10 15 20 25 30"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_aspd"		"10 20 30 40 50"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"radius_modifier"	"300 350 400 450 500"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"duration"			"7 8 9 10 11"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"reveal_radius"		"600"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_INTEGER"
-				//"divine_base_damage""20"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_FLOAT"
-				//"divine_bonus_int"	"0.8"
-			}
-		}
+		"AbilityValues"
+        {
+            "stat_modifier" "10 15 20 25 30"
+            "bonus_aspd" "10 20 30 40 50"
+            "radius_modifier" "300 350 400 450 500"
+            "duration" "7 8 9 10 11"
+            "reveal_radius" "600"
+        }
 
 		"OnUpgrade"
 		{
@@ -777,44 +684,14 @@
 		
 		// Ability special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"stat_modifier"			"10 15 20 25 30 35"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_aspd"		"10 20 30 40 50 60"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"radius_modifier"	"300 350 400 450 500 550"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"duration"			"7 8 9 10 11 12"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"reveal_radius"		"600"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_INTEGER"
-				//"divine_base_damage""20"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_FLOAT"
-				//"divine_bonus_int"	"0.8"
-			}
-		}
+		"AbilityValues"
+        {
+            "stat_modifier" "10 15 20 25 30 35"
+            "bonus_aspd" "10 20 30 40 50 60"
+            "radius_modifier" "300 350 400 450 500 550"
+            "duration" "7 8 9 10 11 12"
+            "reveal_radius" "600"
+        }
 		
 		"OnUpgrade"
 		{
@@ -934,39 +811,15 @@
 		"AbilityCooldown"				"11 10 9 8 7 6"
 
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"radius"			"300"
-			}			
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"delay"				"0.5"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage"			"300 375 450 525 600"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"silence_duration"		"2.0" //also disarm duration
-			}
-			"06"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"slow"				"-40"
-			}
-			"07"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"slow_duration"		"2.7"
-			}
-		}
+		"AbilityValues"
+        {
+            "radius" "300"
+            "delay" "0.5"
+            "damage" "300 375 450 525 600"
+            "silence_duration" "2.0"
+            "slow" "-40"
+            "slow_duration" "2.7"
+        }
 		
 		"OnUpgrade"
 		{
@@ -1073,39 +926,15 @@
 		"AbilityCooldown"				"11 10 9 8 7 6"
 
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"radius"			"300"
-			}			
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"delay"				"0.5"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage"			"300 375 450 525 600 675"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"silence_duration"		"2.0" //also disarm duration
-			}
-			"06"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"slow"				"-40"
-			}
-			"07"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"slow_duration"		"2.7"
-			}
-		}
+		"AbilityValues"
+        {
+            "radius" "300"
+            "delay" "0.5"
+            "damage" "300 375 450 525 600 675"
+            "silence_duration" "2.0"
+            "slow" "-40"
+            "slow_duration" "2.7"
+        }
 		
 		"OnUpgrade"
 		{
@@ -1211,39 +1040,15 @@
 		"AbilityCooldown"				"11 10 9 8 7 6"
 
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"radius"			"300"
-			}			
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"delay"				"0.5"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage"			"300 375 450 525 600"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"silence_duration"		"2.0" //also disarm duration
-			}
-			"06"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"slow"				"-40"
-			}
-			"07"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"slow_duration"		"2.7"
-			}
-		}
+		"AbilityValues"
+        {
+            "radius" "300"
+            "delay" "0.5"
+            "damage" "300 375 450 525 600"
+            "silence_duration" "2.0"
+            "slow" "-40"
+            "slow_duration" "2.7"
+        }
 		
 		"OnUpgrade"
 		{
@@ -1350,39 +1155,15 @@
 		"AbilityCooldown"				"11 10 9 8 7 6"
 
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"radius"			"300"
-			}			
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"delay"				"0.5"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage"			"300 375 450 525 600 675"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"silence_duration"		"2.0" //also disarm duration
-			}
-			"06"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"slow"				"-40"
-			}
-			"07"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"slow_duration"		"2.7"
-			}
-		}
+		"AbilityValues"
+        {
+            "radius" "300"
+            "delay" "0.5"
+            "damage" "300 375 450 525 600 675"
+            "silence_duration" "2.0"
+            "slow" "-40"
+            "slow_duration" "2.7"
+        }
 		
 		"OnUpgrade"
 		{
@@ -1488,44 +1269,16 @@
 		"AbilityCooldown"				"11 10 9 8 7 6"
 
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"radius"			"300"
-			}			
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"delay"				"0.5"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage"			"300 375 450 525 600"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"silence_duration"		"2.0" //also disarm duration
-			}
-			"06"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"slow"				"-40"
-			}
-			"07"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"slow_duration"		"2.7"
-			}
-			"08"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"reveal_duration"		"5.0" 
-			}
-		}
+		"AbilityValues"
+        {
+            "radius" "300"
+            "delay" "0.5"
+            "damage" "300 375 450 525 600"
+            "silence_duration" "2.0"
+            "slow" "-40"
+            "slow_duration" "2.7"
+            "reveal_duration" "5.0"
+        }
 		
 		"OnUpgrade"
 		{
@@ -1632,44 +1385,16 @@
 		"AbilityCooldown"				"11 10 9 8 7 6"
 
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"radius"			"300"
-			}			
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"delay"				"0.5"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage"			"300 375 450 525 600 675"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"silence_duration"		"2.0" //also disarm duration
-			}
-			"06"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"slow"				"-40"
-			}
-			"07"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"slow_duration"		"2.7"
-			}
-			"08"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"reveal_duration"		"5.0" 
-			}
-		}
+		"AbilityValues"
+        {
+            "radius" "300"
+            "delay" "0.5"
+            "damage" "300 375 450 525 600 675"
+            "silence_duration" "2.0"
+            "slow" "-40"
+            "slow_duration" "2.7"
+            "reveal_duration" "5.0"
+        }
 		
 		"OnUpgrade"
 		{
@@ -1776,44 +1501,16 @@
 		"AbilityCooldown"				"11 10 9 8 7 6"
 
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"radius"			"300"
-			}			
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"delay"				"0.5"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage"			"300 375 450 525 600"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"silence_duration"		"2.0" //also disarm duration
-			}
-			"06"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"slow"				"-40"
-			}
-			"07"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"slow_duration"		"2.7"
-			}
-			"08"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"reveal_duration"		"5.0" 
-			}
-		}
+		"AbilityValues"
+        {
+            "radius" "300"
+            "delay" "0.5"
+            "damage" "300 375 450 525 600"
+            "silence_duration" "2.0"
+            "slow" "-40"
+            "slow_duration" "2.7"
+            "reveal_duration" "5.0"
+        }
 		
 		"OnUpgrade"
 		{
@@ -1920,44 +1617,16 @@
 		"AbilityCooldown"				"11 10 9 8 7 6"
 
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"radius"			"300"
-			}			
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"delay"				"0.5"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage"			"300 375 450 525 600 675"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"silence_duration"		"2.0" //also disarm duration
-			}
-			"06"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"slow"				"-40"
-			}
-			"07"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"slow_duration"		"2.7"
-			}
-			"08"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"reveal_duration"		"5.0" 
-			}
-		}
+		"AbilityValues"
+        {
+            "radius" "300"
+            "delay" "0.5"
+            "damage" "300 375 450 525 600 675"
+            "silence_duration" "2.0"
+            "slow" "-40"
+            "slow_duration" "2.7"
+            "reveal_duration" "5.0"
+        }
 		"OnUpgrade"
 		{
 			"RunScript"
@@ -2057,54 +1726,18 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"400"
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"passive_chance"			"35"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"passive_damage_percentage"			"4 5 6 7 8"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"passive_revoke_duration"			"0.5"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"active_total_damage"			"500 650 800 950 1100"
-			}
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"active_duration"			"2.0"
-			}
-			"07"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"radius"			"600"
-			}
-			"08"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"slow_amount"			"-50"
-			}
-			"09"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"mr_bonus"			"30"
-			}
-			"10"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"armor_bonus"			"20"
-			}
-		}
+		"AbilityValues"
+        {
+            "passive_chance" "35"
+            "passive_damage_percentage" "4 5 6 7 8"
+            "passive_revoke_duration" "0.5"
+            "active_total_damage" "500 650 800 950 1100"
+            "active_duration" "2.0"
+            "radius" "600"
+            "slow_amount" "-50"
+            "mr_bonus" "30"
+            "armor_bonus" "20"
+        }
 		
 		"OnUpgrade"
 		{
@@ -2215,54 +1848,18 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"400"
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"passive_chance"			"35"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"passive_damage_percentage"			"4 5 6 7 8"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"passive_revoke_duration"			"0.5"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"active_total_damage"			"500 650 800 950 1100"
-			}
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"active_duration"			"2.0"
-			}
-			"07"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"radius"			"600"
-			}
-			"08"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"slow_amount"			"-50"
-			}
-			"09"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"mr_bonus"			"30"
-			}
-			"10"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"armor_bonus"			"20"
-			}
-		}
+		"AbilityValues"
+        {
+            "passive_chance" "35"
+            "passive_damage_percentage" "4 5 6 7 8"
+            "passive_revoke_duration" "0.5"
+            "active_total_damage" "500 650 800 950 1100"
+            "active_duration" "2.0"
+            "radius" "600"
+            "slow_amount" "-50"
+            "mr_bonus" "30"
+            "armor_bonus" "20"
+        }
 		
 		"OnUpgrade"
 		{
@@ -2349,54 +1946,18 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"400"
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"passive_chance"			"35"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"passive_damage_percentage"			"4 5 6 7 8"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"passive_revoke_duration"			"0.5"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"active_total_damage"			"750 975 1200 1425 1650"
-			}
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"active_duration"			"3.0"
-			}
-			"07"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"radius"			"600"
-			}
-			"08"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"slow_amount"			"-50"
-			}
-			"09"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"mr_bonus"			"30"
-			}
-			"10"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"armor_bonus"			"20"
-			}
-		}
+		"AbilityValues"
+        {
+            "passive_chance" "35"
+            "passive_damage_percentage" "4 5 6 7 8"
+            "passive_revoke_duration" "0.5"
+            "active_total_damage" "750 975 1200 1425 1650"
+            "active_duration" "3.0"
+            "radius" "600"
+            "slow_amount" "-50"
+            "mr_bonus" "30"
+            "armor_bonus" "20"
+        }
 		
 		"OnUpgrade"
 		{
@@ -2507,54 +2068,18 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"400"
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"passive_chance"			"35"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"passive_damage_percentage"			"4 5 6 7 8"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"passive_revoke_duration"			"0.5"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"active_total_damage"			"750 975 1200 1425 1650"
-			}
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"active_duration"			"3.0"
-			}
-			"07"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"radius"			"600"
-			}
-			"08"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"slow_amount"			"-50"
-			}
-			"09"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"mr_bonus"			"30"
-			}
-			"10"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"armor_bonus"			"20"
-			}
-		}
+		"AbilityValues"
+        {
+            "passive_chance" "35"
+            "passive_damage_percentage" "4 5 6 7 8"
+            "passive_revoke_duration" "0.5"
+            "active_total_damage" "750 975 1200 1425 1650"
+            "active_duration" "3.0"
+            "radius" "600"
+            "slow_amount" "-50"
+            "mr_bonus" "30"
+            "armor_bonus" "20"
+        }
 		
 		"OnUpgrade"
 		{
@@ -2641,64 +2166,20 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"400"
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"passive_chance"			"35"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"passive_damage_percentage"			"4 5 6 7 8"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"passive_revoke_duration"			"0.5"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"active_total_damage"			"500 650 800 950 1100"
-			}
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"active_duration"			"2.0"
-			}
-			"07"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"radius"			"600"
-			}
-			"08"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"slow_amount"			"-50"
-			}
-			"09"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"mr_bonus"			"30"
-			}
-			"10"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"armor_bonus"			"20"
-			}
-			"11"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"pillar_dmg"			"200"
-			}
-			"12"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"pillar_radius"			"200"
-			}
-		}
+		"AbilityValues"
+        {
+            "passive_chance" "35"
+            "passive_damage_percentage" "4 5 6 7 8"
+            "passive_revoke_duration" "0.5"
+            "active_total_damage" "500 650 800 950 1100"
+            "active_duration" "2.0"
+            "radius" "600"
+            "slow_amount" "-50"
+            "mr_bonus" "30"
+            "armor_bonus" "20"
+            "pillar_dmg" "200"
+            "pillar_radius" "200"
+        }
 		
 		"OnUpgrade"
 		{
@@ -2809,64 +2290,20 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"400"
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"passive_chance"			"35"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"passive_damage_percentage"			"4 5 6 7 8"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"passive_revoke_duration"			"0.5"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"active_total_damage"			"500 650 800 950 1100"
-			}
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"active_duration"			"2.0"
-			}
-			"07"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"radius"			"600"
-			}
-			"08"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"slow_amount"			"-50"
-			}
-			"09"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"mr_bonus"			"30"
-			}
-			"10"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"armor_bonus"			"20"
-			}
-			"11"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"pillar_dmg"			"200"
-			}
-			"12"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"pillar_radius"			"200"
-			}
-		}
+		"AbilityValues"
+        {
+            "passive_chance" "35"
+            "passive_damage_percentage" "4 5 6 7 8"
+            "passive_revoke_duration" "0.5"
+            "active_total_damage" "500 650 800 950 1100"
+            "active_duration" "2.0"
+            "radius" "600"
+            "slow_amount" "-50"
+            "mr_bonus" "30"
+            "armor_bonus" "20"
+            "pillar_dmg" "200"
+            "pillar_radius" "200"
+        }
 		
 		"OnUpgrade"
 		{
@@ -2953,64 +2390,20 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"400"
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"passive_chance"			"35"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"passive_damage_percentage"			"4 5 6 7 8"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"passive_revoke_duration"			"0.5"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"active_total_damage"			"750 975 1200 1425 1650"
-			}
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"active_duration"			"3.0"
-			}
-			"07"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"radius"			"600"
-			}
-			"08"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"slow_amount"			"-50"
-			}
-			"09"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"mr_bonus"			"30"
-			}
-			"10"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"armor_bonus"			"20"
-			}
-			"11"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"pillar_dmg"			"200"
-			}
-			"12"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"pillar_radius"			"200"
-			}
-		}
+		"AbilityValues"
+        {
+            "passive_chance" "35"
+            "passive_damage_percentage" "4 5 6 7 8"
+            "passive_revoke_duration" "0.5"
+            "active_total_damage" "750 975 1200 1425 1650"
+            "active_duration" "3.0"
+            "radius" "600"
+            "slow_amount" "-50"
+            "mr_bonus" "30"
+            "armor_bonus" "20"
+            "pillar_dmg" "200"
+            "pillar_radius" "200"
+        }
 		
 		"OnUpgrade"
 		{
@@ -3121,64 +2514,20 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"400"
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"passive_chance"			"35"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"passive_damage_percentage"			"4 5 6 7 8"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"passive_revoke_duration"			"0.5"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"active_total_damage"			"750 975 1200 1425 1650"
-			}
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"active_duration"			"3.0"
-			}
-			"07"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"radius"			"600"
-			}
-			"08"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"slow_amount"			"-50"
-			}
-			"09"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"mr_bonus"			"30"
-			}
-			"10"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"armor_bonus"			"20"
-			}
-			"11"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"pillar_dmg"			"200"
-			}
-			"12"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"pillar_radius"			"200"
-			}
-		}
+		"AbilityValues"
+        {
+            "passive_chance" "35"
+            "passive_damage_percentage" "4 5 6 7 8"
+            "passive_revoke_duration" "0.5"
+            "active_total_damage" "750 975 1200 1425 1650"
+            "active_duration" "3.0"
+            "radius" "600"
+            "slow_amount" "-50"
+            "mr_bonus" "30"
+            "armor_bonus" "20"
+            "pillar_dmg" "200"
+            "pillar_radius" "200"
+        }
 
 		"OnUpgrade"
 		{
@@ -3274,54 +2623,18 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"800"
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"delay"				"0.55"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"radius"			"1000"
-			}	
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"range"				"1000"
-			}			
-			"03"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"reveal_duration"	"3.0 4.0 5.0 6.0 7.0"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"damage_reduction"	"-13 -16 -19 -22 -25"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"flag_health"			"8 13 18 23 28"
-			}
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"flag_duration"		"10"
-			}
-			"07"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"damage_amp"		"20"
-			}
-			"07"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"cc_duration"		"1.2"
-			}
-		}
+		"AbilityValues"
+        {
+            "delay" "0.55"
+            "radius" "1000"
+            "range" "1000"
+            "reveal_duration" "3.0 4.0 5.0 6.0 7.0"
+            "damage_reduction" "-13 -16 -19 -22 -25"
+            "flag_health" "8 13 18 23 28"
+            "flag_duration" "10"
+            "damage_amp" "20"
+            "cc_duration" "1.2"
+        }
 
 		"OnUpgrade"
 		{
@@ -3506,54 +2819,18 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"800"
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"delay"				"0.55"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"radius"			"1000"
-			}	
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"range"				"1000"
-			}			
-			"03"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"reveal_duration"	"3.0 4.0 5.0 6.0 7.0"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"damage_reduction"	"-13 -16 -19 -22 -25"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"flag_health"			"8 13 18 23 28"
-			}
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"flag_duration"		"10"
-			}
-			"07"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"damage_amp"		"20"
-			}
-			"07"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"cc_duration"		"1.2"
-			}
-		}
+		"AbilityValues"
+        {
+            "delay" "0.55"
+            "radius" "1000"
+            "range" "1000"
+            "reveal_duration" "3.0 4.0 5.0 6.0 7.0"
+            "damage_reduction" "-13 -16 -19 -22 -25"
+            "flag_health" "8 13 18 23 28"
+            "flag_duration" "10"
+            "damage_amp" "20"
+            "cc_duration" "1.2"
+        }
 		
 		"OnUpgrade"
 		{
@@ -3738,54 +3015,18 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"800"
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"delay"				"0.55"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"radius"			"1000"
-			}	
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"range"				"1000"
-			}			
-			"03"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"reveal_duration"	"3.0 4.0 5.0 6.0 7.0"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"damage_reduction"	"-23 -26 -29 -32 -35"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"flag_health"			"8 13 18 23 28"
-			}
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"flag_duration"		"10"
-			}
-			"07"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"damage_amp"		"20"
-			}
-			"07"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"cc_duration"		"1.2"
-			}
-		}
+		"AbilityValues"
+        {
+            "delay" "0.55"
+            "radius" "1000"
+            "range" "1000"
+            "reveal_duration" "3.0 4.0 5.0 6.0 7.0"
+            "damage_reduction" "-23 -26 -29 -32 -35"
+            "flag_health" "8 13 18 23 28"
+            "flag_duration" "10"
+            "damage_amp" "20"
+            "cc_duration" "1.2"
+        }
 		
 		"OnUpgrade"
 		{
@@ -3970,54 +3211,18 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"800"
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"delay"				"0.55"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"radius"			"1000"
-			}	
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"range"				"1000"
-			}			
-			"03"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"reveal_duration"	"3.0 4.0 5.0 6.0 7.0"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"damage_reduction"	"-23 -26 -29 -32 -35"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"flag_health"		"8 13 18 23 28"
-			}
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"flag_duration"		"10"
-			}
-			"07"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"damage_amp"		"20"
-			}
-			"07"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"cc_duration"		"1.2"
-			}
-		}
+		"AbilityValues"
+        {
+            "delay" "0.55"
+            "radius" "1000"
+            "range" "1000"
+            "reveal_duration" "3.0 4.0 5.0 6.0 7.0"
+            "damage_reduction" "-23 -26 -29 -32 -35"
+            "flag_health" "8 13 18 23 28"
+            "flag_duration" "10"
+            "damage_amp" "20"
+            "cc_duration" "1.2"
+        }
 		
 		"OnUpgrade"
 		{
@@ -4202,54 +3407,18 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"800"
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"delay"				"0.55"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"radius"			"1000"
-			}	
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"range"				"1000"
-			}			
-			"03"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"reveal_duration"	"3.0 4.0 5.0 6.0 7.0"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"damage_reduction"	"-13 -16 -19 -22 -25"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"flag_health"			"8 13 18 23 28"
-			}
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"flag_duration"		"10"
-			}
-			"07"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"damage_amp"		"20"
-			}
-			"07"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"cc_duration"		"1.2"
-			}
-		}
+		"AbilityValues"
+        {
+            "delay" "0.55"
+            "radius" "1000"
+            "range" "1000"
+            "reveal_duration" "3.0 4.0 5.0 6.0 7.0"
+            "damage_reduction" "-13 -16 -19 -22 -25"
+            "flag_health" "8 13 18 23 28"
+            "flag_duration" "10"
+            "damage_amp" "20"
+            "cc_duration" "1.2"
+        }
 		
 		"OnUpgrade"
 		{
@@ -4434,54 +3603,18 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"800"
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"delay"				"0.55"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"radius"			"1000"
-			}	
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"range"				"1000"
-			}			
-			"03"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"reveal_duration"	"3.0 4.0 5.0 6.0 7.0"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"damage_reduction"	"-13 -16 -19 -22 -25"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"flag_health"			"8 13 18 23 28"
-			}
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"flag_duration"		"10"
-			}
-			"07"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"damage_amp"		"20"
-			}
-			"07"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"cc_duration"		"1.2"
-			}
-		}
+		"AbilityValues"
+        {
+            "delay" "0.55"
+            "radius" "1000"
+            "range" "1000"
+            "reveal_duration" "3.0 4.0 5.0 6.0 7.0"
+            "damage_reduction" "-13 -16 -19 -22 -25"
+            "flag_health" "8 13 18 23 28"
+            "flag_duration" "10"
+            "damage_amp" "20"
+            "cc_duration" "1.2"
+        }
 		
 		"OnUpgrade"
 		{
@@ -4666,54 +3799,18 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"800"
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"delay"				"0.55"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"radius"			"1000"
-			}	
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"range"				"1000"
-			}			
-			"03"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"reveal_duration"	"3.0 4.0 5.0 6.0 7.0"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"damage_reduction"	"-23 -26 -29 -32 -35"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"flag_health"			"8 13 18 23 28"
-			}
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"flag_duration"		"10"
-			}
-			"07"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"damage_amp"		"20"
-			}
-			"07"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"cc_duration"		"1.2"
-			}
-		}
+		"AbilityValues"
+        {
+            "delay" "0.55"
+            "radius" "1000"
+            "range" "1000"
+            "reveal_duration" "3.0 4.0 5.0 6.0 7.0"
+            "damage_reduction" "-23 -26 -29 -32 -35"
+            "flag_health" "8 13 18 23 28"
+            "flag_duration" "10"
+            "damage_amp" "20"
+            "cc_duration" "1.2"
+        }
 
 		"OnUpgrade"
 		{
@@ -4898,54 +3995,18 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"800"
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"delay"				"0.55"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"radius"			"1000"
-			}	
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"range"				"1000"
-			}			
-			"03"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"reveal_duration"	"3.0 4.0 5.0 6.0 7.0"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"damage_reduction"	"-23 -26 -29 -32 -35"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"flag_health"			"8 13 18 23 28"
-			}
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"flag_duration"		"10"
-			}
-			"07"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"damage_amp"		"20"
-			}
-			"07"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"cc_duration"		"1.2"
-			}
-		}
+		"AbilityValues"
+        {
+            "delay" "0.55"
+            "radius" "1000"
+            "range" "1000"
+            "reveal_duration" "3.0 4.0 5.0 6.0 7.0"
+            "damage_reduction" "-23 -26 -29 -32 -35"
+            "flag_health" "8 13 18 23 28"
+            "flag_duration" "10"
+            "damage_amp" "20"
+            "cc_duration" "1.2"
+        }
 		
 		"OnUpgrade"
 		{
@@ -5114,34 +4175,14 @@
 			
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"delay"				"2.0"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"duration"			"8"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_aspd"		"200"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_ms"			"50"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"flame_damage_per_sec"			"9"
-			}
-		}
+		"AbilityValues"
+        {
+            "delay" "2.0"
+            "duration" "8"
+            "bonus_aspd" "200"
+            "bonus_ms" "50"
+            "flame_damage_per_sec" "9"
+        }
 		
 		"Modifiers"
 		{
@@ -5242,19 +4283,11 @@
 		{
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"vision_duration"		"3"
-			}		
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"pr_cooldown_reduction"		"65"
-			}		
-		}
+		"AbilityValues"
+        {
+            "vision_duration" "3"
+            "pr_cooldown_reduction" "65"
+        }
 		
 		"OnSpellStart"
 		{
@@ -5286,14 +4319,10 @@
 		{
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"		"7"
-			}				
-		}
+		"AbilityValues"
+        {
+            "bonus_damage" "7"
+        }
 		
 		"OnSpellStart"
 		{
@@ -5325,24 +4354,12 @@
 		{
 		}
 
-		"AbilitySpecial"
-		{
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"slow_amount"		"40"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"slow_duration"		"3"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"active_duration"		"3"
-			}
-		}
+		"AbilityValues"
+        {
+            "slow_amount" "40"
+            "slow_duration" "3"
+            "active_duration" "3"
+        }
 		
 		"OnSpellStart"
 		{
@@ -5374,24 +4391,12 @@
 		{
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bonus_reduction"		"10"
-			}	
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"god_pillar_damage"			"200"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"god_pillar_radius"			"200"
-			}
-		}
+		"AbilityValues"
+        {
+            "bonus_reduction" "10"
+            "god_pillar_damage" "200"
+            "god_pillar_radius" "200"
+        }
 		
 		"OnSpellStart"
 		{
@@ -5423,34 +4428,12 @@
 		{
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"5.0"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"le_duration"			"3.0 4.0 5.0 6.0 7.0"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"600"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				//"base_damage"			"20"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				//"bonus_int_ratio"		"0.8"
-			}
-		}	
+		"AbilityValues"
+        {
+            "duration" "5.0"
+            "le_duration" "3.0 4.0 5.0 6.0 7.0"
+            "radius" "600"
+        }	
 		"OnSpellStart"
 		{
 			"RunScript"

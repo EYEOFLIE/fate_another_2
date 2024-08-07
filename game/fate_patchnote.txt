@@ -1,4 +1,1144 @@
 
+Fix Emiya auto chant
+Fix Cu Wesen not execute
+Add [Legend] Super Karna
+
+Diarmuid
+-Gae Dearg
+Now silence 0.1s
+
+Li Shuwen
+-Chinese Martial Art
+now Mark of Fatality has max cap 10 stacks
+
+-Tiger Strike
+Berserk bypass armor: 80% >> 75%
+
+Jeanne
+-Luminosite Eternelle
+Base Duration: 4.0 4.5 5.0 5.5 6.0 >> 3
+Bonus Duration per Channeling time: 0.5 >> 0.3 0.4 0.5 0.6 0.7
+Base Damage Reduction: 18% 21% 24% 27% 30% >> 10%
+Bonus Damage Reduction per channeling time: 3% >> 3% 4% 5% 6% 7% 
+
+--------
+
+Fix Billy dota item
+Fix Jeanne die wont stop E
+Isekai wont bring jeanne flag
+Fix Meltryllis's combo without SA
+Fix Billy Combo
+Add heal pop up
+
+Item
+-Ex Scroll
+Now silence primary target 0.1s
+
+Jeanne
+-Luminosite Eternelle
+Duration: 5 5.5 6 6.5 7 >> 4.0 4.5 5.0 5.5 6.0
+Bonus Radius per channeling time: 100 >> 70
+Bonus Damage Reduction per channeling time: 4% >> 3%
+Saint channeling heal: 250 >> 200
+
+-Attribute: Divine Symbol
+Luminosite Eternelle cooldown reduction: 12 >> 10
+Luminosite Eternelle Bonus channel heal: 10% max health >> 5 x INT
+Luminosite Eternelle Bonus success heal: 30% max health >> 10 x INT
+
+-Attribute: Revelation
+Luminosite Eternelle no longer dispel while channeling
+
+Gilles
+-Prelati Spellbook
+Passive corpse radius: 800 >> 900
+
+---------
+
+Enable all heroes
+
+Code: ThxGABEN
+Reward: 3000 CP 
+Expired Date: 02 - 09/08/24
+
+----------
+
+Fix mana pot, sentry
+Hero Enable list
+22.Gilgamesh
+
+------------------
+
+Fix abilities, item
+Hero Enable list
+1.Ishtar
+2.Atalanta (Alter)
+3.Jeanne
+4.Musashi
+5.Emiya 
+6.Amakusa
+7.Astolfo
+8.Cu Chulainn
+9.Heracles
+10.Sasaki
+11.Medusa
+12.Lu Bu
+13.Karna
+14.Artoria
+15.Artoria (Alter)
+16.Okita
+17.Gilles
+18.Meltryllis
+19.Frankenstein
+20.Gawain
+21.Angra Mainyu
+
+-------------
+
+Fix Jeanne flag effect
+
+Jeanne
+-God's Resolution
+Gods resolution channel now increase 20 armor, 20% MR instead of damage reduction
+
+-Luminosite Eternelle
+No longer grant damage reduction buff while channeling
+Base damage reduction: 19% 23% 27% 31% 35% >> 18% 21% 24% 27% 30%
+Channel Heal: 100 >> 300
+
+-Attribute: Divine Symbol
+Gods resolution Buff now increase 10 armor, 10% MR instead of damage reduction
+
+Robin Hood
+Base HP: 1250 >> 1300
+STR gain: 1.4 >> 2.0
+AGI gain: 2.5 >> 2.3
+INT gain: 2.1 >> 1.7
+
+Meltryllis
+Base HP: 1200 >> 1300
+
+Semiramis
+Base HP: 1200 >> 1300
+
+Zhuge Liang
+Base HP: 1200 >> 1300
+
+Ishtar
+Base HP: 1200 >> 1300
+
+Oda Nobunaga
+Base HP: 1250 >> 1300
+
+Mashu
+Base HP: 1350 >> 1300
+
+Hans
+Base HP: 1200 >> 1300
+
+Billy
+Base HP: 1100 >> 1300
+
+------------
+
+Fix Gilles's WQ + SA damage
+Fix Gilles's Combo effect
+Adjust Semiramis's Combo effect
+Add Billy (Test)
+
+Jeanne
+-Luminosite Eternelle
+Base damage reduction: 20% 25% 30% 35% 40% >> 19% 23% 27% 31% 35%
+Bonus damage reduction per channel sec: 5% >> 4%
+Saint Heal: 300 >> 250
+
+--------------
+
+Fix Ishtar's F not toggle off when die
+
+Ishtar
+-An Gal Ta Ki Gal Šè
+Channel now increase Arrow(Impact) damage instead
+Bonus Channel damage per sec: 100 >> 160
+
+Jeanne
+-Luminosite Eternelle
+Now heal 100 per sec while channeling
+
+-Attribute: Divine Symbol
+God Resolution Buff now grant 10% damage reduction
+Luminosite Eternelle success channel cooldown reduction: 10 >> 12
+
+-Attribute: Revelation
+Cost: 14 >> 15
+Now apply Charisma + dispel while channeling
+
+Medusa
+-Attribute: Mystic Eye of petrification
+Stone Duration: 3 >> 2
+
+King Hassan
+-Attribute: Natural Body
+Bonus Heal per STR: 2 >> 4
+
+Jack The Ripper
+-Surgery
+Cooldown: 8 >> 10
+
+------------
+
+Fix Jeanne flag not invul
+Fix Jeanne R sound
+Add Atalanta combo sound
+
+-------
+
+Fix Jeanne QW can not lvl up while saint
+
+Jeanne
+-Saint
+Luminosite heal while channel: 200 >> 300
+
+-Attribute: Divine Symbol
+Cost: 14 >> 15
+Luminosite Bonus success heal: 10% >> 30%
+Luminosite Now heal 10% jeanne max health while channel 
+
+-----------
+
+Rework Jeanne's E R SA3 SA4 SA5
+Fix disable mount reselection option
+
+------------
+
+Fix Lancelot Eternal Arms passive crit
+
+Atalanta Alter
+-Tauropolos Alter
+Damager per sec: 200 275 350 425 500 >> 200 260 320 380 420
+
+Hans
+-High speed incantation
+Cast Range: 600
+Mana Restore: 300 400 500 600 700 >> 200 275 350 425 500
+
+-Human Observation
+Cast Range: 800 >> 600
+Spell AMP: 6% 10% 14% 18% 22% >> 8% 10% 12% 14% 16%
+Bonus MR: 6 10 14 16 20 >> 4 7 10 13 16
+
+-Masterpiece - Nightingale
+Cast Range: 800 >> 700
+Mana Cost: 300 >> 400
+Bonus Heal from Hans Max HP: 0 5 10 15 20 >> 2 4 6 8 10
+Buff duration: 3 >> 2
+Damage Reduction: 20% >> 15%
+
+-Masterpiece - Red Shoes
+Mana Cost: 200 >> 300
+
+-Masterpiece - Snow Queen
+Mana Cost: 250 300 350 400 450 >> 400
+
+-Masterpiece - Thumblina
+Mana Cost: 350 >> 400
+
+-Nake King
+Cooldown: 20 >> 30
+Mana Cost: 200 >> 300
+
+-The Autobiography of Hans Christian Andersen
+Bonus Q cast range: 400 >> 200
+
+-Attribute: Improve Territory Creation
+Hans no long gain bonus max mana
+No longer revoke
+Root: 2 >> 1
+Now apply Silence and Mute for 2sec
+Allies also gain 3% mana regen
+
+-Attribute : Improve Human Observation
+Bonus W Cast range: 400 >> 200
+Bonus W duration: 5 >> 3
+Bonus W Spell AMP: 8% >> 5%
+No longer grant bonus MR
+
+-Attribute: Finish Manuscript
+Nightingale Bonus buff duration: 3 >> 1
+Nightingale Bonus Heal per INT: 4 >> 3
+Bonus Cast Range: 200 >> 100
+
+Karna
+-Attribute: Indra Lightning
+Bonus damage per AGI: 9 >> 7.5
+
+----------
+
+Fix RQ end game
+Auto Balance now force Auto Assign
+Correct Lancelot's Gatling damage
+Change Li's Berserk E calculation
+
+Jack The Ripper
+-Attribute: Holy Mother
+Holy Mother Bonus AGI per stack: 2 >> 1
+Maria (combo) Bonus Execute per stack: 3% >> 2%
+
+Edmond Dante
+-Shadow Strike
+Damage per Slash: 110 135 160 185 210 >> 90 115 140 165 190
+
+-Attribute: Improve Monte Cristo Mythology
+Hate Shield: 800 >> 600
+
+-Attribute : Attendre Esperer
+Cost: 18 >> 19
+
+Lubu
+-Nature of Rebellious Spirit
+Bonus ATK per Death: 20% >> 15%
+Bonus ASPD per Death: 20% >> 15%
+
+-Flying General
+Slam Stun Duration: 1.0 1.0 1.1 1.1 1.2 >> 0.7 0.7 0.8 0.8 0.9
+
+-Bravary
+Bonus ATK: 30% 35% 40% 45% 50% >> 20% 25% 30% 35% 40%
+
+-Attribute: Mad Enhancement
+Bonus Movespeed: 20% >> 10%
+Bonus STR: 4 8 12 16 20 >> 3 6 9 12 15
+
+Li Shuwen
+-Tiger Strikes
+Now can not cast while being rooted
+
+-Attribute: Dual Class
+Tiger Strike can use while being rooted
+
+Kiyohime (Lancer)
+-Combo: Dojoji Bell
+Max Damage: 3750 >> 4000
+Min Damage: 2000 >> 2500
+
+Semiramis
+-Binding Chain
+Max Duration: 2 2.75 3.5 4.25 5 >> 2 2.5 3 3.5 4
+
+Meltryllis
+-Attribute: Composite
+Cost: 16 >> 15
+
+-Attribute: Crime Ballet
+Cost: 14 >> 12
+
+-Attribute: Saint Graph Expansion
+Cost: 16 >> 14
+
+Karna
+-Attribute: Indra Lightning
+Bonus Divine Damage: 20% >> 15%
+
+Muramasa
+-Attribute : Tameshi Mono
+Bonus Marble Damage: 13% >> 23%
+Penalty Damage: 15% >> 17%
+
+Frankenstein
+-Blasted Tree
+Damage per Lightning: 200 220 240 260 280 >> 200 210 220 230 240
+-Lament of Falsely Living
+Duration: 2.0 >> 1.3
+
+Ishtar
+-Gem Bombard
+Delay: 0.3 >> 0.7
+Cast Range: 950 >> 900
+AOE: 400 >> 500
+
+Elizabeth Bathory
+-Iron Maiden
+HP Drain: 50% >> 60%
+
+-Dragon Cry Thunder Voice
+Distance: 1500 >> 1600
+
+-Attribute : Torture Technique
+Bonus Iron Maiden duration: 1.0 >> 1.3
+
+Gilles
+-Torment
+Base Damage: 200 240 280 320 360 >> 300 340 380 420 460
+Distance Damage: 30% 35% 40% 45% 50% >> 10% 15% 20% 25% 30%
+
+-Attribute : Outer God Favour
+Mana Regen: 10 >> 12
+Torment Bonus INT Damage: 2 >> 3
+
+Artoria
+-Avalon
+Counter Damage: 800 950 1100 1250 1400 >> 800 930 1060 1190 1320
+
+-Attribute: Improve Excalibur
+Bonus Max Mana Damage: 30% >> 25%
+
+Mashu
+-Shield of Rousing Heroism
+Damage Reduction: 11% 14% 17% 20% 23% >> 12% 14% 16% 18% 20%
+
+-Transient wall of snowflake
+Bonus HP Regen: 30 50 70 90 110 >> 30 45 60 75 90
+
+Medusa
+-High Speed Movement
+Cooldown: 14 13 12 11 10 >> 17 16 15 14 13
+
+-Attribute: Riding
+Riding Movespeed: 800 >> 750
+
+Iskandar
+-Army of The King
+Reduce Soldiers health
+
+-Eumenes's Passive
+Bonus Soldier ATK: 30% >> 20%
+
+-Attribute: Bond Beyond Time
+Bonus Soldiers health from Iskandar's health: 23% >> 15% 
+
+Drake
+-Golden Wild Hunt
+Yellow Laser damage: 100 130 160 190 220 >> 100 120 140 160 180
+Red Laser damage: 200 225 250 275 300 >> 200 220 240 260 280
+
+-The Golden Hind : Drive
+Cooldown: 20 >> 25
+
+-Attribute: Pioneer of Star
+Double ATK chance: 30% >> 50%
+
+King Hassan
+-Attribute : Abyss Of Death
+Abyss Of Death revive time: 2 >> 3
+Revive damage radius: 300 >> 400
+
+Artoria Alter
+-Attribute : Improve Ferocity
+Cost: 10 >> 9
+
+Okita
+-Flash Slash
+Cooldown: 12 11 10 9 8 >> 12 12 11 11 10
+Slash Damage: 200 240 280 320 360 >> 200 220 240 260 280
+
+Lancelot
+-Double Edge
+Max bonus damage taken: 20% 25% 30% 35% 40% >> 35% 32% 29% 26% 23%
+
+-Attribute : Improve Eternal Arms Mastership
+Cost: 14 >> 12
+Active Duration: 5 >> 6
+
+-Attribute : Knight of the Lake
+Cost: 17 >> 15
+
+Sasaki Kojiro
+-Combo Hiken/Enbu
+Buff duration: 3 >> 4
+Sasaki gain bonus 300 attack range
+
+Tamamo
+-Attribute: Spirit Theft
+Subteranian Grasp revoke: 2.0 >> 1.5
+
+Amakusa
+-Attribute: Left Hand
+Left Hand HP Regen: 1% >> 2%
+
+Zhuge Liang
+-Attribute : Chu Shi Biao
+Defensive Formation Shield: 1000 >> 800
+Defensive Formation Shield DuratioN: 7 >> 6 7 8 9 10
+
+Heracles
+-Courage
+Max Stack: 5 >> 6
+
+-Berserk
+Cooldown: 28 >> 30
+
+---------
+
+Add [Heroic] Casual Robin
+Add [Legend] Ninja Robin
+Upgrade Robin model
+Fix Li's combo
+Fix Herc's R
+
+-----------
+
+Fix Tooltip
+中文: 阿塔兰塔(Alter)
+Fix Amakusa's Q effect
+Fix Robin's W2 not slow
+
+----------------
+
+中文: 冲田总司, 伊絲塔
+Fix Penalty ban
+
+Code: PenaltyFix
+Reward: 3000 CP 
+Expired Date: 23/07/24
+
+Medea
+-Magic Trap
+Delay activation: 1.0 >> 0.5
+
+------------
+
+Add [Legend] Zettai Kyouiki Rin Ishtar
+Fix MMR
+Fix Database
+Add some SFX
+
+---------
+
+Fix MMR
+Fix Summer Tamamo's texture
+Fix Ishtar gem not drop when ded
+Fix Robin's trap exist after round end
+
+-----------
+
+Fix Database
+Fix RQ System
+Reset MMR
+
+RQ System
+No longer get penalty
+1st-4th RQter will be get temporary current playing hero banned for 3 games
+finishing the game will reduce hero banned for 1 game
+
+----------
+
+Fix particle
+Fix Iskandar
+Fix Database
+中文: 清姬
+
+Drake
+Reduce Golden Hind's turn rate, hitbox
+
+-----------
+
+Fix Elizabeth's recommend item
+Fix database
+中文: 梅尔特莉莉丝
+
+Medea
+-Magic Trap
+stun duration: 1.2 1.5 1.8 2.1 2.4 >> 0.6 0.7 0.8 0.9 1.0
+Aoe: 250 >> 160
+Now has 1.0s delay to Activated the trap
+
+Diarmuid
+-Mind Eye
+shorten dash time
+
+Melt
+Add Divine indicator
+
+Semiramis
+Add Divine indicator
+
+Robin
+-Yew Bow
+Arrow Damage: 250 300 350 400 450 >> 300 400 500 600 700
+
+---------
+
+fix database
+disable RQ system
+
+------
+Attempt fix database
+
+Frankenstein
+-Blasted Tree
+bonus lightning per stack: 4 >> 3
+
+-Attribute: Bridal Chest
+Blasted Tree bonus damage per stack: 10 >> 5
+
+-----------
+
+Final fix database
+
+-------------
+
+Final fix Link scroll pseudo alive
+Fix Vlad pseudo alive
+Fix Angra pseudo alive
+Fix Rage Quit system
+Fix database
+
+Ishtar
+-Light of Venus
+Damage per arrow: 150 160 170 180 190 >> 100 105 110 115 120
+
+-------------
+
+Fix database
+Fix double Marble
+Add Gift Code
+
+Code: ApoloCP1
+Reward: 6000 CP 
+Available date til 17/07/24
+
+------------
+
+Fix database
+Fix double Marble
+
+-----------
+
+Correct Edmond's Q damage
+Player with 110 PP will get blue name
+Fix Muramasa's Dash charge not refresh with Seal 2
+Fix Tooltips
+
+System
+1st abandon player will get penalty from valve
+1-4 players will get -PP and no CP reward for this game
+When 4 players abandon game, the rest players can freely quit game with 10CP (can claim first game CP) or continuous play for MMR
+When 6 players abandon game, game will force end
+
+Gilles
+-Abysal Contract
+resummon while squid is alive will refresh Contaminate
+
+-Combo
+Now apply stun for 1s and Plaque will slow target 50%
+
+-----------
+
+Fix database
+Add Player Point panel to Scoreboard
+
+Acquired Armor
+Now gain 1.5 armor per 1 master mana
+Max 30 times
+
+-------------
+
+Reset  MMR
+MMR REWARD!
+
+MMR >= 4000 gain 6000 CP
+MMR >= 3000 gain 4000 CP
+MMR >= 2000 gain 3000 CP
+MMR >= 1500 gain 2000 CP
+MMR >= 1100 gain 1000 CP
+
+Fix Player Point (PP) System
+PP = 110 gain 110% CP
+PP = 91 - 109 gain 100% CP
+PP = 81 - 90 gain 80% CP
+PP = 71 - 80 gain 50% CP
+PP below 70 no longer gain CP
+
+Whoever rage quit or disconnect before game complete end will get penalty -5 PP
+When PP below 80 will be tag as RAGE QUITER for 3 end games
+
+RAGE QUITER tag effect: can not gain 100CP! (first game CP of day)
+
+Correct Ishtar's Q damage
+
+---------------
+
+Fix Arthur hitbox
+
+King Hassan
+-Attribute: Abyss of Death
+Revive damage: 70% >> 90%
+
+Kiyohime Lancer
+-Combo
+Add Gacha effect
+
+------------
+
+ภาษาไทย (โอดะ, โอคิตะ)
+
+------------
+
+Fix Ishtar D gold cost
+Fix Ishtar Combo crash
+Fix Atalanta Alter, Medusa jump out of map
+
+--------------------
+
+Fix Ishtar's R not self stun/invul
+Fix Ishtar D gold cost + particle
+Fix Ishtar W can stop at void location/cross realm
+Fix Tooltip
+Fix Atalanta Alter can bring to Isekai while Combo
+
+Ishtar
+-W
+Cooldown: 18 16 14 12 10 > 19 18 17 16 15
+Dash radius: 2000 >> 1500
+
+-E
+Damage per ray: 100 115 130 145 160 >> 100 110 120 130 140
+
+-R
+Jump Cast Range: 1500 >> 1200
+
+Mashu
+-Shielder
+Base Shield Amount: 1000 >> 800
+
+Atalanta Alter
+-Attribute: Bow of Darkness Heaven
+Crossing Arcadia reduce Tauropolo cooldown: 10s >> 5s
+
+Diarmuid
+-Attribute: Improved Mind's Eye
+now Diarmuid dash 300 distance while gaining buff
+
+------------
+
+Fix Atalanta Alter jump attack
+Improve sfx
+Fix Tooltip
+
+Fix Atalanta Alter Max HP
+
+Atalanta Alter
+Max Health: 1325 >> 1400
+
+-Tauropolos Arrow Rain
+Evil Beast heal: 100% >> 70%
+
+Ishtar
+Rework F, Swap D-Q, Improve W E R Combo
+Combo Sequence: Q > D > R
+Combo no longer vector ability
+Add new SA
+
+----------
+
+Fix Nobu R
+
+--------
+
+Muramasa
+
+-R 
+cast point 0.22 -> 0.2
+silence 0.25 -> 0.45
+pure damage 350 400 450 500 550 -> 370 420 470 520 570
+
+-Tengukiri (QQ)
+damage
+80 95 110 125 140 -> 90 105 120 135 150
+
+-Combo
+mana refund on sword pickup 200 -> 230
+sword duration 5 -> 6
+
+-Attribute: tameshi mono
+R cast without chant, damage penalty 17% -> 15%
+
+-Attribute: karmic vision
+bonus pure dmg 160 -> 180
+
+Atalanta Alter
+-Attribute: Self Evolution
+Curse Energy gain: 10 >> 5
+
+-Attribute: Beast Enhancement
+W No longer mini stun
+
+---------------
+
+Fix Atalanta Alter
+Fix Tooltip
+
+-----------
+
+Atalanta Alter
+-Curse
+become lethal damage
+
+-Tauropolo 
+fasten interval
+DPS: 200 250 300 350 400 450 >> 200 275 350 425 500
+Curst stack: 9 12 15 18 21 >> 10 14 18 22 26
+
+-Combo
+R penalty: 10s >> 5s
+
+-Attribute: Self Evolution
+Curse Energy gain: 1 >> 10
+
+-Attribute: Wild Beast Logic
+Cost: 14 >> 11
+
+-Attribute: Beast Enhancement
+W get bonus 2 attack count and ministun on attack
+
+-Attribute: Wild Beast Logic
+W now jump on lowest hp hero instead
+
+-Attribute: Bow of Darkness Heaven
+Crossing Arcadia: reduce Tauropolos cooldown: 5 >> 10
+Jumping Tauropolos mana cost: 600 >> 400
+
+Fran
+-Blasted Tree
+Less focus on Fran
+
+-Combo Blasted Tree
+Cooldown: 240 >> 270
+
+Sasaki
+-Tsubame Gaeshi
+Interruptable Cast: 0.43 >> 0.53
+Stun duration: 1.5 >> 1.0
+
+Amakusa
+-Kyrie Elesion - Chant
+Cooldown: 1.0 >> 0.5
+
+-------------
+
+Fix Atalanta Alter SA1
+Fix Atalanta Alter jump attack, W jump attack
+
+---------------
+
+Fix Atalanta W can walk on water
+Fix Atalanta jump in ubw
+
+Atalanta Alter
+-Crossing Arcadia
+Cast time: 0.4 >> 0.2
+
+-Tauropolos - Arrow Rain
+Evil Beast heal 100% damage to Atalanta instead of increasing damage
+
+-Attribute: Cursed Moon
+Cost: 17 >> 12
+Increase Curse active radius by 2500
+
+-Attribute: Beast Enhancement
+Atalanta get 30 Curse Energy
+
+-Attribute: Bow of Darkness Heaven
+deal bonus damage 2xAGI 
+While Crossing Arcadia jumping, Tauropolos - Arrow Rain's cast time is reduce to 0.4 seconds, mana cost is reduce to 600 with 2.5 seconds arrow rain duration. The arrow rain also follow Atalanta.
+
+--------------
+
+Fix Atalanta Alter jump,combo no stun
+
+Atalanta Alter
+-Roar
+No longer knockback
+apply slow as default
+mini stun when evil beast
+
+--------------
+
+Fix Tooltip
+Fix Atalanta Alter Combo not stun
+Fix Atalanta Alter W duration
+Fix LuBu R
+
+Medea
+-Territory: Mana Drain
+Now can drain mana with full mana
+
+Atalanta (Alter)
+-Calydonian Boar Curse
+Active Radius: 1500 >> 2500
+
+-Beast Transformation
+Now becomes strong dispellable
+
+-Attribute: Self Evolution
+Curse Energy Heal: 0.5% > 1.0%
+Evil Beast gain 1% attack for each Curse Energy stack
+
+-Attribute: Bow of Darkness Heaven
+Atalanta get bonus Curse energy: 0 >> 1
+
+-Attribute: Cursed Moon
+Tauropolos Skia Thermokrasia pull all enemies to center
+
+Ishtar
+-Q 
+bonus R dmg per gem 15 20 25 30 35 -> 12 16 20 24 28
+
+-R 
+impact damage base reduced 600 750 900 1050 1200 -> 550 700 850 1000 1150
+base range 2400 -> 2200
+
+R SA Goddess of venus
+bonus impact percentage 15 -> 12
+bonus R damage 50 100 150 200 250 -> 80 110 140 170 200
+extra range 800 -> 600
+extra cast delay 0.4 -> 0.45
+
+-------------
+
+Fix Atalanta (alter)'s R damage
+Fix Atalanta (alter) D can reset
+Fix Tooltip
+Improve sfx
+
+Atalanta (Alter)
+-Combo
+Cast Range: 3250 >> 5500
+
+-------------
+
+Add [Heroic] Armor Atalanta (Alter)
+
+Heroes list for Test
+Atalanta (Alter)
+
+Rework Atalanta (Alter)'s W D SA
+Improve sfx
+
+---------------
+
+Heroes list for Test
+42. Ishtar
+
+Medea
+-Magic Trap
+Radius: 130 >> 250
+
+-Attribute: Improve Territory Creation
+Territory mana regen: 20 >> 50
+Territory EXP: 3 >> 6
+
+-Territory Mana Drain
+Mana drain per sec: 40 >> 60
+
+--------------
+
+Fix Fran's skin
+Fix Cu's W get stack with deny
+
+Muramasa
+-E
+cast point 0.25 -> 0.2
+cast range 600 -> 650
+
+-R
+cast 0.25 -> 0.22
+delay 0.5 -> 0.42
+
+------------
+
+Fix innate skill's UI
+Fix crash
+
+--------------
+
+[Myth] skins cost sale 10,000CP
+Add [Heroic] Old Li
+Add [Legend] Coated Old Li
+Add [Heroic] Gladiator Fran
+Upgrade some effect
+Upgrade Fran model
+
+Sasaki
+-Tsubame Gaeshi
+Now has 2 phase of cast, interrupt cast 0.43s and uninterrupt cast 0.3s
+
+-Attribute: Ganryu
+Tsubame will still deal half damage to invulnerable jump enemy target
+
+-------------
+
+Fix Melt's anim
+Fix Lubu's combo
+
+Heroes list for Test
+40. Kiyohime
+41. Muramasa
+
+Kiyohime
+-Q
+MS 10 15 20 25 30 -> 9 13 17 21 25
+
+-E
+explosion damage 300 375 450 525 600 -> 250 320 390 460 530
+
+-R
+slash dmg 220 280 340 400 460 -> 200 260 320 380 440
+slash aoe 150 -> 140
+burst dmg 425 550 675 800 925 -> 400 525 650 785 900
+
+Combo
+dmg 1.5k - 4k (random) -> 2k-3750
+cast range 1200 -> 1050
+cast point 0.5 -> 0.6
+
+-Stalk 
+25% ms bonus -> 20 
+25% slow -> 20
+
+-Attribute: pursuer of love
+W armor reduce -3 -6 -9 -12 -15 -> -2-4-6-8-10
+W bonus dmg 150 -> 100
+
+-Attribute samadhi fire
+E int scale 3 -> 2
+
+Muramasa
+-Q
+no longer stop movement
+cast point 0.1 -> 0.2
+
+-W
+dash range 450 -> 400
+marble (chant) dash range 675 -> 550
+damage 200 275 350 425 500 -> 250 300 350 400 450
+
+-E
+cast point 0.15 -> 0.25
+cast delay 0.3 -> 0.35
+damage base 400 500 600 700 800 -> 300 400 500 600 700
+stun 0.5 -> 0
+aoe 450 -> 420
+cast range 750 -> 600
+
+-R
+pure dmg 400 450 500 550 600 -> 350 400 450 500 550
+magic dmg 600 700 800 900 1000 -> 560 660 760 860 960
+base range 1000 -> 900
+cast point 0.2 -> 0.25
+cast delay 0.4 -> 0.5
+silence 0.6 -> 0.25
+
+-D
+bonus armor 3 15 -> 2 10
+bonus tengu kiri dmg 0 30 -> 0 20
+bonus E dmg 0 200 -> 0 150
+
+-Tengu kiri (QQ)
+damage 80 100 120 140 160 -> 80 95 110 125 140 
+
+-Attribute blaze 
+mana cost 16 -> 17
+bonus ms 8 10 12 14 16 -> 6 7 8 9 10
+bonus MR 15 -> 12
+pure dmg 400 450 500 550 600 -> 350 400 450 500 550
+
+-Attribute tameshi mono
+penalty without chant (R) 16% -> 17%
+bonus dmg with marble (full chant) 16% -> 13%
+max health cost without chant (R) 21% -> 30% current health
+bonus to isekai hero 20% -> 15%
+R bonus range 200 -> 150
+
+-Attribute: karmic vision
+bonus R pure 200 -> 160
+
+Combo
+manacost 600 -> 700
+bonus MR 20 -> 18
+bonus MS 70 -> 55
+R cd during combo 8 -> 9
+mana recovery from sword pickup 250 -> 200
+sword pickup range 200 -> 180
+sword pickup duration 6s -> 5s
+
+------------------
+
+Fix Atalanta's skin
+Heroes list for Test
+38. Drake
+
+-------------------
+
+Fix Angra's die by return curse 
+
+Frankenstein
+Max shield = max health
+electric charge no longer refresh with Seal 2
+
+------------------
+
+Official Release Meltryllis
+
+Add [Normal] White Meltryllis
+Fix La Pucelle to Mashu shield
+Fix Heracles's berzerk cast + SA
+Fix Mordred's summer rush big model
+Fix Melt's R effect
+Now Frankenstein's electric charge can refresh with Seal 2
+Upgrade some sfx
+
+Meltryllis
+-Attribute: Crime Ballet
+Bonus E damage: 200 >> 100
+
+Frankenstein
+-Blasted Tree
+Now lightnings often strike at Fran
+
+----------------
+
+Fix Cu's W not working
+Fix Mashu's W can not target amp ally
+Medea's WR rework
+
+Heroes list for Test
+38. Medea
+
+Melt
+-E
+Total Damage: 390 480 570 660 750 >> 600 690 780 870 960
+
+Heracles
+-Attribute: Mad Enhancement
+Now Berserk can not be interrupt while casting
+
+Medea
+-Magic Trap
+Place invisible trap on ground, enemy hero step in will be stun, lock for durations.
+
+-Attribute: Improve Territory Creation
+Allies hero nearby tower will get +3 EXP when team has less win point.
+
+--------------
+
+Fix Melt's R 
+Add [Myth] Koihime Koumei
+Add [Heroic] Sailor Astolfo
+Add [Legend] Summer Astolfo
+Add [Legend] Summer Elizabeth Bathory
+
+--------------
+
+fix spendmana
+fix medusa, kuro, scat, atalanta
+
+--------------
+
+hotfix channel ability
+
+---------------
+
 Fix Tooltip
 Fix Particle
 Fix Mashu shield

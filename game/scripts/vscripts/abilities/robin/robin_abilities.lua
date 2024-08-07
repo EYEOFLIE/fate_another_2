@@ -141,7 +141,13 @@ function OnPitfallCast(keys)
     caster:EmitSound("Robin.PitfallTrap")
 	caster:EmitSound("Robin.PitfallTrapSFX")
 
-	local trap = ParticleManager:CreateParticleForTeam("particles/robin/pitfall/robin_pitfall.vpcf", PATTACH_CUSTOMORIGIN, caster, caster:GetTeamNumber())
+	local trap_dummy = CreateUnitByName("robin_pitfall", targetpoint, false, caster, caster, caster:GetTeamNumber())
+	--trap_dummy:FindAbilityByName("dummy_unit_passive_no_fly"):SetLevel(1)
+	trap_dummy:AddNewModifier(caster, ability, "modifier_kill", {Duration = duration})
+	trap_dummy:SetAbsOrigin(trap_dummy:GetAbsOrigin() + Vector(0,0,20))
+	ability:ApplyDataDrivenModifier(caster, trap_dummy, "modifier_robin_pitfall_checker", {})
+
+	--[[local trap = ParticleManager:CreateParticleForTeam("particles/robin/pitfall/robin_pitfall.vpcf", PATTACH_CUSTOMORIGIN, caster, caster:GetTeamNumber())
 	ParticleManager:SetParticleControl(trap, 0, targetpoint)
 
 	for i=duration,0,-0.5 do	
@@ -152,47 +158,36 @@ function OnPitfallCast(keys)
 
 	Timers:CreateTimer(duration + 1, function()
 		ParticleManager:DestroyParticle(trap, true)
-	end)
+	end)]]
 end
 
-function PitfallCheck(keys,activated,point,trapparticle)
+function PitfallCheck(keys)
 	local caster = keys.caster
     local ability = keys.ability
-    local trap = trapparticle
-	local duration = ability:GetSpecialValueFor("trap_duration")
+    local trap = keys.target
+    local trap_loc = trap:GetAbsOrigin()
 	local damage = ability:GetSpecialValueFor("damage")
 	local stun_duration = ability:GetSpecialValueFor("stun_duration")
 	local radius = ability:GetSpecialValueFor("radius")
 
-	if activated == true then return true end
+	local enemies = FindUnitsInRadius(caster:GetTeam(), trap_loc, nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
 
-	local enemies = FindUnitsInRadius(caster:GetTeam(), point, nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
-
-	if enemies == nil then return false end
+	if enemies[1] == nil then return end 
 
 	for k,v in pairs(enemies) do
 		if IsValidEntity(v) and not v:IsNull() and v:IsAlive() then
 	       	DoDamage(caster, v, damage, DAMAGE_TYPE_MAGICAL, 0, ability, false)
 	       	if not IsImmuneToCC(v) then
 				v:AddNewModifier(caster, ability, "modifier_stunned", { Duration = stun_duration })
-			end
-
-			ParticleManager:DestroyParticle(trap, true)
-
-			local trap = ParticleManager:CreateParticle("particles/dev/library/base_dust_hit_smoke.vpcf", PATTACH_WORLDORIGIN, caster)
-			ParticleManager:SetParticleControl(trap, 0, point)			
-			local trapglobalfx = ParticleManager:CreateParticle("particles/robin/pitfall/robin_pitfall.vpcf", PATTACH_WORLDORIGIN, caster)
-			ParticleManager:SetParticleControl(trap, 0, point)
-
-    		v:EmitSound("Robin.PitfallTriggerSFX")
-
-			Timers:CreateTimer(0.15, function()
-				ParticleManager:DestroyParticle(trapglobalfx, true)
-			end)
-
+			end	
        	end
-       	return true
     end
+
+    trap:EmitSound("Robin.PitfallTriggerSFX")
+    trap:ForceKill(false)
+
+    local smoke = ParticleManager:CreateParticle("particles/dev/library/base_dust_hit_smoke.vpcf", PATTACH_WORLDORIGIN, caster)
+	ParticleManager:SetParticleControl(smoke, 0, trap_loc)	
 end
 
 function OnBarrelCast(keys)
@@ -202,10 +197,17 @@ function OnBarrelCast(keys)
 	local duration = ability:GetSpecialValueFor("trap_duration")
 	local damage = ability:GetSpecialValueFor("damage")
 	local radius = ability:GetSpecialValueFor("radius")
-	local activated = false
+	
+	caster:EmitSound("Robin.BarrelTrapSFX")
+
+	local trap_dummy = CreateUnitByName("robin_barrel", targetpoint, false, caster, caster, caster:GetTeamNumber())
+	--trap_dummy:FindAbilityByName("dummy_unit_passive_no_fly"):SetLevel(1)
+	trap_dummy:AddNewModifier(caster, ability, "modifier_kill", {Duration = duration})
+	trap_dummy:SetAbsOrigin(trap_dummy:GetAbsOrigin() + Vector(0,0,20))
+	ability:ApplyDataDrivenModifier(caster, trap_dummy, "modifier_robin_barrel_checker", {})
 	
 
-	local trap = ParticleManager:CreateParticleForTeam("particles/robin/barrel/robin_barrel.vpcf", PATTACH_CUSTOMORIGIN, caster, caster:GetTeamNumber())
+	--[[local trap = ParticleManager:CreateParticleForTeam("particles/robin/barrel/robin_barrel.vpcf", PATTACH_CUSTOMORIGIN, caster, caster:GetTeamNumber())
 	ParticleManager:SetParticleControl(trap, 0, targetpoint)
 
 	for i=duration,0,-0.5 do	
@@ -214,47 +216,42 @@ function OnBarrelCast(keys)
 		end)
 	end
 
-    caster:EmitSound("Robin.BarrelTrapSFX")
-
 	Timers:CreateTimer(duration + 1, function()
 		ParticleManager:DestroyParticle(trap, true)
-	end)
+	end)]]
 end
 
-function BarrelCheck(keys,activated,point,trapparticle)
+function BarrelCheck(keys)
 	local caster = keys.caster
     local ability = keys.ability
-    local vectorpos = point
-    local trap = trapparticle
-	local duration = ability:GetSpecialValueFor("trap_duration")
+    local trap = keys.target
+    local trap_loc = trap:GetAbsOrigin()
+	local root = ability:GetSpecialValueFor("root_duration")
 	local damage = ability:GetSpecialValueFor("damage")
 	local radius = ability:GetSpecialValueFor("radius")
 
-	if activated == true then return true end
+	local enemies = FindUnitsInRadius(caster:GetTeam(), trap_loc, nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
 
-	local enemies = FindUnitsInRadius(caster:GetTeam(), point, nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
+	if enemies[1] == nil then return end 
 
-	if enemies == nil then return false end
+	local trapglobalfx = ParticleManager:CreateParticle("particles/robin/barrel/robin_barrel.vpcf", PATTACH_WORLDORIGIN, caster)
+	ParticleManager:SetParticleControl(trapglobalfx, 0, trap_loc)
 
-	for k,v in pairs(enemies) do
-		if IsValidEntity(v) and not v:IsNull() and v:IsAlive() then
-			ParticleManager:DestroyParticle(trap, true)
+	trap:EmitSound("Robin.BarrelTrapExplodeSFX")
 
-			local trapglobalfx = ParticleManager:CreateParticle("particles/robin/barrel/robin_barrel.vpcf", PATTACH_WORLDORIGIN, caster)
-			ParticleManager:SetParticleControl(trap, 0, point)
+	Timers:CreateTimer(0.15, function()
+		local detonate = ParticleManager:CreateParticle("particles/econ/items/techies/techies_arcana/techies_remote_mines_detonate_arcana.vpcf", PATTACH_CUSTOMORIGIN, caster)
+		ParticleManager:SetParticleControl(detonate, 0, trap_loc)
+		ParticleManager:DestroyParticle(trapglobalfx, true)
+		ParticleManager:ReleaseParticleIndex(trapglobalfx)
+		for k,v in pairs(enemies) do
+			if IsValidEntity(v) and not v:IsNull() and v:IsAlive() then	
+		       	DoDamage(caster, v, damage, DAMAGE_TYPE_MAGICAL, 0, ability, false)
+	       	end
+	    end
+    end)
 
-			v:EmitSound("Robin.BarrelTrapExplodeSFX")
-
-			Timers:CreateTimer(0.15, function()
-	       		DoDamage(caster, v, damage, DAMAGE_TYPE_MAGICAL, 0, ability, false)
-				ParticleManager:DestroyParticle(trapglobalfx, true)			
-				local trap = ParticleManager:CreateParticle("particles/econ/items/techies/techies_arcana/techies_remote_mines_detonate_arcana.vpcf", PATTACH_CUSTOMORIGIN, caster)
-				ParticleManager:SetParticleControl(trap, 0, point)
-			end)
-
-       	end
-       	return true
-    end
+    trap:ForceKill(false)
 end
 
 function OnRootsCast(keys)
@@ -354,9 +351,9 @@ function OnParalyzingArrow(keys)
 
 	Timers:CreateTimer(cast_delay, function()
 
-		Timers:CreateTimer(0.15, function()
-			StartAnimation(caster, {duration=1, activity=ACT_DOTA_CAST_ABILITY_3, rate=0.6})
-		end)	
+		--Timers:CreateTimer(0.15, function()
+			StartAnimation(caster, {duration=1, activity=ACT_DOTA_CAST_ABILITY_3, rate=1.0})
+		--end)	
 
     	caster:EmitSound("Robin.ParalyzingArrowSFX")
 
@@ -455,7 +452,7 @@ function OnHunterRain(keys)
 
 			Timers:CreateTimer(0.045 * i, function()
 
-				local vectordir = RotatePosition( Vector(0,0,0), QAngle( 0, (amount * -3) + (6 * i) , 0 ), caster:GetForwardVector():Normalized() )
+				local vectordir = RotatePosition( Vector(0,0,0), QAngle( 0, (amount * 3) - (6 * i) , 0 ), caster:GetForwardVector():Normalized() )
 				if caster:IsAlive() then
 			   		caster:EmitSound("Robin.HunterRainPewSFX")
 					local Arrow =
@@ -524,7 +521,7 @@ function OnYewBowStart(keys)
 
 	if IsSpellBlocked(target) then return end -- Linken effect checker
 
-	StartAnimation(caster, {duration=1, activity=ACT_DOTA_CAST_ABILITY_2, rate=0.6})
+	StartAnimation(caster, {duration=1, activity=ACT_DOTA_CAST_ABILITY_2, rate=1.0})
 	giveUnitDataDrivenModifier(caster, caster, "modifier_stunned", cast_delay + 0.1)
 	giveUnitDataDrivenModifier(caster, caster, "pause_sealdisabled", cast_delay - 0.1)
 
@@ -701,7 +698,7 @@ function OnComboCast(keys)
 	giveUnitDataDrivenModifier(caster, caster, "pause_sealdisabled", cast_delay + 0.4)
 
     Timers:CreateTimer(0.45, function()
-		StartAnimation(caster, {duration=1, activity=ACT_DOTA_CAST_ABILITY_2, rate=0.8})
+		StartAnimation(caster, {duration=1, activity=ACT_DOTA_CAST_ABILITY_2, rate=1.0})
 
 		EmitGlobalSound("Robin.Combo")
 
@@ -715,7 +712,7 @@ function OnComboCast(keys)
 		ult:StartCooldown(ult:GetCooldown(ult:GetLevel()))
 		
 
-		StartAnimation(caster, {duration=1, activity=ACT_DOTA_CAST_ABILITY_2, rate=0.6})
+		--StartAnimation(caster, {duration=1, activity=ACT_DOTA_CAST_ABILITY_2, rate=0.6})
 		giveUnitDataDrivenModifier(caster, caster, "modifier_stunned", cast_delay + 0.1)
 		giveUnitDataDrivenModifier(caster, caster, "pause_sealdisabled", cast_delay - 0.1)
 
